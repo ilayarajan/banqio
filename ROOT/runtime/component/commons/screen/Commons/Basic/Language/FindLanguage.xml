@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        default-menu-title="Find Language"
+        default-menu-include="false">
+
+    <transition name="createLanguage">
+        <service-call name="create#commons.basic.Language"/>
+        <default-response url="."/>
+    </transition>
+    <transition name="editLanguage">
+        <default-response url="../EditLanguage"/>
+    </transition>
+
+    <actions>
+        <entity-find entity-name="commons.basic.Language" list="languageList">
+            <search-form-inputs default-order-by="^languageId"/>
+        </entity-find>
+    </actions>
+
+    <widgets>
+        <container-box>
+            <box-header>
+                <label text="Find Language" type="h5"/>
+            </box-header>
+            <box-toolbar>
+                <container-dialog id="CreateLanguageContainer" button-text="New Language" width="900">
+                    <form-single name="CreateLanguageForm" transition="createLanguage">
+                        <auto-fields-entity entity-name="commons.basic.Language" field-type="edit">
+                            <exclude field-name="languageId"/>
+                            <exclude field-name="creationDate"/>
+                        </auto-fields-entity>
+                        <field name="rtl">
+                            <default-field title="RTL">
+                                <drop-down>
+                                    <option key="N" text="No"/>
+                                    <option key="Y" text="Yes"/>
+                                </drop-down>
+                            </default-field>
+                        </field>
+                        <field name="disabled">
+                            <default-field>
+                                <drop-down>
+                                    <option key="N" text="No"/>
+                                    <option key="Y" text="Yes"/>
+                                </drop-down>
+                            </default-field>
+                        </field>
+                        <field name="submitBtn">
+                            <default-field title="Create">
+                                <submit/>
+                            </default-field>
+                        </field>
+
+                        <field-layout>
+                            <fields-not-referenced/>
+                        </field-layout>
+                    </form-single>
+                </container-dialog>
+            </box-toolbar>
+            <box-body>
+                <form-list name="ListLanguages" list="languageList" skip-form="true" header-dialog="true" select-columns="true">
+                    <field name="languageId">
+                        <header-field show-order-by="true" title="ID">
+                            <text-find hide-options="true" size="10"/>
+                        </header-field>
+                        <default-field>
+                            <link url="editLanguage" text="${languageId}"/>
+                        </default-field>
+                    </field>
+                    <field name="languageName">
+                        <header-field show-order-by="true">
+                            <text-find hide-options="true"/>
+                        </header-field>
+                        <default-field>
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="locale">
+                        <header-field show-order-by="true">
+                            <text-find hide-options="true"/>
+                        </header-field>
+                        <default-field>
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="rtl">
+                        <header-field show-order-by="true" title="RTL">
+                            <drop-down allow-empty="true">
+                                <option key="Y" text="Yes"/>
+                                <option key="N" text="No"/>
+                            </drop-down>
+                        </header-field>
+                        <default-field>
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="disabled">
+                        <header-field show-order-by="true">
+                            <drop-down allow-empty="true">
+                                <option key="Y" text="Yes"/>
+                                <option key="N" text="No"/>
+                            </drop-down>
+                        </header-field>
+                        <default-field>
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="find">
+                        <header-field title="Find">
+                            <submit icon="glyphicon glyphicon-search"/>
+                        </header-field>
+                    </field>
+
+                    <form-list-column>
+                        <field-ref name="languageId"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="languageName"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="locale"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="rtl"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="disabled"/>
+                    </form-list-column>
+                </form-list>
+            </box-body>
+        </container-box>
+    </widgets>
+</screen>

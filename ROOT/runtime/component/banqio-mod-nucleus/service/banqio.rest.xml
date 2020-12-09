@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/rest-api-2.1.xsd"
+          name="nucleus"
+          displayName="Nucleus REST API"
+          version="1.0.0">
+
+    <resource name="security" description="Security API" version="1.0.0">
+        <resource name="user">
+            <method type="get">
+                <service name="banqio.security.SecurityServices.find#User"/>
+            </method>
+            <method type="post">
+                <service name="banqio.security.SecurityServices.create#User"/>
+            </method>
+            <method type="patch">
+                <service name="banqio.security.SecurityServices.update#User"/>
+            </method>
+            <id name="userId">
+                <resource name="membership">
+                    <method type="get">
+                        <service name="banqio.security.SecurityServices.find#UserGroupMember"/>
+                    </method>
+                    <method type="post">
+                        <service name="banqio.security.SecurityServices.create#UserGroupMember"/>
+                    </method>
+                    <method type="delete">
+                        <service name="banqio.security.SecurityServices.expire#UserGroupMember"/>
+                    </method>
+                </resource>
+                <resource name="acl">
+                    <method type="get">
+                        <service name="banqio.security.SecurityServices.find#UserAcl"/>
+                    </method>
+                    <method type="post">
+                        <service name="banqio.security.SecurityServices.create#UserAcl"/>
+                    </method>
+                    <method type="patch">
+                        <service name="banqio.security.SecurityServices.position#UserAcl"/>
+                    </method>
+                    <method type="delete">
+                        <service name="banqio.security.SecurityServices.expire#UserAcl"/>
+                    </method>
+                </resource>
+                <resource name="approve">
+                    <method type="post">
+                        <service name="banqio.security.SecurityServices.approve#User"/>
+                    </method>
+                </resource>
+                <resource name="enable">
+                    <method type="post">
+                        <service name="banqio.security.SecurityServices.enable#User"/>
+                    </method>
+                </resource>
+                <resource name="disable">
+                    <method type="post">
+                        <service name="banqio.security.SecurityServices.disable#User"/>
+                    </method>
+                </resource>
+                <resource name="password">
+                    <resource name="reset">
+                        <method type="post">
+                            <service name="banqio.security.SecurityServices.reset#PasswordInternal"/>
+                        </method>
+                    </resource>
+                </resource>
+                <resource name="logout">
+                    <method type="post">
+                        <service name="banqio.security.SecurityServices.forceLogout#User"/>
+                    </method>
+                </resource>
+            </id>
+            <resource name="register" require-authentication="anonymous-all">
+                <method type="post">
+                    <service name="banqio.security.SecurityServices.register#User"/>
+                </method>
+            </resource>
+            <resource name="profile">
+                <method type="get">
+                    <service name="banqio.security.SecurityServices.find#UserProfile"/>
+                </method>
+                <method type="post">
+                    <service name="banqio.security.SecurityServices.update#UserProfile"/>
+                </method>
+            </resource>
+            <resource name="login">
+                <method type="post">
+                    <service name="banqio.security.SecurityServices.login#User"/>
+                </method>
+            </resource>
+            <resource name="authenticate">
+                <method type="post">
+                    <service name="banqio.security.SecurityServices.authenticate#User"/>
+                </method>
+            </resource>
+            <resource name="logout">
+                <method type="post">
+                    <service name="banqio.security.SecurityServices.logout#User"/>
+                </method>
+            </resource>
+            <resource name="poll">
+                <method type="get">
+                    <service name="banqio.security.SecurityServices.poll#UserSession"/>
+                </method>
+            </resource>
+            <resource name="password">
+                <resource name="reset" require-authentication="anonymous-all">
+                    <method type="post">
+                        <service name="banqio.security.SecurityServices.reset#Password"/>
+                    </method>
+                </resource>
+                <resource name="temporary" require-authentication="anonymous-all">
+                    <resource name="change">
+                        <method type="post">
+                            <service name="banqio.security.SecurityServices.change#TemporaryPassword"/>
+                        </method>
+                    </resource>
+                </resource>
+                <resource name="change">
+                    <method type="post">
+                        <service name="banqio.security.SecurityServices.change#Password"/>
+                    </method>
+                </resource>
+                <resource name="oneTime">
+                    <resource name="generate">
+                        <method type="post">
+                            <service name="commons.security.SecurityServices.generate#OneTimePassword"/>
+                        </method>
+                    </resource>
+                </resource>
+            </resource>
+            <resource name="preference">
+                <method type="get">
+                    <service name="banqio.security.SecurityServices.find#UserPreference"/>
+                </method>
+            </resource>
+            <resource name="language">
+                <method type="post">
+                    <service name="banqio.security.SecurityServices.update#UserLanguage"/>
+                </method>
+            </resource>
+            <resource name="otpChannel">
+                <method type="post">
+                    <service name="banqio.security.SecurityServices.update#UserOtpChannel"/>
+                </method>
+            </resource>
+            <resource name="event">
+                <method type="get">
+                    <service name="banqio.security.SecurityServices.find#UserEvent"/>
+                </method>
+            </resource>
+            <resource name="stats">
+                <method type="get">
+                    <service name="banqio.security.SecurityServices.find#UserStats"/>
+                </method>
+            </resource>
+        </resource>
+        <resource name="userGroup">
+            <method type="get">
+                <service name="banqio.security.SecurityServices.find#UserGroup"/>
+            </method>
+            <method type="post">
+                <service name="banqio.security.SecurityServices.create#UserGroup"/>
+            </method>
+            <method type="patch">
+                <service name="banqio.security.SecurityServices.update#UserGroup"/>
+            </method>
+            <id name="userGroupId">
+                <resource name="member">
+                    <method type="get">
+                        <service name="banqio.security.SecurityServices.find#UserGroupMember"/>
+                    </method>
+                    <method type="post">
+                        <service name="banqio.security.SecurityServices.create#UserGroupMember"/>
+                    </method>
+                    <method type="delete">
+                        <service name="banqio.security.SecurityServices.expire#UserGroupMember"/>
+                    </method>
+                </resource>
+                <resource name="acl">
+                    <method type="get">
+                        <service name="banqio.security.SecurityServices.find#UserGroupAcl"/>
+                    </method>
+                    <method type="post">
+                        <service name="banqio.security.SecurityServices.create#UserGroupAcl"/>
+                    </method>
+                    <method type="patch">
+                        <service name="banqio.security.SecurityServices.position#UserGroupAcl"/>
+                    </method>
+                    <method type="delete">
+                        <service name="banqio.security.SecurityServices.expire#UserGroupAcl"/>
+                    </method>
+                </resource>
+                <resource name="workflowInitiator">
+                    <method type="get">
+                        <service name="banqio.security.SecurityServices.find#UserGroupWorkflowInitiator"/>
+                    </method>
+                </resource>
+            </id>
+        </resource>
+    </resource>
+
+    <resource name="basic" description="Basic API" version="1.0.0">
+        <resource name="country">
+            <resource name="holiday">
+                <method type="get">
+                    <service name="banqio.basic.BasicServices.find#CountryHoliday"/>
+                </method>
+                <method type="post">
+                    <service name="banqio.basic.BasicServices.create#CountryHoliday"/>
+                </method>
+                <method type="patch">
+                    <service name="banqio.basic.BasicServices.update#CountryHoliday"/>
+                </method>
+                <method type="delete">
+                    <service name="banqio.basic.BasicServices.delete#CountryHoliday"/>
+                </method>
+            </resource>
+            <resource name="weekend">
+                <method type="get">
+                    <service name="banqio.basic.BasicServices.find#CountryWeekend"/>
+                </method>
+                <method type="post">
+                    <service name="banqio.basic.BasicServices.create#CountryWeekend"/>
+                </method>
+                <method type="patch">
+                    <service name="banqio.basic.BasicServices.update#CountryWeekend"/>
+                </method>
+            </resource>
+            <resource name="ibanFormat">
+                <method type="get">
+                    <service name="banqio.basic.BasicServices.find#CountryIbanFormat"/>
+                </method>
+                <method type="post">
+                    <service name="banqio.basic.BasicServices.create#CountryIbanFormat"/>
+                </method>
+                <method type="patch">
+                    <service name="banqio.basic.BasicServices.update#CountryIbanFormat"/>
+                </method>
+            </resource>
+        </resource>
+        <resource name="currency">
+            <resource name="app">
+                <method type="get">
+                    <service name="banqio.basic.BasicServices.find#CurrencyApp"/>
+                </method>
+                <method type="post">
+                    <service name="banqio.basic.BasicServices.create#CurrencyApp"/>
+                </method>
+                <method type="delete">
+                    <service name="banqio.basic.BasicServices.delete#CurrencyApp"/>
+                </method>
+            </resource>
+            <resource name="holiday">
+                <method type="get">
+                    <service name="banqio.basic.BasicServices.find#CurrencyHoliday"/>
+                </method>
+                <method type="post">
+                    <service name="banqio.basic.BasicServices.create#CurrencyHoliday"/>
+                </method>
+                <method type="patch">
+                    <service name="banqio.basic.BasicServices.update#CurrencyHoliday"/>
+                </method>
+                <method type="delete">
+                    <service name="banqio.basic.BasicServices.delete#CurrencyHoliday"/>
+                </method>
+            </resource>
+            <resource name="weekend">
+                <method type="get">
+                    <service name="banqio.basic.BasicServices.find#CurrencyWeekend"/>
+                </method>
+                <method type="post">
+                    <service name="banqio.basic.BasicServices.create#CurrencyWeekend"/>
+                </method>
+                <method type="patch">
+                    <service name="banqio.basic.BasicServices.update#CurrencyWeekend"/>
+                </method>
+            </resource>
+            <resource name="exchangeRate">
+                <method type="get">
+                    <service name="banqio.basic.BasicServices.find#CurrencyExchangeRate"/>
+                </method>
+            </resource>
+        </resource>
+    </resource>
+
+    <resource name="partyClassification" description="Party classification API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.party.PartyServices.find#PartyClassification"/>
+        </method>
+        <method type="post">
+            <service name="banqio.party.PartyServices.create#PartyClassification"/>
+        </method>
+        <method type="patch">
+            <service name="banqio.party.PartyServices.update#PartyClassification"/>
+        </method>
+    </resource>
+
+    <resource name="contactMech" description="Contact Mechanism API" version="1.0.0">
+        <resource name="purpose">
+            <method type="get">
+                <entity name="mantle.party.contact.ContactMechPurpose" operation="list"/>
+            </method>
+        </resource>
+    </resource>
+
+    <resource name="party" description="Party API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.party.PartyServices.find#Party"/>
+        </method>
+        <method type="post">
+            <service name="banqio.party.PartyServices.create#Party"/>
+        </method>
+        <method type="patch">
+            <service name="banqio.party.PartyServices.update#Party"/>
+        </method>
+        <id name="partyId">
+            <resource name="classification">
+                <method type="get">
+                    <service name="banqio.party.PartyServices.find#PartyClass"/>
+                </method>
+                <method type="post">
+                    <service name="banqio.party.PartyServices.create#PartyClass"/>
+                </method>
+                <method type="delete">
+                    <service name="banqio.party.PartyServices.expire#PartyClass"/>
+                </method>
+            </resource>
+            <resource name="contactMech">
+                <method type="get">
+                    <service name="banqio.party.PartyServices.find#PartyContactMech"/>
+                </method>
+                <method type="post">
+                    <service name="banqio.party.PartyServices.create#PartyContactMech"/>
+                </method>
+                <method type="delete">
+                    <service name="banqio.party.PartyServices.expire#PartyContactMech"/>
+                </method>
+            </resource>
+            <resource name="identification">
+                <method type="get">
+                    <service name="banqio.party.PartyServices.find#PartyIdentification"/>
+                </method>
+                <method type="post">
+                    <service name="banqio.party.PartyServices.create#PartyIdentification"/>
+                </method>
+                <method type="delete">
+                    <service name="banqio.party.PartyServices.delete#PartyIdentification"/>
+                </method>
+            </resource>
+            <resource name="content">
+                <method type="get">
+                    <service name="banqio.party.PartyServices.find#PartyContent"/>
+                </method>
+                <method type="post">
+                    <service name="banqio.party.PartyServices.create#PartyContent"/>
+                </method>
+            </resource>
+            <resource name="role">
+                <method type="get">
+                    <service name="banqio.party.PartyServices.find#PartyRole"/>
+                </method>
+                <method type="post">
+                    <service name="banqio.party.PartyServices.create#PartyRole"/>
+                </method>
+                <method type="delete">
+                    <service name="banqio.party.PartyServices.delete#PartyRole"/>
+                </method>
+            </resource>
+            <resource name="badge">
+                <method type="get">
+                    <service name="banqio.party.PartyServices.find#PartyBadge"/>
+                </method>
+                <method type="post">
+                    <service name="banqio.party.PartyServices.create#PartyBadge"/>
+                </method>
+                <method type="delete">
+                    <service name="banqio.party.PartyServices.expire#PartyBadge"/>
+                </method>
+            </resource>
+            <resource name="note">
+                <method type="get">
+                    <service name="banqio.party.PartyServices.find#PartyNote"/>
+                </method>
+                <method type="post">
+                    <service name="banqio.party.PartyServices.create#PartyNote"/>
+                </method>
+            </resource>
+            <resource name="relationship">
+                <method type="get">
+                    <service name="banqio.party.PartyServices.find#PartyRelationship"/>
+                </method>
+                <method type="post">
+                    <service name="banqio.party.PartyServices.create#PartyRelationship"/>
+                </method>
+                <method type="delete">
+                    <service name="banqio.party.PartyServices.expire#PartyRelationship"/>
+                </method>
+            </resource>
+        </id>
+        <resource name="customer">
+            <method type="get">
+                <service name="banqio.connect.impl.CustomerServices.find#Customer"/>
+            </method>
+        </resource>
+    </resource>
+
+    <resource name="communicationEvent" description="Communication Event API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.party.PartyServices.find#CommunicationEvent"/>
+        </method>
+        <method type="post">
+            <service name="banqio.party.PartyServices.create#CommunicationEvent"/>
+        </method>
+        <method type="patch">
+            <service name="banqio.party.PartyServices.update#CommunicationEvent"/>
+        </method>
+        <id name="communicationEventId">
+            <resource name="content">
+                <method type="get">
+                    <service name="banqio.party.PartyServices.find#CommunicationEventContent"/>
+                </method>
+                <method type="post">
+                    <service name="banqio.party.PartyServices.create#CommunicationEventContent"/>
+                </method>
+            </resource>
+        </id>
+        <resource name="type">
+            <method type="get">
+                <service name="banqio.party.PartyServices.find#CommunicationEventType"/>
+            </method>
+        </resource>
+    </resource>
+
+</resource>

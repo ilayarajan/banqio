@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        default-menu-title="Scene"
+        default-menu-index="1">
+
+    <parameter name="sceneId" required="true"/>
+
+    <transition name="findScene">
+        <default-response url="../FindScene"/>
+    </transition>
+    <transition name="updateScene">
+        <service-call name="update#commons.server.Scene" in-map="context">
+            <field-map field-name="updateUserId" from="ec.user.userId"/>
+        </service-call>
+        <default-response url="."/>
+    </transition>
+
+    <actions>
+        <entity-find-one entity-name="commons.server.Scene" value-field="scene"/>
+    </actions>
+
+    <widgets>
+        <section name="UpdateSceneSection" condition="scene">
+            <widgets>
+                <container-panel>
+                    <panel-header>
+                        <link url="findScene" text="Find Scene" icon="glyphicon glyphicon-search"/>
+                    </panel-header>
+                    <panel-center>
+                        <form-single name="UpdateSceneForm" transition="updateScene" map="scene">
+                            <auto-fields-entity entity-name="commons.server.Scene" field-type="edit">
+                                <exclude field-name="inputUserId"/>
+                                <exclude field-name="updateUserId"/>
+                            </auto-fields-entity>
+                            <field name="sceneId">
+                                <default-field title="ID">
+                                    <display/>
+                                </default-field>
+                            </field>
+                            <field name="appId">
+                                <default-field title="App">
+                                    <drop-down>
+                                        <entity-options text="${appName}" key="${appId}">
+                                            <entity-find entity-name="commons.server.App"/>
+                                        </entity-options>
+                                    </drop-down>
+                                </default-field>
+                            </field>
+                            <field name="lookupName">
+                                <default-field>
+                                    <text-line size="60"/>
+                                </default-field>
+                            </field>
+                            <field name="description">
+                                <default-field>
+                                    <text-area rows="4" cols="80"/>
+                                </default-field>
+                            </field>
+                            <field name="creationDate">
+                                <default-field>
+                                    <display/>
+                                </default-field>
+                            </field>
+                            <field name="submitBtn">
+                                <default-field title="Save">
+                                    <submit/>
+                                </default-field>
+                            </field>
+
+                            <field-layout>
+                                <field-ref name="sceneId"/>
+                                <field-ref name="appId"/>
+                                <field-ref name="sceneName"/>
+                                <fields-not-referenced/>
+                            </field-layout>
+                        </form-single>
+                    </panel-center>
+                </container-panel>
+            </widgets>
+            <fail-widgets>
+                <container style="alert alert-warning">
+                    <label text="Scene with ID [${sceneId}] was not found."/>
+                </container>
+            </fail-widgets>
+        </section>
+    </widgets>
+</screen>

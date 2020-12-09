@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/rest-api-2.1.xsd"
+          name="card"
+          displayName="Card REST API"
+          version="1.0.0">
+
+    <resource name="cardBrand" description="Card Brand API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.card.CardServices.find#CardBrand"/>
+        </method>
+        <method type="post">
+            <service name="banqio.card.CardServices.create#CardBrand"/>
+        </method>
+        <method type="patch">
+            <service name="banqio.card.CardServices.update#CardBrand"/>
+        </method>
+        <resource name="localization">
+            <method type="get">
+                <service name="banqio.card.CardServices.find#CardBrandL10n"/>
+            </method>
+            <method type="post">
+                <service name="banqio.card.CardServices.create#CardBrandL10n"/>
+            </method>
+            <method type="patch">
+                <service name="banqio.card.CardServices.update#CardBrandL10n"/>
+            </method>
+            <method type="delete">
+                <service name="banqio.card.CardServices.delete#CardBrandL10n"/>
+            </method>
+        </resource>
+    </resource>
+    <resource name="cardType" description="Card Type API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.card.CardServices.find#CardType"/>
+        </method>
+        <method type="post">
+            <service name="banqio.card.CardServices.create#CardType"/>
+        </method>
+        <method type="patch">
+            <service name="banqio.card.CardServices.update#CardType"/>
+        </method>
+        <resource name="localization">
+            <method type="get">
+                <service name="banqio.card.CardServices.find#CardTypeL10n"/>
+            </method>
+            <method type="post">
+                <service name="banqio.card.CardServices.create#CardTypeL10n"/>
+            </method>
+            <method type="patch">
+                <service name="banqio.card.CardServices.update#CardTypeL10n"/>
+            </method>
+            <method type="delete">
+                <service name="banqio.card.CardServices.delete#CardTypeL10n"/>
+            </method>
+        </resource>
+    </resource>
+    <resource name="cardStatus" description="Card Status API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.card.CardServices.find#CardStatus"/>
+        </method>
+        <method type="post">
+            <service name="banqio.card.CardServices.create#CardStatus"/>
+        </method>
+        <method type="patch">
+            <service name="banqio.card.CardServices.update#CardStatus"/>
+        </method>
+        <resource name="localization">
+            <method type="get">
+                <service name="banqio.card.CardServices.find#CardStatusL10n"/>
+            </method>
+            <method type="post">
+                <service name="banqio.card.CardServices.create#CardStatusL10n"/>
+            </method>
+            <method type="patch">
+                <service name="banqio.card.CardServices.update#CardStatusL10n"/>
+            </method>
+            <method type="delete">
+                <service name="banqio.card.CardServices.delete#CardStatusL10n"/>
+            </method>
+        </resource>
+    </resource>
+    <resource name="cardLock" description="Card Lock API" version="1.0.0">
+        <resource name="temporary">
+            <method type="get">
+                <service name="banqio.card.CardServices.find#CardTemporaryLock"/>
+            </method>
+            <method type="delete">
+                <service name="banqio.card.CardServices.expire#CardTemporaryLock"/>
+            </method>
+        </resource>
+        <resource name="permanent">
+            <method type="get">
+                <service name="banqio.card.CardServices.find#CardPermanentLock"/>
+            </method>
+            <method type="delete">
+                <service name="banqio.card.CardServices.remove#CardPermanentLock"/>
+            </method>
+        </resource>
+    </resource>
+
+</resource>

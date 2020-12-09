@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        default-menu-index="4"
+        default-menu-title="Security"
+        menu-image="/Static/icons/fugue/lock.png">
+
+    <subscreens default-item="User"/>
+
+    <widgets>
+        <subscreens-menu id="securityMenu" type="popup"/>
+        <subscreens-active/>
+    </widgets>
+</screen>

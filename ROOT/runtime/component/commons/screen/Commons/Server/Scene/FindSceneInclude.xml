@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns=""
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        default-menu-title="Includes"
+        default-menu-index="3">
+
+    <parameter name="sceneId" required="true"/>
+
+    <transition name="createInclude">
+        <service-call name="create#commons.server.SceneInclude" in-map="context"/>
+        <default-response url="."/>
+    </transition>
+    <transition name="deleteInclude">
+        <service-call name="delete#commons.server.SceneInclude" in-map="context"/>
+        <default-response url="."/>
+    </transition>
+
+    <actions>
+        <entity-find entity-name="commons.server.SceneIncludeDetail" list="includeList">
+            <search-form-inputs default-order-by="^sceneId"/>
+        </entity-find>
+    </actions>
+
+    <widgets>
+        <container-box>
+            <box-header>
+                <label text="Find Include" type="h5"/>
+            </box-header>
+            <box-toolbar>
+                <container-dialog id="CreateIncludeContainer" button-text="New Include" width="900">
+                    <form-single name="CreateIncludeForm" transition="createInclude">
+                        <auto-fields-entity entity-name="commons.server.SceneInclude" field-type="edit">
+                            <exclude field-name="sceneId"/>
+                            <exclude field-name="creationDate"/>
+                        </auto-fields-entity>
+                        <field name="sceneId">
+                            <default-field>
+                                <hidden/>
+                            </default-field>
+                        </field>
+                        <field name="otherSceneId">
+                            <default-field title="Other Scene">
+                                <drop-down allow-empty="true">
+                                    <entity-options text="${sceneName} [${appId}]" key="${sceneId}">
+                                        <entity-find entity-name="commons.server.Scene">
+                                            <econdition field-name="sceneId" operator="not-equals" from="sceneId"/>
+                                            <order-by field-name="appId"/>
+                                            <order-by field-name="sceneName"/>
+                                        </entity-find>
+                                    </entity-options>
+                                </drop-down>
+                            </default-field>
+                        </field>
+                        <field name="submitBtn">
+                            <default-field title="Create">
+                                <submit/>
+                            </default-field>
+                        </field>
+
+                        <field-layout>
+                            <fields-not-referenced/>
+                        </field-layout>
+                    </form-single>
+                </container-dialog>
+            </box-toolbar>
+            <box-body>
+                <form-list name="ListIncludes" list="includeList" skip-form="true" header-dialog="true" select-columns="true">
+                    <field name="sceneId">
+                        <header-field>
+                            <hidden/>
+                        </header-field>
+                        <default-field>
+                            <hidden/>
+                        </default-field>
+                    </field>
+                    <field name="otherSceneId">
+                        <header-field show-order-by="true" title="ID">
+                            <hidden/>
+                        </header-field>
+                        <default-field>
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="sceneName">
+                        <header-field show-order-by="true">
+                            <text-find hide-options="true"/>
+                        </header-field>
+                        <default-field>
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="deleteBtn">
+                        <default-field title="" container-style="text-right">
+                            <link url="deleteInclude" icon="glyphicon glyphicon-trash" text="Delete" style="btn-danger"/>
+                        </default-field>
+                    </field>
+                    <field name="find">
+                        <header-field title="Find">
+                            <submit icon="glyphicon glyphicon-search"/>
+                        </header-field>
+                    </field>
+
+                    <form-list-column>
+                        <field-ref name="sceneId"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="otherSceneId"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="sceneName"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="deleteBtn"/>
+                    </form-list-column>
+                </form-list>
+            </box-body>
+        </container-box>
+    </widgets>
+</screen>

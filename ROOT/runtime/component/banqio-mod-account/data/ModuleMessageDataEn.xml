@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <moqui.basic.LocalizedMessage original="TRX_RECON_CREATED_SUCCESSFULLY" locale="en" localized="Transaction reconciliation created successfully."/>
+
+    <moqui.basic.LocalizedMessage original="ACCT_CREATED_SUCCESSFULLY" locale="en" localized="Account created successfully."/>
+
+    <moqui.basic.LocalizedMessage original="SAVING_GOAL_FROM_DATE_INVALID" locale="en" localized="From date is required."/>
+    <moqui.basic.LocalizedMessage original="SAVING_GOAL_TO_DATE_INVALID" locale="en" localized="To date is required."/>
+    <moqui.basic.LocalizedMessage original="SAVING_GOAL_DATE_RANGE_INVALID" locale="en" localized="Invalid date range."/>
+    <moqui.basic.LocalizedMessage original="SAVING_GOAL_NOT_FOUND" locale="en" localized="Saving goal not found."/>
+    <moqui.basic.LocalizedMessage original="SAVING_GOAL_CREATED_SUCCESSFULLY" locale="en" localized="Saving goal created successfully."/>
+    <moqui.basic.LocalizedMessage original="SAVING_GOAL_UPDATED_SUCCESSFULLY" locale="en" localized="Saving goal updated successfully."/>
+    <moqui.basic.LocalizedMessage original="SAVING_GOAL_DELETED_SUCCESSFULLY" locale="en" localized="Saving goal deleted successfully."/>
+
+    <moqui.basic.LocalizedMessage original="ACCT_STATUS_NAME_REQUIRED" locale="en" localized="Status name is required."/>
+    <moqui.basic.LocalizedMessage original="ACCT_STATUS_NOT_FOUND" locale="en" localized="Status not found."/>
+    <moqui.basic.LocalizedMessage original="ACCT_STATUS_CREATED_SUCCESSFULLY" locale="en" localized="Status created successfully."/>
+    <moqui.basic.LocalizedMessage original="ACCT_STATUS_UPDATED_SUCCESSFULLY" locale="en" localized="Status updated successfully."/>
+    <moqui.basic.LocalizedMessage original="ACCT_STATUS_ALREADY_EXISTS" locale="en" localized="Status already exists."/>
+
+    <moqui.basic.LocalizedMessage original="ACCT_TAG_NOT_FOUND" locale="en" localized="Tag not found."/>
+    <moqui.basic.LocalizedMessage original="ACCT_TAG_CREATED_SUCCESSFULLY" locale="en" localized="Tag created successfully."/>
+    <moqui.basic.LocalizedMessage original="ACCT_TAG_DELETED_SUCCESSFULLY" locale="en" localized="Tag deleted successfully."/>
+
+    <moqui.basic.LocalizedMessage original="ACCT_NICKNAME_NOT_FOUND" locale="en" localized="Nickname not found."/>
+    <moqui.basic.LocalizedMessage original="ACCT_NICKNAME_CREATED_SUCCESSFULLY" locale="en" localized="Nickname created successfully."/>
+    <moqui.basic.LocalizedMessage original="ACCT_NICKNAME_DELETED_SUCCESSFULLY" locale="en" localized="Nickname deleted successfully."/>
+
+    <moqui.basic.LocalizedMessage original="ACCT_TYPE_NAME_REQUIRED" locale="en" localized="Type name is required."/>
+    <moqui.basic.LocalizedMessage original="ACCT_TYPE_NOT_FOUND" locale="en" localized="Type not found."/>
+    <moqui.basic.LocalizedMessage original="ACCT_TYPE_CREATED_SUCCESSFULLY" locale="en" localized="Type created successfully."/>
+    <moqui.basic.LocalizedMessage original="ACCT_TYPE_UPDATED_SUCCESSFULLY" locale="en" localized="Type updated successfully."/>
+    <moqui.basic.LocalizedMessage original="ACCT_TYPE_ALREADY_EXISTS" locale="en" localized="Type already exists."/>
+
+    <moqui.basic.LocalizedMessage original="TRX_TYPE_NAME_REQUIRED" locale="en" localized="Type name is required."/>
+    <moqui.basic.LocalizedMessage original="TRX_TYPE_NOT_FOUND" locale="en" localized="Type not found."/>
+    <moqui.basic.LocalizedMessage original="TRX_TYPE_CREATED_SUCCESSFULLY" locale="en" localized="Type created successfully."/>
+    <moqui.basic.LocalizedMessage original="TRX_TYPE_UPDATED_SUCCESSFULLY" locale="en" localized="Type updated successfully."/>
+    <moqui.basic.LocalizedMessage original="TRX_TYPE_ALREADY_EXISTS" locale="en" localized="Type already exists."/>
+
+    <moqui.basic.LocalizedMessage original="IBAN_REQUIRED" locale="en" localized="IBAN is required."/>
+    <moqui.basic.LocalizedMessage original="IBAN_BANK_CODE_REQUIRED" locale="en" localized="Bank code required."/>
+    <moqui.basic.LocalizedMessage original="IBAN_ACCOUNT_NUMBER_REQUIRED" locale="en" localized="Account number required."/>
+    <moqui.basic.LocalizedMessage original="IBAN_NOT_VALID" locale="en" localized="IBAN not valid."/>
+    <moqui.basic.LocalizedMessage original="IBAN_FORMAT_NOT_FOUND" locale="en" localized="IBAN format not found."/>
+
+</entity-facade-xml>

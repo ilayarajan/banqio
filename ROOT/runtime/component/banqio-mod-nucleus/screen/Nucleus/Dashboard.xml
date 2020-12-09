@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        default-menu-index="1"
+        menu-image="/Static/icons/fugue/dashboard.png">
+
+    <widgets>
+        <container-row>
+            <row-col lg="6" md="6">
+                <container-box>
+                    <box-header>
+                        <label text="Basic" type="h5"/>
+                    </box-header>
+                    <box-body>
+                        <link url="../Basic/Language" text="Languages"/>
+                    </box-body>
+                </container-box>
+            </row-col>
+            <row-col lg="6" md="6">
+                <container-box>
+                    <box-header>
+                        <label text="Security" type="h5"/>
+                    </box-header>
+                    <box-body>
+                        <link url="../Security/User" text="Users"/>
+                        <link url="../Security/UserGroup" text="User Groups"/>
+                    </box-body>
+                </container-box>
+            </row-col>
+            <row-col lg="6" md="6">
+                <container-box>
+                    <box-header>
+                        <label text="Server" type="h5"/>
+                    </box-header>
+                    <box-body>
+                        <link url="../Server/App" text="Apps"/>
+                        <link url="../Server/Scene" text="Scenes"/>
+                        <link url="../Server/Configuration" text="Configuration"/>
+                    </box-body>
+                </container-box>
+            </row-col>
+            <row-col lg="6" md="6">
+                <container-box>
+                    <box-header>
+                        <label text="Workflow" type="h5"/>
+                    </box-header>
+                    <box-body>
+                        <link url="../Workflow/WorkflowInstance/FindWorkflowInstance" text="Instances"/>
+                    </box-body>
+                </container-box>
+            </row-col>
+        </container-row>
+    </widgets>
+</screen>

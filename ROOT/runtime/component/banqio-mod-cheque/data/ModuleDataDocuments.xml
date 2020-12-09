@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <dataDocuments dataDocumentId="BanqioChequeType" documentName="Cheque Type" documentTitle="${typeName}" indexName="banqio" primaryEntityName="banqio.cheque.ChequeType">
+        <fields fieldSeqId="01" fieldPath="typeId"/>
+        <fields fieldSeqId="02" fieldPath="externalTypeId"/>
+        <fields fieldSeqId="03" fieldPath="typeName"/>
+        <fields fieldSeqId="04" fieldPath="typeBehaviourEnumId"/>
+        <fields fieldSeqId="05" fieldPath="typeBehaviour:description" fieldNameAlias="typeBehaviourDescription"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioChequeStatus" documentName="Cheque Status" documentTitle="${statusName}" indexName="banqio" primaryEntityName="banqio.cheque.ChequeStatus">
+        <fields fieldSeqId="01" fieldPath="statusId"/>
+        <fields fieldSeqId="02" fieldPath="externalStatusId"/>
+        <fields fieldSeqId="03" fieldPath="statusName"/>
+        <fields fieldSeqId="04" fieldPath="statusBehaviourEnumId"/>
+        <fields fieldSeqId="05" fieldPath="statusBehaviour:description" fieldNameAlias="statusBehaviourDescription"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioChequeBook" documentName="Cheque Book" documentTitle="${bookId}" indexName="banqio" primaryEntityName="banqio.cheque.ChequeBook">
+        <fields fieldSeqId="01" fieldPath="bookId"/>
+        <fields fieldSeqId="02" fieldPath="appId"/>
+        <fields fieldSeqId="03" fieldPath="statusId"/>
+        <fields fieldSeqId="04" fieldPath="customerId"/>
+        <fields fieldSeqId="05" fieldPath="deliveryMethodEnumId"/>
+        <fields fieldSeqId="06" fieldPath="deliveryBranchId"/>
+        <fields fieldSeqId="07" fieldPath="accountNumber"/>
+        <fields fieldSeqId="08" fieldPath="bookCount"/>
+        <fields fieldSeqId="09" fieldPath="pageCount"/>
+        <fields fieldSeqId="10" fieldPath="instructions"/>
+        <fields fieldSeqId="11" fieldPath="app:appName" fieldNameAlias="appName"/>
+        <fields fieldSeqId="12" fieldPath="chequeBookStatus:description" fieldNameAlias="chequeBookStatusDescription"/>
+        <fields fieldSeqId="13" fieldPath="deliveryMethod:description" fieldNameAlias="deliveryMethodDescription"/>
+        <fields fieldSeqId="14" fieldPath="deliveryBranch:branchName" fieldNameAlias="deliveryBranchName"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    
+</entity-facade-xml>

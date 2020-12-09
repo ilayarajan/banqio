@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <!-- Loan -->
+    <entity entity-name="LoanType" package="banqio.loan" short-alias="BanqioLoanType">
+        <field name="typeId" type="id" is-pk="true"/>
+        <field name="externalTypeId" type="text-medium"/>
+        <field name="typeName" type="text-medium" enable-localization="true"/>
+        <field name="typeBehaviourEnumId" type="id"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" title="LoanTypeBehaviour" related="moqui.basic.Enumeration" short-alias="typeBehaviour">
+            <key-map field-name="typeBehaviourEnumId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="LOAN_TYPE_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="LOAN_TYPE_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+
+        <index name="loanTypeIdx1" unique="true">
+            <index-field name="externalTypeId"/>
+        </index>
+    </entity>
+    <entity entity-name="LoanStatus" package="banqio.loan" short-alias="BanqioLoanStatus">
+        <field name="statusId" type="id" is-pk="true"/>
+        <field name="externalStatusId" type="text-medium"/>
+        <field name="statusName" type="text-medium" enable-localization="true"/>
+        <field name="statusBehaviourEnumId" type="id"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" title="LoanStatusBehaviour" related="moqui.basic.Enumeration" short-alias="statusBehaviour">
+            <key-map field-name="statusBehaviourEnumId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="LOAN_STAT_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="LOAN_STAT_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+
+        <index name="loanStatusIdx1" unique="true">
+            <index-field name="externalStatusId"/>
+        </index>
+    </entity>
+
+</entities>

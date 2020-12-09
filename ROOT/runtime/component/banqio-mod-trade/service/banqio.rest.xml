@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/rest-api-2.1.xsd"
+          name="tradeFinance"
+          displayName="Trade Finance REST API"
+          version="1.0.0">
+
+    <resource name="lcType" description="LC Type API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.trade.TradeServices.find#LcType"/>
+        </method>
+        <method type="post">
+            <service name="banqio.trade.TradeServices.create#LcType"/>
+        </method>
+        <method type="patch">
+            <service name="banqio.trade.TradeServices.update#LcType"/>
+        </method>
+        <resource name="localization">
+            <method type="get">
+                <service name="banqio.trade.TradeServices.find#LcTypeL10n"/>
+            </method>
+            <method type="post">
+                <service name="banqio.trade.TradeServices.create#LcTypeL10n"/>
+            </method>
+            <method type="patch">
+                <service name="banqio.trade.TradeServices.update#LcTypeL10n"/>
+            </method>
+            <method type="delete">
+                <service name="banqio.trade.TradeServices.delete#LcTypeL10n"/>
+            </method>
+        </resource>
+    </resource>
+    <resource name="lgType" description="LG Type API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.trade.TradeServices.find#LgType"/>
+        </method>
+        <method type="post">
+            <service name="banqio.trade.TradeServices.create#LgType"/>
+        </method>
+        <method type="patch">
+            <service name="banqio.trade.TradeServices.update#LgType"/>
+        </method>
+        <resource name="localization">
+            <method type="get">
+                <service name="banqio.trade.TradeServices.find#LgTypeL10n"/>
+            </method>
+            <method type="post">
+                <service name="banqio.trade.TradeServices.create#LgTypeL10n"/>
+            </method>
+            <method type="patch">
+                <service name="banqio.trade.TradeServices.update#LgTypeL10n"/>
+            </method>
+            <method type="delete">
+                <service name="banqio.trade.TradeServices.delete#LgTypeL10n"/>
+            </method>
+        </resource>
+    </resource>
+    <resource name="dcType" description="DC Type API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.trade.TradeServices.find#DcType"/>
+        </method>
+        <method type="post">
+            <service name="banqio.trade.TradeServices.create#DcType"/>
+        </method>
+        <method type="patch">
+            <service name="banqio.trade.TradeServices.update#DcType"/>
+        </method>
+        <resource name="localization">
+            <method type="get">
+                <service name="banqio.trade.TradeServices.find#DcTypeL10n"/>
+            </method>
+            <method type="post">
+                <service name="banqio.trade.TradeServices.create#DcTypeL10n"/>
+            </method>
+            <method type="patch">
+                <service name="banqio.trade.TradeServices.update#DcTypeL10n"/>
+            </method>
+            <method type="delete">
+                <service name="banqio.trade.TradeServices.delete#DcTypeL10n"/>
+            </method>
+        </resource>
+    </resource>
+
+</resource>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <dataDocuments dataDocumentId="BanqioCardBrand" documentName="Card Brand" documentTitle="${brandName}" indexName="banqio" primaryEntityName="banqio.card.CardBrand">
+        <fields fieldSeqId="01" fieldPath="brandId"/>
+        <fields fieldSeqId="02" fieldPath="externalBrandId"/>
+        <fields fieldSeqId="03" fieldPath="brandName"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioCardType" documentName="Card Type" documentTitle="${typeName}" indexName="banqio" primaryEntityName="banqio.card.CardType">
+        <fields fieldSeqId="01" fieldPath="typeId"/>
+        <fields fieldSeqId="02" fieldPath="externalTypeId"/>
+        <fields fieldSeqId="03" fieldPath="typeName"/>
+        <fields fieldSeqId="04" fieldPath="typeBehaviourEnumId"/>
+        <fields fieldSeqId="05" fieldPath="typeBehaviour:description" fieldNameAlias="typeBehaviourDescription"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioCardStatus" documentName="Card Status" documentTitle="${statusName}" indexName="banqio" primaryEntityName="banqio.card.CardStatus">
+        <fields fieldSeqId="01" fieldPath="statusId"/>
+        <fields fieldSeqId="02" fieldPath="externalStatusId"/>
+        <fields fieldSeqId="03" fieldPath="statusName"/>
+        <fields fieldSeqId="04" fieldPath="statusBehaviourEnumId"/>
+        <fields fieldSeqId="05" fieldPath="statusBehaviour:description" fieldNameAlias="statusBehaviourDescription"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioCardTemporaryLock" documentName="Card Temporary Lock" documentTitle="${lockId}" indexName="banqio" primaryEntityName="banqio.card.CardTemporaryLock">
+        <fields fieldSeqId="01" fieldPath="lockId"/>
+        <fields fieldSeqId="02" fieldPath="appId"/>
+        <fields fieldSeqId="03" fieldPath="lockReasonEnumId"/>
+        <fields fieldSeqId="04" fieldPath="customerId"/>
+        <fields fieldSeqId="05" fieldPath="cardId"/>
+        <fields fieldSeqId="06" fieldPath="cardNumber"/>
+        <fields fieldSeqId="07" fieldPath="app:appName" fieldNameAlias="appName"/>
+        <fields fieldSeqId="08" fieldPath="lockReason:description" fieldNameAlias="lockReasonDescription"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioCardPermanentLock" documentName="Card Permanent Lock" documentTitle="${lockId}" indexName="banqio" primaryEntityName="banqio.card.CardPermanentLock">
+        <fields fieldSeqId="01" fieldPath="lockId"/>
+        <fields fieldSeqId="02" fieldPath="appId"/>
+        <fields fieldSeqId="03" fieldPath="lockReasonEnumId"/>
+        <fields fieldSeqId="04" fieldPath="customerId"/>
+        <fields fieldSeqId="05" fieldPath="cardId"/>
+        <fields fieldSeqId="06" fieldPath="cardNumber"/>
+        <fields fieldSeqId="07" fieldPath="app:appName" fieldNameAlias="appName"/>
+        <fields fieldSeqId="08" fieldPath="lockReason:description" fieldNameAlias="lockReasonDescription"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+
+</entity-facade-xml>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<moqui-conf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/moqui-conf-2.1.xsd">
+    <tools>
+        <tool-factory class="com.netvariant.banqio.connect.impl.AccountServiceToolFactory" init-priority="15"/>
+        <tool-factory class="com.netvariant.banqio.connect.impl.BeneficiaryServiceToolFactory" init-priority="15"/>
+        <tool-factory class="com.netvariant.banqio.connect.impl.CertificateServiceToolFactory" init-priority="15"/>
+        <tool-factory class="com.netvariant.banqio.connect.impl.ChequeServiceToolFactory" init-priority="15"/>
+        <tool-factory class="com.netvariant.banqio.connect.impl.CustomerServiceToolFactory" init-priority="15"/>
+        <tool-factory class="com.netvariant.banqio.connect.impl.CreditCardServiceToolFactory" init-priority="15"/>
+        <tool-factory class="com.netvariant.banqio.connect.impl.ExchangeRateServiceToolFactory" init-priority="15"/>
+        <tool-factory class="com.netvariant.banqio.connect.impl.FundsTransferServiceToolFactory" init-priority="15"/>
+        <tool-factory class="com.netvariant.banqio.connect.impl.LoanServiceToolFactory" init-priority="15"/>
+        <tool-factory class="com.netvariant.banqio.connect.impl.TermDepositServiceToolFactory" init-priority="15"/>
+        <tool-factory class="com.netvariant.banqio.connect.impl.TradeFinanceServiceToolFactory" init-priority="15"/>
+    </tools>
+    <screen-facade>
+        <screen location="component://webroot/screen/webroot/apps.xml">
+            <subscreens-item name="Connect" menu-include="false" location="component://banqio-mod-connect-akcb/screen/Connect.xml"/>
+        </screen>
+    </screen-facade>
+</moqui-conf>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <!-- Person -->
+    <extend-entity entity-name="Person" package="mantle.party">
+        <field name="birthCountryGeoId" type="id"/>
+        <field name="fatherName" type="text-medium"/>
+        <field name="grandfatherName" type="text-medium"/>
+
+        <relationship type="one" title="BirthCountry" related="moqui.basic.Geo" short-alias="birthCountry">
+            <key-map field-name="birthCountryGeoId"/>
+        </relationship>
+    </extend-entity>
+
+    <!-- Religion -->
+    <entity entity-name="PersonReligion" package="mantle.party">
+        <field name="partyId" type="id" is-pk="true"/>
+        <field name="religionEnumId" type="id" is-pk="true"/>
+        <field name="fromDate" type="date-time" is-pk="true"/>
+        <field name="thruDate" type="date-time"/>
+
+        <relationship type="one" title="Person" related="mantle.party.Person" short-alias="person">
+            <key-map field-name="partyId"/>
+        </relationship>
+        <relationship type="one" title="Religion" related="moqui.basic.Enumeration" short-alias="religion">
+            <key-map field-name="religionEnumId"/>
+        </relationship>
+    </entity>
+
+    <!-- Citizenship -->
+    <entity entity-name="PersonCitizenship" package="mantle.party">
+        <field name="partyId" type="id" is-pk="true"/>
+        <field name="geoId" type="id" is-pk="true"/>
+        <field name="fromDate" type="date-time" is-pk="true"/>
+        <field name="thruDate" type="date-time"/>
+
+        <relationship type="one" title="Person" related="mantle.party.Person" short-alias="person">
+            <key-map field-name="partyId"/>
+        </relationship>
+        <relationship type="one" related="moqui.basic.Geo" short-alias="country">
+            <key-map field-name="geoId"/>
+        </relationship>
+    </entity>
+
+</entities>

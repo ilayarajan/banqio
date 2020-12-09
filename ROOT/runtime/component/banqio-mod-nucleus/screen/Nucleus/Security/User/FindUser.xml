@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        default-menu-title="Find User"
+        default-menu-include="false">
+
+    <transition name="editUser">
+        <default-response url="../EditUser"/>
+    </transition>
+
+    <actions>
+        <entity-find entity-name="moqui.security.UserAccount" list="userList">
+            <search-form-inputs default-order-by="^userId"/>
+        </entity-find>
+    </actions>
+
+    <widgets>
+        <container-box>
+            <box-header>
+                <label text="Find User" type="h5"/>
+            </box-header>
+            <box-toolbar/>
+            <box-body>
+                <form-list name="ListUsers" list="userList" skip-form="true" header-dialog="true" select-columns="true">
+                    <field name="userId">
+                        <header-field show-order-by="true" title="ID">
+                            <text-find hide-options="true" size="10"/>
+                        </header-field>
+                        <default-field>
+                            <link url="editUser" text="${userId}"/>
+                        </default-field>
+                    </field>
+                    <field name="username">
+                        <header-field show-order-by="true">
+                            <text-find hide-options="true"/>
+                        </header-field>
+                        <default-field title="Username">
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="userFullName">
+                        <header-field show-order-by="true">
+                            <text-find hide-options="true"/>
+                        </header-field>
+                        <default-field title="Full Name">
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="externalUserId">
+                        <header-field show-order-by="true">
+                            <text-find hide-options="true"/>
+                        </header-field>
+                        <default-field>
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="disabled">
+                        <header-field show-order-by="true">
+                            <drop-down allow-empty="true">
+                                <option key="Y" text="Yes"/>
+                                <option key="N" text="No"/>
+                            </drop-down>
+                        </header-field>
+                        <default-field>
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="approved">
+                        <header-field show-order-by="true">
+                            <drop-down allow-empty="true">
+                                <option key="Y" text="Yes"/>
+                                <option key="N" text="No"/>
+                            </drop-down>
+                        </header-field>
+                        <default-field>
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="find">
+                        <header-field title="Find">
+                            <submit icon="glyphicon glyphicon-search"/>
+                        </header-field>
+                    </field>
+
+                    <form-list-column>
+                        <field-ref name="userId"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="username"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="userFullName"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="externalUserId"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="approved"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="disabled"/>
+                    </form-list-column>
+                </form-list>
+            </box-body>
+        </container-box>
+    </widgets>
+</screen>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <dataDocuments dataDocumentId="AkbUserCrud" documentName="User CRUD" documentTitle="${logId}" primaryEntityName="banqio.security.audit.UserAccountUpdate">
+        <fields fieldSeqId="01" fieldPath="logId"/>
+        <fields fieldSeqId="02" fieldPath="appId"/>
+        <fields fieldSeqId="03" fieldPath="updateTypeEnumId"/>
+        <fields fieldSeqId="04" fieldPath="inputUserId"/>
+        <fields fieldSeqId="05" fieldPath="targetUserId"/>
+        <fields fieldSeqId="06" fieldPath="ipAddress"/>
+        <fields fieldSeqId="07" fieldPath="userAgent"/>
+        <fields fieldSeqId="08" fieldPath="creationDate"/>
+        <fields fieldSeqId="09" fieldPath="inputUser:userFullName" fieldNameAlias="inputUserFullName"/>
+        <fields fieldSeqId="10" fieldPath="inputUser:username" fieldNameAlias="inputUsername"/>
+        <fields fieldSeqId="11" fieldPath="targetUser:userFullName" fieldNameAlias="targetUserFullName"/>
+        <fields fieldSeqId="12" fieldPath="targetUser:username" fieldNameAlias="targetUsername"/>
+        <fields fieldSeqId="13" fieldPath="updateType:description" fieldNameAlias="updateTypeDescription"/>
+        <fields fieldSeqId="14" fieldPath="app:appName" fieldNameAlias="applicationName"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="AkbUserAuthority" documentName="User Authority" documentTitle="${userGroupId}" primaryEntityName="moqui.security.UserGroupMember">
+        <fields fieldSeqId="01" fieldPath="userGroupId"/>
+        <fields fieldSeqId="02" fieldPath="userId"/>
+        <fields fieldSeqId="03" fieldPath="fromDate"/>
+        <fields fieldSeqId="04" fieldPath="thruDate"/>
+        <fields fieldSeqId="05" fieldPath="user:userFullName" fieldNameAlias="userFullName"/>
+        <fields fieldSeqId="06" fieldPath="user:username" fieldNameAlias="username"/>
+        <fields fieldSeqId="07" fieldPath="group:description" fieldNameAlias="groupDescription"/>
+        <fields fieldSeqId="08" fieldPath="group:ipAllowed" fieldNameAlias="groupIpAllowed"/>
+        <fields fieldSeqId="09" fieldPath="group:groupTypeEnum:description" fieldNameAlias="groupTypeDescription"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="AkbFailedLogin" documentName="Failed Login" documentTitle="${userId}" primaryEntityName="moqui.security.UserLoginHistory">
+        <fields fieldSeqId="01" fieldPath="userId"/>
+        <fields fieldSeqId="02" fieldPath="fromDate"/>
+        <fields fieldSeqId="03" fieldPath="thruDate"/>
+        <fields fieldSeqId="04" fieldPath="successfulLogin"/>
+        <fields fieldSeqId="05" fieldPath="user:userFullName" fieldNameAlias="userFullName"/>
+        <fields fieldSeqId="06" fieldPath="user:username" fieldNameAlias="username"/>
+
+        <moqui.entity.document.DataDocumentCondition postQuery="N" conditionSeqId="01" fieldNameAlias="successfulLogin" fieldValue="N" operator="equals"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="AkbSuccessfulLogin" documentName="Successful Login" documentTitle="${userId}" primaryEntityName="moqui.security.UserLoginHistory">
+        <fields fieldSeqId="01" fieldPath="userId"/>
+        <fields fieldSeqId="02" fieldPath="fromDate"/>
+        <fields fieldSeqId="03" fieldPath="thruDate"/>
+        <fields fieldSeqId="04" fieldPath="successfulLogin"/>
+        <fields fieldSeqId="05" fieldPath="user:userFullName" fieldNameAlias="userFullName"/>
+        <fields fieldSeqId="06" fieldPath="user:username" fieldNameAlias="username"/>
+
+        <moqui.entity.document.DataDocumentCondition postQuery="N" conditionSeqId="01" fieldNameAlias="successfulLogin" fieldValue="Y" operator="equals"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="AkbVisit" documentName="Visit" documentTitle="${userId}" primaryEntityName="moqui.server.Visit">
+        <fields fieldSeqId="01" fieldPath="userId"/>
+        <fields fieldSeqId="02" fieldPath="clientIpAddress"/>
+        <fields fieldSeqId="03" fieldPath="webappName"/>
+        <fields fieldSeqId="04" fieldPath="initialUserAgent"/>
+        <fields fieldSeqId="05" fieldPath="fromDate"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="AkbWorkflowTask" documentName="Workflow Task" documentTitle="${taskId}" primaryEntityName="commons.workflow.WorkflowInstanceTask">
+        <fields fieldSeqId="01" fieldPath="taskId"/>
+        <fields fieldSeqId="02" fieldPath="instanceId"/>
+        <fields fieldSeqId="03" fieldPath="activityId"/>
+        <fields fieldSeqId="04" fieldPath="assignedUserId"/>
+        <fields fieldSeqId="05" fieldPath="taskTypeEnumId"/>
+        <fields fieldSeqId="06" fieldPath="variableId"/>
+        <fields fieldSeqId="07" fieldPath="statusId"/>
+        <fields fieldSeqId="08" fieldPath="summary"/>
+        <fields fieldSeqId="09" fieldPath="description"/>
+        <fields fieldSeqId="10" fieldPath="comments"/>
+        <fields fieldSeqId="11" fieldPath="creationDate"/>
+        <fields fieldSeqId="12" fieldPath="completionDate"/>
+        <fields fieldSeqId="13" fieldPath="activity:workflow:workflowName" fieldNameAlias="workflowName"/>
+        <fields fieldSeqId="14" fieldPath="variable:variableName" fieldNameAlias="variableName"/>
+        <fields fieldSeqId="15" fieldPath="taskType:description" fieldNameAlias="taskTypeDescription"/>
+        <fields fieldSeqId="16" fieldPath="status:description" fieldNameAlias="statusDescription"/>
+        <fields fieldSeqId="17" fieldPath="assignedUser:userFullName" fieldNameAlias="assignedUserFullName"/>
+        <fields fieldSeqId="18" fieldPath="assignedUser:username" fieldNameAlias="assignedUserName"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="AkbParty" documentName="Party" documentTitle="${partyId}" primaryEntityName="mantle.party.Party">
+        <fields fieldSeqId="01" fieldPath="partyId"/>
+        <fields fieldSeqId="02" fieldPath="pseudoId"/>
+        <fields fieldSeqId="03" fieldPath="partyTypeEnumId"/>
+        <fields fieldSeqId="04" fieldPath="disabled"/>
+        <fields fieldSeqId="05" fieldPath="customerStatusId"/>
+        <fields fieldSeqId="06" fieldPath="ownerPartyId"/>
+        <fields fieldSeqId="07" fieldPath="externalId"/>
+        <fields fieldSeqId="08" fieldPath="comments"/>
+        <fields fieldSeqId="09" fieldPath="type:description" fieldNameAlias="typeDescription"/>
+        <fields fieldSeqId="10" fieldPath="person:firstName" fieldNameAlias="personFirstName"/>
+        <fields fieldSeqId="11" fieldPath="person:middleName" fieldNameAlias="personMiddleName"/>
+        <fields fieldSeqId="12" fieldPath="person:lastName" fieldNameAlias="personLastName"/>
+        <fields fieldSeqId="13" fieldPath="organization:organizationName" fieldNameAlias="organizationName"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="AkbPartyRelationship" documentName="Party Relationship" documentTitle="${partyRelationshipId}" primaryEntityName="mantle.party.PartyRelationship">
+        <fields fieldSeqId="01" fieldPath="partyRelationshipId"/>
+        <fields fieldSeqId="02" fieldPath="relationshipTypeEnumId"/>
+        <fields fieldSeqId="03" fieldPath="fromPartyId"/>
+        <fields fieldSeqId="04" fieldPath="fromRoleTypeId"/>
+        <fields fieldSeqId="05" fieldPath="toPartyId"/>
+        <fields fieldSeqId="06" fieldPath="toRoleTypeId"/>
+        <fields fieldSeqId="07" fieldPath="fromDate"/>
+        <fields fieldSeqId="08" fieldPath="thruDate"/>
+        <fields fieldSeqId="09" fieldPath="statusId"/>
+        <fields fieldSeqId="10" fieldPath="comments"/>
+        <fields fieldSeqId="11" fieldPath="relationshipName"/>
+        <fields fieldSeqId="12" fieldPath="type:description" fieldNameAlias="relationshipTypeDescription"/>
+        <fields fieldSeqId="13" fieldPath="status:description" fieldNameAlias="relationshipStatusDescription"/>
+        <fields fieldSeqId="14" fieldPath="fromParty:type:description" fieldNameAlias="fromPartyTypeDescription"/>
+        <fields fieldSeqId="18" fieldPath="fromParty:externalId" fieldNameAlias="fromPartyExternalId"/>
+        <fields fieldSeqId="19" fieldPath="fromParty:organization:organizationName" fieldNameAlias="fromPartyOrganizationName"/>
+        <fields fieldSeqId="20" fieldPath="toParty:type:description" fieldNameAlias="toPartyTypeDescription"/>
+        <fields fieldSeqId="21" fieldPath="toParty:person:firstName" fieldNameAlias="toPartyFirstName"/>
+        <fields fieldSeqId="22" fieldPath="toParty:person:middleName" fieldNameAlias="toPartyMiddleName"/>
+        <fields fieldSeqId="23" fieldPath="toParty:person:lastName" fieldNameAlias="toPartyLastName"/>
+        <fields fieldSeqId="24" fieldPath="toParty:userAccounts:username" fieldNameAlias="username"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="AkbUserDormantDetail" documentName="User Dormant Detail" documentTitle="${userId}" primaryEntityName="moqui.security.UserAccount">
+        <fields fieldSeqId="01" fieldPath="userId"/>
+        <fields fieldSeqId="02" fieldPath="username"/>
+        <fields fieldSeqId="03" fieldPath="userFullName"/>
+        <fields fieldSeqId="04" fieldPath="externalUserId"/>
+        <fields fieldSeqId="05" fieldPath="partyId"/>
+        <fields fieldSeqId="06" fieldPath="lastLoginDate"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="AkbFailedFt" documentName="Failed Funds Transfer" documentTitle="${transferId}" primaryEntityName="banqio.ft.FundsTransfer">
+        <fields fieldSeqId="01" fieldPath="transferId"/>
+        <fields fieldSeqId="02" fieldPath="parentTransferId"/>
+        <fields fieldSeqId="03" fieldPath="appId"/>
+        <fields fieldSeqId="04" fieldPath="typeId"/>
+        <fields fieldSeqId="05" fieldPath="statusId"/>
+        <fields fieldSeqId="06" fieldPath="ruleId"/>
+        <fields fieldSeqId="07" fieldPath="customerId"/>
+        <fields fieldSeqId="08" fieldPath="employerId"/>
+        <fields fieldSeqId="09" fieldPath="payerId"/>
+        <fields fieldSeqId="10" fieldPath="payerLegalId"/>
+        <fields fieldSeqId="11" fieldPath="externalTransferId"/>
+        <fields fieldSeqId="12" fieldPath="referenceNumber"/>
+        <fields fieldSeqId="13" fieldPath="invoiceNumber"/>
+        <fields fieldSeqId="14" fieldPath="debitAccountNumber"/>
+        <fields fieldSeqId="15" fieldPath="creditAccountNumber"/>
+        <fields fieldSeqId="16" fieldPath="beneficiaryId"/>
+        <fields fieldSeqId="17" fieldPath="transactionCount"/>
+        <fields fieldSeqId="18" fieldPath="currencyId"/>
+        <fields fieldSeqId="19" fieldPath="amount"/>
+        <fields fieldSeqId="20" fieldPath="amountDebit"/>
+        <fields fieldSeqId="21" fieldPath="amountLocal"/>
+        <fields fieldSeqId="22" fieldPath="exchangeRate"/>
+        <fields fieldSeqId="23" fieldPath="senderReference"/>
+        <fields fieldSeqId="24" fieldPath="transferDetails"/>
+        <fields fieldSeqId="25" fieldPath="transferPurposeId"/>
+        <fields fieldSeqId="26" fieldPath="chargesTypeEnumId"/>
+        <fields fieldSeqId="27" fieldPath="sameCurrency"/>
+        <fields fieldSeqId="28" fieldPath="termsAgreed"/>
+        <fields fieldSeqId="29" fieldPath="postingDate"/>
+        <fields fieldSeqId="30" fieldPath="valueDate"/>
+        <fields fieldSeqId="31" fieldPath="processingDate"/>
+        <fields fieldSeqId="32" fieldPath="salaryDate"/>
+        <fields fieldSeqId="33" fieldPath="creationDate"/>
+        <fields fieldSeqId="34" fieldPath="errors"/>
+        <fields fieldSeqId="35" fieldPath="app:appName" fieldNameAlias="appName"/>
+        <fields fieldSeqId="36" fieldPath="transferType:typeName" fieldNameAlias="ftTypeName"/>
+        <fields fieldSeqId="37" fieldPath="status:description" fieldNameAlias="statusDescription"/>
+        <fields fieldSeqId="38" fieldPath="postingRule:description" fieldNameAlias="postingRuleDescription"/>
+        <fields fieldSeqId="39" fieldPath="beneficiary:beneficiaryName" fieldNameAlias="beneficiaryName"/>
+        <fields fieldSeqId="40" fieldPath="chargesType:description" fieldNameAlias="chargesTypeDescription"/>
+        <fields fieldSeqId="41" fieldPath="transferPurpose:purposeName" fieldNameAlias="transferPurposeName"/>
+        <fields fieldSeqId="42" fieldPath="currency:description" fieldNameAlias="currencyDescription"/>
+        <fields fieldSeqId="43" fieldPath="currency:abbreviation" fieldNameAlias="currencyAbbreviation"/>
+        <fields fieldSeqId="44" fieldPath="transferPurpose:purposeName" fieldNameAlias="transferPurposeName"/>
+
+        <moqui.entity.document.DataDocumentCondition postQuery="N" conditionSeqId="01" fieldNameAlias="statusId" fieldValue="FT_FAILED" operator="equals"/>
+    </dataDocuments>
+
+</entity-facade-xml>

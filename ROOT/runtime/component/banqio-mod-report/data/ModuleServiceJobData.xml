@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml>
+
+    <moqui.service.job.ServiceJob
+            jobName="run_PendingReportInstances_frequent"
+            description="Runs pending report instances"
+            serviceName="banqio.report.ReportServices.run#PendingReportInstances"
+            cronExpression="0/15 * * * * ?"
+            paused="Y"/>
+
+</entity-facade-xml>

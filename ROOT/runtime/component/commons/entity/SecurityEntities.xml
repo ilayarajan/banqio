@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <!-- User account extensions -->
+    <extend-entity entity-name="UserAccount" package="moqui.security">
+        <field name="userExpiryDate" type="date-time"/>
+        <field name="migratedPassword" type="text-medium"/>
+        <field name="createdBy" type="text-medium"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="lastLoginDate" type="date-time"/>
+        <field name="approved" type="text-indicator"/>
+        <field name="approvedBy" type="text-medium"/>
+        <field name="approvalDate" type="date-time"/>
+    </extend-entity>
+
+    <!-- User group extensions -->
+    <extend-entity entity-name="UserGroup" package="moqui.security">
+        <field name="wikiLocation" type="text-medium"/>
+    </extend-entity>
+
+    <!-- User -->
+    <entity entity-name="UserLocation" package="commons.security">
+        <description>
+            Used to store locations users are accessing the system from and build IP trust.
+        </description>
+
+        <field name="userId" type="id" is-pk="true"/>
+        <field name="locationSeqId" type="id" is-pk="true"/>
+        <field name="userAgent" type="text-long"/>
+        <field name="ipAddress" type="text-short"/>
+        <field name="ipIspName" type="text-short"/>
+        <field name="ipCountryId" type="id"/>
+        <field name="ipRegion" type="text-short"/>
+        <field name="ipCity" type="text-short"/>
+        <field name="ipPostalCode" type="text-short"/>
+        <field name="ipMetroCode" type="text-short"/>
+        <field name="ipAreaCode" type="text-short"/>
+        <field name="ipLatitude" type="text-short"/>
+        <field name="ipLongitude" type="text-short"/>
+        <field name="visitCount" type="number-integer"/>
+        <field name="trusted" type="text-indicator"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="lastAccessDate" type="date-time"/>
+
+        <relationship type="one" related="moqui.security.UserAccount" short-alias="userAccount">
+            <key-map field-name="userId"/>
+        </relationship>
+        <relationship type="one" related="moqui.basic.Geo" short-alias="geo">
+            <key-map field-name="ipCountryId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="UserEvent" package="commons.security">
+        <description>
+            Provides a convenient way to store user events and build a historical timeline. User events should be populated via ECA rules.
+        </description>
+
+        <field name="userId" type="id" is-pk="true"/>
+        <field name="eventSeqId" type="id" is-pk="true"/>
+        <field name="eventTypeEnumId" type="id"/>
+        <field name="entityName" type="text-medium"/>
+        <field name="primaryKeyValue" type="text-medium"/>
+        <field name="sourceName" type="text-medium"/>
+        <field name="description" type="text-long"/>
+        <field name="wasError" type="text-indicator"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+
+        <relationship type="one" related="moqui.security.UserAccount" short-alias="userAccount">
+            <key-map field-name="userId"/>
+        </relationship>
+        <relationship type="one" title="UserEventType" related="moqui.basic.Enumeration" short-alias="eventType">
+            <key-map field-name="eventTypeEnumId"/>
+        </relationship>
+    </entity>
+
+    <!-- Object access control list -->
+    <entity entity-name="ObjectAcl" package="commons.security">
+        <field name="itemId" type="id" is-pk="true"/>
+        <field name="userGroupId" type="id"/>
+        <field name="userId" type="id"/>
+        <field name="objectId" type="text-medium"/>
+        <field name="objectTypeEnumId" type="id"/>
+        <field name="permissionTypeEnumId" type="id"/>
+        <field name="position" type="number-integer" default="0"/>
+        <field name="fromDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="toDate" type="date-time"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one-nofk" related="moqui.security.UserGroup" short-alias="userGroup">
+            <key-map field-name="userGroupId"/>
+        </relationship>
+        <relationship type="one-nofk" related="moqui.security.UserAccount" short-alias="userAccount">
+            <key-map field-name="userId"/>
+        </relationship>
+        <relationship type="one" title="ObjectType" related="moqui.basic.Enumeration" short-alias="objectType">
+            <key-map field-name="objectTypeEnumId"/>
+        </relationship>
+        <relationship type="one" title="PermissionType" related="moqui.basic.Enumeration" short-alias="permissionType">
+            <key-map field-name="permissionTypeEnumId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="OBJ_ACL_INPUT_USR_ID" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="OBJ_ACL_UPDATE_USR_ID" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+    </entity>
+
+    <!-- One time password -->
+    <entity entity-name="OneTimePassword" package="commons.security">
+        <field name="userId" type="id" is-pk="true"/>
+        <field name="appId" type="id" is-pk="true"/>
+        <field name="password" type="text-medium"/>
+        <field name="validationAttempts" type="number-integer" default="0"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="validityDate" type="date-time"/>
+
+        <relationship type="one" related="moqui.security.UserAccount" short-alias="user">
+            <key-map field-name="userId"/>
+        </relationship>
+        <relationship type="one" related="commons.server.App" short-alias="app">
+            <key-map field-name="appId"/>
+        </relationship>
+    </entity>
+
+</entities>

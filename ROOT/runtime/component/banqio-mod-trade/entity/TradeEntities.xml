@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <!-- LC -->
+    <entity entity-name="LcType" package="banqio.trade" short-alias="BanqioLcType">
+        <field name="typeId" type="id" is-pk="true"/>
+        <field name="externalTypeId" type="text-medium"/>
+        <field name="typeName" type="text-medium" enable-localization="true"/>
+        <field name="typeBehaviourEnumId" type="id"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" title="LcTypeBehaviour" related="moqui.basic.Enumeration" short-alias="typeBehaviour">
+            <key-map field-name="typeBehaviourEnumId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="LC_TYPE_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="LC_TYPE_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+
+        <index name="lcTypeIdx1" unique="true">
+            <index-field name="externalTypeId"/>
+        </index>
+    </entity>
+
+    <!-- LG -->
+    <entity entity-name="LgType" package="banqio.trade" short-alias="BanqioLgType">
+        <field name="typeId" type="id" is-pk="true"/>
+        <field name="externalTypeId" type="text-medium"/>
+        <field name="typeName" type="text-medium" enable-localization="true"/>
+        <field name="typeBehaviourEnumId" type="id"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" title="LgTypeBehaviour" related="moqui.basic.Enumeration" short-alias="typeBehaviour">
+            <key-map field-name="typeBehaviourEnumId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="LG_TYPE_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="LG_TYPE_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+
+        <index name="lgTypeIdx1" unique="true">
+            <index-field name="externalTypeId"/>
+        </index>
+    </entity>
+
+    <!-- DC -->
+    <entity entity-name="DcType" package="banqio.trade" short-alias="BanqioDcType">
+        <field name="typeId" type="id" is-pk="true"/>
+        <field name="externalTypeId" type="text-medium"/>
+        <field name="typeName" type="text-medium" enable-localization="true"/>
+        <field name="typeBehaviourEnumId" type="id"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" title="DcTypeBehaviour" related="moqui.basic.Enumeration" short-alias="typeBehaviour">
+            <key-map field-name="typeBehaviourEnumId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="DC_TYPE_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="DC_TYPE_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+
+        <index name="dcTypeIdx1" unique="true">
+            <index-field name="externalTypeId"/>
+        </index>
+    </entity>
+
+</entities>

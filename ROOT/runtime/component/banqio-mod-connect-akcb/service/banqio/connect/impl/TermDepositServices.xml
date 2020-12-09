@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Term deposit -->
+    <service verb="find" noun="TermDeposit" type="java" location="com.netvariant.banqio.connect.impl.TermDepositServiceRelay" method="findTermDeposits">
+        <implements service="banqio.account.AccountServices.find#TermDeposit"/>
+    </service>
+    <service verb="find" noun="TermDepositReceipt" type="java" location="com.netvariant.banqio.connect.impl.TermDepositServiceRelay" method="findTermDepositReceipts">
+        <implements service="banqio.account.AccountServices.find#TermDepositReceipt"/>
+    </service>
+    <service verb="download" noun="TermDepositReceipt" type="java" location="com.netvariant.banqio.connect.impl.TermDepositServiceRelay" method="downloadTermDepositReceipt">
+        <implements service="banqio.account.AccountServices.download#TermDepositReceipt"/>
+    </service>
+
+</services>

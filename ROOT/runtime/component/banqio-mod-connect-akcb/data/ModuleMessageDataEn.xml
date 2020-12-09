@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <moqui.basic.LocalizedMessage original="REQUEST_ERROR" locale="en" localized="An error has occurred while processing your request."/>
+    <moqui.basic.LocalizedMessage original="REQUEST_FAILED" locale="en" localized="Request has failed."/>
+
+    <moqui.basic.LocalizedMessage original="CUST_ID_REQUIRED" locale="en" localized="Customer ID is required."/>
+    <moqui.basic.LocalizedMessage original="CUST_SOME_ID_REQUIRED" locale="en" localized="Either customer ID, account number or mobile number should not be empty."/>
+
+    <moqui.basic.LocalizedMessage original="ACCT_NOT_FOUND" locale="en" localized="Account not found."/>
+    <moqui.basic.LocalizedMessage original="ACCT_NUMBER_REQUIRED" locale="en" localized="Account number is required."/>
+    <moqui.basic.LocalizedMessage original="ACCT_NICKNAME_REQUIRED" locale="en" localized="Nickname is required."/>
+    <moqui.basic.LocalizedMessage original="ACCT_ADVICE_ID_REQUIRED" locale="en" localized="Advice ID is required."/>
+
+    <moqui.basic.LocalizedMessage original="CARD_ID_REQUIRED" locale="en" localized="Card ID is required."/>
+    <moqui.basic.LocalizedMessage original="CARD_NOT_FOUND" locale="en" localized="Card not found."/>
+
+    <moqui.basic.LocalizedMessage original="CHQ_BOOK_NOT_AVAILABLE" locale="en" localized="Cheque book not available."/>
+    <moqui.basic.LocalizedMessage original="CHQ_BOOK_ACCOUNT_NUMBER_REQUIRED" locale="en" localized="Account number is required."/>
+    <moqui.basic.LocalizedMessage original="CHQ_BOOK_DELIVERY_BRANCH_REQUIRED" locale="en" localized="Delivery branch is required."/>
+    <moqui.basic.LocalizedMessage original="CHQ_BOOK_INVALID_BOOK_COUNT" locale="en" localized="Invalid book count."/>
+
+    <moqui.basic.LocalizedMessage original="TRX_ID_REQUIRED" locale="en" localized="Transaction ID is required."/>
+    <moqui.basic.LocalizedMessage original="TRX_FROM_DATE_INVALID" locale="en" localized="From date is required."/>
+    <moqui.basic.LocalizedMessage original="TRX_TO_DATE_INVALID" locale="en" localized="To date is required."/>
+    <moqui.basic.LocalizedMessage original="TRX_DATE_RANGE_INVALID" locale="en" localized="Invalid date range."/>
+
+    <moqui.basic.LocalizedMessage original="LOAN_NOT_FOUND" locale="en" localized="Loan not found."/>
+    <moqui.basic.LocalizedMessage original="LOAN_NUMBER_REQUIRED" locale="en" localized="Loan number is required."/>
+
+    <moqui.basic.LocalizedMessage original="BEN_NOT_AVAILABLE" locale="en" localized="Beneficiary not available."/>
+    <moqui.basic.LocalizedMessage original="BEN_TYPE_NOT_FOUND" locale="en" localized="Beneficiary type not found."/>
+    <moqui.basic.LocalizedMessage original="BEN_TYPE_MISMATCH" locale="en" localized="Beneficiary type mismatch."/>
+    <moqui.basic.LocalizedMessage original="BEN_NAME_REQUIRED" locale="en" localized="Name is required."/>
+    <moqui.basic.LocalizedMessage original="BEN_NAME_UNSUPPORTED" locale="en" localized="Name contains unsupported characters."/>
+    <moqui.basic.LocalizedMessage original="BEN_NICKNAME_REQUIRED" locale="en" localized="Nickname is required."/>
+    <moqui.basic.LocalizedMessage original="BEN_NICKNAME_UNSUPPORTED" locale="en" localized="Nickname contains unsupported characters."/>
+    <moqui.basic.LocalizedMessage original="BEN_ACCT_NUMBER_REQUIRED" locale="en" localized="Account number is required."/>
+    <moqui.basic.LocalizedMessage original="BEN_ACCT_NUMBER_WRONG" locale="en" localized="Account number does not exist."/>
+    <moqui.basic.LocalizedMessage original="BEN_ACCT_NUMBER_UNSUPPORTED" locale="en" localized="Account number contains unsupported characters."/>
+    <moqui.basic.LocalizedMessage original="BEN_IBAN_REQUIRED" locale="en" localized="IBAN is required."/>
+    <moqui.basic.LocalizedMessage original="BEN_IBAN_OR_ACC_NUMBER_REQUIRED" locale="en" localized="IBAN or account number is required."/>
+    <moqui.basic.LocalizedMessage original="BEN_COUNTRY_REQUIRED" locale="en" localized="Country is required."/>
+    <moqui.basic.LocalizedMessage original="BEN_COUNTRY_NOT_FOUND" locale="en" localized="Country not found."/>
+    <moqui.basic.LocalizedMessage original="BEN_BANK_FOUND" locale="en" localized="Bank not found."/>
+    <moqui.basic.LocalizedMessage original="BEN_SWIFT_CODE_REQUIRED" locale="en" localized="SWIFT code is required."/>
+    <moqui.basic.LocalizedMessage original="BEN_BRANCH_NOT_FOUND" locale="en" localized="Branch not found."/>
+    <moqui.basic.LocalizedMessage original="BEN_BRANCH_NOT_AUTHORIZED" locale="en" localized="Branch not authorized."/>
+    <moqui.basic.LocalizedMessage original="BEN_ADDRESS_REQUIRED" locale="en" localized="Address is required."/>
+    <moqui.basic.LocalizedMessage original="BEN_ADDRESS_UNSUPPORTED" locale="en" localized="Address contains unsupported characters."/>
+    <moqui.basic.LocalizedMessage original="BEN_DISTRICT_UNSUPPORTED" locale="en" localized="District contains unsupported characters."/>
+    <moqui.basic.LocalizedMessage original="BEN_CITY_REQUIRED" locale="en" localized="City is required."/>
+    <moqui.basic.LocalizedMessage original="BEN_CITY_UNSUPPORTED" locale="en" localized="City contains unsupported characters."/>
+    <moqui.basic.LocalizedMessage original="BEN_PROVINCE_UNSUPPORTED" locale="en" localized="Province contains unsupported characters."/>
+    <moqui.basic.LocalizedMessage original="BEN_POSTAL_CODE_UNSUPPORTED" locale="en" localized="Postal code contains unsupported characters."/>
+    <moqui.basic.LocalizedMessage original="BEN_POST_OFFICE_BOX_UNSUPPORTED" locale="en" localized="Post office box contains unsupported characters."/>
+    <moqui.basic.LocalizedMessage original="BEN_CREATED_SUCCESSFULLY" locale="en" localized="Beneficiary created successfully."/>
+    <moqui.basic.LocalizedMessage original="BEN_UPDATED_SUCCESSFULLY" locale="en" localized="Beneficiary updated successfully."/>
+
+    <moqui.basic.LocalizedMessage original="FX_CURRENCY_NOT_FOUND" locale="en" localized="Currency not found."/>
+
+    <moqui.basic.LocalizedMessage original="FT_NOT_FOUND" locale="en" localized="Transfer not found."/>
+    <moqui.basic.LocalizedMessage original="FT_NOT_AVAILABLE" locale="en" localized="Transfer not available."/>
+    <moqui.basic.LocalizedMessage original="FT_TYPE_NOT_FOUND" locale="en" localized="Transfer type not found."/>
+    <moqui.basic.LocalizedMessage original="FT_TYPE_MISMATCH" locale="en" localized="Transfer type mismatch."/>
+    <moqui.basic.LocalizedMessage original="FT_TYPE_NOT_AUTHORIZED" locale="en" localized="Transfer type not authorized."/>
+    <moqui.basic.LocalizedMessage original="FT_DEBIT_ACCT_REQUIRED" locale="en" localized="Debit account is required."/>
+    <moqui.basic.LocalizedMessage original="FT_DEBIT_ACCT_TYPE_NOT_ALLOWED" locale="en" localized="Debit account type not allowed."/>
+    <moqui.basic.LocalizedMessage original="FT_CREDIT_ACCT_REQUIRED" locale="en" localized="Credit account is required."/>
+    <moqui.basic.LocalizedMessage original="FT_CREDIT_CARD_REQUIRED" locale="en" localized="Credit card is required."/>
+    <moqui.basic.LocalizedMessage original="FT_SAME_ACCT" locale="en" localized="Debit and Credit accounts are the same."/>
+    <moqui.basic.LocalizedMessage original="FT_BENEFICIARY_NOT_FOUND" locale="en" localized="Beneficiary not found."/>
+    <moqui.basic.LocalizedMessage original="FT_BENEFICIARY_NOT_AUTHORIZED" locale="en" localized="Beneficiary not authorized."/>
+    <moqui.basic.LocalizedMessage original="FT_BENEFICIARY_OUTDATED" locale="en" localized="Beneficiary is outdated and must be updated."/>
+    <moqui.basic.LocalizedMessage original="FT_BENEFICIARY_ACCESS_DENIED" locale="en" localized="Access to beneficiary was denied."/>
+    <moqui.basic.LocalizedMessage original="FT_CURRENCY_NOT_FOUND" locale="en" localized="Currency not found."/>
+    <moqui.basic.LocalizedMessage original="FT_CURRENCY_NOT_AUTHORIZED" locale="en" localized="Currency not authorized."/>
+    <moqui.basic.LocalizedMessage original="FT_AMOUNT_NOT_POSITIVE" locale="en" localized="Amount must be greater than zero."/>
+    <moqui.basic.LocalizedMessage original="FT_AMOUNT_TOO_MANY_DECIMAL_DIGITS" locale="en" localized="Amount has too many digits after the decimal point."/>
+    <moqui.basic.LocalizedMessage original="FT_AMOUNT_EXCEEDS_BALANCE" locale="en" localized="Amount exceeds the available balance."/>
+    <moqui.basic.LocalizedMessage original="FT_PURPOSE_NOT_FOUND" locale="en" localized="Transfer purpose not found."/>
+    <moqui.basic.LocalizedMessage original="FT_PURPOSE_NOT_AUTHORIZED" locale="en" localized="Transfer purpose not authorized."/>
+    <moqui.basic.LocalizedMessage original="FT_DETAILS_REQUIRED" locale="en" localized="Transfer details is required."/>
+    <moqui.basic.LocalizedMessage original="FT_DETAILS_UNSUPPORTED" locale="en" localized="Transfer details contains unsupported characters or exceeds maximum allowed length."/>
+    <moqui.basic.LocalizedMessage original="FT_SENDER_REFERENCE_REQUIRED" locale="en" localized="Transfer sender reference is required."/>
+    <moqui.basic.LocalizedMessage original="FT_SENDER_REFERENCE_UNSUPPORTED" locale="en" localized="Transfer sender reference contains unsupported characters."/>
+    <moqui.basic.LocalizedMessage original="FT_PROCESSING_DATE_REQUIRED" locale="en" localized="Processing date is required."/>
+    <moqui.basic.LocalizedMessage original="FT_SALARY_DATE_REQUIRED" locale="en" localized="Salary date is required."/>
+    <moqui.basic.LocalizedMessage original="FT_SALARY_DATE_BEYOND_LIMIT" locale="en" localized="Salary date is beyond allowed limit."/>
+    <moqui.basic.LocalizedMessage original="FT_POSTING_NOT_ALLOWED" locale="en" localized="Transfer posting not allowed at this time."/>
+    <moqui.basic.LocalizedMessage original="FT_PAYMENT_FILE_REQUIRED" locale="en" localized="Payment file is required."/>
+    <moqui.basic.LocalizedMessage original="FT_PAYMENT_FILE_PARSING_FAILED" locale="en" localized="Payment file parsing has failed."/>
+    <moqui.basic.LocalizedMessage original="FT_PAYMENT_FILE_WRITING_FAILED" locale="en" localized="Payment file generation has failed."/>
+    <moqui.basic.LocalizedMessage original="FT_UNSUPPORTED_FILE_TYPE" locale="en" localized="Payment file type not supported."/>
+    <moqui.basic.LocalizedMessage original="FT_CREATED_SUCCESSFULLY" locale="en" localized="Transfer created successfully."/>
+
+    <moqui.basic.LocalizedMessage original="TF_FROM_DATE_INVALID" locale="en" localized="From date is required."/>
+    <moqui.basic.LocalizedMessage original="TF_TO_DATE_INVALID" locale="en" localized="To date is required."/>
+    <moqui.basic.LocalizedMessage original="TF_DATE_RANGE_INVALID" locale="en" localized="Invalid date range."/>
+
+    <moqui.basic.LocalizedMessage original="RPT_NAME_REQUIRED" locale="en" localized="Name is required."/>
+    <moqui.basic.LocalizedMessage original="RPT_ADDRESS_REQUIRED" locale="en" localized="Address is required."/>
+    <moqui.basic.LocalizedMessage original="RPT_ACCT_HOLDER_REQUIRED" locale="en" localized="Account holder is required."/>
+    <moqui.basic.LocalizedMessage original="RPT_OPENING_DATE_INVALID" locale="en" localized="Opening date is invalid."/>
+    <moqui.basic.LocalizedMessage original="RPT_EFFECTIVE_DATE_INVALID" locale="en" localized="Effective date is invalid."/>
+    <moqui.basic.LocalizedMessage original="RPT_FROM_DATE_INVALID" locale="en" localized="From date is invalid."/>
+    <moqui.basic.LocalizedMessage original="RPT_TO_DATE_INVALID" locale="en" localized="To date is invalid."/>
+    <moqui.basic.LocalizedMessage original="RPT_VALUE_DATE_INVALID" locale="en" localized="Value date is invalid."/>
+    <moqui.basic.LocalizedMessage original="RPT_DATE_RANGE_INVALID" locale="en" localized="Invalid date range."/>
+
+</entity-facade-xml>

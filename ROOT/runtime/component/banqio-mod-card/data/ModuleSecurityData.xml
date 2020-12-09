@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Card API -->
+    <artifactGroups artifactGroupId="BNQ_CARD_API" description="Banqio Card API">
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/card/.*"/>
+    </artifactGroups>
+
+    <!-- Admin Cards (All) -->
+    <userGroups userGroupId="BNQ_ADM_CARD_ALL" description="Banqio Admin Cards (All)" groupTypeEnumId="BNQ_ADM_GRP" wikiLocation="component://banqio-mod-card/wiki/BNQ_ADM_CARD_ALL.md">
+        <authz artifactGroupId="BNQ_CARD_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+    </userGroups>
+
+    <!-- Admin Cards (View) -->
+    <userGroups userGroupId="BNQ_ADM_CARD_VIEW" description="Banqio Admin Cards (View)" groupTypeEnumId="BNQ_ADM_GRP" wikiLocation="component://banqio-mod-card/wiki/BNQ_ADM_CARD_VIEW.md">
+        <authz artifactGroupId="BNQ_CARD_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+    </userGroups>
+
+</entity-facade-xml>

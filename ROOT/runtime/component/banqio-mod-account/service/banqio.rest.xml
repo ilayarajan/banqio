@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/rest-api-2.1.xsd"
+          name="account"
+          displayName="Account REST API"
+          version="1.0.0">
+
+    <resource name="accountType" description="Account Type API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.account.AccountServices.find#AccountType"/>
+        </method>
+        <method type="post">
+            <service name="banqio.account.AccountServices.create#AccountType"/>
+        </method>
+        <method type="patch">
+            <service name="banqio.account.AccountServices.update#AccountType"/>
+        </method>
+        <resource name="localization">
+            <method type="get">
+                <service name="banqio.account.AccountServices.find#AccountTypeL10n"/>
+            </method>
+            <method type="post">
+                <service name="banqio.account.AccountServices.create#AccountTypeL10n"/>
+            </method>
+            <method type="patch">
+                <service name="banqio.account.AccountServices.update#AccountTypeL10n"/>
+            </method>
+            <method type="delete">
+                <service name="banqio.account.AccountServices.delete#AccountTypeL10n"/>
+            </method>
+        </resource>
+    </resource>
+    <resource name="accountStatus" description="Account Status API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.account.AccountServices.find#AccountStatus"/>
+        </method>
+        <method type="post">
+            <service name="banqio.account.AccountServices.create#AccountStatus"/>
+        </method>
+        <method type="patch">
+            <service name="banqio.account.AccountServices.update#AccountStatus"/>
+        </method>
+        <resource name="localization">
+            <method type="get">
+                <service name="banqio.account.AccountServices.find#AccountStatusL10n"/>
+            </method>
+            <method type="post">
+                <service name="banqio.account.AccountServices.create#AccountStatusL10n"/>
+            </method>
+            <method type="patch">
+                <service name="banqio.account.AccountServices.update#AccountStatusL10n"/>
+            </method>
+            <method type="delete">
+                <service name="banqio.account.AccountServices.delete#AccountStatusL10n"/>
+            </method>
+        </resource>
+    </resource>
+    <resource name="transactionType" description="Transaction Type API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.account.AccountServices.find#TransactionType"/>
+        </method>
+        <method type="post">
+            <service name="banqio.account.AccountServices.create#TransactionType"/>
+        </method>
+        <method type="patch">
+            <service name="banqio.account.AccountServices.update#TransactionType"/>
+        </method>
+        <resource name="localization">
+            <method type="get">
+                <service name="banqio.account.AccountServices.find#TransactionTypeL10n"/>
+            </method>
+            <method type="post">
+                <service name="banqio.account.AccountServices.create#TransactionTypeL10n"/>
+            </method>
+            <method type="patch">
+                <service name="banqio.account.AccountServices.update#TransactionTypeL10n"/>
+            </method>
+            <method type="delete">
+                <service name="banqio.account.AccountServices.delete#TransactionTypeL10n"/>
+            </method>
+        </resource>
+    </resource>
+
+</resource>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Sweep type -->
+    <moqui.basic.EnumerationType enumTypeId="SweepType" description="Sweep Type"/>
+    <moqui.basic.Enumeration enumTypeId="SweepType" enumId="SWEEP_FULL_BAL" description="Full Balance"/>
+    <moqui.basic.Enumeration enumTypeId="SweepType" enumId="SWEEP_ABOVE_BAL_LMT" description="Above Balance Limit"/>
+    <moqui.basic.Enumeration enumTypeId="SweepType" enumId="SWEEP_BELOW_BAL_LMT" description="Below Balance Limit"/>
+
+    <!-- Sweep frequency -->
+    <moqui.basic.EnumerationType enumTypeId="SweepFrequency" description="Sweep Frequency"/>
+    <moqui.basic.Enumeration enumTypeId="SweepFrequency" enumId="SWEEP_FREQ_DAY" description="Daily"/>
+    <moqui.basic.Enumeration enumTypeId="SweepFrequency" enumId="SWEEP_FREQ_WEEKLY" description="Weekly"/>
+    <moqui.basic.Enumeration enumTypeId="SweepFrequency" enumId="SWEEP_FREQ_BIWEEKLY" description="Biweekly"/>
+    <moqui.basic.Enumeration enumTypeId="SweepFrequency" enumId="SWEEP_FREQ_MONTH" description="Monthly"/>
+
+</entity-facade-xml>

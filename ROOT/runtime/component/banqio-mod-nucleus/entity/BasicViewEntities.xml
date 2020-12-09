@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <!-- Currency -->
+    <view-entity entity-name="CurrencyExchangeRateDetail" package="banqio.basic">
+        <member-entity entity-alias="exchangeRate" entity-name="banqio.basic.CurrencyExchangeRate"/>
+        <member-entity entity-alias="baseCurrency" entity-name="moqui.basic.Uom" join-from-alias="exchangeRate">
+            <key-map field-name="baseCurrencyId"/>
+        </member-entity>
+        <member-entity entity-alias="quoteCurrency" entity-name="moqui.basic.Uom" join-from-alias="exchangeRate">
+            <key-map field-name="quoteCurrencyId"/>
+        </member-entity>
+        <member-entity entity-alias="dataSource" entity-name="moqui.basic.DataSource" join-from-alias="exchangeRate">
+            <key-map field-name="dataSourceId"/>
+        </member-entity>
+
+        <alias-all entity-alias="exchangeRate"/>
+        <alias name="baseCurrencyAbbreviation" entity-alias="baseCurrency" field="abbreviation"/>
+        <alias name="baseCurrencyNumericCode" entity-alias="baseCurrency" field="numericCode"/>
+        <alias name="baseCurrencyDescription" entity-alias="baseCurrency" field="description"/>
+        <alias name="quoteCurrencyAbbreviation" entity-alias="quoteCurrency" field="abbreviation"/>
+        <alias name="quoteCurrencyNumericCode" entity-alias="quoteCurrency" field="numericCode"/>
+        <alias name="quoteCurrencyDescription" entity-alias="quoteCurrency" field="description"/>
+        <alias name="dataSourceDescription" entity-alias="dataSource" field="description"/>
+    </view-entity>
+    <view-entity entity-name="CurrencyAppDetail" package="banqio.basic">
+        <member-entity entity-alias="currencyApp" entity-name="banqio.basic.CurrencyApp"/>
+        <member-entity entity-alias="currency" entity-name="moqui.basic.Uom" join-from-alias="currencyApp">
+            <key-map field-name="uomId"/>
+        </member-entity>
+        <member-entity entity-alias="config" entity-name="banqio.basic.CurrencyConfig" join-from-alias="currency" join-optional="true">
+            <key-map field-name="uomId"/>
+        </member-entity>
+        <member-entity entity-alias="app" entity-name="commons.server.App" join-from-alias="currencyApp">
+            <key-map field-name="appId"/>
+        </member-entity>
+
+        <alias-all entity-alias="currencyApp"/>
+        <alias-all entity-alias="currency">
+            <exclude field="uomId"/>
+        </alias-all>
+        <alias-all entity-alias="config">
+            <exclude field="uomId"/>
+        </alias-all>
+        <alias name="appName" entity-alias="app" field="appName"/>
+        <alias name="appDescription" entity-alias="app" field="description"/>
+    </view-entity>
+    <view-entity entity-name="CurrencyHolidayDetail" package="banqio.basic">
+        <member-entity entity-alias="holiday" entity-name="banqio.basic.CurrencyHoliday"/>
+        <member-entity entity-alias="currency" entity-name="moqui.basic.Uom" join-from-alias="holiday">
+            <key-map field-name="uomId"/>
+        </member-entity>
+
+        <alias-all entity-alias="holiday"/>
+        <alias name="currencyName" entity-alias="currency" field="description"/>
+    </view-entity>
+    <view-entity entity-name="CurrencyWeekendDetail" package="banqio.basic">
+        <member-entity entity-alias="weekend" entity-name="banqio.basic.CurrencyWeekend"/>
+        <member-entity entity-alias="currency" entity-name="moqui.basic.Uom" join-from-alias="weekend">
+            <key-map field-name="uomId"/>
+        </member-entity>
+
+        <alias-all entity-alias="weekend"/>
+        <alias name="currencyName" entity-alias="currency" field="description"/>
+    </view-entity>
+
+</entities>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/rest-api-2.1.xsd"
+          name="ft"
+          displayName="Funds Transfer REST API"
+          version="1.0.0">
+
+    <resource name="fundsTransferType" description="Funds Transfer Type API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.ft.FundsTransferServices.find#FundsTransferType"/>
+        </method>
+        <method type="post">
+            <service name="banqio.ft.FundsTransferServices.create#FundsTransferType"/>
+        </method>
+        <resource name="update">
+            <method type="post">
+                <service name="banqio.ft.FundsTransferServices.update#FundsTransferType"/>
+            </method>
+        </resource>
+        <resource name="tree">
+            <method type="get">
+                <service name="banqio.ft.FundsTransferServices.tree#FundsTransferType"/>
+            </method>
+        </resource>
+        <resource name="localization">
+            <method type="get">
+                <service name="banqio.ft.FundsTransferServices.find#FundsTransferTypeL10n"/>
+            </method>
+            <method type="post">
+                <service name="banqio.ft.FundsTransferServices.create#FundsTransferTypeL10n"/>
+            </method>
+            <method type="patch">
+                <service name="banqio.ft.FundsTransferServices.update#FundsTransferTypeL10n"/>
+            </method>
+            <method type="delete">
+                <service name="banqio.ft.FundsTransferServices.delete#FundsTransferTypeL10n"/>
+            </method>
+        </resource>
+    </resource>
+    <resource name="fundsTransferPurpose" description="Funds Transfer Purpose API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.ft.FundsTransferServices.find#FundsTransferPurpose"/>
+        </method>
+        <method type="post">
+            <service name="banqio.ft.FundsTransferServices.create#FundsTransferPurpose"/>
+        </method>
+        <method type="patch">
+            <service name="banqio.ft.FundsTransferServices.update#FundsTransferPurpose"/>
+        </method>
+        <resource name="tree">
+            <method type="get">
+                <service name="banqio.ft.FundsTransferServices.tree#FundsTransferPurpose"/>
+            </method>
+        </resource>
+        <resource name="localization">
+            <method type="get">
+                <service name="banqio.ft.FundsTransferServices.find#FundsTransferPurposeL10n"/>
+            </method>
+            <method type="post">
+                <service name="banqio.ft.FundsTransferServices.create#FundsTransferPurposeL10n"/>
+            </method>
+            <method type="patch">
+                <service name="banqio.ft.FundsTransferServices.update#FundsTransferPurposeL10n"/>
+            </method>
+            <method type="delete">
+                <service name="banqio.ft.FundsTransferServices.delete#FundsTransferPurposeL10n"/>
+            </method>
+        </resource>
+    </resource>
+    <resource name="fundsTransferFrequency" description="Funds Transfer Frequency API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.ft.FundsTransferServices.find#FundsTransferFrequency"/>
+        </method>
+        <method type="post">
+            <service name="banqio.ft.FundsTransferServices.create#FundsTransferFrequency"/>
+        </method>
+        <method type="patch">
+            <service name="banqio.ft.FundsTransferServices.update#FundsTransferFrequency"/>
+        </method>
+        <resource name="localization">
+            <method type="get">
+                <service name="banqio.ft.FundsTransferServices.find#FundsTransferFrequencyL10n"/>
+            </method>
+            <method type="post">
+                <service name="banqio.ft.FundsTransferServices.create#FundsTransferFrequencyL10n"/>
+            </method>
+            <method type="patch">
+                <service name="banqio.ft.FundsTransferServices.update#FundsTransferFrequencyL10n"/>
+            </method>
+            <method type="delete">
+                <service name="banqio.ft.FundsTransferServices.delete#FundsTransferFrequencyL10n"/>
+            </method>
+        </resource>
+    </resource>
+    <resource name="postingRule" description="Posting Rule API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.ft.FundsTransferServices.find#PostingRule"/>
+        </method>
+        <method type="post">
+            <service name="banqio.ft.FundsTransferServices.create#PostingRule"/>
+        </method>
+        <method type="patch">
+            <service name="banqio.ft.FundsTransferServices.update#PostingRule"/>
+        </method>
+        <id name="ruleId">
+            <resource name="position">
+                <method type="patch">
+                    <service name="banqio.ft.FundsTransferServices.position#PostingRule"/>
+                </method>
+            </resource>
+        </id>
+    </resource>
+
+</resource>

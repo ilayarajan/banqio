@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd">
+
+    <widgets>
+        <render-mode>
+            <text type="html"><![CDATA[
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <p>Hello,</p>
+        <p>You have some pending activities in workflow <strong>${workflowName}</strong>. You may wish to complete the pending activities before a timeout is raised.</p>
+        <p>Thank you.</p>
+    </body>
+</html>
+            ]]></text>
+        </render-mode>
+    </widgets>
+</screen>

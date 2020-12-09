@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Teller type -->
+    <service verb="find" noun="TellerType" type="java" location="com.netvariant.banqio.bank.TellerTypeService" method="findTellerTypes">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.bank.teller.TellerTypeDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="tellerTypeList" type="List">
+                <parameter name="tellerType" type="Map">
+                    <auto-parameters entity-name="banqio.bank.teller.TellerTypeDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="TellerType" type="java" location="com.netvariant.banqio.bank.TellerTypeService" method="createTellerType">
+        <in-parameters>
+            <parameter name="externalTypeId"/>
+            <parameter name="typeName"/>
+            <parameter name="typeBehaviourEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="typeId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="TellerType" type="java" location="com.netvariant.banqio.bank.TellerTypeService" method="updateTellerType">
+        <in-parameters>
+            <parameter name="typeId"/>
+            <parameter name="externalTypeId"/>
+            <parameter name="typeName"/>
+            <parameter name="typeBehaviourEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="typeId"/>
+        </out-parameters>
+    </service>
+
+    <!-- Teller type L10n -->
+    <service verb="find" noun="TellerTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.bank.teller.TellerType"/>
+            <service-call name="commons.entity.EntityServices.find#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="create" noun="TellerTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.bank.teller.TellerType"/>
+            <service-call name="commons.entity.EntityServices.create#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="update" noun="TellerTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.bank.teller.TellerType"/>
+            <service-call name="commons.entity.EntityServices.update#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="delete" noun="TellerTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="localized"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.bank.teller.TellerType"/>
+            <service-call name="commons.entity.EntityServices.delete#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+
+    <!-- Teller Status-->
+    <service verb="find" noun="TellerStatus" type="java" location="com.netvariant.banqio.bank.TellerStatusService" method="findTellerStatuses">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.bank.teller.TellerStatusDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="tellerStatusList" type="List">
+                <parameter name="tellerStatus" type="Map">
+                    <auto-parameters entity-name="banqio.bank.teller.TellerStatusDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="TellerStatus" type="java" location="com.netvariant.banqio.bank.TellerStatusService" method="createTellerStatus">
+        <in-parameters>
+            <parameter name="externalStatusId"/>
+            <parameter name="statusName"/>
+            <parameter name="statusBehaviourEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="statusId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="TellerStatus" type="java" location="com.netvariant.banqio.bank.TellerStatusService" method="updateTellerStatus">
+        <in-parameters>
+            <parameter name="statusId"/>
+            <parameter name="externalStatusId"/>
+            <parameter name="statusName"/>
+            <parameter name="statusBehaviourEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="statusId"/>
+        </out-parameters>
+    </service>
+
+    <!-- Teller status L10n -->
+    <service verb="find" noun="TellerStatusL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.bank.teller.TellerStatus"/>
+            <service-call name="commons.entity.EntityServices.find#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="create" noun="TellerStatusL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.bank.teller.TellerStatus"/>
+            <service-call name="commons.entity.EntityServices.create#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="update" noun="TellerStatusL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.bank.teller.TellerStatus"/>
+            <service-call name="commons.entity.EntityServices.update#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="delete" noun="TellerStatusL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="localized"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.bank.teller.TellerStatus"/>
+            <service-call name="commons.entity.EntityServices.delete#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+
+    <!-- Teller -->
+    <service verb="find" noun="Teller" type="java" location="com.netvariant.banqio.bank.TellerService" method="findTellers">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.bank.teller.TellerDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="tellerList" type="List">
+                <parameter name="teller" type="Map">
+                    <auto-parameters entity-name="banqio.bank.teller.TellerDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="Teller" type="java" location="com.netvariant.banqio.bank.TellerService" method="createTeller">
+        <in-parameters>
+            <parameter name="tellerTypeId"/>
+            <parameter name="tellerStatusId"/>
+            <parameter name="tellerName"/>
+            <parameter name="pseudoId"/>
+            <parameter name="externalId"/>
+            <parameter name="latitude" type="Float"/>
+            <parameter name="longitude" type="Float"/>
+            <parameter name="elevation" type="Float"/>
+            <parameter name="elevationUomId"/>
+            <parameter name="disabled"/>
+            <parameter name="functions"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="tellerId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="Teller" type="java" location="com.netvariant.banqio.bank.TellerService" method="updateTeller">
+        <in-parameters>
+            <parameter name="tellerId"/>
+            <parameter name="tellerTypeId"/>
+            <parameter name="tellerStatusId"/>
+            <parameter name="tellerName"/>
+            <parameter name="pseudoId"/>
+            <parameter name="externalId"/>
+            <parameter name="latitude" type="Float"/>
+            <parameter name="longitude" type="Float"/>
+            <parameter name="elevation" type="Float"/>
+            <parameter name="elevationUomId"/>
+            <parameter name="disabled"/>
+            <parameter name="functions"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="tellerId"/>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="TellerBankFunctionAppl" type="java" location="com.netvariant.banqio.bank.TellerService" method="findTellerBankFunctions">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.bank.teller.TellerBankFunctionApplDetail"/>
+            <parameter name="tellerId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="tellerBankFunctionList" type="List">
+                <parameter name="function" type="Map">
+                    <auto-parameters entity-name="banqio.bank.teller.TellerBankFunctionApplDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+
+    <!-- Bank -->
+    <service verb="find" noun="Bank" type="java" location="com.netvariant.banqio.bank.BankService" method="findBanks">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.bank.BankDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+            <parameter name="localOnly" type="Boolean" default="false"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="bankList" type="List">
+                <parameter name="bank" type="Map">
+                    <auto-parameters entity-name="banqio.bank.BankDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="Bank" type="java" location="com.netvariant.banqio.bank.BankService" method="createBank">
+        <in-parameters>
+            <parameter name="countryGeoId"/>
+            <parameter name="bankName"/>
+            <parameter name="institutionCode"/>
+            <parameter name="nationalCode"/>
+            <parameter name="disabled"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="bankId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="Bank" type="java" location="com.netvariant.banqio.bank.BankService" method="updateBank">
+        <in-parameters>
+            <parameter name="bankId"/>
+            <parameter name="countryGeoId"/>
+            <parameter name="bankName"/>
+            <parameter name="institutionCode"/>
+            <parameter name="nationalCode"/>
+            <parameter name="disabled"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="bankId"/>
+        </out-parameters>
+    </service>
+    <service verb="import" noun="BIC" type="java" location="com.netvariant.banqio.bank.BankService" method="importBicDirectory">
+        <in-parameters/>
+        <out-parameters>
+            <parameter name="recordsSkipped"/>
+            <parameter name="banksCreated"/>
+            <parameter name="branchesCreated"/>
+        </out-parameters>
+    </service>
+    <service verb="import" noun="Text" type="java" location="com.netvariant.banqio.bank.BankService" method="importTextFile">
+        <in-parameters/>
+        <out-parameters>
+            <parameter name="recordsSkipped"/>
+            <parameter name="banksCreated"/>
+            <parameter name="branchesCreated"/>
+        </out-parameters>
+    </service>
+
+    <!-- Bank branch -->
+    <service verb="find" noun="Branch" type="java" location="com.netvariant.banqio.bank.BankBranchService" method="findBranches">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.bank.BranchDetail"/>
+            <parameter name="bankId"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+            <parameter name="localOnly" type="Boolean" default="false"/>
+            <parameter name="swiftCodeOnly" type="Boolean" default="false"/>
+            <parameter name="placeholderOnly" type="Boolean" default="false"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="branchList" type="List">
+                <parameter name="branch" type="Map">
+                    <auto-parameters entity-name="banqio.bank.BranchDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="Branch" type="java" location="com.netvariant.banqio.bank.BankBranchService" method="createBranch">
+        <in-parameters>
+            <parameter name="bankId"/>
+            <parameter name="externalBranchId"/>
+            <parameter name="branchName"/>
+            <parameter name="branchCode"/>
+            <parameter name="swiftCode"/>
+            <parameter name="localCode"/>
+            <parameter name="recordKey"/>
+            <parameter name="address1"/>
+            <parameter name="address2"/>
+            <parameter name="district"/>
+            <parameter name="city"/>
+            <parameter name="province"/>
+            <parameter name="countryGeoId"/>
+            <parameter name="poBox"/>
+            <parameter name="postalCode"/>
+            <parameter name="postalCodeExt"/>
+            <parameter name="acceptsPayments"/>
+            <parameter name="disabled"/>
+            <parameter name="functions"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="branchId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="Branch" type="java" location="com.netvariant.banqio.bank.BankBranchService" method="updateBranch">
+        <in-parameters>
+            <parameter name="branchId"/>
+            <parameter name="externalBranchId"/>
+            <parameter name="bankId"/>
+            <parameter name="branchName"/>
+            <parameter name="branchCode"/>
+            <parameter name="swiftCode"/>
+            <parameter name="localCode"/>
+            <parameter name="recordKey"/>
+            <parameter name="address1"/>
+            <parameter name="address2"/>
+            <parameter name="district"/>
+            <parameter name="city"/>
+            <parameter name="province"/>
+            <parameter name="countryGeoId"/>
+            <parameter name="poBox"/>
+            <parameter name="postalCode"/>
+            <parameter name="postalCodeExt"/>
+            <parameter name="acceptsPayments"/>
+            <parameter name="disabled"/>
+            <parameter name="functions"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="branchId"/>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="BranchContactMech" type="java" location="com.netvariant.banqio.bank.BankBranchService" method="findBranchContactMechs">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.bank.BranchContactMechDetail"/>
+            <parameter name="branchId"/>
+            <parameter name="addressTypeEnumId"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="contactMechList" type="List">
+                <parameter name="contactMech" type="Map">
+                    <auto-parameters entity-name="banqio.bank.BranchContactMechDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="BranchContactMech" type="java" location="com.netvariant.banqio.bank.BankBranchService" method="createBranchContactMech">
+        <in-parameters>
+            <parameter name="branchId"/>
+            <parameter name="contactMechTypeEnumId"/>
+            <parameter name="contactMechPurposeId"/>
+            <parameter name="infoString"/>
+            <parameter name="countryCode"/>
+            <parameter name="extension"/>
+            <parameter name="areaCode"/>
+            <parameter name="contactNumber"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="branchId"/>
+            <parameter name="contactMechId"/>
+        </out-parameters>
+    </service>
+    <service verb="delete" noun="BranchContactMech" type="java" location="com.netvariant.banqio.bank.BankBranchService" method="deleteBranchContactMech">
+        <in-parameters>
+            <parameter name="contactMechId"/>
+            <parameter name="branchId"/>
+        </in-parameters>
+    </service>
+    <service verb="find" noun="BranchWorkShift" type="java" location="com.netvariant.banqio.bank.BankBranchService" method="findBranchWorkShifts">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.bank.BranchWorkShiftDetail"/>
+            <parameter name="branchId"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="workShiftList" type="List">
+                <parameter name="workShift" type="Map">
+                    <auto-parameters entity-name="banqio.bank.BranchWorkShiftDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="BranchWorkShift" type="java" location="com.netvariant.banqio.bank.BankBranchService" method="createBranchWorkShift">
+        <in-parameters>
+            <parameter name="branchId"/>
+            <parameter name="weekDayEnumId"/>
+            <parameter name="startTime"/>
+            <parameter name="endTime"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="branchId"/>
+            <parameter name="shiftSeqId"/>
+        </out-parameters>
+    </service>
+    <service verb="delete" noun="BranchWorkShift" type="java" location="com.netvariant.banqio.bank.BankBranchService" method="deleteBranchWorkShift">
+        <in-parameters>
+            <parameter name="shiftSeqId"/>
+            <parameter name="branchId"/>
+        </in-parameters>
+    </service>
+    <service verb="find" noun="BranchBankFunctionAppl" type="java" location="com.netvariant.banqio.bank.BankBranchService" method="findBranchBankFunctions">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.bank.BranchBankFunctionApplDetail"/>
+            <parameter name="branchId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="branchBankFunctionList" type="List">
+                <parameter name="function" type="Map">
+                    <auto-parameters entity-name="banqio.bank.BranchBankFunctionApplDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+
+    <!-- Bank Functions-->
+    <service verb="find" noun="BankFunction" type="java" location="com.netvariant.banqio.bank.BankFunctionService" method="findBankFunctions">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.bank.BankFunction"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="functionList" type="List">
+                <parameter name="function" type="Map">
+                    <auto-parameters entity-name="banqio.bank.BankFunction"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="BankFunction" type="java" location="com.netvariant.banqio.bank.BankFunctionService" method="createBankFunction">
+        <in-parameters>
+            <parameter name="functionName"/>
+            <parameter name="description"/>
+            <parameter name="iconClass"/>
+            <parameter name="disabled"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="functionId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="BankFunction" type="java" location="com.netvariant.banqio.bank.BankFunctionService" method="updateBankFunction">
+        <in-parameters>
+            <parameter name="functionId"/>
+            <parameter name="functionName"/>
+            <parameter name="description"/>
+            <parameter name="iconClass"/>
+            <parameter name="disabled"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="functionId"/>
+        </out-parameters>
+    </service>
+
+    <!-- Bank function L10n -->
+    <service verb="find" noun="BankFunctionL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.bank.BankFunction"/>
+            <service-call name="commons.entity.EntityServices.find#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="create" noun="BankFunctionL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.bank.BankFunction"/>
+            <service-call name="commons.entity.EntityServices.create#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="update" noun="BankFunctionL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.bank.BankFunction"/>
+            <service-call name="commons.entity.EntityServices.update#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="delete" noun="BankFunctionL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="localized"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.bank.BankFunction"/>
+            <service-call name="commons.entity.EntityServices.delete#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+
+</services>

@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Loan Type-->
+    <service verb="find" noun="LoanType" type="java" location="com.netvariant.banqio.loan.LoanTypeService" method="findLoanTypes">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.loan.LoanTypeDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="loanTypeList" type="List">
+                <parameter name="loanType" type="Map">
+                    <auto-parameters entity-name="banqio.loan.LoanTypeDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="LoanType" type="java" location="com.netvariant.banqio.loan.LoanTypeService" method="createLoanType">
+        <in-parameters>
+            <parameter name="externalTypeId"/>
+            <parameter name="typeName"/>
+            <parameter name="typeBehaviourEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="typeId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="LoanType" type="java" location="com.netvariant.banqio.loan.LoanTypeService" method="updateLoanType">
+        <in-parameters>
+            <parameter name="typeId"/>
+            <parameter name="externalTypeId"/>
+            <parameter name="typeName"/>
+            <parameter name="typeBehaviourEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="typeId"/>
+        </out-parameters>
+    </service>
+
+    <!-- Loan type L10n -->
+    <service verb="find" noun="LoanTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.loan.LoanType"/>
+            <service-call name="commons.entity.EntityServices.find#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="create" noun="LoanTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.loan.LoanType"/>
+            <service-call name="commons.entity.EntityServices.create#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="update" noun="LoanTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.loan.LoanType"/>
+            <service-call name="commons.entity.EntityServices.update#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="delete" noun="LoanTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="localized"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.loan.LoanType"/>
+            <service-call name="commons.entity.EntityServices.delete#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+
+    <!-- Loan status -->
+    <service verb="find" noun="LoanStatus" type="java" location="com.netvariant.banqio.loan.LoanStatusService" method="findLoanStatuses">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.loan.LoanStatusDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="loanStatusList" type="List">
+                <parameter name="loanStatus" type="Map">
+                    <auto-parameters entity-name="banqio.loan.LoanStatusDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="LoanStatus" type="java" location="com.netvariant.banqio.loan.LoanStatusService" method="createLoanStatus">
+        <in-parameters>
+            <parameter name="externalStatusId"/>
+            <parameter name="statusName"/>
+            <parameter name="statusBehaviourEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="statusId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="LoanStatus" type="java" location="com.netvariant.banqio.loan.LoanStatusService" method="updateLoanStatus">
+        <in-parameters>
+            <parameter name="statusId"/>
+            <parameter name="externalStatusId"/>
+            <parameter name="statusName"/>
+            <parameter name="statusBehaviourEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="statusId"/>
+        </out-parameters>
+    </service>
+
+    <!-- Loan status L10n -->
+    <service verb="find" noun="LoanStatusL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.loan.LoanStatus"/>
+            <service-call name="commons.entity.EntityServices.find#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="create" noun="LoanStatusL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.loan.LoanStatus"/>
+            <service-call name="commons.entity.EntityServices.create#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="update" noun="LoanStatusL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.loan.LoanStatus"/>
+            <service-call name="commons.entity.EntityServices.update#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="delete" noun="LoanStatusL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="localized"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.loan.LoanStatus"/>
+            <service-call name="commons.entity.EntityServices.delete#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+
+    <!-- API -->
+    <service verb="find" noun="Loan" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="loanNumber"/>
+            <parameter name="currencyId"/>
+            <parameter name="typeId"/>
+            <parameter name="statusId"/>
+            <parameter name="permissionTypeEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="loanList" type="List">
+                <parameter name="loan" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="loanNumber"/>
+                    <parameter name="loanAccountNumber"/>
+                    <parameter name="disbursementAccountNumber"/>
+                    <parameter name="contractNumber"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="typeId"/>
+                    <parameter name="typeName"/>
+                    <parameter name="typeBehaviourEnumId"/>
+                    <parameter name="statusId"/>
+                    <parameter name="statusName"/>
+                    <parameter name="statusBehaviourEnumId"/>
+                    <parameter name="startDate" type="Date"/>
+                    <parameter name="maturityDate" type="Date"/>
+                    <parameter name="loanAmount" type="Double"/>
+                    <parameter name="loanAmountLocal" type="Double"/>
+                    <parameter name="outstandingAmount" type="Double"/>
+                    <parameter name="outstandingAmountLocal" type="Double"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="LoanDetail" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="loanNumber"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="loan" type="Map">
+                <parameter name="customerId"/>
+                <parameter name="loanNumber"/>
+                <parameter name="loanAccountNumber"/>
+                <parameter name="disbursementAccountNumber"/>
+                <parameter name="contractNumber"/>
+                <parameter name="currencyId"/>
+                <parameter name="currencyDescription"/>
+                <parameter name="currencyAbbreviation"/>
+                <parameter name="typeId"/>
+                <parameter name="typeName"/>
+                <parameter name="typeBehaviourEnumId"/>
+                <parameter name="statusId"/>
+                <parameter name="statusName"/>
+                <parameter name="statusBehaviourEnumId"/>
+                <parameter name="startDate" type="Date"/>
+                <parameter name="maturityDate" type="Date"/>
+                <parameter name="loanAmount" type="Double"/>
+                <parameter name="loanAmountLocal" type="Double"/>
+                <parameter name="outstandingAmount" type="Double"/>
+                <parameter name="outstandingAmountLocal" type="Double"/>
+                <parameter name="dueAmount" type="Double"/>
+                <parameter name="dueAmountLocal" type="Double"/>
+                <parameter name="paymentStartDate" type="Date"/>
+                <parameter name="paymentEndDate" type="Date"/>
+                <parameter name="paymentAmount" type="Double"/>
+                <parameter name="paymentAmountLocal" type="Double"/>
+                <parameter name="principalInterestRate"/>
+                <parameter name="penaltyInterestRate"/>
+                <parameter name="auxiliary1"/>
+                <parameter name="auxiliary2"/>
+                <parameter name="auxiliary3"/>
+                <parameter name="auxiliary4"/>
+                <parameter name="auxiliary5"/>
+                <parameter name="auxiliary6"/>
+                <parameter name="auxiliary7"/>
+                <parameter name="auxiliary8"/>
+                <parameter name="auxiliary9"/>
+                <parameter name="auxiliary10" type="Double"/>
+                <parameter name="auxiliary11" type="Double"/>
+                <parameter name="auxiliary12" type="Double"/>
+                <parameter name="auxiliary13" type="Date"/>
+                <parameter name="auxiliary14" type="Date"/>
+                <parameter name="auxiliary15" type="Date"/>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="LoanRepayment" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="loanNumber"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="repaymentList" type="List">
+                <parameter name="repayment" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="loanNumber"/>
+                    <parameter name="contractNumber"/>
+                    <parameter name="loanAccountNumber"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="typeId"/>
+                    <parameter name="typeName"/>
+                    <parameter name="typeBehaviourEnumId"/>
+                    <parameter name="installmentDate" type="Date"/>
+                    <parameter name="installmentAmount" type="Double"/>
+                    <parameter name="installmentAmountLocal" type="Double"/>
+                    <parameter name="principalAmount" type="Double"/>
+                    <parameter name="principalAmountLocal" type="Double"/>
+                    <parameter name="serviceFeeAmount" type="Double"/>
+                    <parameter name="serviceFeeAmountLocal" type="Double"/>
+                    <parameter name="interestAmount" type="Double"/>
+                    <parameter name="interestAmountLocal" type="Double"/>
+                    <parameter name="outstandingAmount" type="Double"/>
+                    <parameter name="outstandingAmountLocal" type="Double"/>
+                    <parameter name="transactionId"/>
+                    <parameter name="paymentDate" type="Date"/>
+                    <parameter name="paymentAmount" type="Double"/>
+                    <parameter name="paymentAmountLocal" type="Double"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="LoanTransaction" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="loanNumber"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+            <parameter name="fromAmount" type="Double"/>
+            <parameter name="toAmount" type="Double"/>
+            <parameter name="typeId"/>
+            <parameter name="orderByField"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="transactionList" type="List">
+                <parameter name="transaction" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="transactionId"/>
+                    <parameter name="typeId"/>
+                    <parameter name="typeName"/>
+                    <parameter name="typeBehaviourEnumId"/>
+                    <parameter name="amount" type="Double"/>
+                    <parameter name="amountLocal" type="Double"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="accountNumber"/>
+                    <parameter name="accountBalance" type="Double"/>
+                    <parameter name="postingDate" type="Date"/>
+                    <parameter name="valueDate" type="Date"/>
+                    <parameter name="narrative"/>
+                    <parameter name="drCrIndicator"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+
+</services>

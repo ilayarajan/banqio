@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<secas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-eca-2.1.xsd">
+
+    <!-- Run report validation -->
+    <seca service="banqio.report.ReportServices.run#Report" when="pre-service">
+        <actions>
+            <service-call name="commons.server.ServerServices.validate#App">
+                <field-map field-name="appId" from="sourceAppId"/>
+            </service-call>
+            <if condition="customerId">
+                <service-call name="banqio.security.SecurityServices.validate#UserExternalId">
+                    <field-map field-name="externalId" from="customerId"/>
+                </service-call>
+            </if>
+        </actions>
+    </seca>
+
+</secas>

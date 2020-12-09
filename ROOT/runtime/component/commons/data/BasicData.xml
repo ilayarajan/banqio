@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Languages -->
+    <CommonsLang languageId="EN" languageName="English" iconName="us.png" locale="en" rtl="N" disabled="N"/>
+    <CommonsLang languageId="AR" languageName="العربية" iconName="lb.png" locale="ar" rtl="Y" disabled="N"/>
+
+    <!-- Alert types -->
+    <moqui.basic.EnumerationType enumTypeId="AlertType" description="Alert Type"/>
+    <moqui.basic.Enumeration enumTypeId="AlertType" enumId="ALERT_EMAIL" description="Email" sequenceNum="1"/>
+    <moqui.basic.Enumeration enumTypeId="AlertType" enumId="ALERT_SMS" description="SMS" sequenceNum="2"/>
+    <moqui.basic.Enumeration enumTypeId="AlertType" enumId="ALERT_PUSH" description="Push Notification" sequenceNum="3"/>
+
+    <!-- Alert templates -->
+    <CommonsAlertTpl alertTypeEnumId="ALERT_SMS" templateId="AtResetPwd" templateName="Reset Password" body="Your new password is: {password}"/>
+    <CommonsAlertTpl alertTypeEnumId="ALERT_SMS" templateId="AtOtp" templateName="One Time Password" body="Your one time password is: {password}"/>
+
+    <!-- Text comparison operator -->
+    <moqui.basic.EnumerationType enumTypeId="TextComparisonOperator" description="Text Comparison Operator"/>
+    <moqui.basic.Enumeration enumTypeId="TextComparisonOperator" enumId="TXT_EQUALS" description="Equals" sequenceNum="1"/>
+    <moqui.basic.Enumeration enumTypeId="TextComparisonOperator" enumId="TXT_NOT_EQUALS" description="Not Equals" sequenceNum="2"/>
+    <moqui.basic.Enumeration enumTypeId="TextComparisonOperator" enumId="TXT_STARTS_WITH" description="Starts With" sequenceNum="3"/>
+    <moqui.basic.Enumeration enumTypeId="TextComparisonOperator" enumId="TXT_ENDS_WITH" description="Ends With" sequenceNum="4"/>
+    <moqui.basic.Enumeration enumTypeId="TextComparisonOperator" enumId="TXT_CONTAINS" description="Contains" sequenceNum="5"/>
+    <moqui.basic.Enumeration enumTypeId="TextComparisonOperator" enumId="TXT_NOT_CONTAINS" description="Not Contains" sequenceNum="6"/>
+    <moqui.basic.Enumeration enumTypeId="TextComparisonOperator" enumId="TXT_EMPTY" description="Empty" sequenceNum="7"/>
+    <moqui.basic.Enumeration enumTypeId="TextComparisonOperator" enumId="TXT_NOT_EMPTY" description="Not Empty" sequenceNum="8"/>
+
+    <!-- Number comparison operator -->
+    <moqui.basic.EnumerationType enumTypeId="NumberComparisonOperator" description="Number Comparison Operator"/>
+    <moqui.basic.Enumeration enumTypeId="NumberComparisonOperator" enumId="NUM_EQUALS" description="Equals" sequenceNum="1"/>
+    <moqui.basic.Enumeration enumTypeId="NumberComparisonOperator" enumId="NUM_NOT_EQUALS" description="Not Equals" sequenceNum="2"/>
+    <moqui.basic.Enumeration enumTypeId="NumberComparisonOperator" enumId="NUM_LESS_THAN" description="Less Than" sequenceNum="3"/>
+    <moqui.basic.Enumeration enumTypeId="NumberComparisonOperator" enumId="NUM_LESS_THAN_EQUALS" description="Less Than or Equals" sequenceNum="4"/>
+    <moqui.basic.Enumeration enumTypeId="NumberComparisonOperator" enumId="NUM_GREATER_THAN" description="Greater Than" sequenceNum="5"/>
+    <moqui.basic.Enumeration enumTypeId="NumberComparisonOperator" enumId="NUM_GREATER_THAN_EQUALS" description="Greater Than or Equals" sequenceNum="6"/>
+
+    <!-- Date comparison operator -->
+    <moqui.basic.EnumerationType enumTypeId="DateComparisonOperator" description="Date Comparison Operator"/>
+    <moqui.basic.Enumeration enumTypeId="DateComparisonOperator" enumId="DATE_EQUALS" description="Equals" sequenceNum="1"/>
+    <moqui.basic.Enumeration enumTypeId="DateComparisonOperator" enumId="DATE_NOT_EQUALS" description="Not Equals" sequenceNum="2"/>
+    <moqui.basic.Enumeration enumTypeId="DateComparisonOperator" enumId="DATE_BEFORE" description="Before" sequenceNum="3"/>
+    <moqui.basic.Enumeration enumTypeId="DateComparisonOperator" enumId="DATE_AFTER" description="After" sequenceNum="4"/>
+
+    <!-- Boolean comparison operator -->
+    <moqui.basic.EnumerationType enumTypeId="BooleanComparisonOperator" description="Boolean Comparison Operator"/>
+    <moqui.basic.Enumeration enumTypeId="BooleanComparisonOperator" enumId="BOOL_TRUE" description="True" sequenceNum="1"/>
+    <moqui.basic.Enumeration enumTypeId="BooleanComparisonOperator" enumId="BOOL_FALSE" description="False" sequenceNum="2"/>
+
+</entity-facade-xml>

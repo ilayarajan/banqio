@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <!-- Application -->
+    <view-entity entity-name="AppVersionDetail" package="commons.server">
+        <member-entity entity-alias="version" entity-name="commons.server.AppVersion"/>
+        <member-entity entity-alias="alertType" entity-name="moqui.basic.Enumeration" join-from-alias="version">
+            <key-map field-name="alertTypeEnumId"/>
+        </member-entity>
+
+        <alias-all entity-alias="version"/>
+        <alias name="alertTypeDescription" entity-alias="alertType" field="description"/>
+    </view-entity>
+
+    <!-- Scene -->
+    <view-entity entity-name="SceneDetail" package="commons.server">
+        <member-entity entity-alias="scene" entity-name="commons.server.Scene"/>
+        <member-entity entity-alias="app" entity-name="commons.server.App" join-from-alias="scene">
+            <key-map field-name="appId"/>
+        </member-entity>
+
+        <alias-all entity-alias="scene"/>
+        <alias name="appName" entity-alias="app" field="appName"/>
+        <alias name="appDescription" entity-alias="app" field="description"/>
+    </view-entity>
+    <view-entity entity-name="SceneIncludeDetail" package="commons.server">
+        <member-entity entity-alias="sceneInclude" entity-name="commons.server.SceneInclude"/>
+        <member-entity entity-alias="otherScene" entity-name="commons.server.Scene" join-from-alias="sceneInclude">
+            <key-map field-name="otherSceneId"/>
+        </member-entity>
+
+        <alias-all entity-alias="sceneInclude"/>
+        <alias-all entity-alias="otherScene">
+            <exclude field="sceneId"/>
+            <exclude field="creationDate"/>
+        </alias-all>
+    </view-entity>
+    <view-entity entity-name="SceneVisitDetail" package="commons.server">
+        <member-entity entity-alias="sceneVisit" entity-name="commons.server.SceneVisit"/>
+        <member-entity entity-alias="scene" entity-name="commons.server.Scene" join-from-alias="sceneVisit">
+            <key-map field-name="sceneId"/>
+        </member-entity>
+        <member-entity entity-alias="visit" entity-name="moqui.server.Visit" join-from-alias="sceneVisit">
+            <key-map field-name="visitId"/>
+        </member-entity>
+        <member-entity entity-alias="app" entity-name="commons.server.App" join-from-alias="scene">
+            <key-map field-name="appId"/>
+        </member-entity>
+
+        <alias-all entity-alias="sceneVisit"/>
+        <alias-all entity-alias="scene">
+            <exclude field="sceneId"/>
+            <exclude field="creationDate"/>
+        </alias-all>
+        <alias-all entity-alias="visit">
+            <exclude field="visitId"/>
+        </alias-all>
+        <alias name="appName" entity-alias="app" field="appName"/>
+    </view-entity>
+
+    <!-- Configuration -->
+    <view-entity entity-name="ConfigurationDetail" package="commons.server">
+        <member-entity entity-alias="config" entity-name="commons.server.Configuration"/>
+        <member-entity entity-alias="app" entity-name="commons.server.App" join-from-alias="config">
+            <key-map field-name="appId"/>
+        </member-entity>
+        <member-entity entity-alias="grp" entity-name="commons.server.ConfigurationGroup" join-from-alias="config">
+            <key-map field-name="groupId"/>
+        </member-entity>
+
+        <alias-all entity-alias="config"/>
+        <alias name="appName" entity-alias="app" field="appName"/>
+        <alias name="appDescription" entity-alias="app" field="description"/>
+        <alias name="groupName" entity-alias="grp" field="groupName"/>
+        <alias name="groupDescription" entity-alias="grp" field="description"/>
+        <alias name="groupPosition" entity-alias="grp" field="position"/>
+    </view-entity>
+
+</entities>

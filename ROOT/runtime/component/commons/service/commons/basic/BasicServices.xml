@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Language -->
+    <service verb="find" noun="Language">
+        <in-parameters>
+            <auto-parameters entity-name="commons.basic.Language">
+                <exclude field-name="disabled"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="languageList" type="List">
+                <parameter name="language" type="Map">
+                    <auto-parameters entity-name="commons.basic.Language"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <entity-find entity-name="commons.basic.Language" list="languageList">
+                <search-form-inputs paginate="false"/>
+                <econdition field-name="disabled" value="N"/>
+                <order-by field-name="languageName"/>
+            </entity-find>
+            <script>result.put("languageList", languageList)</script>
+        </actions>
+    </service>
+
+    <!-- Enumeration -->
+    <service verb="find" noun="Enumeration" type="java" location="com.netvariant.commons.basic.EnumerationService" method="findEnumerations">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.Enumeration"/>
+            <parameter name="ignoreEnumId"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="pageNoLimit" type="Boolean" default="false"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="enumerationList" type="List">
+                <parameter name="enumeration" type="Map">
+                    <auto-parameters entity-name="moqui.basic.Enumeration"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="Enumeration" type="java" location="com.netvariant.commons.basic.EnumerationService" method="createEnumeration">
+        <in-parameters>
+            <parameter name="enumTypeId"/>
+            <parameter name="description"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="enumId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="Enumeration" type="java" location="com.netvariant.commons.basic.EnumerationService" method="updateEnumeration">
+        <in-parameters>
+            <parameter name="enumId"/>
+            <parameter name="description"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="enumId"/>
+        </out-parameters>
+    </service>
+    <service verb="delete" noun="Enumeration" type="java" location="com.netvariant.commons.basic.EnumerationService" method="deleteEnumeration">
+        <in-parameters>
+            <parameter name="enumId"/>
+        </in-parameters>
+        <out-parameters/>
+    </service>
+
+    <!-- Geo -->
+    <service verb="find" noun="Geo" type="java" location="com.netvariant.commons.basic.GeoService" method="findGeos">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.Geo"/>
+            <parameter name="ignoreGeoId"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="pageNoLimit" type="Boolean" default="false"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="geoList" type="List">
+                <parameter name="geo" type="Map">
+                    <auto-parameters entity-name="moqui.basic.Geo"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="GeoAssoc" type="java" location="com.netvariant.commons.basic.GeoService" method="findGeoAssocs">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.GeoAssocAndFromDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="geoList" type="List">
+                <parameter name="geo" type="Map">
+                    <auto-parameters entity-name="moqui.basic.GeoAssocAndFromDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="Geo" type="java" location="com.netvariant.commons.basic.GeoService" method="createGeo">
+        <in-parameters>
+            <parameter name="geoId"/>
+            <parameter name="geoTypeEnumId"/>
+            <parameter name="geoName"/>
+            <parameter name="geoNameLocal"/>
+            <parameter name="geoCodeAlpha2"/>
+            <parameter name="geoCodeAlpha3"/>
+            <parameter name="geoCodeNumeric"/>
+            <parameter name="wellKnownText"/>
+            <parameter name="disabled"/>
+            <parameter name="assocGeoId"/>
+            <parameter name="geoAssocTypeEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="geoId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="Geo" type="java" location="com.netvariant.commons.basic.GeoService" method="updateGeo">
+        <in-parameters>
+            <parameter name="geoId"/>
+            <parameter name="geoName"/>
+            <parameter name="geoNameLocal"/>
+            <parameter name="geoCodeAlpha2"/>
+            <parameter name="geoCodeAlpha3"/>
+            <parameter name="geoCodeNumeric"/>
+            <parameter name="wellKnownText"/>
+            <parameter name="disabled"/>
+            <parameter name="assocGeoId"/>
+            <parameter name="geoAssocTypeEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="geoId"/>
+        </out-parameters>
+    </service>
+
+    <!-- Uom -->
+    <service verb="find" noun="Uom" type="java" location="com.netvariant.commons.basic.UomService" method="findUoms">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.Uom"/>
+            <parameter name="ignoreUomId"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="pageNoLimit" type="Boolean" default="false"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="uomList" type="List">
+                <parameter name="uom" type="Map">
+                    <auto-parameters entity-name="moqui.basic.Uom"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="Uom" type="java" location="com.netvariant.commons.basic.UomService" method="createUom">
+        <in-parameters>
+            <parameter name="uomId"/>
+            <parameter name="uomTypeEnumId"/>
+            <parameter name="abbreviation"/>
+            <parameter name="description"/>
+            <parameter name="numericCode"/>
+            <parameter name="disabled"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="uomId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="Uom" type="java" location="com.netvariant.commons.basic.UomService" method="updateUom">
+        <in-parameters>
+            <parameter name="uomId"/>
+            <parameter name="abbreviation"/>
+            <parameter name="description"/>
+            <parameter name="numericCode"/>
+            <parameter name="disabled"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="uomId"/>
+        </out-parameters>
+    </service>
+
+    <!-- Status item -->
+    <service verb="find" noun="StatusItem" type="java" location="com.netvariant.commons.basic.StatusItemService" method="findStatusItems">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.StatusItem"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="statusItemList" type="List">
+                <parameter name="statusItem" type="Map">
+                    <auto-parameters entity-name="moqui.basic.StatusItem"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="StatusItem" type="java" location="com.netvariant.commons.basic.StatusItemService" method="createStatusItem">
+        <in-parameters>
+            <parameter name="statusTypeId"/>
+            <parameter name="statusCode"/>
+            <parameter name="description"/>
+            <parameter name="sequenceNum" type="Integer"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="statusId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="StatusItem" type="java" location="com.netvariant.commons.basic.StatusItemService" method="updateStatusItem">
+        <in-parameters>
+            <parameter name="statusId"/>
+            <parameter name="statusCode"/>
+            <parameter name="description"/>
+            <parameter name="sequenceNum" type="Integer"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="statusId"/>
+        </out-parameters>
+    </service>
+
+    <!-- Status flow -->
+    <service verb="find" noun="StatusFlow" type="java" location="com.netvariant.commons.basic.StatusFlowService" method="findStatusFlows">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.StatusFlow"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="statusFlowList" type="List">
+                <parameter name="statusFlow" type="Map">
+                    <auto-parameters entity-name="moqui.basic.StatusFlow"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="StatusFlowItem" type="java" location="com.netvariant.commons.basic.StatusFlowService" method="findStatusFlowItems">
+        <in-parameters>
+            <parameter name="statusFlowId"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="statusItemList" type="List">
+                <parameter name="statusItem" type="Map">
+                    <auto-parameters entity-name="moqui.basic.StatusFlowItemDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="StatusFlowItem" type="java" location="com.netvariant.commons.basic.StatusFlowService" method="createStatusFlowItem">
+        <in-parameters>
+            <parameter name="statusFlowId"/>
+            <parameter name="statusId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="statusFlowId"/>
+            <parameter name="statusId"/>
+        </out-parameters>
+    </service>
+    <service verb="initial" noun="StatusFlowItem" type="java" location="com.netvariant.commons.basic.StatusFlowService" method="initialStatusFlowItem">
+        <in-parameters>
+            <parameter name="statusFlowId"/>
+            <parameter name="statusId"/>
+        </in-parameters>
+    </service>
+    <service verb="delete" noun="StatusFlowItem" type="java" location="com.netvariant.commons.basic.StatusFlowService" method="deleteStatusFlowItem">
+        <in-parameters>
+            <parameter name="statusFlowId"/>
+            <parameter name="statusId"/>
+        </in-parameters>
+    </service>
+    <service verb="find" noun="StatusFlowTransition" type="java" location="com.netvariant.commons.basic.StatusFlowService" method="findStatusFlowTransitions">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.StatusFlowTransitionDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="transitionList" type="List">
+                <parameter name="transition" type="Map">
+                    <auto-parameters entity-name="moqui.basic.StatusFlowTransitionDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="StatusFlowTransition" type="java" location="com.netvariant.commons.basic.StatusFlowService" method="createStatusFlowTransition">
+        <in-parameters>
+            <parameter name="statusFlowId"/>
+            <parameter name="statusId"/>
+            <parameter name="toStatusId"/>
+            <parameter name="transitionName"/>
+            <parameter name="transitionSequence"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="statusFlowId"/>
+            <parameter name="statusId"/>
+            <parameter name="toStatusId"/>
+        </out-parameters>
+    </service>
+    <service verb="delete" noun="StatusFlowTransition" type="java" location="com.netvariant.commons.basic.StatusFlowService" method="deleteStatusFlowTransition">
+        <in-parameters>
+            <parameter name="statusFlowId"/>
+            <parameter name="statusId"/>
+            <parameter name="toStatusId"/>
+        </in-parameters>
+    </service>
+
+    <!-- Data source -->
+    <service verb="find" noun="DataSource" type="java" location="com.netvariant.commons.basic.DataSourceService" method="findDataSources">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.DataSource"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="pageNoLimit" type="Boolean" default="false"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="dataSourceList" type="List">
+                <parameter name="dataSource" type="Map">
+                    <auto-parameters entity-name="moqui.basic.DataSourceDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+
+    <!-- Alert template -->
+    <service verb="find" noun="AlertTemplate" type="java" location="com.netvariant.commons.basic.AlertTemplateService" method="findAlertTemplates">
+        <in-parameters>
+            <auto-parameters entity-name="commons.basic.AlertTemplateDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="alertTemplateList" type="List">
+                <parameter name="alertTemplate" type="Map">
+                    <auto-parameters entity-name="commons.basic.AlertTemplateDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="AlertTemplate" type="java" location="com.netvariant.commons.basic.AlertTemplateService" method="createAlertTemplate">
+        <in-parameters>
+            <parameter name="templateName"/>
+            <parameter name="alertTypeEnumId"/>
+            <parameter name="body" allow-html="safe"/>
+            <parameter name="style"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="templateId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="AlertTemplate" type="java" location="com.netvariant.commons.basic.AlertTemplateService" method="updateAlertTemplate">
+        <in-parameters>
+            <parameter name="templateId"/>
+            <parameter name="templateName"/>
+            <parameter name="alertTypeEnumId"/>
+            <parameter name="body" allow-html="safe"/>
+            <parameter name="style"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="templateId"/>
+        </out-parameters>
+    </service>
+
+    <!-- Content -->
+    <service verb="save" noun="ContentFile" type="java" location="com.netvariant.commons.basic.ContentService" method="saveContentFile">
+        <in-parameters>
+            <parameter name="contentFile" type="org.apache.commons.fileupload.FileItem"/>
+            <parameter name="contentFileParameter"/>
+            <parameter name="contentLocation"/>
+        </in-parameters>
+    </service>
+
+</services>

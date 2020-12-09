@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- User update type -->
+    <moqui.basic.EnumerationType enumTypeId="UserUpdateType" description="User Update Type"/>
+    <moqui.basic.Enumeration enumTypeId="UserUpdateType" enumId="USER_UPDATE_CREATE" description="Create"/>
+    <moqui.basic.Enumeration enumTypeId="UserUpdateType" enumId="USER_UPDATE_UPDATE" description="Update"/>
+    <moqui.basic.Enumeration enumTypeId="UserUpdateType" enumId="USER_UPDATE_APPROVE" description="Approve"/>
+    <moqui.basic.Enumeration enumTypeId="UserUpdateType" enumId="USER_UPDATE_ENABLE" description="Enable"/>
+    <moqui.basic.Enumeration enumTypeId="UserUpdateType" enumId="USER_UPDATE_DISABLE" description="Disable"/>
+    <moqui.basic.Enumeration enumTypeId="UserUpdateType" enumId="USER_UPDATE_LOGOUT" description="Logout"/>
+
+</entity-facade-xml>

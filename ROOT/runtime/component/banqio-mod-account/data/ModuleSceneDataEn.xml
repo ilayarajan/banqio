@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Navigation -->
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_ACCOUNTS" messageValue="Accounts"/>
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_ACCOUNT_TYPES" messageValue="Account Types"/>
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_ACCOUNT_STATUSES" messageValue="Account Statuses"/>
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_TRANSACTION_TYPES" messageValue="Transaction Types"/>
+
+    <!-- Account Setup scene -->
+    <CommonsScene sceneId="ADM_ACCT_SETUP_BOARD" appId="ADM" sceneName="Account Setup Dashboard" lookupName="/secure/setup/account/dashboard">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Account Setup"/>
+    </CommonsScene>
+
+    <!-- Browse account types scene -->
+    <CommonsScene sceneId="ADM_BROWSE_ACCT_TYPE" appId="ADM" sceneName="Browse Account Types" lookupName="/secure/setup/account/account-type/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Account Types"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Create account type scene -->
+    <CommonsScene sceneId="ADM_CREATE_ACCT_TYPE" appId="ADM" sceneName="Create Account Type" lookupName="/secure/setup/account/account-type/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Account Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Modify account type scene -->
+    <CommonsScene sceneId="ADM_MODIFY_ACCT_TYPE" appId="ADM" sceneName="Modify Account Type" lookupName="/secure/setup/account/account-type/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Account Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- View account type scene -->
+    <CommonsScene sceneId="ADM_VIEW_ACCT_TYPE" appId="ADM" sceneName="View Account Type" lookupName="/secure/setup/account/account-type/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Account Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+    </CommonsScene>
+
+    <!-- Browse account statuses scene -->
+    <CommonsScene sceneId="ADM_BROWSE_ACCT_STAT" appId="ADM" sceneName="Browse Account Statuses" lookupName="/secure/setup/account/account-status/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Account Statuses"/>
+        <messages messageKey="STATUS_NAME" messageValue="Status Name"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Create account status scene -->
+    <CommonsScene sceneId="ADM_CREATE_ACCT_STAT" appId="ADM" sceneName="Create Account Status" lookupName="/secure/setup/account/account-status/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Account Status"/>
+        <messages messageKey="STATUS_NAME" messageValue="Status Name"/>
+        <messages messageKey="STATUS_BEHAVIOUR" messageValue="Status Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Modify account status scene -->
+    <CommonsScene sceneId="ADM_MODIFY_ACCT_STAT" appId="ADM" sceneName="Modify Account Status" lookupName="/secure/setup/account/account-status/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Account Status"/>
+        <messages messageKey="STATUS_NAME" messageValue="Status Name"/>
+        <messages messageKey="STATUS_BEHAVIOUR" messageValue="Status Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- View account status scene -->
+    <CommonsScene sceneId="ADM_VIEW_ACCT_STAT" appId="ADM" sceneName="View Account Status" lookupName="/secure/setup/account/account-status/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Account Status"/>
+        <messages messageKey="STATUS_NAME" messageValue="Status Name"/>
+        <messages messageKey="STATUS_BEHAVIOUR" messageValue="Status Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+    </CommonsScene>
+
+    <!-- Browse transaction types scene -->
+    <CommonsScene sceneId="ADM_BROWSE_TRX_TYPE" appId="ADM" sceneName="Browse Transaction Types" lookupName="/secure/setup/account/transaction-type/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Transaction Types"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Create transaction type scene -->
+    <CommonsScene sceneId="ADM_CREATE_TRX_TYPE" appId="ADM" sceneName="Create Transaction Type" lookupName="/secure/setup/account/transaction-type/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Transaction Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Modify transaction type scene -->
+    <CommonsScene sceneId="ADM_MODIFY_TRX_TYPE" appId="ADM" sceneName="Modify Transaction Type" lookupName="/secure/setup/account/transaction-type/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Transaction Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- View transaction type scene -->
+    <CommonsScene sceneId="ADM_VIEW_TRX_TYPE" appId="ADM" sceneName="View Transaction Type" lookupName="/secure/setup/account/transaction-type/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Transaction Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+    </CommonsScene>
+    
+</entity-facade-xml>

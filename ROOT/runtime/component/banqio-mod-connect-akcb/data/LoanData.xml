@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Loan types -->
+    <BanqioLoanType typeId="Lt3510" externalTypeId="3510" typeBehaviourEnumId="LOAN_TYPE_PERSON" typeName="Personal Installment Loan"/>
+    <BanqioLoanType typeId="Lt3520" externalTypeId="3520" typeBehaviourEnumId="LOAN_TYPE_PERSON" typeName="Personal Revolving Loan"/>
+    <BanqioLoanType typeId="Lt3530" externalTypeId="3530" typeBehaviourEnumId="LOAN_TYPE_MORTGAGE" typeName="Mortgage-Property"/>
+    <BanqioLoanType typeId="Lt3535" externalTypeId="3535" typeBehaviourEnumId="LOAN_TYPE_VEHICLE" typeName="Auto Loan"/>
+    <BanqioLoanType typeId="Lt3540" externalTypeId="3540" typeBehaviourEnumId="LOAN_TYPE_MORTGAGE" typeName="Mortgage-Equity Release"/>
+    <BanqioLoanType typeId="Lt3610" externalTypeId="3610" typeBehaviourEnumId="LOAN_TYPE_CORP" typeName="Bridge Loan"/>
+    <BanqioLoanType typeId="Lt3620" externalTypeId="3620" typeBehaviourEnumId="LOAN_TYPE_CORP" typeName="Project Finance"/>
+    <BanqioLoanType typeId="Lt3630" externalTypeId="3630" typeBehaviourEnumId="LOAN_TYPE_CORP" typeName="Construction Loan"/>
+    <BanqioLoanType typeId="Lt3635" externalTypeId="3635" typeBehaviourEnumId="LOAN_TYPE_CORP" typeName="Syndicated loan"/>
+    <BanqioLoanType typeId="Lt3640" externalTypeId="3640" typeBehaviourEnumId="LOAN_TYPE_CORP" typeName="Bills Discounting"/>
+    <BanqioLoanType typeId="Lt3641" externalTypeId="3641" typeBehaviourEnumId="LOAN_TYPE_CORP" typeName="Cheque Dis"/>
+    <BanqioLoanType typeId="Lt3645" externalTypeId="3645" typeBehaviourEnumId="LOAN_TYPE_CORP" typeName="Export LC Discounting"/>
+    <BanqioLoanType typeId="Lt3649" externalTypeId="3649" typeBehaviourEnumId="LOAN_TYPE_CORP" typeName="Receivables Discounting"/>
+    <BanqioLoanType typeId="Lt3650" externalTypeId="3650" typeBehaviourEnumId="LOAN_TYPE_CORP" typeName="Amortising Term Loan"/>
+    <BanqioLoanType typeId="Lt3660" externalTypeId="3660" typeBehaviourEnumId="LOAN_TYPE_CORP" typeName="Revolving Term Loan"/>
+    <BanqioLoanType typeId="Lt3670" externalTypeId="3670" typeBehaviourEnumId="LOAN_TYPE_CORP" typeName="PPC Discounting"/>
+    <BanqioLoanType typeId="Lt3680" externalTypeId="3680" typeBehaviourEnumId="LOAN_TYPE_CORP" typeName="Invoice Discounting"/>
+    <BanqioLoanType typeId="Lt3690" externalTypeId="3690" typeBehaviourEnumId="LOAN_TYPE_CORP" typeName="Clean Import Loan"/>
+    <BanqioLoanType typeId="Lt3693" externalTypeId="3693" typeBehaviourEnumId="LOAN_TYPE_CORP" typeName="Import LC Refinance"/>
+    <BanqioLoanType typeId="Lt3696" externalTypeId="3696" typeBehaviourEnumId="LOAN_TYPE_CORP" typeName="Inward Collection Refinance"/>
+    <BanqioLoanType typeId="Lt3700" externalTypeId="3700" typeBehaviourEnumId="LOAN_TYPE_CORP" typeName="Business Installment Loan"/>
+    <BanqioLoanType typeId="Lt3710" externalTypeId="3710" typeBehaviourEnumId="LOAN_TYPE_CORP" typeName="Commercial Vehicle Finance"/>
+    <BanqioLoanType typeId="Lt3720" externalTypeId="3720" typeBehaviourEnumId="LOAN_TYPE_CORP" typeName="Finance Lease"/>
+    <BanqioLoanType typeId="Lt3730" externalTypeId="3730" typeBehaviourEnumId="LOAN_TYPE_CORP" typeName="Working Capital Loan"/>
+    <BanqioLoanType typeId="Lt49900" externalTypeId="49900" typeBehaviourEnumId="LOAN_TYPE_CORP" typeName="Syndicated Loans"/>
+    <BanqioLoanType typeId="Lt49905" externalTypeId="49905" typeBehaviourEnumId="LOAN_TYPE_CORP" typeName="Revolving Multi Currency Syndicated Loan"/>
+    <BanqioLoanType typeId="Lt49910" externalTypeId="49910" typeBehaviourEnumId="LOAN_TYPE_CORP" typeName="Non Revolving Syndicated Loan"/>
+
+    <!-- Loan types L10n -->
+    <moqui.basic.LocalizedEntityField entityName="banqio.loan.LoanType" fieldName="typeName" locale="en" pkValue="Lt3510" localized="Personal Loan"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.loan.LoanType" fieldName="typeName" locale="en" pkValue="Lt3520" localized="Personal Loan"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.loan.LoanType" fieldName="typeName" locale="en" pkValue="Lt3530" localized="Mortgage"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.loan.LoanType" fieldName="typeName" locale="en" pkValue="Lt3535" localized="Auto Loan"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.loan.LoanType" fieldName="typeName" locale="en" pkValue="Lt3540" localized="Mortgage"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.loan.LoanType" fieldName="typeName" locale="en" pkValue="Lt3610" localized="Bridge Loan"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.loan.LoanType" fieldName="typeName" locale="en" pkValue="Lt3620" localized="Project Finance"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.loan.LoanType" fieldName="typeName" locale="en" pkValue="Lt3630" localized="Construction Loan"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.loan.LoanType" fieldName="typeName" locale="en" pkValue="Lt3635" localized="Syndicated loan"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.loan.LoanType" fieldName="typeName" locale="en" pkValue="Lt3640" localized="Bills Discounting"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.loan.LoanType" fieldName="typeName" locale="en" pkValue="Lt3641" localized="Cheque Discounting"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.loan.LoanType" fieldName="typeName" locale="en" pkValue="Lt3645" localized="Export LC Discounting"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.loan.LoanType" fieldName="typeName" locale="en" pkValue="Lt3649" localized="Receivables Discounting"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.loan.LoanType" fieldName="typeName" locale="en" pkValue="Lt3650" localized="Amortising Term Loan"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.loan.LoanType" fieldName="typeName" locale="en" pkValue="Lt3660" localized="Revolving Term Loan"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.loan.LoanType" fieldName="typeName" locale="en" pkValue="Lt3670" localized="PPC Discounting"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.loan.LoanType" fieldName="typeName" locale="en" pkValue="Lt3680" localized="Invoice Discounting"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.loan.LoanType" fieldName="typeName" locale="en" pkValue="Lt3690" localized="Clean Import Loan"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.loan.LoanType" fieldName="typeName" locale="en" pkValue="Lt3693" localized="Import LC Refinance"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.loan.LoanType" fieldName="typeName" locale="en" pkValue="Lt3696" localized="Inward Collection Refinance"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.loan.LoanType" fieldName="typeName" locale="en" pkValue="Lt3700" localized="Business Installment Loan"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.loan.LoanType" fieldName="typeName" locale="en" pkValue="Lt3710" localized="Commercial Vehicle Finance"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.loan.LoanType" fieldName="typeName" locale="en" pkValue="Lt3720" localized="Finance Lease"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.loan.LoanType" fieldName="typeName" locale="en" pkValue="Lt3730" localized="Working Capital Loan"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.loan.LoanType" fieldName="typeName" locale="en" pkValue="Lt49900" localized="Syndicated loan"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.loan.LoanType" fieldName="typeName" locale="en" pkValue="Lt49905" localized="Syndicated loan"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.loan.LoanType" fieldName="typeName" locale="en" pkValue="Lt49910" localized="Syndicated loan"/>
+
+</entity-facade-xml>

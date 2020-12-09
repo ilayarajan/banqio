@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Configuration groups -->
+    <CommonsConfigGrp groupId="EFS_PRINT" groupName="EFS Print" description="EFS print endpoint configuration" position="36"/>
+    <CommonsConfigGrp groupId="EFS_SEARCH" groupName="EFS Search" description="EFS search endpoint configuration" position="36"/>
+    <CommonsConfigGrp groupId="T24_IB" groupName="T24 Internet Banking" description="T24 internet banking endpoint configuration" position="37"/>
+    <CommonsConfigGrp groupId="T24_PIB" groupName="T24 PIB" description="T24 PIB endpoint configuration" position="38"/>
+    <CommonsConfigGrp groupId="T24_BIBS" groupName="T24 BIBS" description="T24 BIBS endpoint configuration" position="38"/>
+    <CommonsConfigGrp groupId="CSC" groupName="CSC" description="CSC endpoint configuration" position="39"/>
+
+    <!-- General configuration -->
+    <CommonsConfig configurationId="BASE_GEO" definedValue="QAT"/>
+    <CommonsConfig configurationId="BASE_CCY" definedValue="QAR"/>
+    <CommonsConfig appId="COR" groupId="GENERAL" configurationId="T24_FIXED_PAYMENT_FILENAME" editorTypeEnumId="CONF_EDITOR_RADIO" configurationName="T24 Fixed Payment Filenames" description="T24 payment filenames fixed as 'BULK.csv'" defaultValue="false" definedValue="false">
+        <options optionSeqId="1" optionValue="true" optionText="Yes"/>
+        <options optionSeqId="2" optionValue="false" optionText="No"/>
+    </CommonsConfig>
+    <CommonsConfig appId="COR" groupId="GENERAL" configurationId="EFS_ACCT_STMT_APP" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="EFS Account Statement Application" description="EFS account statement application name" defaultValue="Account_statement" definedValue="Account_statement"/>
+    <CommonsConfig appId="COR" groupId="GENERAL" configurationId="EFS_TRX_ADVICE_APP" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="EFS Transaction Advice Application" description="EFS transaction advice application name" defaultValue="FT ADVICE" definedValue="FT ADVICE"/>
+    <CommonsConfig appId="COR" groupId="GENERAL" configurationId="EFS_DEPOSIT_RCPT_APP" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="EFS Deposit Receipt Application" description="EFS deposit receipt application name" defaultValue="FD_RECEIPT" definedValue="FD_RECEIPT"/>
+
+    <!-- Content configuration -->
+    <CommonsConfig appId="COR" groupId="CONTENT" configurationId="T24_HOLD_DIR" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="T24 Hold Folder" description="T24 hold file NFS folder path" defaultValue="/opt/t24share/ibupload/BIBSREPORT" definedValue="/opt/t24share/ibupload/BIBSREPORT"/>
+    <CommonsConfig appId="COR" groupId="CONTENT" configurationId="T24_MT940_DIR" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="T24 MT940 Folder" description="T24 MT940 statement NFS folder path" defaultValue="/opt/t24share/ibupload/BIBSREPORT" definedValue="/opt/t24share/ibupload/BIBSREPORT"/>
+    <CommonsConfig appId="COR" groupId="CONTENT" configurationId="T24_PAYMENT_REQ_DIR" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="T24 Payment Request Folder" description="T24 bulk payment request folder path" defaultValue="/opt/t24share/ibupload/BIBSREQ" definedValue="/opt/t24share/ibupload/BIBSREQ"/>
+    <CommonsConfig appId="COR" groupId="CONTENT" configurationId="T24_PAYMENT_RESP_DIR" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="T24 Payment Response Folder" description="T24 bulk payment response folder path" defaultValue="/opt/t24share/ibupload/BIBSRESP" definedValue="/opt/t24share/ibupload/BIBSRESP"/>
+    <CommonsConfig appId="COR" groupId="CONTENT" configurationId="CARD_STMT_DIR" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Credit Card Statement Folder" description="Credit card statement folder path" defaultValue="/opt/tomcat/common/banqio/stmts/" definedValue="/opt/tomcat/common/banqio/stmts/"/>
+
+    <!-- Alert configuration -->
+    <CommonsConfig appId="COR" groupId="ALERT" configurationId="SMS_GW_URL" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="SMS Gateway URL" description="SMS gateway API URL" defaultValue="https://nvsmsapp.akb.qa:9001/smsvariant/api/sms" definedValue="https://nvsmsapp.akb.qa:9001/smsvariant/api/sms"/>
+    <CommonsConfig appId="COR" groupId="ALERT" configurationId="SMS_GW_USERNAME" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="SMS Gateway Username" description="SMS gateway authentication username" defaultValue="banker-personal" definedValue="banker-personal"/>
+    <CommonsConfig appId="COR" groupId="ALERT" configurationId="SMS_GW_PASSWORD" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="SMS Gateway Password" description="SMS gateway authentication password" defaultValue="6tBUjcBsFivuONmFYZdg" definedValue="6tBUjcBsFivuONmFYZdg"/>
+    <CommonsConfig appId="COR" groupId="ALERT" configurationId="SMS_SRC_ADDR" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="SMS Source Address" description="Source address for outgoing SMS" defaultValue="al khaliji" definedValue="al khaliji"/>
+
+    <!-- EFS print configuration -->
+    <CommonsConfig appId="COR" groupId="EFS_PRINT" configurationId="EFS_PRINT_ENDPOINT" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Endpoint" description="Webservice endpoint URL" defaultValue="http://efsprint.akb.qa/webinputport/T24Input/?preview" definedValue="http://efsprint.akb.qa/webinputport/T24Input/?preview"/>
+
+    <!-- EFS search configuration -->
+    <CommonsConfig appId="COR" groupId="EFS_SEARCH" configurationId="EFS_SEARCH_ENDPOINT" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Endpoint" description="Webservice endpoint URL" defaultValue="http://efsarch.akb.qa/pdmwebsvc-v2.1/search" definedValue="http://efsarch.akb.qa/pdmwebsvc-v2.1/search"/>
+    <CommonsConfig appId="COR" groupId="EFS_SEARCH" configurationId="EFS_SEARCH_USERNAME" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Username" description="Authentication username" defaultValue="admin" definedValue="admin"/>
+    <CommonsConfig appId="COR" groupId="EFS_SEARCH" configurationId="EFS_SEARCH_PASSWORD" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Password" description="Authentication password" defaultValue="password" definedValue="password"/>
+    <CommonsConfig appId="COR" groupId="EFS_SEARCH" configurationId="EFS_SEARCH_TIMEOUT" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Timeout" description="Web service request timeout" defaultValue="30000" definedValue="30000"/>
+
+    <!-- T24 IB configuration -->
+    <CommonsConfig appId="COR" groupId="T24_IB" configurationId="T24_IB_ENDPOINT" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Endpoint" description="Webservice endpoint URL" defaultValue="http://t24web:8080/InternetBanking/services" definedValue="http://t24web:8080/InternetBanking/services"/>
+    <CommonsConfig appId="COR" groupId="T24_IB" configurationId="T24_IB_USERNAME" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Username" description="Authentication username" defaultValue="IB.USER" definedValue="IB.USER"/>
+    <CommonsConfig appId="COR" groupId="T24_IB" configurationId="T24_IB_PASSWORD" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Password" description="Authentication password" defaultValue="any" definedValue="any"/>
+    <CommonsConfig appId="COR" groupId="T24_IB" configurationId="T24_IB_COMPANY" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Company" description="Authentication company" defaultValue="" definedValue=""/>
+    <CommonsConfig appId="COR" groupId="T24_IB" configurationId="T24_IB_TIMEOUT" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Timeout" description="Web service request timeout" defaultValue="30000" definedValue="30000"/>
+
+    <!-- T24 PIB configuration -->
+    <CommonsConfig appId="COR" groupId="T24_PIB" configurationId="T24_PIB_ENDPOINT" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Endpoint" description="Webservice endpoint URL" defaultValue="http://t24web:8080/PIB/services" definedValue="http://t24web:8080/PIB/services"/>
+    <CommonsConfig appId="COR" groupId="T24_PIB" configurationId="T24_PIB_USERNAME" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Username" description="Authentication username" defaultValue="IB.USER" definedValue="IB.USER"/>
+    <CommonsConfig appId="COR" groupId="T24_PIB" configurationId="T24_PIB_PASSWORD" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Password" description="Authentication password" defaultValue="any" definedValue="any"/>
+    <CommonsConfig appId="COR" groupId="T24_PIB" configurationId="T24_PIB_COMPANY" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Company" description="Authentication company" defaultValue="" definedValue=""/>
+    <CommonsConfig appId="COR" groupId="T24_PIB" configurationId="T24_PIB_TIMEOUT" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Timeout" description="Web service request timeout" defaultValue="30000" definedValue="30000"/>
+
+    <!-- T24 BIBS configuration -->
+    <CommonsConfig appId="COR" groupId="T24_BIBS" configurationId="T24_BIBS_ENDPOINT" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Endpoint" description="Webservice endpoint URL" defaultValue="http://t24web:8080/BIBS/services" definedValue="http://t24web:8080/BIBS/services"/>
+    <CommonsConfig appId="COR" groupId="T24_BIBS" configurationId="T24_BIBS_USERNAME" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Username" description="Authentication username" defaultValue="IB.USER" definedValue="IB.USER"/>
+    <CommonsConfig appId="COR" groupId="T24_BIBS" configurationId="T24_BIBS_PASSWORD" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Password" description="Authentication password" defaultValue="any" definedValue="any"/>
+    <CommonsConfig appId="COR" groupId="T24_BIBS" configurationId="T24_BIBS_COMPANY" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Company" description="Authentication company" defaultValue="" definedValue=""/>
+    <CommonsConfig appId="COR" groupId="T24_BIBS" configurationId="T24_BIBS_TIMEOUT" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Timeout" description="Web service request timeout" defaultValue="30000" definedValue="30000"/>
+
+    <!-- CSC configuration -->
+    <CommonsConfig appId="COR" groupId="CSC" configurationId="CSC_ENDPOINT" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Endpoint" description="Webservice endpoint URL" defaultValue="https://serv-websrvc-t.cscgroup.com/wsm" definedValue="https://serv-websrvc-t.cscgroup.com/wsm"/>
+    <CommonsConfig appId="COR" groupId="CSC" configurationId="CSC_CLIENT_ID" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Client ID" description="Authentication username" defaultValue="KLJI" definedValue="KLJI"/>
+    <CommonsConfig appId="COR" groupId="CSC" configurationId="CSC_SECRET" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Secret" description="Authentication password" defaultValue="WahzEL!b41" definedValue="WahzEL!b41"/>
+    <CommonsConfig appId="COR" groupId="CSC" configurationId="CSC_INSTITUTION_NUM" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Institution Number" description="Institution number" defaultValue="00000158" definedValue="00000158"/>
+    <CommonsConfig appId="COR" groupId="CSC" configurationId="CSC_BASE_CCY" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Base Currency" description="Base currency code" defaultValue="634" definedValue="634"/>
+
+</entity-facade-xml>

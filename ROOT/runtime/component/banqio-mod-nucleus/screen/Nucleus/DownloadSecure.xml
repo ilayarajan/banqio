@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        default-menu-include="false">
+
+    <transition name="downloadPartyContent" read-only="true" require-session-token="false">
+        <service-call name="banqio.party.PartyServices.download#PartyContent" in-map="context"/>
+        <default-response type="none"/>
+    </transition>
+    <transition name="downloadCommunicationEventContent" read-only="true" require-session-token="false">
+        <service-call name="banqio.party.PartyServices.download#CommunicationEventContent" in-map="context"/>
+        <default-response type="none"/>
+    </transition>
+
+    <widgets/>
+
+</screen>

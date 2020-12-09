@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Navigation -->
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_BANKS" messageValue="Banks"/>
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_BRANCHES" messageValue="Branches"/>
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_TELLERS" messageValue="Tellers"/>
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_TELLER_TYPES" messageValue="Teller Types"/>
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_TELLER_STATUSES" messageValue="Teller Statuses"/>
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_BANK_FUNCTIONS" messageValue="Bank Functions"/>
+
+    <!-- Bank setup scene -->
+    <CommonsScene sceneId="ADM_BANK_SETUP_BOARD" appId="ADM" sceneName="Bank Setup Dashboard" lookupName="/secure/setup/bank/dashboard">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Bank Setup"/>
+    </CommonsScene>
+
+    <!-- Browse teller types scene -->
+    <CommonsScene sceneId="ADM_BROWSE_TELL_TYPE" appId="ADM" sceneName="Browse Teller Types" lookupName="/secure/setup/bank/teller-type/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Teller Types"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Create teller type scene -->
+    <CommonsScene sceneId="ADM_CREATE_TELL_TYPE" appId="ADM" sceneName="Create Teller Type" lookupName="/secure/setup/bank/teller-type/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Teller Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Modify teller type scene -->
+    <CommonsScene sceneId="ADM_MODIFY_TELL_TYPE" appId="ADM" sceneName="Modify Teller Type" lookupName="/secure/setup/bank/teller-type/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Teller Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- View teller type scene -->
+    <CommonsScene sceneId="ADM_VIEW_TELL_TYPE" appId="ADM" sceneName="View Teller Type" lookupName="/secure/setup/bank/teller-type/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Teller Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+    </CommonsScene>
+
+    <!-- Browse teller statuses scene -->
+    <CommonsScene sceneId="ADM_BROWSE_TELL_STAT" appId="ADM" sceneName="Browse Teller Statuses" lookupName="/secure/setup/bank/teller-status/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Teller Statuses"/>
+        <messages messageKey="STATUS_NAME" messageValue="Status Name"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Create teller status scene -->
+    <CommonsScene sceneId="ADM_CREATE_TELL_STAT" appId="ADM" sceneName="Create Teller Status" lookupName="/secure/setup/bank/teller-status/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Teller Status"/>
+        <messages messageKey="STATUS_NAME" messageValue="Status Name"/>
+        <messages messageKey="STATUS_BEHAVIOUR" messageValue="Status Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Modify teller status scene -->
+    <CommonsScene sceneId="ADM_MODIFY_TELL_STAT" appId="ADM" sceneName="Modify Teller Status" lookupName="/secure/setup/bank/teller-status/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Teller Status"/>
+        <messages messageKey="STATUS_NAME" messageValue="Status Name"/>
+        <messages messageKey="STATUS_BEHAVIOUR" messageValue="Status Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- View teller status scene -->
+    <CommonsScene sceneId="ADM_VIEW_TELL_STAT" appId="ADM" sceneName="View Teller Status" lookupName="/secure/setup/bank/teller-status/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Teller Status"/>
+        <messages messageKey="STATUS_NAME" messageValue="Status Name"/>
+        <messages messageKey="STATUS_BEHAVIOUR" messageValue="Status Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+    </CommonsScene>
+
+    <!-- Browse bank functions scene -->
+    <CommonsScene sceneId="ADM_BROWSE_BNK_FUNC" appId="ADM" sceneName="Browse Bank Functions" lookupName="/secure/setup/bank/bank-function/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Bank Functions"/>
+        <messages messageKey="FUNCTION_NAME" messageValue="Function Name"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Create bank function scene -->
+    <CommonsScene sceneId="ADM_CREATE_BNK_FUNC" appId="ADM" sceneName="Create Bank Function" lookupName="/secure/setup/bank/bank-function/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Bank Function"/>
+        <messages messageKey="FUNCTION_NAME" messageValue="Function Name"/>
+        <messages messageKey="ICON_CLASS" messageValue="Icon Class"/>
+        <messages messageKey="DESCRIPTION" messageValue="Description"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+    </CommonsScene>
+
+    <!-- Modify bank function scene -->
+    <CommonsScene sceneId="ADM_MODIFY_BNK_FUNC" appId="ADM" sceneName="Modify Bank Function" lookupName="/secure/setup/bank/bank-function/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Bank Function"/>
+        <messages messageKey="FUNCTION_NAME" messageValue="Function Name"/>
+        <messages messageKey="ICON_CLASS" messageValue="Icon Class"/>
+        <messages messageKey="DESCRIPTION" messageValue="Description"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+    </CommonsScene>
+
+    <!-- View bank function scene -->
+    <CommonsScene sceneId="ADM_VIEW_BNK_FUNC" appId="ADM" sceneName="View Bank Function" lookupName="/secure/setup/bank/bank-function/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Bank Function"/>
+        <messages messageKey="FUNCTION_NAME" messageValue="Function Name"/>
+        <messages messageKey="ICON_CLASS" messageValue="Icon Class"/>
+        <messages messageKey="DESCRIPTION" messageValue="Description"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+    </CommonsScene>
+
+    <!-- Bank dashboard scene -->
+    <CommonsScene sceneId="ADM_BANK_BOARD" appId="ADM" sceneName="Bank Dashboard" lookupName="/secure/bank/dashboard">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Banks"/>
+    </CommonsScene>
+
+    <!-- Browse banks scene -->
+    <CommonsScene sceneId="ADM_BROWSE_BANK" appId="ADM" sceneName="Browse Banks" lookupName="/secure/bank/bank/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Banks"/>
+        <messages messageKey="BANK_NAME" messageValue="Bank Name"/>
+        <messages messageKey="COUNTRY" messageValue="Country"/>
+        <messages messageKey="INSTITUTION_CODE" messageValue="Institution Code"/>
+        <messages messageKey="NATIONAL_CODE" messageValue="National Code"/>
+    </CommonsScene>
+
+    <!-- Import bank scene -->
+    <CommonsScene sceneId="ADM_IMPORT_BANK" appId="ADM" sceneName="Import Bank" lookupName="/secure/bank/bank/import">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Import Banks"/>
+        <messages messageKey="FILE_TYPE" messageValue="File Type"/>
+        <messages messageKey="BIC" messageValue="BIC Directory"/>
+        <messages messageKey="TEXT" messageValue="Text File"/>
+        <messages messageKey="FILE" messageValue="File"/>
+        <messages messageKey="ROW_PATTERN" messageValue="Row Pattern"/>
+        <messages messageKey="PATTERN_HELP" messageValue="Supported keywords: {bankName}, {institutionCode}, {branchCode}, {swiftCode}, {countryName}, {countryAlpha2Code}, {countryAlpha3Code}, {address1}, {address2}, {addressDistrict}, {addressCity}, {addressProvince}, {addressPostalCode}, {addressPoBox}"/>
+        <messages messageKey="SKIP_FIRST_ROW" messageValue="Skip First Row"/>
+    </CommonsScene>
+
+    <!-- Create bank scene -->
+    <CommonsScene sceneId="ADM_CREATE_BANK" appId="ADM" sceneName="Create Bank" lookupName="/secure/bank/bank/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Bank"/>
+        <messages messageKey="BANK_NAME" messageValue="Bank Name"/>
+        <messages messageKey="COUNTRY" messageValue="Country"/>
+        <messages messageKey="INSTITUTION_CODE" messageValue="Institution Code"/>
+        <messages messageKey="NATIONAL_CODE" messageValue="National Code"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+        <messages messageKey="COUNTRY_NAME" messageValue="Country Name"/>
+        <messages messageKey="NUMERIC_CODE" messageValue="Numeric Code"/>
+        <messages messageKey="ALPHA2_CODE" messageValue="Alpha-2 Code"/>
+        <messages messageKey="ALPHA3_CODE" messageValue="Alpha-3 Code"/>
+    </CommonsScene>
+
+    <!-- Modify bank scene -->
+    <CommonsScene sceneId="ADM_MODIFY_BANK" appId="ADM" sceneName="Modify Bank" lookupName="/secure/bank/bank/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Bank"/>
+        <messages messageKey="BANK_NAME" messageValue="Bank Name"/>
+        <messages messageKey="COUNTRY" messageValue="Country"/>
+        <messages messageKey="INSTITUTION_CODE" messageValue="Institution Code"/>
+        <messages messageKey="NATIONAL_CODE" messageValue="National Code"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+        <messages messageKey="COUNTRY_NAME" messageValue="Country Name"/>
+        <messages messageKey="NUMERIC_CODE" messageValue="Numeric Code"/>
+        <messages messageKey="ALPHA2_CODE" messageValue="Alpha-2 Code"/>
+        <messages messageKey="ALPHA3_CODE" messageValue="Alpha-3 Code"/>
+    </CommonsScene>
+
+    <!-- View bank scene -->
+    <CommonsScene sceneId="ADM_VIEW_BANK" appId="ADM" sceneName="View Bank" lookupName="/secure/bank/bank/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Bank"/>
+        <messages messageKey="BANK_NAME" messageValue="Bank Name"/>
+        <messages messageKey="COUNTRY" messageValue="Country"/>
+        <messages messageKey="INSTITUTION_CODE" messageValue="Institution Code"/>
+        <messages messageKey="NATIONAL_CODE" messageValue="National Code"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+        <messages messageKey="BRANCHES" messageValue="Branches"/>
+        <messages messageKey="BRANCH_NAME" messageValue="Branch Name"/>
+        <messages messageKey="BRANCH_CODE" messageValue="Branch Code"/>
+    </CommonsScene>
+
+    <!-- Browse branches scene -->
+    <CommonsScene sceneId="ADM_BROWSE_BRANCH" appId="ADM" sceneName="Browse Branches" lookupName="/secure/bank/branch/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Branches"/>
+        <messages messageKey="BRANCH_NAME" messageValue="Branch Name"/>
+        <messages messageKey="BANK_NAME" messageValue="Bank Name"/>
+        <messages messageKey="BRANCH_CODE" messageValue="Branch Code"/>
+        <messages messageKey="COUNTRY" messageValue="Country"/>
+    </CommonsScene>
+
+    <!-- Create branch scene -->
+    <CommonsScene sceneId="ADM_CREATE_BRANCH" appId="ADM" sceneName="Create Branch" lookupName="/secure/bank/branch/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <includes otherSceneId="ADM_BROWSE_BANK"/>
+        <includes otherSceneId="ADM_BROWSE_COUNTRY"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Branch"/>
+        <messages messageKey="GENERAL" messageValue="General"/>
+        <messages messageKey="ADDRESS" messageValue="Address"/>
+        <messages messageKey="FUNCTIONS" messageValue="Functions"/>
+        <messages messageKey="BRANCH_NAME" messageValue="Branch Name"/>
+        <messages messageKey="BANK" messageValue="Bank"/>
+        <messages messageKey="BRANCH_CODE" messageValue="Branch Code"/>
+        <messages messageKey="SWIFT_CODE" messageValue="SWIFT Code"/>
+        <messages messageKey="LOCAL_CODE" messageValue="Local Code"/>
+        <messages messageKey="RECORD_KEY" messageValue="Record Key"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="ACCEPTS_PAYMENTS" messageValue="Accepts Payments"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+        <messages messageKey="ADDRESS_1" messageValue="Address 1"/>
+        <messages messageKey="ADDRESS_2" messageValue="Address 2"/>
+        <messages messageKey="DISTRICT" messageValue="District"/>
+        <messages messageKey="CITY" messageValue="City"/>
+        <messages messageKey="PROVINCE" messageValue="Province"/>
+        <messages messageKey="COUNTRY" messageValue="Country"/>
+        <messages messageKey="POSTAL_CODE" messageValue="Postal Code"/>
+        <messages messageKey="POSTAL_CODE_EXT" messageValue="Postal Code Extension"/>
+        <messages messageKey="PO_BOX" messageValue="Post Office Box"/>
+    </CommonsScene>
+
+    <!-- Modify branch scene -->
+    <CommonsScene sceneId="ADM_MODIFY_BRANCH" appId="ADM" sceneName="Modify Branch" lookupName="/secure/bank/branch/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <includes otherSceneId="ADM_BROWSE_BANK"/>
+        <includes otherSceneId="ADM_BROWSE_COUNTRY"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Branch"/>
+        <messages messageKey="GENERAL" messageValue="General"/>
+        <messages messageKey="ADDRESS" messageValue="Address"/>
+        <messages messageKey="FUNCTIONS" messageValue="Functions"/>
+        <messages messageKey="BRANCH_NAME" messageValue="Branch Name"/>
+        <messages messageKey="BANK" messageValue="Bank"/>
+        <messages messageKey="BRANCH_CODE" messageValue="Branch Code"/>
+        <messages messageKey="SWIFT_CODE" messageValue="SWIFT Code"/>
+        <messages messageKey="LOCAL_CODE" messageValue="Local Code"/>
+        <messages messageKey="RECORD_KEY" messageValue="Record Key"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="ACCEPTS_PAYMENTS" messageValue="Accepts Payments"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+        <messages messageKey="ADDRESS_1" messageValue="Address 1"/>
+        <messages messageKey="ADDRESS_2" messageValue="Address 2"/>
+        <messages messageKey="DISTRICT" messageValue="District"/>
+        <messages messageKey="CITY" messageValue="City"/>
+        <messages messageKey="PROVINCE" messageValue="Province"/>
+        <messages messageKey="COUNTRY" messageValue="Country"/>
+        <messages messageKey="POSTAL_CODE" messageValue="Postal Code"/>
+        <messages messageKey="POSTAL_CODE_EXT" messageValue="Postal Code Extension"/>
+        <messages messageKey="PO_BOX" messageValue="Post Office Box"/>
+    </CommonsScene>
+
+    <!-- View branch scene -->
+    <CommonsScene sceneId="ADM_VIEW_BRANCH" appId="ADM" sceneName="View Branch" lookupName="/secure/bank/branch/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Branch"/>
+        <messages messageKey="BRANCH_NAME" messageValue="Branch Name"/>
+        <messages messageKey="BANK" messageValue="Bank"/>
+        <messages messageKey="BRANCH_CODE" messageValue="Branch Code"/>
+        <messages messageKey="SWIFT_CODE" messageValue="SWIFT Code"/>
+        <messages messageKey="LOCAL_CODE" messageValue="Local Code"/>
+        <messages messageKey="RECORD_KEY" messageValue="Record Key"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="ACCEPTS_PAYMENTS" messageValue="Accepts Payments"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+        <messages messageKey="FUNCTIONS" messageValue="Functions"/>
+        <messages messageKey="ADDRESS" messageValue="Address"/>
+        <messages messageKey="ADDRESS_1" messageValue="Address 1"/>
+        <messages messageKey="ADDRESS_2" messageValue="Address 2"/>
+        <messages messageKey="DISTRICT" messageValue="District"/>
+        <messages messageKey="CITY" messageValue="City"/>
+        <messages messageKey="PROVINCE" messageValue="Province"/>
+        <messages messageKey="COUNTRY" messageValue="Country"/>
+        <messages messageKey="POSTAL_CODE" messageValue="Postal Code"/>
+        <messages messageKey="POSTAL_CODE_EXT" messageValue="Postal Code Extension"/>
+        <messages messageKey="PO_BOX" messageValue="Post Office Box"/>
+        <messages messageKey="CONTACTS" messageValue="Contacts"/>
+        <messages messageKey="TYPE" messageValue="Type"/>
+        <messages messageKey="DETAILS" messageValue="Details"/>
+        <messages messageKey="PURPOSE" messageValue="Purpose"/>
+        <messages messageKey="PHONE" messageValue="Phone"/>
+        <messages messageKey="EMAIL" messageValue="Email"/>
+        <messages messageKey="COUNTRY_CODE" messageValue="Country Code"/>
+        <messages messageKey="AREA_CODE" messageValue="Area Code"/>
+        <messages messageKey="PHONE_NUMBER" messageValue="Phone Number"/>
+        <messages messageKey="EXTENSION" messageValue="Extension"/>
+        <messages messageKey="EMAIL_ADDRESS" messageValue="Email Address"/>
+        <messages messageKey="WORK_SHIFTS" messageValue="Work Shifts"/>
+        <messages messageKey="DAY" messageValue="Day"/>
+        <messages messageKey="START_TIME" messageValue="Start Time"/>
+        <messages messageKey="END_TIME" messageValue="End Time"/>
+    </CommonsScene>
+
+    <!-- Browse tellers scene -->
+    <CommonsScene sceneId="ADM_BROWSE_TELL" appId="ADM" sceneName="Browse Tellers" lookupName="/secure/bank/teller/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Tellers"/>
+        <messages messageKey="TELLER_NAME" messageValue="Teller Name"/>
+        <messages messageKey="TYPE" messageValue="Type"/>
+    </CommonsScene>
+
+    <!-- Create teller scene -->
+    <CommonsScene sceneId="ADM_CREATE_TELLER" appId="ADM" sceneName="Create Teller" lookupName="/secure/bank/teller/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Teller"/>
+        <messages messageKey="GENERAL" messageValue="General"/>
+        <messages messageKey="ADDRESS" messageValue="Address"/>
+        <messages messageKey="FUNCTIONS" messageValue="Functions"/>
+        <messages messageKey="TELLER_NAME" messageValue="Teller Name"/>
+        <messages messageKey="TELLER_TYPE" messageValue="Teller Type"/>
+        <messages messageKey="TELLER_STATUS" messageValue="Teller Status"/>
+        <messages messageKey="PSEUDO_ID" messageValue="Pseudo ID"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+        <messages messageKey="LATITUDE" messageValue="Latitude"/>
+        <messages messageKey="LONGITUDE" messageValue="Longitude"/>
+        <messages messageKey="ELEVATION" messageValue="Elevation"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="STATUS_NAME" messageValue="Status Name"/>
+    </CommonsScene>
+
+    <!-- Modify teller scene -->
+    <CommonsScene sceneId="ADM_MODIFY_TELLER" appId="ADM" sceneName="Modify Teller" lookupName="/secure/bank/teller/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Teller"/>
+        <messages messageKey="GENERAL" messageValue="General"/>
+        <messages messageKey="ADDRESS" messageValue="Address"/>
+        <messages messageKey="FUNCTIONS" messageValue="Functions"/>
+        <messages messageKey="TELLER_NAME" messageValue="Teller Name"/>
+        <messages messageKey="TELLER_TYPE" messageValue="Teller Type"/>
+        <messages messageKey="TELLER_STATUS" messageValue="Teller Status"/>
+        <messages messageKey="PSEUDO_ID" messageValue="Pseudo ID"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+        <messages messageKey="LATITUDE" messageValue="Latitude"/>
+        <messages messageKey="LONGITUDE" messageValue="Longitude"/>
+        <messages messageKey="ELEVATION" messageValue="Elevation"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="STATUS_NAME" messageValue="Status Name"/>
+    </CommonsScene>
+
+    <!-- View teller scene -->
+    <CommonsScene sceneId="ADM_VIEW_TELLER" appId="ADM" sceneName="View Teller" lookupName="/secure/bank/teller/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Teller"/>
+        <messages messageKey="TELLER_NAME" messageValue="Teller Name"/>
+        <messages messageKey="TELLER_TYPE" messageValue="Teller Type"/>
+        <messages messageKey="TELLER_STATUS" messageValue="Teller Status"/>
+        <messages messageKey="PSEUDO_ID" messageValue="Pseudo ID"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+        <messages messageKey="FUNCTIONS" messageValue="Functions"/>
+        <messages messageKey="ADDRESS" messageValue="Address"/>
+    </CommonsScene>
+
+</entity-facade-xml>

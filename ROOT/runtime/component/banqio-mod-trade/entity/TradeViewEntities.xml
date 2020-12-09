@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <!-- LC -->
+    <view-entity entity-name="LcTypeDetail" package="banqio.trade">
+        <member-entity entity-alias="lcType" entity-name="banqio.trade.LcType"/>
+        <member-entity entity-alias="typeBehaviour" entity-name="moqui.basic.Enumeration" join-from-alias="lcType">
+            <key-map field-name="typeBehaviourEnumId"/>
+        </member-entity>
+
+        <alias-all entity-alias="lcType"/>
+        <alias name="typeBehaviourDescription" entity-alias="typeBehaviour" field="description"/>
+    </view-entity>
+
+    <!-- LG -->
+    <view-entity entity-name="LgTypeDetail" package="banqio.trade">
+        <member-entity entity-alias="lgType" entity-name="banqio.trade.LgType"/>
+        <member-entity entity-alias="typeBehaviour" entity-name="moqui.basic.Enumeration" join-from-alias="lgType">
+            <key-map field-name="typeBehaviourEnumId"/>
+        </member-entity>
+
+        <alias-all entity-alias="lgType"/>
+        <alias name="typeBehaviourDescription" entity-alias="typeBehaviour" field="description"/>
+    </view-entity>
+
+    <!-- DC -->
+    <view-entity entity-name="DcTypeDetail" package="banqio.trade">
+        <member-entity entity-alias="dcType" entity-name="banqio.trade.DcType"/>
+        <member-entity entity-alias="typeBehaviour" entity-name="moqui.basic.Enumeration" join-from-alias="dcType">
+            <key-map field-name="typeBehaviourEnumId"/>
+        </member-entity>
+
+        <alias-all entity-alias="dcType"/>
+        <alias name="typeBehaviourDescription" entity-alias="typeBehaviour" field="description"/>
+    </view-entity>
+
+</entities>

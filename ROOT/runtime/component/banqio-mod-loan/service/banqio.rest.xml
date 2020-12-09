@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/rest-api-2.1.xsd"
+          name="loan"
+          displayName="Loan REST API"
+          version="1.0.0">
+
+    <resource name="loanType" description="Loan Type API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.loan.LoanServices.find#LoanType"/>
+        </method>
+        <method type="post">
+            <service name="banqio.loan.LoanServices.create#LoanType"/>
+        </method>
+        <method type="patch">
+            <service name="banqio.loan.LoanServices.update#LoanType"/>
+        </method>
+        <resource name="localization">
+            <method type="get">
+                <service name="banqio.loan.LoanServices.find#LoanTypeL10n"/>
+            </method>
+            <method type="post">
+                <service name="banqio.loan.LoanServices.create#LoanTypeL10n"/>
+            </method>
+            <method type="patch">
+                <service name="banqio.loan.LoanServices.update#LoanTypeL10n"/>
+            </method>
+            <method type="delete">
+                <service name="banqio.loan.LoanServices.delete#LoanTypeL10n"/>
+            </method>
+        </resource>
+    </resource>
+    <resource name="loanStatus" description="Loan Status API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.loan.LoanServices.find#LoanStatus"/>
+        </method>
+        <method type="post">
+            <service name="banqio.loan.LoanServices.create#LoanStatus"/>
+        </method>
+        <method type="patch">
+            <service name="banqio.loan.LoanServices.update#LoanStatus"/>
+        </method>
+        <resource name="localization">
+            <method type="get">
+                <service name="banqio.loan.LoanServices.find#LoanStatusL10n"/>
+            </method>
+            <method type="post">
+                <service name="banqio.loan.LoanServices.create#LoanStatusL10n"/>
+            </method>
+            <method type="patch">
+                <service name="banqio.loan.LoanServices.update#LoanStatusL10n"/>
+            </method>
+            <method type="delete">
+                <service name="banqio.loan.LoanServices.delete#LoanStatusL10n"/>
+            </method>
+        </resource>
+    </resource>
+
+</resource>

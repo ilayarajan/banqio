@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <moqui.basic.LocalizedMessage original="GEO_NAME_REQUIRED" locale="en" localized="Name is required."/>
+    <moqui.basic.LocalizedMessage original="GEO_NOT_FOUND" locale="en" localized="Geo not found."/>
+    <moqui.basic.LocalizedMessage original="GEO_CREATED_SUCCESSFULLY" locale="en" localized="Geo created successfully."/>
+    <moqui.basic.LocalizedMessage original="GEO_UPDATED_SUCCESSFULLY" locale="en" localized="Geo updated successfully."/>
+    <moqui.basic.LocalizedMessage original="GEO_ALREADY_EXISTS" locale="en" localized="Geo already exists."/>
+
+    <moqui.basic.LocalizedMessage original="UOM_ABBREVIATION_REQUIRED" locale="en" localized="Abbreviation is required."/>
+    <moqui.basic.LocalizedMessage original="UOM_DESCRIPTION_REQUIRED" locale="en" localized="Description is required."/>
+    <moqui.basic.LocalizedMessage original="UOM_NOT_FOUND" locale="en" localized="Uom not found."/>
+    <moqui.basic.LocalizedMessage original="UOM_CREATED_SUCCESSFULLY" locale="en" localized="Uom created successfully."/>
+    <moqui.basic.LocalizedMessage original="UOM_UPDATED_SUCCESSFULLY" locale="en" localized="Uom updated successfully."/>
+
+    <moqui.basic.LocalizedMessage original="STATUS_FLOW_NOT_FOUND" locale="en" localized="Status flow not found."/>
+    <moqui.basic.LocalizedMessage original="STATUS_FLOW_ITEM_ALREADY_EXISTS" locale="en" localized="Status item already exists."/>
+    <moqui.basic.LocalizedMessage original="STATUS_FLOW_ITEM_NOT_FOUND" locale="en" localized="Status item not found."/>
+    <moqui.basic.LocalizedMessage original="STATUS_FLOW_ITEM_CREATED_SUCCESSFULLY" locale="en" localized="Status flow item created successfully."/>
+    <moqui.basic.LocalizedMessage original="STATUS_FLOW_ITEM_DELETED_SUCCESSFULLY" locale="en" localized="Status flow item deleted successfully."/>
+    <moqui.basic.LocalizedMessage original="STATUS_FLOW_ITEM_INIT_SET_SUCCESSFULLY" locale="en" localized="Initial status flow item set successfully."/>
+    <moqui.basic.LocalizedMessage original="STATUS_FLOW_TRANSITION_CREATED_SUCCESSFULLY" locale="en" localized="Status flow transition created successfully."/>
+    <moqui.basic.LocalizedMessage original="STATUS_FLOW_TRANSITION_DELETED_SUCCESSFULLY" locale="en" localized="Status flow transition deleted successfully."/>
+
+    <moqui.basic.LocalizedMessage original="STATUS_ITEM_TYPE_REQUIRED" locale="en" localized="Status type is required."/>
+    <moqui.basic.LocalizedMessage original="STATUS_ITEM_DESCRIPTION_REQUIRED" locale="en" localized="Description is required."/>
+    <moqui.basic.LocalizedMessage original="STATUS_ITEM_NOT_FOUND" locale="en" localized="Status item not found."/>
+    <moqui.basic.LocalizedMessage original="STATUS_ITEM_CREATED_SUCCESSFULLY" locale="en" localized="Status item created successfully."/>
+    <moqui.basic.LocalizedMessage original="STATUS_ITEM_UPDATED_SUCCESSFULLY" locale="en" localized="Status item updated successfully."/>
+
+    <moqui.basic.LocalizedMessage original="ENTITY_FIELD_NOT_FOUND" locale="en" localized="Entity field not found."/>
+
+    <moqui.basic.LocalizedMessage original="CONTENT_FILE_NOT_FOUND" locale="en" localized="Content file not found."/>
+
+    <moqui.basic.LocalizedMessage original="LOCALIZE_FIELD_ENTITY_NAME_REQUIRED" locale="en" localized="Entity name is required."/>
+    <moqui.basic.LocalizedMessage original="LOCALIZE_FIELD_FIELD_NAME_REQUIRED" locale="en" localized="Field name is required."/>
+    <moqui.basic.LocalizedMessage original="LOCALIZE_FIELD_PK_REQUIRED" locale="en" localized="Primary key value is required."/>
+    <moqui.basic.LocalizedMessage original="LOCALIZE_FIELD_NOT_FOUND" locale="en" localized="Localized field not found."/>
+    <moqui.basic.LocalizedMessage original="LOCALIZE_FIELD_ALREADY_EXISTS" locale="en" localized="Localized field already exists."/>
+    <moqui.basic.LocalizedMessage original="LOCALIZE_FIELD_CREATED_SUCCESSFULLY" locale="en" localized="Localized field created successfully."/>
+    <moqui.basic.LocalizedMessage original="LOCALIZE_FIELD_UPDATED_SUCCESSFULLY" locale="en" localized="Localized field updated successfully."/>
+    <moqui.basic.LocalizedMessage original="LOCALIZE_FIELD_DELETED_SUCCESSFULLY" locale="en" localized="Localized field deleted successfully."/>
+
+    <moqui.basic.LocalizedMessage original="ACL_OBJECT_ID_REQUIRED" locale="en" localized="Object ID is required."/>
+    <moqui.basic.LocalizedMessage original="ACL_ACCESS_DENIED" locale="en" localized="Access to object is denied."/>
+
+    <moqui.basic.LocalizedMessage original="USER_NOT_FOUND" locale="en" localized="User not found."/>
+
+    <moqui.basic.LocalizedMessage original="PASSWORD_REQUIRED" locale="en" localized="Password is required."/>
+    <moqui.basic.LocalizedMessage original="PASSWORD_NOT_FOUND" locale="en" localized="Password not found."/>
+    <moqui.basic.LocalizedMessage original="PASSWORD_INCORRECT" locale="en" localized="Password specified is incorrect."/>
+
+    <moqui.basic.LocalizedMessage original="ROLE_TYPE_NOT_FOUND" locale="en" localized="Role type not found."/>
+
+    <moqui.basic.LocalizedMessage original="APP_NOT_FOUND" locale="en" localized="App not found."/>
+    <moqui.basic.LocalizedMessage original="APP_NOT_AUTHORIZED" locale="en" localized="App not authorized."/>
+    <moqui.basic.LocalizedMessage original="APP_BRANDING_UPDATED_SUCCESSFULLY" locale="en" localized="App branding update successfully."/>
+
+    <moqui.basic.LocalizedMessage original="SCENE_LOOKUP_NAME_REQUIRED" locale="en" localized="Lookup name is required."/>
+    <moqui.basic.LocalizedMessage original="SCENE_NOT_FOUND" locale="en" localized="Scene not found."/>
+
+    <moqui.basic.LocalizedMessage original="ALERT_TEMPLATE_NAME_REQUIRED" locale="en" localized="Alert template name is required."/>
+    <moqui.basic.LocalizedMessage original="ALERT_TEMPLATE_NOT_FOUND" locale="en" localized="Alert template not found."/>
+    <moqui.basic.LocalizedMessage original="ALERT_TEMPLATE_CREATED_SUCCESSFULLY" locale="en" localized="Alert template created successfully."/>
+    <moqui.basic.LocalizedMessage original="ALERT_TEMPLATE_UPDATED_SUCCESSFULLY" locale="en" localized="Alert template updated successfully."/>
+
+    <moqui.basic.LocalizedMessage original="WORKFLOW_NAME_REQUIRED" locale="en" localized="Workflow name is required."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_TYPE_REQUIRED" locale="en" localized="Workflow type is required."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_STATUS_FLOW_REQUIRED" locale="en" localized="Status flow is required."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_NOT_FOUND" locale="en" localized="Workflow not found."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_DISABLED" locale="en" localized="Workflow is disabled."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_NOT_APPROVED" locale="en" localized="Workflow has not yet been approved."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_ALREADY_APPROVED" locale="en" localized="Workflow already approved."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_APPROVAL_BY_CREATOR" locale="en" localized="Workflow cannot be approved by creator."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_APPROVED_SUCCESSFULLY" locale="en" localized="Workflow approved successfully."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_CREATED_SUCCESSFULLY" locale="en" localized="Workflow created successfully."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_DUPLICATED_SUCCESSFULLY" locale="en" localized="Workflow duplicated successfully."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_UPDATED_SUCCESSFULLY" locale="en" localized="Workflow updated successfully."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_DESIGNED_SUCCESSFULLY" locale="en" localized="Workflow designed successfully."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_MODEL_VALIDATION_FAILED" locale="en" localized="Workflow model validation failed: ${errors}."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_MODEL_ONE_TRANSITION_TO_PORT" locale="en" localized="${activityName} activity must have at least one transition to port ${portName}."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_MODEL_ONE_TRANSITION_FROM_PORT" locale="en" localized="${activityName} activity must have only one transition from port ${portName}."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_MODEL_ACTIVITY_NO_CROWDS" locale="en" localized="${activityName} activity does not have any crowds."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_MODEL_ACTIVITY_NO_SERVICE" locale="en" localized="${activityName} activity does not have any service."/>
+
+    <moqui.basic.LocalizedMessage original="WORKFLOW_VARIABLE_NAME_REQUIRED" locale="en" localized="Variable name is required."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_VARIABLE_NAME_UNSUPPORTED" locale="en" localized="Variable name contains unsupported characters."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_VARIABLE_NOT_FOUND" locale="en" localized="Workflow variable not found."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_VARIABLE_CREATED_SUCCESSFULLY" locale="en" localized="Workflow variable created successfully."/>
+
+    <moqui.basic.LocalizedMessage original="WORKFLOW_INITIATOR_NOT_FOUND" locale="en" localized="Workflow initiator not found."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_INITIATOR_USER_GROUP_NOT_FOUND" locale="en" localized="User group not found."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_INITIATOR_DATE_RANGE_INVALID" locale="en" localized="Invalid date range."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_INITIATOR_CREATED_SUCCESSFULLY" locale="en" localized="Workflow initiator created successfully."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_INITIATOR_EXPIRED_SUCCESSFULLY" locale="en" localized="Workflow initiator expired successfully."/>
+
+    <moqui.basic.LocalizedMessage original="WORKFLOW_INSTANCE_PK_REQUIRED" locale="en" localized="Primary key value is required."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_INSTANCE_ENTITY_NOT_FOUND" locale="en" localized="No matching entity found."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_INSTANCE_ALREADY_EXISTS" locale="en" localized="Workflow instance for entity already exists."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_INSTANCE_NOT_FOUND" locale="en" localized="Workflow instance not found."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_INSTANCE_NO_ENTRY_ACTIVITY" locale="en" localized="Workflow instance has no entry activity."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_INSTANCE_NOT_OPERABLE" locale="en" localized="Workflow instance not in operable state."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_INSTANCE_ACCESS_DENIED" locale="en" localized="Access to workflow instance denied."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_INSTANCE_CREATED_SUCCESSFULLY" locale="en" localized="Workflow instance created successfully."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_INSTANCE_STARTED_SUCCESSFULLY" locale="en" localized="Workflow instance started successfully."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_INSTANCE_SUSPENDED_SUCCESSFULLY" locale="en" localized="Workflow instance suspended successfully."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_INSTANCE_RESUMED_SUCCESSFULLY" locale="en" localized="Workflow instance resumed successfully."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_INSTANCE_ABORTED_SUCCESSFULLY" locale="en" localized="Workflow instance aborted successfully."/>
+
+    <moqui.basic.LocalizedMessage original="WORKFLOW_INSTANCE_VARIABLE_NOT_FOUND" locale="en" localized="Workflow instance variable not found."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_INSTANCE_VARIABLE_EXPRESSION_REQUIRED" locale="en" localized="Value expression is required."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_INSTANCE_VARIABLE_EVALUATION_ERROR" locale="en" localized="Error evaluating value expression."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_INSTANCE_VARIABLE_UPDATED_SUCCESSFULLY" locale="en" localized="Workflow instance variable updated successfully."/>
+
+    <moqui.basic.LocalizedMessage original="WORKFLOW_INSTANCE_TASK_NOT_FOUND" locale="en" localized="Workflow instance task not found."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_INSTANCE_TASK_ACCESS_DENIED" locale="en" localized="Access to task denied."/>
+    <moqui.basic.LocalizedMessage original="WORKFLOW_INSTANCE_TASK_UPDATED_SUCCESSFULLY" locale="en" localized="Workflow instance task updated successfully."/>
+
+</entity-facade-xml>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <!-- Report -->
+    <entity entity-name="ReportCategory" package="banqio.report" short-alias="BanqioRptCat">
+        <field name="categoryId" type="id" is-pk="true"/>
+        <field name="categoryName" type="text-medium" enable-localization="true"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="RPT_CAT_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="RPT_CAT_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="Report" package="banqio.report" short-alias="BanqioRpt">
+        <field name="reportId" type="id" is-pk="true"/>
+        <field name="pseudoId" type="text-medium" default="reportId"/>
+        <field name="categoryId" type="id"/>
+        <field name="reportName" type="text-medium" enable-localization="true"/>
+        <field name="reportTypeEnumId" type="id"/>
+        <field name="serviceName" type="text-medium"/>
+        <field name="dataDocumentId" type="text-medium"/>
+        <field name="dataField" type="text-medium"/>
+        <field name="browseNotes" type="text-long"/>
+        <field name="runNotes" type="text-long"/>
+        <field name="iconClass" type="text-medium"/>
+        <field name="disabled" type="text-indicator"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" related="banqio.report.ReportCategory" short-alias="category">
+            <key-map field-name="categoryId"/>
+        </relationship>
+        <relationship type="one" title="ReportType" related="moqui.basic.Enumeration" short-alias="reportType">
+            <key-map field-name="reportTypeEnumId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="RPT_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="RPT_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+        <relationship type="many" related="banqio.report.ReportParameter" short-alias="parameters">
+            <key-map field-name="reportId"/>
+        </relationship>
+        <relationship type="many" related="banqio.report.ReportPrice" short-alias="prices">
+            <key-map field-name="reportId"/>
+        </relationship>
+        <relationship type="many" related="banqio.report.ReportApp" short-alias="apps">
+            <key-map field-name="reportId"/>
+        </relationship>
+
+        <master>
+            <detail relationship="parameters"/>
+            <detail relationship="prices"/>
+            <detail relationship="apps"/>
+        </master>
+    </entity>
+    <entity entity-name="ReportParameter" package="banqio.report" short-alias="BanqioRptParam">
+        <field name="parameterId" type="id" is-pk="true"/>
+        <field name="reportId" type="id"/>
+        <field name="parameterDirectionEnumId" type="id"/>
+        <field name="parameterTypeEnumId" type="id"/>
+        <field name="operatorTypeEnumId" type="id"/>
+        <field name="parameterName" type="text-medium"/>
+        <field name="displayName" type="text-medium" default="parameterName"/>
+        <field name="position" type="number-integer" default="0"/>
+        <field name="mandatory" type="text-indicator"/>
+        <field name="disabled" type="text-indicator"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" related="banqio.report.Report" short-alias="report">
+            <key-map field-name="reportId"/>
+        </relationship>
+        <relationship type="one" title="ReportParameterDirection" related="moqui.basic.Enumeration" short-alias="parameterDirection">
+            <key-map field-name="parameterDirectionEnumId"/>
+        </relationship>
+        <relationship type="one" title="ReportParameterType" related="moqui.basic.Enumeration" short-alias="parameterType">
+            <key-map field-name="parameterTypeEnumId"/>
+        </relationship>
+        <relationship type="one-nofk" related="moqui.basic.Enumeration" short-alias="operatorType">
+            <key-map field-name="operatorTypeEnumId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="RPT_PARAM_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="RPT_PARAM_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="ReportPrice" package="banqio.report" short-alias="BanqioRptPrice">
+        <field name="priceId" type="id" is-pk="true"/>
+        <field name="reportId" type="id"/>
+        <field name="partyClassificationId" type="id"/>
+        <field name="externalPartyId" type="text-medium"/>
+        <field name="price" type="number-decimal"/>
+        <field name="currencyUomId" type="id"/>
+        <field name="billingIdentifier" type="text-medium"/>
+        <field name="fromDate" type="date-time"/>
+        <field name="toDate" type="date-time"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" related="banqio.report.Report" short-alias="report">
+            <key-map field-name="reportId"/>
+        </relationship>
+        <relationship type="one-nofk" related="mantle.party.PartyClassification" short-alias="partyClassification">
+            <key-map field-name="partyClassificationId"/>
+        </relationship>
+        <relationship type="one" related="moqui.basic.Uom" short-alias="currency">
+            <key-map field-name="currencyUomId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="RPT_PRICE_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="RPT_PRICE_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="ReportApp" package="banqio.report" short-alias="BanqioReportApp">
+        <field name="reportId" type="id" is-pk="true"/>
+        <field name="appId" type="id" is-pk="true"/>
+
+        <relationship type="one" related="banqio.report.Report" short-alias="report">
+            <key-map field-name="reportId"/>
+        </relationship>
+        <relationship type="one" related="commons.server.App" short-alias="app">
+            <key-map field-name="appId"/>
+        </relationship>
+    </entity>
+
+    <!-- Report instance -->
+    <entity entity-name="ReportInstance" package="banqio.report">
+        <field name="instanceId" type="id" is-pk="true"/>
+        <field name="reportId" type="id"/>
+        <field name="priceId" type="id"/>
+        <field name="statusId" type="id"/>
+        <field name="debitAccountNumber" type="text-medium"/>
+        <field name="resourceLocation" type="text-long"/>
+        <field name="errors" type="text-very-long"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="updateDate" type="date-time"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" related="banqio.report.Report" short-alias="report">
+            <key-map field-name="reportId"/>
+        </relationship>
+        <relationship type="one-nofk" related="banqio.report.ReportPrice" short-alias="reportPrice">
+            <key-map field-name="priceId"/>
+        </relationship>
+        <relationship type="one" title="ReportInstanceStatus" related="moqui.basic.StatusItem" short-alias="status">
+            <key-map field-name="statusId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="ReportInstanceParameter" package="banqio.report">
+        <field name="instanceId" type="id" is-pk="true"/>
+        <field name="parameterId" type="id" is-pk="true"/>
+        <field name="parameterValue" type="text-long"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+
+        <relationship type="one" related="banqio.report.ReportInstance" short-alias="reportInstance">
+            <key-map field-name="instanceId"/>
+        </relationship>
+        <relationship type="one" related="banqio.report.ReportParameter" short-alias="reportParameter">
+            <key-map field-name="parameterId"/>
+        </relationship>
+    </entity>
+
+</entities>

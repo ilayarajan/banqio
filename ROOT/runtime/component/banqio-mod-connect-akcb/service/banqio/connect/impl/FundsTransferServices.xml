@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Funds transfer -->
+    <service verb="calculate" noun="ValueDate" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="calculateValueDate">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="transferTypeId"/>
+            <parameter name="transferCurrencyId"/>
+            <parameter name="debitCurrencyId"/>
+            <parameter name="amount" type="Double"/>
+            <parameter name="postingDate"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="ruleId"/>
+            <parameter name="postingDate" type="Date"/>
+            <parameter name="valueDate" type="Date"/>
+        </out-parameters>
+    </service>
+    <service verb="generate" noun="BulkFundsTransferCsvFile" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="generateBulkFundsTransferCsvFile">
+        <in-parameters>
+            <parameter name="transferId"/>
+            <parameter name="paymentFile" type="org.apache.commons.fileupload.FileItem"/>
+        </in-parameters>
+    </service>
+    <service verb="validate" noun="OwnAccountFundsTransfer" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="validateOwnAccountFundsTransfer">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="typeId"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="creditAccountNumber"/>
+            <parameter name="currencyId"/>
+            <parameter name="amount" type="Double"/>
+            <parameter name="amountDebit" type="Double"/>
+            <parameter name="valueDate" type="Date"/>
+            <parameter name="transferDetails"/>
+        </in-parameters>
+    </service>
+    <service verb="validate" noun="BankBeneficiaryFundsTransfer" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="validateBankBeneficiaryFundsTransfer">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="typeId"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="beneficiaryId"/>
+            <parameter name="currencyId"/>
+            <parameter name="amount" type="Double"/>
+            <parameter name="amountDebit" type="Double"/>
+            <parameter name="valueDate" type="Date"/>
+            <parameter name="transferDetails"/>
+        </in-parameters>
+    </service>
+    <service verb="validate" noun="LocalBeneficiaryFundsTransfer" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="validateLocalBeneficiaryFundsTransfer">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="typeId"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="beneficiaryId"/>
+            <parameter name="currencyId"/>
+            <parameter name="amount" type="Double"/>
+            <parameter name="amountDebit" type="Double"/>
+            <parameter name="valueDate" type="Date"/>
+            <parameter name="transferDetails"/>
+            <parameter name="chargesTypeEnumId"/>
+            <parameter name="transferPurposeId"/>
+        </in-parameters>
+    </service>
+    <service verb="validate" noun="OverseasBeneficiaryFundsTransfer" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="validateOverseasBeneficiaryFundsTransfer">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="typeId"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="beneficiaryId"/>
+            <parameter name="currencyId"/>
+            <parameter name="amount" type="Double"/>
+            <parameter name="amountDebit" type="Double"/>
+            <parameter name="valueDate" type="Date"/>
+            <parameter name="transferDetails"/>
+            <parameter name="chargesTypeEnumId"/>
+            <parameter name="transferPurposeId"/>
+        </in-parameters>
+    </service>
+    <service verb="validate" noun="CreditCardFundsTransfer" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="validateCreditCardFundsTransfer">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="typeId"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="cardId"/>
+            <parameter name="currencyId"/>
+            <parameter name="amount" type="Double"/>
+            <parameter name="amountDebit" type="Double"/>
+            <parameter name="valueDate" type="Date"/>
+        </in-parameters>
+    </service>
+    <service verb="validate" noun="BulkLcyFundsTransfer" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="validateBulkLcyFundsTransfer">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="typeId"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="processingDate"/>
+            <parameter name="senderReference"/>
+            <parameter name="paymentFile" type="org.apache.commons.fileupload.FileItem"/>
+        </in-parameters>
+    </service>
+    <service verb="validate" noun="BulkFcyFundsTransfer" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="validateBulkFcyFundsTransfer">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="typeId"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="processingDate"/>
+            <parameter name="senderReference"/>
+            <parameter name="paymentFile" type="org.apache.commons.fileupload.FileItem"/>
+        </in-parameters>
+    </service>
+    <service verb="validate" noun="BulkSalaryLcyFundsTransfer" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="validateBulkSalaryLcyFundsTransfer">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="typeId"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="processingDate"/>
+            <parameter name="senderReference"/>
+            <parameter name="transferDetails"/>
+            <parameter name="paymentFile" type="org.apache.commons.fileupload.FileItem"/>
+        </in-parameters>
+    </service>
+    <service verb="validate" noun="BulkSalaryLcyWpsFundsTransfer" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="validateBulkSalaryLcyWpsFundsTransfer">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="typeId"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="processingDate"/>
+            <parameter name="senderReference"/>
+            <parameter name="salaryDate"/>
+            <parameter name="paymentFile" type="org.apache.commons.fileupload.FileItem"/>
+        </in-parameters>
+    </service>
+    <service verb="validate" noun="BulkSalaryFcyFundsTransfer" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="validateBulkSalaryFcyFundsTransfer">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="typeId"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="processingDate"/>
+            <parameter name="senderReference"/>
+            <parameter name="transferDetails"/>
+            <parameter name="currencyId"/>
+            <parameter name="paymentFile" type="org.apache.commons.fileupload.FileItem"/>
+        </in-parameters>
+    </service>
+    <service verb="parse" noun="BulkLcyPaymentFile" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="parseBulkLcyPaymentFile">
+        <in-parameters>
+            <parameter name="paymentFile" type="org.apache.commons.fileupload.FileItem"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="fundsTransferList" type="List">
+                <parameter name="fundsTransfer" type="Map">
+                    <auto-parameters entity-name="banqio.ft.FundsTransfer"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="parse" noun="BulkFcyPaymentFile" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="parseBulkFcyPaymentFile">
+        <in-parameters>
+            <parameter name="paymentFile" type="org.apache.commons.fileupload.FileItem"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="fundsTransferList" type="List">
+                <parameter name="fundsTransfer" type="Map">
+                    <auto-parameters entity-name="banqio.ft.FundsTransfer"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="parse" noun="BulkSalaryLcyPaymentFile" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="parseBulkSalaryLcyPaymentFile">
+        <in-parameters>
+            <parameter name="paymentFile" type="org.apache.commons.fileupload.FileItem"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="fundsTransferList" type="List">
+                <parameter name="fundsTransfer" type="Map">
+                    <auto-parameters entity-name="banqio.ft.FundsTransfer"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="parse" noun="BulkSalaryLcyWpsPaymentFile" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="parseBulkSalaryLcyWpsPaymentFile">
+        <in-parameters>
+            <parameter name="paymentFile" type="org.apache.commons.fileupload.FileItem"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="fundsTransferList" type="List">
+                <parameter name="fundsTransfer" type="Map">
+                    <auto-parameters entity-name="banqio.ft.FundsTransfer"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="parse" noun="BulkSalaryFcyPaymentFile" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="parseBulkSalaryFcyPaymentFile">
+        <in-parameters>
+            <parameter name="paymentFile" type="org.apache.commons.fileupload.FileItem"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="fundsTransferList" type="List">
+                <parameter name="fundsTransfer" type="Map">
+                    <auto-parameters entity-name="banqio.ft.FundsTransfer"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="SingleFundsTransfer" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="createSingleFundsTransfer">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="typeId"/>
+            <parameter name="employerId"/>
+            <parameter name="payerId"/>
+            <parameter name="payerLegalId"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="creditAccountNumber"/>
+            <parameter name="beneficiaryId"/>
+            <parameter name="cardId"/>
+            <parameter name="currencyId"/>
+            <parameter name="amount" type="Double"/>
+            <parameter name="senderReference"/>
+            <parameter name="transferDetails"/>
+            <parameter name="chargesTypeEnumId"/>
+            <parameter name="transferPurposeId"/>
+            <parameter name="processingDate"/>
+            <parameter name="salaryDate"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transferId"/>
+            <parameter name="amountDebit" type="Double"/>
+            <parameter name="amountLocal" type="Double"/>
+            <parameter name="exchangeRate" type="Double"/>
+            <parameter name="valueDate"/>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="BulkFundsTransfer" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="createBulkFundsTransfer">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="typeId"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="currencyId"/>
+            <parameter name="senderReference"/>
+            <parameter name="transferDetails"/>
+            <parameter name="chargesTypeEnumId"/>
+            <parameter name="processingDate"/>
+            <parameter name="salaryDate"/>
+            <parameter name="employerId"/>
+            <parameter name="payerId"/>
+            <parameter name="payerLegalId"/>
+            <parameter name="paymentFile" type="org.apache.commons.fileupload.FileItem"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transferId"/>
+            <parameter name="transactionCount" type="Integer"/>
+            <parameter name="amountDebit" type="Double"/>
+            <parameter name="amountLocal" type="Double"/>
+            <parameter name="processingDate"/>
+            <parameter name="errors"/>
+            <parameter name="currencySummaryList" type="List">
+                <parameter name="currencySummary" type="Map">
+                    <auto-parameters entity-name="banqio.ft.FundsTransferCurrencySummaryDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="propose" noun="BulkFundsTransfer" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="proposeBulkFundsTransfer">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="transferId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transferId"/>
+            <parameter name="instanceId"/>
+        </out-parameters>
+    </service>
+    <service verb="validate" noun="BulkFundsTransfer" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="validateBulkFundsTransfer">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="transferId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="transferId"/>
+            <parameter name="errors"/>
+        </out-parameters>
+    </service>
+    <service verb="commit" noun="FundsTransfer" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="commitFundsTransfer">
+        <in-parameters>
+            <parameter name="instanceId"/>
+        </in-parameters>
+    </service>
+    <service verb="reject" noun="FundsTransfer" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="rejectFundsTransfer">
+        <in-parameters>
+            <parameter name="instanceId"/>
+        </in-parameters>
+    </service>
+    <service verb="create" noun="T24OwnAccountFundsTransfer" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="createT24OwnAccountFundsTransfer">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="transferId"/>
+            <parameter name="typeId"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="creditAccountNumber"/>
+            <parameter name="currencyId"/>
+            <parameter name="amount" type="Double"/>
+            <parameter name="amountDebit" type="Double"/>
+            <parameter name="amountLocal" type="Double"/>
+            <parameter name="valueDate" type="Date"/>
+            <parameter name="transferDetails"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="transferId"/>
+            <parameter name="externalTransferId"/>
+            <parameter name="creditValueDate"/>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="T24BankBeneficiaryFundsTransfer" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="createT24BankBeneficiaryFundsTransfer">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="transferId"/>
+            <parameter name="typeId"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="beneficiaryId"/>
+            <parameter name="currencyId"/>
+            <parameter name="amount" type="Double"/>
+            <parameter name="amountDebit" type="Double"/>
+            <parameter name="amountLocal" type="Double"/>
+            <parameter name="valueDate" type="Date"/>
+            <parameter name="transferDetails"/>
+            <parameter name="transferPurposeId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="transferId"/>
+            <parameter name="externalTransferId"/>
+            <parameter name="creditValueDate"/>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="T24LocalBeneficiaryFundsTransfer" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="createT24LocalBeneficiaryFundsTransfer">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="transferId"/>
+            <parameter name="typeId"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="beneficiaryId"/>
+            <parameter name="currencyId"/>
+            <parameter name="amount" type="Double"/>
+            <parameter name="amountDebit" type="Double"/>
+            <parameter name="amountLocal" type="Double"/>
+            <parameter name="valueDate" type="Date"/>
+            <parameter name="transferDetails"/>
+            <parameter name="chargesTypeEnumId"/>
+            <parameter name="transferPurposeId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="transferId"/>
+            <parameter name="externalTransferId"/>
+            <parameter name="creditValueDate"/>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="T24OverseasBeneficiaryFundsTransfer" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="createT24OverseasBeneficiaryFundsTransfer">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="transferId"/>
+            <parameter name="typeId"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="beneficiaryId"/>
+            <parameter name="currencyId"/>
+            <parameter name="amount" type="Double"/>
+            <parameter name="amountDebit" type="Double"/>
+            <parameter name="amountLocal" type="Double"/>
+            <parameter name="valueDate" type="Date"/>
+            <parameter name="transferDetails"/>
+            <parameter name="chargesTypeEnumId"/>
+            <parameter name="transferPurposeId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="transferId"/>
+            <parameter name="externalTransferId"/>
+            <parameter name="creditValueDate"/>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="T24CreditCardFundsTransfer" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="createT24CreditCardFundsTransfer">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="transferId"/>
+            <parameter name="typeId"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="cardId"/>
+            <parameter name="currencyId"/>
+            <parameter name="amount" type="Double"/>
+            <parameter name="amountDebit" type="Double"/>
+            <parameter name="amountLocal" type="Double"/>
+            <parameter name="valueDate" type="Date"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="transferId"/>
+            <parameter name="externalTransferId"/>
+            <parameter name="creditValueDate"/>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="T24BulkFundsTransfer" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="createT24BulkFundsTransfer">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="transferId"/>
+            <parameter name="action"/>
+            <parameter name="typeId"/>
+            <parameter name="employerId"/>
+            <parameter name="payerId"/>
+            <parameter name="payerLegalId"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="paymentFileLocation"/>
+            <parameter name="currencyId"/>
+            <parameter name="processingDate"/>
+            <parameter name="salaryDate"/>
+            <parameter name="transferDetails"/>
+            <parameter name="senderReference"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="transferId"/>
+            <parameter name="externalTransferId"/>
+            <parameter name="transactionCount" type="Integer"/>
+            <parameter name="amountDebit" type="Double"/>
+            <parameter name="processingDate" type="Date"/>
+            <parameter name="currencySummaryList" type="List">
+                <parameter name="currencySummary" type="Map">
+                    <auto-parameters entity-name="banqio.ft.FundsTransferCurrencySummaryDetail"/>
+                </parameter>
+            </parameter>
+            <parameter name="errorList" type="List">
+                <parameter name="error"/>
+            </parameter>
+        </out-parameters>
+    </service>
+
+    <!-- WPS -->
+    <service verb="find" noun="WpsRegistration" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="findWpsRegistrations">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="registrationList" type="List">
+                <parameter name="registration" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="iban"/>
+                    <parameter name="employerId"/>
+                    <parameter name="employerName"/>
+                    <parameter name="payerId"/>
+                    <parameter name="payerLegalId"/>
+                    <parameter name="payerName"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+
+</services>

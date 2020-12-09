@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Account types -->
+    <BanqioAcctType typeId="At1000" externalTypeId="1000" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="CURRENT.AC.MASS-20070101"/>
+    <BanqioAcctType typeId="At1001" externalTypeId="1001" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="CURRENT.AC"/>
+    <BanqioAcctType typeId="At1005" externalTypeId="1005" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="CURRENT.AC.UPSCALE-20070101"/>
+    <BanqioAcctType typeId="At1010" externalTypeId="1010" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="CUR.AC.BNK.AT.WRK.MS-20070101"/>
+    <BanqioAcctType typeId="At1015" externalTypeId="1015" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="CUR.AC.BNK.AT.WRK.UP-20070101"/>
+    <BanqioAcctType typeId="At1020" externalTypeId="1020" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="CUR.AC.PRM.SAL-20070101"/>
+    <BanqioAcctType typeId="At1025" externalTypeId="1025" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="CUR.AC.PRM.WLTH-20070101"/>
+    <BanqioAcctType typeId="At1030" externalTypeId="1030" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="CUR.AC.PRM.FMLY-20070101"/>
+    <BanqioAcctType typeId="At1035" externalTypeId="1035" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="CUR.AC.PVT.W.MGT-20070101"/>
+    <BanqioAcctType typeId="At1040" externalTypeId="1040" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="CUR.AC.PVT.LEND-20070101"/>
+    <BanqioAcctType typeId="At1045" externalTypeId="1045" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="CUR.AC.STAFF-20070101"/>
+    <BanqioAcctType typeId="At1100" externalTypeId="1100" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="FUSION.AC.MASS-20070101"/>
+    <BanqioAcctType typeId="At1105" externalTypeId="1105" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="FUSION.AC.UPSCALE-20070101"/>
+    <BanqioAcctType typeId="At1110" externalTypeId="1110" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="FUS.AC.BNK.AT.WRK.MS-20070101"/>
+    <BanqioAcctType typeId="At1115" externalTypeId="1115" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="FUS.AC.BNK.AT.WRK.UP-20070101"/>
+    <BanqioAcctType typeId="At1120" externalTypeId="1120" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="FUS.AC.PRM.SAL-20070101"/>
+    <BanqioAcctType typeId="At1125" externalTypeId="1125" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="FUS.AC.PRM.WLTH-20070101"/>
+    <BanqioAcctType typeId="At1130" externalTypeId="1130" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="FUS.AC.PRM.FMLY-20070101"/>
+    <BanqioAcctType typeId="At1135" externalTypeId="1135" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="FUS.AC.PVT.W.MGT-20070101"/>
+    <BanqioAcctType typeId="At1140" externalTypeId="1140" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="FUS.AC.PVT.LEND-20070101"/>
+    <BanqioAcctType typeId="At1145" externalTypeId="1145" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="FUS.AC.STAFF-20070101"/>
+    <BanqioAcctType typeId="At1200" externalTypeId="1200" typeBehaviourEnumId="ACCT_TYPE_SAVINGS" typeName="SVG.AC.MASS-20070101"/>
+    <BanqioAcctType typeId="At1205" externalTypeId="1205" typeBehaviourEnumId="ACCT_TYPE_SAVINGS" typeName="SVG.AC.UPSCALE-20070101"/>
+    <BanqioAcctType typeId="At1210" externalTypeId="1210" typeBehaviourEnumId="ACCT_TYPE_SAVINGS" typeName="SVG.AC.BNK.AT.WRK.MS-20070101"/>
+    <BanqioAcctType typeId="At1215" externalTypeId="1215" typeBehaviourEnumId="ACCT_TYPE_SAVINGS" typeName="SVG.AC.BNK.AT.WRK.UP-20070101"/>
+    <BanqioAcctType typeId="At1220" externalTypeId="1220" typeBehaviourEnumId="ACCT_TYPE_SAVINGS" typeName="SVG.AC.PRM.SAL-20070101"/>
+    <BanqioAcctType typeId="At1225" externalTypeId="1225" typeBehaviourEnumId="ACCT_TYPE_SAVINGS" typeName="SVG.AC.PRM.WLTH-20070101"/>
+    <BanqioAcctType typeId="At1230" externalTypeId="1230" typeBehaviourEnumId="ACCT_TYPE_SAVINGS" typeName="SVG.AC.PRM.FMLY-20070101"/>
+    <BanqioAcctType typeId="At1235" externalTypeId="1235" typeBehaviourEnumId="ACCT_TYPE_SAVINGS" typeName="SVG.AC.PVT.W.MGT-20070101"/>
+    <BanqioAcctType typeId="At1240" externalTypeId="1240" typeBehaviourEnumId="ACCT_TYPE_SAVINGS" typeName="SVG.AC.PVT.LEND-20070101"/>
+    <BanqioAcctType typeId="At1245" externalTypeId="1245" typeBehaviourEnumId="ACCT_TYPE_SAVINGS" typeName="SVG.AC.STAFF-20070101"/>
+    <BanqioAcctType typeId="At1300" externalTypeId="1300" typeBehaviourEnumId="ACCT_TYPE_DEPOSIT" typeName="CAL.AC.MASS-20070101"/>
+    <BanqioAcctType typeId="At1305" externalTypeId="1305" typeBehaviourEnumId="ACCT_TYPE_DEPOSIT" typeName="CAL.AC.UPSCALE-20070101"/>
+    <BanqioAcctType typeId="At1310" externalTypeId="1310" typeBehaviourEnumId="ACCT_TYPE_DEPOSIT" typeName="CAL.AC.BNK.AT.WRK.MS-20070101"/>
+    <BanqioAcctType typeId="At1315" externalTypeId="1315" typeBehaviourEnumId="ACCT_TYPE_DEPOSIT" typeName="CAL.AC.BNK.AT.WRK.UP-20070101"/>
+    <BanqioAcctType typeId="At1320" externalTypeId="1320" typeBehaviourEnumId="ACCT_TYPE_DEPOSIT" typeName="CAL.AC.PRM.SAL-20070101"/>
+    <BanqioAcctType typeId="At1325" externalTypeId="1325" typeBehaviourEnumId="ACCT_TYPE_DEPOSIT" typeName="CAL.AC.PRM.WLTH-20070101"/>
+    <BanqioAcctType typeId="At1330" externalTypeId="1330" typeBehaviourEnumId="ACCT_TYPE_DEPOSIT" typeName="CAL.AC.PRM.FMLY-20070101"/>
+    <BanqioAcctType typeId="At1335" externalTypeId="1335" typeBehaviourEnumId="ACCT_TYPE_DEPOSIT" typeName="CAL.AC.PVT.W.MGT-20070101"/>
+    <BanqioAcctType typeId="At1340" externalTypeId="1340" typeBehaviourEnumId="ACCT_TYPE_DEPOSIT" typeName="CAL.AC.PVT.LEND-20070101"/>
+    <BanqioAcctType typeId="At1345" externalTypeId="1345" typeBehaviourEnumId="ACCT_TYPE_DEPOSIT" typeName="CAL.AC.STAFF-20070101"/>
+    <BanqioAcctType typeId="At1400" externalTypeId="1400" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="OD.AC.MASS-20070101"/>
+    <BanqioAcctType typeId="At1405" externalTypeId="1405" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="OD.AC.UPSCALE-20070101"/>
+    <BanqioAcctType typeId="At1410" externalTypeId="1410" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="OD.AC.BNK.AT.WRK.MS-20070101"/>
+    <BanqioAcctType typeId="At1415" externalTypeId="1415" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="OD.AC.BNK.AT.WRK.UP-20070101"/>
+    <BanqioAcctType typeId="At1420" externalTypeId="1420" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="OD.AC.PRM.SAL-20070101"/>
+    <BanqioAcctType typeId="At1425" externalTypeId="1425" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="OD.AC.PRM.WLTH-20070101"/>
+    <BanqioAcctType typeId="At1430" externalTypeId="1430" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="OD.AC.PRM.FMLY-20070101"/>
+    <BanqioAcctType typeId="At1435" externalTypeId="1435" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="OD.AC.PVT.W.MGT-20070101"/>
+    <BanqioAcctType typeId="At1440" externalTypeId="1440" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="OD.AC.PVT.LEND-20070101"/>
+    <BanqioAcctType typeId="At1445" externalTypeId="1445" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="OD.AC.STAFF-20070101"/>
+    <BanqioAcctType typeId="At1501" externalTypeId="1501" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="CALL.AC.CORP-20070101"/>
+    <BanqioAcctType typeId="At1502" externalTypeId="1502" typeBehaviourEnumId="ACCT_TYPE_DEPOSIT" typeName="CALL.AC.FIN.INST-20070101"/>
+    <BanqioAcctType typeId="At1503" externalTypeId="1503" typeBehaviourEnumId="ACCT_TYPE_DEPOSIT" typeName="CALL.AC.INTL.BNKG-20070101"/>
+    <BanqioAcctType typeId="At1504" externalTypeId="1504" typeBehaviourEnumId="ACCT_TYPE_DEPOSIT" typeName="CALL.AC.MED.ENTP-20070101"/>
+    <BanqioAcctType typeId="At1505" externalTypeId="1505" typeBehaviourEnumId="ACCT_TYPE_DEPOSIT" typeName="CALL.AC.SMALL.BIZ-20070101"/>
+    <BanqioAcctType typeId="At1506" externalTypeId="1506" typeBehaviourEnumId="ACCT_TYPE_DEPOSIT" typeName="Call Account Micro Bus"/>
+    <BanqioAcctType typeId="At1507" externalTypeId="1507" typeBehaviourEnumId="ACCT_TYPE_DEPOSIT" typeName="Call Account Med Enterprise"/>
+    <BanqioAcctType typeId="At1508" externalTypeId="1508" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="CUR.AC.MICRO.BUSS-20070101"/>
+    <BanqioAcctType typeId="At1509" externalTypeId="1509" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="CURR.ACC.MED.ENTP-20160406"/>
+    <BanqioAcctType typeId="At1510" externalTypeId="1510" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="CURRENT.AC.INTL.BNKNG-20070101"/>
+    <BanqioAcctType typeId="At1511" externalTypeId="1511" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="CURRENT.AC.MED.ENT-20070101"/>
+    <BanqioAcctType typeId="At1512" externalTypeId="1512" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="CURRENT.AC.SMALL.BIZ-20070101"/>
+    <BanqioAcctType typeId="At1513" externalTypeId="1513" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="CURRENT.ACCOUNT.CORP-20070101"/>
+    <BanqioAcctType typeId="At1514" externalTypeId="1514" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="CURRENT.ACCOUNT.FI-20070101"/>
+    <BanqioAcctType typeId="At1517" externalTypeId="1517" typeBehaviourEnumId="ACCT_TYPE_ESCROW" typeName="ESCROW.AC.CORP-20070101"/>
+    <BanqioAcctType typeId="At1518" externalTypeId="1518" typeBehaviourEnumId="ACCT_TYPE_ESCROW" typeName="ESCROW.AC.INTL.BNKG-20070101"/>
+    <BanqioAcctType typeId="At1519" externalTypeId="1519" typeBehaviourEnumId="ACCT_TYPE_ESCROW" typeName="ESCROW.AC.MED.ENTP-20070101"/>
+    <BanqioAcctType typeId="At1520" externalTypeId="1520" typeBehaviourEnumId="ACCT_TYPE_ESCROW" typeName="ESCROW.AC.SMALL.BIZ-20070101"/>
+    <BanqioAcctType typeId="At1521" externalTypeId="1521" typeBehaviourEnumId="ACCT_TYPE_ESCROW" typeName="Escrow AC Micro Bus"/>
+    <BanqioAcctType typeId="At1522" externalTypeId="1522" typeBehaviourEnumId="ACCT_TYPE_ESCROW" typeName="Escrow AC Med Ent"/>
+    <BanqioAcctType typeId="At1525" externalTypeId="1525" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="IB.CURR.AC.CORP-20070101"/>
+    <BanqioAcctType typeId="At1526" externalTypeId="1526" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="IB.CURR.AC.FIN.INST-20070101"/>
+    <BanqioAcctType typeId="At1527" externalTypeId="1527" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="IB.CURR.AC.INT.BNKG-20070101"/>
+    <BanqioAcctType typeId="At1528" externalTypeId="1528" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="IB.CURR.AC.MED.ENTP-20070101"/>
+    <BanqioAcctType typeId="At1529" externalTypeId="1529" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="IB.CURR.AC.SMALL.BIZ-20070101"/>
+    <BanqioAcctType typeId="At1531" externalTypeId="1531" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="IB.CUR.AC.MICRO.BUSS-20070101"/>
+    <BanqioAcctType typeId="At1532" externalTypeId="1532" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="IB.CUR.AC.MEDIUM.ENT-20070101"/>
+    <BanqioAcctType typeId="At1534" externalTypeId="1534" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="PROJECT.AC.MED.ENTP-20070101"/>
+    <BanqioAcctType typeId="At1535" externalTypeId="1535" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="PROJECT.AC.SMALL.BIZ-20070101"/>
+    <BanqioAcctType typeId="At1536" externalTypeId="1536" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="PROJECT.ACCOUNT.CORP-20070101"/>
+    <BanqioAcctType typeId="At1537" externalTypeId="1537" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="PROJECT.ACCOUNT.INTL-20070101"/>
+    <BanqioAcctType typeId="At1538" externalTypeId="1538" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="PRJ.AC.MICRO.BUSS-20070101"/>
+    <BanqioAcctType typeId="At1539" externalTypeId="1539" typeBehaviourEnumId="ACCT_TYPE_CURRENT" typeName="PRJ.AC.MEDIUM.ENT-20070101"/>
+    <BanqioAcctType typeId="At1600" externalTypeId="1600" typeBehaviourEnumId="ACCT_TYPE_SAVINGS" typeName="SPL.SVG.AC.MASS-20070101"/>
+    <BanqioAcctType typeId="At1605" externalTypeId="1605" typeBehaviourEnumId="ACCT_TYPE_SAVINGS" typeName="SPL.SVG.AC.UPSCLE-20070101"/>
+    <BanqioAcctType typeId="At1610" externalTypeId="1610" typeBehaviourEnumId="ACCT_TYPE_SAVINGS" typeName="SPL.SVG.BNKAT.WRK.MSS-20070101"/>
+    <BanqioAcctType typeId="At1615" externalTypeId="1615" typeBehaviourEnumId="ACCT_TYPE_SAVINGS" typeName="SPL.SVG.BNKAT.WRK.UPS-20070101"/>
+    <BanqioAcctType typeId="At1620" externalTypeId="1620" typeBehaviourEnumId="ACCT_TYPE_SAVINGS" typeName="SPL.SVG.AC.PRM.SALARY-20070101"/>
+    <BanqioAcctType typeId="At1625" externalTypeId="1625" typeBehaviourEnumId="ACCT_TYPE_SAVINGS" typeName="SPL.SVG.AC.PRM.WLTHY-20070101"/>
+    <BanqioAcctType typeId="At1630" externalTypeId="1630" typeBehaviourEnumId="ACCT_TYPE_SAVINGS" typeName="SPL.SVG.AC.PRM.FMLY-20070101"/>
+    <BanqioAcctType typeId="At1635" externalTypeId="1635" typeBehaviourEnumId="ACCT_TYPE_SAVINGS" typeName="SPL.SVG.AC.PVT.WLTH-20070101"/>
+    <BanqioAcctType typeId="At1640" externalTypeId="1640" typeBehaviourEnumId="ACCT_TYPE_SAVINGS" typeName="SPL.SVG.AC.PVT.LENDG-20070101"/>
+    <BanqioAcctType typeId="At1645" externalTypeId="1645" typeBehaviourEnumId="ACCT_TYPE_SAVINGS" typeName="SPL.SVG.AC.STAFF-20070101"/>
+    <BanqioAcctType typeId="At2001" externalTypeId="2001" typeBehaviourEnumId="ACCT_TYPE_VOSTRO" typeName="Vostro Account"/>
+    <BanqioAcctType typeId="At3015" externalTypeId="3015" typeBehaviourEnumId="ACCT_TYPE_DEPOSIT" typeName="FD.PERIODIC.INT-20070101"/>
+    <BanqioAcctType typeId="At3050" externalTypeId="3050" typeBehaviourEnumId="ACCT_TYPE_DEPOSIT" typeName="FD.MATURITY.INT-20070101"/>
+    <BanqioAcctType typeId="At3055" externalTypeId="3055" typeBehaviourEnumId="ACCT_TYPE_DEPOSIT" typeName="Variable Return Deposit"/>
+    <BanqioAcctType typeId="At3115" externalTypeId="3115" typeBehaviourEnumId="ACCT_TYPE_DEPOSIT" typeName="STRUCTURED.DEP-20070101"/>
+    <BanqioAcctType typeId="At3150" externalTypeId="3150" typeBehaviourEnumId="ACCT_TYPE_DEPOSIT" typeName="CERT.OF.DEP-20070101"/>
+    <BanqioAcctType typeId="At3215" externalTypeId="3215" typeBehaviourEnumId="ACCT_TYPE_DEPOSIT" typeName="CERT.OF.DEP.MAT-20070101"/>
+    <BanqioAcctType typeId="At3250" externalTypeId="3250" typeBehaviourEnumId="ACCT_TYPE_DEPOSIT" typeName="CERT.OF.DEP.PERIODIC-20070101"/>
+    <BanqioAcctType typeId="At3315" externalTypeId="3315" typeBehaviourEnumId="ACCT_TYPE_DEPOSIT" typeName="CORP.DEPOSITS-20070101"/>
+    <BanqioAcctType typeId="At3350" externalTypeId="3350" typeBehaviourEnumId="ACCT_TYPE_DEPOSIT" typeName="SAVING.PLAN-20070101"/>
+
+    <!-- Account types L10n -->
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1000" localized="Current Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1001" localized="Current Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1005" localized="Current Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1010" localized="Current Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1015" localized="Current Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1020" localized="Current Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1025" localized="Current Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1030" localized="Current Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1035" localized="Current Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1040" localized="Current Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1045" localized="Current Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1100" localized="Fusion Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1105" localized="Fusion Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1110" localized="Fusion Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1115" localized="Fusion Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1120" localized="Fusion Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1125" localized="Fusion Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1130" localized="Fusion Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1135" localized="Fusion Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1140" localized="Fusion Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1145" localized="Fusion Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1200" localized="Savings Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1205" localized="Savings Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1210" localized="Savings Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1215" localized="Savings Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1220" localized="Savings Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1225" localized="Savings Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1230" localized="Savings Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1235" localized="Savings Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1240" localized="Savings Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1245" localized="Savings Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1300" localized="Call Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1305" localized="Call Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1310" localized="Call Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1315" localized="Call Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1320" localized="Call Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1325" localized="Call Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1330" localized="Call Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1335" localized="Call Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1340" localized="Call Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1345" localized="Call Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1400" localized="Salary Overdraft Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1405" localized="Salary Overdraft Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1410" localized="Salary Overdraft Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1415" localized="Salary Overdraft Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1420" localized="Salary Overdraft Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1425" localized="Salary Overdraft Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1430" localized="Salary Overdraft Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1435" localized="Salary Overdraft Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1440" localized="Salary Overdraft Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1445" localized="Salary Overdraft Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1501" localized="Call Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1502" localized="Call Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1503" localized="Call Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1504" localized="Call Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1505" localized="Call Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1506" localized="Call Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1507" localized="Call Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1508" localized="Current Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1509" localized="Current Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1510" localized="Current Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1511" localized="Current Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1512" localized="Current Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1513" localized="Current Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1514" localized="Current Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1517" localized="Escrow Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1518" localized="Escrow Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1519" localized="Escrow Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1520" localized="Escrow Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1521" localized="Escrow Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1522" localized="Escrow Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1525" localized="Current Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1526" localized="Current Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1527" localized="Current Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1528" localized="IB-Current A/C"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1529" localized="Current Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1531" localized="Current Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1532" localized="Current Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1534" localized="Project Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1535" localized="Project Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1536" localized="Project Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1537" localized="Project Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1538" localized="Project Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1539" localized="Project Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1600" localized="Special Savings Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1605" localized="Special Savings Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1610" localized="Special Savings Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1615" localized="Special Savings Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1620" localized="Special Savings Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1625" localized="Special Savings Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1630" localized="Special Savings Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1635" localized="Special Savings Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1640" localized="Special Savings Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At1645" localized="Special Savings Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At2001" localized="Vostro Account"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At3015" localized="Fixed Term Deposit"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At3050" localized="Fixed Term Deposit"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At3055" localized="Variable Return Deposit"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At3115" localized="Structured Deposit"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At3150" localized="Certificates of Deposit"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At3215" localized="Certificates of Deposit"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At3250" localized="Certificates of Deposit"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At3315" localized="Fixed Term Deposit"/>
+    <moqui.basic.LocalizedEntityField entityName="banqio.account.AccountType" fieldName="typeName" locale="en" pkValue="At3350" localized="Savings Plan"/>
+
+    <!-- Transaction types -->
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="1" typeName="Miscellaneous Debits" typeId="Trx1"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="436" typeName="Loan Principal Repayment" typeId="Trx436"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="258" typeName="Inward Funds Transfer" typeId="Trx258"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="588" typeName="Deposit Debit Arrangement" typeId="Trx588"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="193" typeName="Inward Funds Sweep" typeId="Trx193"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="131" typeName="IN.DR.TXN.CODE" typeId="Trx131"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="114" typeName="Cheque Book Issuance Charge" typeId="Trx114"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="460" typeName="Contract Reversal" typeId="Trx460"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="24" typeName="Cheque Deposit" typeId="Trx24"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="437" typeName="Matured Loan Interest" typeId="Trx437"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="427" typeName="Payment of Interest" typeId="Trx427"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="613" typeName="Brokerage Paid" typeId="Trx613"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="550" typeName="Debit" typeId="Trx550"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="192" typeName="Cheque Payment" typeId="Trx192"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="587" typeName="Deposit Credit Arrangement" typeId="Trx587"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="212" typeName="Outward Funds Transfer" typeId="Trx212"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="2" typeName="Cash Withdrawal" typeId="Trx2"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="241" typeName="Outward Clg Chq Return" typeId="Trx241"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="586" typeName="Charge Capitalise" typeId="Trx586"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="284" typeName="Salary Credit" typeId="Trx284"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="507" typeName="Reimburse under LCs Dr" typeId="Trx507"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="306" typeName="Credit re FX Sale" typeId="Trx306"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="213" typeName="Outward Funds Transfer" typeId="Trx213"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="500" typeName="LC Payment Credit" typeId="Trx500"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="299" typeName="Debit Card Transaction" typeId="Trx299"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="183" typeName="INTERCOMPANY CREDIT" typeId="Trx183"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="601" typeName="Securities Purchase" typeId="Trx601"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="590" typeName="Deposit Debit Arrangement" typeId="Trx590"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="520" typeName="LC Provision Margin - Debit" typeId="Trx520"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="563" typeName="Interest" typeId="Trx563"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="108" typeName="Cheque Correction Entries" typeId="Trx108"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="585" typeName="Deposit Charge Made Due" typeId="Trx585"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="313" typeName="POS Purchase" typeId="Trx313"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="214" typeName="Standing Order" typeId="Trx214"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="307" typeName="Debit re FX Purchase" typeId="Trx307"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="557" typeName="Membership Fee" typeId="Trx557"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="521" typeName="LC Provision Margin - Credit" typeId="Trx521"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="220" typeName="Inward Funds Transfer" typeId="Trx220"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="579" typeName="Fixed Deposit Interest" typeId="Trx579"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="609" typeName="Redemption Purchase" typeId="Trx609"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="576" typeName="Deposit Charge Repayment" typeId="Trx576"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="401" typeName="New Deposit" typeId="Trx401"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="584" typeName="Interest" typeId="Trx584"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="27" typeName="Cheque Payment" typeId="Trx27"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="189" typeName="ATM cash deposit" typeId="Trx189"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="286" typeName="Salary Credit Staff" typeId="Trx286"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="599" typeName="Deposit Takeover Charge" typeId="Trx599"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="270" typeName="Inward Funds Transfer" typeId="Trx270"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="35" typeName="Deposit" typeId="Trx35"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="52" typeName="Cash Deposit" typeId="Trx52"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="633" typeName="Secs Unrealised Loss" typeId="Trx633"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="294" typeName="Special clearing fees" typeId="Trx294"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="216" typeName="Managers Cheque Payment" typeId="Trx216"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="402" typeName="Loan Drawdown" typeId="Trx402"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="577" typeName="Deposit Principal Make Due" typeId="Trx577"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="109" typeName="Cheque Correction Entries" typeId="Trx109"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="44" typeName="Cheque" typeId="Trx44"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="133" typeName="MAT.DR.TXN.CODE" typeId="Trx133"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="201" typeName="Cheque Payment" typeId="Trx201"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="181" typeName="Point of sale" typeId="Trx181"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="271" typeName="Outward Funds Transfer" typeId="Trx271"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="182" typeName="INTERCOMPANY DEBIT" typeId="Trx182"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="34" typeName="Cash Incoming" typeId="Trx34"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="51" typeName="Miscellaneous Credit" typeId="Trx51"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="634" typeName="Secs Unrealised Profit" typeId="Trx634"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="222" typeName="Inward Funds Transfer" typeId="Trx222"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="602" typeName="Securities Sale" typeId="Trx602"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="268" typeName="Debit Card Transaction" typeId="Trx268"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="551" typeName="Credit From" typeId="Trx551"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="61" typeName="Transfer Credit" typeId="Trx61"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="132" typeName="MAT.CR.TXN.CODE" typeId="Trx132"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="180" typeName="ATM cash withdrawal" typeId="Trx180"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="403" typeName="New Placement" typeId="Trx403"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="210" typeName="Outward Funds Transfer" typeId="Trx210"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="589" typeName="Transfer from Arrangement" typeId="Trx589"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="296" typeName="Inward Rejection Fees" typeId="Trx296"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="597" typeName="Deposit Takeover Principal" typeId="Trx597"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="554" typeName="Adjustment Principal" typeId="Trx554"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="26" typeName="Cash Withdrawal" typeId="Trx26"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="426" typeName="Repayment of Principal" typeId="Trx426"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="302" typeName="FX Revaluation Credit" typeId="Trx302"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="3" typeName="Bank Notes Purchase" typeId="Trx3"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="11" typeName="Transfer Debit" typeId="Trx11"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="303" typeName="FX Revaluation Debit" typeId="Trx303"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="625" typeName="Corporate Action Cr" typeId="Trx625"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="194" typeName="Outward Funds Sweep" typeId="Trx194"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="102" typeName="Statement Charges" typeId="Trx102"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="239" typeName="Credit Card Payment" typeId="Trx239"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="246" typeName="Managers Cheque Cancellation" typeId="Trx246"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="610" typeName="Redemption Sale" typeId="Trx610"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="626" typeName="Corporate Action Dr" typeId="Trx626"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="130" typeName="IN.CR.TXN.CODE" typeId="Trx130"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="295" typeName="Outward Rejection Fees" typeId="Trx295"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="53" typeName="Bank Notes Sale" typeId="Trx53"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="789" typeName="Foreign Cheque Collection Chg" typeId="Trx789"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="975" typeName="Inward Collection Charges" typeId="Trx975"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="991" typeName="SWIFT Charges" typeId="Trx991"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="983" typeName="LC Issuance Commission" typeId="Trx983"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="863" typeName="Debit from Arrangement" typeId="Trx863"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="94" typeName="Cheque Deposit" typeId="Trx94"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="831" typeName="Capitalised interest" typeId="Trx831"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="750" typeName="PD Principal Debit" typeId="Trx750"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="904" typeName="POS Transfer" typeId="Trx904"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="855" typeName="Partial Loan Repayment" typeId="Trx855"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="774" typeName="Commission Paid" typeId="Trx774"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="951" typeName="MD-Guarantee Provision Debit" typeId="Trx951"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="895" typeName="Create Fixed Deposit" typeId="Trx895"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="885" typeName="Create Fixed Deposit" typeId="Trx885"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="788" typeName="Cash Withdrawal Charge" typeId="Trx788"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="974" typeName="Export LC SWIFT Charges" typeId="Trx974"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="990" typeName="Cash Deposit" typeId="Trx990"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="880" typeName="Balance BF" typeId="Trx880"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="968" typeName="Courier Charges" typeId="Trx968"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="862" typeName="Credit from Arrangement" typeId="Trx862"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="814" typeName="PRINCIPAL ADJUSTMENT" typeId="Trx814"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="93" typeName="Cheque Deposit" typeId="Trx93"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="903" typeName="POS Transfer" typeId="Trx903"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="830" typeName="Interest amount" typeId="Trx830"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="952" typeName="MD-Guarantee Provision Credit" typeId="Trx952"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="807" typeName="Advance instalment payment" typeId="Trx807"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="824" typeName="Interest Adjustment" typeId="Trx824"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="989" typeName="Full SWIFT Charges" typeId="Trx989"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="772" typeName="LG Amendment Commission" typeId="Trx772"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="779" typeName="LG Amendment Commission" typeId="Trx779"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="708" typeName="Swap Revaluation Debit" typeId="Trx708"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="902" typeName="Deposit Partial Withdrawal" typeId="Trx902"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="864" typeName="Principal amount" typeId="Trx864"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="701" typeName="Swap Interest Payment" typeId="Trx701"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="84" typeName="Cash Outgoing" typeId="Trx84"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="966" typeName="LC Amendment Commission" typeId="Trx966"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="771" typeName="LG Issuance Commission" typeId="Trx771"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="986" typeName="Outward Collection Charges" typeId="Trx986"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="893" typeName="Takeover Interest" typeId="Trx893"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="972" typeName="Discrepancy Charges" typeId="Trx972"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="844" typeName="Principal Made Due" typeId="Trx844"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="822" typeName="Loan capital reduction" typeId="Trx822"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="85" typeName="Withdrawal" typeId="Trx85"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="709" typeName="Swap Revaluation Credit" typeId="Trx709"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="987" typeName="SBLC Negotiation Commission" typeId="Trx987"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="965" typeName="LC Advising Commission" typeId="Trx965"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="993" typeName="Foreign Cash Withdrawal" typeId="Trx993"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="950" typeName="Loan Disbursement" typeId="Trx950"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="98" typeName="Credit EOD Balancing Entry" typeId="Trx98"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="843" typeName="Principal Bill Due" typeId="Trx843"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="754" typeName="PD Charge Debit" typeId="Trx754"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="932" typeName="Inward Direct Debit" typeId="Trx932"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="851" typeName="Loan Payment" typeId="Trx851"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="820" typeName="Pay Outstanding Principal" typeId="Trx820"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="979" typeName="Courier Charges" typeId="Trx979"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="812" typeName="Charge Repayment" typeId="Trx812"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="706" typeName="Swap Principal Re-Exchange" typeId="Trx706"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="994" typeName="Short SWIFT Charges" typeId="Trx994"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="964" typeName="LC Acceptance Commission" typeId="Trx964"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="804" typeName="Interest Repayment" typeId="Trx804"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="883" typeName="Writeoff Interest" typeId="Trx883"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="852" typeName="Loan Capital Reduction" typeId="Trx852"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="941" typeName="Sight LC Payment Commission" typeId="Trx941"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="99" typeName="Debit EOD Balancing Entry" typeId="Trx99"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="842" typeName="Loan UNC posting" typeId="Trx842"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="778" typeName="LG Issuance Commission" typeId="Trx778"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="813" typeName="Charge - Application" typeId="Trx813"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="978" typeName="LC Issuance Commission" typeId="Trx978"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="833" typeName="Charge - Capitalise" typeId="Trx833"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="949" typeName="Courier Charges" typeId="Trx949"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="806" typeName="Loan disbursement" typeId="Trx806"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="776" typeName="Commission Paid" typeId="Trx776"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="962" typeName="Commission Received" typeId="Trx962"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="69" typeName="Drafts Payment Dr" typeId="Trx69"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="953" typeName="MD-Guarantee Invocation Debit" typeId="Trx953"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="996" typeName="ATM Cash Withdrawal Charge" typeId="Trx996"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="881" typeName="UND - Adjustment" typeId="Trx881"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="977" typeName="Courier Charges" typeId="Trx977"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="853" typeName="Loan Repayment" typeId="Trx853"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="860" typeName="Fixed Deposit closure" typeId="Trx860"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="753" typeName="PD Penalty Spread Int Debit" typeId="Trx753"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="710" typeName="Swap Net Payment" typeId="Trx710"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="905" typeName="POS Transfer" typeId="Trx905"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="832" typeName="Charge" typeId="Trx832"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="68" typeName="Drafts Payment" typeId="Trx68"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="954" typeName="MD-Guarantee Invocation Credit" typeId="Trx954"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="882" typeName="Writeoff Principal" typeId="Trx882"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="775" typeName="Letter Request Fee" typeId="Trx775"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="961" typeName="Commission Paid" typeId="Trx961"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="647" typeName="Interest Exp Accruals" typeId="Trx647"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_CREDIT" externalTypeId="96" typeName="Cheque Deposit" typeId="Trx96"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="982" typeName="LC Negotiation Commission" typeId="Trx982"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_DEBIT" externalTypeId="927" typeName="DD Ret Insufficient funds" typeId="Trx927"/>
+    <BanqioTrxType typeBehaviourEnumId="TRX_TYPE_MISC" externalTypeId="933" typeName="Inward Direct Debit" typeId="Trx933"/>
+
+</entity-facade-xml>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Report -->
+    <service verb="find" noun="DormantUser" type="java" location="com.netvariant.banqio.connect.impl.ReportService" method="findDormantUsers">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="userList" type="List">
+                <parameter name="user" type="Map">
+                    <auto-parameters entity-name="moqui.security.UserAccount"/>
+                </parameter>
+            </parameter>
+            <parameter name="userStats" type="List"/>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="ActiveUser" type="java" location="com.netvariant.banqio.connect.impl.ReportService" method="findActiveUsers">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="userList" type="List">
+                <parameter name="user" type="Map">
+                    <auto-parameters entity-name="moqui.security.UserAccount"/>
+                </parameter>
+            </parameter>
+            <parameter name="userStats" type="List"/>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="RegisteredUser" type="java" location="com.netvariant.banqio.connect.impl.ReportService" method="findRegisteredUsers">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="userList" type="List">
+                <parameter name="user" type="Map">
+                    <auto-parameters entity-name="moqui.security.UserAccount"/>
+                </parameter>
+            </parameter>
+            <parameter name="userStats" type="List"/>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="FundsTransfer" type="java" location="com.netvariant.banqio.connect.impl.ReportService" method="findFundsTransfers">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="transferList" type="List">
+                <parameter name="transfer" type="Map">
+                    <auto-parameters entity-name="banqio.ft.FundsTransferDetail"/>
+                </parameter>
+            </parameter>
+            <parameter name="transferStats" type="List"/>
+        </out-parameters>
+    </service>
+    <service verb="count" noun="FundsTransfersByValueDate" type="java" location="com.netvariant.banqio.connect.impl.ReportService" method="countFundsTransfersByValueDate">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="valueDate"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="ftSummaryList" type="Map"/>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="TreasuryFundsTransfersSummary" type="java" location="com.netvariant.banqio.connect.impl.ReportService" method="findTreasuryFundsTransfersSummary">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="ftSummaryList" type="Map"/>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="FunctionStatistics" type="java" location="com.netvariant.banqio.connect.impl.ReportService" method="findFunctionStatistics">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="visitList" type="List">
+                <parameter name="sceneName"/>
+                <parameter name="count"/>
+            </parameter>
+        </out-parameters>
+    </service>
+
+</services>

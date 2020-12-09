@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns=""
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        default-menu-title="Find Configuration"
+        default-menu-include="false">
+
+    <transition name="editConfiguration">
+        <default-response url="../EditConfiguration"/>
+    </transition>
+
+    <actions>
+        <entity-find entity-name="commons.server.ConfigurationDetail" list="configList">
+            <search-form-inputs default-order-by="^configurationId"/>
+        </entity-find>
+    </actions>
+
+    <widgets>
+        <container-box>
+            <box-header>
+                <label text="Find Configuration" type="h5"/>
+            </box-header>
+            <box-toolbar/>
+            <box-body>
+                <form-list name="ListConfig" list="configList" skip-form="true" header-dialog="true" select-columns="true">
+                    <field name="configurationId">
+                        <header-field show-order-by="true" title="ID">
+                            <text-find hide-options="true" size="10"/>
+                        </header-field>
+                        <default-field>
+                            <link url="editConfiguration" text="${configurationId}"/>
+                        </default-field>
+                    </field>
+                    <field name="appId">
+                        <header-field show-order-by="true" title="App">
+                            <drop-down allow-empty="true">
+                                <entity-options text="${appName}" key="${appId}">
+                                    <entity-find entity-name="commons.server.App"/>
+                                </entity-options>
+                            </drop-down>
+                        </header-field>
+                        <default-field>
+                            <display text="${appName}"/>
+                        </default-field>
+                    </field>
+                    <field name="groupId">
+                        <header-field show-order-by="true" title="Group">
+                            <drop-down allow-empty="true">
+                                <entity-options text="${groupName}" key="${groupId}">
+                                    <entity-find entity-name="commons.server.ConfigurationGroup"/>
+                                </entity-options>
+                            </drop-down>
+                        </header-field>
+                        <default-field>
+                            <display text="${groupName}"/>
+                        </default-field>
+                    </field>
+                    <field name="configurationName">
+                        <header-field show-order-by="true">
+                            <text-find hide-options="true"/>
+                        </header-field>
+                        <default-field>
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="description">
+                        <header-field show-order-by="true">
+                            <text-find hide-options="true"/>
+                        </header-field>
+                        <default-field>
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="definedValue">
+                        <header-field show-order-by="true">
+                            <text-find hide-options="true"/>
+                        </header-field>
+                        <default-field>
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="find">
+                        <header-field title="Find">
+                            <submit icon="glyphicon glyphicon-search"/>
+                        </header-field>
+                    </field>
+
+                    <form-list-column>
+                        <field-ref name="configurationId"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="appId"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="groupId"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="description"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="definedValue"/>
+                    </form-list-column>
+                </form-list>
+            </box-body>
+        </container-box>
+    </widgets>
+</screen>

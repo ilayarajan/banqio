@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <view-entity entity-name="TreasuryFundsTransferDetail" package="banqio.connect.akcb">
+        <member-entity entity-alias="fundsTransfer" entity-name="banqio.ft.FundsTransfer"/>
+        <member-entity entity-alias="type" entity-name="banqio.ft.FundsTransferType" join-from-alias="fundsTransfer">
+            <key-map field-name="typeId"/>
+        </member-entity>
+        <member-entity entity-alias="currency" entity-name="moqui.basic.Uom" join-from-alias="fundsTransfer">
+            <key-map field-name="currencyId"/>
+        </member-entity>
+
+        <alias name="typeId" entity-alias="fundsTransfer" field="typeId"/>
+        <alias name="statusId" entity-alias="fundsTransfer" field="statusId"/>
+        <alias name="parentTransferId" entity-alias="fundsTransfer" field="parentTransferId"/>
+        <alias name="valueDate" entity-alias="fundsTransfer" field="valueDate"/>
+        <alias name="typeName" entity-alias="type" field="typeName"/>
+        <alias name="currencyId" entity-alias="fundsTransfer" field="currencyId"/>
+        <alias name="currencyAbbreviation" entity-alias="currency" field="abbreviation"/>
+        <alias name="currencyDescription" entity-alias="currency" field="description"/>
+        <alias name="amount" entity-alias="fundsTransfer" field="amount" function="sum"/>
+        <alias name="count" entity-alias="fundsTransfer" field="transferId" function="count"/>
+
+        <entity-condition>
+            <econditions>
+                <econdition field-name="parentTransferId" operator="is-null"/>
+                <econdition field-name="statusId" value="FT_SUCCESSFUL"/>
+            </econditions>
+        </entity-condition>
+    </view-entity>
+
+</entities>

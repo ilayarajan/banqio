@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <dataDocuments dataDocumentId="BanqioAccountType" documentName="Account Type" documentTitle="${typeName}" indexName="banqio" primaryEntityName="banqio.account.AccountType">
+        <fields fieldSeqId="01" fieldPath="typeId"/>
+        <fields fieldSeqId="02" fieldPath="externalTypeId"/>
+        <fields fieldSeqId="03" fieldPath="typeName"/>
+        <fields fieldSeqId="04" fieldPath="typeBehaviourEnumId"/>
+        <fields fieldSeqId="05" fieldPath="typeBehaviour:description" fieldNameAlias="typeBehaviourDescription"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioAccountStatus" documentName="Account Status" documentTitle="${statusName}" indexName="banqio" primaryEntityName="banqio.account.AccountStatus">
+        <fields fieldSeqId="01" fieldPath="statusId"/>
+        <fields fieldSeqId="02" fieldPath="externalStatusId"/>
+        <fields fieldSeqId="03" fieldPath="statusName"/>
+        <fields fieldSeqId="04" fieldPath="statusBehaviourEnumId"/>
+        <fields fieldSeqId="05" fieldPath="statusBehaviour:description" fieldNameAlias="statusBehaviourDescription"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioTransactionType" documentName="Transaction Type" documentTitle="${typeName}" indexName="banqio" primaryEntityName="banqio.account.TransactionType">
+        <fields fieldSeqId="01" fieldPath="typeId"/>
+        <fields fieldSeqId="02" fieldPath="externalTypeId"/>
+        <fields fieldSeqId="03" fieldPath="typeName"/>
+        <fields fieldSeqId="04" fieldPath="typeBehaviourEnumId"/>
+        <fields fieldSeqId="05" fieldPath="typeBehaviour:description" fieldNameAlias="typeBehaviourDescription"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioSavingGoal" documentName="Saving Goal" documentTitle="${goalName}" indexName="banqio" primaryEntityName="banqio.account.SavingGoal">
+        <fields fieldSeqId="01" fieldPath="goalId"/>
+        <fields fieldSeqId="02" fieldPath="statusId"/>
+        <fields fieldSeqId="03" fieldPath="accountId"/>
+        <fields fieldSeqId="04" fieldPath="goalName"/>
+        <fields fieldSeqId="05" fieldPath="startingBalance"/>
+        <fields fieldSeqId="06" fieldPath="targetBalance"/>
+        <fields fieldSeqId="07" fieldPath="lastBalance"/>
+        <fields fieldSeqId="08" fieldPath="highestBalance"/>
+        <fields fieldSeqId="09" fieldPath="minMonthlyAmount"/>
+        <fields fieldSeqId="10" fieldPath="goalStatus:description" fieldNameAlias="statusDescription"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+
+</entity-facade-xml>

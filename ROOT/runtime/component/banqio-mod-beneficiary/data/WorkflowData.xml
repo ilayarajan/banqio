@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Plug workflow types -->
+    <CommonsWfType
+            typeId="WF_BEN"
+            typeName="Beneficiary"
+            statusTypeId="Beneficiary"
+            primaryEntityName="banqio.beneficiary.Beneficiary"
+            primaryViewEntityName="banqio.beneficiary.BeneficiaryDetail"
+            primaryKeyFieldName="beneficiaryId"/>
+
+    <!-- Plug entity fields -->
+    <CommonsEntityFld entityName="banqio.beneficiary.BeneficiaryDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="customerId" displayName="Customer ID"/>
+    <CommonsEntityFld entityName="banqio.beneficiary.BeneficiaryDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="typeName" displayName="Beneficiary Type"/>
+    <CommonsEntityFld entityName="banqio.beneficiary.BeneficiaryDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="typeExternalId" displayName="Beneficiary Type External ID"/>
+    <CommonsEntityFld entityName="banqio.beneficiary.BeneficiaryDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="typeBehaviourEnumId" displayName="Beneficiary Type Behavior ID"/>
+    <CommonsEntityFld entityName="banqio.beneficiary.BeneficiaryDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="typeBehaviourDescription" displayName="Beneficiary Type Behavior"/>
+    <CommonsEntityFld entityName="banqio.beneficiary.BeneficiaryDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="swiftCode" displayName="SWIFT Code"/>
+    <CommonsEntityFld entityName="banqio.beneficiary.BeneficiaryDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="intermediarySwiftCode" displayName="Intermediary SWIFT Code"/>
+    <CommonsEntityFld entityName="banqio.beneficiary.BeneficiaryDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="localCode" displayName="Local Code"/>
+    <CommonsEntityFld entityName="banqio.beneficiary.BeneficiaryDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="countryGeoName" displayName="Country"/>
+    <CommonsEntityFld entityName="banqio.beneficiary.BeneficiaryDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="countryGeoCodeAlpha2" displayName="Country Alpha-2 Code"/>
+    <CommonsEntityFld entityName="banqio.beneficiary.BeneficiaryDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="countryGeoCodeAlpha3" displayName="Country Alpha-3 Code"/>
+    <CommonsEntityFld entityName="banqio.beneficiary.BeneficiaryDetail" fieldTypeEnumId="ENTITY_FLD_NUMBER" fieldName="countryGeoCodeNumeric" displayName="Country Numeric Code"/>
+
+</entity-facade-xml>

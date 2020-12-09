@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Alert templates -->
+    <CommonsAlertTpl alertTypeEnumId="ALERT_SMS" templateId="AtBenPend" templateName="Beneficiary Pending" body="A beneficiary request has been created on al khaliji Corporate Internet-Banking and is awaiting your approval. Please login to view the status and approve."/>
+    <CommonsAlertTpl alertTypeEnumId="ALERT_SMS" templateId="AtBenAccept" templateName="Beneficiary Accepted" body="A beneficiary request on al khaliji Corporate Internet-Banking has been approved. Please login to view status."/>
+    <CommonsAlertTpl alertTypeEnumId="ALERT_SMS" templateId="AtBenReject" templateName="Beneficiary Rejected" body="A beneficiary request submitted for approval on al khaliji Corporate Internet-Banking has been declined by the authorizer. Please login to view status."/>
+    <CommonsAlertTpl alertTypeEnumId="ALERT_SMS" templateId="AtFtPend" templateName="Payment Pending" body="A {{transferTypeName}} on al khaliji Business Internet Banking  has been submitted for your approval. Please login to view the status and approve."/>
+    <CommonsAlertTpl alertTypeEnumId="ALERT_SMS" templateId="AtFtAccept" templateName="Payment Accepted" body="A {{transferTypeName}} on al khaliji Business Internet Banking has been approved. Please login to view the status."/>
+    <CommonsAlertTpl alertTypeEnumId="ALERT_SMS" templateId="AtFtReject" templateName="Payment Rejected" body="A {{transferTypeName}} on al khaliji Business Internet Banking has been rejected by the authorizer. Please login to view the status."/>
+    <CommonsAlertTpl alertTypeEnumId="ALERT_SMS" templateId="AtFtProcess" templateName="Payment Processed" body="A  bulk-file transaction #transactionId# submitted on al khaliji Business Internet Banking has been processed today. Please login to view MIS."/>
+    <CommonsAlertTpl alertTypeEnumId="ALERT_SMS" templateId="AtRptPend" templateName="Report Pending" body="A report request has been created on al khaliji Corporate Internet-Banking and is awaiting your approval. Please login to view the status and approve."/>
+    <CommonsAlertTpl alertTypeEnumId="ALERT_SMS" templateId="AtRptAccept" templateName="Report Accepted" body="A report request on al khaliji Corporate Internet-Banking has been approved. Please login to view status."/>
+    <CommonsAlertTpl alertTypeEnumId="ALERT_SMS" templateId="AtRptReject" templateName="Report Rejected" body="A report request submitted for approval on al khaliji Corporate Internet-Banking has been declined by the authorizer. Please login to view status."/>
+
+</entity-facade-xml>

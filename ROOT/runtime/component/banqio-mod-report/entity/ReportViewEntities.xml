@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <!-- Report -->
+    <view-entity entity-name="ReportDetail" package="banqio.report">
+        <member-entity entity-alias="report" entity-name="banqio.report.Report"/>
+        <member-entity entity-alias="reportCategory" entity-name="banqio.report.ReportCategory" join-from-alias="report">
+            <key-map field-name="categoryId"/>
+        </member-entity>
+        <member-entity entity-alias="reportType" entity-name="moqui.basic.Enumeration" join-from-alias="report">
+            <key-map field-name="reportTypeEnumId"/>
+        </member-entity>
+
+        <alias-all entity-alias="report"/>
+        <alias name="categoryName" entity-alias="reportCategory" field="categoryName"/>
+        <alias name="typeDescription" entity-alias="reportType" field="description"/>
+    </view-entity>
+    <view-entity entity-name="ReportPriceDetail" package="banqio.report">
+        <member-entity entity-alias="reportPrice" entity-name="banqio.report.ReportPrice"/>
+        <member-entity entity-alias="partyClassification" entity-name="mantle.party.PartyClassification" join-from-alias="reportPrice" join-optional="true">
+            <key-map field-name="partyClassificationId"/>
+        </member-entity>
+        <member-entity entity-alias="currency" entity-name="moqui.basic.Uom" join-from-alias="reportPrice">
+            <key-map field-name="currencyUomId"/>
+        </member-entity>
+
+        <alias-all entity-alias="reportPrice"/>
+        <alias name="partyClassificationDescription" entity-alias="partyClassification" field="description"/>
+        <alias name="currencyAbbreviation" entity-alias="currency" field="abbreviation"/>
+        <alias name="currencyNumericCode" entity-alias="currency" field="numericCode"/>
+        <alias name="currencyDescription" entity-alias="currency" field="description"/>
+
+        <entity-condition>
+            <date-filter thru-field-name="toDate"/>
+        </entity-condition>
+    </view-entity>
+    <view-entity entity-name="ReportParameterDetail" package="banqio.report">
+        <member-entity entity-alias="reportParameter" entity-name="banqio.report.ReportParameter"/>
+        <member-entity entity-alias="parameterDirection" entity-name="moqui.basic.Enumeration" join-from-alias="reportParameter">
+            <key-map field-name="parameterDirectionEnumId"/>
+        </member-entity>
+        <member-entity entity-alias="parameterType" entity-name="moqui.basic.Enumeration" join-from-alias="reportParameter">
+            <key-map field-name="parameterTypeEnumId"/>
+        </member-entity>
+        <member-entity entity-alias="operatorType" entity-name="moqui.basic.Enumeration" join-from-alias="reportParameter" join-optional="true">
+            <key-map field-name="operatorTypeEnumId"/>
+        </member-entity>
+
+        <alias-all entity-alias="reportParameter"/>
+        <alias name="parameterDirectionDescription" entity-alias="parameterDirection" field="description"/>
+        <alias name="parameterTypeDescription" entity-alias="parameterType" field="description"/>
+        <alias name="operatorTypeDescription" entity-alias="operatorType" field="description"/>
+    </view-entity>
+    <view-entity entity-name="ReportAppDetail" package="banqio.report">
+        <member-entity entity-alias="reportApp" entity-name="banqio.report.ReportApp"/>
+        <member-entity entity-alias="app" entity-name="commons.server.App" join-from-alias="reportApp">
+            <key-map field-name="appId"/>
+        </member-entity>
+        <member-entity entity-alias="report" entity-name="banqio.report.Report" join-from-alias="reportApp">
+            <key-map field-name="reportId"/>
+        </member-entity>
+        <member-entity entity-alias="reportCategory" entity-name="banqio.report.ReportCategory" join-from-alias="report">
+            <key-map field-name="categoryId"/>
+        </member-entity>
+        <member-entity entity-alias="reportType" entity-name="moqui.basic.Enumeration" join-from-alias="report">
+            <key-map field-name="reportTypeEnumId"/>
+        </member-entity>
+
+        <alias-all entity-alias="reportApp"/>
+        <alias-all entity-alias="report">
+            <exclude field="reportId"/>
+        </alias-all>
+        <alias name="appName" entity-alias="app" field="appName"/>
+        <alias name="appDescription" entity-alias="app" field="description"/>
+        <alias name="categoryName" entity-alias="reportCategory" field="categoryName"/>
+        <alias name="typeDescription" entity-alias="reportType" field="description"/>
+    </view-entity>
+
+    <!-- Report instance -->
+    <view-entity entity-name="ReportInstanceDetail" package="banqio.report">
+        <member-entity entity-alias="reportInstance" entity-name="banqio.report.ReportInstance"/>
+        <member-entity entity-alias="report" entity-name="banqio.report.Report" join-from-alias="reportInstance">
+            <key-map field-name="reportId"/>
+        </member-entity>
+        <member-entity entity-alias="reportPrice" entity-name="banqio.report.ReportPrice" join-from-alias="reportInstance" join-optional="true">
+            <key-map field-name="priceId"/>
+        </member-entity>
+        <member-entity entity-alias="reportCategory" entity-name="banqio.report.ReportCategory" join-from-alias="report">
+            <key-map field-name="categoryId"/>
+        </member-entity>
+        <member-entity entity-alias="reportType" entity-name="moqui.basic.Enumeration" join-from-alias="report">
+            <key-map field-name="reportTypeEnumId"/>
+        </member-entity>
+        <member-entity entity-alias="instanceStatus" entity-name="moqui.basic.StatusItem" join-from-alias="reportInstance">
+            <key-map field-name="statusId"/>
+        </member-entity>
+
+        <alias-all entity-alias="reportInstance"/>
+        <alias name="reportName" entity-alias="report" field="reportName"/>
+        <alias name="pseudoId" entity-alias="report" field="pseudoId"/>
+        <alias name="price" entity-alias="reportPrice" field="price"/>
+        <alias name="categoryId" entity-alias="reportCategory" field="categoryId"/>
+        <alias name="categoryName" entity-alias="reportCategory" field="categoryName"/>
+        <alias name="reportTypeEnumId" entity-alias="reportType" field="enumId"/>
+        <alias name="reportTypeDescription" entity-alias="reportType" field="description"/>
+        <alias name="serviceName" entity-alias="report" field="serviceName"/>
+        <alias name="disabled" entity-alias="report" field="disabled"/>
+        <alias name="statusDescription" entity-alias="instanceStatus" field="description"/>
+    </view-entity>
+    <view-entity entity-name="ReportInstanceParameterDetail" package="banqio.report">
+        <member-entity entity-alias="instanceParameter" entity-name="banqio.report.ReportInstanceParameter"/>
+        <member-entity entity-alias="reportParameter" entity-name="banqio.report.ReportParameter" join-from-alias="instanceParameter">
+            <key-map field-name="parameterId"/>
+        </member-entity>
+
+        <alias-all entity-alias="instanceParameter"/>
+        <alias name="parameterName" entity-alias="reportParameter" field="parameterName"/>
+        <alias name="parameterTypeEnumId" entity-alias="reportParameter" field="parameterTypeEnumId"/>
+    </view-entity>
+    <view-entity entity-name="ReportWorkflowInstance" package="banqio.report">
+        <member-entity entity-alias="instance" entity-name="commons.workflow.WorkflowInstance"/>
+        <member-entity entity-alias="instanceStatus" entity-name="moqui.basic.StatusItem" join-from-alias="instance">
+            <key-map field-name="statusId"/>
+        </member-entity>
+        <member-entity entity-alias="actionType" entity-name="moqui.basic.Enumeration" join-from-alias="instance">
+            <key-map field-name="actionTypeEnumId"/>
+        </member-entity>
+        <member-entity entity-alias="workflow" entity-name="commons.workflow.Workflow" join-from-alias="instance">
+            <key-map field-name="workflowId"/>
+        </member-entity>
+        <member-entity entity-alias="workflowType" entity-name="commons.workflow.WorkflowType" join-from-alias="workflow">
+            <key-map field-name="workflowTypeId"/>
+        </member-entity>
+        <member-entity entity-alias="reportInstance" entity-name="banqio.report.ReportInstance" join-from-alias="instance">
+            <key-map field-name="primaryKeyValue" related="instanceId"/>
+        </member-entity>
+        <member-entity entity-alias="reportInstanceStatus" entity-name="moqui.basic.StatusItem" join-from-alias="reportInstance">
+            <key-map field-name="statusId"/>
+        </member-entity>
+        <member-entity entity-alias="reportPrice" entity-name="banqio.report.ReportPrice" join-from-alias="reportInstance" join-optional="true">
+            <key-map field-name="priceId"/>
+        </member-entity>
+        <member-entity entity-alias="currency" entity-name="moqui.basic.Uom" join-from-alias="reportPrice" join-optional="true">
+            <key-map field-name="currencyUomId"/>
+        </member-entity>
+        <member-entity entity-alias="report" entity-name="banqio.report.Report" join-from-alias="reportInstance">
+            <key-map field-name="reportId"/>
+        </member-entity>
+        <member-entity entity-alias="reportCategory" entity-name="banqio.report.ReportCategory" join-from-alias="report">
+            <key-map field-name="categoryId"/>
+        </member-entity>
+        <member-entity entity-alias="reportType" entity-name="moqui.basic.Enumeration" join-from-alias="report">
+            <key-map field-name="reportTypeEnumId"/>
+        </member-entity>
+        <member-entity entity-alias="inputUser" entity-name="moqui.security.UserAccount" join-from-alias="instance" join-optional="true">
+            <key-map field-name="inputUserId"/>
+        </member-entity>
+
+        <alias-all entity-alias="instance"/>
+        <alias-all entity-alias="report">
+            <exclude field="inputUserId"/>
+            <exclude field="creationDate"/>
+        </alias-all>
+        <alias name="priceId" entity-alias="reportPrice" field="priceId"/>
+        <alias name="price" entity-alias="reportPrice" field="price"/>
+        <alias name="currencyUomId" entity-alias="currency" field="uomId"/>
+        <alias name="currencyDescription" entity-alias="currency" field="description"/>
+        <alias name="currencyAbbreviation" entity-alias="currency" field="abbreviation"/>
+        <alias name="debitAccountNumber" entity-alias="reportInstance" field="debitAccountNumber"/>
+        <alias name="reportInstanceId" entity-alias="reportInstance" field="instanceId"/>
+        <alias name="reportInstanceStatusId" entity-alias="reportInstanceStatus" field="statusId"/>
+        <alias name="reportInstanceStatusDescription" entity-alias="reportInstanceStatus" field="description"/>
+        <alias name="resourceLocation" entity-alias="reportInstance" field="resourceLocation"/>
+        <alias name="errors" entity-alias="reportInstance" field="errors"/>
+        <alias name="statusDescription" entity-alias="instanceStatus" field="description"/>
+        <alias name="workflowTypeId" entity-alias="workflowType" field="typeId"/>
+        <alias name="actionTypeDescription" entity-alias="actionType" field="description"/>
+        <alias name="categoryName" entity-alias="reportCategory" field="categoryName"/>
+        <alias name="typeDescription" entity-alias="reportType" field="description"/>
+        <alias name="inputUserFullName" entity-alias="inputUser" field="userFullName"/>
+
+        <entity-condition>
+            <econdition field-name="workflowTypeId" value="WF_RPT"/>
+        </entity-condition>
+    </view-entity>
+
+</entities>

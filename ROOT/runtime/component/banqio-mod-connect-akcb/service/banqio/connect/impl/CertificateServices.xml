@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Certificates -->
+    <service verb="generate" noun="AccountConfirmation" type="java" location="com.netvariant.banqio.connect.impl.CertificateServiceRelay" method="generateAccountConfirmation" authenticate="false">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="price" type="Double"/>
+            <parameter name="accountNumber"/>
+            <parameter name="name"/>
+            <parameter name="address"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="customerId"/>
+            <parameter name="resourceLocation"/>
+        </out-parameters>
+    </service>
+    <service verb="generate" noun="AccountClosureConfirmation" type="java" location="com.netvariant.banqio.connect.impl.CertificateServiceRelay" method="generateAccountClosureConfirmation" authenticate="false">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="price" type="Double"/>
+            <parameter name="accountNumber"/>
+            <parameter name="accountHolder"/>
+            <parameter name="effectiveDate"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="customerId"/>
+            <parameter name="resourceLocation"/>
+        </out-parameters>
+    </service>
+    <service verb="generate" noun="AuditConfirmation" type="java" location="com.netvariant.banqio.connect.impl.CertificateServiceRelay" method="generateAuditConfirmation" authenticate="false">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="price" type="Double"/>
+            <parameter name="name1"/>
+            <parameter name="name2"/>
+            <parameter name="address1"/>
+            <parameter name="address2"/>
+            <parameter name="address3"/>
+            <parameter name="fromDate"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="customerId"/>
+            <parameter name="resourceLocation"/>
+        </out-parameters>
+    </service>
+    <service verb="generate" noun="AddressConfirmation" type="java" location="com.netvariant.banqio.connect.impl.CertificateServiceRelay" method="generateAddressConfirmation" authenticate="false">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="price" type="Double"/>
+            <parameter name="accountNumber"/>
+            <parameter name="accountType"/>
+            <parameter name="name1"/>
+            <parameter name="name2"/>
+            <parameter name="address1"/>
+            <parameter name="address2"/>
+            <parameter name="address3"/>
+            <parameter name="openingDate"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="customerId"/>
+            <parameter name="resourceLocation"/>
+        </out-parameters>
+    </service>
+    <service verb="generate" noun="BalanceConfirmation" type="java" location="com.netvariant.banqio.connect.impl.CertificateServiceRelay" method="generateBalanceConfirmation" authenticate="false">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="price" type="Double"/>
+            <parameter name="accountNumber"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="customerId"/>
+            <parameter name="resourceLocation"/>
+        </out-parameters>
+    </service>
+    <service verb="generate" noun="AccountStatement" type="java" location="com.netvariant.banqio.connect.impl.CertificateServiceRelay" method="generateAccountStatement" authenticate="false">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="price" type="Double"/>
+            <parameter name="accountNumber"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="customerId"/>
+            <parameter name="resourceLocation"/>
+        </out-parameters>
+    </service>
+
+</services>

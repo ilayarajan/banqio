@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <dataDocuments dataDocumentId="BanqioReportCategory" documentName="Report Category" documentTitle="${categoryName}" indexName="banqio" primaryEntityName="banqio.report.ReportCategory">
+        <fields fieldSeqId="01" fieldPath="categoryId"/>
+        <fields fieldSeqId="02" fieldPath="categoryName"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioReport" documentName="Report" documentTitle="${reportName}" indexName="banqio" primaryEntityName="banqio.report.Report">
+        <fields fieldSeqId="01" fieldPath="reportId"/>
+        <fields fieldSeqId="02" fieldPath="categoryId"/>
+        <fields fieldSeqId="03" fieldPath="reportName"/>
+        <fields fieldSeqId="04" fieldPath="reportTypeEnumId"/>
+        <fields fieldSeqId="05" fieldPath="serviceName"/>
+        <fields fieldSeqId="06" fieldPath="dataDocumentId"/>
+        <fields fieldSeqId="07" fieldPath="reportType:description" fieldNameAlias="reportTypeDescription"/>
+        <fields fieldSeqId="08" fieldPath="category:categoryName" fieldNameAlias="categoryName"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioReportParameter" documentName="Report Parameter" documentTitle="${parameterName}" indexName="banqio" primaryEntityName="banqio.report.ReportParameter">
+        <fields fieldSeqId="01" fieldPath="parameterId"/>
+        <fields fieldSeqId="02" fieldPath="reportId"/>
+        <fields fieldSeqId="03" fieldPath="parameterTypeEnumId"/>
+        <fields fieldSeqId="04" fieldPath="parameterName"/>
+        <fields fieldSeqId="05" fieldPath="displayName"/>
+        <fields fieldSeqId="06" fieldPath="parameterType:description" fieldNameAlias="parameterTypeDescription"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioReportInstance" documentName="Report Instance" documentTitle="${instanceId}" indexName="banqio" primaryEntityName="banqio.report.ReportInstance">
+        <fields fieldSeqId="01" fieldPath="instanceId"/>
+        <fields fieldSeqId="02" fieldPath="reportId"/>
+        <fields fieldSeqId="03" fieldPath="statusId"/>
+        <fields fieldSeqId="04" fieldPath="resourceLocation"/>
+        <fields fieldSeqId="05" fieldPath="errors"/>
+        <fields fieldSeqId="06" fieldPath="report:reportName" fieldNameAlias="reportName"/>
+        <fields fieldSeqId="07" fieldPath="status:statusCode" fieldNameAlias="statusCode"/>
+        <fields fieldSeqId="08" fieldPath="status:description" fieldNameAlias="statusDescription"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioReportPrice" documentName="Report Price" documentTitle="${priceId}" indexName="banqio" primaryEntityName="banqio.report.ReportPrice">
+        <fields fieldSeqId="01" fieldPath="priceId"/>
+        <fields fieldSeqId="02" fieldPath="reportId"/>
+        <fields fieldSeqId="03" fieldPath="partyClassificationId"/>
+        <fields fieldSeqId="04" fieldPath="externalPartyId"/>
+        <fields fieldSeqId="05" fieldPath="price"/>
+        <fields fieldSeqId="06" fieldPath="currencyUomId"/>
+        <fields fieldSeqId="07" fieldPath="billingIdentifier"/>
+        <fields fieldSeqId="08" fieldPath="fromDate"/>
+        <fields fieldSeqId="09" fieldPath="toDate"/>
+        <fields fieldSeqId="10" fieldPath="report:reportName" fieldNameAlias="reportName"/>
+        <fields fieldSeqId="11" fieldPath="partyClassification:description" fieldNameAlias="partyClassificationDescription"/>
+        <fields fieldSeqId="12" fieldPath="currency:description" fieldNameAlias="currencyDescription"/>
+        <fields fieldSeqId="13" fieldPath="currency:abbreviation" fieldNameAlias="currencyAbbreviation"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+
+</entity-facade-xml>

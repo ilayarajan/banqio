@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Account type behaviour -->
+    <moqui.basic.EnumerationType enumTypeId="AccountTypeBehaviour" description="Account Type Behaviour"/>
+    <moqui.basic.Enumeration enumTypeId="AccountTypeBehaviour" enumId="ACCT_TYPE_CURRENT" description="Current Account"/>
+    <moqui.basic.Enumeration enumTypeId="AccountTypeBehaviour" enumId="ACCT_TYPE_SAVINGS" description="Savings Account"/>
+    <moqui.basic.Enumeration enumTypeId="AccountTypeBehaviour" enumId="ACCT_TYPE_CREDIT" description="Credit Card Account"/>
+    <moqui.basic.Enumeration enumTypeId="AccountTypeBehaviour" enumId="ACCT_TYPE_DEPOSIT" description="Deposit Account"/>
+    <moqui.basic.Enumeration enumTypeId="AccountTypeBehaviour" enumId="ACCT_TYPE_LOAN" description="Loan Account"/>
+    <moqui.basic.Enumeration enumTypeId="AccountTypeBehaviour" enumId="ACCT_TYPE_NOSTRO" description="Nostro Account"/>
+    <moqui.basic.Enumeration enumTypeId="AccountTypeBehaviour" enumId="ACCT_TYPE_VOSTRO" description="Vostro Account"/>
+    <moqui.basic.Enumeration enumTypeId="AccountTypeBehaviour" enumId="ACCT_TYPE_ESCROW" description="Escrow Account"/>
+    <moqui.basic.Enumeration enumTypeId="AccountTypeBehaviour" enumId="ACCT_TYPE_OVERSEAS" description="Overseas Account"/>
+
+    <!-- Account status behaviour -->
+    <moqui.basic.EnumerationType enumTypeId="AccountStatusBehaviour" description="Account Status Behaviour"/>
+    <moqui.basic.Enumeration enumTypeId="AccountStatusBehaviour" enumId="ACCT_STAT_ACT" description="Active"/>
+    <moqui.basic.Enumeration enumTypeId="AccountStatusBehaviour" enumId="ACCT_STAT_DORMANT" description="Dormant"/>
+    <moqui.basic.Enumeration enumTypeId="AccountStatusBehaviour" enumId="ACCT_STAT_SUSPEND" description="Suspended"/>
+    <moqui.basic.Enumeration enumTypeId="AccountStatusBehaviour" enumId="ACCT_STAT_CLOSE" description="Closed"/>
+
+    <!-- Account opening status -->
+    <moqui.basic.StatusType statusTypeId="AccountOpening" description="Account Opening Status"/>
+    <moqui.basic.StatusItem statusTypeId="AccountOpening" statusId="ACCT_OPEN_DRAFT" description="Draft"/>
+    <moqui.basic.StatusItem statusTypeId="AccountOpening" statusId="ACCT_OPEN_CANCELLED" description="Cancelled"/>
+    <moqui.basic.StatusItem statusTypeId="AccountOpening" statusId="ACCT_OPEN_PROPOSED" description="Proposed"/>
+    <moqui.basic.StatusItem statusTypeId="AccountOpening" statusId="ACCT_OPEN_APPROVED" description="Approved"/>
+    <moqui.basic.StatusItem statusTypeId="AccountOpening" statusId="ACCT_OPEN_REJECTED" description="Rejected"/>
+
+    <!-- Account opening status flow -->
+    <moqui.basic.StatusFlow statusFlowId="AccountOpeningStatusFlow" statusTypeId="AccountOpening" description="Account Opening Status Flow"/>
+    <moqui.basic.StatusFlowItem statusFlowId="AccountOpeningStatusFlow" statusId="ACCT_OPEN_DRAFT" isInitial="Y"/>
+    <moqui.basic.StatusFlowItem statusFlowId="AccountOpeningStatusFlow" statusId="ACCT_OPEN_CANCELLED" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="AccountOpeningStatusFlow" statusId="ACCT_OPEN_PROPOSED" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="AccountOpeningStatusFlow" statusId="ACCT_OPEN_APPROVED" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="AccountOpeningStatusFlow" statusId="ACCT_OPEN_REJECTED" isInitial="N"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="AccountOpeningStatusFlow" statusId="ACCT_OPEN_DRAFT" toStatusId="ACCT_OPEN_CANCELLED" transitionSequence="1" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="AccountOpeningStatusFlow" statusId="ACCT_OPEN_DRAFT" toStatusId="ACCT_OPEN_PROPOSED" transitionSequence="2" transitionName="Propose"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="AccountOpeningStatusFlow" statusId="ACCT_OPEN_PROPOSED" toStatusId="ACCT_OPEN_CANCELLED" transitionSequence="1" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="AccountOpeningStatusFlow" statusId="ACCT_OPEN_PROPOSED" toStatusId="ACCT_OPEN_APPROVED" transitionSequence="2" transitionName="Accept"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="AccountOpeningStatusFlow" statusId="ACCT_OPEN_PROPOSED" toStatusId="ACCT_OPEN_REJECTED" transitionSequence="3" transitionName="Reject"/>
+
+    <!-- Account saving goal status -->
+    <moqui.basic.StatusType statusTypeId="SavingGoal" description="Saving Goal Status"/>
+    <moqui.basic.StatusItem statusTypeId="SavingGoal" statusId="SAVE_GOAL_ACTIVE" description="Active"/>
+    <moqui.basic.StatusItem statusTypeId="SavingGoal" statusId="SAVE_GOAL_DELETED" description="Deleted"/>
+    <moqui.basic.StatusItem statusTypeId="SavingGoal" statusId="SAVE_GOAL_COMPLETED" description="Completed"/>
+
+    <!-- Account saving goal status flow -->
+    <moqui.basic.StatusFlow statusFlowId="SavingGoalStatusFlow" statusTypeId="SavingGoal" description="Saving Goal Status Flow"/>
+    <moqui.basic.StatusFlowItem statusFlowId="SavingGoalStatusFlow" statusId="SAVE_GOAL_ACTIVE" isInitial="Y"/>
+    <moqui.basic.StatusFlowItem statusFlowId="SavingGoalStatusFlow" statusId="SAVE_GOAL_DELETED" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="SavingGoalStatusFlow" statusId="SAVE_GOAL_COMPLETED" isInitial="N"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="SavingGoalStatusFlow" statusId="SAVE_GOAL_ACTIVE" toStatusId="SAVE_GOAL_DELETED" transitionSequence="1" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="SavingGoalStatusFlow" statusId="SAVE_GOAL_ACTIVE" toStatusId="SAVE_GOAL_COMPLETED" transitionSequence="2" transitionName="Complete"/>
+
+    <!-- Transaction type behaviour -->
+    <moqui.basic.EnumerationType enumTypeId="TransactionTypeBehaviour" description="Transaction Type Behaviour"/>
+    <moqui.basic.Enumeration enumTypeId="TransactionTypeBehaviour" enumId="TRX_TYPE_SALARY" description="Salary Deposit"/>
+    <moqui.basic.Enumeration enumTypeId="TransactionTypeBehaviour" enumId="TRX_TYPE_IN_FT" description="Incoming Funds Transfer"/>
+    <moqui.basic.Enumeration enumTypeId="TransactionTypeBehaviour" enumId="TRX_TYPE_OUT_FT" description="Outgoing Funds Transfer"/>
+    <moqui.basic.Enumeration enumTypeId="TransactionTypeBehaviour" enumId="TRX_TYPE_CC_PAY" description="Credit Card Payment"/>
+    <moqui.basic.Enumeration enumTypeId="TransactionTypeBehaviour" enumId="TRX_TYPE_CC_SETTLE" description="Credit Card Settlement"/>
+    <moqui.basic.Enumeration enumTypeId="TransactionTypeBehaviour" enumId="TRX_TYPE_POS_PAY" description="Point of Sale Payment"/>
+    <moqui.basic.Enumeration enumTypeId="TransactionTypeBehaviour" enumId="TRX_TYPE_ATM_WITHDRAW" description="ATM Withdrawal"/>
+    <moqui.basic.Enumeration enumTypeId="TransactionTypeBehaviour" enumId="TRX_TYPE_CASH_WITHDRAW" description="Cash Withdrawal"/>
+    <moqui.basic.Enumeration enumTypeId="TransactionTypeBehaviour" enumId="TRX_TYPE_DEBIT" description="Debit"/>
+    <moqui.basic.Enumeration enumTypeId="TransactionTypeBehaviour" enumId="TRX_TYPE_CREDIT" description="Credit"/>
+    <moqui.basic.Enumeration enumTypeId="TransactionTypeBehaviour" enumId="TRX_TYPE_MISC" description="Miscellaneous"/>
+
+    <!-- Transaction order field -->
+    <moqui.basic.EnumerationType enumTypeId="TransactionOrderField" description="Transaction Order Field"/>
+    <moqui.basic.Enumeration enumTypeId="TransactionOrderField" enumId="TRX_ORDER_FLD_VALUE_DATE" description="Value Date"/>
+    <moqui.basic.Enumeration enumTypeId="TransactionOrderField" enumId="TRX_ORDER_FLD_POST_DATE" description="Posting Date"/>
+
+</entity-facade-xml>

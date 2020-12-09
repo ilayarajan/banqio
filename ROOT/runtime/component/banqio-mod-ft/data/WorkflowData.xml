@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Plug workflow types -->
+    <CommonsWfType
+            typeId="WF_FT"
+            typeName="Funds Transfer"
+            statusTypeId="FundsTransfer"
+            primaryEntityName="banqio.ft.FundsTransfer"
+            primaryViewEntityName="banqio.ft.FundsTransferDetail"
+            primaryKeyFieldName="transferId"/>
+
+    <!-- Plug entity fields -->
+    <CommonsEntityFld entityName="banqio.ft.FundsTransferDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="customerId" displayName="Customer ID"/>
+    <CommonsEntityFld entityName="banqio.ft.FundsTransferDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="typeId" displayName="Transfer Type ID"/>
+    <CommonsEntityFld entityName="banqio.ft.FundsTransferDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="typeName" displayName="Transfer Type"/>
+    <CommonsEntityFld entityName="banqio.ft.FundsTransferDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="typeExternalId" displayName="Transfer Type External ID"/>
+    <CommonsEntityFld entityName="banqio.ft.FundsTransferDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="typeBehaviourEnumId" displayName="Transfer Type Behavior ID"/>
+    <CommonsEntityFld entityName="banqio.ft.FundsTransferDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="typeBehaviourDescription" displayName="Transfer Type Behavior"/>
+    <CommonsEntityFld entityName="banqio.ft.FundsTransferDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="beneficiaryTypeId" displayName="Beneficiary Type ID"/>
+    <CommonsEntityFld entityName="banqio.ft.FundsTransferDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="beneficiaryTypeName" displayName="Beneficiary Type"/>
+    <CommonsEntityFld entityName="banqio.ft.FundsTransferDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="beneficiaryTypeBehaviourEnumId" displayName="Beneficiary Type Behavior ID"/>
+    <CommonsEntityFld entityName="banqio.ft.FundsTransferDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="beneficiaryTypeBehaviourDescription" displayName="Beneficiary Type Behavior"/>
+    <CommonsEntityFld entityName="banqio.ft.FundsTransferDetail" fieldTypeEnumId="ENTITY_FLD_NUMBER" fieldName="amount" displayName="Amount"/>
+    <CommonsEntityFld entityName="banqio.ft.FundsTransferDetail" fieldTypeEnumId="ENTITY_FLD_NUMBER" fieldName="amountDebit" displayName="Amount Debit"/>
+    <CommonsEntityFld entityName="banqio.ft.FundsTransferDetail" fieldTypeEnumId="ENTITY_FLD_NUMBER" fieldName="amountLocal" displayName="Amount Local"/>
+    <CommonsEntityFld entityName="banqio.ft.FundsTransferDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="currencyAbbreviation" displayName="Currency Code"/>
+    <CommonsEntityFld entityName="banqio.ft.FundsTransferDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="currencyNumericCode" displayName="Currency Numeric Code"/>
+    <CommonsEntityFld entityName="banqio.ft.FundsTransferDetail" fieldTypeEnumId="ENTITY_FLD_BOOLEAN" fieldName="sameCurrency" displayName="Same Currency Transfer"/>
+
+</entity-facade-xml>

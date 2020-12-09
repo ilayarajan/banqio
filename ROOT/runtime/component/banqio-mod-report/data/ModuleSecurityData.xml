@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Report API -->
+    <artifactGroups artifactGroupId="BNQ_RPT_API" description="Banqio Report API">
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/report/.*"/>
+    </artifactGroups>
+
+    <!-- Report run API -->
+    <artifactGroups artifactGroupId="BNQ_RPT_RUN_API" description="Banqio Report Run API">
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/report/.*/run"/>
+    </artifactGroups>
+
+    <!-- Admin Reports (All) -->
+    <userGroups userGroupId="BNQ_ADM_RPT_ALL" description="Banqio Admin Reports (All)" groupTypeEnumId="BNQ_ADM_GRP" wikiLocation="component://banqio-mod-report/wiki/BNQ_ADM_RPT_ALL.md">
+        <authz artifactGroupId="BNQ_RPT_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+    </userGroups>
+
+    <!-- Admin Reports (Run) -->
+    <userGroups userGroupId="BNQ_ADM_RPT_RUN" description="Banqio Admin Reports (Run)" groupTypeEnumId="BNQ_ADM_GRP" wikiLocation="component://banqio-mod-report/wiki/BNQ_ADM_RPT_RUN.md">
+        <authz artifactGroupId="BNQ_RPT_RUN_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_RPT_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+    </userGroups>
+
+    <!-- Admin Reports (View) -->
+    <userGroups userGroupId="BNQ_ADM_RPT_VIEW" description="Banqio Admin Reports (View)" groupTypeEnumId="BNQ_ADM_GRP" wikiLocation="component://banqio-mod-report/wiki/BNQ_ADM_RPT_VIEW.md">
+        <authz artifactGroupId="BNQ_RPT_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+    </userGroups>
+
+</entity-facade-xml>

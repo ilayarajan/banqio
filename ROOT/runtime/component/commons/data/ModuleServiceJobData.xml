@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml>
+
+    <moqui.service.job.ServiceJob
+            jobName="start_ElapsedWorkflowInstances_frequent"
+            description="Starts elapsed workflow instances"
+            serviceName="commons.workflow.WorkflowServices.start#ElapsedWorkflowInstances"
+            cronExpression="0 0/1 * * * ?"
+            paused="Y"/>
+
+</entity-facade-xml>

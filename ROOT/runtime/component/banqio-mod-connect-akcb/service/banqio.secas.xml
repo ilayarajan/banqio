@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<secas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-eca-2.1.xsd">
+
+    <!-- Account service validation -->
+    <seca service="banqio\.connect\.impl\.AccountServices\.(.+)" name-is-pattern="true" when="pre-service">
+        <actions>
+            <service-call name="commons.server.ServerServices.validate#App">
+                <field-map field-name="appId" from="sourceAppId"/>
+            </service-call>
+            <service-call name="banqio.security.SecurityServices.validate#UserAuthenticated">
+                <field-map field-name="sourceAppId" from="sourceAppId"/>
+            </service-call>
+            <service-call name="banqio.security.SecurityServices.validate#UserExternalId">
+                <field-map field-name="sourceAppId" from="sourceAppId"/>
+                <field-map field-name="externalId" from="customerId"/>
+            </service-call>
+        </actions>
+    </seca>
+
+    <!-- Beneficiary service validation -->
+    <seca service="banqio\.connect\.impl\.BeneficiaryServices\.(?!(commit|reject)).+" name-is-pattern="true" when="pre-service">
+        <actions>
+            <service-call name="commons.server.ServerServices.validate#App">
+                <field-map field-name="appId" from="sourceAppId"/>
+            </service-call>
+            <service-call name="banqio.security.SecurityServices.validate#UserAuthenticated">
+                <field-map field-name="sourceAppId" from="sourceAppId"/>
+            </service-call>
+            <service-call name="banqio.security.SecurityServices.validate#UserExternalId">
+                <field-map field-name="sourceAppId" from="sourceAppId"/>
+                <field-map field-name="externalId" from="customerId"/>
+            </service-call>
+        </actions>
+    </seca>
+
+    <!-- Cheque service validation -->
+    <seca service="banqio\.connect\.impl\.ChequeServices\.(?!(commit|reject)).+" name-is-pattern="true" when="pre-service">
+        <actions>
+            <service-call name="commons.server.ServerServices.validate#App">
+                <field-map field-name="appId" from="sourceAppId"/>
+            </service-call>
+            <service-call name="banqio.security.SecurityServices.validate#UserAuthenticated">
+                <field-map field-name="sourceAppId" from="sourceAppId"/>
+            </service-call>
+            <service-call name="banqio.security.SecurityServices.validate#UserExternalId">
+                <field-map field-name="sourceAppId" from="sourceAppId"/>
+                <field-map field-name="externalId" from="customerId"/>
+            </service-call>
+        </actions>
+    </seca>
+
+    <!-- Credit card service validation -->
+    <seca service="banqio\.connect\.impl\.CreditCardServices\.(.+)" name-is-pattern="true" when="pre-service">
+        <actions>
+            <service-call name="commons.server.ServerServices.validate#App">
+                <field-map field-name="appId" from="sourceAppId"/>
+            </service-call>
+            <service-call name="banqio.security.SecurityServices.validate#UserAuthenticated">
+                <field-map field-name="sourceAppId" from="sourceAppId"/>
+            </service-call>
+            <service-call name="banqio.security.SecurityServices.validate#UserExternalId">
+                <field-map field-name="sourceAppId" from="sourceAppId"/>
+                <field-map field-name="externalId" from="customerId"/>
+            </service-call>
+        </actions>
+    </seca>
+
+    <!-- Customer service validation -->
+    <seca service="banqio\.connect\.impl\.CustomerServices\.(.+)" name-is-pattern="true" when="pre-service">
+        <actions>
+            <service-call name="commons.server.ServerServices.validate#App">
+                <field-map field-name="appId" from="sourceAppId"/>
+            </service-call>
+            <service-call name="banqio.security.SecurityServices.validate#UserAuthenticated">
+                <field-map field-name="sourceAppId" from="sourceAppId"/>
+            </service-call>
+            <service-call name="banqio.security.SecurityServices.validate#UserExternalId">
+                <field-map field-name="sourceAppId" from="sourceAppId"/>
+                <field-map field-name="externalId" from="customerId"/>
+            </service-call>
+        </actions>
+    </seca>
+
+    <!-- Dashboard service validation -->
+    <seca service="banqio\.connect\.impl\.DashboardServices\.(.+)" name-is-pattern="true" when="pre-service">
+        <actions>
+            <service-call name="commons.server.ServerServices.validate#App">
+                <field-map field-name="appId" from="sourceAppId"/>
+            </service-call>
+            <service-call name="banqio.security.SecurityServices.validate#UserAuthenticated">
+                <field-map field-name="sourceAppId" from="sourceAppId"/>
+            </service-call>
+            <service-call name="banqio.security.SecurityServices.validate#UserExternalId">
+                <field-map field-name="sourceAppId" from="sourceAppId"/>
+                <field-map field-name="externalId" from="customerId"/>
+            </service-call>
+        </actions>
+    </seca>
+
+    <!-- Exchange rate service validation -->
+    <seca service="banqio\.connect\.impl\.ExchangeRateServices\.(.+)" name-is-pattern="true" when="pre-service">
+        <actions>
+            <service-call name="commons.server.ServerServices.validate#App">
+                <field-map field-name="appId" from="sourceAppId"/>
+            </service-call>
+            <service-call name="banqio.security.SecurityServices.validate#UserAuthenticated">
+                <field-map field-name="sourceAppId" from="sourceAppId"/>
+            </service-call>
+            <service-call name="banqio.security.SecurityServices.validate#UserExternalId">
+                <field-map field-name="sourceAppId" from="sourceAppId"/>
+                <field-map field-name="externalId" from="customerId"/>
+            </service-call>
+        </actions>
+    </seca>
+
+    <!-- Funds transfer service validation -->
+    <seca service="banqio\.connect\.impl\.FundsTransferServices\.(?!(commit|reject|generate|parse|pay)).+" name-is-pattern="true" when="pre-service">
+        <actions>
+            <service-call name="commons.server.ServerServices.validate#App">
+                <field-map field-name="appId" from="sourceAppId"/>
+            </service-call>
+            <service-call name="banqio.security.SecurityServices.validate#UserAuthenticated">
+                <field-map field-name="sourceAppId" from="sourceAppId"/>
+            </service-call>
+            <service-call name="banqio.security.SecurityServices.validate#UserExternalId">
+                <field-map field-name="sourceAppId" from="sourceAppId"/>
+                <field-map field-name="externalId" from="customerId"/>
+            </service-call>
+        </actions>
+    </seca>
+
+    <!-- Loan service validation -->
+    <seca service="banqio\.connect\.impl\.LoanServices\.(.+)" name-is-pattern="true" when="pre-service">
+        <actions>
+            <service-call name="commons.server.ServerServices.validate#App">
+                <field-map field-name="appId" from="sourceAppId"/>
+            </service-call>
+            <service-call name="banqio.security.SecurityServices.validate#UserAuthenticated">
+                <field-map field-name="sourceAppId" from="sourceAppId"/>
+            </service-call>
+            <service-call name="banqio.security.SecurityServices.validate#UserExternalId">
+                <field-map field-name="sourceAppId" from="sourceAppId"/>
+                <field-map field-name="externalId" from="customerId"/>
+            </service-call>
+        </actions>
+    </seca>
+
+    <!-- Report service validation -->
+    <seca service="banqio\.connect\.impl\.ReportServices\.(.+)" name-is-pattern="true" when="pre-service">
+        <actions>
+            <service-call name="commons.server.ServerServices.validate#App">
+                <field-map field-name="appId" from="sourceAppId"/>
+            </service-call>
+        </actions>
+    </seca>
+
+    <!-- Term deposit service validation -->
+    <seca service="banqio\.connect\.impl\.TermDepositServices\.(.+)" name-is-pattern="true" when="pre-service">
+        <actions>
+            <service-call name="commons.server.ServerServices.validate#App">
+                <field-map field-name="appId" from="sourceAppId"/>
+            </service-call>
+            <service-call name="banqio.security.SecurityServices.validate#UserAuthenticated">
+                <field-map field-name="sourceAppId" from="sourceAppId"/>
+            </service-call>
+            <service-call name="banqio.security.SecurityServices.validate#UserExternalId">
+                <field-map field-name="sourceAppId" from="sourceAppId"/>
+                <field-map field-name="externalId" from="customerId"/>
+            </service-call>
+        </actions>
+    </seca>
+
+    <!-- Trade finance service validation -->
+    <seca service="banqio\.connect\.impl\.TradeFinanceServices\.(.+)" name-is-pattern="true" when="pre-service">
+        <actions>
+            <service-call name="commons.server.ServerServices.validate#App">
+                <field-map field-name="appId" from="sourceAppId"/>
+            </service-call>
+            <service-call name="banqio.security.SecurityServices.validate#UserAuthenticated">
+                <field-map field-name="sourceAppId" from="sourceAppId"/>
+            </service-call>
+            <service-call name="banqio.security.SecurityServices.validate#UserExternalId">
+                <field-map field-name="sourceAppId" from="sourceAppId"/>
+                <field-map field-name="externalId" from="customerId"/>
+            </service-call>
+        </actions>
+    </seca>
+
+    <!-- Trigger workflow on beneficiary creation -->
+    <seca service="banqio.connect.impl.BeneficiaryServices.create#Beneficiary" when="post-service">
+        <actions>
+            <entity-find entity-name="commons.workflow.WorkflowAcl" list="workflowList">
+                <econdition field-name="workflowTypeId" value="WF_BEN"/>
+                <econdition field-name="accessUserGroupId" operator="in" from="ec.user.getUserGroupIdSet()"/>
+            </entity-find>
+            <if condition="!workflowList.isEmpty()">
+                <service-call name="update#banqio.beneficiary.Beneficiary">
+                    <field-map field-name="beneficiaryId" from="beneficiaryId"/>
+                    <field-map field-name="statusId" value="BEN_PROPOSED"/>
+                </service-call>
+
+                <set field="workflowId" from="workflowList.get(0).workflowId"/>
+                <service-call name="commons.workflow.WorkflowServices.create#WorkflowInstance" out-map="context">
+                    <field-map field-name="workflowId" from="workflowId"/>
+                    <field-map field-name="primaryKeyValue" from="beneficiaryId"/>
+                    <field-map field-name="actionTypeEnumId" value="WF_ACTION_CREATE"/>
+                </service-call>
+            </if>
+        </actions>
+    </seca>
+
+    <!-- Trigger workflow on beneficiary updates -->
+    <seca service="banqio.connect.impl.BeneficiaryServices.update#Beneficiary" when="post-service">
+        <actions>
+            <entity-find entity-name="commons.workflow.WorkflowAcl" list="workflowList">
+                <econdition field-name="workflowTypeId" value="WF_BEN"/>
+                <econdition field-name="accessUserGroupId" operator="in" from="ec.user.getUserGroupIdSet()"/>
+            </entity-find>
+            <if condition="!workflowList.isEmpty()">
+                <service-call name="update#banqio.beneficiary.Beneficiary">
+                    <field-map field-name="beneficiaryId" from="beneficiaryId"/>
+                    <field-map field-name="statusId" value="BEN_PROPOSED"/>
+                </service-call>
+
+                <set field="workflowId" from="workflowList.get(0).workflowId"/>
+                <service-call name="commons.workflow.WorkflowServices.create#WorkflowInstance" out-map="context">
+                    <field-map field-name="workflowId" from="workflowId"/>
+                    <field-map field-name="primaryKeyValue" from="beneficiaryId"/>
+                    <field-map field-name="actionTypeEnumId" value="WF_ACTION_UPDATE"/>
+                </service-call>
+            </if>
+        </actions>
+    </seca>
+
+    <!-- Trigger workflow on beneficiary deletes -->
+    <seca service="banqio.connect.impl.BeneficiaryServices.delete#Beneficiary" when="post-service">
+        <actions>
+            <entity-find entity-name="commons.workflow.WorkflowAcl" list="workflowList">
+                <econdition field-name="workflowTypeId" value="WF_BEN"/>
+                <econdition field-name="accessUserGroupId" operator="in" from="ec.user.getUserGroupIdSet()"/>
+            </entity-find>
+            <if condition="!workflowList.isEmpty()">
+                <set field="workflowId" from="workflowList.get(0).workflowId"/>
+                <service-call name="commons.workflow.WorkflowServices.create#WorkflowInstance" out-map="context">
+                    <field-map field-name="workflowId" from="workflowId"/>
+                    <field-map field-name="primaryKeyValue" from="beneficiaryId"/>
+                    <field-map field-name="actionTypeEnumId" value="WF_ACTION_DELETE"/>
+                </service-call>
+            </if>
+        </actions>
+    </seca>
+
+    <!-- Trigger workflow on single funds transfer creation -->
+    <seca service="banqio.connect.impl.FundsTransferServices.create#SingleFundsTransfer" when="post-service">
+        <actions>
+            <entity-find entity-name="commons.workflow.WorkflowAcl" list="workflowList">
+                <econdition field-name="workflowTypeId" value="WF_FT"/>
+                <econdition field-name="accessUserGroupId" operator="in" from="ec.user.getUserGroupIdSet()"/>
+            </entity-find>
+            <if condition="!workflowList.isEmpty()">
+                <service-call name="update#banqio.ft.FundsTransfer">
+                    <field-map field-name="transferId" from="transferId"/>
+                    <field-map field-name="statusId" value="FT_PROPOSED"/>
+                </service-call>
+
+                <set field="workflowId" from="workflowList.get(0).workflowId"/>
+                <service-call name="commons.workflow.WorkflowServices.create#WorkflowInstance" out-map="context">
+                    <field-map field-name="workflowId" from="workflowId"/>
+                    <field-map field-name="primaryKeyValue" from="transferId"/>
+                    <field-map field-name="actionTypeEnumId" value="WF_ACTION_CREATE"/>
+                </service-call>
+            </if>
+        </actions>
+    </seca>
+
+    <!-- Trigger workflow on bulk funds transfer proposal -->
+    <seca service="banqio.connect.impl.FundsTransferServices.propose#BulkFundsTransfer" when="post-service">
+        <actions>
+            <entity-find entity-name="commons.workflow.WorkflowAcl" list="workflowList">
+                <econdition field-name="workflowTypeId" value="WF_FT"/>
+                <econdition field-name="accessUserGroupId" operator="in" from="ec.user.getUserGroupIdSet()"/>
+            </entity-find>
+            <if condition="!workflowList.isEmpty()">
+                <set field="workflowId" from="workflowList.get(0).workflowId"/>
+                <service-call name="commons.workflow.WorkflowServices.create#WorkflowInstance" out-map="context">
+                    <field-map field-name="workflowId" from="workflowId"/>
+                    <field-map field-name="primaryKeyValue" from="transferId"/>
+                    <field-map field-name="actionTypeEnumId" value="WF_ACTION_CREATE"/>
+                </service-call>
+            </if>
+        </actions>
+    </seca>
+
+    <!-- Trigger workflow on run report -->
+    <seca service="banqio.report.ReportServices.run#Report" when="post-service">
+        <actions>
+            <entity-find-one entity-name="banqio.report.Report" value-field="report"/>
+            <if condition="report.reportTypeEnumId == 'RPT_TYPE_SERVICE_FILE'">
+                <entity-find entity-name="commons.workflow.WorkflowAcl" list="workflowList">
+                    <econdition field-name="workflowTypeId" value="WF_RPT"/>
+                    <econdition field-name="accessUserGroupId" operator="in" from="ec.user.getUserGroupIdSet()"/>
+                </entity-find>
+                <if condition="!workflowList.isEmpty()">
+                    <service-call name="update#banqio.report.ReportInstance">
+                        <field-map field-name="instanceId" from="instanceId"/>
+                        <field-map field-name="statusId" value="RPT_INST_PROPOSED"/>
+                    </service-call>
+
+                    <set field="workflowId" from="workflowList.get(0).workflowId"/>
+                    <service-call name="commons.workflow.WorkflowServices.create#WorkflowInstance">
+                        <field-map field-name="workflowId" from="workflowId"/>
+                        <field-map field-name="primaryKeyValue" from="instanceId"/>
+                        <field-map field-name="actionTypeEnumId" value="WF_ACTION_CREATE"/>
+                    </service-call>
+                </if>
+            </if>
+        </actions>
+    </seca>
+
+    <!-- Refresh pending bulk funds transfer on view -->
+    <seca service="banqio.ft.FundsTransferServices.find#FundsTransferWorkflowInstance" when="pre-service">
+        <actions>
+            <if condition="instanceId">
+                <entity-find-one entity-name="banqio.ft.FundsTransferWorkflowInstance" value-field="ft"/>
+                <if condition="ft?.typeBehaviourEnumId.startsWith('FT_TYPE_SINGLE')">
+                    <if condition="ft.transferStatusId == 'FT_PROPOSED'">
+                        <service-call name="banqio.connect.impl.InternalServices.refresh#SingleFundsTransfer">
+                            <field-map field-name="sourceAppId" from="sourceAppId"/>
+                            <field-map field-name="transferId" from="ft.primaryKeyValue"/>
+                        </service-call>
+                    </if>
+                </if>
+                <if condition="ft?.typeBehaviourEnumId.startsWith('FT_TYPE_BULK')">
+                    <if condition="ft.transferStatusId == 'FT_PROPOSED'">
+                        <service-call name="banqio.connect.impl.InternalServices.refresh#BulkFundsTransfer">
+                            <field-map field-name="sourceAppId" from="sourceAppId"/>
+                            <field-map field-name="transferId" from="ft.primaryKeyValue"/>
+                        </service-call>
+                    </if>
+                </if>
+            </if>
+        </actions>
+    </seca>
+
+    <!-- Validate bulk funds transfer on approval -->
+    <seca service="commons.workflow.WorkflowServices.update#WorkflowInstanceTask" when="pre-service">
+        <actions>
+            <if condition="statusId == 'WF_TASK_APPROVE'">
+                <entity-find-one entity-name="commons.workflow.WorkflowInstanceTask" value-field="task"/>
+                <entity-find-one entity-name="banqio.ft.FundsTransferWorkflowInstance" value-field="ft">
+                    <field-map field-name="instanceId" from="task.instanceId"/>
+                </entity-find-one>
+                <if condition="ft?.typeBehaviourEnumId?.startsWith('FT_TYPE_BULK')">
+                    <service-call name="banqio.connect.impl.FundsTransferServices.validate#BulkFundsTransfer">
+                        <field-map field-name="sourceAppId" from="sourceAppId"/>
+                        <field-map field-name="transferId" from="ft.primaryKeyValue"/>
+                    </service-call>
+                </if>
+            </if>
+        </actions>
+    </seca>
+
+    <!-- Trigger workflow on cheque book creation -->
+    <seca service="banqio.connect.impl.ChequeServices.create#ChequeBook" when="post-service">
+        <actions>
+            <entity-find entity-name="commons.workflow.WorkflowAcl" list="workflowList">
+                <econdition field-name="workflowTypeId" value="WF_CHQ"/>
+                <econdition field-name="accessUserGroupId" operator="in" from="ec.user.getUserGroupIdSet()"/>
+            </entity-find>
+            <if condition="!workflowList.isEmpty()">
+                <service-call name="update#banqio.cheque.ChequeBook">
+                    <field-map field-name="bookId" from="bookId"/>
+                    <field-map field-name="statusId" value="CHQ_BOOK_PROPOSED"/>
+                </service-call>
+
+                <set field="workflowId" from="workflowList.get(0).workflowId"/>
+                <service-call name="commons.workflow.WorkflowServices.create#WorkflowInstance" out-map="context">
+                    <field-map field-name="workflowId" from="workflowId"/>
+                    <field-map field-name="primaryKeyValue" from="bookId"/>
+                    <field-map field-name="actionTypeEnumId" value="WF_ACTION_CREATE"/>
+                </service-call>
+            </if>
+        </actions>
+    </seca>
+
+</secas>

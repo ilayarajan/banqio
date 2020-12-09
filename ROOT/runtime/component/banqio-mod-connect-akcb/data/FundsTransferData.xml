@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Single funds transfer types -->
+    <BanqioFtType typeId="FtSingle"
+                  typeName="Single Funds Transfers"
+                  typeBehaviourEnumId="FT_TYPE_PLACEHOLDER"
+                  debitFieldTypeEnumId="FT_DEBIT_FLD_NA"
+                  currencyFieldTypeEnumId="FT_CCY_FLD_NA"
+                  chargesFieldTypeEnumId="FT_CHARGE_FLD_NA"
+                  chargesAmountThreshold="0"
+                  position="1"
+                  disabled="N"/>
+    <BanqioFtType typeId="FtSingleOwn"
+                  parentTypeId="FtSingle"
+                  typeName="Own Accounts Funds Transfer"
+                  typeBehaviourEnumId="FT_TYPE_SINGLE_OWN_ACCT"
+                  debitFieldTypeEnumId="FT_DEBIT_FLD_ALL"
+                  currencyFieldTypeEnumId="FT_CCY_FLD_CREDIT"
+                  chargesFieldTypeEnumId="FT_CHARGE_FLD_NA"
+                  chargesAmountThreshold="0"
+                  position="1"
+                  disabled="N"/>
+    <BanqioFtType typeId="FtSingleBank"
+                  parentTypeId="FtSingle"
+                  typeName="Within al khaliji Funds Transfer"
+                  typeBehaviourEnumId="FT_TYPE_SINGLE_BANK"
+                  debitFieldTypeEnumId="FT_DEBIT_FLD_ALL"
+                  currencyFieldTypeEnumId="FT_CCY_FLD_CREDIT"
+                  chargesFieldTypeEnumId="FT_CHARGE_FLD_NA"
+                  chargesAmountThreshold="0"
+                  position="2"
+                  disabled="N"/>
+    <BanqioFtType typeId="FtSingleLcy"
+                  parentTypeId="FtSingle"
+                  typeName="QAR Funds Transfer"
+                  typeBehaviourEnumId="FT_TYPE_SINGLE_LOCAL"
+                  debitFieldTypeEnumId="FT_DEBIT_FLD_LCY"
+                  currencyFieldTypeEnumId="FT_CCY_FLD_LCY"
+                  chargesFieldTypeEnumId="FT_CHARGE_FLD_ALL"
+                  chargesAmountThreshold="1000000"
+                  position="3"
+                  disabled="N"/>
+    <BanqioFtType typeId="FtSingleFcy"
+                  parentTypeId="FtSingle"
+                  typeName="Foreign Currency Funds Transfer"
+                  typeBehaviourEnumId="FT_TYPE_SINGLE_OVERSEAS"
+                  debitFieldTypeEnumId="FT_DEBIT_FLD_ALL"
+                  currencyFieldTypeEnumId="FT_CCY_FLD_FCY"
+                  chargesFieldTypeEnumId="FT_CHARGE_FLD_ALL"
+                  chargesAmountThreshold="0"
+                  position="4"
+                  disabled="N"/>
+    <BanqioFtType typeId="FtSingleCreditCard"
+                  parentTypeId="FtSingle"
+                  typeName="Credit Card Payment"
+                  typeBehaviourEnumId="FT_TYPE_SINGLE_CREDIT_CARD"
+                  debitFieldTypeEnumId="FT_DEBIT_FLD_ALL"
+                  currencyFieldTypeEnumId="FT_CCY_FLD_DEBIT"
+                  chargesFieldTypeEnumId="FT_CHARGE_FLD_NA"
+                  chargesAmountThreshold="0"
+                  position="5"
+                  disabled="N"/>
+
+    <!-- Bulk salary funds transfer types -->
+    <BanqioFtType typeId="FtBulkSalary"
+                  typeName="Bulk Funds Transfers (Salary)"
+                  typeBehaviourEnumId="FT_TYPE_PLACEHOLDER"
+                  debitFieldTypeEnumId="FT_DEBIT_FLD_NA"
+                  currencyFieldTypeEnumId="FT_CCY_FLD_NA"
+                  chargesFieldTypeEnumId="FT_CHARGE_FLD_NA"
+                  chargesAmountThreshold="0"
+                  position="2"
+                  disabled="N"/>
+    <BanqioFtType typeId="FtBulkSalaryLcy"
+                  parentTypeId="FtBulkSalary"
+                  typeName="QAR Bulk Salary Funds Transfer (non WPS)"
+                  typeBehaviourEnumId="FT_TYPE_BULK_SALARY_LCY"
+                  debitFieldTypeEnumId="FT_DEBIT_FLD_LCY"
+                  currencyFieldTypeEnumId="FT_CCY_FLD_LCY"
+                  chargesFieldTypeEnumId="FT_CHARGE_FLD_OUR"
+                  chargesAmountThreshold="0"
+                  templateFileName="SALARY_LCY.xlsm"
+                  templateFileLocation="component://banqio-mod-connect-akcb/template/ft/SALARY_LCY.xlsm"
+                  templateAttached="Y"
+                  position="1"
+                  disabled="N"/>
+    <BanqioFtType typeId="FtBulkSalaryLcyWps"
+                  parentTypeId="FtBulkSalary"
+                  typeName="QAR Bulk Salary Funds Transfer (WPS)"
+                  typeBehaviourEnumId="FT_TYPE_BULK_SALARY_LCY_WPS"
+                  debitFieldTypeEnumId="FT_DEBIT_FLD_LCY"
+                  currencyFieldTypeEnumId="FT_CCY_FLD_LCY"
+                  chargesFieldTypeEnumId="FT_CHARGE_FLD_OUR"
+                  chargesAmountThreshold="0"
+                  templateFileName="SALARY_LCY_WPS.xlsm"
+                  templateFileLocation="component://banqio-mod-connect-akcb/template/ft/SALARY_LCY_WPS.xlsm"
+                  templateAttached="Y"
+                  position="2"
+                  disabled="N"/>
+    <BanqioFtType typeId="FtBulkSalaryFcy"
+                  parentTypeId="FtBulkSalary"
+                  typeName="Foreign Currency Bulk Salary Funds Transfer"
+                  typeBehaviourEnumId="FT_TYPE_BULK_SALARY_FCY"
+                  debitFieldTypeEnumId="FT_DEBIT_FLD_ALL"
+                  currencyFieldTypeEnumId="FT_CCY_FLD_FCY"
+                  chargesFieldTypeEnumId="FT_CHARGE_FLD_OUR"
+                  chargesAmountThreshold="0"
+                  templateFileName="SALARY_FCY.xlsm"
+                  templateFileLocation="component://banqio-mod-connect-akcb/template/ft/SALARY_FCY.xlsm"
+                  templateAttached="Y"
+                  position="3"
+                  disabled="N"/>
+
+    <!-- Bulk non-salary funds transfer types -->
+    <BanqioFtType typeId="FtBulk"
+                  typeName="Bulk Funds Transfers (Non-Salary)"
+                  typeBehaviourEnumId="FT_TYPE_PLACEHOLDER"
+                  debitFieldTypeEnumId="FT_DEBIT_FLD_NA"
+                  currencyFieldTypeEnumId="FT_CCY_FLD_NA"
+                  chargesFieldTypeEnumId="FT_CHARGE_FLD_NA"
+                  chargesAmountThreshold="0"
+                  position="3"
+                  disabled="N"/>
+    <BanqioFtType typeId="FtBulkLcy"
+                  parentTypeId="FtBulk"
+                  typeName="QAR Bulk Funds Transfer"
+                  typeBehaviourEnumId="FT_TYPE_BULK_LCY"
+                  debitFieldTypeEnumId="FT_DEBIT_FLD_LCY"
+                  currencyFieldTypeEnumId="FT_CCY_FLD_LCY"
+                  chargesFieldTypeEnumId="FT_CHARGE_FLD_NA"
+                  chargesAmountThreshold="0"
+                  templateFileName="NON_SALARY_LCY.xlsm"
+                  templateFileLocation="component://banqio-mod-connect-akcb/template/ft/NON_SALARY_LCY.xlsm"
+                  templateAttached="Y"
+                  position="1"
+                  disabled="N"/>
+    <BanqioFtType typeId="FtBulkFcy"
+                  parentTypeId="FtBulk"
+                  typeName="Foreign Currency Bulk Funds Transfer"
+                  typeBehaviourEnumId="FT_TYPE_BULK_FCY"
+                  debitFieldTypeEnumId="FT_DEBIT_FLD_ALL"
+                  currencyFieldTypeEnumId="FT_CCY_FLD_FCY"
+                  chargesFieldTypeEnumId="FT_CHARGE_FLD_NA"
+                  chargesAmountThreshold="0"
+                  templateFileName="NON_SALARY_FCY.xlsm"
+                  templateFileLocation="component://banqio-mod-connect-akcb/template/ft/NON_SALARY_FCY.xlsm"
+                  templateAttached="Y"
+                  position="2"
+                  disabled="N"/>
+
+    <!-- QATCH transfer purposes -->
+    <BanqioFtPurpose purposeId="QatchAllw" transferTypeId="FtSingleLcy" purposeName="Allowances Claim" externalPurposeId="31" position="1"/>
+    <BanqioFtPurpose purposeId="QatchBill" transferTypeId="FtSingleLcy" purposeName="Bill Payment" externalPurposeId="5" position="2"/>
+    <BanqioFtPurpose purposeId="QatchBonu" transferTypeId="FtSingleLcy" purposeName="Bonus Payments" externalPurposeId="28" position="3"/>
+    <BanqioFtPurpose purposeId="QatchClpr" transferTypeId="FtSingleLcy" purposeName="Car Loan Payment" externalPurposeId="8" position="4"/>
+    <BanqioFtPurpose purposeId="QatchChco" transferTypeId="FtSingleLcy" purposeName="Cheque Collection" externalPurposeId="32" position="5"/>
+    <BanqioFtPurpose purposeId="QatchChqr" transferTypeId="FtSingleLcy" purposeName="Cheque Returns" externalPurposeId="27" position="6"/>
+    <BanqioFtPurpose purposeId="QatchCour" transferTypeId="FtSingleLcy" purposeName="Court Case" externalPurposeId="11" position="7"/>
+    <BanqioFtPurpose purposeId="QatchCrcp" transferTypeId="FtSingleLcy" purposeName="Credit cards payments" externalPurposeId="18" position="8"/>
+    <BanqioFtPurpose purposeId="QatchDivi" transferTypeId="FtSingleLcy" purposeName="Dividend, Coupon Payments" externalPurposeId="22" position="9"/>
+    <BanqioFtPurpose purposeId="QatchEsrv" transferTypeId="FtSingleLcy" purposeName="End Of Service Benefits" externalPurposeId="24" position="10"/>
+    <BanqioFtPurpose purposeId="QatchGovt" transferTypeId="FtSingleLcy" purposeName="Government Payment" externalPurposeId="4" position="11"/>
+    <BanqioFtPurpose purposeId="QatchHolp" transferTypeId="FtSingleLcy" purposeName="Housing loan payment" externalPurposeId="9" position="12"/>
+    <BanqioFtPurpose purposeId="QatchInsu" transferTypeId="FtSingleLcy" purposeName="Insurance Premium" externalPurposeId="3" position="13"/>
+    <BanqioFtPurpose purposeId="QatchInte" transferTypeId="FtSingleLcy" purposeName="Interest" externalPurposeId="7" position="14"/>
+    <BanqioFtPurpose purposeId="QatchIntc" transferTypeId="FtSingleLcy" purposeName="Intra Company Payment" externalPurposeId="6" position="15"/>
+    <BanqioFtPurpose purposeId="QatchLeav" transferTypeId="FtSingleLcy" purposeName="Leave Encashment" externalPurposeId="30" position="16"/>
+    <BanqioFtPurpose purposeId="QatchLiab" transferTypeId="FtSingleLcy" purposeName="Liability Settlements" externalPurposeId="26" position="17"/>
+    <BanqioFtPurpose purposeId="QatchMopa" transferTypeId="FtSingleLcy" purposeName="Mobile Payment" externalPurposeId="37" position="18"/>
+    <BanqioFtPurpose purposeId="QatchOffm" transferTypeId="FtSingleLcy" purposeName="Official Mission" externalPurposeId="35" position="19"/>
+    <BanqioFtPurpose purposeId="QatchCntp" transferTypeId="FtSingleLcy" purposeName="Payment to Contractor" externalPurposeId="21" position="20"/>
+    <BanqioFtPurpose purposeId="QatchPflb" transferTypeId="FtSingleLcy" purposeName="Payments for local banks (transfers)" externalPurposeId="19" position="21"/>
+    <BanqioFtPurpose purposeId="QatchPens" transferTypeId="FtSingleLcy" purposeName="Pension Payment" externalPurposeId="10" position="22"/>
+    <BanqioFtPurpose purposeId="QatchPfst" transferTypeId="FtSingleLcy" purposeName="Personal Finance settlement" externalPurposeId="20" position="23"/>
+    <BanqioFtPurpose purposeId="QatchRent" transferTypeId="FtSingleLcy" purposeName="Rent Payment" externalPurposeId="23" position="24"/>
+    <BanqioFtPurpose purposeId="QatchSala" transferTypeId="FtSingleLcy" purposeName="Salary Payment" externalPurposeId="2" position="25"/>
+    <BanqioFtPurpose purposeId="QatchSecu" transferTypeId="FtSingleLcy" purposeName="Securities Payment" externalPurposeId="12" position="26"/>
+    <BanqioFtPurpose purposeId="QatchSsbe" transferTypeId="FtSingleLcy" purposeName="Social Security Benefit" externalPurposeId="13" position="27"/>
+    <BanqioFtPurpose purposeId="QatchStan" transferTypeId="FtSingleLcy" purposeName="Standing Orders" externalPurposeId="17" position="28"/>
+    <BanqioFtPurpose purposeId="QatchSupp" transferTypeId="FtSingleLcy" purposeName="Supplier Payment" externalPurposeId="14" position="29"/>
+    <BanqioFtPurpose purposeId="QatchTaxs" transferTypeId="FtSingleLcy" purposeName="Tax Payment" externalPurposeId="15" position="30"/>
+    <BanqioFtPurpose purposeId="QatchTerm" transferTypeId="FtSingleLcy" purposeName="Termination Of Services" externalPurposeId="25" position="31"/>
+    <BanqioFtPurpose purposeId="QatchCort" transferTypeId="FtSingleLcy" purposeName="Trade Settlement Payment" externalPurposeId="1" position="32"/>
+    <BanqioFtPurpose purposeId="QatchTrcf" transferTypeId="FtSingleLcy" purposeName="Training Course Fees" externalPurposeId="34" position="33"/>
+    <BanqioFtPurpose purposeId="QatchTrav" transferTypeId="FtSingleLcy" purposeName="Travel Allowance" externalPurposeId="29" position="34"/>
+    <BanqioFtPurpose purposeId="QatchTrea" transferTypeId="FtSingleLcy" purposeName="Treasury Payment" externalPurposeId="38" position="35"/>
+    <BanqioFtPurpose purposeId="QatchTuit" transferTypeId="FtSingleLcy" purposeName="Tuition Fees" externalPurposeId="33" position="36"/>
+    <BanqioFtPurpose purposeId="QatchVatx" transferTypeId="FtSingleLcy" purposeName="Value Added Tax Payment" externalPurposeId="16" position="37"/>
+
+    <!-- SWIFT transfer purposes -->
+    <BanqioFtPurpose purposeId="Swift010" transferTypeId="FtSingleFcy" purposeName="Other Current Transfers" externalPurposeId="10"/>
+    <BanqioFtPurpose purposeId="Swift009" transferTypeId="FtSingleFcy" purposeName="Workers' Remittances" externalPurposeId="9"/>
+    <BanqioFtPurpose purposeId="Swift04B" transferTypeId="FtSingleFcy" purposeName="Other Transportation Services - Other" externalPurposeId="4B"/>
+    <BanqioFtPurpose purposeId="Swift04A" transferTypeId="FtSingleFcy" purposeName="Other Transportation Services-Passenger" externalPurposeId="4A"/>
+    <BanqioFtPurpose purposeId="Swift08A" transferTypeId="FtSingleFcy" purposeName="Payments from Services Provided - Comm services" externalPurposeId="8A"/>
+    <BanqioFtPurpose purposeId="Swift08B" transferTypeId="FtSingleFcy" purposeName="Payments from Services Provided - Construction services" externalPurposeId="8B"/>
+    <BanqioFtPurpose purposeId="Swift08D" transferTypeId="FtSingleFcy" purposeName="Payments from Services Provided - Financial services" externalPurposeId="8D"/>
+    <BanqioFtPurpose purposeId="Swift08C" transferTypeId="FtSingleFcy" purposeName="Payments from Services Provided - Non merchant Insu services" externalPurposeId="8C"/>
+    <BanqioFtPurpose purposeId="Swift08F" transferTypeId="FtSingleFcy" purposeName="Payments from Services Provided - Others" externalPurposeId="8F"/>
+    <BanqioFtPurpose purposeId="Swift08E" transferTypeId="FtSingleFcy" purposeName="Payments from Services Provided - e-Government Services" externalPurposeId="8E"/>
+    <BanqioFtPurpose purposeId="Swift007" transferTypeId="FtSingleFcy" purposeName="Remittances made by Foreign Embassies/Inter. Org." externalPurposeId="7"/>
+    <BanqioFtPurpose purposeId="Swift014" transferTypeId="FtSingleFcy" purposeName="Remittances to Bank Accounts abroad" externalPurposeId="14"/>
+    <BanqioFtPurpose purposeId="Swift016" transferTypeId="FtSingleFcy" purposeName="Acquisition of Other Assets abroad" externalPurposeId="16"/>
+    <BanqioFtPurpose purposeId="Swift015" transferTypeId="FtSingleFcy" purposeName="Acquisition of Portfolio Investment abroad" externalPurposeId="15"/>
+    <BanqioFtPurpose purposeId="Swift11A" transferTypeId="FtSingleFcy" purposeName="Capital Transfers-Govt transfers" externalPurposeId="11A"/>
+    <BanqioFtPurpose purposeId="Swift11B" transferTypeId="FtSingleFcy" purposeName="Capital Transfers-Migrant transfers" externalPurposeId="11B"/>
+    <BanqioFtPurpose purposeId="Swift013" transferTypeId="FtSingleFcy" purposeName="Drawings on Loans Extended" externalPurposeId="13"/>
+    <BanqioFtPurpose purposeId="Swift002" transferTypeId="FtSingleFcy" purposeName="Freight" externalPurposeId="2"/>
+    <BanqioFtPurpose purposeId="Swift006" transferTypeId="FtSingleFcy" purposeName="Investment Income (Interest, Profits, Dividends)" externalPurposeId="6"/>
+    <BanqioFtPurpose purposeId="Swift001" transferTypeId="FtSingleFcy" purposeName="Merchandise Imports" externalPurposeId="1"/>
+    <BanqioFtPurpose purposeId="Swift003" transferTypeId="FtSingleFcy" purposeName="Merchandise Insurance /Claims paid" externalPurposeId="3"/>
+    <BanqioFtPurpose purposeId="Swift017" transferTypeId="FtSingleFcy" purposeName="Repayment of other Foreign Liabilities" externalPurposeId="17"/>
+    <BanqioFtPurpose purposeId="Swift012" transferTypeId="FtSingleFcy" purposeName="Repayments on Loans Received" externalPurposeId="12"/>
+    <BanqioFtPurpose purposeId="Swift005" transferTypeId="FtSingleFcy" purposeName="Travel and Tourism" externalPurposeId="5"/>
+    <BanqioFtPurpose purposeId="Swift018" transferTypeId="FtSingleFcy" purposeName="Other Transactions (n.i.e)" externalPurposeId="18"/>
+
+</entity-facade-xml>

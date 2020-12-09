@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0f0612"],{"9bb5":function(e,n,t){"use strict";t.r(n);var r=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("router-view")},u=[],s={name:"funds-transfer-type"},a=s,c=t("2877"),l=Object(c["a"])(a,r,u,!1,null,null,null);n["default"]=l.exports}}]);
+//# sourceMappingURL=chunk-2d0f0612.35a5f85f.js.map

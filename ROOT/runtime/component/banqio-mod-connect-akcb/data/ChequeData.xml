@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Cheque book status -->
+    <moqui.basic.StatusItem statusTypeId="ChequeBook" statusId="CHQ_BOOK_AUTO_REORDER" description="Automatic Reorder" statusCode="AUTOMATIC RE-ORDER"/>
+    <moqui.basic.StatusItem statusTypeId="ChequeBook" statusId="CHQ_BOOK_PRINT" description="Sent For Printing" statusCode="SENT FOR PRINTING"/>
+    <moqui.basic.StatusItem statusTypeId="ChequeBook" statusId="CHQ_BOOK_DESTROY" description="Destroyed" statusCode="DESTROYED"/>
+    <moqui.basic.StatusItem statusTypeId="ChequeBook" statusId="CHQ_BOOK_ISSUED" description="Issued" statusCode="ISSUED"/>
+    <moqui.basic.StatusItem statusTypeId="ChequeBook" statusId="CHQ_BOOK_REQ_RECEIVED" description="Request Received" statusCode="REQUEST RECIEVED"/>
+
+    <!-- Cheque book status flow -->
+    <moqui.basic.StatusFlow statusFlowId="ChequeBookStatusFlow" statusTypeId="ChequeBook" description="Cheque Book Status Flow"/>
+    <moqui.basic.StatusFlowItem statusFlowId="ChequeBookStatusFlow" statusId="CHQ_BOOK_REQ_RECEIVED" isInitial="Y"/>
+    <moqui.basic.StatusFlowItem statusFlowId="ChequeBookStatusFlow" statusId="CHQ_BOOK_PRINT" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="ChequeBookStatusFlow" statusId="CHQ_BOOK_DESTROY" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="ChequeBookStatusFlow" statusId="CHQ_BOOK_ISSUED" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="ChequeBookStatusFlow" statusId="CHQ_BOOK_REQ_RECEIVED" isInitial="N"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="ChequeBookStatusFlow" statusId="CHQ_BOOK_REQ_RECEIVED" toStatusId="CHQ_BOOK_PRINT" transitionSequence="1" transitionName="Sent For Printing"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="ChequeBookStatusFlow" statusId="CHQ_BOOK_REQ_RECEIVED" toStatusId="CHQ_BOOK_ISSUED" transitionSequence="2" transitionName="Issued"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="ChequeBookStatusFlow" statusId="CHQ_BOOK_REQ_RECEIVED" toStatusId="CHQ_BOOK_DESTROY" transitionSequence="3" transitionName="Destroyed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="ChequeBookStatusFlow" statusId="CHQ_BOOK_REQ_RECEIVED" toStatusId="CHQ_BOOK_AUTO_REORDER" transitionSequence="4" transitionName="Automatic Reorder"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="ChequeBookStatusFlow" statusId="CHQ_BOOK_PRINT" toStatusId="CHQ_BOOK_ISSUED" transitionSequence="1" transitionName="Issued"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="ChequeBookStatusFlow" statusId="CHQ_BOOK_ISSUED" toStatusId="CHQ_BOOK_DESTROY" transitionSequence="1" transitionName="Destroyed"/>
+
+    <!-- Cheque statuses -->
+    <BanqioChequeStatus statusId="CsUnused" externalStatusId="UNUSED" statusBehaviourEnumId="CHQ_STAT_BLANK" statusName="Unused"/>
+    <BanqioChequeStatus statusId="CsIssue" externalStatusId="ISSUED" statusBehaviourEnumId="CHQ_STAT_ISSUE" statusName="Issued"/>
+    <BanqioChequeStatus statusId="CsPresent" externalStatusId="PRESENTED" statusBehaviourEnumId="CHQ_STAT_ISSUE" statusName="Presented"/>
+    <BanqioChequeStatus statusId="CsClear" externalStatusId="CLEARED" statusBehaviourEnumId="CHQ_STAT_CLEAR" statusName="Cleared"/>
+    <BanqioChequeStatus statusId="CsExpire" externalStatusId="EXPIRED" statusBehaviourEnumId="CHQ_STAT_EXPIRED" statusName="Expired"/>
+    <BanqioChequeStatus statusId="CsCancel" externalStatusId="CANCELLED" statusBehaviourEnumId="CHQ_STAT_CANCEL" statusName="Cancelled"/>
+    <BanqioChequeStatus statusId="CsStop" externalStatusId="STOPPED" statusBehaviourEnumId="CHQ_STAT_CANCEL" statusName="Stopped"/>
+    <BanqioChequeStatus statusId="CsException" externalStatusId="EXCEPTION" statusBehaviourEnumId="CHQ_STAT_REJECT" statusName="Exception"/>
+    <BanqioChequeStatus statusId="CsReturn" externalStatusId="RETURNED" statusBehaviourEnumId="CHQ_STAT_REJECT" statusName="Returned"/>
+
+    <!-- Cheque types -->
+    <BanqioChequeType typeId="CtDd" externalTypeId="DD" typeBehaviourEnumId="CHQ_TYPE_BEARER" typeName="Demand Draft"/>
+    <BanqioChequeType typeId="CtRetl" externalTypeId="RETL" typeBehaviourEnumId="CHQ_TYPE_BEARER" typeName="Retail - Premium Banking"/>
+    <BanqioChequeType typeId="CtRepo" externalTypeId="REPO" typeBehaviourEnumId="CHQ_TYPE_BEARER" typeName="Retail - Premium Personalized"/>
+    <BanqioChequeType typeId="CtCorp" externalTypeId="CORP" typeBehaviourEnumId="CHQ_TYPE_BEARER" typeName="Corporate - Business Banking"/>
+    <BanqioChequeType typeId="CtCrpo" externalTypeId="CRPO" typeBehaviourEnumId="CHQ_TYPE_BEARER" typeName="Corporate Personalized Cheque"/>
+    <BanqioChequeType typeId="CtCpbk" externalTypeId="CPBK" typeBehaviourEnumId="CHQ_TYPE_BEARER" typeName="Corporate Personalised Bulk Cheque"/>
+    <BanqioChequeType typeId="CtCrbk" externalTypeId="CRBK" typeBehaviourEnumId="CHQ_TYPE_BEARER" typeName="Corporate Bulk Cheque"/>
+    <BanqioChequeType typeId="CtInbk" externalTypeId="INBK" typeBehaviourEnumId="CHQ_TYPE_BEARER" typeName="Individual Bulk Cheque"/>
+    <BanqioChequeType typeId="CtCrch" externalTypeId="CRCH" typeBehaviourEnumId="CHQ_TYPE_BEARER" typeName="Corporate Cheque"/>
+    <BanqioChequeType typeId="CtCust" externalTypeId="CUST" typeBehaviourEnumId="CHQ_TYPE_BEARER" typeName="Customized Cheque"/>
+    <BanqioChequeType typeId="CtCndi" externalTypeId="INDI" typeBehaviourEnumId="CHQ_TYPE_BEARER" typeName="Individual Cheque"/>
+    <BanqioChequeType typeId="CtCrin" externalTypeId="CRIN" typeBehaviourEnumId="CHQ_TYPE_BEARER" typeName="Corporate Instant Cheque book"/>
+
+</entity-facade-xml>

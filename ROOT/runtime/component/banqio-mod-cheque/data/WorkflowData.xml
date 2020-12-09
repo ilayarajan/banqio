@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Plug workflow types -->
+    <CommonsWfType
+            typeId="WF_CHQ"
+            typeName="Cheque Book"
+            statusTypeId="WorkflowRequest"
+            primaryEntityName="banqio.cheque.ChequeBook"
+            primaryViewEntityName="banqio.cheque.ChequeBookDetail"
+            primaryKeyFieldName="bookId"/>
+
+    <!-- Plug entity fields -->
+    <CommonsEntityFld entityName="banqio.cheque.ChequeBookDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="inputUsername" displayName="Input Username"/>
+    <CommonsEntityFld entityName="banqio.cheque.ChequeBookDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="targetUsername" displayName="Target Username"/>
+    <CommonsEntityFld entityName="banqio.cheque.ChequeBookDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="targetPartyId" displayName="Target Party ID"/>
+    <CommonsEntityFld entityName="banqio.cheque.ChequeBookDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="targetPartyExternalId" displayName="Target Party External ID"/>
+    <CommonsEntityFld entityName="banqio.cheque.ChequeBookDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="targetPartyTypeEnumId" displayName="Target Party Type ID"/>
+    <CommonsEntityFld entityName="banqio.cheque.ChequeBookDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="targetPartyTypeDescription" displayName="Target Party Type"/>
+    <CommonsEntityFld entityName="banqio.cheque.ChequeBookDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="deliveryMethodEnumId" displayName="Delivery Method ID"/>
+    <CommonsEntityFld entityName="banqio.cheque.ChequeBookDetail" fieldTypeEnumId="ENTITY_FLD_NUMBER" fieldName="bookCount" displayName="Book Count"/>
+    <CommonsEntityFld entityName="banqio.cheque.ChequeBookDetail" fieldTypeEnumId="ENTITY_FLD_NUMBER" fieldName="pageCount" displayName="Page Count"/>
+
+</entity-facade-xml>

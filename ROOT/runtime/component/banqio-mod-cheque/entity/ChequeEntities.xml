@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <!-- Cheque -->
+    <entity entity-name="ChequeType" package="banqio.cheque" short-alias="BanqioChequeType">
+        <field name="typeId" type="id" is-pk="true"/>
+        <field name="externalTypeId" type="text-medium"/>
+        <field name="typeName" type="text-medium" enable-localization="true"/>
+        <field name="typeBehaviourEnumId" type="id"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" title="ChequeTypeBehaviour" related="moqui.basic.Enumeration" short-alias="typeBehaviour">
+            <key-map field-name="typeBehaviourEnumId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="CHQ_TYPE_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="CHQ_TYPE_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+
+        <index name="chequeTypeIdx1" unique="true">
+            <index-field name="externalTypeId"/>
+        </index>
+    </entity>
+    <entity entity-name="ChequeStatus" package="banqio.cheque" short-alias="BanqioChequeStatus">
+        <field name="statusId" type="id" is-pk="true"/>
+        <field name="externalStatusId" type="text-medium"/>
+        <field name="statusName" type="text-medium" enable-localization="true"/>
+        <field name="statusBehaviourEnumId" type="id"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" title="ChequeStatusBehaviour" related="moqui.basic.Enumeration" short-alias="statusBehaviour">
+            <key-map field-name="statusBehaviourEnumId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="CHQ_STAT_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="CHQ_STAT_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+
+        <index name="chequeStatusIdx1" unique="true">
+            <index-field name="externalStatusId"/>
+        </index>
+    </entity>
+
+    <!-- Cheque book -->
+    <entity entity-name="ChequeBook" package="banqio.cheque">
+        <field name="bookId" type="id" is-pk="true"/>
+        <field name="appId" type="id"/>
+        <field name="statusId" type="id"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="targetUserId" type="id" default="ec.user.userId"/>
+        <field name="externalBookId" type="text-medium"/>
+        <field name="customerId" type="text-medium"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="deliveryMethodEnumId" type="id"/>
+        <field name="deliveryBranchId" type="id"/>
+        <field name="accountNumber" type="text-medium"/>
+        <field name="bookCount" type="number-integer" default="1"/>
+        <field name="pageCount" type="number-integer"/>
+        <field name="instructions" type="text-long"/>
+
+        <relationship type="one" related="commons.server.App" short-alias="app">
+            <key-map field-name="appId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="CHQ_BOOK_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="CHQ_BOOK_TARGET_USR_FK" short-alias="targetUser">
+            <key-map field-name="targetUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.basic.StatusItem" short-alias="chequeBookStatus">
+            <key-map field-name="statusId"/>
+        </relationship>
+        <relationship type="one-nofk" title="ChequeDeliveryMethod" related="moqui.basic.Enumeration" short-alias="deliveryMethod">
+            <key-map field-name="deliveryMethodEnumId"/>
+        </relationship>
+        <relationship type="one-nofk" related="banqio.bank.Branch" short-alias="deliveryBranch">
+            <key-map field-name="deliveryBranchId"/>
+        </relationship>
+
+    </entity>
+
+</entities>

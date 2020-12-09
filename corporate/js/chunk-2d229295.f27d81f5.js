@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d229295"],{dbef:function(n,e,t){"use strict";t.r(e);var u=function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("router-view")},a=[],l={name:"sales-invoice-loan-outstanding"},o=l,s=t("2877"),c=Object(s["a"])(o,u,a,!1,null,null,null);e["default"]=c.exports}}]);
+//# sourceMappingURL=chunk-2d229295.f27d81f5.js.map

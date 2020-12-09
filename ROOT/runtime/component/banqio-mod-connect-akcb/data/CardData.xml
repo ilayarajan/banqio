@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Card types -->
+    <BanqioCardType typeId="CtPri" externalTypeId="PRIMARY" typeBehaviourEnumId="CARD_TYPE_CREDIT" typeName="Primary"/>
+    <BanqioCardType typeId="CtSec" externalTypeId="SECONDARY" typeBehaviourEnumId="CARD_TYPE_CREDIT" typeName="Secondary"/>
+
+    <!-- Card statuses -->
+    <BanqioCardStatus statusId="Cs000" externalStatusId="000" statusBehaviourEnumId="CARD_STAT_INACTIVE" statusName="Inactive"/>
+    <BanqioCardStatus statusId="Cs001" externalStatusId="001" statusBehaviourEnumId="CARD_STAT_ACT" statusName="Active"/>
+    <BanqioCardStatus statusId="Cs002" externalStatusId="002" statusBehaviourEnumId="CARD_STAT_REPORT" statusName="Pick-up lost"/>
+    <BanqioCardStatus statusId="Cs003" externalStatusId="003" statusBehaviourEnumId="CARD_STAT_REPORT" statusName="Pick-up stolen"/>
+    <BanqioCardStatus statusId="Cs004" externalStatusId="004" statusBehaviourEnumId="CARD_STAT_LOCK" statusName="Blocked"/>
+    <BanqioCardStatus statusId="Cs005" externalStatusId="005" statusBehaviourEnumId="CARD_STAT_ISSUE" statusName="Card delivered"/>
+    <BanqioCardStatus statusId="Cs006" externalStatusId="006" statusBehaviourEnumId="CARD_STAT_LOCK" statusName="Temporary blocked"/>
+    <BanqioCardStatus statusId="Cs009" externalStatusId="009" statusBehaviourEnumId="CARD_STAT_LOCK" statusName="Temporary suspended"/>
+    <BanqioCardStatus statusId="Cs020" externalStatusId="020" statusBehaviourEnumId="CARD_STAT_REPORT" statusName="Pick-up Fraud"/>
+
+</entity-facade-xml>

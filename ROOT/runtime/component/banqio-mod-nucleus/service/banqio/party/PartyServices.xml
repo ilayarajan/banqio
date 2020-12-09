@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Party classification -->
+    <service verb="find" noun="PartyClassification" type="java" location="com.netvariant.banqio.nucleus.PartyClassificationService" method="findPartyClassifications">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.party.PartyClassificationDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="classificationList" type="List">
+                <parameter name="partyClassification" type="Map">
+                    <auto-parameters entity-name="banqio.party.PartyClassificationDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="PartyClassification" type="java" location="com.netvariant.banqio.nucleus.PartyClassificationService" method="createPartyClassification">
+        <in-parameters>
+            <parameter name="classificationTypeEnumId"/>
+            <parameter name="parentClassificationId"/>
+            <parameter name="description"/>
+            <parameter name="standardCode"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="partyClassificationId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="PartyClassification" type="java" location="com.netvariant.banqio.nucleus.PartyClassificationService" method="updatePartyClassification">
+        <in-parameters>
+            <parameter name="partyClassificationId"/>
+            <parameter name="classificationTypeEnumId"/>
+            <parameter name="parentClassificationId"/>
+            <parameter name="description"/>
+            <parameter name="standardCode"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="partyClassificationId"/>
+        </out-parameters>
+    </service>
+    
+    <!-- Party -->
+    <service verb="find" noun="Party" type="java" location="com.netvariant.banqio.nucleus.PartyService" method="findParties">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.party.PartyDetailExt"/>
+            <parameter name="roleTypeId"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="partyList" type="List">
+                <parameter name="party" type="Map">
+                    <auto-parameters entity-name="banqio.party.PartyDetailExt"/>
+                    <parameter name="partyName"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="Party" type="java" location="com.netvariant.banqio.nucleus.PartyService" method="createParty">
+        <in-parameters>
+            <parameter name="pseudoId"/>
+            <parameter name="partyTypeEnumId"/>
+            <parameter name="externalId"/>
+            <parameter name="comments"/>
+            <parameter name="disabled"/>
+            <parameter name="salutation"/>
+            <parameter name="firstName"/>
+            <parameter name="middleName"/>
+            <parameter name="lastName"/>
+            <parameter name="suffix"/>
+            <parameter name="mothersMaidenName"/>
+            <parameter name="gender"/>
+            <parameter name="birthDate"/>
+            <parameter name="deceasedDate"/>
+            <parameter name="maritalStatusEnumId"/>
+            <parameter name="residenceStatusEnumId"/>
+            <parameter name="employmentStatusEnumId"/>
+            <parameter name="occupation"/>
+            <parameter name="organizationName"/>
+            <parameter name="annualRevenue" type="Integer"/>
+            <parameter name="numEmployees" type="Integer"/>
+            <parameter name="contactMechList"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="partyId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="Party" type="java" location="com.netvariant.banqio.nucleus.PartyService" method="updateParty">
+        <in-parameters>
+            <parameter name="partyId"/>
+            <parameter name="pseudoId"/>
+            <parameter name="partyTypeEnumId"/>
+            <parameter name="externalId"/>
+            <parameter name="comments"/>
+            <parameter name="disabled"/>
+            <parameter name="salutation"/>
+            <parameter name="firstName"/>
+            <parameter name="middleName"/>
+            <parameter name="lastName"/>
+            <parameter name="suffix"/>
+            <parameter name="mothersMaidenName"/>
+            <parameter name="gender"/>
+            <parameter name="birthDate"/>
+            <parameter name="deceasedDate"/>
+            <parameter name="maritalStatusEnumId"/>
+            <parameter name="residenceStatusEnumId"/>
+            <parameter name="employmentStatusEnumId"/>
+            <parameter name="occupation"/>
+            <parameter name="organizationName"/>
+            <parameter name="annualRevenue" type="Integer"/>
+            <parameter name="numEmployees" type="Integer"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="partyId"/>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="PartyClass" type="java" location="com.netvariant.banqio.nucleus.PartyService" method="findPartyClassifications">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.party.PartyClassificationApplDetail"/>
+            <parameter name="partyId"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="classificationList" type="List">
+                <parameter name="partyClassification" type="Map">
+                    <auto-parameters entity-name="banqio.party.PartyClassificationApplDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="PartyClass" type="java" location="com.netvariant.banqio.nucleus.PartyService" method="createPartyClassification">
+        <in-parameters>
+            <parameter name="partyId"/>
+            <parameter name="partyClassificationId"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="partyId"/>
+            <parameter name="partyClassificationId"/>
+        </out-parameters>
+    </service>
+    <service verb="expire" noun="PartyClass" type="java" location="com.netvariant.banqio.nucleus.PartyService" method="expirePartyClassification">
+        <in-parameters>
+            <parameter name="partyId"/>
+            <parameter name="partyClassificationId"/>
+            <parameter name="fromDate"/>
+        </in-parameters>
+    </service>
+    <service verb="find" noun="PartyContactMech" type="java" location="com.netvariant.banqio.nucleus.PartyService" method="findPartyContactMechs">
+        <in-parameters>
+            <auto-parameters entity-name="commons.party.PartyContactMechDetail"/>
+            <parameter name="partyId"/>
+            <parameter name="contactMechTypeEnumId"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="pageNoLimit" type="Boolean" default="false"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="partyContactMechList" type="List">
+                <parameter name="partyContactMech" type="Map">
+                    <auto-parameters entity-name="commons.party.PartyContactMechDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="PartyContactMech" type="java" location="com.netvariant.banqio.nucleus.PartyService" method="createPartyContactMech">
+        <in-parameters>
+            <parameter name="partyId"/>
+            <parameter name="contactMechTypeEnumId"/>
+            <parameter name="contactMechPurposeId"/>
+            <parameter name="infoString"/>
+            <parameter name="countryCode"/>
+            <parameter name="areaCode"/>
+            <parameter name="contactNumber"/>
+            <parameter name="extension"/>
+            <parameter name="askForName"/>
+            <parameter name="countryGeoId"/>
+            <parameter name="stateProvinceGeoId"/>
+            <parameter name="cityGeoId"/>
+            <parameter name="address1"/>
+            <parameter name="address2"/>
+            <parameter name="postalCode"/>
+            <parameter name="postalCodeExt"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="contactMechId"/>
+        </out-parameters>
+    </service>
+    <service verb="expire" noun="PartyContactMech" type="java" location="com.netvariant.banqio.nucleus.PartyService" method="expirePartyContactMech">
+        <in-parameters>
+            <parameter name="partyId"/>
+            <parameter name="contactMechId"/>
+        </in-parameters>
+    </service>
+    <service verb="find" noun="PartyIdentification" type="java" location="com.netvariant.banqio.nucleus.PartyService" method="findPartyIdentifications">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.party.PartyIdentificationDetail"/>
+            <parameter name="partyId"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="partyIdentificationList" type="List">
+                <parameter name="identification" type="Map">
+                    <auto-parameters entity-name="banqio.party.PartyIdentificationDetail"/>
+                    <parameter name="partyName"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="PartyIdentification" type="java" location="com.netvariant.banqio.nucleus.PartyService" method="createPartyIdentification">
+        <in-parameters>
+            <parameter name="partyId"/>
+            <parameter name="partyIdTypeEnumId"/>
+            <parameter name="idValue"/>
+            <parameter name="issuedBy"/>
+            <parameter name="issuedByPartyId"/>
+            <parameter name="expireDate"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="partyId"/>
+        </out-parameters>
+    </service>
+    <service verb="delete" noun="PartyIdentification" type="java" location="com.netvariant.banqio.nucleus.PartyService" method="deletePartyIdentification">
+        <in-parameters>
+            <parameter name="partyId"/>
+            <parameter name="partyIdTypeEnumId"/>
+        </in-parameters>
+    </service>
+    <service verb="find" noun="PartyContent" type="java" location="com.netvariant.banqio.nucleus.PartyService" method="findPartyContents">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.party.PartyContentDetail"/>
+            <parameter name="partyId"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="partyContentList" type="List">
+                <parameter name="content" type="Map">
+                    <auto-parameters entity-name="banqio.party.PartyContentDetail">
+                        <exclude field-name="contentLocation"/>
+                    </auto-parameters>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="PartyContent" type="java" location="com.netvariant.banqio.nucleus.PartyService" method="createPartyContent">
+        <in-parameters>
+            <parameter name="partyId"/>
+            <parameter name="partyContentTypeEnumId"/>
+            <parameter name="contentFile" type="org.apache.commons.fileupload.FileItem"/>
+            <parameter name="description"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="partyContentId"/>
+        </out-parameters>
+    </service>
+    <service verb="download" noun="PartyContent" type="java" location="com.netvariant.banqio.nucleus.PartyService" method="downloadPartyContent">
+        <in-parameters>
+            <parameter name="partyId"/>
+            <parameter name="partyContentId"/>
+        </in-parameters>
+    </service>
+    <service verb="find" noun="PartyRole" type="java" location="com.netvariant.banqio.nucleus.PartyService" method="findPartyRoles">
+        <in-parameters>
+            <auto-parameters entity-name="mantle.party.PartyRoleAndType"/>
+            <parameter name="partyId"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="partyRoleList" type="List">
+                <parameter name="partyRole" type="Map">
+                    <auto-parameters entity-name="mantle.party.PartyRoleAndType"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="PartyRole" type="java" location="com.netvariant.banqio.nucleus.PartyService" method="createPartyRole">
+        <in-parameters>
+            <parameter name="partyId"/>
+            <parameter name="roleTypeId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="partyId"/>
+            <parameter name="roleTypeId"/>
+        </out-parameters>
+    </service>
+    <service verb="delete" noun="PartyRole" type="java" location="com.netvariant.banqio.nucleus.PartyService" method="deletePartyRole">
+        <in-parameters>
+            <parameter name="partyId"/>
+            <parameter name="roleTypeId"/>
+        </in-parameters>
+    </service>
+    <service verb="find" noun="PartyBadge" type="java" location="com.netvariant.banqio.nucleus.PartyService" method="findPartyBadges">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.party.PartyBadgeDetail"/>
+            <parameter name="partyId"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="partyBadgeList" type="List">
+                <parameter name="badge" type="Map">
+                    <auto-parameters entity-name="banqio.party.PartyBadgeDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="PartyBadge" type="java" location="com.netvariant.banqio.nucleus.PartyService" method="createPartyBadge">
+        <in-parameters>
+            <parameter name="partyId"/>
+            <parameter name="organizationPartyId"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+            <parameter name="serialNumber"/>
+            <parameter name="storedValue"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="partyBadgeId"/>
+        </out-parameters>
+    </service>
+    <service verb="expire" noun="PartyBadge" type="java" location="com.netvariant.banqio.nucleus.PartyService" method="expirePartyBadge">
+        <in-parameters>
+            <parameter name="partyId"/>
+            <parameter name="partyBadgeId"/>
+        </in-parameters>
+    </service>
+    <service verb="find" noun="PartyNote" type="java" location="com.netvariant.banqio.nucleus.PartyService" method="findPartyNotes">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.party.PartyNoteDetail"/>
+            <parameter name="partyId"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="partyNoteList" type="List">
+                <parameter name="note" type="Map">
+                    <auto-parameters entity-name="banqio.party.PartyNoteDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="PartyNote" type="java" location="com.netvariant.banqio.nucleus.PartyService" method="createPartyNote">
+        <in-parameters>
+            <parameter name="partyId"/>
+            <parameter name="noteText"/>
+            <parameter name="internalNote"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="partyId"/>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="PartyRelationship" type="java" location="com.netvariant.banqio.nucleus.PartyService" method="findPartyRelationships">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.party.PartyRelationshipDetail"/>
+            <parameter name="partyId"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="partyRelationshipList" type="List">
+                <parameter name="relationship" type="Map">
+                    <auto-parameters entity-name="banqio.party.PartyRelationshipDetail"/>
+                    <parameter name="fromPartyName"/>
+                    <parameter name="toPartyName"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="PartyRelationship" type="java" location="com.netvariant.banqio.nucleus.PartyService" method="createPartyRelationship">
+        <in-parameters>
+            <parameter name="partyId"/>
+            <parameter name="relationshipTypeEnumId"/>
+            <parameter name="toPartyId"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="partyRelationshipId"/>
+        </out-parameters>
+    </service>
+    <service verb="expire" noun="PartyRelationship" type="java" location="com.netvariant.banqio.nucleus.PartyService" method="expirePartyRelationship">
+        <in-parameters>
+            <parameter name="partyId"/>
+            <parameter name="partyRelationshipId"/>
+        </in-parameters>
+    </service>
+
+    <!-- Communication event -->
+    <service verb="find" noun="CommunicationEventType" type="java" location="com.netvariant.banqio.nucleus.CommunicationEventService" method="findCommunicationEventTypes">
+        <in-parameters>
+            <auto-parameters entity-name="mantle.party.communication.CommunicationEventType"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="eventTypeList" type="List">
+                <parameter name="type" type="Map">
+                    <auto-parameters entity-name="mantle.party.communication.CommunicationEventType"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="CommunicationEvent" type="java" location="com.netvariant.banqio.nucleus.CommunicationEventService" method="findCommunicationEvents">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.party.communication.CommunicationEventDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="eventList" type="List">
+                <parameter name="event" type="Map">
+                    <auto-parameters entity-name="banqio.party.communication.CommunicationEventDetail"/>
+                    <parameter name="fromPartyName"/>
+                    <parameter name="toPartyName"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="CommunicationEvent" type="java" location="com.netvariant.banqio.nucleus.CommunicationEventService" method="createCommunicationEvent">
+        <in-parameters>
+            <parameter name="communicationEventTypeId"/>
+            <parameter name="contactMechTypeEnumId"/>
+            <parameter name="statusId"/>
+            <parameter name="fromPartyId"/>
+            <parameter name="toPartyId"/>
+            <parameter name="startDate"/>
+            <parameter name="endDate"/>
+            <parameter name="subject"/>
+            <parameter name="body"/>
+            <parameter name="note"/>
+            <parameter name="reasonEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="communicationEventId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="CommunicationEvent" type="java" location="com.netvariant.banqio.nucleus.CommunicationEventService" method="updateCommunicationEvent">
+        <in-parameters>
+            <parameter name="communicationEventId"/>
+            <parameter name="communicationEventTypeId"/>
+            <parameter name="contactMechTypeEnumId"/>
+            <parameter name="statusId"/>
+            <parameter name="fromPartyId"/>
+            <parameter name="toPartyId"/>
+            <parameter name="startDate"/>
+            <parameter name="endDate"/>
+            <parameter name="subject"/>
+            <parameter name="body"/>
+            <parameter name="note"/>
+            <parameter name="reasonEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="communicationEventId"/>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="CommunicationEventContent" type="java" location="com.netvariant.banqio.nucleus.CommunicationEventService" method="findCommunicationEventContents">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.party.communication.CommunicationEventContentDetail"/>
+            <parameter name="communicationEventId"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="contentList" type="List">
+                <parameter name="content" type="Map">
+                    <auto-parameters entity-name="banqio.party.communication.CommunicationEventContentDetail">
+                        <exclude field-name="contentLocation"/>
+                    </auto-parameters>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="CommunicationEventContent" type="java" location="com.netvariant.banqio.nucleus.CommunicationEventService" method="createCommunicationEventContent">
+        <in-parameters>
+            <parameter name="communicationEventId"/>
+            <parameter name="contentTypeEnumId"/>
+            <parameter name="contentFile" type="org.apache.commons.fileupload.FileItem"/>
+            <parameter name="description"/>
+            <parameter name="sequenceNum" type="Integer"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="communicationEventContentId"/>
+        </out-parameters>
+    </service>
+    <service verb="download" noun="CommunicationEventContent" type="java" location="com.netvariant.banqio.nucleus.CommunicationEventService" method="downloadCommunicationEventContent">
+        <in-parameters>
+            <parameter name="communicationEventId"/>
+            <parameter name="communicationEventContentId"/>
+        </in-parameters>
+    </service>
+
+    <!-- API -->
+    <service verb="find" noun="Customer" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="accountNumber"/>
+            <parameter name="cardNumber"/>
+            <parameter name="mobileNumber"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="customer" type="Map">
+                <parameter name="customerId"/>
+                <parameter name="legalId"/>
+                <parameter name="firstName"/>
+                <parameter name="lastName"/>
+                <parameter name="title"/>
+                <parameter name="gender"/>
+                <parameter name="nationality"/>
+                <parameter name="mobileNumber"/>
+                <parameter name="emailAddress"/>
+                <parameter name="sector"/>
+                <parameter name="customerStatus"/>
+                <parameter name="maritalStatus"/>
+                <parameter name="birthDate" type="Date"/>
+                <parameter name="creationDate" type="Date"/>
+                <parameter name="countryGeoId"/>
+                <parameter name="countryGeoName"/>
+                <parameter name="countryGeoCodeAlpha2"/>
+                <parameter name="countryGeoCodeAlpha3"/>
+                <parameter name="countryGeoCodeNumeric"/>
+                <parameter name="auxiliary1"/>
+                <parameter name="auxiliary2"/>
+                <parameter name="auxiliary3"/>
+                <parameter name="auxiliary4"/>
+                <parameter name="auxiliary5"/>
+                <parameter name="auxiliary6"/>
+                <parameter name="auxiliary7"/>
+                <parameter name="auxiliary8"/>
+                <parameter name="auxiliary9"/>
+                <parameter name="auxiliary10" type="Double"/>
+                <parameter name="auxiliary11" type="Double"/>
+                <parameter name="auxiliary12" type="Double"/>
+                <parameter name="auxiliary13" type="Date"/>
+                <parameter name="auxiliary14" type="Date"/>
+                <parameter name="auxiliary15" type="Date"/>
+            </parameter>
+        </out-parameters>
+    </service>
+
+</services>

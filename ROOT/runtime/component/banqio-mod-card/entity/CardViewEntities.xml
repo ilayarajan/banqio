@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <!-- Card -->
+    <view-entity entity-name="CardTypeDetail" package="banqio.card">
+        <member-entity entity-alias="cardType" entity-name="banqio.card.CardType"/>
+        <member-entity entity-alias="typeBehaviour" entity-name="moqui.basic.Enumeration" join-from-alias="cardType">
+            <key-map field-name="typeBehaviourEnumId"/>
+        </member-entity>
+
+        <alias-all entity-alias="cardType"/>
+        <alias name="typeBehaviourDescription" entity-alias="typeBehaviour" field="description"/>
+    </view-entity>
+    <view-entity entity-name="CardStatusDetail" package="banqio.card">
+        <member-entity entity-alias="cardStatus" entity-name="banqio.card.CardStatus"/>
+        <member-entity entity-alias="statusBehaviour" entity-name="moqui.basic.Enumeration" join-from-alias="cardStatus">
+            <key-map field-name="statusBehaviourEnumId"/>
+        </member-entity>
+
+        <alias-all entity-alias="cardStatus"/>
+        <alias name="statusBehaviourDescription" entity-alias="statusBehaviour" field="description"/>
+    </view-entity>
+
+    <!-- Card lock -->
+    <view-entity entity-name="CardTemporaryLockDetail" package="banqio.card">
+        <member-entity entity-alias="cardLock" entity-name="banqio.card.CardTemporaryLock"/>
+        <member-entity entity-alias="lockReason" entity-name="moqui.basic.Enumeration" join-from-alias="cardLock">
+            <key-map field-name="lockReasonEnumId"/>
+        </member-entity>
+        <member-entity entity-alias="app" entity-name="commons.server.App" join-from-alias="cardLock">
+            <key-map field-name="appId"/>
+        </member-entity>
+
+        <alias-all entity-alias="cardLock"/>
+        <alias name="lockReasonDescription" entity-alias="lockReason" field="description"/>
+        <alias name="appName" entity-alias="app" field="appName"/>
+    </view-entity>
+    <view-entity entity-name="CardPermanentLockDetail" package="banqio.card">
+        <member-entity entity-alias="cardLock" entity-name="banqio.card.CardPermanentLock"/>
+        <member-entity entity-alias="lockReason" entity-name="moqui.basic.Enumeration" join-from-alias="cardLock">
+            <key-map field-name="lockReasonEnumId"/>
+        </member-entity>
+        <member-entity entity-alias="app" entity-name="commons.server.App" join-from-alias="cardLock">
+            <key-map field-name="appId"/>
+        </member-entity>
+
+        <alias-all entity-alias="cardLock"/>
+        <alias name="lockReasonDescription" entity-alias="lockReason" field="description"/>
+        <alias name="appName" entity-alias="app" field="appName"/>
+    </view-entity>
+
+</entities>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <moqui.basic.LocalizedMessage original="FT_TYPE_ROOT" locale="en" localized="Transfer Types"/>
+    <moqui.basic.LocalizedMessage original="FT_TYPE_NAME_REQUIRED" locale="en" localized="Type name is required."/>
+    <moqui.basic.LocalizedMessage original="FT_TYPE_NOT_FOUND" locale="en" localized="Type not found."/>
+    <moqui.basic.LocalizedMessage original="FT_TYPE_CREATED_SUCCESSFULLY" locale="en" localized="Type created successfully."/>
+    <moqui.basic.LocalizedMessage original="FT_TYPE_UPDATED_SUCCESSFULLY" locale="en" localized="Type updated successfully."/>
+    <moqui.basic.LocalizedMessage original="FT_TYPE_ALREADY_EXISTS" locale="en" localized="Type already exists."/>
+    <moqui.basic.LocalizedMessage original="FT_TYPE_PARENT_NOT_FOUND" locale="en" localized="Parent type not found."/>
+    <moqui.basic.LocalizedMessage original="FT_TYPE_PARENT_NOT_ALLOWED" locale="en" localized="Parent type not allowed."/>
+    <moqui.basic.LocalizedMessage original="FT_TYPE_SAME_PARENT" locale="en" localized="Parent type cannot be self."/>
+    <moqui.basic.LocalizedMessage original="FT_TYPE_CRC_CHECK_FAILED" locale="en" localized="Parent type CRC check failed."/>
+
+    <moqui.basic.LocalizedMessage original="FT_CHARGE_NAME_REQUIRED" locale="en" localized="Charge name is required."/>
+    <moqui.basic.LocalizedMessage original="FT_CHARGE_ALREADY_EXISTS" locale="en" localized="Charge already exists."/>
+    <moqui.basic.LocalizedMessage original="FT_CHARGE_NOT_FOUND" locale="en" localized="Charge not found."/>
+    <moqui.basic.LocalizedMessage original="FT_CHARGE_CREATED_SUCCESSFULLY" locale="en" localized="Charge created successfully."/>
+    <moqui.basic.LocalizedMessage original="FT_CHARGE_UPDATED_SUCCESSFULLY" locale="en" localized="Charge updated successfully."/>
+
+    <moqui.basic.LocalizedMessage original="FT_FREQUENCY_NAME_REQUIRED" locale="en" localized="Frequency name is required."/>
+    <moqui.basic.LocalizedMessage original="FT_FREQUENCY_PERIOD_REQUIRED" locale="en" localized="Frequency period is required."/>
+    <moqui.basic.LocalizedMessage original="FT_FREQUENCY_NOT_FOUND" locale="en" localized="Frequency not found."/>
+    <moqui.basic.LocalizedMessage original="FT_FREQUENCY_CREATED_SUCCESSFULLY" locale="en" localized="Frequency created successfully."/>
+    <moqui.basic.LocalizedMessage original="FT_FREQUENCY_UPDATED_SUCCESSFULLY" locale="en" localized="Frequency updated successfully."/>
+    <moqui.basic.LocalizedMessage original="FT_FREQUENCY_ALREADY_EXISTS" locale="en" localized="Frequency already exists."/>
+
+    <moqui.basic.LocalizedMessage original="FT_PURPOSE_ROOT" locale="en" localized="Transfer Purposes"/>
+    <moqui.basic.LocalizedMessage original="FT_PURPOSE_NAME_REQUIRED" locale="en" localized="Purpose name is required.."/>
+    <moqui.basic.LocalizedMessage original="FT_PURPOSE_NOT_FOUND" locale="en" localized="Purpose not found.."/>
+    <moqui.basic.LocalizedMessage original="FT_PURPOSE_ALREADY_EXISTS" locale="en" localized="Purpose already exists.."/>
+    <moqui.basic.LocalizedMessage original="FT_PURPOSE_PARENT_NOT_FOUND" locale="en" localized="Parent purpose not found."/>
+    <moqui.basic.LocalizedMessage original="FT_PURPOSE_SAME_PARENT" locale="en" localized="Parent purpose cannot be self."/>
+    <moqui.basic.LocalizedMessage original="FT_PURPOSE_CRC_CHECK_FAILED" locale="en" localized="Parent purpose CRC check failed."/>
+    <moqui.basic.LocalizedMessage original="FT_PURPOSE_CREATED_SUCCESSFULLY" locale="en" localized="Purpose created successfully.."/>
+    <moqui.basic.LocalizedMessage original="FT_PURPOSE_UPDATED_SUCCESSFULLY" locale="en" localized="Purpose updated successfully.."/>
+
+    <moqui.basic.LocalizedMessage original="POSTING_RULE_APP_REQUIRED" locale="en" localized="Application is required."/>
+    <moqui.basic.LocalizedMessage original="POSTING_RULE_FT_TYPE_REQUIRED" locale="en" localized="Transfer type is required."/>
+    <moqui.basic.LocalizedMessage original="POSTING_RULE_CURRENCY_REQUIRED" locale="en" localized="Debit or Transfer currency is required."/>
+    <moqui.basic.LocalizedMessage original="POSTING_RULE_NOT_FOUND" locale="en" localized="Posting rule not found."/>
+    <moqui.basic.LocalizedMessage original="POSTING_RULE_CREATED_SUCCESSFULLY" locale="en" localized="Posting rule created successfully."/>
+    <moqui.basic.LocalizedMessage original="POSTING_RULE_UPDATED_SUCCESSFULLY" locale="en" localized="Posting rule updated successfully."/>
+    <moqui.basic.LocalizedMessage original="POSTING_RULE_FROM_AMOUNT_NOT_POSITIVE" locale="en" localized="From amount is not positive."/>
+    <moqui.basic.LocalizedMessage original="POSTING_RULE_TO_AMOUNT_NOT_POSITIVE" locale="en" localized="To amount is not positive."/>
+    <moqui.basic.LocalizedMessage original="POSTING_RULE_AMOUNT_RANGE_INVALID" locale="en" localized="Invalid amount range."/>
+
+    <moqui.basic.LocalizedMessage original="FT_NOT_FOUND" locale="en" localized="Funds transfer not found."/>
+    <moqui.basic.LocalizedMessage original="FT_ACCESS_DENIED" locale="en" localized="Access to funds transfer denied."/>
+    <moqui.basic.LocalizedMessage original="FT_CREATED_SUCCESSFULLY" locale="en" localized="Funds transfer created successfully."/>
+    <moqui.basic.LocalizedMessage original="FT_UPDATED_SUCCESSFULLY" locale="en" localized="Funds transfer updated successfully."/>
+
+</entity-facade-xml>

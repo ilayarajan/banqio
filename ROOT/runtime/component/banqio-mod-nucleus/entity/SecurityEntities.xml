@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <entity entity-name="UserAccountEnroll" package="banqio.security.audit">
+        <field name="logId" type="id" is-pk="true"/>
+        <field name="appId" type="id"/>
+        <field name="username" type="text-medium"/>
+        <field name="externalId" type="text-medium"/>
+        <field name="ipAddress" type="text-short"/>
+        <field name="userAgent" type="text-medium"/>
+        <field name="enrolled" type="text-indicator"/>
+        <field name="errors" type="text-very-long"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+
+        <relationship type="one" related="commons.server.App">
+            <key-map field-name="appId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="UserAccountUpdate" package="banqio.security.audit">
+        <field name="logId" type="id" is-pk="true"/>
+        <field name="appId" type="id"/>
+        <field name="updateTypeEnumId" type="id"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="targetUserId" type="id"/>
+        <field name="ipAddress" type="text-short"/>
+        <field name="userAgent" type="text-medium"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+
+        <relationship type="one" related="commons.server.App" short-alias="app">
+            <key-map field-name="appId"/>
+        </relationship>
+        <relationship type="one" title="UserUpdateType" related="moqui.basic.Enumeration" short-alias="updateType">
+            <key-map field-name="updateTypeEnumId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="USER_UPDATE_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="USER_UPDATE_TARGET_USR_FK" short-alias="targetUser">
+            <key-map field-name="targetUserId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="UserPasswordReset" package="banqio.security.audit">
+        <field name="logId" type="id" is-pk="true"/>
+        <field name="appId" type="id"/>
+        <field name="inputUserId" type="id"/>
+        <field name="targetUserId" type="id"/>
+        <field name="ipAddress" type="text-short"/>
+        <field name="userAgent" type="text-medium"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+
+        <relationship type="one" related="commons.server.App">
+            <key-map field-name="appId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="USER_PWD_RESET_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="USER_PWD_RESET_TARGET_USR_FK" short-alias="targetUser">
+            <key-map field-name="targetUserId"/>
+        </relationship>
+    </entity>
+
+</entities>

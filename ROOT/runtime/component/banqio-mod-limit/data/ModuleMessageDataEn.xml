@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <moqui.basic.LocalizedMessage original="FT_LIMIT_NOT_FOUND" locale="en" localized="Limit not found."/>
+    <moqui.basic.LocalizedMessage original="FT_LIMIT_APP_REQUIRED" locale="en" localized="Application is required."/>
+    <moqui.basic.LocalizedMessage original="FT_LIMIT_CREATED_SUCCESSFULLY" locale="en" localized="Limit created successfully."/>
+    <moqui.basic.LocalizedMessage original="FT_LIMIT_UPDATED_SUCCESSFULLY" locale="en" localized="Limit updated successfully."/>
+    <moqui.basic.LocalizedMessage original="FT_LIMIT_BREACHED" locale="en" localized="Funds transfer limit breached."/>
+    <moqui.basic.LocalizedMessage original="FT_LIMIT_MIN_AMOUNT_NOT_POSITIVE" locale="en" localized="Minimum amount is not positive."/>
+    <moqui.basic.LocalizedMessage original="FT_LIMIT_MAX_AMOUNT_NOT_POSITIVE" locale="en" localized="Maximum amount is not positive."/>
+    <moqui.basic.LocalizedMessage original="FT_LIMIT_AMOUNT_RANGE_INVALID" locale="en" localized="Invalid amount range."/>
+
+</entity-facade-xml>

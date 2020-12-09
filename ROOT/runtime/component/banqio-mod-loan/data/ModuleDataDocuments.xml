@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <dataDocuments dataDocumentId="BanqioLoanType" documentName="Loan Type" documentTitle="${typeName}" indexName="banqio" primaryEntityName="banqio.loan.LoanType">
+        <fields fieldSeqId="01" fieldPath="typeId"/>
+        <fields fieldSeqId="02" fieldPath="externalTypeId"/>
+        <fields fieldSeqId="03" fieldPath="typeName"/>
+        <fields fieldSeqId="04" fieldPath="typeBehaviourEnumId"/>
+        <fields fieldSeqId="05" fieldPath="typeBehaviour:description" fieldNameAlias="typeBehaviourDescription"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioLoanStatus" documentName="Loan Status" documentTitle="${statusName}" indexName="banqio" primaryEntityName="banqio.loan.LoanStatus">
+        <fields fieldSeqId="01" fieldPath="statusId"/>
+        <fields fieldSeqId="02" fieldPath="externalStatusId"/>
+        <fields fieldSeqId="03" fieldPath="statusName"/>
+        <fields fieldSeqId="04" fieldPath="statusBehaviourEnumId"/>
+        <fields fieldSeqId="05" fieldPath="statusBehaviour:description" fieldNameAlias="statusBehaviourDescription"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+
+</entity-facade-xml>

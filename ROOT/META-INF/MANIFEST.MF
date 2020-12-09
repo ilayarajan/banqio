@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Implementation-Title: Moqui Start
+Implementation-Version: 3.0.0-rc5
+Implementation-Vendor: Moqui Ecosystem
+Main-Class: MoquiStart
+

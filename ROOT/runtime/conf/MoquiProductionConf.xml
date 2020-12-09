@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<moqui-conf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/moqui-conf-2.1.xsd">
+
+	<default-property name="default_locale" value="en_US"/>
+	<default-property name="default_time_zone" value="Asia/Qatar"/>
+	<default-property name="database_time_zone" value="Asia/Qatar"/>
+	<default-property name="elasticsearch_url" value="http://172.20.200.24:9200"/>
+	
+	<server-stats stats-skip-condition="pathInfo?.startsWith('/rpc') || pathInfo?.startsWith('/status')"/>
+	
+	<webapp-list>
+        <webapp name="webroot">
+            <session-config timeout="10"/>
+        </webapp>
+    </webapp-list>
+    
+	<user-facade>
+		<password encrypt-hash-type="SHA-256" min-length="4" min-digits="0" min-others="0" history-limit="0" change-weeks="104" email-require-change="false" email-expire-hours="48"/>
+		<login max-failures="9" disable-minutes="5" history-store="true" history-incorrect-password="false"/>
+	</user-facade>
+
+	<database-list>
+		<database name="oracle">
+			<database-type type="time" sql-type="DATE"/>
+			<database-type type="text-short" sql-type="VARCHAR2(63)"/>
+		</database>
+	</database-list>
+
+    <entity-facade>
+		<datasource group-name="transactional" database-conf-name="oracle" schema-name="BNQUAT">
+			<inline-jdbc 
+				jdbc-uri="jdbc:oracle:thin:@banqiodb:1521:UPDB"
+        	    jdbc-username="bnquat"
+				jdbc-password="bnquatDB1234"
+				pool-minsize="2"
+				pool-maxsize="100"/>
+        </datasource>
+    </entity-facade>
+
+</moqui-conf>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<secas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-eca-2.1.xsd">
+
+    <!-- OTP service validation -->
+    <seca service="commons\.security\.SecurityServices\.(generate#OneTimePassword|validate#OneTimePassword)" name-is-pattern="true" when="pre-service">
+        <actions>
+            <service-call name="commons.server.ServerServices.validate#App">
+                <field-map field-name="appId" from="sourceAppId"/>
+            </service-call>
+        </actions>
+    </seca>
+
+    <!-- Scene service validation -->
+    <seca service="commons.server.ServerServices.find#Scene" when="pre-service">
+        <actions>
+            <service-call name="commons.server.ServerServices.validate#App">
+                <field-map field-name="appId" from="sourceAppId"/>
+            </service-call>
+        </actions>
+    </seca>
+
+    <!-- App branding service validation -->
+    <seca service="commons.server.ServerServices.find#AppBranding" when="pre-service">
+        <actions>
+            <service-call name="commons.server.ServerServices.validate#App">
+                <field-map field-name="appId" from="appId"/>
+            </service-call>
+        </actions>
+    </seca>
+
+    <!-- Store scene visit -->
+    <seca service="commons.server.ServerServices.find#Scene" when="post-service">
+        <actions>
+            <if condition="scene != null &amp;&amp; ec.user.visitId != null">
+                <service-call name="create#commons.server.SceneVisit">
+                    <field-map field-name="sceneId" from="scene.sceneId"/>
+                    <field-map field-name="visitId" from="ec.user.visitId"/>
+                </service-call>
+            </if>
+        </actions>
+    </seca>
+
+    <!-- Start workflow instance after creation -->
+    <seca service="commons.workflow.WorkflowServices.create#WorkflowInstance" when="post-service">
+        <actions>
+            <if condition="!ec.message.hasError()">
+                <service-call name="commons.workflow.WorkflowServices.start#WorkflowInstance">
+                    <field-map field-name="instanceId" from="instanceId"/>
+                </service-call>
+            </if>
+        </actions>
+    </seca>
+
+    <!-- Start workflow instance after task updates -->
+    <seca service="commons.workflow.WorkflowServices.update#WorkflowInstanceTask" when="post-service">
+        <actions>
+            <if condition="!ec.message.hasError()">
+                <entity-find-one entity-name="commons.workflow.WorkflowInstanceTask" value-field="task"/>
+                <service-call name="commons.workflow.WorkflowServices.start#WorkflowInstance">
+                    <field-map field-name="instanceId" from="task.instanceId"/>
+                </service-call>
+            </if>
+        </actions>
+    </seca>
+
+</secas>

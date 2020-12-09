@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <moqui.basic.LocalizedMessage original="REPORT_CATEGORY_NAME_REQUIRED" locale="en" localized="Category name is required."/>
+    <moqui.basic.LocalizedMessage original="REPORT_CATEGORY_NOT_FOUND" locale="en" localized="Category not found."/>
+    <moqui.basic.LocalizedMessage original="REPORT_CATEGORY_CREATED_SUCCESSFULLY" locale="en" localized="Category created successfully."/>
+    <moqui.basic.LocalizedMessage original="REPORT_CATEGORY_UPDATED_SUCCESSFULLY" locale="en" localized="Category updated successfully."/>
+
+    <moqui.basic.LocalizedMessage original="REPORT_NAME_REQUIRED" locale="en" localized="Report name is required."/>
+    <moqui.basic.LocalizedMessage original="REPORT_SERVICE_NAME_REQUIRED" locale="en" localized="Report service name is required."/>
+    <moqui.basic.LocalizedMessage original="REPORT_DATA_DOCUMENT_ID_REQUIRED" locale="en" localized="Report data document Id is required."/>
+    <moqui.basic.LocalizedMessage original="REPORT_NOT_FOUND" locale="en" localized="Report not found."/>
+    <moqui.basic.LocalizedMessage original="REPORT_NOT_AUTHORIZED" locale="en" localized="Report not authorized."/>
+    <moqui.basic.LocalizedMessage original="REPORT_CREATED_SUCCESSFULLY" locale="en" localized="Report created successfully."/>
+    <moqui.basic.LocalizedMessage original="REPORT_UPDATED_SUCCESSFULLY" locale="en" localized="Report updated successfully."/>
+    <moqui.basic.LocalizedMessage original="REPORT_DEBIT_ACCOUNT_REQUIRED" locale="en" localized="Debit account is required."/>
+    <moqui.basic.LocalizedMessage original="REPORT_INSUFFICIENT_FUNDS" locale="en" localized="Debit account has insufficient funds."/>
+    <moqui.basic.LocalizedMessage original="REPORT_MANDATORY_PARAMETERS_REQUIRED" locale="en" localized="Mandatory report parameters are required."/>
+
+    <moqui.basic.LocalizedMessage original="REPORT_PARAMETER_NAME_REQUIRED" locale="en" localized="Parameter name is required."/>
+    <moqui.basic.LocalizedMessage original="REPORT_PARAMETER_NOT_FOUND" locale="en" localized="Parameter not found."/>
+    <moqui.basic.LocalizedMessage original="REPORT_PARAMETER_CREATED_SUCCESSFULLY" locale="en" localized="Parameter created successfully."/>
+    <moqui.basic.LocalizedMessage original="REPORT_PARAMETER_UPDATED_SUCCESSFULLY" locale="en" localized="Parameter updated successfully."/>
+
+    <moqui.basic.LocalizedMessage original="REPORT_PRICE_DATE_RANGE_INVALID" locale="en" localized="Invalid date range."/>
+    <moqui.basic.LocalizedMessage original="REPORT_PRICE_NOT_FOUND" locale="en" localized="Price not found."/>
+    <moqui.basic.LocalizedMessage original="REPORT_PRICE_CREATED_SUCCESSFULLY" locale="en" localized="Price created successfully."/>
+    <moqui.basic.LocalizedMessage original="REPORT_PRICE_EXPIRED_SUCCESSFULLY" locale="en" localized="Price expired successfully."/>
+
+    <moqui.basic.LocalizedMessage original="REPORT_INSTANCE_NOT_FOUND" locale="en" localized="Report instance not found."/>
+    <moqui.basic.LocalizedMessage original="REPORT_INSTANCE_NOT_READY" locale="en" localized="Report instance not ready."/>
+    <moqui.basic.LocalizedMessage original="REPORT_INSTANCE_NOT_AVAILABLE" locale="en" localized="Report instance not available."/>
+    <moqui.basic.LocalizedMessage original="REPORT_INSTANCE_ACCESS_DENIED" locale="en" localized="Access to report instance denied."/>
+    <moqui.basic.LocalizedMessage original="REPORT_INSTANCE_CREATED_SUCCESSFULLY" locale="en" localized="Your report is being prepared. Check the archive to download the report."/>
+
+</entity-facade-xml>

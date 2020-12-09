@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Connect Base API -->
+    <artifactGroups artifactGroupId="BNQ_CONNECT_BASE_API" description="Banqio Connect Base API">
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/connect/basic/.*"/>
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/connect/dashboard/.*"/>
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/connect/exchangeRate/.*"/>
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/connect/security/.*"/>
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/connect/server/.*"/>
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/connect/workflow/.*"/>
+        <artifacts artifactTypeEnumId="AT_SERVICE" inheritAuthz="Y" nameIsPattern="N" artifactName="commons.server.ServerServices.validate#App"/>
+        <artifacts artifactTypeEnumId="AT_SERVICE" inheritAuthz="Y" nameIsPattern="N" artifactName="banqio.security.SecurityServices.validate#UserAuthenticated"/>
+        <artifacts artifactTypeEnumId="AT_SERVICE" inheritAuthz="Y" nameIsPattern="N" artifactName="banqio.security.SecurityServices.validate#UserExternalId"/>
+    </artifactGroups>
+
+    <!-- Connect Account API -->
+    <artifactGroups artifactGroupId="BNQ_CONNECT_ACCT_API" description="Banqio Connect Account API">
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/connect/account.*"/>
+        <artifacts artifactTypeEnumId="AT_SERVICE" inheritAuthz="Y" nameIsPattern="N" artifactName="banqio.connect.impl.AccountServices.download#AccountTransactions"/>
+        <artifacts artifactTypeEnumId="AT_SERVICE" inheritAuthz="Y" nameIsPattern="N" artifactName="banqio.connect.impl.AccountServices.download#AccountTransactionAdvice"/>
+        <artifacts artifactTypeEnumId="AT_SERVICE" inheritAuthz="Y" nameIsPattern="N" artifactName="banqio.connect.impl.AccountServices.download#OfficialAccountStatement"/>
+        <artifacts artifactTypeEnumId="AT_SERVICE" inheritAuthz="Y" nameIsPattern="N" artifactName="banqio.connect.impl.AccountServices.download#Mt940AccountStatement"/>
+    </artifactGroups>
+
+    <!-- Connect Term Deposit API -->
+    <artifactGroups artifactGroupId="BNQ_CONNECT_DEPOSIT_API" description="Banqio Connect Term Deposit API">
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/connect/termDeposit.*"/>
+        <artifacts artifactTypeEnumId="AT_SERVICE" inheritAuthz="Y" nameIsPattern="N" artifactName="banqio.connect.impl.TermDepositServices.download#TermDepositReceipt"/>
+    </artifactGroups>
+
+    <!-- Connect Loan API -->
+    <artifactGroups artifactGroupId="BNQ_CONNECT_LOAN_API" description="Banqio Connect Loan API">
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/connect/loan.*"/>
+    </artifactGroups>
+
+    <!-- Connect Card API -->
+    <artifactGroups artifactGroupId="BNQ_CONNECT_CARD_API" description="Banqio Connect Card API">
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/connect/card.*"/>
+        <artifacts artifactTypeEnumId="AT_SERVICE" inheritAuthz="Y" nameIsPattern="N" artifactName="banqio.connect.impl.CreditCardServices.download#OfficialCreditCardStatement"/>
+    </artifactGroups>
+
+    <!-- Connect Cheque API -->
+    <artifactGroups artifactGroupId="BNQ_CONNECT_CHQ_API" description="Banqio Connect Cheque API">
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/connect/cheque.*"/>
+    </artifactGroups>
+
+    <!-- Connect Beneficiary API -->
+    <artifactGroups artifactGroupId="BNQ_CONNECT_BEN_API" description="Banqio Connect Beneficiary API">
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/connect/beneficiary.*"/>
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/connect/bank.*"/>
+    </artifactGroups>
+
+    <!-- Connect Funds Transfer API -->
+    <artifactGroups artifactGroupId="BNQ_CONNECT_FT_BASE_API" description="Banqio Connect Funds Transfer Base API">
+        <artifacts artifactTypeEnumId="AT_SERVICE" inheritAuthz="Y" nameIsPattern="N" artifactName="banqio.connect.impl.FundsTransferServices.calculate#ValueDate"/>
+        <artifacts artifactTypeEnumId="AT_SERVICE" inheritAuthz="Y" nameIsPattern="N" artifactName="banqio.ft.FundsTransferServices.download#FundsTransferPaymentFile"/>
+        <artifacts artifactTypeEnumId="AT_SERVICE" inheritAuthz="Y" nameIsPattern="N" artifactName="banqio.ft.FundsTransferServices.download#FundsTransferTypeTemplate"/>
+    </artifactGroups>
+
+    <!-- Connect Funds Transfer API -->
+    <artifactGroups artifactGroupId="BNQ_CONNECT_FT_API" description="Banqio Connect Funds Transfer API">
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/connect/ft.*"/>
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/connect/wps.*"/>
+    </artifactGroups>
+
+    <!-- Connect TF LG API -->
+    <artifactGroups artifactGroupId="BNQ_CONNECT_TF_LG_API" description="Banqio Connect LG API">
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/connect/tradeFinance/lg.*"/>
+    </artifactGroups>
+
+    <!-- Connect TF Import LC API -->
+    <artifactGroups artifactGroupId="BNQ_CONNECT_TF_IMP_LC_API" description="Banqio Connect Trade Finance Import LC API">
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/connect/tradeFinance/lc/import.*"/>
+    </artifactGroups>
+
+    <!-- Connect TF Export LC API -->
+    <artifactGroups artifactGroupId="BNQ_CONNECT_TF_EXP_LC_API" description="Banqio Connect Trade Finance Export LC API">
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/connect/tradeFinance/lc/export.*"/>
+    </artifactGroups>
+
+    <!-- Connect TF Collection API -->
+    <artifactGroups artifactGroupId="BNQ_CONNECT_TF_DC_API" description="Banqio Connect Trade Finance Collection API">
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/connect/tradeFinance/collection.*"/>
+    </artifactGroups>
+
+    <!-- Connect Trade Finance Loan API -->
+    <artifactGroups artifactGroupId="BNQ_CONNECT_TF_LOAN_API" description="Banqio Connect Trade Finance Loan API">
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/connect/tradeFinance/loan.*"/>
+    </artifactGroups>
+
+    <!-- Connect Report API -->
+    <artifactGroups artifactGroupId="BNQ_CONNECT_RPT_API" description="Banqio Connect Report API">
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/connect/report.*"/>
+        <artifacts artifactTypeEnumId="AT_SERVICE" inheritAuthz="Y" nameIsPattern="N" artifactName="banqio.report.ReportServices.download#ReportInstance"/>
+    </artifactGroups>
+
+    <!-- Corporate Accounts -->
+    <userGroups userGroupId="BNQ_CRP_CASH_ACCT" description="Banqio Corporate Accounts" groupTypeEnumId="BNQ_CRP_GRP" wikiLocation="component://banqio-mod-connect-akcb/wiki/BNQ_CRP_CASH_ACCT.md">
+        <authz artifactGroupId="BNQ_CONNECT_BASE_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_ACCT_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+    </userGroups>
+
+    <!-- Corporate Term Deposits -->
+    <userGroups userGroupId="BNQ_CRP_CASH_DEPOSIT" description="Banqio Corporate Term Deposits" groupTypeEnumId="BNQ_CRP_GRP" wikiLocation="component://banqio-mod-connect-akcb/wiki/BNQ_CRP_CASH_DEPOSIT.md">
+        <authz artifactGroupId="BNQ_CONNECT_BASE_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_DEPOSIT_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+    </userGroups>
+
+    <!-- Corporate Cards -->
+    <userGroups userGroupId="BNQ_CRP_CASH_CARD" description="Banqio Corporate Cards" groupTypeEnumId="BNQ_CRP_GRP" wikiLocation="component://banqio-mod-connect-akcb/wiki/BNQ_CRP_CASH_CARD.md">
+        <authz artifactGroupId="BNQ_CONNECT_BASE_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_CARD_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+    </userGroups>
+
+    <!-- Corporate Cheques -->
+    <userGroups userGroupId="BNQ_CRP_CASH_CHQ" description="Banqio Corporate Cheques" groupTypeEnumId="BNQ_CRP_GRP" wikiLocation="component://banqio-mod-connect-akcb/wiki/BNQ_CRP_CASH_CHQ.md">
+        <authz artifactGroupId="BNQ_CONNECT_BASE_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_CHQ_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+    </userGroups>
+
+    <!-- Corporate Cash Management -->
+    <userGroups userGroupId="BNQ_CRP_CASH" description="Banqio Corporate Cash Management" groupTypeEnumId="BNQ_CRP_GRP" wikiLocation="component://banqio-mod-connect-akcb/wiki/BNQ_CRP_CASH.md">
+        <authz artifactGroupId="BNQ_CONNECT_BASE_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_ACCT_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_DEPOSIT_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_CARD_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_CHQ_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+    </userGroups>
+
+    <!-- Corporate Loans -->
+    <userGroups userGroupId="BNQ_CRP_CASH_LOAN" description="Banqio Corporate Loans" groupTypeEnumId="BNQ_CRP_GRP" wikiLocation="component://banqio-mod-connect-akcb/wiki/BNQ_CRP_CASH_LOAN.md">
+        <authz artifactGroupId="BNQ_CONNECT_BASE_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_LOAN_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+    </userGroups>
+
+    <!-- Corporate Beneficiaries (All) -->
+    <userGroups userGroupId="BNQ_CRP_TRX_BEN_ALL" description="Banqio Corporate Beneficiaries (All)" groupTypeEnumId="BNQ_CRP_GRP" wikiLocation="component://banqio-mod-connect-akcb/wiki/BNQ_CRP_TRX_BEN_ALL.md">
+        <authz artifactGroupId="BNQ_CONNECT_BASE_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_BEN_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+    </userGroups>
+
+    <!-- Corporate Beneficiaries (View) -->
+    <userGroups userGroupId="BNQ_CRP_TRX_BEN_VIEW" description="Banqio Corporate Beneficiaries (View)" groupTypeEnumId="BNQ_CRP_GRP" wikiLocation="component://banqio-mod-connect-akcb/wiki/BNQ_CRP_TRX_BEN_VIEW.md">
+        <authz artifactGroupId="BNQ_CONNECT_BASE_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_BEN_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+    </userGroups>
+
+    <!-- Corporate Funds Transfers (All) -->
+    <userGroups userGroupId="BNQ_CRP_TRX_FT_ALL" description="Banqio Corporate Funds Transfers (All)" groupTypeEnumId="BNQ_CRP_GRP" wikiLocation="component://banqio-mod-connect-akcb/wiki/BNQ_CRP_TRX_FT_ALL.md">
+        <authz artifactGroupId="BNQ_CONNECT_BASE_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_FT_BASE_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_FT_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+    </userGroups>
+
+    <!-- Corporate Funds Transfers (View) -->
+    <userGroups userGroupId="BNQ_CRP_TRX_FT_VIEW" description="Banqio Corporate Funds Transfers (View)" groupTypeEnumId="BNQ_CRP_GRP" wikiLocation="component://banqio-mod-connect-akcb/wiki/BNQ_CRP_TRX_FT_VIEW.md">
+        <authz artifactGroupId="BNQ_CONNECT_BASE_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_FT_BASE_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_FT_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+    </userGroups>
+
+    <!-- Corporate Financial Transactions -->
+    <userGroups userGroupId="BNQ_CRP_TRX" description="Banqio Corporate Financial Transactions" groupTypeEnumId="BNQ_CRP_GRP" wikiLocation="component://banqio-mod-connect-akcb/wiki/BNQ_CRP_TRX.md">
+        <authz artifactGroupId="BNQ_CONNECT_BASE_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_BEN_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_FT_BASE_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_FT_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+    </userGroups>
+
+    <!-- Corporate TF LGs (View) -->
+    <userGroups userGroupId="BNQ_CRP_TF_LG_VIEW" description="Banqio Corporate Trade Finance LGs (View) " groupTypeEnumId="BNQ_CRP_GRP" wikiLocation="component://banqio-mod-connect-akcb/wiki/BNQ_CRP_TF_LG_VIEW.md">
+        <authz artifactGroupId="BNQ_CONNECT_BASE_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_TF_LG_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+    </userGroups>
+
+    <!-- Corporate TF Import LCs (View) -->
+    <userGroups userGroupId="BNQ_CRP_TF_IMP_LC_VIEW" description="Banqio Corporate Trade Finance Import LCs (View)" groupTypeEnumId="BNQ_CRP_GRP" wikiLocation="component://banqio-mod-connect-akcb/wiki/BNQ_CRP_TF_IMP_LC_VIEW.md">
+        <authz artifactGroupId="BNQ_CONNECT_BASE_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_TF_IMP_LC_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+    </userGroups>
+
+    <!-- Corporate TF Export LCs (View) -->
+    <userGroups userGroupId="BNQ_CRP_TF_EXP_LC_VIEW" description="Banqio Corporate Trade Finance Export LCs (View)" groupTypeEnumId="BNQ_CRP_GRP" wikiLocation="component://banqio-mod-connect-akcb/wiki/BNQ_CRP_TF_EXP_LC_VIEW.md">
+        <authz artifactGroupId="BNQ_CONNECT_BASE_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_TF_EXP_LC_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+    </userGroups>
+
+    <!-- Corporate TF Collections -->
+    <userGroups userGroupId="BNQ_CRP_TF_DC" description="Banqio Corporate Trade Finance Collections" groupTypeEnumId="BNQ_CRP_GRP" wikiLocation="component://banqio-mod-connect-akcb/wiki/BNQ_CRP_TF_DC.md">
+        <authz artifactGroupId="BNQ_CONNECT_BASE_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_TF_DC_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+    </userGroups>
+
+    <!-- Corporate Trade Finance Loans -->
+    <userGroups userGroupId="BNQ_CRP_TF_LOAN" description="Banqio Corporate Trade Finance Loans" groupTypeEnumId="BNQ_CRP_GRP" wikiLocation="component://banqio-mod-connect-akcb/wiki/BNQ_CRP_TF_LOAN.md">
+        <authz artifactGroupId="BNQ_CONNECT_BASE_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_TF_LOAN_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+    </userGroups>
+
+    <!-- Corporate Trade Finance (All) -->
+    <userGroups userGroupId="BNQ_CRP_TF_ALL" description="Banqio Corporate Trade Finance (All)" groupTypeEnumId="BNQ_CRP_GRP" wikiLocation="component://banqio-mod-connect-akcb/wiki/BNQ_CRP_TF_ALL.md">
+        <authz artifactGroupId="BNQ_CONNECT_BASE_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_TF_LG_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_TF_IMP_LC_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_TF_EXP_LC_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_TF_DC_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_TF_LOAN_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+    </userGroups>
+
+    <!-- Corporate Trade Finance (View) -->
+    <userGroups userGroupId="BNQ_CRP_TF_VIEW" description="Banqio Corporate Trade Finance (View)" groupTypeEnumId="BNQ_CRP_GRP" wikiLocation="component://banqio-mod-connect-akcb/wiki/BNQ_CRP_TF_VIEW.md">
+        <authz artifactGroupId="BNQ_CONNECT_BASE_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_TF_LG_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+        <authz artifactGroupId="BNQ_CONNECT_TF_IMP_LC_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+        <authz artifactGroupId="BNQ_CONNECT_TF_EXP_LC_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+        <authz artifactGroupId="BNQ_CONNECT_TF_DC_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+        <authz artifactGroupId="BNQ_CONNECT_TF_LOAN_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+    </userGroups>
+
+    <!-- Corporate Reports -->
+    <userGroups userGroupId="BNQ_CRP_RPT" description="Banqio Corporate Reports" groupTypeEnumId="BNQ_CRP_GRP" wikiLocation="component://banqio-mod-connect-akcb/wiki/BNQ_CRP_RPT.md">
+        <authz artifactGroupId="BNQ_CONNECT_BASE_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_RPT_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+    </userGroups>
+
+    <!-- Corporate (All) -->
+    <userGroups userGroupId="BNQ_CRP_ALL" description="Banqio Corporate (All)" groupTypeEnumId="BNQ_CRP_GRP" wikiLocation="component://banqio-mod-connect-akcb/wiki/BNQ_CRP_ALL.md">
+        <authz artifactGroupId="BNQ_CONNECT_BASE_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_ACCT_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_DEPOSIT_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_LOAN_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_CARD_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_CHQ_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_BEN_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_FT_BASE_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_FT_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_TF_LG_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_TF_IMP_LC_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_TF_EXP_LC_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_TF_DC_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_TF_LOAN_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_RPT_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+    </userGroups>
+
+    <!-- Corporate (View) -->
+    <userGroups userGroupId="BNQ_CRP_VIEW" description="Banqio Corporate (View)" groupTypeEnumId="BNQ_CRP_GRP" wikiLocation="component://banqio-mod-connect-akcb/wiki/BNQ_CRP_VIEW.md">
+        <authz artifactGroupId="BNQ_CONNECT_BASE_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_ACCT_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_DEPOSIT_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_LOAN_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_CARD_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_CONNECT_CHQ_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+        <authz artifactGroupId="BNQ_CONNECT_BEN_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+        <authz artifactGroupId="BNQ_CONNECT_FT_BASE_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+        <authz artifactGroupId="BNQ_CONNECT_FT_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+        <authz artifactGroupId="BNQ_CONNECT_TF_LG_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+        <authz artifactGroupId="BNQ_CONNECT_TF_IMP_LC_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+        <authz artifactGroupId="BNQ_CONNECT_TF_EXP_LC_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+        <authz artifactGroupId="BNQ_CONNECT_TF_DC_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+        <authz artifactGroupId="BNQ_CONNECT_TF_LOAN_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+        <authz artifactGroupId="BNQ_CONNECT_RPT_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+    </userGroups>
+
+</entity-facade-xml>

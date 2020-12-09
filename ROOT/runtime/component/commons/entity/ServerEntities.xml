@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <!-- Application -->
+    <entity entity-name="App" package="commons.server" short-alias="CommonsApp" enable-audit-log="update">
+        <field name="appId" type="id" is-pk="true"/>
+        <field name="appName" type="text-medium"/>
+        <field name="description" type="text-long"/>
+        <field name="disabled" type="text-indicator"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="APP_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="APP_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+        <relationship type="many" related="commons.server.AppServer" short-alias="servers">
+            <key-map field-name="appId"/>
+        </relationship>
+        <relationship type="many" related="commons.server.AppVersion" short-alias="versions">
+            <key-map field-name="appId"/>
+        </relationship>
+        <relationship type="many" related="commons.server.Scene" short-alias="scenes">
+            <key-map field-name="appId"/>
+        </relationship>
+        <relationship type="one-nofk" related="commons.server.AppBranding" short-alias="branding">
+            <key-map field-name="appId"/>
+        </relationship>
+
+        <master>
+            <detail relationship="servers"/>
+            <detail relationship="versions"/>
+            <detail relationship="scenes"/>
+            <detail relationship="branding"/>
+        </master>
+    </entity>
+    <entity entity-name="AppServer" package="commons.server">
+        <field name="serverId" type="id" is-pk="true"/>
+        <field name="appId" type="id"/>
+        <field name="hostName" type="text-medium"/>
+        <field name="nodeName" type="text-medium"/>
+        <field name="ipAddress" type="text-medium"/>
+        <field name="port" type="number-integer"/>
+        <field name="disabled" type="text-indicator"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" related="commons.server.App" short-alias="app">
+            <key-map field-name="appId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="APP_SERVER_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="APP_SERVER_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="AppVersion" package="commons.server">
+        <field name="versionId" type="id" is-pk="true"/>
+        <field name="appId" type="id"/>
+        <field name="versionNumber" type="text-medium"/>
+        <field name="buildNumber" type="text-medium"/>
+        <field name="releaseNotes" type="text-long" enable-localization="true"/>
+        <field name="alertTypeEnumId" type="id"/>
+        <field name="breaking" type="text-indicator"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" related="commons.server.App" short-alias="app">
+            <key-map field-name="appId"/>
+        </relationship>
+        <relationship type="one" title="VersionAlertType" related="moqui.basic.Enumeration" short-alias="alertType">
+            <key-map field-name="alertTypeEnumId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="APP_VERSION_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="APP_VERSION_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+
+        <index name="appVersionIdx1" unique="true">
+            <index-field name="appId"/>
+            <index-field name="versionNumber"/>
+        </index>
+        <index name="appVersionIdx2" unique="true">
+            <index-field name="appId"/>
+            <index-field name="buildNumber"/>
+        </index>
+    </entity>
+    <entity entity-name="AppBranding" package="commons.server" short-alias="CommonsAppBranding" enable-audit-log="update">
+        <field name="appId" type="id" is-pk="true"/>
+        <field name="primaryColor" type="text-medium" default="'#97C626'"/>
+        <field name="successColor" type="text-medium" default="'#28C76F'"/>
+        <field name="dangerColor" type="text-medium" default="'#EA5455'"/>
+        <field name="warningColor" type="text-medium" default="'#FF9F43'"/>
+        <field name="darkColor" type="text-medium" default="'#1E1E1E'"/>
+        <field name="titleColor" type="text-medium" default="'#97C626'"/>
+        <field name="loginBackgroundLocation" type="text-medium"/>
+        <field name="loginBackgroundPosition" type="text-medium" default="'center center'"/>
+        <field name="loginLogoLocation" type="text-medium"/>
+        <field name="loginLogoSize" type="number-integer" default="150"/>
+        <field name="loginLogoBackgroundColor" type="text-medium" default="'#777777'"/>
+        <field name="logoLocation" type="text-medium"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" related="commons.server.App" short-alias="app">
+            <key-map field-name="appId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="APP_BRAND_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="APP_BRAND_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="AppWsCall" package="commons.server">
+        <field name="transactionId" type="id" is-pk="true"/>
+        <field name="appId" type="id"/>
+        <field name="remoteSystem" type="text-medium"/>
+        <field name="requestMessage" type="text-very-long"/>
+        <field name="requestDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="responseMessage" type="text-very-long"/>
+        <field name="responseDate" type="date-time"/>
+
+        <relationship type="one" related="commons.server.App" short-alias="app">
+            <key-map field-name="appId"/>
+        </relationship>
+    </entity>
+
+    <!-- Scene -->
+    <entity entity-name="Scene" package="commons.server" short-alias="CommonsScene">
+        <field name="sceneId" type="id" is-pk="true"/>
+        <field name="appId" type="id"/>
+        <field name="sceneName" type="text-medium"/>
+        <field name="lookupName" type="text-medium"/>
+        <field name="description" type="text-long"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" related="commons.server.App" short-alias="app">
+            <key-map field-name="appId"/>
+        </relationship>
+        <relationship type="many" related="commons.server.SceneMessage" short-alias="messages">
+            <key-map field-name="sceneId"/>
+        </relationship>
+        <relationship type="many" related="commons.server.SceneInclude" short-alias="includes">
+            <key-map field-name="sceneId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="SCENE_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="SCENE_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+
+        <index name="sceneIdx1" unique="true">
+            <index-field name="appId"/>
+            <index-field name="lookupName"/>
+        </index>
+        <index name="sceneIdx2">
+            <index-field name="lookupName"/>
+        </index>
+
+        <master>
+            <detail relationship="messages"/>
+            <detail relationship="includes"/>
+        </master>
+    </entity>
+    <entity entity-name="SceneInclude" package="commons.server">
+        <field name="sceneId" type="id" is-pk="true"/>
+        <field name="otherSceneId" type="id" is-pk="true"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+
+        <relationship type="one" related="commons.server.Scene" fk-name="INCLUDE_SCENE_FK" short-alias="scene">
+            <key-map field-name="sceneId"/>
+        </relationship>
+        <relationship type="one" related="commons.server.Scene" fk-name="INCLUDE_OTHER_SCENE_FK" short-alias="otherScene">
+            <key-map field-name="otherSceneId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="SceneMessage" package="commons.server" short-alias="CommonsSceneMsg">
+        <field name="messageId" type="id" is-pk="true"/>
+        <field name="sceneId" type="id"/>
+        <field name="messageKey" type="text-medium"/>
+        <field name="messageValue" type="text-very-long" enable-localization="true" enable-audit-log="update"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+
+        <relationship type="one" related="commons.server.Scene" short-alias="scene">
+            <key-map field-name="sceneId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="SceneVisit" package="commons.server">
+        <field name="sceneId" type="id" is-pk="true"/>
+        <field name="visitId" type="id" is-pk="true"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp" is-pk="true"/>
+
+        <relationship type="one" related="commons.server.Scene" short-alias="scene">
+            <key-map field-name="sceneId"/>
+        </relationship>
+        <relationship type="one" related="moqui.server.Visit" short-alias="visit">
+            <key-map field-name="visitId"/>
+        </relationship>
+    </entity>
+
+    <!-- Configuration -->
+    <entity entity-name="ConfigurationGroup" package="commons.server" short-alias="CommonsConfigGrp">
+        <field name="groupId" type="id" is-pk="true"/>
+        <field name="groupName" type="text-medium"/>
+        <field name="description" type="text-long"/>
+        <field name="position" type="number-integer" default="0"/>
+        <field name="configurationList" type="text-medium">
+            <description>Reserved for internal use. Do not modify or remove.</description>
+        </field>
+
+        <relationship type="many" related="commons.server.Configuration" short-alias="configurations">
+            <key-map field-name="groupId"/>
+        </relationship>
+
+        <master>
+            <detail relationship="configurations"/>
+        </master>
+    </entity>
+    <entity entity-name="Configuration" package="commons.server" short-alias="CommonsConfig">
+        <field name="configurationId" type="id" is-pk="true"/>
+        <field name="appId" type="id"/>
+        <field name="groupId" type="id"/>
+        <field name="editorTypeEnumId" type="id"/>
+        <field name="configurationName" type="text-medium"/>
+        <field name="description" type="text-long"/>
+        <field name="defaultValue" type="text-long"/>
+        <field name="definedValue" type="text-long" enable-audit-log="update"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+
+        <relationship type="one" related="commons.server.App" short-alias="app">
+            <key-map field-name="appId"/>
+        </relationship>
+        <relationship type="one" related="commons.server.ConfigurationGroup" short-alias="configurationGroup">
+            <key-map field-name="groupId"/>
+        </relationship>
+        <relationship type="one" title="ConfigEditorType" related="moqui.basic.Enumeration" short-alias="editorType">
+            <key-map field-name="editorTypeEnumId"/>
+        </relationship>
+        <relationship type="many" related="commons.server.ConfigurationOption" short-alias="options">
+            <key-map field-name="configurationId"/>
+        </relationship>
+
+        <master>
+            <detail relationship="options"/>
+        </master>
+    </entity>
+    <entity entity-name="ConfigurationOption" package="commons.server" short-alias="CommonsConfigOpt">
+        <field name="configurationId" type="id" is-pk="true"/>
+        <field name="optionSeqId" type="id" is-pk="true"/>
+        <field name="optionValue" type="text-medium"/>
+        <field name="optionText" type="text-medium"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+
+        <relationship type="one" related="commons.server.Configuration" short-alias="configuration">
+            <key-map field-name="configurationId"/>
+        </relationship>
+    </entity>
+
+</entities>

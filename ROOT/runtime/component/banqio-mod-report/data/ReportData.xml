@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Report type -->
+    <moqui.basic.EnumerationType enumTypeId="ReportType" description="Report Type"/>
+    <moqui.basic.Enumeration enumTypeId="ReportType" enumId="RPT_TYPE_SERVICE_INLINE" description="Inline Service"/>
+    <moqui.basic.Enumeration enumTypeId="ReportType" enumId="RPT_TYPE_SERVICE_FILE" description="File Service"/>
+    <moqui.basic.Enumeration enumTypeId="ReportType" enumId="RPT_TYPE_DATA_DOCUMENT" description="Data Document"/>
+
+    <!-- Report parameter direction -->
+    <moqui.basic.EnumerationType enumTypeId="ReportParameterDirection" description="Report Parameter Direction"/>
+    <moqui.basic.Enumeration enumTypeId="ReportParameterDirection" enumId="RPT_PARAM_DIR_IN" description="Input Parameter"/>
+    <moqui.basic.Enumeration enumTypeId="ReportParameterDirection" enumId="RPT_PARAM_DIR_OUT" description="Output Parameter"/>
+
+    <!-- Report parameter type -->
+    <moqui.basic.EnumerationType enumTypeId="ReportParameterType" description="Report Parameter Type"/>
+    <moqui.basic.Enumeration enumTypeId="ReportParameterType" enumId="RPT_PARAM_TYPE_ACCT" description="Account Number"/>
+    <moqui.basic.Enumeration enumTypeId="ReportParameterType" enumId="RPT_PARAM_TYPE_TEXT" description="Text"/>
+    <moqui.basic.Enumeration enumTypeId="ReportParameterType" enumId="RPT_PARAM_TYPE_NUMBER" description="Number"/>
+    <moqui.basic.Enumeration enumTypeId="ReportParameterType" enumId="RPT_PARAM_TYPE_DATE" description="Date"/>
+    <moqui.basic.Enumeration enumTypeId="ReportParameterType" enumId="RPT_PARAM_TYPE_CONTEXT" description="Context"/>
+
+    <!-- Report instance status -->
+    <moqui.basic.StatusType statusTypeId="ReportInstance" description="Report Instance"/>
+    <moqui.basic.StatusItem statusTypeId="ReportInstance" statusId="RPT_INST_DRAFT" description="Draft" sequenceNum="1"/>
+    <moqui.basic.StatusItem statusTypeId="ReportInstance" statusId="RPT_INST_PROPOSED" description="Proposed" sequenceNum="2"/>
+    <moqui.basic.StatusItem statusTypeId="ReportInstance" statusId="RPT_INST_APPROVED" description="Approved" sequenceNum="3"/>
+    <moqui.basic.StatusItem statusTypeId="ReportInstance" statusId="RPT_INST_REJECTED" description="Rejected" sequenceNum="4"/>
+    <moqui.basic.StatusItem statusTypeId="ReportInstance" statusId="RPT_INST_PROCESSING" description="Processing" sequenceNum="5"/>
+    <moqui.basic.StatusItem statusTypeId="ReportInstance" statusId="RPT_INST_COMPLETED" description="Completed" sequenceNum="6"/>
+    <moqui.basic.StatusItem statusTypeId="ReportInstance" statusId="RPT_INST_FAILED" description="Failed" sequenceNum="7"/>
+
+    <!-- Report instance status flow -->
+    <moqui.basic.StatusFlow statusFlowId="ReportInstanceStatusFlow" statusTypeId="ReportInstance" description="Report Instance Status Flow"/>
+    <moqui.basic.StatusFlowItem statusFlowId="ReportInstanceStatusFlow" statusId="RPT_INST_DRAFT" isInitial="Y"/>
+    <moqui.basic.StatusFlowItem statusFlowId="ReportInstanceStatusFlow" statusId="RPT_INST_PROPOSED" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="ReportInstanceStatusFlow" statusId="RPT_INST_APPROVED" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="ReportInstanceStatusFlow" statusId="RPT_INST_REJECTED" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="ReportInstanceStatusFlow" statusId="RPT_INST_PROCESSING" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="ReportInstanceStatusFlow" statusId="RPT_INST_COMPLETED" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="ReportInstanceStatusFlow" statusId="RPT_INST_FAILED" isInitial="N"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="ReportInstanceStatusFlow" statusId="RPT_INST_DRAFT" toStatusId="RPT_INST_PROPOSED" transitionName="Propose" transitionSequence="1"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="ReportInstanceStatusFlow" statusId="RPT_INST_PROPOSED" toStatusId="RPT_INST_APPROVED" transitionName="Accept" transitionSequence="1"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="ReportInstanceStatusFlow" statusId="RPT_INST_PROPOSED" toStatusId="RPT_INST_REJECTED" transitionName="Reject" transitionSequence="2"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="ReportInstanceStatusFlow" statusId="RPT_INST_APPROVED" toStatusId="RPT_INST_PROCESSING" transitionName="Start" transitionSequence="1"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="ReportInstanceStatusFlow" statusId="RPT_INST_PROCESSING" toStatusId="RPT_INST_COMPLETED" transitionName="Complete" transitionSequence="1"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="ReportInstanceStatusFlow" statusId="RPT_INST_PROCESSING" toStatusId="RPT_INST_FAILED" transitionName="Fail" transitionSequence="2"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="ReportInstanceStatusFlow" statusId="RPT_INST_FAILED" toStatusId="RPT_INST_PROPOSED" transitionName="Restart" transitionSequence="1"/>
+
+</entity-facade-xml>

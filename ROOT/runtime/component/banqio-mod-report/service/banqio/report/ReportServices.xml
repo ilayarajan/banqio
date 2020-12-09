@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Report category -->
+    <service verb="find" noun="ReportCategory" type="java" location="com.netvariant.banqio.report.ReportCategoryService" method="findReportCategories">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.report.ReportCategory"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="reportCategoryList" type="List">
+                <parameter name="reportCategory" type="Map">
+                    <auto-parameters entity-name="banqio.report.ReportCategory"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="ReportCategory" type="java" location="com.netvariant.banqio.report.ReportCategoryService" method="createReportCategory">
+        <in-parameters>
+            <parameter name="categoryName"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="categoryId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="ReportCategory" type="java" location="com.netvariant.banqio.report.ReportCategoryService" method="updateReportCategory">
+        <in-parameters>
+            <parameter name="categoryId"/>
+            <parameter name="categoryName"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="categoryId"/>
+        </out-parameters>
+    </service>
+
+    <!-- Report category L10n -->
+    <service verb="find" noun="ReportCategoryL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.report.ReportCategory"/>
+            <service-call name="commons.entity.EntityServices.find#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="create" noun="ReportCategoryL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.report.ReportCategory"/>
+            <service-call name="commons.entity.EntityServices.create#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="update" noun="ReportCategoryL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.report.ReportCategory"/>
+            <service-call name="commons.entity.EntityServices.update#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="delete" noun="ReportCategoryL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="localized"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.report.ReportCategory"/>
+            <service-call name="commons.entity.EntityServices.delete#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+
+    <!-- Report -->
+    <service verb="find" noun="Report" type="java" location="com.netvariant.banqio.report.ReportService" method="findReports">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.report.ReportDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="pageNoLimit" type="Boolean" default="false"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="reportList" type="List">
+                <parameter name="report" type="Map">
+                    <auto-parameters entity-name="banqio.report.ReportDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="Report" type="java" location="com.netvariant.banqio.report.ReportService" method="createReport">
+        <in-parameters>
+            <parameter name="categoryId"/>
+            <parameter name="pseudoId"/>
+            <parameter name="reportName"/>
+            <parameter name="reportTypeEnumId"/>
+            <parameter name="serviceName"/>
+            <parameter name="dataDocumentId"/>
+            <parameter name="dataField"/>
+            <parameter name="browseNotes"/>
+            <parameter name="runNotes"/>
+            <parameter name="iconClass"/>
+            <parameter name="disabled"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="reportId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="Report" type="java" location="com.netvariant.banqio.report.ReportService" method="updateReport">
+        <in-parameters>
+            <parameter name="reportId"/>
+            <parameter name="categoryId"/>
+            <parameter name="pseudoId"/>
+            <parameter name="reportName"/>
+            <parameter name="reportTypeEnumId"/>
+            <parameter name="serviceName"/>
+            <parameter name="dataDocumentId"/>
+            <parameter name="dataField"/>
+            <parameter name="browseNotes"/>
+            <parameter name="runNotes"/>
+            <parameter name="iconClass"/>
+            <parameter name="disabled"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="reportId"/>
+        </out-parameters>
+    </service>
+    <service verb="approve" noun="ReportInstance" type="java" location="com.netvariant.banqio.report.ReportService" method="approveReportInstance">
+        <in-parameters>
+            <parameter name="instanceId"/>
+        </in-parameters>
+    </service>
+    <service verb="reject" noun="ReportInstance" type="java" location="com.netvariant.banqio.report.ReportService" method="rejectReportInstance">
+        <in-parameters>
+            <parameter name="instanceId"/>
+        </in-parameters>
+    </service>
+    <service verb="find" noun="ReportParameter" type="java" location="com.netvariant.banqio.report.ReportService" method="findReportParameters">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.report.ReportParameterDetail"/>
+            <parameter name="reportId"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="pageNoLimit"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="reportParameterList" type="List">
+                <parameter name="reportParameter" type="Map">
+                    <auto-parameters entity-name="banqio.report.ReportParameterDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="ReportParameter" type="java" location="com.netvariant.banqio.report.ReportService" method="createReportParameter">
+        <in-parameters>
+            <parameter name="reportId"/>
+            <parameter name="parameterDirectionEnumId"/>
+            <parameter name="parameterTypeEnumId"/>
+            <parameter name="operatorTypeEnumId"/>
+            <parameter name="parameterName"/>
+            <parameter name="displayName"/>
+            <parameter name="position" type="Integer"/>
+            <parameter name="mandatory"/>
+            <parameter name="disabled"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="parameterId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="ReportParameter" type="java" location="com.netvariant.banqio.report.ReportService" method="updateReportParameter">
+        <in-parameters>
+            <parameter name="parameterId"/>
+            <parameter name="reportId"/>
+            <parameter name="parameterTypeEnumId"/>
+            <parameter name="operatorTypeEnumId"/>
+            <parameter name="parameterName"/>
+            <parameter name="displayName"/>
+            <parameter name="position" type="Integer"/>
+            <parameter name="mandatory"/>
+            <parameter name="disabled"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="parameterId"/>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="ReportPrice" type="java" location="com.netvariant.banqio.report.ReportService" method="findReportPrices">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.report.ReportPriceDetail"/>
+            <parameter name="reportId"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="reportPriceList" type="List">
+                <parameter name="reportPrice" type="Map">
+                    <auto-parameters entity-name="banqio.report.ReportPriceDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="ReportPrice" type="java" location="com.netvariant.banqio.report.ReportService" method="createReportPrice">
+        <in-parameters>
+            <parameter name="reportId"/>
+            <parameter name="partyClassificationId"/>
+            <parameter name="externalPartyId"/>
+            <parameter name="price" type="Double"/>
+            <parameter name="currencyUomId"/>
+            <parameter name="billingIdentifier"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="priceId"/>
+        </out-parameters>
+    </service>
+    <service verb="expire" noun="ReportPrice" type="java" location="com.netvariant.banqio.report.ReportService" method="expireReportPrice">
+        <in-parameters>
+            <parameter name="priceId"/>
+            <parameter name="reportId"/>
+        </in-parameters>
+    </service>
+    <service verb="find" noun="ReportApp" type="java" location="com.netvariant.banqio.report.ReportService" method="findReportApps">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.report.ReportAppDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="pageNoLimit" type="Boolean" default="false"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+            <parameter name="runnableOnly" type="Boolean" default="false"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="reportAppList" type="List">
+                <parameter name="reportApp" type="Map">
+                    <auto-parameters entity-name="banqio.report.ReportAppDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="ReportApp" type="java" location="com.netvariant.banqio.report.ReportService" method="createReportApp">
+        <in-parameters>
+            <parameter name="reportId"/>
+            <parameter name="appId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="reportId"/>
+            <parameter name="appId"/>
+        </out-parameters>
+    </service>
+    <service verb="delete" noun="ReportApp" type="java" location="com.netvariant.banqio.report.ReportService" method="deleteReportApp">
+        <in-parameters>
+            <parameter name="reportId"/>
+            <parameter name="appId"/>
+        </in-parameters>
+    </service>
+    <service verb="find" noun="ReportWorkflowInstance" type="java" location="com.netvariant.banqio.report.ReportService" method="findReportWorkflowInstances">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.report.ReportWorkflowInstance"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="instanceList" type="List">
+                <parameter name="instance" type="Map">
+                    <auto-parameters entity-name="banqio.report.ReportWorkflowInstance">
+                        <exclude field-name="resourceLocation"/>
+                    </auto-parameters>
+                    <parameter name="approvedCount"/>
+                    <parameter name="pendingCount"/>
+                    <parameter name="rejectedCount"/>
+                    <parameter name="reportFileName"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+
+    <!-- Report L10n -->
+    <service verb="find" noun="ReportL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.report.Report"/>
+            <service-call name="commons.entity.EntityServices.find#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="create" noun="ReportL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.report.Report"/>
+            <service-call name="commons.entity.EntityServices.create#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="update" noun="ReportL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.report.Report"/>
+            <service-call name="commons.entity.EntityServices.update#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="delete" noun="ReportL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="localized"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.report.Report"/>
+            <service-call name="commons.entity.EntityServices.delete#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+
+    <!-- API -->
+    <service verb="find" noun="UserReportPrice" type="java" location="com.netvariant.banqio.report.ReportService" method="findUserReportPrice">
+        <description>
+            Finds the report price applicable to the current user.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="reportId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="priceId"/>
+            <parameter name="price" type="Double"/>
+            <parameter name="currencyAbbreviation"/>
+            <parameter name="currencyDescription"/>
+        </out-parameters>
+    </service>
+    <service verb="run" noun="Report" type="java" location="com.netvariant.banqio.report.ReportService" method="runReport">
+        <description>
+            Runs the specified report. This service will either return instanceId or inlineDataList, never both.
+            Running inline reports will return data directly in the inlineDataList field.
+            Running file reports will only create a ReportInstance that the scheduler will later run.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="reportId"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="parameters"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="instanceId"/>
+            <parameter name="inlineDataList" type="List">
+                <parameter name="inlineData" type="Map"/>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="run" noun="PendingReportInstances" type="java" location="com.netvariant.banqio.report.ReportService" method="runPendingReportInstances" authenticate="false">
+        <description>
+            Runs pending report instances pending execution. Report instance statuses are changed to Complete if all goes well or Failed if an error occurs.
+        </description>
+    </service>
+    <service verb="find" noun="ReportInstance" type="java" location="com.netvariant.banqio.report.ReportService" method="findReportInstances">
+        <description>
+            Finds reports instances. This service will only retrieve instances inputted by the context user.
+        </description>
+        <in-parameters>
+            <auto-parameters entity-name="banqio.report.ReportInstanceDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="reportInstanceList" type="List">
+                <parameter name="reportInstance" type="Map">
+                    <auto-parameters entity-name="banqio.report.ReportInstanceDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="download" noun="ReportInstance" type="java" location="com.netvariant.banqio.report.ReportService" method="downloadReportInstance">
+        <description>
+            Download the resource file of the specified report instance.
+            Resources can only be downloaded if the report status is in Complete state.
+        </description>
+        <in-parameters>
+            <parameter name="instanceId"/>
+        </in-parameters>
+    </service>
+
+</services>

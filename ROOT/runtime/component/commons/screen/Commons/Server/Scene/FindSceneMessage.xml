@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns=""
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        default-menu-title="Messages"
+        default-menu-index="2">
+
+    <parameter name="sceneId" required="true"/>
+
+    <transition name="createMessage">
+        <service-call name="create#commons.server.SceneMessage" in-map="context"/>
+        <default-response url="."/>
+    </transition>
+    <transition name="editMessage">
+        <default-response url="../EditSceneMessage">
+            <parameter name="messageId" from="messageId"/>
+            <parameter name="sceneId" from="sceneId"/>
+        </default-response>
+    </transition>
+    <transition name="deleteMessage">
+        <service-call name="delete#commons.server.SceneMessage" in-map="context"/>
+        <default-response url="."/>
+    </transition>
+
+    <actions>
+        <entity-find entity-name="commons.server.SceneMessage" list="messageList">
+            <search-form-inputs default-order-by="^messageId"/>
+        </entity-find>
+    </actions>
+
+    <widgets>
+        <container-box>
+            <box-header>
+                <label text="Find Message" type="h5"/>
+            </box-header>
+            <box-toolbar>
+                <container-dialog id="CreateMessageContainer" button-text="New Message" width="900">
+                    <form-single name="CreateMessageForm" transition="createMessage">
+                        <auto-fields-entity entity-name="commons.server.SceneMessage" field-type="edit">
+                            <exclude field-name="messageId"/>
+                            <exclude field-name="creationDate"/>
+                        </auto-fields-entity>
+                        <field name="sceneId">
+                            <default-field>
+                                <hidden/>
+                            </default-field>
+                        </field>
+                        <field name="messageValue">
+                            <default-field>
+                                <text-area rows="4" cols="80"/>
+                            </default-field>
+                        </field>
+                        <field name="submitBtn">
+                            <default-field title="Create">
+                                <submit/>
+                            </default-field>
+                        </field>
+
+                        <field-layout>
+                            <fields-not-referenced/>
+                        </field-layout>
+                    </form-single>
+                </container-dialog>
+            </box-toolbar>
+            <box-body>
+                <form-list name="ListMessages" list="messageList" skip-form="true" header-dialog="true" select-columns="true">
+                    <field name="messageId">
+                        <header-field show-order-by="true" title="ID">
+                            <text-find hide-options="true" size="10"/>
+                        </header-field>
+                        <default-field>
+                            <link url="editMessage" text="${messageId}"/>
+                        </default-field>
+                    </field>
+                    <field name="sceneId">
+                        <header-field>
+                            <hidden/>
+                        </header-field>
+                        <default-field>
+                            <hidden/>
+                        </default-field>
+                    </field>
+                    <field name="messageKey">
+                        <header-field show-order-by="true">
+                            <text-find hide-options="true"/>
+                        </header-field>
+                        <default-field>
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="messageValue">
+                        <header-field show-order-by="true">
+                            <text-find hide-options="true"/>
+                        </header-field>
+                        <default-field>
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="deleteBtn">
+                        <default-field title="" container-style="text-right">
+                            <link url="deleteMessage" icon="glyphicon glyphicon-trash" text="Delete" style="btn-danger"/>
+                        </default-field>
+                    </field>
+                    <field name="find">
+                        <header-field title="Find">
+                            <submit icon="glyphicon glyphicon-search"/>
+                        </header-field>
+                    </field>
+
+                    <form-list-column>
+                        <field-ref name="messageId"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="messageKey"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="messageValue"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="deleteBtn"/>
+                    </form-list-column>
+                </form-list>
+            </box-body>
+        </container-box>
+    </widgets>
+</screen>

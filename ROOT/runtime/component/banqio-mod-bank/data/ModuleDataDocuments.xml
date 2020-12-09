@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <dataDocuments dataDocumentId="BanqioBank" documentName="Bank" documentTitle="${bankName}" indexName="banqio" primaryEntityName="banqio.bank.Bank">
+        <fields fieldSeqId="01" fieldPath="bankId"/>
+        <fields fieldSeqId="02" fieldPath="bankName"/>
+        <fields fieldSeqId="03" fieldPath="institutionCode"/>
+        <fields fieldSeqId="04" fieldPath="nationalCode"/>
+        <fields fieldSeqId="05" fieldPath="countryGeoId"/>
+        <fields fieldSeqId="06" fieldPath="country:geoName" fieldNameAlias="countryName"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioBranch" documentName="Branch" documentTitle="${branchName}" indexName="banqio" primaryEntityName="banqio.bank.Branch">
+        <fields fieldSeqId="01" fieldPath="branchId"/>
+        <fields fieldSeqId="02" fieldPath="branchName"/>
+        <fields fieldSeqId="03" fieldPath="branchCode"/>
+        <fields fieldSeqId="04" fieldPath="swiftCode"/>
+        <fields fieldSeqId="05" fieldPath="localCode"/>
+        <fields fieldSeqId="06" fieldPath="recordKey"/>
+        <fields fieldSeqId="07" fieldPath="bankId"/>
+        <fields fieldSeqId="08" fieldPath="bank:bankName" fieldNameAlias="bankName"/>
+        <fields fieldSeqId="09" fieldPath="bank:institutionCode" fieldNameAlias="bankInstitutionCode"/>
+        <fields fieldSeqId="10" fieldPath="bank:nationalCode" fieldNameAlias="bankNationalCode"/>
+        <fields fieldSeqId="11" fieldPath="addresses:countryGeoId" fieldNameAlias="countryGeoId"/>
+        <fields fieldSeqId="12" fieldPath="addresses:city" fieldNameAlias="city"/>
+        <fields fieldSeqId="13" fieldPath="addresses:country:geoName" fieldNameAlias="countryName"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioBankFunction" documentName="Bank Function" documentTitle="${functionName}" indexName="banqio" primaryEntityName="banqio.bank.BankFunction">
+        <fields fieldSeqId="01" fieldPath="functionId"/>
+        <fields fieldSeqId="02" fieldPath="functionName"/>
+        <fields fieldSeqId="03" fieldPath="description"/>
+        <fields fieldSeqId="04" fieldPath="iconClass"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioBranchContactMech" documentName="Branch Contact Mech" documentTitle="${contactMechId}" indexName="banqio" primaryEntityName="banqio.bank.BranchContactMech">
+        <fields fieldSeqId="01" fieldPath="branchId"/>
+        <fields fieldSeqId="02" fieldPath="contactMechId"/>
+        <fields fieldSeqId="03" fieldPath="contactMechPurposeId"/>
+        <fields fieldSeqId="04" fieldPath="contactMechTypeEnumId"/>
+        <fields fieldSeqId="05" fieldPath="purpose:description" fieldNameAlias="contactMechPurposeDescription"/>
+        <fields fieldSeqId="06" fieldPath="type:description" fieldNameAlias="contactMechTypeDescription"/>
+        <fields fieldSeqId="07" fieldPath="infoString" fieldNameAlias="infoString"/>
+        <fields fieldSeqId="08" fieldPath="telecomNumber:countryCode" fieldNameAlias="countryCode"/>
+        <fields fieldSeqId="09" fieldPath="telecomNumber:areaCode" fieldNameAlias="areaCode"/>
+        <fields fieldSeqId="10" fieldPath="telecomNumber:contactNumber" fieldNameAlias="contactNumber"/>
+        <fields fieldSeqId="11" fieldPath="telecomNumber:extension" fieldNameAlias="extension"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioBranchWorkShift" documentName="Branch Work Shift" documentTitle="${branchId}-${shiftSeqId}" indexName="banqio" primaryEntityName="banqio.bank.BranchWorkShift">
+        <fields fieldSeqId="01" fieldPath="branchId"/>
+        <fields fieldSeqId="02" fieldPath="shiftSeqId"/>
+        <fields fieldSeqId="03" fieldPath="weekDay:description" fieldNameAlias="weekDayDescription"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioTeller" documentName="Teller" documentTitle="${tellerName}" indexName="banqio" primaryEntityName="banqio.bank.teller.Teller">
+        <fields fieldSeqId="01" fieldPath="tellerId"/>
+        <fields fieldSeqId="02" fieldPath="tellerName"/>
+        <fields fieldSeqId="03" fieldPath="pseudoId"/>
+        <fields fieldSeqId="04" fieldPath="externalId"/>
+        <fields fieldSeqId="05" fieldPath="tellerTypeId"/>
+        <fields fieldSeqId="06" fieldPath="type:typeName" fieldNameAlias="tellerTypeName"/>
+        <fields fieldSeqId="07" fieldPath="tellerStatusId"/>
+        <fields fieldSeqId="08" fieldPath="status:statusName" fieldNameAlias="tellerStatusName"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioTellerType" documentName="Teller Type" documentTitle="${typeName}" indexName="banqio" primaryEntityName="banqio.bank.teller.TellerType">
+        <fields fieldSeqId="01" fieldPath="typeId"/>
+        <fields fieldSeqId="02" fieldPath="externalTypeId"/>
+        <fields fieldSeqId="03" fieldPath="typeName"/>
+        <fields fieldSeqId="04" fieldPath="typeBehaviourEnumId"/>
+        <fields fieldSeqId="05" fieldPath="typeBehaviour:description" fieldNameAlias="typeBehaviourDescription"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioTellerStatus" documentName="Teller Status" documentTitle="${statusName}" indexName="banqio" primaryEntityName="banqio.bank.teller.TellerStatus">
+        <fields fieldSeqId="01" fieldPath="statusId"/>
+        <fields fieldSeqId="02" fieldPath="externalStatusId"/>
+        <fields fieldSeqId="03" fieldPath="statusName"/>
+        <fields fieldSeqId="04" fieldPath="statusBehaviourEnumId"/>
+        <fields fieldSeqId="05" fieldPath="statusBehaviour:description" fieldNameAlias="statusBehaviourDescription"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+
+</entity-facade-xml>

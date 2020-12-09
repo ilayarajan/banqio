@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Report categories -->
+    <BanqioRptCat categoryId="RcAcct" categoryName="Account Services"/>
+    <BanqioRptCat categoryId="RcCash" categoryName="Cash Management"/>
+    <BanqioRptCat categoryId="RcTrade" categoryName="Trade Finance"/>
+    <BanqioRptCat categoryId="RcAdmin" categoryName="Admin"/>
+
+    <!-- Certificate reports -->
+    <BanqioRpt categoryId="RcAcct" reportTypeEnumId="RPT_TYPE_SERVICE_FILE" reportName="Account Closure Confirmation" pseudoId="Account Closure Confirmation" serviceName="banqio.connect.impl.CertificateServices.generate#AccountClosureConfirmation" disabled="N">
+        <apps appId="CRP"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_CONTEXT" parameterName="sourceAppId" displayName="Source App ID" mandatory="Y" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_CONTEXT" parameterName="customerId" displayName="Customer ID" mandatory="Y" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_ACCT" parameterName="accountNumber" displayName="Account Number" mandatory="Y" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="accountHolder" displayName="Account Holder" mandatory="Y" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="effectiveDate" displayName="Effective Date" mandatory="Y" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcAcct" reportTypeEnumId="RPT_TYPE_SERVICE_FILE" reportName="Account Confirmation" pseudoId="Account Confirmation" serviceName="banqio.connect.impl.CertificateServices.generate#AccountConfirmation" disabled="N">
+        <apps appId="CRP"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_CONTEXT" parameterName="sourceAppId" displayName="Source App ID" mandatory="Y" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_CONTEXT" parameterName="customerId" displayName="Customer ID" mandatory="Y" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_ACCT" parameterName="accountNumber" displayName="Account Number" mandatory="Y" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="name" displayName="Name" mandatory="Y" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="address" displayName="Address" mandatory="Y" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcAcct" reportTypeEnumId="RPT_TYPE_SERVICE_FILE" reportName="Address Confirmation" pseudoId="Address Confirmation" serviceName="banqio.connect.impl.CertificateServices.generate#AddressConfirmation" disabled="N">
+        <apps appId="CRP"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_CONTEXT" parameterName="sourceAppId" displayName="Source App ID" mandatory="Y" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_CONTEXT" parameterName="customerId" displayName="Customer ID" mandatory="Y" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_ACCT" parameterName="accountNumber" displayName="Account Number" mandatory="Y" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="accountType" displayName="Account Type" mandatory="Y" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="name1" displayName="Name 1" mandatory="Y" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="name2" displayName="Name 2" mandatory="N" disabled="N"/>
+        <parameters position="7" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="address1" displayName="Address 1" mandatory="Y" disabled="N"/>
+        <parameters position="8" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="address2" displayName="Address 2" mandatory="N" disabled="N"/>
+        <parameters position="9" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="address3" displayName="Address 3" mandatory="N" disabled="N"/>
+        <parameters position="10" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="openingDate" displayName="Opening Date" mandatory="Y" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcAcct" reportTypeEnumId="RPT_TYPE_SERVICE_FILE" reportName="Audit Confirmation" pseudoId="Audit Confirmation" serviceName="banqio.connect.impl.CertificateServices.generate#AuditConfirmation" disabled="N">
+        <apps appId="CRP"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_CONTEXT" parameterName="sourceAppId" displayName="Source App ID" mandatory="Y" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_CONTEXT" parameterName="customerId" displayName="Customer ID" mandatory="Y" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="name1" displayName="Recipient Name 1" mandatory="Y" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="name2" displayName="Recipient Name 2" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="address1" displayName="Recipient Address 1" mandatory="Y" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="address2" displayName="Recipient Address 2" mandatory="N" disabled="N"/>
+        <parameters position="7" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="address3" displayName="Recipient Address 3" mandatory="N" disabled="N"/>
+        <parameters position="8" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="fromDate" displayName="As Of" mandatory="Y" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcAcct" reportTypeEnumId="RPT_TYPE_SERVICE_FILE" reportName="Balance Confirmation" pseudoId="Balance Confirmation" serviceName="banqio.connect.impl.CertificateServices.generate#BalanceConfirmation" disabled="N">
+        <apps appId="CRP"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_CONTEXT" parameterName="sourceAppId" displayName="Source App ID" mandatory="Y" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_CONTEXT" parameterName="customerId" displayName="Customer ID" mandatory="Y" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_ACCT" parameterName="accountNumber" displayName="Account Number" mandatory="Y" disabled="N"/>
+    </BanqioRpt>
+
+    <!-- Trade finance inline service reports -->
+    <BanqioRpt categoryId="RcTrade" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Outstanding Import LC Bills" pseudoId="Outstanding Import LC Bills" serviceName="banqio.connect.impl.TradeFinanceServices.find#OutstandingImportLcBill" dataField="billList" disabled="N">
+        <apps appId="CRP"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="lcTypeName" displayName="LC Type" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="lcNumber" displayName="LC Number" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="billNumber" displayName="Additional Ref" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="beneficiaryName" displayName="Beneficiary Name" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="currencyId" displayName="Currency" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="billAmount" displayName="Amount" mandatory="N" disabled="N"/>
+        <parameters position="7" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="dueDate" displayName="Payment Due" mandatory="N" disabled="N"/>
+        <parameters position="8" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="paymentTerms" displayName="Tenor Details" mandatory="N" disabled="N"/>
+        <parameters position="9" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="auxiliary1" displayName="Status of Documents" mandatory="N" disabled="N"/>
+        <parameters position="10" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="adviseDate" displayName="Date Advised" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcTrade" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Accepted Inward Documentary Collections" pseudoId="Accepted Inward Documentary Collections" serviceName="banqio.connect.impl.TradeFinanceServices.find#AcceptedInwardDc" dataField="documentList" disabled="N">
+        <apps appId="CRP"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="documentNumber" displayName="Collection Reference" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="beneficiaryName" displayName="Drawer Name" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="remittingBank" displayName="Remitting Bank" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="currencyId" displayName="Currency" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="paymentAmount" displayName="Amount" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="adviseDate" displayName="Date Advised" mandatory="N" disabled="N"/>
+        <parameters position="7" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="acceptanceDate" displayName="Accepted Maturity Date" mandatory="N" disabled="N"/>
+        <parameters position="8" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="lcTypeName" displayName="Collection Type" mandatory="N" disabled="N"/>
+        <parameters position="9" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="referenceNumber" displayName="Expired LC Ref." mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcTrade" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Discrepant Import LC Documents" pseudoId="Discrepant Import LC Documents" serviceName="banqio.connect.impl.TradeFinanceServices.find#RejectedImportLcBill" dataField="billList" disabled="N">
+        <apps appId="CRP"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="lcTypeName" displayName="LC Type" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="lcNumber" displayName="LC Number" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="billNumber" displayName="Additional Ref" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="beneficiaryName" displayName="Beneficiary Name" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="currencyId" displayName="Currency" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="billAmount" displayName="Amount" mandatory="N" disabled="N"/>
+        <parameters position="7" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="dueDate" displayName="Payment Due" mandatory="N" disabled="N"/>
+        <parameters position="8" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="paymentTerms" displayName="Tenor Details" mandatory="N" disabled="N"/>
+        <parameters position="9" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="adviseDate" displayName="Date Advised" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcTrade" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Issued LGs" pseudoId="Issued LGs" serviceName="banqio.connect.impl.TradeFinanceServices.find#IssuedLg" dataField="lgList" disabled="N">
+        <apps appId="CRP"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="fromDate" displayName="From Date" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="toDate" displayName="To Date" mandatory="N" disabled="N"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="typeName" displayName="LG Type" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="lgNumber" displayName="LG Reference Number" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="beneficiaryName" displayName="Beneficiary Name" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="issuanceDate" displayName="Issuance Date" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="currencyId" displayName="Currency" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="lgAmount" displayName="LG Amount" mandatory="N" disabled="N"/>
+        <parameters position="7" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="lgAmountLocal" displayName="LG Amount in Local Currency" mandatory="N" disabled="N"/>
+        <parameters position="8" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="expiryDate" displayName="Expiry Date" mandatory="N" disabled="N"/>
+        <parameters position="9" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="marginCurrencyId" displayName="Margin Currency" mandatory="N" disabled="N"/>
+        <parameters position="10" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="marginAmount" displayName="Margin Amount" mandatory="N" disabled="N"/>
+        <parameters position="11" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="auxiliary1" displayName="Open Ended" mandatory="N" disabled="N"/>
+        <parameters position="12" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="auxiliary2" displayName="Expired" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcTrade" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Outstanding Import LCs" pseudoId="Outstanding Import LCs" serviceName="banqio.connect.impl.TradeFinanceServices.find#OutstandingImportLc" dataField="lcList" disabled="N">
+        <apps appId="CRP"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="typeName" displayName="LC Type" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="lcNumber" displayName="LC Number" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="auxiliary1" displayName="Additional Ref" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="beneficiaryName" displayName="Beneficiary Name" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="currencyId" displayName="Currency" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="lcAmount" displayName="Amount" mandatory="N" disabled="N"/>
+        <parameters position="7" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="issuanceDate" displayName="Issuance Date" mandatory="N" disabled="N"/>
+        <parameters position="8" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="expiryDate" displayName="Expiry Date" mandatory="N" disabled="N"/>
+        <parameters position="9" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="outstandingAmount" displayName="Outstanding Amount" mandatory="N" disabled="N"/>
+        <parameters position="10" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="advisingBank" displayName="Advising Bank" mandatory="N" disabled="N"/>
+        <parameters position="11" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="marginAmount" displayName="Cash Margin Amount" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcTrade" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Outstanding Inward Documentary Collections" pseudoId="Outstanding Inward Documentary Collections" serviceName="banqio.connect.impl.TradeFinanceServices.find#OutstandingInwardDc" dataField="documentList" disabled="N">
+        <apps appId="CRP"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="documentNumber" displayName="Collection Reference" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="beneficiaryName" displayName="Drawer Name" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="remittingBank" displayName="Remitting Bank" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="currencyId" displayName="Currency" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="paymentAmount" displayName="Amount" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="adviseDate" displayName="Date Advised" mandatory="N" disabled="N"/>
+        <parameters position="7" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="lcTypeName" displayName="Collection Type" mandatory="N" disabled="N"/>
+        <parameters position="8" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="referenceNumber" displayName="Expired LC Ref." mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcTrade" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Outstanding LGs" pseudoId="Outstanding LGs" serviceName="banqio.connect.impl.TradeFinanceServices.find#OutstandingLg" dataField="lgList" disabled="N">
+        <apps appId="CRP"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="typeName" displayName="LG Type" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="lgNumber" displayName="LG Reference Number" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="beneficiaryName" displayName="Beneficiary Name" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="issuanceDate" displayName="Issuance Date" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="currencyId" displayName="Currency" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="lgAmount" displayName="LG Amount" mandatory="N" disabled="N"/>
+        <parameters position="7" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="lgAmountLocal" displayName="LG Amount in Local Currency" mandatory="N" disabled="N"/>
+        <parameters position="8" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="expiryDate" displayName="Expiry Date" mandatory="N" disabled="N"/>
+        <parameters position="9" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="marginCurrencyId" displayName="Margin Currency" mandatory="N" disabled="N"/>
+        <parameters position="10" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="marginAmount" displayName="Margin Amount" mandatory="N" disabled="N"/>
+        <parameters position="11" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="auxiliary1" displayName="Open Ended" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcTrade" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Issued Import LCs" pseudoId="Issued Import LCs" serviceName="banqio.connect.impl.TradeFinanceServices.find#IssuedImportLc" dataField="lcList" disabled="N">
+        <apps appId="CRP"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="fromDate" displayName="From Date" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="toDate" displayName="To Date" mandatory="N" disabled="N"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="typeName" displayName="LC Type" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="lcNumber" displayName="LC Number" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="auxiliary1" displayName="Additional Ref" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="beneficiaryName" displayName="Beneficiary Name" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="currencyId" displayName="Currency" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="lcAmount" displayName="LC Amount" mandatory="N" disabled="N"/>
+        <parameters position="7" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="issuanceDate" displayName="Issuance Date" mandatory="N" disabled="N"/>
+        <parameters position="8" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="expiryDate" displayName="Expiry date" mandatory="N" disabled="N"/>
+        <parameters position="9" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="outstandingAmount" displayName="Outstanding Amount" mandatory="N" disabled="N"/>
+        <parameters position="10" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="advisingBank" displayName="Advising Bank" mandatory="N" disabled="N"/>
+        <parameters position="11" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="marginCurrencyId" displayName="Margin Currency" mandatory="N" disabled="N"/>
+        <parameters position="12" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="marginAmount" displayName="Margin Amount" mandatory="N" disabled="N"/>
+        <parameters position="13" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="auxiliary2" displayName="Expired" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcTrade" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Import LC and Collection Refinance Outstanding" pseudoId="Import LC and Collection Refinance Outstanding" serviceName="banqio.connect.impl.TradeFinanceServices.find#OutstandingTrustReceiptLoan" dataField="loanList" disabled="N">
+        <apps appId="CRP"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="lcNumber" displayName="LC/Collection Reference" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="typeName" displayName="Loan Type" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="startDate" displayName="Effective Date" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="maturityDate" displayName="Due date" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="currencyId" displayName="Currency" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="loanAmount" displayName="Principal Amount" mandatory="N" disabled="N"/>
+        <parameters position="7" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="interestAmount" displayName="Interest Amount" mandatory="N" disabled="N"/>
+        <parameters position="8" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="outstandingAmount" displayName="Remaining Amount" mandatory="N" disabled="N"/>
+        <parameters position="9" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="loanNumber" displayName="Loan Account Number" mandatory="N" disabled="N"/>
+        <parameters position="10" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="settlementAccountNumber" displayName="Settlement Account number" mandatory="N" disabled="N"/>
+        <parameters position="11" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="interestRate" displayName="Interest rate" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcTrade" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Import LC and Collection Refinance Past Dues" pseudoId="Import LC and Collection Refinance Past Dues" serviceName="banqio.connect.impl.TradeFinanceServices.find#OverdueTrustReceiptLoan" dataField="loanList" disabled="N">
+        <apps appId="CRP"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="lcNumber" displayName="LC/Collection Reference" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="typeName" displayName="Loan Type" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="startDate" displayName="Effective Date" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="maturityDate" displayName="Due date" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="currencyId" displayName="Currency" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="loanAmount" displayName="Principal Amount" mandatory="N" disabled="N"/>
+        <parameters position="7" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="interestAmount" displayName="Interest Amount" mandatory="N" disabled="N"/>
+        <parameters position="8" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="outstandingAmount" displayName="Remaining Amount" mandatory="N" disabled="N"/>
+        <parameters position="9" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="loanNumber" displayName="Loan Account Number" mandatory="N" disabled="N"/>
+        <parameters position="10" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="settlementAccountNumber" displayName="Settlement Account number" mandatory="N" disabled="N"/>
+        <parameters position="11" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="interestRate" displayName="Interest rate" mandatory="N" disabled="N"/>
+        <parameters position="12" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="auxiliary10" displayName="Past Due in Days" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcTrade" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Clean Import Loans Outstanding" pseudoId="Clean Import Loans Outstanding" serviceName="banqio.connect.impl.TradeFinanceServices.find#OutstandingCleanImportLoan" dataField="loanList" disabled="N">
+        <apps appId="CRP"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="invoiceNumber" displayName="CIL reference" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="typeName" displayName="Loan Type" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="startDate" displayName="Effective Date" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="maturityDate" displayName="Due Date" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="currencyId" displayName="Currency" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="loanAmount" displayName="Principal Amount" mandatory="N" disabled="N"/>
+        <parameters position="7" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="interestAmount" displayName="Interest Amount" mandatory="N" disabled="N"/>
+        <parameters position="8" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="outstandingAmount" displayName="Remaining Amount" mandatory="N" disabled="N"/>
+        <parameters position="9" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="loanNumber" displayName="Loan Account Number" mandatory="N" disabled="N"/>
+        <parameters position="10" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="settlementAccountNumber" displayName="Settlement Account Number" mandatory="N" disabled="N"/>
+        <parameters position="11" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="interestRate" displayName="Interest Rate" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcTrade" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Clean Import Loans Past Due" pseudoId="Clean Import Loans Past Due" serviceName="banqio.connect.impl.TradeFinanceServices.find#OverdueCleanImportLoan" dataField="loanList" disabled="N">
+        <apps appId="CRP"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="invoiceNumber" displayName="CIL reference" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="typeName" displayName="Loan Type" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="startDate" displayName="Effective Date" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="maturityDate" displayName="Due Date" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="currencyId" displayName="Currency" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="loanAmount" displayName="Principal Amount" mandatory="N" disabled="N"/>
+        <parameters position="7" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="interestAmount" displayName="Interest Amount" mandatory="N" disabled="N"/>
+        <parameters position="8" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="outstandingAmount" displayName="Remaining Amount" mandatory="N" disabled="N"/>
+        <parameters position="9" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="loanNumber" displayName="Loan Account Number" mandatory="N" disabled="N"/>
+        <parameters position="10" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="settlementAccountNumber" displayName="Settlement Account Number" mandatory="N" disabled="N"/>
+        <parameters position="11" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="interestRate" displayName="Interest Rate" mandatory="N" disabled="N"/>
+        <parameters position="12" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="auxiliary10" displayName="Past Due In Days" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcTrade" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="PPC and Invoice Discounting Outstanding" pseudoId="PPC and Invoice Discounting Outstanding" serviceName="banqio.connect.impl.TradeFinanceServices.find#OutstandingSalesInvoiceLoan" dataField="loanList" disabled="N">
+        <apps appId="CRP"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="invoiceNumber" displayName="Invoice Reference" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="typeName" displayName="Loan Type" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="startDate" displayName="Effective Date" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="maturityDate" displayName="Due Date" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="currencyId" displayName="Currency" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="loanAmount" displayName="Principal Amount" mandatory="N" disabled="N"/>
+        <parameters position="7" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="interestAmount" displayName="Interest Amount" mandatory="N" disabled="N"/>
+        <parameters position="8" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="outstandingAmount" displayName="Remaining Amount" mandatory="N" disabled="N"/>
+        <parameters position="9" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="loanNumber" displayName="Loan Account Number" mandatory="N" disabled="N"/>
+        <parameters position="10" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="settlementAccountNumber" displayName="Settlement Account Number" mandatory="N" disabled="N"/>
+        <parameters position="11" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="interestRate" displayName="Interest Rate" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcTrade" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="PPC and Invoice Discounting Past Due" pseudoId="PPC and Invoice Discounting Past Due" serviceName="banqio.connect.impl.TradeFinanceServices.find#OverdueSalesInvoiceLoan" dataField="loanList" disabled="N">
+        <apps appId="CRP"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="invoiceNumber" displayName="Invoice Reference" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="typeName" displayName="Loan Type" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="startDate" displayName="Effective Date" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="maturityDate" displayName="Due Date" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="currencyId" displayName="Currency" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="loanAmount" displayName="Principal Amount" mandatory="N" disabled="N"/>
+        <parameters position="7" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="interestAmount" displayName="Interest Amount" mandatory="N" disabled="N"/>
+        <parameters position="8" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="outstandingAmount" displayName="Remaining Amount" mandatory="N" disabled="N"/>
+        <parameters position="9" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="loanNumber" displayName="Loan Account Number" mandatory="N" disabled="N"/>
+        <parameters position="10" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="settlementAccountNumber" displayName="Settlement Account Number" mandatory="N" disabled="N"/>
+        <parameters position="11" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="interestRate" displayName="Interest Rate" mandatory="N" disabled="N"/>
+        <parameters position="12" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="auxiliary10" displayName="Past Due In Days" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcTrade" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Export LC Outstanding" pseudoId="Export LC Outstanding" serviceName="banqio.connect.impl.TradeFinanceServices.find#OutstandingExportLc" dataField="lcList" disabled="N">
+        <apps appId="CRP"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="typeName" displayName="LC Type" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="lcNumber" displayName="LC Number" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="auxiliary1" displayName="Al Khaliji Ref." mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="beneficiaryName" displayName="Applicant Name" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="currencyId" displayName="Currency" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="lcAmount" displayName="Amount" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="outstandingAmount" displayName="Outstanding Amount" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="issuanceDate" displayName="Issue Date" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="issuingBank" displayName="Issuing Bank" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="expiryDate" displayName="Expiry Date" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcTrade" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Advised Export LCs" pseudoId="Advised Export LCs" serviceName="banqio.connect.impl.TradeFinanceServices.find#AdvisedExportLc" dataField="lcList" disabled="N">
+        <apps appId="CRP"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="fromDate" displayName="From Date" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="toDate" displayName="To Date" mandatory="N" disabled="N"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="typeName" displayName="LC Type" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="lcNumber" displayName="LC Number" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="auxiliary1" displayName="Al Khaliji Ref." mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="beneficiaryName" displayName="Applicant Name" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="currencyId" displayName="Currency" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="lcAmount" displayName="Amount" mandatory="N" disabled="N"/>
+        <parameters position="7" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="outstandingAmount" displayName="Outstanding Amount" mandatory="N" disabled="N"/>
+        <parameters position="8" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="issuanceDate" displayName="Issue Date" mandatory="N" disabled="N"/>
+        <parameters position="9" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="issuingBank" displayName="Issuing Bank" mandatory="N" disabled="N"/>
+        <parameters position="10" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="expiryDate" displayName="Expiry Date" mandatory="N" disabled="N"/>
+        <parameters position="11" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="auxiliary2" displayName="Expired" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcTrade" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Expired Import LCs" pseudoId="Expired Import LCs" serviceName="banqio.connect.impl.TradeFinanceServices.find#ExpiredImportLc" dataField="lcList" disabled="N">
+        <apps appId="CRP"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="typeName" displayName="LC Type" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="lcNumber" displayName="LC Number" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="auxiliary1" displayName="Additional Ref" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="beneficiaryName" displayName="Beneficiary Name" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="currencyId" displayName="Currency" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="lcAmount" displayName="Amount" mandatory="N" disabled="N"/>
+        <parameters position="7" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="issuanceDate" displayName="Issuance Date" mandatory="N" disabled="N"/>
+        <parameters position="8" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="expiryDate" displayName="Expiry Date" mandatory="N" disabled="N"/>
+        <parameters position="9" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="outstandingAmount" displayName="Outstanding Amount" mandatory="N" disabled="N"/>
+        <parameters position="10" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="advisingBank" displayName="Advising Bank" mandatory="N" disabled="N"/>
+        <parameters position="11" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="marginCurrencyId" displayName="Margin currency" mandatory="N" disabled="N"/>
+        <parameters position="12" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="marginAmount" displayName="Margin Amount" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcTrade" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Import LCs Due Bills" pseudoId="Import LCs Due Bills" serviceName="banqio.connect.impl.TradeFinanceServices.find#DueImportLcBill" dataField="billList" disabled="N">
+        <apps appId="CRP"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="lcTypeName" displayName="LC Type" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="lcNumber" displayName="LC Number" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="billNumber" displayName="Additional Ref" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="beneficiaryName" displayName="Beneficiary Name" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="currencyId" displayName="Currency" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="billAmount" displayName="Amount" mandatory="N" disabled="N"/>
+        <parameters position="7" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="dueDate" displayName="Payment Due" mandatory="N" disabled="N"/>
+        <parameters position="8" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="paymentTerms" displayName="Tenor Details" mandatory="N" disabled="N"/>
+        <parameters position="9" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="auxiliary1" displayName="Settlement Method" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcTrade" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Export LCs Bills Sent For Collection" pseudoId="Export LCs Bills Sent For Collection" serviceName="banqio.connect.impl.TradeFinanceServices.find#SentExportLcBill" dataField="billList" disabled="N">
+        <apps appId="CRP"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="lcTypeName" displayName="LC Type" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="lcNumber" displayName="LC Number" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="billNumber" displayName="Al Khaliji Ref." mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="beneficiaryName" displayName="Applicant name" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="currencyId" displayName="Currency" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="billAmount" displayName="Amount" mandatory="N" disabled="N"/>
+        <parameters position="7" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="sentDate" displayName="Sent On" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcTrade" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Discrepant Export LC Documents" pseudoId="Discrepant Export LC Documents" serviceName="banqio.connect.impl.TradeFinanceServices.find#RejectedExportLcBill" dataField="billList" disabled="N">
+        <apps appId="CRP"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="lcTypeName" displayName="LC Type" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="lcNumber" displayName="LC Number" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="billNumber" displayName="Al Khaliji Ref." mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="beneficiaryName" displayName="Applicant name" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="currencyId" displayName="Currency" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="billAmount" displayName="Amount" mandatory="N" disabled="N"/>
+        <parameters position="7" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="adviseDate" displayName="Date Advised" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcTrade" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Export LCs Due Bills" pseudoId="Export LCs Due Bills" serviceName="banqio.connect.impl.TradeFinanceServices.find#DueExportLcBill" dataField="billList" disabled="N">
+        <apps appId="CRP"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="lcNumber" displayName="LC Number" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="lcTypeName" displayName="LC Type" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="billNumber" displayName="Al Khaliji Ref." mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="beneficiaryName" displayName="Applicant name" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="currencyId" displayName="Currency" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="billAmount" displayName="Amount" mandatory="N" disabled="N"/>
+        <parameters position="7" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="dueDate" displayName="Due Date" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+
+    <!-- Admin inline service reports -->
+    <BanqioRpt categoryId="RcAdmin" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Dormant User Detail" serviceName="banqio.connect.impl.ReportServices.find#DormantUser" dataField="userList" disabled="N">
+        <apps appId="ADM"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="userId" displayName="User ID" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="username" displayName="Username" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="userFullName" displayName="User Full Name" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="externalUserId" displayName="Customer ID" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="lastLoginDate" displayName="Last Login Date" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcAdmin" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Dormant User Summary" serviceName="banqio.connect.impl.ReportServices.find#DormantUser" dataField="userStats" disabled="N">
+        <apps appId="ADM"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="totalUsers" displayName="Total Users" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcAdmin" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Active User Summary" serviceName="banqio.connect.impl.ReportServices.find#ActiveUser" dataField="userStatsList" disabled="N">
+        <apps appId="ADM"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="totalUsers" displayName="Total Users" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcAdmin" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Registered User Summary" serviceName="banqio.connect.impl.ReportServices.find#RegisteredUser" dataField="userStats" disabled="N">
+        <apps appId="ADM"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="totalUsers" displayName="Total Users" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcAdmin" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Financial Transfer Summary" serviceName="banqio.connect.impl.ReportServices.find#FundsTransfer" dataField="transferStats" disabled="N">
+        <apps appId="ADM"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="fromDate" displayName="From Date" mandatory="Y" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="toDate" displayName="To Date" mandatory="Y" disabled="N"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="successfulTransfers" displayName="Successful Transfers" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="failedTransfers" displayName="Failed Transfers" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="submittedTransfers" displayName="Submitted Transfers" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="proposedTransfers" displayName="Proposed Transfers" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="cancelledTransfers" displayName="Cancelled Transfers" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="draftTransfers" displayName="Draft Transfers" mandatory="N" disabled="N"/>
+        <parameters position="7" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="rejectedTransfers" displayName="Rejected Transfers" mandatory="N" disabled="N"/>
+        <parameters position="8" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="partiallySuccessfulTransfers" displayName="Partially Successful Transfers" mandatory="N" disabled="N"/>
+        <parameters position="9" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="totalTransfers" displayName="Total Transfers" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcAdmin" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Financial Transfer Details" serviceName="banqio.connect.impl.ReportServices.find#FundsTransfer" dataField="transferList" disabled="N">
+        <apps appId="ADM"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="fromDate" displayName="From Date" mandatory="Y" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="toDate" displayName="To Date" mandatory="Y" disabled="N"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="customerId" displayName="Customer ID" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="employerId" displayName="Employer ID" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="payerId" displayName="Payer ID" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="beneficiaryName" displayName="Beneficiary Name" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="beneficiaryTypeName" displayName="Beneficiary Type" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="debitAccountNumber" displayName="Debit Account Number" mandatory="N" disabled="N"/>
+        <parameters position="7" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="creditAccountNumber" displayName="Credit Account Number" mandatory="N" disabled="N"/>
+        <parameters position="8" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="chargesTypeDescription" displayName="Charges Type" mandatory="N" disabled="N"/>
+        <parameters position="9" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="transferPurposeName" displayName="Transfer Purpose" mandatory="N" disabled="N"/>
+        <parameters position="10" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="amount" displayName="Amount" mandatory="N" disabled="N"/>
+        <parameters position="11" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="currencyAbbreviation" displayName="Currency" mandatory="N" disabled="N"/>
+        <parameters position="12" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="amountDebit" displayName="Debit Amount" mandatory="N" disabled="N"/>
+        <parameters position="13" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="amountLocal" displayName="Local Amount" mandatory="N" disabled="N"/>
+        <parameters position="14" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="exchangeRate" displayName="Exchange Rate" mandatory="N" disabled="N"/>
+        <parameters position="15" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="senderReference" displayName="Sender Ref" mandatory="N" disabled="N"/>
+        <parameters position="16" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="sameCurrency" displayName="Same Currency" mandatory="N" disabled="N"/>
+        <parameters position="17" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="statusDescription" displayName="Transfer Status" mandatory="N" disabled="N"/>
+        <parameters position="18" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="postingDate" displayName="Posting Date" mandatory="N" disabled="N"/>
+        <parameters position="19" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="valueDate" displayName="Value Date" mandatory="N" disabled="N"/>
+        <parameters position="20" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="processingDate" displayName="Processing Date" mandatory="N" disabled="N"/>
+        <parameters position="21" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="salaryDate" displayName="Salary Date" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcAdmin" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Number of Financial Transactions Report" serviceName="banqio.connect.impl.ReportServices.find#FundsTransfer" dataField="transferStats" disabled="N">
+        <apps appId="ADM"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="fromDate" displayName="From Date" mandatory="Y" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="toDate" displayName="To Date" mandatory="Y" disabled="N"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="totalTransfers" displayName="Total Transfers" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcAdmin" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Same Currency Financial Transaction Summary Report" serviceName="banqio.connect.impl.ReportServices.find#FundsTransfer" dataField="transferStats" disabled="N">
+        <apps appId="ADM"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="fromDate" displayName="From Date" mandatory="Y" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="toDate" displayName="To Date" mandatory="Y" disabled="N"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="sameCurrencyTransfers" displayName="Total Transfers" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcAdmin" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Financial Transfer Summary By Value Date" serviceName="banqio.connect.impl.ReportServices.count#FundsTransfersByValueDate" dataField="ftSummaryList" disabled="N">
+        <apps appId="ADM"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="valueDate" displayName="Value Date" mandatory="Y" disabled="N"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="fundsTransferCount" displayName="Financial transactions" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcAdmin" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Treasury Funds Transfer Summary" serviceName="banqio.connect.impl.ReportServices.find#TreasuryFundsTransfersSummary" dataField="ftSummaryList" disabled="N">
+        <apps appId="ADM"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="fromDate" displayName="From Date" mandatory="Y" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="toDate" displayName="To Date" mandatory="Y" disabled="N"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="typeName" displayName="Transaction Type" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="currencyAbbreviation" displayName="Currency" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="valueDate" displayName="Value Date" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="count" displayName="Count" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="amount" displayName="Amount" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcAdmin" reportTypeEnumId="RPT_TYPE_SERVICE_INLINE" reportName="Function Statistics" serviceName="banqio.connect.impl.ReportServices.find#FunctionStatistics" dataField="visitList" disabled="N">
+        <apps appId="ADM"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="fromDate" displayName="From Date" mandatory="Y" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="toDate" displayName="To Date" mandatory="Y" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="sceneName" displayName="Function" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="count" displayName="Count" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+
+    <!-- Admin data document reports -->
+    <BanqioRpt categoryId="RcAdmin" reportTypeEnumId="RPT_TYPE_DATA_DOCUMENT" reportName="Login CRUD" dataDocumentId="AkbUserCrud" disabled="N">
+        <apps appId="ADM"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="inputUsername" displayName="Input Username" operatorTypeEnumId="TXT_EQUALS" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="targetUsername" displayName="Target Username" operatorTypeEnumId="TXT_EQUALS" mandatory="N" disabled="N"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="logId" displayName="Log ID" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="applicationName" displayName="Application Name" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="updateTypeDescription" displayName="Update Type" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="ipAddress" displayName="IP Address" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="userAgent" displayName="User Agent" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="inputUserFullName" displayName="Input User Full Name" mandatory="N" disabled="N"/>
+        <parameters position="7" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="inputUsername" displayName="Input Username" mandatory="N" disabled="N"/>
+        <parameters position="8" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="targetUserFullName" displayName="Target User Full Name" mandatory="N" disabled="N"/>
+        <parameters position="9" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="targetUsername" displayName="Target Username" mandatory="N" disabled="N"/>
+        <parameters position="10" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="creationDate" displayName="Update Date" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcAdmin" reportTypeEnumId="RPT_TYPE_DATA_DOCUMENT" reportName="User Authority" dataDocumentId="AkbUserAuthority" disabled="N">
+        <apps appId="ADM"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="username" displayName="Username" operatorTypeEnumId="TXT_EQUALS" mandatory="N" disabled="N"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="userFullName" displayName="User Full Name" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="groupDescription" displayName="Group Description" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="groupTypeDescription" displayName="Group Type" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="groupIpAllowed" displayName="IP Allowed" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcAdmin" reportTypeEnumId="RPT_TYPE_DATA_DOCUMENT" reportName="Workflow Task" dataDocumentId="AkbWorkflowTask" disabled="N">
+        <apps appId="ADM"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="assignedUsername" displayName="Assigned Username" operatorTypeEnumId="TXT_EQUALS" mandatory="N" disabled="N"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="workflowName" displayName="Workflow Name" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="taskTypeDescription" displayName="Task Type" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="statusDescription" displayName="Task Status" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="assignedUserFullName" displayName="Assigned User Full Name" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="assignedUserName" displayName="Assigned Username" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="description" displayName="Description" mandatory="N" disabled="N"/>
+        <parameters position="7" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="summary" displayName="Summary" mandatory="N" disabled="N"/>
+        <parameters position="8" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="comments" displayName="Comments" mandatory="N" disabled="N"/>
+        <parameters position="9" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="creationDate" displayName="Creation Date" mandatory="N" disabled="N"/>
+        <parameters position="10" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="completionDate" displayName="Completion Date" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcAdmin" reportTypeEnumId="RPT_TYPE_DATA_DOCUMENT" reportName="Customer Profile" dataDocumentId="AkbParty" disabled="N">
+        <apps appId="ADM"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="externalId" displayName="Customer ID" operatorTypeEnumId="TXT_EQUALS" mandatory="Y" disabled="N"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="partyId" displayName="Party ID" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="personFirstName" displayName="First Name" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="personMiddleName" displayName="Middle Name" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="personLastName" displayName="Last Name" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="organizationName" displayName="Organization Name" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="typeDescription" displayName="Party Type" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcAdmin" reportTypeEnumId="RPT_TYPE_DATA_DOCUMENT" reportName="Party Relationship" dataDocumentId="AkbPartyRelationship" disabled="N">
+        <apps appId="ADM"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="fromPartyExternalId" displayName="Customer ID" operatorTypeEnumId="TXT_EQUALS" mandatory="Y" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="fromPartyId" displayName="From Party ID" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="fromPartyOrganizationName" displayName="From Party Organization Name" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="toPartyId" displayName="To Party ID" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="toPartyFirstName" displayName="To Party First Name" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="toPartyMiddleName" displayName="To Party Middle Name" mandatory="N" disabled="N"/>
+        <parameters position="7" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="toPartyLastName" displayName="To Party Last Name" mandatory="N" disabled="N"/>
+        <parameters position="8" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="userAccounts[0].username" displayName="To Party Username" mandatory="N" disabled="N"/>
+        <parameters position="9" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="fromDate" displayName="From Date" mandatory="N" disabled="N"/>
+        <parameters position="10" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="thruDate" displayName="To Date" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcAdmin" reportTypeEnumId="RPT_TYPE_DATA_DOCUMENT" reportName="Failed Funds Transfers" dataDocumentId="AkbFailedFt" disabled="N">
+        <apps appId="ADM"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="creationDate" displayName="From Date" mandatory="Y" operatorTypeEnumId="DATE_AFTER" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_IN" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="creationDate" displayName="To Date" mandatory="Y" operatorTypeEnumId="DATE_BEFORE" disabled="N"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="customerId" displayName="Customer ID" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="beneficiaryName" displayName="Beneficiary Name" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="chargesTypeDescription" displayName="Charges Type" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="transferPurposeName" displayName="Transfer Purpose" mandatory="N" disabled="N"/>
+        <parameters position="5" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_NUMBER" parameterName="amount" displayName="Amount" mandatory="N" disabled="N"/>
+        <parameters position="6" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="currencyAbbreviation" displayName="Currency" mandatory="N" disabled="N"/>
+        <parameters position="7" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="postingDate" displayName="Posting Date" mandatory="N" disabled="N"/>
+        <parameters position="8" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="valueDate" displayName="Value Date" mandatory="N" disabled="N"/>
+        <parameters position="9" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="processingDate" displayName="Processing Date" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcAdmin" reportTypeEnumId="RPT_TYPE_DATA_DOCUMENT" reportName="Failed Login Report" dataDocumentId="AkbFailedLogin" disabled="N">
+        <apps appId="ADM"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="userId" displayName="User ID" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="username" displayName="Username" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="userFullName" displayName="User Full Name" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="fromDate" displayName="Login Date" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcAdmin" reportTypeEnumId="RPT_TYPE_DATA_DOCUMENT" reportName="Successful Login Report" dataDocumentId="AkbSuccessfulLogin" disabled="N">
+        <apps appId="ADM"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="userId" displayName="User ID" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="username" displayName="Username" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="userFullName" displayName="User Full Name" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="fromDate" displayName="Login Date" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+    <BanqioRpt categoryId="RcAdmin" reportTypeEnumId="RPT_TYPE_DATA_DOCUMENT" reportName="Visits Report" dataDocumentId="AkbVisit" disabled="N">
+        <apps appId="ADM"/>
+        <parameters position="1" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="userId" displayName="User ID" mandatory="N" disabled="N"/>
+        <parameters position="2" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="clientIpAddress" displayName="IP Address" mandatory="N" disabled="N"/>
+        <parameters position="3" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="webappName" displayName="Application" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_TEXT" parameterName="initialUserAgent" displayName="User Agent" mandatory="N" disabled="N"/>
+        <parameters position="4" parameterDirectionEnumId="RPT_PARAM_DIR_OUT" parameterTypeEnumId="RPT_PARAM_TYPE_DATE" parameterName="fromDate" displayName="Visit Date" mandatory="N" disabled="N"/>
+    </BanqioRpt>
+
+</entity-facade-xml>

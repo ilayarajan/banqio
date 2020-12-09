@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        default-menu-title="Find App"
+        default-menu-include="false">
+
+    <transition name="createApp">
+        <service-call name="create#commons.server.App"/>
+        <default-response url="."/>
+    </transition>
+    <transition name="editApp">
+        <default-response url="../EditApp"/>
+    </transition>
+
+    <actions>
+        <entity-find entity-name="commons.server.App" list="appList">
+            <search-form-inputs default-order-by="^appId"/>
+        </entity-find>
+    </actions>
+
+    <widgets>
+        <container-box>
+            <box-header>
+                <label text="Find App" type="h5"/>
+            </box-header>
+            <box-toolbar>
+                <container-dialog id="CreateAppContainer" button-text="New App" width="900">
+                    <form-single name="CreateAppForm" transition="createApp">
+                        <auto-fields-entity entity-name="commons.server.App" field-type="edit">
+                            <exclude field-name="appId"/>
+                            <exclude field-name="creationDate"/>
+                            <exclude field-name="inputUserId"/>
+                            <exclude field-name="updateUserId"/>
+                        </auto-fields-entity>
+                        <field name="appName">
+                            <default-field>
+                                <text-line size="40"/>
+                            </default-field>
+                        </field>
+                        <field name="description">
+                            <default-field>
+                                <text-area rows="4" cols="80"/>
+                            </default-field>
+                        </field>
+                        <field name="disabled">
+                            <default-field>
+                                <drop-down>
+                                    <option key="N" text="No"/>
+                                    <option key="Y" text="Yes"/>
+                                </drop-down>
+                            </default-field>
+                        </field>
+                        <field name="submitBtn">
+                            <default-field title="Create">
+                                <submit/>
+                            </default-field>
+                        </field>
+
+                        <field-layout>
+                            <fields-not-referenced/>
+                        </field-layout>
+                    </form-single>
+                </container-dialog>
+            </box-toolbar>
+            <box-body>
+                <form-list name="ListApps" list="appList" skip-form="true" header-dialog="true" select-columns="true">
+                    <field name="appId">
+                        <header-field show-order-by="true" title="ID">
+                            <text-find hide-options="true" size="10"/>
+                        </header-field>
+                        <default-field>
+                            <link url="editApp" text="${appId}"/>
+                        </default-field>
+                    </field>
+                    <field name="appName">
+                        <header-field show-order-by="true">
+                            <text-find hide-options="true"/>
+                        </header-field>
+                        <default-field>
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="description">
+                        <header-field show-order-by="true">
+                            <text-find hide-options="true"/>
+                        </header-field>
+                        <default-field>
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="find">
+                        <header-field title="Find">
+                            <submit icon="glyphicon glyphicon-search"/>
+                        </header-field>
+                    </field>
+
+                    <form-list-column>
+                        <field-ref name="appId"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="appName"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="description"/>
+                    </form-list-column>
+                </form-list>
+            </box-body>
+        </container-box>
+    </widgets>
+</screen>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Funds Transfer API -->
+    <artifactGroups artifactGroupId="BNQ_FT_API" description="Banqio Funds Transfer API">
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/ft/.*"/>
+        <artifacts artifactTypeEnumId="AT_SERVICE" inheritAuthz="Y" nameIsPattern="N" artifactName="banqio.ft.FundsTransferServices.download#FundsTransferTypeTemplate"/>
+    </artifactGroups>
+
+    <!-- Admin Funds Transfers (All) -->
+    <userGroups userGroupId="BNQ_ADM_FT_ALL" description="Banqio Admin Funds Transfers (All)" groupTypeEnumId="BNQ_ADM_GRP" wikiLocation="component://banqio-mod-ft/wiki/BNQ_ADM_FT_ALL.md">
+        <authz artifactGroupId="BNQ_FT_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+    </userGroups>
+
+    <!-- Admin Funds Transfers (View) -->
+    <userGroups userGroupId="BNQ_ADM_FT_VIEW" description="Banqio Admin Funds Transfers (View)" groupTypeEnumId="BNQ_ADM_GRP" wikiLocation="component://banqio-mod-ft/wiki/BNQ_ADM_FT_VIEW.md">
+        <authz artifactGroupId="BNQ_FT_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+    </userGroups>
+
+</entity-facade-xml>

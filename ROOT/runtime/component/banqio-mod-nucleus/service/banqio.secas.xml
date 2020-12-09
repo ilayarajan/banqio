@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<secas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-eca-2.1.xsd">
+
+    <!-- User service validation -->
+    <seca service="banqio\.security\.SecurityServices\.(create#User|update#User|approve#User|disable#User|enable#User|reset#PasswordInternal|forceLogout#User)" name-is-pattern="true" when="pre-service">
+        <actions>
+            <service-call name="commons.server.ServerServices.validate#App">
+                <field-map field-name="appId" from="sourceAppId"/>
+            </service-call>
+        </actions>
+    </seca>
+
+    <!-- User self service validation -->
+    <seca service="banqio\.security\.SecurityServices\.(register#User|login#User|logout#User|change#Password|change#TemporaryPassword|reset#Password|poll#UserSession|update#UserLanguage|find#UserProfile|update#UserProfile)" name-is-pattern="true" when="pre-service">
+        <actions>
+            <service-call name="commons.server.ServerServices.validate#App">
+                <field-map field-name="appId" from="sourceAppId"/>
+            </service-call>
+        </actions>
+    </seca>
+
+    <!-- Create audit logs -->
+    <seca service="banqio.security.SecurityServices.create#User" when="post-service">
+        <actions>
+            <service-call name="create#banqio.security.audit.UserAccountUpdate" in-map="context">
+                <field-map field-name="updateTypeEnumId" value="USER_UPDATE_CREATE"/>
+                <field-map field-name="inputUserId" from="ec.user.userId"/>
+                <field-map field-name="targetUserId" from="userId"/>
+                <field-map field-name="ipAddress" from="ec.web.getRequest().getRemoteAddr()"/>
+                <field-map field-name="userAgent" from="ec.web.getRequest().getHeader('User-Agent')"/>
+            </service-call>
+        </actions>
+    </seca>
+    <seca service="banqio.security.SecurityServices.update#User" when="post-service">
+        <actions>
+            <service-call name="create#banqio.security.audit.UserAccountUpdate" in-map="context">
+                <field-map field-name="updateTypeEnumId" value="USER_UPDATE_UPDATE"/>
+                <field-map field-name="inputUserId" from="ec.user.userId"/>
+                <field-map field-name="targetUserId" from="userId"/>
+                <field-map field-name="ipAddress" from="ec.web.getRequest().getRemoteAddr()"/>
+                <field-map field-name="userAgent" from="ec.web.getRequest().getHeader('User-Agent')"/>
+            </service-call>
+        </actions>
+    </seca>
+    <seca service="banqio.security.SecurityServices.approve#User" when="post-service">
+        <actions>
+            <service-call name="create#banqio.security.audit.UserAccountUpdate" in-map="context">
+                <field-map field-name="updateTypeEnumId" value="USER_UPDATE_APPROVE"/>
+                <field-map field-name="inputUserId" from="ec.user.userId"/>
+                <field-map field-name="targetUserId" from="userId"/>
+                <field-map field-name="ipAddress" from="ec.web.getRequest().getRemoteAddr()"/>
+                <field-map field-name="userAgent" from="ec.web.getRequest().getHeader('User-Agent')"/>
+            </service-call>
+        </actions>
+    </seca>
+    <seca service="banqio.security.SecurityServices.enable#User" when="post-service">
+        <actions>
+            <service-call name="create#banqio.security.audit.UserAccountUpdate" in-map="context">
+                <field-map field-name="updateTypeEnumId" value="USER_UPDATE_ENABLE"/>
+                <field-map field-name="inputUserId" from="ec.user.userId"/>
+                <field-map field-name="targetUserId" from="userId"/>
+                <field-map field-name="ipAddress" from="ec.web.getRequest().getRemoteAddr()"/>
+                <field-map field-name="userAgent" from="ec.web.getRequest().getHeader('User-Agent')"/>
+            </service-call>
+        </actions>
+    </seca>
+    <seca service="banqio.security.SecurityServices.disable#User" when="post-service">
+        <actions>
+            <service-call name="create#banqio.security.audit.UserAccountUpdate" in-map="context">
+                <field-map field-name="updateTypeEnumId" value="USER_UPDATE_DISABLE"/>
+                <field-map field-name="inputUserId" from="ec.user.userId"/>
+                <field-map field-name="targetUserId" from="userId"/>
+                <field-map field-name="ipAddress" from="ec.web.getRequest().getRemoteAddr()"/>
+                <field-map field-name="userAgent" from="ec.web.getRequest().getHeader('User-Agent')"/>
+            </service-call>
+        </actions>
+    </seca>
+    <seca service="banqio.security.SecurityServices.forceLogout#User" when="post-service">
+        <actions>
+            <service-call name="create#banqio.security.audit.UserAccountUpdate" in-map="context">
+                <field-map field-name="updateTypeEnumId" value="USER_UPDATE_LOGOUT"/>
+                <field-map field-name="inputUserId" from="ec.user.userId"/>
+                <field-map field-name="targetUserId" from="userId"/>
+                <field-map field-name="ipAddress" from="ec.web.getRequest().getRemoteAddr()"/>
+                <field-map field-name="userAgent" from="ec.web.getRequest().getHeader('User-Agent')"/>
+            </service-call>
+        </actions>
+    </seca>
+    <seca service="banqio.security.SecurityServices.reset#PasswordInternal" when="post-service">
+        <actions>
+            <service-call name="create#banqio.security.audit.UserPasswordReset" in-map="context">
+                <field-map field-name="inputUserId" from="ec.user.userId"/>
+                <field-map field-name="targetUserId" from="userId"/>
+                <field-map field-name="ipAddress" from="ec.web.getRequest().getRemoteAddr()"/>
+                <field-map field-name="userAgent" from="ec.web.getRequest().getHeader('User-Agent')"/>
+            </service-call>
+        </actions>
+    </seca>
+
+</secas>

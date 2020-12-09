@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Navigation -->
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_CHEQUES" messageValue="Cheques"/>
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_CHEQUE_TYPES" messageValue="Cheque Types"/>
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_CHEQUE_STATUSES" messageValue="Cheque Statuses"/>
+
+    <!-- Cheque setup scene -->
+    <CommonsScene sceneId="ADM_CHQ_SETUP_BOARD" appId="ADM" sceneName="Cheque Setup Dashboard" lookupName="/secure/setup/cheque/dashboard">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Cheque Setup"/>
+    </CommonsScene>
+
+    <!-- Browse cheque types scene -->
+    <CommonsScene sceneId="ADM_BROWSE_CHQ_TYPE" appId="ADM" sceneName="Browse Cheque Types" lookupName="/secure/setup/cheque/cheque-type/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Cheque Types"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Create cheque type scene -->
+    <CommonsScene sceneId="ADM_CREATE_CHQ_TYPE" appId="ADM" sceneName="Create Cheque Type" lookupName="/secure/setup/cheque/cheque-type/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Cheque Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Modify cheque type scene -->
+    <CommonsScene sceneId="ADM_MODIFY_CHQ_TYPE" appId="ADM" sceneName="Modify Cheque Type" lookupName="/secure/setup/cheque/cheque-type/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Cheque Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- View cheque type scene -->
+    <CommonsScene sceneId="ADM_VIEW_CHQ_TYPE" appId="ADM" sceneName="View Cheque Type" lookupName="/secure/setup/cheque/cheque-type/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Cheque Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+    </CommonsScene>
+
+    <!-- Browse cheque statuses scene -->
+    <CommonsScene sceneId="ADM_BROWSE_CHQ_STAT" appId="ADM" sceneName="Browse Cheque Statuses" lookupName="/secure/setup/cheque/cheque-status/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Cheque Statuses"/>
+        <messages messageKey="STATUS_NAME" messageValue="Status Name"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Create cheque status scene -->
+    <CommonsScene sceneId="ADM_CREATE_CHQ_STAT" appId="ADM" sceneName="Create Cheque Status" lookupName="/secure/setup/cheque/cheque-status/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Cheque Status"/>
+        <messages messageKey="STATUS_NAME" messageValue="Status Name"/>
+        <messages messageKey="STATUS_BEHAVIOUR" messageValue="Status Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Modify cheque status scene -->
+    <CommonsScene sceneId="ADM_MODIFY_CHQ_STAT" appId="ADM" sceneName="Modify Cheque Status" lookupName="/secure/setup/cheque/cheque-status/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Cheque Status"/>
+        <messages messageKey="STATUS_NAME" messageValue="Status Name"/>
+        <messages messageKey="STATUS_BEHAVIOUR" messageValue="Status Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- View cheque status scene -->
+    <CommonsScene sceneId="ADM_VIEW_CHQ_STAT" appId="ADM" sceneName="View Cheque Status" lookupName="/secure/setup/cheque/cheque-status/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Cheque Status"/>
+        <messages messageKey="STATUS_NAME" messageValue="Status Name"/>
+        <messages messageKey="STATUS_BEHAVIOUR" messageValue="Status Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+    </CommonsScene>
+    
+</entity-facade-xml>

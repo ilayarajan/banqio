@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <entity entity-name="SweepAgreement" package="banqio.sweep">
+        <field name="agreementId" type="id" is-pk="true"/>
+        <field name="sweepTypeEnumId" type="id"/>
+        <field name="frequencyEnumId" type="id"/>
+        <field name="customerId" type="text-medium"/>
+        <field name="primaryAccountId" type="text-medium"/>
+        <field name="balanceLimit" type="number-decimal"/>
+        <field name="executionTime" type="time"/>
+        <field name="fromDate" type="date-time"/>
+        <field name="toDate" type="date-time"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="lastRunDate" type="date-time"/>
+        <field name="disabled" type="text-indicator"/>
+
+        <relationship type="one" title="SweepType" related="moqui.basic.Enumeration">
+            <key-map field-name="sweepTypeEnumId"/>
+        </relationship>
+        <relationship type="one" title="SweepFrequency" related="moqui.basic.Enumeration">
+            <key-map field-name="frequencyEnumId"/>
+        </relationship>
+        <relationship type="many" related="banqio.sweep.SweepSecondaryAccount" short-alias="accounts">
+            <key-map field-name="agreementId"/>
+        </relationship>
+        <relationship type="many" related="banqio.sweep.SweepRun" short-alias="runs">
+            <key-map field-name="agreementId"/>
+        </relationship>
+
+        <master>
+            <detail relationship="accounts"/>
+            <detail relationship="runs"/>
+        </master>
+    </entity>
+    <entity entity-name="SweepSecondaryAccount" package="banqio.sweep">
+        <field name="agreementId" type="id" is-pk="true"/>
+        <field name="accountSeqId" type="id" is-pk="true"/>
+        <field name="secondaryAccountId" type="text-medium"/>
+
+        <relationship type="one" related="banqio.sweep.SweepAgreement">
+            <key-map field-name="agreementId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="SweepRun" package="banqio.sweep">
+        <field name="runId" type="id" is-pk="true"/>
+        <field name="agreementId" type="id"/>
+        <field name="startDate" type="date-time"/>
+        <field name="endDate" type="date-time"/>
+
+        <relationship type="one" related="banqio.sweep.SweepAgreement">
+            <key-map field-name="agreementId"/>
+        </relationship>
+        <relationship type="many" related="banqio.sweep.SweepTransfer" short-alias="transfers">
+            <key-map field-name="runId"/>
+        </relationship>
+
+        <master>
+            <detail relationship="transfers"/>
+        </master>
+    </entity>
+    <entity entity-name="SweepTransfer" package="banqio.sweep">
+        <field name="runId" type="id" is-pk="true"/>
+        <field name="transferSeqId" type="id" is-pk="true"/>
+        <field name="debitAccountId" type="text-medium"/>
+        <field name="creditAccountId" type="text-medium"/>
+        <field name="transactionId" type="text-medium"/>
+        <field name="transactionDate" type="date-time"/>
+        <field name="transferStatusId" type="id"/>
+        <field name="errors" type="text-very-long"/>
+        <field name="transactionCurrencyId" type="id"/>
+        <field name="debitCurrencyId" type="id"/>
+        <field name="creditCurrencyId" type="id"/>
+        <field name="transactionAmount" type="number-decimal"/>
+        <field name="totalDebitAmount" type="number-decimal"/>
+        <field name="totalCreditAmount" type="number-decimal"/>
+        <field name="exchangeRate" type="number-decimal"/>
+        <field name="debitValueDate" type="date-time"/>
+        <field name="creditValueDate" type="date-time"/>
+
+        <relationship type="one" related="banqio.sweep.SweepRun">
+            <key-map field-name="runId"/>
+        </relationship>
+        <relationship type="one-nofk" related="moqui.basic.Uom">
+            <key-map field-name="transactionCurrencyId"/>
+        </relationship>
+        <relationship type="one-nofk" related="moqui.basic.Uom">
+            <key-map field-name="debitCurrencyId"/>
+        </relationship>
+        <relationship type="one-nofk" related="moqui.basic.Uom">
+            <key-map field-name="creditCurrencyId"/>
+        </relationship>
+    </entity>
+
+</entities>

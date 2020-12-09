@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Workflow launch type -->
+    <moqui.basic.EnumerationType enumTypeId="WorkflowLaunchType" description="Workflow Launch Type"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowLaunchType" enumId="WF_LAUNCH_TRIGGER" description="Trigger"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowLaunchType" enumId="WF_LAUNCH_PERIODIC" description="Periodic"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowLaunchType" enumId="WF_LAUNCH_MANUAL" description="Manual"/>
+
+    <!-- Workflow activity type -->
+    <moqui.basic.EnumerationType enumTypeId="WorkflowActivityType" description="Workflow Activity Type"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowActivityType" enumId="WF_ACTIVITY_ENTER" description="Enter"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowActivityType" enumId="WF_ACTIVITY_EXIT" description="Exit"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowActivityType" enumId="WF_ACTIVITY_CONDITION" description="Condition"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowActivityType" enumId="WF_ACTIVITY_USER" description="User"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowActivityType" enumId="WF_ACTIVITY_ADJUST" description="Adjustment"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowActivityType" enumId="WF_ACTIVITY_SERVICE" description="Service"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowActivityType" enumId="WF_ACTIVITY_ALERT" description="Alert"/>
+
+    <!-- Workflow port type -->
+    <moqui.basic.EnumerationType enumTypeId="WorkflowPortType" description="Workflow Port Type"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowPortType" enumId="WF_PORT_INPUT" description="Input"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowPortType" enumId="WF_PORT_SUCCESS" description="Success"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowPortType" enumId="WF_PORT_FAILURE" description="Failure"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowPortType" enumId="WF_PORT_TIMEOUT" description="Timeout"/>
+
+    <!-- Workflow action type -->
+    <moqui.basic.EnumerationType enumTypeId="WorkflowActionType" description="Workflow Action Type"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowActionType" enumId="WF_ACTION_CREATE" description="Create"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowActionType" enumId="WF_ACTION_UPDATE" description="Update"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowActionType" enumId="WF_ACTION_DELETE" description="Delete"/>
+
+    <!-- Workflow event type -->
+    <moqui.basic.EnumerationType enumTypeId="WorkflowEventType" description="Workflow Event Type"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowEventType" enumId="WF_EVENT_START" description="Start"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowEventType" enumId="WF_EVENT_FINISH" description="Finish"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowEventType" enumId="WF_EVENT_SUSPEND" description="Suspend"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowEventType" enumId="WF_EVENT_RESUME" description="Resume"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowEventType" enumId="WF_EVENT_ACTIVITY" description="Activity"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowEventType" enumId="WF_EVENT_TRANSITION" description="Transition"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowEventType" enumId="WF_EVENT_REMINDER" description="Reminder"/>
+
+    <!-- Workflow variable type -->
+    <moqui.basic.EnumerationType enumTypeId="WorkflowVariableType" description="Workflow Variable Type"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowVariableType" enumId="WF_VAR_TEXT" description="Text" sequenceNum="1"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowVariableType" enumId="WF_VAR_NUMBER" description="Number" sequenceNum="2"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowVariableType" enumId="WF_VAR_DATE" description="Date" sequenceNum="3"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowVariableType" enumId="WF_VAR_BOOLEAN" description="Boolean" sequenceNum="4"/>
+
+    <!-- Workflow crowd type -->
+    <moqui.basic.EnumerationType enumTypeId="WorkflowCrowdType" description="Workflow Crowd Type"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowCrowdType" enumId="WF_CROWD_USER" description="User" sequenceNum="1"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowCrowdType" enumId="WF_CROWD_USER_GROUP" description="User Group" sequenceNum="2"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowCrowdType" enumId="WF_CROWD_INITIATOR" description="Initiator" sequenceNum="3"/>
+
+    <!-- Workflow adjustment type -->
+    <moqui.basic.EnumerationType enumTypeId="WorkflowAdjustmentType" description="Workflow Adjustment Type"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowAdjustmentType" enumId="WF_ADJUST_STATUS" description="Status" sequenceNum="1"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowAdjustmentType" enumId="WF_ADJUST_VARIABLE" description="Variable" sequenceNum="2"/>
+
+    <!-- Workflow condition type -->
+    <moqui.basic.EnumerationType enumTypeId="WorkflowConditionType" description="Workflow Condition Type"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowConditionType" enumId="WF_CONDITION_FIELD" description="Field" sequenceNum="1"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowConditionType" enumId="WF_CONDITION_VARIABLE" description="Variable" sequenceNum="2"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowConditionType" enumId="WF_CONDITION_APPROVAL" description="Approval" sequenceNum="3"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowConditionType" enumId="WF_CONDITION_SCRIPT" description="Script" sequenceNum="4"/>
+
+    <!-- Workflow task type -->
+    <moqui.basic.EnumerationType enumTypeId="WorkflowTaskType" description="Workflow Task Type"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowTaskType" enumId="WF_TASK_APPROVAL" description="Approval" sequenceNum="1"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowTaskType" enumId="WF_TASK_VARIABLE" description="Variable" sequenceNum="2"/>
+    <moqui.basic.Enumeration enumTypeId="WorkflowTaskType" enumId="WF_TASK_MANUAL"  description="Manual" sequenceNum="3"/>
+
+    <!-- Workflow task status -->
+    <moqui.basic.StatusType statusTypeId="WorkflowTask" description="Workflow Task Status"/>
+    <moqui.basic.StatusItem statusTypeId="WorkflowTask" statusId="WF_TASK_PEND" description="Pending" sequenceNum="1"/>
+    <moqui.basic.StatusItem statusTypeId="WorkflowTask" statusId="WF_TASK_PROGRESS" description="In Progress" sequenceNum="2"/>
+    <moqui.basic.StatusItem statusTypeId="WorkflowTask" statusId="WF_TASK_DONE" description="Done" sequenceNum="3"/>
+    <moqui.basic.StatusItem statusTypeId="WorkflowTask" statusId="WF_TASK_APPROVE" description="Approved" sequenceNum="4"/>
+    <moqui.basic.StatusItem statusTypeId="WorkflowTask" statusId="WF_TASK_REJECT" description="Rejected" sequenceNum="5"/>
+    <moqui.basic.StatusItem statusTypeId="WorkflowTask" statusId="WF_TASK_OBSOLETE" description="Obsolete" sequenceNum="6"/>
+
+    <!-- Workflow task status flow -->
+    <moqui.basic.StatusFlow statusFlowId="WorkflowTaskStatusFlow" statusTypeId="WorkflowTask" description="Workflow Task Status Flow"/>
+    <moqui.basic.StatusFlowItem statusFlowId="WorkflowTaskStatusFlow" statusId="WF_TASK_PEND" isInitial="Y"/>
+    <moqui.basic.StatusFlowItem statusFlowId="WorkflowTaskStatusFlow" statusId="WF_TASK_PROGRESS" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="WorkflowTaskStatusFlow" statusId="WF_TASK_DONE" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="WorkflowTaskStatusFlow" statusId="WF_TASK_APPROVE" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="WorkflowTaskStatusFlow" statusId="WF_TASK_REJECT" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="WorkflowTaskStatusFlow" statusId="WF_TASK_OBSOLETE" isInitial="N"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="WorkflowTaskStatusFlow" statusId="WF_TASK_PEND" toStatusId="WF_TASK_APPROVE" transitionSequence="1" transitionName="Approve" conditionExpression="WF_TASK_APPROVAL"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="WorkflowTaskStatusFlow" statusId="WF_TASK_PEND" toStatusId="WF_TASK_REJECT" transitionSequence="2" transitionName="Reject" conditionExpression="WF_TASK_APPROVAL"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="WorkflowTaskStatusFlow" statusId="WF_TASK_PEND" toStatusId="WF_TASK_DONE" transitionSequence="1" transitionName="Set Variable" conditionExpression="WF_TASK_VARIABLE"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="WorkflowTaskStatusFlow" statusId="WF_TASK_PEND" toStatusId="WF_TASK_PROGRESS" transitionSequence="1" transitionName="Start" conditionExpression="WF_TASK_MANUAL"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="WorkflowTaskStatusFlow" statusId="WF_TASK_PROGRESS" toStatusId="WF_TASK_DONE" transitionSequence="2" transitionName="Complete" conditionExpression="WF_TASK_MANUAL"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="WorkflowTaskStatusFlow" statusId="WF_TASK_PEND" toStatusId="WF_TASK_OBSOLETE"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="WorkflowTaskStatusFlow" statusId="WF_TASK_PROGRESS" toStatusId="WF_TASK_OBSOLETE"/>
+
+    <!-- Workflow instance status -->
+    <moqui.basic.StatusType statusTypeId="WorkflowInstance" description="Workflow Instance Status"/>
+    <moqui.basic.StatusItem statusTypeId="WorkflowInstance" statusId="WF_INST_PEND" description="Pending" sequenceNum="1"/>
+    <moqui.basic.StatusItem statusTypeId="WorkflowInstance" statusId="WF_INST_ACTIVE" description="Active" sequenceNum="2"/>
+    <moqui.basic.StatusItem statusTypeId="WorkflowInstance" statusId="WF_INST_COMPLETE" description="Completed" sequenceNum="3"/>
+    <moqui.basic.StatusItem statusTypeId="WorkflowInstance" statusId="WF_INST_ABORT" description="Aborted" sequenceNum="4"/>
+    <moqui.basic.StatusItem statusTypeId="WorkflowInstance" statusId="WF_INST_SUSPEND" description="Suspended" sequenceNum="5"/>
+
+    <!-- Workflow instance status flow -->
+    <moqui.basic.StatusFlow statusFlowId="WorkflowInstanceStatusFlow" statusTypeId="WorkflowInstance"  description="Workflow Instance Status Flow"/>
+    <moqui.basic.StatusFlowItem statusFlowId="WorkflowInstanceStatusFlow" statusId="WF_INST_PEND" isInitial="Y"/>
+    <moqui.basic.StatusFlowItem statusFlowId="WorkflowInstanceStatusFlow" statusId="WF_INST_ACTIVE" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="WorkflowInstanceStatusFlow" statusId="WF_INST_COMPLETE" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="WorkflowInstanceStatusFlow" statusId="WF_INST_ABORT" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="WorkflowInstanceStatusFlow" statusId="WF_INST_SUSPEND" isInitial="N"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="WorkflowInstanceStatusFlow" statusId="WF_INST_PEND" toStatusId="WF_INST_ACTIVE" transitionSequence="1" transitionName="Start"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="WorkflowInstanceStatusFlow" statusId="WF_INST_PEND" toStatusId="WF_INST_ABORT" transitionSequence="2" transitionName="Abort"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="WorkflowInstanceStatusFlow" statusId="WF_INST_ACTIVE" toStatusId="WF_INST_COMPLETE" transitionSequence="1" transitionName="Finish"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="WorkflowInstanceStatusFlow" statusId="WF_INST_ACTIVE" toStatusId="WF_INST_ABORT" transitionSequence="2" transitionName="Abort"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="WorkflowInstanceStatusFlow" statusId="WF_INST_ACTIVE" toStatusId="WF_INST_SUSPEND" transitionSequence="3" transitionName="Suspend"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="WorkflowInstanceStatusFlow" statusId="WF_INST_SUSPEND" toStatusId="WF_INST_ACTIVE" transitionSequence="1" transitionName="Resume"/>
+
+    <!-- Workflow request status -->
+    <moqui.basic.StatusType statusTypeId="WorkflowRequest" description="Workflow Request Status"/>
+
+</entity-facade-xml>

@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Card brand -->
+    <service verb="find" noun="CardBrand" type="java" location="com.netvariant.banqio.card.CardBrandService" method="findCardBrands">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.card.CardBrand"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="cardBrandList" type="List">
+                <parameter name="cardBrand" type="Map">
+                    <auto-parameters entity-name="banqio.card.CardBrand"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="CardBrand" type="java" location="com.netvariant.banqio.card.CardBrandService" method="createCardBrand">
+        <in-parameters>
+            <parameter name="externalBrandId"/>
+            <parameter name="brandName"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="brandId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="CardBrand" type="java" location="com.netvariant.banqio.card.CardBrandService" method="updateCardBrand">
+        <in-parameters>
+            <parameter name="brandId"/>
+            <parameter name="externalBrandId"/>
+            <parameter name="brandName"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="brandId"/>
+        </out-parameters>
+    </service>
+
+    <!-- Card brand L10n -->
+    <service verb="find" noun="CardBrandL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.card.CardBrand"/>
+            <service-call name="commons.entity.EntityServices.find#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="create" noun="CardBrandL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.card.CardBrand"/>
+            <service-call name="commons.entity.EntityServices.create#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="update" noun="CardBrandL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.card.CardBrand"/>
+            <service-call name="commons.entity.EntityServices.update#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="delete" noun="CardBrandL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="localized"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.card.CardBrand"/>
+            <service-call name="commons.entity.EntityServices.delete#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+
+    <!-- Card type -->
+    <service verb="find" noun="CardType" type="java" location="com.netvariant.banqio.card.CardTypeService" method="findCardTypes">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.card.CardTypeDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="cardTypeList" type="List">
+                <parameter name="cardType" type="Map">
+                    <auto-parameters entity-name="banqio.card.CardTypeDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="CardType" type="java" location="com.netvariant.banqio.card.CardTypeService" method="createCardType">
+        <in-parameters>
+            <parameter name="externalTypeId"/>
+            <parameter name="typeName"/>
+            <parameter name="typeBehaviourEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="typeId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="CardType" type="java" location="com.netvariant.banqio.card.CardTypeService" method="updateCardType">
+        <in-parameters>
+            <parameter name="typeId"/>
+            <parameter name="externalTypeId"/>
+            <parameter name="typeName"/>
+            <parameter name="typeBehaviourEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="typeId"/>
+        </out-parameters>
+    </service>
+
+    <!-- Card type L10n -->
+    <service verb="find" noun="CardTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.card.CardType"/>
+            <service-call name="commons.entity.EntityServices.find#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="create" noun="CardTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.card.CardType"/>
+            <service-call name="commons.entity.EntityServices.create#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="update" noun="CardTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.card.CardType"/>
+            <service-call name="commons.entity.EntityServices.update#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="delete" noun="CardTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="localized"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.card.CardType"/>
+            <service-call name="commons.entity.EntityServices.delete#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+
+    <!-- Card status -->
+    <service verb="find" noun="CardStatus" type="java" location="com.netvariant.banqio.card.CardStatusService" method="findCardStatuses">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.card.CardStatusDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="cardStatusList" type="List">
+                <parameter name="cardStatus" type="Map">
+                    <auto-parameters entity-name="banqio.card.CardStatusDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="CardStatus" type="java" location="com.netvariant.banqio.card.CardStatusService" method="createCardStatus">
+        <in-parameters>
+            <parameter name="externalStatusId"/>
+            <parameter name="statusName"/>
+            <parameter name="statusBehaviourEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="statusId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="CardStatus" type="java" location="com.netvariant.banqio.card.CardStatusService" method="updateCardStatus">
+        <in-parameters>
+            <parameter name="statusId"/>
+            <parameter name="externalStatusId"/>
+            <parameter name="statusName"/>
+            <parameter name="statusBehaviourEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="statusId"/>
+        </out-parameters>
+    </service>
+
+    <!-- Card lock -->
+    <service verb="find" noun="CardTemporaryLock" type="java" location="com.netvariant.banqio.card.CardLockService" method="findCardTemporaryLocks">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.card.CardTemporaryLockDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="cardLockList" type="List">
+                <parameter name="cardLock" type="Map">
+                    <auto-parameters entity-name="banqio.card.CardTemporaryLockDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="CardPermanentLock" type="java" location="com.netvariant.banqio.card.CardLockService" method="findCardPermanentLocks">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.card.CardPermanentLockDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="cardLockList" type="List">
+                <parameter name="cardLock" type="Map">
+                    <auto-parameters entity-name="banqio.card.CardPermanentLockDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="expire" noun="CardTemporaryLock" type="java" location="com.netvariant.banqio.card.CardLockService" method="expireCardTemporaryLock">
+        <in-parameters>
+            <parameter name="lockId"/>
+        </in-parameters>
+    </service>
+    <service verb="remove" noun="CardPermanentLock" type="java" location="com.netvariant.banqio.card.CardLockService" method="removeCardPermanentLock">
+        <in-parameters>
+            <parameter name="lockId"/>
+        </in-parameters>
+    </service>
+
+    <!-- Card status L10n -->
+    <service verb="find" noun="CardStatusL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.card.CardStatus"/>
+            <service-call name="commons.entity.EntityServices.find#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="create" noun="CardStatusL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.card.CardStatus"/>
+            <service-call name="commons.entity.EntityServices.create#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="update" noun="CardStatusL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.card.CardStatus"/>
+            <service-call name="commons.entity.EntityServices.update#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="delete" noun="CardStatusL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="localized"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.card.CardStatus"/>
+            <service-call name="commons.entity.EntityServices.delete#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+
+    <!-- API -->
+    <service verb="find" noun="CreditCard" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="cardId"/>
+            <parameter name="currencyId"/>
+            <parameter name="typeId"/>
+            <parameter name="statusId"/>
+            <parameter name="brandId"/>
+            <parameter name="permissionTypeEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="cardList" type="List">
+                <parameter name="card" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="cardId"/>
+                    <parameter name="cardNumber"/>
+                    <parameter name="accountNumber"/>
+                    <parameter name="embossedName"/>
+                    <parameter name="typeId"/>
+                    <parameter name="typeName"/>
+                    <parameter name="typeBehaviourEnumId"/>
+                    <parameter name="statusId"/>
+                    <parameter name="statusName"/>
+                    <parameter name="statusBehaviourEnumId"/>
+                    <parameter name="brandId"/>
+                    <parameter name="brandName"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="issuanceDate" type="Date"/>
+                    <parameter name="activationDate" type="Date"/>
+                    <parameter name="expiryDate" type="Date"/>
+                    <parameter name="lastTransactionDate" type="Date"/>
+                    <parameter name="nextStatementDate" type="Date"/>
+                    <parameter name="paymentDueDate" type="Date"/>
+                    <parameter name="creditLimit" type="Double"/>
+                    <parameter name="creditLimitLocal" type="Double"/>
+                    <parameter name="cashLimit" type="Double"/>
+                    <parameter name="cashLimitLocal" type="Double"/>
+                    <parameter name="availableCreditAmount" type="Double"/>
+                    <parameter name="availableCreditAmountLocal" type="Double"/>
+                    <parameter name="availableCashAmount" type="Double"/>
+                    <parameter name="availableCashAmountLocal" type="Double"/>
+                    <parameter name="totalDueAmount" type="Double"/>
+                    <parameter name="totalDueAmountLocal" type="Double"/>
+                    <parameter name="minimumDueAmount" type="Double"/>
+                    <parameter name="minimumDueAmountLocal" type="Double"/>
+                    <parameter name="overdueAmount" type="Double"/>
+                    <parameter name="overdueAmountLocal" type="Double"/>
+                    <parameter name="pendingTransactionAmount" type="Double"/>
+                    <parameter name="pendingTransactionAmountLocal" type="Double"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="CreditCardTransaction" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="cardId"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+            <parameter name="fromAmount" type="Double"/>
+            <parameter name="toAmount" type="Double"/>
+            <parameter name="typeId"/>
+            <parameter name="orderByField"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="transactionList" type="List">
+                <parameter name="transaction" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="transactionId"/>
+                    <parameter name="typeId"/>
+                    <parameter name="typeName"/>
+                    <parameter name="typeBehaviourEnumId"/>
+                    <parameter name="amount" type="Double"/>
+                    <parameter name="amountLocal" type="Double"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="cardNumber"/>
+                    <parameter name="cardBalance" type="Double"/>
+                    <parameter name="cardBalanceLocal" type="Double"/>
+                    <parameter name="postingDate" type="Date"/>
+                    <parameter name="valueDate" type="Date"/>
+                    <parameter name="narrative"/>
+                    <parameter name="merchant"/>
+                    <parameter name="drCrIndicator"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="CreditCardPin" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="cardId"/>
+            <parameter name="expiryDate"/>
+            <parameter name="oldPin"/>
+            <parameter name="newPin"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="customerId"/>
+            <parameter name="cardNumber"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="CreditCardStatus" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="cardId"/>
+            <parameter name="statusId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="customerId"/>
+            <parameter name="cardNumber"/>
+            <parameter name="statusId"/>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="OfficialCreditCardStatement" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="cardId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="statementList" type="List">
+                <parameter name="statement" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="statementId"/>
+                    <parameter name="cardId"/>
+                    <parameter name="cardNumber"/>
+                    <parameter name="issuanceDate" type="Date"/>
+                    <parameter name="startDate" type="Date"/>
+                    <parameter name="endDate" type="Date"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="download" noun="OfficialCreditCardStatement" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="cardId"/>
+            <parameter name="statementId"/>
+        </in-parameters>
+    </service>
+    <service verb="find" noun="DebitCard" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="cardId"/>
+            <parameter name="currencyId"/>
+            <parameter name="typeId"/>
+            <parameter name="statusId"/>
+            <parameter name="brandId"/>
+            <parameter name="permissionTypeEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="cardList" type="List">
+                <parameter name="card" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="cardId"/>
+                    <parameter name="cardNumber"/>
+                    <parameter name="accountNumber"/>
+                    <parameter name="embossedName"/>
+                    <parameter name="typeId"/>
+                    <parameter name="typeName"/>
+                    <parameter name="typeBehaviourEnumId"/>
+                    <parameter name="statusId"/>
+                    <parameter name="statusName"/>
+                    <parameter name="statusBehaviourEnumId"/>
+                    <parameter name="brandId"/>
+                    <parameter name="brandName"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="issuanceDate" type="Date"/>
+                    <parameter name="activationDate" type="Date"/>
+                    <parameter name="expiryDate" type="Date"/>
+                    <parameter name="pointOfSaleLimit" type="Double"/>
+                    <parameter name="pointOfSaleLimitLocal" type="Double"/>
+                    <parameter name="cashWithdrawalLimit" type="Double"/>
+                    <parameter name="cashWithdrawalLimitLocal" type="Double"/>
+                    <parameter name="availableAmount" type="Double"/>
+                    <parameter name="availableAmountLocal" type="Double"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="DebitCardStatus" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="cardId"/>
+            <parameter name="statusId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="customerId"/>
+            <parameter name="cardNumber"/>
+            <parameter name="statusId"/>
+        </out-parameters>
+    </service>
+
+</services>

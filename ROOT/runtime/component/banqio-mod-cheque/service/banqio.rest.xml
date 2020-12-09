@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/rest-api-2.1.xsd"
+          name="cheque"
+          displayName="Cheque REST API"
+          version="1.0.0">
+
+    <resource name="chequeType" description="Cheque Type API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.cheque.ChequeServices.find#ChequeType"/>
+        </method>
+        <method type="post">
+            <service name="banqio.cheque.ChequeServices.create#ChequeType"/>
+        </method>
+        <method type="patch">
+            <service name="banqio.cheque.ChequeServices.update#ChequeType"/>
+        </method>
+        <resource name="localization">
+            <method type="get">
+                <service name="banqio.cheque.ChequeServices.find#ChequeTypeL10n"/>
+            </method>
+            <method type="post">
+                <service name="banqio.cheque.ChequeServices.create#ChequeTypeL10n"/>
+            </method>
+            <method type="patch">
+                <service name="banqio.cheque.ChequeServices.update#ChequeTypeL10n"/>
+            </method>
+            <method type="delete">
+                <service name="banqio.cheque.ChequeServices.delete#ChequeTypeL10n"/>
+            </method>
+        </resource>
+    </resource>
+    <resource name="chequeStatus" description="Cheque Status API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.cheque.ChequeServices.find#ChequeStatus"/>
+        </method>
+        <method type="post">
+            <service name="banqio.cheque.ChequeServices.create#ChequeStatus"/>
+        </method>
+        <method type="patch">
+            <service name="banqio.cheque.ChequeServices.update#ChequeStatus"/>
+        </method>
+        <resource name="localization">
+            <method type="get">
+                <service name="banqio.cheque.ChequeServices.find#ChequeStatusL10n"/>
+            </method>
+            <method type="post">
+                <service name="banqio.cheque.ChequeServices.create#ChequeStatusL10n"/>
+            </method>
+            <method type="patch">
+                <service name="banqio.cheque.ChequeServices.update#ChequeStatusL10n"/>
+            </method>
+            <method type="delete">
+                <service name="banqio.cheque.ChequeServices.delete#ChequeStatusL10n"/>
+            </method>
+        </resource>
+    </resource>
+
+</resource>

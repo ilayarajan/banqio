@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- App branding -->
+    <CommonsAppBranding appId="ADM" primaryColor="#0096C8" titleColor="#0096C8" loginLogoSize="200" loginLogoBackgroundColor="#FFFFFF"/>
+    <CommonsAppBranding appId="PPL" primaryColor="#0096C8" titleColor="#0096C8" loginLogoSize="200" loginLogoBackgroundColor="#FFFFFF"/>
+    <CommonsAppBranding appId="CRP" primaryColor="#0096C8" titleColor="#0096C8" loginLogoSize="200" loginLogoBackgroundColor="#FFFFFF"/>
+
+    <!-- General configuration -->
+    <CommonsConfig appId="COR" groupId="GENERAL" configurationId="BASE_GEO" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Base Country" description="Base country ISO 3166-1 alpha-3 code" defaultValue="LBN" definedValue="LBN"/>
+    <CommonsConfig appId="COR" groupId="GENERAL" configurationId="BASE_CCY" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Base Currency" description="Base currency ISO 4217 alphabetic code" defaultValue="USD" definedValue="USD"/>
+    <CommonsConfig appId="COR" groupId="GENERAL" configurationId="STORE_WS_CALLS" editorTypeEnumId="CONF_EDITOR_RADIO" configurationName="Store Web Service Calls" description="Store web service requests and responses" defaultValue="false" definedValue="false">
+        <options optionSeqId="1" optionValue="true" optionText="Yes"/>
+        <options optionSeqId="2" optionValue="false" optionText="No"/>
+    </CommonsConfig>
+    <CommonsConfig appId="COR" groupId="GENERAL" configurationId="CBS_DATE_GAP" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="CBS Date Gap" description="Number of days between the server and CBS dates" defaultValue="0" definedValue="0"/>
+    <CommonsConfig appId="COR" groupId="GENERAL" configurationId="WPS_SALARY_DATE_LIMIT" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="WPS Salary Date Limit" description="Number of past and future months allowed for WPS salary transfers" defaultValue="3" definedValue="3"/>
+    <CommonsConfig appId="COR" groupId="GENERAL" configurationId="PRTY_CONTACT_MECH_OPT" editorTypeEnumId="CONF_EDITOR_RADIO" configurationName="Optional Party Contact Mechanisms" description="Contact mechanisms are optional when creating a party" defaultValue="true" definedValue="true">
+        <options optionSeqId="1" optionValue="true" optionText="Yes"/>
+        <options optionSeqId="2" optionValue="false" optionText="No"/>
+    </CommonsConfig>
+
+    <!-- Alert configuration -->
+    <CommonsConfig appId="COR" groupId="ALERT" configurationId="SMS_DISABLED" editorTypeEnumId="CONF_EDITOR_RADIO" configurationName="SMS Disabled" description="Disable outgoing SMS" defaultValue="false" definedValue="false">
+        <options optionSeqId="1" optionValue="true" optionText="Yes"/>
+        <options optionSeqId="2" optionValue="false" optionText="No"/>
+    </CommonsConfig>
+    <CommonsConfig appId="COR" groupId="ALERT" configurationId="EMAIL_DISABLED" editorTypeEnumId="CONF_EDITOR_RADIO" configurationName="Email Disabled" description="Disable outgoing Emails" defaultValue="false" definedValue="false">
+        <options optionSeqId="1" optionValue="true" optionText="Yes"/>
+        <options optionSeqId="2" optionValue="false" optionText="No"/>
+    </CommonsConfig>
+    <CommonsConfig appId="COM" configurationId="EMAIL_SERVICE_NAME" definedValue="banqio.connect.impl.AlertServices.send#Email"/>
+    <CommonsConfig appId="COM" configurationId="SMS_SERVICE_NAME" definedValue="banqio.connect.impl.AlertServices.send#Sms"/>
+
+    <!-- Security configuration -->
+    <CommonsConfig appId="COR" groupId="SECURITY" configurationId="USER_AUTO_APPROVE" editorTypeEnumId="CONF_EDITOR_RADIO" configurationName="User Auto Approval" description="Automatically approve new user accounts" defaultValue="false" definedValue="true">
+        <options optionSeqId="1" optionValue="true" optionText="Yes"/>
+        <options optionSeqId="2" optionValue="false" optionText="No"/>
+    </CommonsConfig>
+    <CommonsConfig appId="ADM" groupId="SECURITY" configurationId="ADM_USER_LOGIN_AUTH" editorTypeEnumId="CONF_EDITOR_RADIO" configurationName="User Login Authentication" description="Authenticate user login attempts" defaultValue="NONE" definedValue="NONE">
+        <options optionSeqId="1" optionValue="NONE" optionText="None"/>
+        <options optionSeqId="2" optionValue="SMS" optionText="SMS Code"/>
+        <options optionSeqId="3" optionValue="EMAIL" optionText="Email Code"/>
+        <options optionSeqId="4" optionValue="PREF" optionText="User Preference"/>
+    </CommonsConfig>
+    <CommonsConfig appId="ADM" groupId="SECURITY" configurationId="ADM_DEFAULT_OTP_CHANNEL" editorTypeEnumId="CONF_EDITOR_RADIO" configurationName="Default OTP Channel" description="Default OTP channel preference" defaultValue="SMS" definedValue="SMS">
+        <options optionSeqId="1" optionValue="SMS" optionText="SMS Code"/>
+        <options optionSeqId="2" optionValue="EMAIL" optionText="Email Code"/>
+        <options optionSeqId="3" optionValue="BOTH" optionText="Both"/>
+    </CommonsConfig>
+    <CommonsConfig appId="PPL" groupId="SECURITY" configurationId="PPL_USER_LOGIN_AUTH" editorTypeEnumId="CONF_EDITOR_RADIO" configurationName="User Login Authentication" description="Authenticate user login attempts" defaultValue="NONE" definedValue="NONE">
+        <options optionSeqId="1" optionValue="NONE" optionText="None"/>
+        <options optionSeqId="2" optionValue="SMS" optionText="SMS Code"/>
+        <options optionSeqId="3" optionValue="EMAIL" optionText="Email Code"/>
+        <options optionSeqId="4" optionValue="PREF" optionText="User Preference"/>
+    </CommonsConfig>
+    <CommonsConfig appId="PPL" groupId="SECURITY" configurationId="PPL_DEFAULT_OTP_CHANNEL" editorTypeEnumId="CONF_EDITOR_RADIO" configurationName="Default OTP Channel" description="Default OTP channel preference" defaultValue="SMS" definedValue="SMS">
+        <options optionSeqId="1" optionValue="SMS" optionText="SMS Code"/>
+        <options optionSeqId="2" optionValue="EMAIL" optionText="Email Code"/>
+        <options optionSeqId="3" optionValue="BOTH" optionText="Both"/>
+    </CommonsConfig>
+    <CommonsConfig appId="CRP" groupId="SECURITY" configurationId="CRP_USER_LOGIN_AUTH" editorTypeEnumId="CONF_EDITOR_RADIO" configurationName="User Login Authentication" description="Authenticate user login attempts" defaultValue="NONE" definedValue="NONE">
+        <options optionSeqId="1" optionValue="NONE" optionText="None"/>
+        <options optionSeqId="2" optionValue="SMS" optionText="SMS Code"/>
+        <options optionSeqId="3" optionValue="EMAIL" optionText="Email Code"/>
+        <options optionSeqId="4" optionValue="PREF" optionText="User Preference"/>
+    </CommonsConfig>
+    <CommonsConfig appId="CRP" groupId="SECURITY" configurationId="CRP_DEFAULT_OTP_CHANNEL" editorTypeEnumId="CONF_EDITOR_RADIO" configurationName="Default OTP Channel" description="Default OTP channel preference" defaultValue="SMS" definedValue="SMS">
+        <options optionSeqId="1" optionValue="SMS" optionText="SMS Code"/>
+        <options optionSeqId="2" optionValue="EMAIL" optionText="Email Code"/>
+        <options optionSeqId="3" optionValue="BOTH" optionText="Both"/>
+    </CommonsConfig>
+
+</entity-facade-xml>

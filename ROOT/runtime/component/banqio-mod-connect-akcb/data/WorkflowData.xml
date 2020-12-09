@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Plug workflow type services -->
+    <CommonsWfTypeService
+            workflowTypeId="WF_BEN"
+            serviceName="banqio.connect.impl.BeneficiaryServices.commit#Beneficiary"
+            displayName="Commit Beneficiary"
+            acceptsParameters="N"/>
+    <CommonsWfTypeService
+            workflowTypeId="WF_BEN"
+            serviceName="banqio.connect.impl.BeneficiaryServices.reject#Beneficiary"
+            displayName="Reject Beneficiary"
+            acceptsParameters="N"/>
+    <CommonsWfTypeService
+            workflowTypeId="WF_FT"
+            serviceName="banqio.connect.impl.FundsTransferServices.commit#FundsTransfer"
+            displayName="Commit Funds Transfer"
+            acceptsParameters="N"/>
+    <CommonsWfTypeService
+            workflowTypeId="WF_FT"
+            serviceName="banqio.connect.impl.FundsTransferServices.reject#FundsTransfer"
+            displayName="Reject Funds Transfer"
+            acceptsParameters="N"/>
+    <CommonsWfTypeService
+            workflowTypeId="WF_CHQ"
+            serviceName="banqio.connect.impl.ChequeServices.commit#ChequeBook"
+            displayName="Commit Cheque Book"
+            acceptsParameters="N"/>
+    <CommonsWfTypeService
+            workflowTypeId="WF_CHQ"
+            serviceName="banqio.connect.impl.ChequeServices.reject#ChequeBook"
+            displayName="Reject Cheque Book"
+            acceptsParameters="N"/>
+
+    <!-- Plug workflow type alert templates -->
+    <CommonsWfTypeAlertTpl workflowTypeId="WF_BEN" alertTemplateId="AtBenPend"/>
+    <CommonsWfTypeAlertTpl workflowTypeId="WF_BEN" alertTemplateId="AtBenAccept"/>
+    <CommonsWfTypeAlertTpl workflowTypeId="WF_BEN" alertTemplateId="AtBenReject"/>
+    <CommonsWfTypeAlertTpl workflowTypeId="WF_FT" alertTemplateId="AtFtPend"/>
+    <CommonsWfTypeAlertTpl workflowTypeId="WF_FT" alertTemplateId="AtFtAccept"/>
+    <CommonsWfTypeAlertTpl workflowTypeId="WF_FT" alertTemplateId="AtFtReject"/>
+    <CommonsWfTypeAlertTpl workflowTypeId="WF_FT" alertTemplateId="AtFtProcess"/>
+    <CommonsWfTypeAlertTpl workflowTypeId="WF_RPT" alertTemplateId="AtRptPend"/>
+    <CommonsWfTypeAlertTpl workflowTypeId="WF_RPT" alertTemplateId="AtRptAccept"/>
+    <CommonsWfTypeAlertTpl workflowTypeId="WF_RPT" alertTemplateId="AtRptReject"/>
+
+</entity-facade-xml>

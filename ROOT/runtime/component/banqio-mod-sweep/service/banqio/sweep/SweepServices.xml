@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Sweep Agreement-->
+    <service verb="find" noun="SweepAgreement" type="java" location="com.netvariant.banqio.sweep.AgreementService" method="findSweepAgreements">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.sweep.SweepAgreementDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="agreementList" type="List">
+                <parameter name="agreement" type="Map">
+                    <auto-parameters entity-name="banqio.sweep.SweepAgreementDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="SweepAgreementSecondaryAccount" type="java" location="com.netvariant.banqio.sweep.AgreementService" method="findSweepAgreementSecondaryAccounts">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.sweep.SweepSecondaryAccount"/>
+            <parameter name="agreementId"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="accountList" type="List">
+                <parameter name="account" type="Map">
+                    <auto-parameters entity-name="banqio.sweep.SweepSecondaryAccount"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="SweepAgreementRun" type="java" location="com.netvariant.banqio.sweep.AgreementService" method="findSweepAgreementRuns">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.sweep.SweepRun"/>
+            <parameter name="agreementId"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="agreementRunList" type="List">
+                <parameter name="agreementRun" type="Map">
+                    <auto-parameters entity-name="banqio.sweep.SweepRun"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+
+</services>

@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- User self service -->
+    <service verb="register" noun="User" type="java" location="com.netvariant.banqio.nucleus.UserSelfService" method="registerUser" authenticate="anonymous-all">
+        <in-parameters>
+            <parameter name="username"/>
+            <parameter name="password"/>
+            <parameter name="verifyPassword"/>
+            <parameter name="fullName"/>
+            <parameter name="emailAddress"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="userId"/>
+        </out-parameters>
+    </service>
+    <service verb="login" noun="User" type="java" location="com.netvariant.banqio.nucleus.UserSelfService" method="loginUser">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="sessionId"/>
+            <parameter name="sessionValidity"/>
+            <parameter name="sessionToken"/>
+            <parameter name="username"/>
+            <parameter name="userId"/>
+            <parameter name="userFullName"/>
+            <parameter name="userGroupIds" type="Set">
+                <parameter name="userGroupId"/>
+            </parameter>
+            <parameter name="externalIds" type="List">
+                <parameter name="externalId" type="Map"/>
+            </parameter>
+            <parameter name="languageLocale"/>
+            <parameter name="languageRtl"/>
+        </out-parameters>
+    </service>
+    <service verb="authenticate" noun="User" type="java" location="com.netvariant.banqio.nucleus.UserSelfService" method="authenticateUser">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="password"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="sessionId"/>
+            <parameter name="userId"/>
+            <parameter name="userGroupIds" type="Set">
+                <parameter name="userGroupId"/>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="logout" noun="User" type="java" location="com.netvariant.banqio.nucleus.UserSelfService" method="logoutUser">
+        <in-parameters/>
+        <out-parameters>
+            <parameter name="userId"/>
+        </out-parameters>
+    </service>
+    <service verb="poll" noun="UserSession" type="java" location="com.netvariant.banqio.nucleus.UserSelfService" method="pollUserSession">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="sessionId"/>
+            <parameter name="sessionValidity"/>
+            <parameter name="sessionToken"/>
+            <parameter name="workflowTasks"/>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="UserProfile" type="java" location="com.netvariant.banqio.nucleus.UserSelfService" method="findUserProfile">
+        <out-parameters>
+            <auto-parameters entity-name="banqio.party.PartyDetailExt">
+                <exclude field-name="partyTypeDescription"/>
+                <exclude field-name="maritalStatusDescription"/>
+                <exclude field-name="employmentStatusDescription"/>
+                <exclude field-name="residenceStatusDescription"/>
+                <exclude field-name="pseudoId"/>
+                <exclude field-name="partyTypeEnumId"/>
+                <exclude field-name="disabled"/>
+                <exclude field-name="customerStatusId"/>
+                <exclude field-name="externalId"/>
+                <exclude field-name="comments"/>
+                <exclude field-name="personalTitle"/>
+                <exclude field-name="nickname"/>
+                <exclude field-name="gender"/>
+                <exclude field-name="birthDate"/>
+                <exclude field-name="deceasedDate"/>
+                <exclude field-name="height"/>
+                <exclude field-name="weight"/>
+                <exclude field-name="maritalStatusEnumId"/>
+                <exclude field-name="employmentStatusEnumId"/>
+                <exclude field-name="residenceStatusEnumId"/>
+                <exclude field-name="occupation"/>
+                <exclude field-name="organizationName"/>
+                <exclude field-name="annualRevenue"/>
+                <exclude field-name="numEmployees"/>
+            </auto-parameters>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="UserPreference" type="java" location="com.netvariant.banqio.nucleus.UserSelfService" method="findUserPreferences">
+        <out-parameters>
+            <auto-parameters entity-name="moqui.security.UserPreference"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="UserProfile" type="java" location="com.netvariant.banqio.nucleus.UserSelfService" method="updateUserProfile">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="salutation"/>
+            <parameter name="firstName"/>
+            <parameter name="middleName"/>
+            <parameter name="lastName"/>
+            <parameter name="mothersMaidenName"/>
+            <parameter name="suffix"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="userId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="UserLanguage" type="java" location="com.netvariant.banqio.nucleus.UserSelfService" method="updateUserLanguage">
+        <in-parameters>
+            <parameter name="locale"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="locale"/>
+            <parameter name="rtl"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="UserOtpChannel" type="java" location="com.netvariant.banqio.nucleus.UserSelfService" method="updateUserOtpChannel">
+        <in-parameters>
+            <parameter name="otpChannel"/>
+        </in-parameters>
+    </service>
+    <service verb="change" noun="Password" type="java" location="com.netvariant.banqio.nucleus.UserSelfService" method="changePassword">
+        <in-parameters>
+            <parameter name="oldPassword"/>
+            <parameter name="newPassword"/>
+            <parameter name="newPasswordVerify"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="userId"/>
+        </out-parameters>
+    </service>
+    <service verb="reset" noun="Password" type="java" location="com.netvariant.banqio.nucleus.UserSelfService" method="resetPassword">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="username"/>
+        </in-parameters>
+    </service>
+    <service verb="change" noun="TemporaryPassword" type="java" location="com.netvariant.banqio.nucleus.UserSelfService" method="changeTemporaryPassword">
+        <in-parameters>
+            <parameter name="username"/>
+            <parameter name="oldPassword"/>
+            <parameter name="newPassword"/>
+            <parameter name="newPasswordVerify"/>
+        </in-parameters>
+    </service>
+
+    <!-- User -->
+    <service verb="find" noun="User" type="java" location="com.netvariant.banqio.nucleus.UserService" method="findUsers">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.security.UserAccount">
+                <exclude field-name="currentPassword"/>
+                <exclude field-name="resetPassword"/>
+                <exclude field-name="passwordSalt"/>
+                <exclude field-name="passwordHashType"/>
+                <exclude field-name="passwordBase64"/>
+                <exclude field-name="passwordSetDate"/>
+                <exclude field-name="passwordHint"/>
+                <exclude field-name="publicKey"/>
+                <exclude field-name="disabledDateTime"/>
+                <exclude field-name="successiveFailedLogins"/>
+                <exclude field-name="externalUserId"/>
+                <exclude field-name="ipAllowed"/>
+                <exclude field-name="migratedPassword"/>
+            </auto-parameters>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="userList" type="List">
+                <parameter name="user" type="Map">
+                    <auto-parameters entity-name="moqui.security.UserAccount">
+                        <exclude field-name="currentPassword"/>
+                        <exclude field-name="resetPassword"/>
+                        <exclude field-name="passwordSalt"/>
+                        <exclude field-name="passwordHashType"/>
+                        <exclude field-name="passwordBase64"/>
+                        <exclude field-name="passwordSetDate"/>
+                        <exclude field-name="passwordHint"/>
+                        <exclude field-name="publicKey"/>
+                        <exclude field-name="migratedPassword"/>
+                    </auto-parameters>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="User" type="java" location="com.netvariant.banqio.nucleus.UserService" method="createUser">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="username"/>
+            <parameter name="password"/>
+            <parameter name="passwordVerify"/>
+            <parameter name="fullName"/>
+            <parameter name="disabled"/>
+            <parameter name="partyId"/>
+            <parameter name="externalUserId"/>
+            <parameter name="userGroupId" type="Object"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="userId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="User" type="java" location="com.netvariant.banqio.nucleus.UserService" method="updateUser">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="userId"/>
+            <parameter name="username"/>
+            <parameter name="fullName"/>
+            <parameter name="disabled"/>
+            <parameter name="externalUserId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="userId"/>
+        </out-parameters>
+    </service>
+    <service verb="approve" noun="User" type="java" location="com.netvariant.banqio.nucleus.UserService" method="approveUser">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="userId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="userId"/>
+        </out-parameters>
+    </service>
+    <service verb="enable" noun="User" type="java" location="com.netvariant.banqio.nucleus.UserService" method="enableUser">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="userId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="userId"/>
+        </out-parameters>
+    </service>
+    <service verb="disable" noun="User" type="java" location="com.netvariant.banqio.nucleus.UserService" method="disableUser">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="userId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="userId"/>
+        </out-parameters>
+    </service>
+    <service verb="forceLogout" noun="User" type="java" location="com.netvariant.banqio.nucleus.UserService" method="forceLogoutUser">
+        <in-parameters>
+            <parameter name="userId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="userId"/>
+        </out-parameters>
+    </service>
+    <service verb="reset" noun="PasswordInternal" type="java" location="com.netvariant.banqio.nucleus.UserService" method="resetPassword">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="userId"/>
+            <parameter name="contactMechs"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="userId"/>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="UserEvent" type="java" location="com.netvariant.banqio.nucleus.UserService" method="findUserEvents">
+        <in-parameters>
+            <auto-parameters entity-name="commons.security.UserEventDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="eventList" type="List">
+                <parameter name="event" type="Map">
+                    <auto-parameters entity-name="commons.security.UserEventDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="validate" noun="UserExternalId" type="java" location="com.netvariant.banqio.nucleus.UserService" method="validateUserExternalId">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="externalId"/>
+        </in-parameters>
+    </service>
+    <service verb="validate" noun="UserAuthenticated" type="java" location="com.netvariant.banqio.nucleus.UserService" method="validateUserAuthenticated">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+        </in-parameters>
+    </service>
+    <service verb="find" noun="UserAcl" type="java" location="com.netvariant.banqio.nucleus.UserService" method="findUserAcls">
+        <in-parameters>
+            <auto-parameters entity-name="commons.security.ObjectAclDetail"/>
+            <parameter name="userId"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="userAclList" type="List">
+                <parameter name="userAcl" type="Map">
+                    <auto-parameters entity-name="commons.security.ObjectAclDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="UserAcl" type="java" location="com.netvariant.banqio.nucleus.UserService" method="createUserAcl">
+        <in-parameters>
+            <parameter name="userId"/>
+            <parameter name="objectId"/>
+            <parameter name="objectTypeEnumId"/>
+            <parameter name="permissionTypeEnumId"/>
+            <parameter name="position" type="Integer"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="itemId"/>
+        </out-parameters>
+    </service>
+    <service verb="position" noun="UserAcl" type="java" location="com.netvariant.banqio.nucleus.UserService" method="positionUserAcl">
+        <in-parameters>
+            <parameter name="itemId"/>
+            <parameter name="userId"/>
+            <parameter name="position" type="Integer"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="itemId"/>
+        </out-parameters>
+    </service>
+    <service verb="expire" noun="UserAcl" type="java" location="com.netvariant.banqio.nucleus.UserService" method="expireUserAcl">
+        <in-parameters>
+            <parameter name="itemId"/>
+            <parameter name="userId"/>
+        </in-parameters>
+    </service>
+    <service verb="find" noun="UserStats" type="java" location="com.netvariant.banqio.nucleus.UserService" method="findUserStats">
+        <in-parameters>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="activeUsers" type="Long"/>
+            <parameter name="pendingUsers" type="Long"/>
+            <parameter name="disabledUsers" type="Long"/>
+            <parameter name="totalUsers" type="Long"/>
+        </out-parameters>
+    </service>
+
+    <!-- User group -->
+    <service verb="find" noun="UserGroup" type="java" location="com.netvariant.banqio.nucleus.UserGroupService" method="findUserGroups">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.security.UserGroupDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="userGroupList" type="List">
+                <parameter name="userGroup" type="Map">
+                    <auto-parameters entity-name="banqio.security.UserGroupDetail">
+                        <exclude field-name="wikiLocation"/>
+                    </auto-parameters>
+                    <parameter name="wiki"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="UserGroup" type="java" location="com.netvariant.banqio.nucleus.UserGroupService" method="createUserGroup">
+        <in-parameters>
+            <parameter name="groupTypeEnumId"/>
+            <parameter name="description"/>
+            <parameter name="ipAllowed"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="userGroupId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="UserGroup" type="java" location="com.netvariant.banqio.nucleus.UserGroupService" method="updateUserGroup">
+        <in-parameters>
+            <parameter name="userGroupId"/>
+            <parameter name="groupTypeEnumId"/>
+            <parameter name="description"/>
+            <parameter name="ipAllowed"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="userGroupId"/>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="UserGroupAcl" type="java" location="com.netvariant.banqio.nucleus.UserGroupService" method="findUserGroupAcls">
+        <in-parameters>
+            <auto-parameters entity-name="commons.security.ObjectAclDetail"/>
+            <parameter name="userGroupId"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="userGroupAclList" type="List">
+                <parameter name="userGroupAcl" type="Map">
+                    <auto-parameters entity-name="commons.security.ObjectAclDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="UserGroupAcl" type="java" location="com.netvariant.banqio.nucleus.UserGroupService" method="createUserGroupAcl">
+        <in-parameters>
+            <parameter name="userGroupId"/>
+            <parameter name="objectId"/>
+            <parameter name="objectTypeEnumId"/>
+            <parameter name="permissionTypeEnumId"/>
+            <parameter name="position" type="Integer"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="itemId"/>
+        </out-parameters>
+    </service>
+    <service verb="position" noun="UserGroupAcl" type="java" location="com.netvariant.banqio.nucleus.UserGroupService" method="positionUserGroupAcl">
+        <in-parameters>
+            <parameter name="itemId"/>
+            <parameter name="userGroupId"/>
+            <parameter name="position" type="Integer"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="itemId"/>
+        </out-parameters>
+    </service>
+    <service verb="expire" noun="UserGroupAcl" type="java" location="com.netvariant.banqio.nucleus.UserGroupService" method="expireUserGroupAcl">
+        <in-parameters>
+            <parameter name="itemId"/>
+            <parameter name="userGroupId"/>
+        </in-parameters>
+    </service>
+    <service verb="find" noun="UserGroupWorkflowInitiator" type="java" location="com.netvariant.banqio.nucleus.UserGroupService" method="findUserGroupWorkflowInitiators">
+        <in-parameters>
+            <parameter name="userGroupId"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="workflowInitiatorList" type="List">
+                <parameter name="workflowInitiator" type="Map">
+                    <auto-parameters entity-name="commons.workflow.WorkflowInitiatorDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+
+    <!-- User group member -->
+    <service verb="find" noun="UserGroupMember" type="java" location="com.netvariant.banqio.nucleus.UserGroupService" method="findUserGroupMembers">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.security.UserGroupMemberDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="userGroupMemberList" type="List">
+                <parameter name="userGroupMember" type="Map">
+                    <auto-parameters entity-name="banqio.security.UserGroupMemberDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="UserGroupMember" type="java" location="com.netvariant.banqio.nucleus.UserGroupService" method="createUserGroupMember">
+        <in-parameters>
+            <parameter name="userGroupId"/>
+            <parameter name="userId"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="userId"/>
+            <parameter name="userGroupId"/>
+        </out-parameters>
+    </service>
+    <service verb="expire" noun="UserGroupMember" type="java" location="com.netvariant.banqio.nucleus.UserGroupService" method="expireUserGroupMember">
+        <in-parameters>
+            <parameter name="userId"/>
+            <parameter name="userGroupId"/>
+            <parameter name="fromDate"/>
+        </in-parameters>
+    </service>
+
+</services>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml>
+
+    <moqui.service.job.ServiceJob
+            jobName="run_UpdateBulkFundsTransfers_frequent"
+            description="Update bulk funds transfers"
+            serviceName="banqio.connect.impl.InternalServices.update#BulkFundsTransfers"
+            cronExpression="* 0/30 * * * ?"
+            paused="Y"/>
+    <moqui.service.job.ServiceJob
+            jobName="dequeue_FundsTransfers_daily"
+            description="Dequeue funds transfers"
+            serviceName="banqio.connect.impl.InternalServices.dequeue#FundsTransfers"
+            cronExpression="30 8 * * * ?"
+            paused="Y"/>
+    <moqui.service.job.ServiceJob
+            jobName="update_cheque_book_statuses"
+            description="Updates cheque book statuses"
+            serviceName="banqio.connect.impl.InternalServices.update#ChequeBooks"
+            cronExpression="0 0/5 0 ? * * *"
+            paused="Y"/>
+
+</entity-facade-xml>

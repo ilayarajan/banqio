@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <!-- Beneficiary -->
+    <entity entity-name="BeneficiaryType" package="banqio.beneficiary" short-alias="BanqioBenType">
+        <field name="typeId" type="id" is-pk="true"/>
+        <field name="parentTypeId" type="id"/>
+        <field name="externalTypeId" type="text-medium"/>
+        <field name="typeName" type="text-medium" enable-localization="true"/>
+        <field name="typeBehaviourEnumId" type="id"/>
+        <field name="inputNotes" type="text-long"/>
+        <field name="reviewNotes" type="text-long"/>
+        <field name="position" type="number-integer" default="0"/>
+        <field name="disabled" type="text-indicator"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one-nofk" related="banqio.beneficiary.BeneficiaryType" short-alias="parentType">
+            <key-map field-name="parentTypeId"/>
+        </relationship>
+        <relationship type="one" title="BeneficiaryTypeBehaviour" related="moqui.basic.Enumeration" short-alias="typeBehaviour">
+            <key-map field-name="typeBehaviourEnumId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="BEN_TYPE_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="BEN_TYPE_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+
+        <index name="beneficiaryTypeIdx1" unique="true">
+            <index-field name="externalTypeId"/>
+        </index>
+    </entity>
+    <entity entity-name="Beneficiary" package="banqio.beneficiary" short-alias="BanqioBen">
+        <field name="beneficiaryId" type="id" is-pk="true"/>
+        <field name="appId" type="id"/>
+        <field name="typeId" type="id"/>
+        <field name="statusId" type="id"/>
+        <field name="preferredCurrencyId" type="id"/>
+        <field name="customerId" type="text-medium"/>
+        <field name="externalBeneficiaryId" type="text-medium"/>
+        <field name="beneficiaryName" type="text-medium"/>
+        <field name="nickname" type="text-medium"/>
+        <field name="accountNumber" type="text-medium"/>
+        <field name="iban" type="text-medium"/>
+        <field name="swiftCode" type="text-medium"/>
+        <field name="intermediarySwiftCode" type="text-medium"/>
+        <field name="localCode" type="text-medium">
+            <description>This field may be used to store local codes for specific countries such as: IFSC (India), Sort Code (UK), Transit Number (Canada), Routing Number (USA)</description>
+        </field>
+        <field name="disabled" type="text-indicator"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="activationDate" type="date-time"/>
+        <field name="lastTransactionDate" type="date-time"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" related="commons.server.App" short-alias="app">
+            <key-map field-name="appId"/>
+        </relationship>
+        <relationship type="one" related="banqio.beneficiary.BeneficiaryType" short-alias="beneficiaryType">
+            <key-map field-name="typeId"/>
+        </relationship>
+        <relationship type="one" related="moqui.basic.StatusItem" short-alias="beneficiaryStatus">
+            <key-map field-name="statusId"/>
+        </relationship>
+        <relationship type="one-nofk" related="moqui.basic.Uom" short-alias="preferredCurrency">
+            <key-map field-name="preferredCurrencyId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="BEN_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="BEN_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="BeneficiaryAddress" package="banqio.beneficiary" short-alias="BanqioBenAddr">
+        <field name="beneficiaryId" type="id" is-pk="true"/>
+        <field name="address1" type="text-medium"/>
+        <field name="address2" type="text-medium"/>
+        <field name="district" type="text-medium"/>
+        <field name="city" type="text-medium"/>
+        <field name="province" type="text-medium"/>
+        <field name="countryGeoId" type="id"/>
+        <field name="postalCode" type="text-medium"/>
+        <field name="postalCodeExt" type="text-medium"/>
+        <field name="postOfficeBox" type="text-medium"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+
+        <relationship type="one" related="banqio.beneficiary.Beneficiary" short-alias="beneficiary">
+            <key-map field-name="beneficiaryId"/>
+        </relationship>
+        <relationship type="one" title="Country" related="moqui.basic.Geo" short-alias="country">
+            <key-map field-name="countryGeoId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="BeneficiaryContactMech" package="banqio.beneficiary">
+        <field name="contactMechId" type="id" is-pk="true"/>
+        <field name="beneficiaryId" type="id"/>
+        <field name="contactMechTypeEnumId" type="id"/>
+        <field name="infoString" type="text-medium"/>
+        <field name="fromDate" type="date-time"/>
+        <field name="toDate" type="date-time"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+
+        <relationship type="one" related="moqui.basic.Enumeration" short-alias="contactMechType">
+            <key-map field-name="contactMechTypeEnumId"/>
+        </relationship>
+        <relationship type="one" related="banqio.beneficiary.Beneficiary">
+            <key-map field-name="beneficiaryId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="BeneficiaryTelecomNumber" package="banqio.beneficiary">
+        <field name="contactMechId" type="id" is-pk="true"/>
+        <field name="countryCode" type="text-short"/>
+        <field name="extension" type="text-short"/>
+        <field name="areaCode" type="text-short"/>
+        <field name="contactNumber" type="text-short"/>
+
+        <relationship type="one" related="banqio.beneficiary.BeneficiaryContactMech">
+            <key-map field-name="contactMechId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="BeneficiaryTag" package="banqio.beneficiary">
+        <field name="userId" type="id" is-pk="true"/>
+        <field name="beneficiaryId" type="id"/>
+        <field name="tag" type="text-medium"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+
+        <relationship type="one" related="banqio.beneficiary.Beneficiary" short-alias="beneficiary">
+            <key-map field-name="beneficiaryId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount">
+            <key-map field-name="userId"/>
+        </relationship>
+
+        <index name="beneficiaryTagIdx1">
+            <index-field name="beneficiaryId"/>
+        </index>
+    </entity>
+
+</entities>

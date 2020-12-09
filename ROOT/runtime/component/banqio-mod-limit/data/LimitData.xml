@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Limit type -->
+    <moqui.basic.EnumerationType enumTypeId="LimitType" description="Limit Type"/>
+    <moqui.basic.Enumeration enumTypeId="LimitType" enumId="LMT_TYPE_GENERAL" description="General Transfer Limit" sequenceNum="1"/>
+    <moqui.basic.Enumeration enumTypeId="LimitType" enumId="LMT_TYPE_ORG" description="Organization Transfer Limit" sequenceNum="2"/>
+    <moqui.basic.Enumeration enumTypeId="LimitType" enumId="LMT_TYPE_USER_GRP" description="User Group Transfer Limit" sequenceNum="3"/>
+    <moqui.basic.Enumeration enumTypeId="LimitType" enumId="LMT_TYPE_USER" description="User Transfer Limit" sequenceNum="4"/>
+    <moqui.basic.Enumeration enumTypeId="LimitType" enumId="LMT_TYPE_ACCT" description="Account Transfer Limit" sequenceNum="5"/>
+    <moqui.basic.Enumeration enumTypeId="LimitType" enumId="LMT_TYPE_BEN" description="Beneficiary Transfer Limit" sequenceNum="6"/>
+
+</entity-facade-xml>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Cheque type behaviour -->
+    <moqui.basic.EnumerationType enumTypeId="ChequeTypeBehaviour" description="Cheque Type Behaviour"/>
+    <moqui.basic.Enumeration enumTypeId="ChequeTypeBehaviour" enumId="CHQ_TYPE_BEARER" description="Bearer Cheque"/>
+    <moqui.basic.Enumeration enumTypeId="ChequeTypeBehaviour" enumId="CHQ_TYPE_ORDER" description="Order Cheque"/>
+    <moqui.basic.Enumeration enumTypeId="ChequeTypeBehaviour" enumId="CHQ_TYPE_CROSSED" description="Crossed Cheque"/>
+    <moqui.basic.Enumeration enumTypeId="ChequeTypeBehaviour" enumId="CHQ_TYPE_PDC" description="Post-Dated Cheque"/>
+
+    <!-- Cheque status behaviour -->
+    <moqui.basic.EnumerationType enumTypeId="ChequeStatusBehaviour" description="Cheque Status Behaviour"/>
+    <moqui.basic.Enumeration enumTypeId="ChequeStatusBehaviour" enumId="CHQ_STAT_BLANK" description="Blank"/>
+    <moqui.basic.Enumeration enumTypeId="ChequeStatusBehaviour" enumId="CHQ_STAT_ISSUE" description="Issued"/>
+    <moqui.basic.Enumeration enumTypeId="ChequeStatusBehaviour" enumId="CHQ_STAT_CLEAR" description="Cleared"/>
+    <moqui.basic.Enumeration enumTypeId="ChequeStatusBehaviour" enumId="CHQ_STAT_REJECT" description="Rejected"/>
+    <moqui.basic.Enumeration enumTypeId="ChequeStatusBehaviour" enumId="CHQ_STAT_CANCEL" description="Cancelled"/>
+    <moqui.basic.Enumeration enumTypeId="ChequeStatusBehaviour" enumId="CHQ_STAT_EXPIRED" description="Expired"/>
+    <moqui.basic.Enumeration enumTypeId="ChequeStatusBehaviour" enumId="CHQ_STAT_LOST" description="Lost"/>
+
+    <!-- Cheque delivery method -->
+    <moqui.basic.EnumerationType enumTypeId="ChequeDeliveryMethod" description="Cheque Delivery Method"/>
+    <moqui.basic.Enumeration enumTypeId="ChequeDeliveryMethod" enumId="CHQ_DELIVER_HOME" description="Home Address"/>
+    <moqui.basic.Enumeration enumTypeId="ChequeDeliveryMethod" enumId="CHQ_DELIVER_RM" description="Relationship Manager"/>
+    <moqui.basic.Enumeration enumTypeId="ChequeDeliveryMethod" enumId="CHQ_DELIVER_BRANCH" description="Bank Branch"/>
+
+    <!-- Cheque book status -->
+    <moqui.basic.StatusType statusTypeId="ChequeBook" description="Cheque Book Status"/>
+    <moqui.basic.StatusItem statusTypeId="ChequeBook" statusId="CHQ_BOOK_DRAFT" description="Draft"/>
+    <moqui.basic.StatusItem statusTypeId="ChequeBook" statusId="CHQ_BOOK_CANCELLED" description="Cancelled"/>
+    <moqui.basic.StatusItem statusTypeId="ChequeBook" statusId="CHQ_BOOK_PROPOSED" description="Proposed"/>
+    <moqui.basic.StatusItem statusTypeId="ChequeBook" statusId="CHQ_BOOK_SUBMITTED" description="Submitted"/>
+    <moqui.basic.StatusItem statusTypeId="ChequeBook" statusId="CHQ_BOOK_REJECTED" description="Rejected"/>
+
+    <!-- Cheque book status flow -->
+    <moqui.basic.StatusFlow statusFlowId="ChequeBookStatusFlow" statusTypeId="ChequeBook" description="Cheque Book Status Flow"/>
+    <moqui.basic.StatusFlowItem statusFlowId="ChequeBookStatusFlow" statusId="CHQ_BOOK_DRAFT" isInitial="Y"/>
+    <moqui.basic.StatusFlowItem statusFlowId="ChequeBookStatusFlow" statusId="CHQ_BOOK_CANCELLED" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="ChequeBookStatusFlow" statusId="CHQ_BOOK_PROPOSED" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="ChequeBookStatusFlow" statusId="CHQ_BOOK_SUBMITTED" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="ChequeBookStatusFlow" statusId="CHQ_BOOK_REJECTED" isInitial="N"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="ChequeBookStatusFlow" statusId="CHQ_BOOK_DRAFT" toStatusId="CHQ_BOOK_CANCELLED" transitionSequence="1" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="ChequeBookStatusFlow" statusId="CHQ_BOOK_DRAFT" toStatusId="CHQ_BOOK_PROPOSED" transitionSequence="2" transitionName="Propose"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="ChequeBookStatusFlow" statusId="CHQ_BOOK_PROPOSED" toStatusId="CHQ_BOOK_CANCELLED" transitionSequence="1" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="ChequeBookStatusFlow" statusId="CHQ_BOOK_PROPOSED" toStatusId="CHQ_BOOK_SUBMITTED" transitionSequence="2" transitionName="Submit"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="ChequeBookStatusFlow" statusId="CHQ_BOOK_PROPOSED" toStatusId="CHQ_BOOK_REJECTED" transitionSequence="3" transitionName="Reject"/>
+    
+</entity-facade-xml>

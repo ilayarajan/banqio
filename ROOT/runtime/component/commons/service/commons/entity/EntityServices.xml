@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Entity field -->
+    <service verb="find" noun="EntityField" type="java" location="com.netvariant.commons.entity.EntityFieldService" method="findEntityFields">
+        <in-parameters>
+            <auto-parameters entity-name="commons.entity.EntityFieldDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="entityFieldList" type="List">
+                <parameter name="entityField" type="Map">
+                    <auto-parameters entity-name="commons.entity.EntityFieldDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="EntityFieldComparisonOperator" type="java" location="com.netvariant.commons.entity.EntityFieldService" method="findEntityFieldComparisonOperators">
+        <in-parameters>
+            <parameter name="fieldId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="operatorList" type="List">
+                <parameter name="operator" type="Map">
+                    <auto-parameters entity-name="moqui.basic.Enumeration"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+
+    <!-- Localized entity field -->
+    <service verb="find" noun="LocalizedEntityField" type="java" location="com.netvariant.commons.entity.LocalizedEntityFieldService" method="findLocalizedEntityFields">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="LocalizedEntityField" type="java" location="com.netvariant.commons.entity.LocalizedEntityFieldService" method="createLocalizedEntityField">
+        <in-parameters>
+            <parameter name="entityName"/>
+            <parameter name="fieldName"/>
+            <parameter name="pkValue"/>
+            <parameter name="locale"/>
+            <parameter name="localized"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="entityName"/>
+            <parameter name="fieldName"/>
+            <parameter name="pkValue"/>
+            <parameter name="locale"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="LocalizedEntityField" type="java" location="com.netvariant.commons.entity.LocalizedEntityFieldService" method="updateLocalizedEntityField">
+        <in-parameters>
+            <parameter name="entityName"/>
+            <parameter name="fieldName"/>
+            <parameter name="pkValue"/>
+            <parameter name="locale"/>
+            <parameter name="localized"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="entityName"/>
+            <parameter name="fieldName"/>
+            <parameter name="pkValue"/>
+            <parameter name="locale"/>
+        </out-parameters>
+    </service>
+    <service verb="delete" noun="LocalizedEntityField" type="java" location="com.netvariant.commons.entity.LocalizedEntityFieldService" method="deleteLocalizedEntityField">
+        <in-parameters>
+            <parameter name="entityName"/>
+            <parameter name="fieldName"/>
+            <parameter name="pkValue"/>
+            <parameter name="locale"/>
+        </in-parameters>
+    </service>
+
+</services>

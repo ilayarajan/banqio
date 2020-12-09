@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Object ACL -->
+    <service verb="check" noun="ObjectAccess" type="java" location="com.netvariant.commons.security.ObjectAclService" method="checkObjectAccess">
+        <description>
+            Checks access to the specified object. This service is for ACL checking only and does not raise any errors.
+        </description>
+        <in-parameters>
+            <parameter name="objectId"/>
+            <parameter name="objectTypeEnumId"/>
+            <parameter name="permissionTypeEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="allowed" type="Boolean"/>
+            <parameter name="itemId"/>
+        </out-parameters>
+    </service>
+    <service verb="validate" noun="ObjectAccess" type="java" location="com.netvariant.commons.security.ObjectAclService" method="validateObjectAccess">
+        <description>
+            Validates access to the specified object. This service checks the user ACL and then user group ACL and raises an error if the user is not allowed to access the object.
+        </description>
+        <in-parameters>
+            <parameter name="objectId"/>
+            <parameter name="objectTypeEnumId"/>
+            <parameter name="permissionTypeEnumId"/>
+        </in-parameters>
+    </service>
+
+    <!-- Password -->
+    <service verb="generate" noun="Password" type="java" location="com.netvariant.commons.security.PasswordService" method="generatePassword">
+        <description>
+            Generates a new random password based on the password policy.
+        </description>
+        <out-parameters>
+            <parameter name="password"/>
+        </out-parameters>
+    </service>
+    <service verb="validate" noun="Password" type="java" location="com.netvariant.commons.security.PasswordService" method="validatePassword">
+        <description>
+            Validates the current user password.
+        </description>
+        <in-parameters>
+            <parameter name="password"/>
+        </in-parameters>
+    </service>
+    <service verb="generate" noun="OneTimePassword" type="java" location="com.netvariant.commons.security.PasswordService" method="generateOneTimePassword">
+        <description>
+            Generates a random one time password for the current user.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="sendEmail" type="Boolean" default="false"/>
+            <parameter name="sendSms" type="Boolean" default="false"/>
+        </in-parameters>
+    </service>
+    <service verb="validate" noun="OneTimePassword" type="java" location="com.netvariant.commons.security.PasswordService" method="validateOneTimePassword">
+        <description>
+            Validates the current user one time password.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="password"/>
+        </in-parameters>
+    </service>
+
+    <!-- Encryption -->
+    <service verb="encrypt" noun="Text" type="java" location="com.netvariant.commons.security.EncryptionService" method="encryptText">
+        <description>
+            Encrypts the specified text using the configured secret key and transformation.
+        </description>
+        <in-parameters>
+            <parameter name="plainText"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="encryptedText"/>
+        </out-parameters>
+    </service>
+    <service verb="decrypt" noun="Text" type="java" location="com.netvariant.commons.security.EncryptionService" method="decryptText">
+        <description>
+            Decrypt the specified text using the configured secret key and transformation.
+        </description>
+        <in-parameters>
+            <parameter name="encryptedText"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="plainText"/>
+        </out-parameters>
+    </service>
+
+</services>

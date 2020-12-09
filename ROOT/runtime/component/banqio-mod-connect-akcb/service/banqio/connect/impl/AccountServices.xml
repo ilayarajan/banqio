@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Account -->
+    <service verb="find" noun="Account" type="java" location="com.netvariant.banqio.connect.impl.AccountServiceRelay" method="findAccounts">
+        <implements service="banqio.account.AccountServices.find#Account"/>
+    </service>
+    <service verb="find" noun="AccountTransaction" type="java" location="com.netvariant.banqio.connect.impl.AccountServiceRelay" method="findAccountTransactions">
+        <implements service="banqio.account.AccountServices.find#AccountTransaction"/>
+    </service>
+    <service verb="download" noun="AccountTransactions" type="java" location="com.netvariant.banqio.connect.impl.AccountServiceRelay" method="downloadAccountTransactions">
+        <implements service="banqio.account.AccountServices.download#AccountTransactions"/>
+    </service>
+    <service verb="find" noun="OfficialAccountStatement" type="java" location="com.netvariant.banqio.connect.impl.AccountServiceRelay" method="findOfficialAccountStatements">
+        <implements service="banqio.account.AccountServices.find#OfficialAccountStatement"/>
+    </service>
+    <service verb="download" noun="OfficialAccountStatement" type="java" location="com.netvariant.banqio.connect.impl.AccountServiceRelay" method="downloadOfficialAccountStatement">
+        <implements service="banqio.account.AccountServices.download#OfficialAccountStatement"/>
+    </service>
+    <service verb="find" noun="Mt940AccountStatement" type="java" location="com.netvariant.banqio.connect.impl.AccountServiceRelay" method="findMt940AccountStatements">
+        <implements service="banqio.account.AccountServices.find#Mt940AccountStatement"/>
+    </service>
+    <service verb="download" noun="Mt940AccountStatement" type="java" location="com.netvariant.banqio.connect.impl.AccountServiceRelay" method="downloadMt940AccountStatement">
+        <implements service="banqio.account.AccountServices.download#Mt940AccountStatement"/>
+    </service>
+    <service verb="update" noun="AccountNickname" type="java" location="com.netvariant.banqio.connect.impl.AccountServiceRelay" method="updateAccountNickname">
+        <implements service="banqio.account.AccountServices.update#AccountNickname"/>
+    </service>
+    <service verb="find" noun="AccountTransactionAdvice" type="java" location="com.netvariant.banqio.connect.impl.AccountServiceRelay" method="findAccountTransactionAdvices">
+        <implements service="banqio.account.AccountServices.find#AccountTransactionAdvice"/>
+    </service>
+    <service verb="download" noun="AccountTransactionAdvice" type="java" location="com.netvariant.banqio.connect.impl.AccountServiceRelay" method="downloadAccountTransactionAdvice">
+        <implements service="banqio.account.AccountServices.download#AccountTransactionAdvice"/>
+    </service>
+
+</services>

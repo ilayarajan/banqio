@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <!-- Country -->
+    <entity entity-name="CountryHoliday" package="banqio.basic">
+        <field name="holidayId" type="id" is-pk="true"/>
+        <field name="geoId" type="id"/>
+        <field name="holidayName" type="text-medium"/>
+        <field name="fromDate" type="date"/>
+        <field name="toDate" type="date"/>
+        <field name="recurring" type="text-indicator"/>
+        <field name="disabled" type="text-indicator"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" related="moqui.basic.Geo" short-alias="geo">
+            <key-map field-name="geoId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="GEO_HOLIDAY_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="GEO_HOLIDAY_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="CountryWeekend" package="banqio.basic">
+        <field name="geoId" type="id" is-pk="true"/>
+        <field name="sunday" type="text-indicator"/>
+        <field name="monday" type="text-indicator"/>
+        <field name="tuesday" type="text-indicator"/>
+        <field name="wednesday" type="text-indicator"/>
+        <field name="thursday" type="text-indicator"/>
+        <field name="friday" type="text-indicator"/>
+        <field name="saturday" type="text-indicator"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" related="moqui.basic.Geo" short-alias="geo">
+            <key-map field-name="geoId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="GEO_WEEKEND_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="GEO_WEEKEND_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="CountryIbanFormat" package="banqio.basic" short-alias="BanqioIbanFormat">
+        <field name="geoId" type="id" is-pk="true"/>
+        <field name="ibanLength" type="number-integer"/>
+        <field name="bbanFormat" type="text-medium"/>
+        <field name="ibanFormat" type="text-medium"/>
+        <field name="checkDigitTypeId" type="id"/>
+        <field name="checkDigit" type="text-medium"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" related="moqui.basic.Geo" short-alias="geo">
+            <key-map field-name="geoId"/>
+        </relationship>
+        <relationship type="one" title="CheckDigitType" related="moqui.basic.Enumeration">
+            <key-map field-name="checkDigitTypeId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="GEO_IBAN_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="GEO_IBAN_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+    </entity>
+
+    <!-- Currency -->
+    <entity entity-name="CurrencyConfig" package="banqio.basic" short-alias="BanqioCyConfig">
+        <field name="uomId" type="id" is-pk="true"/>
+        <field name="fxRank" type="number-integer"/>
+        <field name="decimalDigits" type="number-integer"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+
+        <relationship type="one" related="moqui.basic.Uom" short-alias="uom">
+            <key-map field-name="uomId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="CurrencyHoliday" package="banqio.basic">
+        <field name="holidayId" type="id" is-pk="true"/>
+        <field name="uomId" type="id"/>
+        <field name="holidayName" type="text-medium"/>
+        <field name="fromDate" type="date"/>
+        <field name="toDate" type="date"/>
+        <field name="recurring" type="text-indicator"/>
+        <field name="disabled" type="text-indicator"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" related="moqui.basic.Uom" short-alias="uom">
+            <key-map field-name="uomId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="CCY_HOLIDAY_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="CCY_HOLIDAY_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="CurrencyWeekend" package="banqio.basic">
+        <field name="uomId" type="id" is-pk="true"/>
+        <field name="sunday" type="text-indicator"/>
+        <field name="monday" type="text-indicator"/>
+        <field name="tuesday" type="text-indicator"/>
+        <field name="wednesday" type="text-indicator"/>
+        <field name="thursday" type="text-indicator"/>
+        <field name="friday" type="text-indicator"/>
+        <field name="saturday" type="text-indicator"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" related="moqui.basic.Uom" short-alias="uom">
+            <key-map field-name="uomId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="CCY_WEEKEND_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="CCY_WEEKEND_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="CurrencyExchangeRate" package="banqio.basic" enable-audit-log="update">
+        <field name="exchangeRateId" type="id" is-pk="true"/>
+        <field name="baseCurrencyId" type="id"/>
+        <field name="quoteCurrencyId" type="id"/>
+        <field name="dataSourceId" type="id"/>
+        <field name="buyRate" type="number-decimal"/>
+        <field name="sellRate" type="number-decimal"/>
+        <field name="fromDate" type="date"/>
+        <field name="toDate" type="date"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+
+        <relationship type="one" related="moqui.basic.Uom" fk-name="CCY_FX_RATE_BASE_CCY_FK" short-alias="fromCurrency">
+            <key-map field-name="baseCurrencyId" related="uomId"/>
+        </relationship>
+        <relationship type="one" related="moqui.basic.Uom" fk-name="CCY_FX_RATE_QUOTE_CCY_FK" short-alias="toCurrency">
+            <key-map field-name="quoteCurrencyId" related="uomId"/>
+        </relationship>
+        <relationship type="one" related="moqui.basic.DataSource" short-alias="dataSource">
+            <key-map field-name="dataSourceId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="CurrencyApp" package="banqio.basic" short-alias="BanqioCyApp">
+        <field name="uomId" type="id" is-pk="true"/>
+        <field name="appId" type="id" is-pk="true"/>
+
+        <relationship type="one" related="moqui.basic.Uom" short-alias="uom">
+            <key-map field-name="uomId"/>
+        </relationship>
+        <relationship type="one" related="commons.server.App" short-alias="app">
+            <key-map field-name="appId"/>
+        </relationship>
+    </entity>
+
+</entities>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Bank API -->
+    <artifactGroups artifactGroupId="BNQ_BANK_API" description="Banqio Bank API">
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/bank/.*"/>
+    </artifactGroups>
+
+    <!-- Admin Banks (All) -->
+    <userGroups userGroupId="BNQ_ADM_BANK_ALL" description="Banqio Admin Banks (All)" groupTypeEnumId="BNQ_ADM_GRP" wikiLocation="component://banqio-mod-bank/wiki/BNQ_ADM_BANK_ALL.md">
+        <authz artifactGroupId="BNQ_BANK_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+    </userGroups>
+
+    <!-- Admin Banks (View) -->
+    <userGroups userGroupId="BNQ_ADM_BANK_VIEW" description="Banqio Admin Banks (View)" groupTypeEnumId="BNQ_ADM_GRP" wikiLocation="component://banqio-mod-bank/wiki/BNQ_ADM_BANK_VIEW.md">
+        <authz artifactGroupId="BNQ_BANK_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+    </userGroups>
+
+</entity-facade-xml>

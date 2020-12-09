@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Funds transfer currency type -->
+    <moqui.basic.EnumerationType enumTypeId="FundsTransferCurrencyType" description="Funds Transfer Currency Type"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferCurrencyType" enumId="FT_CCY_SAME" description="Same" sequenceNum="1"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferCurrencyType" enumId="FT_CCY_DIFF" description="Different" sequenceNum="2"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferCurrencyType" enumId="FT_CCY_EXPLICIT" description="Explicit" sequenceNum="3"/>
+
+    <!-- Funds transfer posting type -->
+    <moqui.basic.EnumerationType enumTypeId="FundsTransferPostingType" description="Funds Transfer Posting Type"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferPostingType" enumId="FT_POST_AUTO" description="Automatic" sequenceNum="1"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferPostingType" enumId="FT_POST_QUEUE" description="Queue" sequenceNum="2"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferPostingType" enumId="FT_POST_PROHIBIT" description="Prohibit" sequenceNum="3"/>
+
+    <!-- Funds transfer type behaviour -->
+    <moqui.basic.EnumerationType enumTypeId="FundsTransferTypeBehaviour" description="Funds Transfer Type Behaviour"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferTypeBehaviour" enumId="FT_TYPE_PLACEHOLDER" description="Placeholder Type"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferTypeBehaviour" enumId="FT_TYPE_SINGLE_OWN_ACCT" description="Single Own Account Transfer"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferTypeBehaviour" enumId="FT_TYPE_SINGLE_BANK" description="Single Within Bank Transfer"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferTypeBehaviour" enumId="FT_TYPE_SINGLE_LOCAL" description="Single Within Country Transfer"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferTypeBehaviour" enumId="FT_TYPE_SINGLE_OVERSEAS" description="Single Overseas Transfer"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferTypeBehaviour" enumId="FT_TYPE_SINGLE_CREDIT_CARD" description="Single Credit Card Transfer"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferTypeBehaviour" enumId="FT_TYPE_BULK_SALARY_LCY" description="Bulk Local Currency Salary Transfer (non WPS)"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferTypeBehaviour" enumId="FT_TYPE_BULK_SALARY_LCY_WPS" description="Bulk Local Currency Salary Transfer (WPS)"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferTypeBehaviour" enumId="FT_TYPE_BULK_SALARY_FCY" description="Bulk Foreign Currency Salary Transfer"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferTypeBehaviour" enumId="FT_TYPE_BULK_LCY" description="Bulk Local Currency Transfer"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferTypeBehaviour" enumId="FT_TYPE_BULK_FCY" description="Bulk Foreign Currency Transfer"/>
+
+    <!-- Funds transfer charges type -->
+    <moqui.basic.EnumerationType enumTypeId="FundsTransferChargesType" description="Funds Transfer Charges Type"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferChargesType" enumId="FT_CHARGE_OUR" description="Sender"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferChargesType" enumId="FT_CHARGE_BEN" description="Beneficiary"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferChargesType" enumId="FT_CHARGE_SHA" description="Shared"/>
+
+    <!-- Funds transfer debit field type -->
+    <moqui.basic.EnumerationType enumTypeId="FundsTransferDebitFieldType" description="Funds Transfer Debit Field Type"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferDebitFieldType" enumId="FT_DEBIT_FLD_NA" description="Not Applicable"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferDebitFieldType" enumId="FT_DEBIT_FLD_ALL" description="All Accounts"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferDebitFieldType" enumId="FT_DEBIT_FLD_LCY" description="Local Currency Accounts"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferDebitFieldType" enumId="FT_DEBIT_FLD_FCY" description="Foreign Currency Accounts"/>
+
+    <!-- Funds transfer currency field type -->
+    <moqui.basic.EnumerationType enumTypeId="FundsTransferCurrencyFieldType" description="Transfer Currency Field Type"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferCurrencyFieldType" enumId="FT_CCY_FLD_NA" description="Not Applicable"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferCurrencyFieldType" enumId="FT_CCY_FLD_ALL" description="All Currencies"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferCurrencyFieldType" enumId="FT_CCY_FLD_DEBIT" description="Debit Account Currency"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferCurrencyFieldType" enumId="FT_CCY_FLD_CREDIT" description="Credit Account Currency"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferCurrencyFieldType" enumId="FT_CCY_FLD_FCY" description="Foreign Currencies"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferCurrencyFieldType" enumId="FT_CCY_FLD_LCY" description="Local Currency"/>
+
+    <!-- Funds transfer charges field type -->
+    <moqui.basic.EnumerationType enumTypeId="FundsTransferChargesFieldType" description="Transfer Charges Field Type"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferChargesFieldType" enumId="FT_CHARGE_FLD_NA" description="Not Applicable"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferChargesFieldType" enumId="FT_CHARGE_FLD_ALL" description="All Charges"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferChargesFieldType" enumId="FT_CHARGE_FLD_BEN" description="Beneficiary Charges"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferChargesFieldType" enumId="FT_CHARGE_FLD_SHA" description="Shared Charges"/>
+    <moqui.basic.Enumeration enumTypeId="FundsTransferChargesFieldType" enumId="FT_CHARGE_FLD_OUR" description="Our Charges"/>
+
+    <!-- Funds transfer status -->
+    <moqui.basic.StatusType statusTypeId="FundsTransfer" description="Funds Transfer Status"/>
+    <moqui.basic.StatusItem statusTypeId="FundsTransfer" statusId="FT_DRAFT" description="Draft"/>
+    <moqui.basic.StatusItem statusTypeId="FundsTransfer" statusId="FT_CANCELLED" description="Cancelled"/>
+    <moqui.basic.StatusItem statusTypeId="FundsTransfer" statusId="FT_PROPOSED" description="Proposed"/>
+    <moqui.basic.StatusItem statusTypeId="FundsTransfer" statusId="FT_QUEUED" description="Queued"/>
+    <moqui.basic.StatusItem statusTypeId="FundsTransfer" statusId="FT_SUBMITTED" description="Submitted"/>
+    <moqui.basic.StatusItem statusTypeId="FundsTransfer" statusId="FT_SUCCESSFUL" description="Successful"/>
+    <moqui.basic.StatusItem statusTypeId="FundsTransfer" statusId="FT_PARTIALLY_SUCCESSFUL" description="Partially Successful"/>
+    <moqui.basic.StatusItem statusTypeId="FundsTransfer" statusId="FT_FAILED" description="Failed"/>
+    <moqui.basic.StatusItem statusTypeId="FundsTransfer" statusId="FT_REJECTED" description="Rejected"/>
+    <moqui.basic.StatusItem statusTypeId="FundsTransfer" statusId="FT_ARCHIVED" description="Archived"/>
+
+    <!-- Funds transfer status flow -->
+    <moqui.basic.StatusFlow statusFlowId="FundsTransferStatusFlow" statusTypeId="FundsTransfer" description="Funds Transfer Status Flow"/>
+    <moqui.basic.StatusFlowItem statusFlowId="FundsTransferStatusFlow" statusId="FT_DRAFT" isInitial="Y"/>
+    <moqui.basic.StatusFlowItem statusFlowId="FundsTransferStatusFlow" statusId="FT_CANCELLED" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="FundsTransferStatusFlow" statusId="FT_PROPOSED" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="FundsTransferStatusFlow" statusId="FT_QUEUED" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="FundsTransferStatusFlow" statusId="FT_SUBMITTED" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="FundsTransferStatusFlow" statusId="FT_SUCCESSFUL" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="FundsTransferStatusFlow" statusId="FT_PARTIALLY_SUCCESSFUL" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="FundsTransferStatusFlow" statusId="FT_FAILED" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="FundsTransferStatusFlow" statusId="FT_REJECTED" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="FundsTransferStatusFlow" statusId="FT_ARCHIVED" isInitial="N"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="FundsTransferStatusFlow" statusId="FT_DRAFT" toStatusId="FT_CANCELLED" transitionSequence="1" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="FundsTransferStatusFlow" statusId="FT_DRAFT" toStatusId="FT_PROPOSED" transitionSequence="2" transitionName="Propose"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="FundsTransferStatusFlow" statusId="FT_DRAFT" toStatusId="FT_ARCHIVED" transitionSequence="3" transitionName="Archive"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="FundsTransferStatusFlow" statusId="FT_PROPOSED" toStatusId="FT_CANCELLED" transitionSequence="1" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="FundsTransferStatusFlow" statusId="FT_PROPOSED" toStatusId="FT_QUEUED" transitionSequence="2" transitionName="Queued"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="FundsTransferStatusFlow" statusId="FT_PROPOSED" toStatusId="FT_SUBMITTED" transitionSequence="3" transitionName="Submit"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="FundsTransferStatusFlow" statusId="FT_PROPOSED" toStatusId="FT_SUCCESSFUL" transitionSequence="4" transitionName="Successful"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="FundsTransferStatusFlow" statusId="FT_PROPOSED" toStatusId="FT_FAILED" transitionSequence="5" transitionName="Failed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="FundsTransferStatusFlow" statusId="FT_PROPOSED" toStatusId="FT_REJECTED" transitionSequence="6" transitionName="Reject"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="FundsTransferStatusFlow" statusId="FT_PROPOSED" toStatusId="FT_ARCHIVED" transitionSequence="7" transitionName="Archive"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="FundsTransferStatusFlow" statusId="FT_QUEUED" toStatusId="FT_SUCCESSFUL" transitionSequence="1" transitionName="Successful"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="FundsTransferStatusFlow" statusId="FT_QUEUED" toStatusId="FT_FAILED" transitionSequence="2" transitionName="Failed"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="FundsTransferStatusFlow" statusId="FT_QUEUED" toStatusId="FT_CANCELLED" transitionSequence="3" transitionName="Cancelled"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="FundsTransferStatusFlow" statusId="FT_SUBMITTED" toStatusId="FT_SUCCESSFUL" transitionSequence="1" transitionName="Successful"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="FundsTransferStatusFlow" statusId="FT_SUBMITTED" toStatusId="FT_PARTIALLY_SUCCESSFUL" transitionSequence="2" transitionName="Partially Successful"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="FundsTransferStatusFlow" statusId="FT_SUBMITTED" toStatusId="FT_FAILED" transitionSequence="3" transitionName="Fail"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="FundsTransferStatusFlow" statusId="FT_SUBMITTED" toStatusId="FT_CANCELLED" transitionSequence="4" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="FundsTransferStatusFlow" statusId="FT_SUBMITTED" toStatusId="FT_ARCHIVED" transitionSequence="5" transitionName="Archive"/>
+
+</entity-facade-xml>

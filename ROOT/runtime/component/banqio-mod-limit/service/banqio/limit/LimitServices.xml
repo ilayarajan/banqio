@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Funds transfer limit -->
+    <service verb="find" noun="FundsTransferLimit" type="java" location="com.netvariant.banqio.limit.FundsTransferLimitService" method="findFundsTransferLimits">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.limit.FundsTransferLimitDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="fundsTransferLimitList" type="List">
+                <parameter name="fundsTransferLimit" type="Map">
+                    <auto-parameters entity-name="banqio.limit.FundsTransferLimitDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="FundsTransferLimit" type="java" location="com.netvariant.banqio.limit.FundsTransferLimitService" method="createFundsTransferLimit">
+        <in-parameters>
+            <parameter name="appId"/>
+            <parameter name="limitTypeEnumId"/>
+            <parameter name="frequencyUomId"/>
+            <parameter name="currencyTypeEnumId"/>
+            <parameter name="transferCurrencyId"/>
+            <parameter name="debitCurrencyId"/>
+            <parameter name="minAmount" type="Double"/>
+            <parameter name="maxAmount" type="Double"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+            <parameter name="description"/>
+            <parameter name="disabled"/>
+            <parameter name="userId"/>
+            <parameter name="userGroupId"/>
+            <parameter name="accountId"/>
+            <parameter name="beneficiaryId"/>
+            <parameter name="partyId"/>
+            <parameter name="transferTypeId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="limitId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="FundsTransferLimit" type="java" location="com.netvariant.banqio.limit.FundsTransferLimitService" method="updateFundsTransferLimit">
+        <in-parameters>
+            <parameter name="limitId"/>
+            <parameter name="appId"/>
+            <parameter name="frequencyUomId"/>
+            <parameter name="currencyTypeEnumId"/>
+            <parameter name="transferCurrencyId"/>
+            <parameter name="debitCurrencyId"/>
+            <parameter name="minAmount" type="Double"/>
+            <parameter name="maxAmount" type="Double"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+            <parameter name="description"/>
+            <parameter name="disabled"/>
+            <parameter name="userId"/>
+            <parameter name="userGroupId"/>
+            <parameter name="accountId"/>
+            <parameter name="beneficiaryId"/>
+            <parameter name="partyId"/>
+            <parameter name="transferTypeId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="limitId"/>
+        </out-parameters>
+    </service>
+    <service verb="validate" noun="FundsTransferLimit" type="java" location="com.netvariant.banqio.limit.FundsTransferLimitService" method="validateFundsTransferLimits">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="transferTypeId"/>
+            <parameter name="transferCurrencyId"/>
+            <parameter name="debitCurrencyId"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="beneficiaryId"/>
+            <parameter name="amount" type="Double"/>
+        </in-parameters>
+    </service>
+
+</services>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        default-menu-title="Find Localization"
+        default-menu-include="false">
+
+    <parameter name="entityName" required="true"/>
+    <parameter name="fieldName" required="true"/>
+    <parameter name="pkValue" required="true"/>
+    <parameter name="fieldType"/>
+
+    <transition name="createLocalization">
+        <service-call name="create#moqui.basic.LocalizedEntityField"/>
+        <default-response url="."/>
+    </transition>
+    <transition name="deleteLocalization">
+        <service-call name="delete#moqui.basic.LocalizedEntityField"/>
+        <default-response url="."/>
+    </transition>
+
+    <actions>
+        <entity-find entity-name="moqui.basic.LocalizedEntityField" list="localizationList">
+            <search-form-inputs default-order-by="^locale"/>
+            <econdition field-name="entityName" from="entityName"/>
+            <econdition field-name="fieldName" from="fieldName"/>
+            <econdition field-name="pkValue" from="pkValue"/>
+        </entity-find>
+    </actions>
+
+    <widgets>
+        <container-box>
+            <box-header>
+                <label text="Find Localization" type="h5"/>
+            </box-header>
+            <box-toolbar>
+                <container-dialog id="CreateLocalizationContainer" button-text="New Localization" width="900">
+                    <form-single name="CreateLocalizationForm" transition="createLocalization">
+                        <auto-fields-entity entity-name="moqui.basic.LocalizedEntityField" field-type="edit"/>
+                        <field name="entityName">
+                            <default-field>
+                                <hidden/>
+                            </default-field>
+                        </field>
+                        <field name="fieldName">
+                            <default-field>
+                                <hidden/>
+                            </default-field>
+                        </field>
+                        <field name="pkValue">
+                            <default-field>
+                                <hidden/>
+                            </default-field>
+                        </field>
+                        <field name="locale">
+                            <default-field>
+                                <drop-down>
+                                    <entity-options text="${languageName}" key="${locale}">
+                                        <entity-find entity-name="commons.basic.Language"/>
+                                    </entity-options>
+                                </drop-down>
+                            </default-field>
+                        </field>
+                        <field name="localized">
+                            <conditional-field condition="fieldType == 'TEXTAREA'">
+                                <text-area rows="4" cols="80"/>
+                            </conditional-field>
+                            <default-field title="Localization">
+                                <text-line size="60"/>
+                            </default-field>
+                        </field>
+                        <field name="submitBtn">
+                            <default-field title="Create">
+                                <submit/>
+                            </default-field>
+                        </field>
+
+                        <field-layout>
+                            <fields-not-referenced/>
+                        </field-layout>
+                    </form-single>
+                </container-dialog>
+            </box-toolbar>
+            <box-body>
+                <form-list name="ListLocalizations" list="localizationList" skip-form="true" header-dialog="true" paginate="false">
+                    <field name="locale">
+                        <header-field show-order-by="true"/>
+                        <default-field>
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="localized">
+                        <header-field show-order-by="true"/>
+                        <default-field title="Localization">
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="delete">
+                        <default-field title="" container-style="text-right">
+                            <link url="deleteLocalization" icon="glyphicon glyphicon-trash" text="Delete" style="btn-danger"/>
+                        </default-field>
+                    </field>
+
+                    <form-list-column>
+                        <field-ref name="locale"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="localized"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="delete"/>
+                    </form-list-column>
+                </form-list>
+            </box-body>
+        </container-box>
+    </widgets>
+</screen>

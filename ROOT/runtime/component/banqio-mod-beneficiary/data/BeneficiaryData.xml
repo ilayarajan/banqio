@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Beneficiary type behaviour -->
+    <moqui.basic.EnumerationType enumTypeId="BeneficiaryTypeBehaviour" description="Beneficiary Type Behaviour"/>
+    <moqui.basic.Enumeration enumTypeId="BeneficiaryTypeBehaviour" enumId="BEN_TYPE_PLACEHOLDER" description="Placeholder Type"/>
+    <moqui.basic.Enumeration enumTypeId="BeneficiaryTypeBehaviour" enumId="BEN_TYPE_OWN_ACCT" description="Own Account Beneficiary"/>
+    <moqui.basic.Enumeration enumTypeId="BeneficiaryTypeBehaviour" enumId="BEN_TYPE_BANK" description="Within Bank Beneficiary"/>
+    <moqui.basic.Enumeration enumTypeId="BeneficiaryTypeBehaviour" enumId="BEN_TYPE_LOCAL" description="Within Country Beneficiary"/>
+    <moqui.basic.Enumeration enumTypeId="BeneficiaryTypeBehaviour" enumId="BEN_TYPE_OVERSEAS" description="Overseas Beneficiary"/>
+    <moqui.basic.Enumeration enumTypeId="BeneficiaryTypeBehaviour" enumId="BEN_TYPE_CREDIT_CARD" description="Credit Card Beneficiary"/>
+    <moqui.basic.Enumeration enumTypeId="BeneficiaryTypeBehaviour" enumId="BEN_TYPE_COMPANY" description="Company Beneficiary"/>
+    <moqui.basic.Enumeration enumTypeId="BeneficiaryTypeBehaviour" enumId="BEN_TYPE_CHARITY" description="Charity Beneficiary"/>
+
+    <!-- Beneficiary status -->
+    <moqui.basic.StatusType statusTypeId="Beneficiary" description="Beneficiary Status"/>
+    <moqui.basic.StatusItem statusTypeId="Beneficiary" statusId="BEN_DRAFT" description="Draft"/>
+    <moqui.basic.StatusItem statusTypeId="Beneficiary" statusId="BEN_CANCELLED" description="Cancelled"/>
+    <moqui.basic.StatusItem statusTypeId="Beneficiary" statusId="BEN_PROPOSED" description="Proposed"/>
+    <moqui.basic.StatusItem statusTypeId="Beneficiary" statusId="BEN_ACTIVE" description="Active"/>
+    <moqui.basic.StatusItem statusTypeId="Beneficiary" statusId="BEN_REJECTED" description="Rejected"/>
+    <moqui.basic.StatusItem statusTypeId="Beneficiary" statusId="BEN_DELETED" description="Deleted"/>
+    <moqui.basic.StatusItem statusTypeId="Beneficiary" statusId="BEN_OUTDATED" description="Outdated"/>
+
+    <!-- Beneficiary status flow -->
+    <moqui.basic.StatusFlow statusFlowId="BeneficiaryStatusFlow" statusTypeId="Beneficiary" description="Beneficiary Status Flow"/>
+    <moqui.basic.StatusFlowItem statusFlowId="BeneficiaryStatusFlow" statusId="BEN_DRAFT" isInitial="Y"/>
+    <moqui.basic.StatusFlowItem statusFlowId="BeneficiaryStatusFlow" statusId="BEN_CANCELLED" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="BeneficiaryStatusFlow" statusId="BEN_PROPOSED" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="BeneficiaryStatusFlow" statusId="BEN_ACTIVE" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="BeneficiaryStatusFlow" statusId="BEN_REJECTED" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="BeneficiaryStatusFlow" statusId="BEN_DELETED" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="BeneficiaryStatusFlow" statusId="BEN_OUTDATED" isInitial="N"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="BeneficiaryStatusFlow" statusId="BEN_DRAFT" toStatusId="BEN_CANCELLED" transitionSequence="1" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="BeneficiaryStatusFlow" statusId="BEN_DRAFT" toStatusId="BEN_PROPOSED" transitionSequence="2" transitionName="Propose"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="BeneficiaryStatusFlow" statusId="BEN_DRAFT" toStatusId="BEN_OUTDATED" transitionSequence="3" transitionName="Expire"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="BeneficiaryStatusFlow" statusId="BEN_PROPOSED" toStatusId="BEN_CANCELLED" transitionSequence="1" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="BeneficiaryStatusFlow" statusId="BEN_PROPOSED" toStatusId="BEN_ACTIVE" transitionSequence="2" transitionName="Accept"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="BeneficiaryStatusFlow" statusId="BEN_PROPOSED" toStatusId="BEN_REJECTED" transitionSequence="3" transitionName="Reject"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="BeneficiaryStatusFlow" statusId="BEN_PROPOSED" toStatusId="BEN_OUTDATED" transitionSequence="4" transitionName="Expire"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="BeneficiaryStatusFlow" statusId="BEN_ACTIVE" toStatusId="BEN_DRAFT" transitionSequence="1" transitionName="Draft"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="BeneficiaryStatusFlow" statusId="BEN_ACTIVE" toStatusId="BEN_DELETED" transitionSequence="2" transitionName="Delete"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="BeneficiaryStatusFlow" statusId="BEN_ACTIVE" toStatusId="BEN_OUTDATED" transitionSequence="3" transitionName="Expire"/>
+
+</entity-facade-xml>

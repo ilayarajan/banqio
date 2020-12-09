@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- General configuration -->
+    <CommonsConfig appId="COR" groupId="GENERAL" configurationId="SKIP_LOOSE_LIMITS" editorTypeEnumId="CONF_EDITOR_RADIO" configurationName="Skip Loose Limits" description="Ignore loose limits when more specific limits are available" defaultValue="false" definedValue="false">
+        <options optionSeqId="1" optionValue="true" optionText="Yes"/>
+        <options optionSeqId="2" optionValue="false" optionText="No"/>
+    </CommonsConfig>
+
+</entity-facade-xml>

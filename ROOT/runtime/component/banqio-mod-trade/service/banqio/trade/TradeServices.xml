@@ -1,0 +1,1697 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- LC type -->
+    <service verb="find" noun="LcType" type="java" location="com.netvariant.banqio.trade.LcTypeService" method="findLcTypes">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.trade.LcTypeDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="lcTypeList" type="List">
+                <parameter name="lcType" type="Map">
+                    <auto-parameters entity-name="banqio.trade.LcTypeDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="LcType" type="java" location="com.netvariant.banqio.trade.LcTypeService" method="createLcType">
+        <in-parameters>
+            <parameter name="externalTypeId"/>
+            <parameter name="typeName"/>
+            <parameter name="typeBehaviourEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="typeId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="LcType" type="java" location="com.netvariant.banqio.trade.LcTypeService" method="updateLcType">
+        <in-parameters>
+            <parameter name="typeId"/>
+            <parameter name="externalTypeId"/>
+            <parameter name="typeName"/>
+            <parameter name="typeBehaviourEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="typeId"/>
+        </out-parameters>
+    </service>
+
+    <!-- LC type L10n -->
+    <service verb="find" noun="LcTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.trade.LcType"/>
+            <service-call name="commons.entity.EntityServices.find#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="create" noun="LcTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.trade.LcType"/>
+            <service-call name="commons.entity.EntityServices.create#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="update" noun="LcTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.trade.LcType"/>
+            <service-call name="commons.entity.EntityServices.update#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="delete" noun="LcTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="localized"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.trade.LcType"/>
+            <service-call name="commons.entity.EntityServices.delete#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+
+    <!-- LG type -->
+    <service verb="find" noun="LgType" type="java" location="com.netvariant.banqio.trade.LgTypeService" method="findLgTypes">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.trade.LgTypeDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="lgTypeList" type="List">
+                <parameter name="lgType" type="Map">
+                    <auto-parameters entity-name="banqio.trade.LgTypeDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="LgType" type="java" location="com.netvariant.banqio.trade.LgTypeService" method="createLgType">
+        <in-parameters>
+            <parameter name="externalTypeId"/>
+            <parameter name="typeName"/>
+            <parameter name="typeBehaviourEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="typeId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="LgType" type="java" location="com.netvariant.banqio.trade.LgTypeService" method="updateLgType">
+        <in-parameters>
+            <parameter name="typeId"/>
+            <parameter name="externalTypeId"/>
+            <parameter name="typeName"/>
+            <parameter name="typeBehaviourEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="typeId"/>
+        </out-parameters>
+    </service>
+
+    <!-- LG type L10n -->
+    <service verb="find" noun="LgTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.trade.LgType"/>
+            <service-call name="commons.entity.EntityServices.find#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="create" noun="LgTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.trade.LgType"/>
+            <service-call name="commons.entity.EntityServices.create#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="update" noun="LgTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.trade.LgType"/>
+            <service-call name="commons.entity.EntityServices.update#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="delete" noun="LgTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="localized"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.trade.LgType"/>
+            <service-call name="commons.entity.EntityServices.delete#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+
+    <!-- DC type -->
+    <service verb="find" noun="DcType" type="java" location="com.netvariant.banqio.trade.DcTypeService" method="findDcTypes">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.trade.DcTypeDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="dcTypeList" type="List">
+                <parameter name="dcType" type="Map">
+                    <auto-parameters entity-name="banqio.trade.DcTypeDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="DcType" type="java" location="com.netvariant.banqio.trade.DcTypeService" method="createDcType">
+        <in-parameters>
+            <parameter name="externalTypeId"/>
+            <parameter name="typeName"/>
+            <parameter name="typeBehaviourEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="typeId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="DcType" type="java" location="com.netvariant.banqio.trade.DcTypeService" method="updateDcType">
+        <in-parameters>
+            <parameter name="typeId"/>
+            <parameter name="externalTypeId"/>
+            <parameter name="typeName"/>
+            <parameter name="typeBehaviourEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="typeId"/>
+        </out-parameters>
+    </service>
+
+    <!-- DC type L10n -->
+    <service verb="find" noun="DcTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.trade.DcType"/>
+            <service-call name="commons.entity.EntityServices.find#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="create" noun="DcTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.trade.DcType"/>
+            <service-call name="commons.entity.EntityServices.create#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="update" noun="DcTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.trade.DcType"/>
+            <service-call name="commons.entity.EntityServices.update#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="delete" noun="DcTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="localized"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.trade.DcType"/>
+            <service-call name="commons.entity.EntityServices.delete#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+
+    <!-- API -->
+    <service verb="find" noun="AcceptedInwardDc" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="documentNumber"/>
+            <parameter name="currencyId"/>
+            <parameter name="typeId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="documentList" type="List">
+                <parameter name="document" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="documentNumber"/>
+                    <parameter name="referenceNumber"/>
+                    <parameter name="issuanceDate" type="Date"/>
+                    <parameter name="expiryDate" type="Date"/>
+                    <parameter name="adviseDate" type="Date"/>
+                    <parameter name="acceptanceDate" type="Date"/>
+                    <parameter name="beneficiaryName"/>
+                    <parameter name="issuingBank"/>
+                    <parameter name="remittingBank"/>
+                    <parameter name="paymentAmount" type="Double"/>
+                    <parameter name="paymentAmountLocal" type="Double"/>
+                    <parameter name="outstandingAmount" type="Double"/>
+                    <parameter name="outstandingAmountLocal" type="Double"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="typeId"/>
+                    <parameter name="typeName"/>
+                    <parameter name="typeBehaviourEnumId"/>
+                    <parameter name="lcTypeId"/>
+                    <parameter name="lcTypeName"/>
+                    <parameter name="lcTypeBehaviourEnumId"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="AdvisedExportLc" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="lcNumber"/>
+            <parameter name="currencyId"/>
+            <parameter name="typeId"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="lcList" type="List">
+                <parameter name="lc" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="lcNumber"/>
+                    <parameter name="issuanceDate" type="Date"/>
+                    <parameter name="expiryDate" type="Date"/>
+                    <parameter name="beneficiaryName"/>
+                    <parameter name="beneficiaryAddress"/>
+                    <parameter name="issuingBank"/>
+                    <parameter name="issuingBankReference"/>
+                    <parameter name="nominatedBank"/>
+                    <parameter name="advisingBank"/>
+                    <parameter name="confirmingBank"/>
+                    <parameter name="lcAmount" type="Double"/>
+                    <parameter name="lcAmountLocal" type="Double"/>
+                    <parameter name="outstandingAmount" type="Double"/>
+                    <parameter name="outstandingAmountLocal" type="Double"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="typeId"/>
+                    <parameter name="typeName"/>
+                    <parameter name="typeBehaviourEnumId"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="ExpiredImportLc" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="lcNumber"/>
+            <parameter name="currencyId"/>
+            <parameter name="typeId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="lcList" type="List">
+                <parameter name="lc" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="lcNumber"/>
+                    <parameter name="settlementAccountNumber"/>
+                    <parameter name="issuanceDate" type="Date"/>
+                    <parameter name="expiryDate" type="Date"/>
+                    <parameter name="beneficiaryName"/>
+                    <parameter name="beneficiaryAddress"/>
+                    <parameter name="issuingBank"/>
+                    <parameter name="issuingBankReference"/>
+                    <parameter name="nominatedBank"/>
+                    <parameter name="advisingBank"/>
+                    <parameter name="confirmingBank"/>
+                    <parameter name="lcAmount" type="Double"/>
+                    <parameter name="lcAmountLocal" type="Double"/>
+                    <parameter name="outstandingAmount" type="Double"/>
+                    <parameter name="outstandingAmountLocal" type="Double"/>
+                    <parameter name="marginAmount" type="Double"/>
+                    <parameter name="marginAmountLocal" type="Double"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="marginCurrencyId"/>
+                    <parameter name="marginCurrencyDescription"/>
+                    <parameter name="marginCurrencyAbbreviation"/>
+                    <parameter name="typeId"/>
+                    <parameter name="typeName"/>
+                    <parameter name="typeBehaviourEnumId"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="DueExportLcBill" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="billNumber"/>
+            <parameter name="currencyId"/>
+            <parameter name="typeId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="billList" type="List">
+                <parameter name="bill" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="billNumber"/>
+                    <parameter name="lcNumber"/>
+                    <parameter name="beneficiaryName"/>
+                    <parameter name="billAmount" type="Double"/>
+                    <parameter name="billAmountLocal" type="Double"/>
+                    <parameter name="paymentTerms"/>
+                    <parameter name="issuanceDate" type="Date"/>
+                    <parameter name="expiryDate" type="Date"/>
+                    <parameter name="dueDate" type="Date"/>
+                    <parameter name="sentDate" type="Date"/>
+                    <parameter name="adviseDate" type="Date"/>
+                    <parameter name="acceptanceDate" type="Date"/>
+                    <parameter name="lcTypeId"/>
+                    <parameter name="lcTypeName"/>
+                    <parameter name="lcTypeBehaviourEnumId"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="DueImportLcBill" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="billNumber"/>
+            <parameter name="currencyId"/>
+            <parameter name="typeId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="billList" type="List">
+                <parameter name="bill" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="billNumber"/>
+                    <parameter name="lcNumber"/>
+                    <parameter name="beneficiaryName"/>
+                    <parameter name="billAmount" type="Double"/>
+                    <parameter name="billAmountLocal" type="Double"/>
+                    <parameter name="paymentTerms"/>
+                    <parameter name="issuanceDate" type="Date"/>
+                    <parameter name="expiryDate" type="Date"/>
+                    <parameter name="dueDate" type="Date"/>
+                    <parameter name="sentDate" type="Date"/>
+                    <parameter name="adviseDate" type="Date"/>
+                    <parameter name="acceptanceDate" type="Date"/>
+                    <parameter name="lcTypeId"/>
+                    <parameter name="lcTypeName"/>
+                    <parameter name="lcTypeBehaviourEnumId"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="IssuedLg" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="lgNumber"/>
+            <parameter name="currencyId"/>
+            <parameter name="typeId"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="lgList" type="List">
+                <parameter name="lg" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="lgNumber"/>
+                    <parameter name="issuanceDate" type="Date"/>
+                    <parameter name="expiryDate" type="Date"/>
+                    <parameter name="beneficiaryName"/>
+                    <parameter name="beneficiaryAddress"/>
+                    <parameter name="lgAmount" type="Double"/>
+                    <parameter name="lgAmountLocal" type="Double"/>
+                    <parameter name="marginAmount" type="Double"/>
+                    <parameter name="marginAmountLocal" type="Double"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="marginCurrencyId"/>
+                    <parameter name="marginCurrencyDescription"/>
+                    <parameter name="marginCurrencyAbbreviation"/>
+                    <parameter name="typeId"/>
+                    <parameter name="typeName"/>
+                    <parameter name="typeBehaviourEnumId"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="IssuedImportLc" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="lcNumber"/>
+            <parameter name="currencyId"/>
+            <parameter name="typeId"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="lcList" type="List">
+                <parameter name="lc" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="lcNumber"/>
+                    <parameter name="settlementAccountNumber"/>
+                    <parameter name="issuanceDate" type="Date"/>
+                    <parameter name="expiryDate" type="Date"/>
+                    <parameter name="beneficiaryName"/>
+                    <parameter name="beneficiaryAddress"/>
+                    <parameter name="issuingBank"/>
+                    <parameter name="issuingBankReference"/>
+                    <parameter name="nominatedBank"/>
+                    <parameter name="advisingBank"/>
+                    <parameter name="confirmingBank"/>
+                    <parameter name="lcAmount" type="Double"/>
+                    <parameter name="lcAmountLocal" type="Double"/>
+                    <parameter name="outstandingAmount" type="Double"/>
+                    <parameter name="outstandingAmountLocal" type="Double"/>
+                    <parameter name="marginAmount" type="Double"/>
+                    <parameter name="marginAmountLocal" type="Double"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="marginCurrencyId"/>
+                    <parameter name="marginCurrencyDescription"/>
+                    <parameter name="marginCurrencyAbbreviation"/>
+                    <parameter name="typeId"/>
+                    <parameter name="typeName"/>
+                    <parameter name="typeBehaviourEnumId"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="OutstandingCleanImportLoan" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="loanNumber"/>
+            <parameter name="currencyId"/>
+            <parameter name="typeId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="loanList" type="List">
+                <parameter name="loan" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="loanNumber"/>
+                    <parameter name="loanAccountNumber"/>
+                    <parameter name="disbursementAccountNumber"/>
+                    <parameter name="settlementAccountNumber"/>
+                    <parameter name="contractNumber"/>
+                    <parameter name="invoiceNumber"/>
+                    <parameter name="invoiceAmount" type="Double"/>
+                    <parameter name="invoiceAmountLocal" type="Double"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="typeId"/>
+                    <parameter name="typeName"/>
+                    <parameter name="typeBehaviourEnumId"/>
+                    <parameter name="statusId"/>
+                    <parameter name="statusName"/>
+                    <parameter name="statusBehaviourEnumId"/>
+                    <parameter name="startDate" type="Date"/>
+                    <parameter name="maturityDate" type="Date"/>
+                    <parameter name="loanAmount" type="Double"/>
+                    <parameter name="loanAmountLocal" type="Double"/>
+                    <parameter name="outstandingAmount" type="Double"/>
+                    <parameter name="outstandingAmountLocal" type="Double"/>
+                    <parameter name="dueAmount" type="Double"/>
+                    <parameter name="dueAmountLocal" type="Double"/>
+                    <parameter name="paymentStartDate" type="Date"/>
+                    <parameter name="paymentEndDate" type="Date"/>
+                    <parameter name="paymentAmount" type="Double"/>
+                    <parameter name="paymentAmountLocal" type="Double"/>
+                    <parameter name="interestRate" type="Double"/>
+                    <parameter name="interestAmount" type="Double"/>
+                    <parameter name="interestAmountLocal" type="Double"/>
+                    <parameter name="penaltyInterestRate" type="Double"/>
+                    <parameter name="penaltyInterestAmount" type="Double"/>
+                    <parameter name="penaltyInterestAmountLocal" type="Double"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="OutstandingExportLc" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="lcNumber"/>
+            <parameter name="currencyId"/>
+            <parameter name="typeId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="lcList" type="List">
+                <parameter name="lc" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="lcNumber"/>
+                    <parameter name="issuanceDate" type="Date"/>
+                    <parameter name="expiryDate" type="Date"/>
+                    <parameter name="beneficiaryName"/>
+                    <parameter name="beneficiaryAddress"/>
+                    <parameter name="issuingBank"/>
+                    <parameter name="issuingBankReference"/>
+                    <parameter name="nominatedBank"/>
+                    <parameter name="advisingBank"/>
+                    <parameter name="confirmingBank"/>
+                    <parameter name="lcAmount" type="Double"/>
+                    <parameter name="lcAmountLocal" type="Double"/>
+                    <parameter name="outstandingAmount" type="Double"/>
+                    <parameter name="outstandingAmountLocal" type="Double"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="typeId"/>
+                    <parameter name="typeName"/>
+                    <parameter name="typeBehaviourEnumId"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="OutstandingInwardDc" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="documentNumber"/>
+            <parameter name="currencyId"/>
+            <parameter name="typeId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="documentList" type="List">
+                <parameter name="document" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="documentNumber"/>
+                    <parameter name="referenceNumber"/>
+                    <parameter name="issuanceDate" type="Date"/>
+                    <parameter name="expiryDate" type="Date"/>
+                    <parameter name="adviseDate" type="Date"/>
+                    <parameter name="acceptanceDate" type="Date"/>
+                    <parameter name="beneficiaryName"/>
+                    <parameter name="issuingBank"/>
+                    <parameter name="remittingBank"/>
+                    <parameter name="paymentAmount" type="Double"/>
+                    <parameter name="paymentAmountLocal" type="Double"/>
+                    <parameter name="outstandingAmount" type="Double"/>
+                    <parameter name="outstandingAmountLocal" type="Double"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="typeId"/>
+                    <parameter name="typeName"/>
+                    <parameter name="typeBehaviourEnumId"/>
+                    <parameter name="lcTypeId"/>
+                    <parameter name="lcTypeName"/>
+                    <parameter name="lcTypeBehaviourEnumId"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="OutstandingImportLc" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="lcNumber"/>
+            <parameter name="currencyId"/>
+            <parameter name="typeId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="lcList" type="List">
+                <parameter name="lc" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="lcNumber"/>
+                    <parameter name="settlementAccountNumber"/>
+                    <parameter name="issuanceDate" type="Date"/>
+                    <parameter name="expiryDate" type="Date"/>
+                    <parameter name="beneficiaryName"/>
+                    <parameter name="beneficiaryAddress"/>
+                    <parameter name="issuingBank"/>
+                    <parameter name="issuingBankReference"/>
+                    <parameter name="nominatedBank"/>
+                    <parameter name="advisingBank"/>
+                    <parameter name="confirmingBank"/>
+                    <parameter name="lcAmount" type="Double"/>
+                    <parameter name="lcAmountLocal" type="Double"/>
+                    <parameter name="outstandingAmount" type="Double"/>
+                    <parameter name="outstandingAmountLocal" type="Double"/>
+                    <parameter name="marginAmount" type="Double"/>
+                    <parameter name="marginAmountLocal" type="Double"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="marginCurrencyId"/>
+                    <parameter name="marginCurrencyDescription"/>
+                    <parameter name="marginCurrencyAbbreviation"/>
+                    <parameter name="typeId"/>
+                    <parameter name="typeName"/>
+                    <parameter name="typeBehaviourEnumId"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="OutstandingImportLcBill" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="billNumber"/>
+            <parameter name="currencyId"/>
+            <parameter name="typeId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="billList" type="List">
+                <parameter name="bill" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="billNumber"/>
+                    <parameter name="lcNumber"/>
+                    <parameter name="beneficiaryName"/>
+                    <parameter name="billAmount" type="Double"/>
+                    <parameter name="billAmountLocal" type="Double"/>
+                    <parameter name="paymentTerms"/>
+                    <parameter name="issuanceDate" type="Date"/>
+                    <parameter name="expiryDate" type="Date"/>
+                    <parameter name="dueDate" type="Date"/>
+                    <parameter name="sentDate" type="Date"/>
+                    <parameter name="adviseDate" type="Date"/>
+                    <parameter name="acceptanceDate" type="Date"/>
+                    <parameter name="lcTypeId"/>
+                    <parameter name="lcTypeName"/>
+                    <parameter name="lcTypeBehaviourEnumId"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="OutstandingLg" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="lgNumber"/>
+            <parameter name="currencyId"/>
+            <parameter name="typeId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="lgList" type="List">
+                <parameter name="lg" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="lgNumber"/>
+                    <parameter name="issuanceDate" type="Date"/>
+                    <parameter name="expiryDate" type="Date"/>
+                    <parameter name="beneficiaryName"/>
+                    <parameter name="beneficiaryAddress"/>
+                    <parameter name="lgAmount" type="Double"/>
+                    <parameter name="lgAmountLocal" type="Double"/>
+                    <parameter name="marginAmount" type="Double"/>
+                    <parameter name="marginAmountLocal" type="Double"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="marginCurrencyId"/>
+                    <parameter name="marginCurrencyDescription"/>
+                    <parameter name="marginCurrencyAbbreviation"/>
+                    <parameter name="typeId"/>
+                    <parameter name="typeName"/>
+                    <parameter name="typeBehaviourEnumId"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="OutstandingSalesInvoiceLoan" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="loanNumber"/>
+            <parameter name="currencyId"/>
+            <parameter name="typeId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="loanList" type="List">
+                <parameter name="loan" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="loanNumber"/>
+                    <parameter name="loanAccountNumber"/>
+                    <parameter name="disbursementAccountNumber"/>
+                    <parameter name="settlementAccountNumber"/>
+                    <parameter name="contractNumber"/>
+                    <parameter name="invoiceNumber"/>
+                    <parameter name="invoiceAmount" type="Double"/>
+                    <parameter name="invoiceAmountLocal" type="Double"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="typeId"/>
+                    <parameter name="typeName"/>
+                    <parameter name="typeBehaviourEnumId"/>
+                    <parameter name="statusId"/>
+                    <parameter name="statusName"/>
+                    <parameter name="statusBehaviourEnumId"/>
+                    <parameter name="startDate" type="Date"/>
+                    <parameter name="maturityDate" type="Date"/>
+                    <parameter name="loanAmount" type="Double"/>
+                    <parameter name="loanAmountLocal" type="Double"/>
+                    <parameter name="outstandingAmount" type="Double"/>
+                    <parameter name="outstandingAmountLocal" type="Double"/>
+                    <parameter name="dueAmount" type="Double"/>
+                    <parameter name="dueAmountLocal" type="Double"/>
+                    <parameter name="paymentStartDate" type="Date"/>
+                    <parameter name="paymentEndDate" type="Date"/>
+                    <parameter name="paymentAmount" type="Double"/>
+                    <parameter name="paymentAmountLocal" type="Double"/>
+                    <parameter name="interestRate" type="Double"/>
+                    <parameter name="interestAmount" type="Double"/>
+                    <parameter name="interestAmountLocal" type="Double"/>
+                    <parameter name="penaltyInterestRate" type="Double"/>
+                    <parameter name="penaltyInterestAmount" type="Double"/>
+                    <parameter name="penaltyInterestAmountLocal" type="Double"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="OutstandingTrustReceiptLoan" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="loanNumber"/>
+            <parameter name="currencyId"/>
+            <parameter name="typeId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="loanList" type="List">
+                <parameter name="loan" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="loanNumber"/>
+                    <parameter name="loanAccountNumber"/>
+                    <parameter name="disbursementAccountNumber"/>
+                    <parameter name="settlementAccountNumber"/>
+                    <parameter name="contractNumber"/>
+                    <parameter name="lcNumber"/>
+                    <parameter name="lcAmount" type="Double"/>
+                    <parameter name="lcAmountLocal" type="Double"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="typeId"/>
+                    <parameter name="typeName"/>
+                    <parameter name="typeBehaviourEnumId"/>
+                    <parameter name="statusId"/>
+                    <parameter name="statusName"/>
+                    <parameter name="statusBehaviourEnumId"/>
+                    <parameter name="startDate" type="Date"/>
+                    <parameter name="maturityDate" type="Date"/>
+                    <parameter name="loanAmount" type="Double"/>
+                    <parameter name="loanAmountLocal" type="Double"/>
+                    <parameter name="outstandingAmount" type="Double"/>
+                    <parameter name="outstandingAmountLocal" type="Double"/>
+                    <parameter name="dueAmount" type="Double"/>
+                    <parameter name="dueAmountLocal" type="Double"/>
+                    <parameter name="paymentStartDate" type="Date"/>
+                    <parameter name="paymentEndDate" type="Date"/>
+                    <parameter name="paymentAmount" type="Double"/>
+                    <parameter name="paymentAmountLocal" type="Double"/>
+                    <parameter name="interestRate" type="Double"/>
+                    <parameter name="interestAmount" type="Double"/>
+                    <parameter name="interestAmountLocal" type="Double"/>
+                    <parameter name="penaltyInterestRate" type="Double"/>
+                    <parameter name="penaltyInterestAmount" type="Double"/>
+                    <parameter name="penaltyInterestAmountLocal" type="Double"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="OverdueCleanImportLoan" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="loanNumber"/>
+            <parameter name="currencyId"/>
+            <parameter name="typeId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="loanList" type="List">
+                <parameter name="loan" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="loanNumber"/>
+                    <parameter name="loanAccountNumber"/>
+                    <parameter name="disbursementAccountNumber"/>
+                    <parameter name="settlementAccountNumber"/>
+                    <parameter name="contractNumber"/>
+                    <parameter name="invoiceNumber"/>
+                    <parameter name="invoiceAmount" type="Double"/>
+                    <parameter name="invoiceAmountLocal" type="Double"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="typeId"/>
+                    <parameter name="typeName"/>
+                    <parameter name="typeBehaviourEnumId"/>
+                    <parameter name="statusId"/>
+                    <parameter name="statusName"/>
+                    <parameter name="statusBehaviourEnumId"/>
+                    <parameter name="startDate" type="Date"/>
+                    <parameter name="maturityDate" type="Date"/>
+                    <parameter name="loanAmount" type="Double"/>
+                    <parameter name="loanAmountLocal" type="Double"/>
+                    <parameter name="outstandingAmount" type="Double"/>
+                    <parameter name="outstandingAmountLocal" type="Double"/>
+                    <parameter name="dueAmount" type="Double"/>
+                    <parameter name="dueAmountLocal" type="Double"/>
+                    <parameter name="paymentStartDate" type="Date"/>
+                    <parameter name="paymentEndDate" type="Date"/>
+                    <parameter name="paymentAmount" type="Double"/>
+                    <parameter name="paymentAmountLocal" type="Double"/>
+                    <parameter name="interestRate" type="Double"/>
+                    <parameter name="interestAmount" type="Double"/>
+                    <parameter name="interestAmountLocal" type="Double"/>
+                    <parameter name="penaltyInterestRate" type="Double"/>
+                    <parameter name="penaltyInterestAmount" type="Double"/>
+                    <parameter name="penaltyInterestAmountLocal" type="Double"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="OverdueTradeFinanceLoan" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="loanNumber"/>
+            <parameter name="currencyId"/>
+            <parameter name="typeId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="loanList" type="List">
+                <parameter name="loan" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="loanNumber"/>
+                    <parameter name="loanAccountNumber"/>
+                    <parameter name="disbursementAccountNumber"/>
+                    <parameter name="settlementAccountNumber"/>
+                    <parameter name="contractNumber"/>
+                    <parameter name="invoiceNumber"/>
+                    <parameter name="invoiceAmount" type="Double"/>
+                    <parameter name="invoiceAmountLocal" type="Double"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="typeId"/>
+                    <parameter name="typeName"/>
+                    <parameter name="typeBehaviourEnumId"/>
+                    <parameter name="statusId"/>
+                    <parameter name="statusName"/>
+                    <parameter name="statusBehaviourEnumId"/>
+                    <parameter name="startDate" type="Date"/>
+                    <parameter name="maturityDate" type="Date"/>
+                    <parameter name="loanAmount" type="Double"/>
+                    <parameter name="loanAmountLocal" type="Double"/>
+                    <parameter name="outstandingAmount" type="Double"/>
+                    <parameter name="outstandingAmountLocal" type="Double"/>
+                    <parameter name="dueAmount" type="Double"/>
+                    <parameter name="dueAmountLocal" type="Double"/>
+                    <parameter name="paymentStartDate" type="Date"/>
+                    <parameter name="paymentEndDate" type="Date"/>
+                    <parameter name="paymentAmount" type="Double"/>
+                    <parameter name="paymentAmountLocal" type="Double"/>
+                    <parameter name="interestRate" type="Double"/>
+                    <parameter name="interestAmount" type="Double"/>
+                    <parameter name="interestAmountLocal" type="Double"/>
+                    <parameter name="penaltyInterestRate" type="Double"/>
+                    <parameter name="penaltyInterestAmount" type="Double"/>
+                    <parameter name="penaltyInterestAmountLocal" type="Double"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="OverdueSalesInvoiceLoan" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="loanNumber"/>
+            <parameter name="currencyId"/>
+            <parameter name="typeId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="loanList" type="List">
+                <parameter name="loan" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="loanNumber"/>
+                    <parameter name="loanAccountNumber"/>
+                    <parameter name="disbursementAccountNumber"/>
+                    <parameter name="settlementAccountNumber"/>
+                    <parameter name="contractNumber"/>
+                    <parameter name="invoiceNumber"/>
+                    <parameter name="invoiceAmount" type="Double"/>
+                    <parameter name="invoiceAmountLocal" type="Double"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="typeId"/>
+                    <parameter name="typeName"/>
+                    <parameter name="typeBehaviourEnumId"/>
+                    <parameter name="statusId"/>
+                    <parameter name="statusName"/>
+                    <parameter name="statusBehaviourEnumId"/>
+                    <parameter name="startDate" type="Date"/>
+                    <parameter name="maturityDate" type="Date"/>
+                    <parameter name="loanAmount" type="Double"/>
+                    <parameter name="loanAmountLocal" type="Double"/>
+                    <parameter name="outstandingAmount" type="Double"/>
+                    <parameter name="outstandingAmountLocal" type="Double"/>
+                    <parameter name="dueAmount" type="Double"/>
+                    <parameter name="dueAmountLocal" type="Double"/>
+                    <parameter name="paymentStartDate" type="Date"/>
+                    <parameter name="paymentEndDate" type="Date"/>
+                    <parameter name="paymentAmount" type="Double"/>
+                    <parameter name="paymentAmountLocal" type="Double"/>
+                    <parameter name="interestRate" type="Double"/>
+                    <parameter name="interestAmount" type="Double"/>
+                    <parameter name="interestAmountLocal" type="Double"/>
+                    <parameter name="penaltyInterestRate" type="Double"/>
+                    <parameter name="penaltyInterestAmount" type="Double"/>
+                    <parameter name="penaltyInterestAmountLocal" type="Double"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="OverdueTrustReceiptLoan" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="loanNumber"/>
+            <parameter name="currencyId"/>
+            <parameter name="typeId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="loanList" type="List">
+                <parameter name="loan" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="loanNumber"/>
+                    <parameter name="loanAccountNumber"/>
+                    <parameter name="disbursementAccountNumber"/>
+                    <parameter name="settlementAccountNumber"/>
+                    <parameter name="contractNumber"/>
+                    <parameter name="lcNumber"/>
+                    <parameter name="lcAmount" type="Double"/>
+                    <parameter name="lcAmountLocal" type="Double"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="typeId"/>
+                    <parameter name="typeName"/>
+                    <parameter name="typeBehaviourEnumId"/>
+                    <parameter name="statusId"/>
+                    <parameter name="statusName"/>
+                    <parameter name="statusBehaviourEnumId"/>
+                    <parameter name="startDate" type="Date"/>
+                    <parameter name="maturityDate" type="Date"/>
+                    <parameter name="loanAmount" type="Double"/>
+                    <parameter name="loanAmountLocal" type="Double"/>
+                    <parameter name="outstandingAmount" type="Double"/>
+                    <parameter name="outstandingAmountLocal" type="Double"/>
+                    <parameter name="dueAmount" type="Double"/>
+                    <parameter name="dueAmountLocal" type="Double"/>
+                    <parameter name="paymentStartDate" type="Date"/>
+                    <parameter name="paymentEndDate" type="Date"/>
+                    <parameter name="paymentAmount" type="Double"/>
+                    <parameter name="paymentAmountLocal" type="Double"/>
+                    <parameter name="interestRate" type="Double"/>
+                    <parameter name="interestAmount" type="Double"/>
+                    <parameter name="interestAmountLocal" type="Double"/>
+                    <parameter name="penaltyInterestRate" type="Double"/>
+                    <parameter name="penaltyInterestAmount" type="Double"/>
+                    <parameter name="penaltyInterestAmountLocal" type="Double"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="RejectedExportLcBill" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="billNumber"/>
+            <parameter name="currencyId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="billList" type="List">
+                <parameter name="bill" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="billNumber"/>
+                    <parameter name="lcNumber"/>
+                    <parameter name="beneficiaryName"/>
+                    <parameter name="billAmount" type="Double"/>
+                    <parameter name="billAmountLocal" type="Double"/>
+                    <parameter name="paymentTerms"/>
+                    <parameter name="issuanceDate" type="Date"/>
+                    <parameter name="expiryDate" type="Date"/>
+                    <parameter name="dueDate" type="Date"/>
+                    <parameter name="sentDate" type="Date"/>
+                    <parameter name="adviseDate" type="Date"/>
+                    <parameter name="acceptanceDate" type="Date"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="lcTypeId"/>
+                    <parameter name="lcTypeName"/>
+                    <parameter name="lcTypeBehaviourEnumId"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="RejectedImportLcBill" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="billNumber"/>
+            <parameter name="currencyId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="billList" type="List">
+                <parameter name="bill" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="billNumber"/>
+                    <parameter name="lcNumber"/>
+                    <parameter name="beneficiaryName"/>
+                    <parameter name="billAmount" type="Double"/>
+                    <parameter name="billAmountLocal" type="Double"/>
+                    <parameter name="paymentTerms"/>
+                    <parameter name="issuanceDate" type="Date"/>
+                    <parameter name="expiryDate" type="Date"/>
+                    <parameter name="dueDate" type="Date"/>
+                    <parameter name="sentDate" type="Date"/>
+                    <parameter name="adviseDate" type="Date"/>
+                    <parameter name="acceptanceDate" type="Date"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="lcTypeId"/>
+                    <parameter name="lcTypeName"/>
+                    <parameter name="lcTypeBehaviourEnumId"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="SentExportLcBill" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="billNumber"/>
+            <parameter name="currencyId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="billList" type="List">
+                <parameter name="bill" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="billNumber"/>
+                    <parameter name="lcNumber"/>
+                    <parameter name="beneficiaryName"/>
+                    <parameter name="billAmount" type="Double"/>
+                    <parameter name="billAmountLocal" type="Double"/>
+                    <parameter name="paymentTerms"/>
+                    <parameter name="issuanceDate" type="Date"/>
+                    <parameter name="expiryDate" type="Date"/>
+                    <parameter name="dueDate" type="Date"/>
+                    <parameter name="sentDate" type="Date"/>
+                    <parameter name="adviseDate" type="Date"/>
+                    <parameter name="acceptanceDate" type="Date"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="lcTypeId"/>
+                    <parameter name="lcTypeName"/>
+                    <parameter name="lcTypeBehaviourEnumId"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+
+</services>

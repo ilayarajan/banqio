@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <!-- Funds transfer -->
+    <view-entity entity-name="FundsTransferDetail" package="banqio.ft">
+        <member-entity entity-alias="fundsTransfer" entity-name="banqio.ft.FundsTransfer"/>
+        <member-entity entity-alias="status" entity-name="moqui.basic.StatusItem" join-from-alias="fundsTransfer">
+            <key-map field-name="statusId"/>
+        </member-entity>
+        <member-entity entity-alias="transferType" entity-name="banqio.ft.FundsTransferType" join-from-alias="fundsTransfer" join-optional="true">
+            <key-map field-name="typeId"/>
+        </member-entity>
+        <member-entity entity-alias="typeBehaviour" entity-name="moqui.basic.Enumeration" join-from-alias="transferType" join-optional="true">
+            <key-map field-name="typeBehaviourEnumId"/>
+        </member-entity>
+        <member-entity entity-alias="beneficiary" entity-name="banqio.beneficiary.Beneficiary" join-from-alias="fundsTransfer" join-optional="true">
+            <key-map field-name="beneficiaryId"/>
+        </member-entity>
+        <member-entity entity-alias="beneficiaryType" entity-name="banqio.beneficiary.BeneficiaryType" join-from-alias="beneficiary" join-optional="true">
+            <key-map field-name="typeId"/>
+        </member-entity>
+        <member-entity entity-alias="beneficiaryBranch" entity-name="banqio.bank.Branch" join-from-alias="beneficiary" join-optional="true">
+            <key-map field-name="swiftCode"/>
+        </member-entity>
+        <member-entity entity-alias="beneficiaryBank" entity-name="banqio.bank.Bank" join-from-alias="beneficiaryBranch" join-optional="true">
+            <key-map field-name="bankId"/>
+        </member-entity>
+        <member-entity entity-alias="country" entity-name="moqui.basic.Geo" join-from-alias="beneficiaryBank" join-optional="true">
+            <key-map field-name="countryGeoId"/>
+        </member-entity>
+        <member-entity entity-alias="currency" entity-name="moqui.basic.Uom" join-from-alias="fundsTransfer" join-optional="true">
+            <key-map field-name="currencyId"/>
+        </member-entity>
+        <member-entity entity-alias="transferChargesType" entity-name="moqui.basic.Enumeration" join-from-alias="fundsTransfer" join-optional="true">
+            <key-map field-name="chargesTypeEnumId"/>
+        </member-entity>
+        <member-entity entity-alias="transferPurpose" entity-name="banqio.ft.FundsTransferPurpose" join-from-alias="fundsTransfer" join-optional="true">
+            <key-map field-name="transferPurposeId"/>
+        </member-entity>
+        <member-entity entity-alias="inputUser" entity-name="moqui.security.UserAccount" join-from-alias="fundsTransfer" join-optional="true">
+            <key-map field-name="inputUserId"/>
+        </member-entity>
+        <member-entity entity-alias="updateUser" entity-name="moqui.security.UserAccount" join-from-alias="fundsTransfer" join-optional="true">
+            <key-map field-name="updateUserId"/>
+        </member-entity>
+
+        <alias-all entity-alias="fundsTransfer"/>
+        <alias name="statusDescription" entity-alias="status" field="description"/>
+        <alias name="transferTypeName" entity-alias="transferType" field="typeName"/>
+        <alias name="typeBehaviourEnumId" entity-alias="typeBehaviour" field="enumId"/>
+        <alias name="typeBehaviourDescription" entity-alias="typeBehaviour" field="description"/>
+        <alias name="beneficiaryName" entity-alias="beneficiary" field="beneficiaryName"/>
+        <alias name="beneficiaryAccountNumber" entity-alias="beneficiary" field="accountNumber"/>
+        <alias name="beneficiarySwiftCode" entity-alias="beneficiary" field="swiftCode"/>
+        <alias name="beneficiaryIban" entity-alias="beneficiary" field="iban"/>
+        <alias name="beneficiaryTypeId" entity-alias="beneficiaryType" field="typeId"/>
+        <alias name="beneficiaryTypeName" entity-alias="beneficiaryType" field="typeName"/>
+        <alias name="bankName" entity-alias="beneficiaryBank" field="bankName"/>
+        <alias name="countryName" entity-alias="country" field="geoName"/>
+        <alias name="currencyDescription" entity-alias="currency" field="description"/>
+        <alias name="currencyAbbreviation" entity-alias="currency" field="abbreviation"/>
+        <alias name="chargesTypeDescription" entity-alias="transferChargesType" field="description"/>
+        <alias name="transferPurposeName" entity-alias="transferPurpose" field="purposeName"/>
+        <alias name="inputUserFullName" entity-alias="inputUser" field="userFullName"/>
+        <alias name="updateUserFullName" entity-alias="updateUser" field="userFullName"/>
+    </view-entity>
+    <view-entity entity-name="FundsTransferCurrencySummaryDetail" package="banqio.ft">
+        <member-entity entity-alias="currencySummary" entity-name="banqio.ft.FundsTransferCurrencySummary"/>
+        <member-entity entity-alias="currency" entity-name="moqui.basic.Uom" join-from-alias="currencySummary">
+            <key-map field-name="currencyId"/>
+        </member-entity>
+
+        <alias-all entity-alias="currencySummary"/>
+        <alias name="currencyDescription" entity-alias="currency" field="description"/>
+        <alias name="currencyAbbreviation" entity-alias="currency" field="abbreviation"/>
+    </view-entity>
+    <view-entity entity-name="FundsTransferWorkflowInstance" package="banqio.ft">
+        <member-entity entity-alias="instance" entity-name="commons.workflow.WorkflowInstance"/>
+        <member-entity entity-alias="instanceStatus" entity-name="moqui.basic.StatusItem" join-from-alias="instance">
+            <key-map field-name="statusId"/>
+        </member-entity>
+        <member-entity entity-alias="actionType" entity-name="moqui.basic.Enumeration" join-from-alias="instance">
+            <key-map field-name="actionTypeEnumId"/>
+        </member-entity>
+        <member-entity entity-alias="workflow" entity-name="commons.workflow.Workflow" join-from-alias="instance">
+            <key-map field-name="workflowId"/>
+        </member-entity>
+        <member-entity entity-alias="workflowType" entity-name="commons.workflow.WorkflowType" join-from-alias="workflow">
+            <key-map field-name="workflowTypeId"/>
+        </member-entity>
+        <member-entity entity-alias="fundsTransfer" entity-name="banqio.ft.FundsTransfer" join-from-alias="instance">
+            <key-map field-name="primaryKeyValue" related="transferId"/>
+        </member-entity>
+        <member-entity entity-alias="transferStatus" entity-name="moqui.basic.StatusItem" join-from-alias="fundsTransfer">
+            <key-map field-name="statusId"/>
+        </member-entity>
+        <member-entity entity-alias="transferType" entity-name="banqio.ft.FundsTransferType" join-from-alias="fundsTransfer" join-optional="true">
+            <key-map field-name="typeId"/>
+        </member-entity>
+        <member-entity entity-alias="typeBehaviour" entity-name="moqui.basic.Enumeration" join-from-alias="transferType" join-optional="true">
+            <key-map field-name="typeBehaviourEnumId"/>
+        </member-entity>
+        <member-entity entity-alias="beneficiary" entity-name="banqio.beneficiary.Beneficiary" join-from-alias="fundsTransfer" join-optional="true">
+            <key-map field-name="beneficiaryId"/>
+        </member-entity>
+        <member-entity entity-alias="beneficiaryType" entity-name="banqio.beneficiary.BeneficiaryType" join-from-alias="beneficiary" join-optional="true">
+            <key-map field-name="typeId"/>
+        </member-entity>
+        <member-entity entity-alias="currency" entity-name="moqui.basic.Uom" join-from-alias="fundsTransfer" join-optional="true">
+            <key-map field-name="currencyId"/>
+        </member-entity>
+        <member-entity entity-alias="transferChargesType" entity-name="moqui.basic.Enumeration" join-from-alias="fundsTransfer" join-optional="true">
+            <key-map field-name="chargesTypeEnumId"/>
+        </member-entity>
+        <member-entity entity-alias="transferPurpose" entity-name="banqio.ft.FundsTransferPurpose" join-from-alias="fundsTransfer" join-optional="true">
+            <key-map field-name="transferPurposeId"/>
+        </member-entity>
+        <member-entity entity-alias="inputUser" entity-name="moqui.security.UserAccount" join-from-alias="instance" join-optional="true">
+            <key-map field-name="inputUserId"/>
+        </member-entity>
+
+        <alias-all entity-alias="instance"/>
+        <alias-all entity-alias="fundsTransfer">
+            <exclude field="inputUserId"/>
+            <exclude field="creationDate"/>
+        </alias-all>
+        <alias name="statusDescription" entity-alias="instanceStatus" field="description"/>
+        <alias name="workflowTypeId" entity-alias="workflowType" field="typeId"/>
+        <alias name="actionTypeDescription" entity-alias="actionType" field="description"/>
+        <alias name="transferStatusId" entity-alias="transferStatus" field="statusId"/>
+        <alias name="transferStatusDescription" entity-alias="transferStatus" field="description"/>
+        <alias name="transferTypeName" entity-alias="transferType" field="typeName"/>
+        <alias name="typeBehaviourEnumId" entity-alias="typeBehaviour" field="enumId"/>
+        <alias name="typeBehaviourDescription" entity-alias="typeBehaviour" field="description"/>
+        <alias name="beneficiaryName" entity-alias="beneficiary" field="beneficiaryName"/>
+        <alias name="beneficiaryAccountNumber" entity-alias="beneficiary" field="accountNumber"/>
+        <alias name="beneficiaryIban" entity-alias="beneficiary" field="iban"/>
+        <alias name="beneficiaryTypeId" entity-alias="beneficiaryType" field="typeId"/>
+        <alias name="beneficiaryTypeName" entity-alias="beneficiaryType" field="typeName"/>
+        <alias name="currencyDescription" entity-alias="currency" field="description"/>
+        <alias name="currencyAbbreviation" entity-alias="currency" field="abbreviation"/>
+        <alias name="chargesTypeDescription" entity-alias="transferChargesType" field="description"/>
+        <alias name="transferPurposeName" entity-alias="transferPurpose" field="purposeName"/>
+        <alias name="inputUserFullName" entity-alias="inputUser" field="userFullName"/>
+
+        <entity-condition>
+            <econdition field-name="workflowTypeId" value="WF_FT"/>
+        </entity-condition>
+    </view-entity>
+    <view-entity entity-name="FundsTransferTypeDetail" package="banqio.ft">
+        <member-entity entity-alias="transferType" entity-name="banqio.ft.FundsTransferType"/>
+        <member-entity entity-alias="parentType" entity-name="banqio.ft.FundsTransferType" join-from-alias="transferType" join-optional="true">
+            <key-map field-name="parentTypeId" related="typeId"/>
+        </member-entity>
+        <member-entity entity-alias="typeBehaviour" entity-name="moqui.basic.Enumeration" join-from-alias="transferType">
+            <key-map field-name="typeBehaviourEnumId"/>
+        </member-entity>
+        <member-entity entity-alias="debitFieldType" entity-name="moqui.basic.Enumeration" join-from-alias="transferType">
+            <key-map field-name="debitFieldTypeEnumId"/>
+        </member-entity>
+        <member-entity entity-alias="currencyFieldType" entity-name="moqui.basic.Enumeration" join-from-alias="transferType">
+            <key-map field-name="currencyFieldTypeEnumId"/>
+        </member-entity>
+        <member-entity entity-alias="chargesFieldType" entity-name="moqui.basic.Enumeration" join-from-alias="transferType">
+            <key-map field-name="chargesFieldTypeEnumId"/>
+        </member-entity>
+
+        <alias-all entity-alias="transferType"/>
+        <alias name="parentTypeName" entity-alias="parentType" field="typeName"/>
+        <alias name="typeBehaviourDescription" entity-alias="typeBehaviour" field="description"/>
+        <alias name="debitFieldTypeDescription" entity-alias="debitFieldType" field="description"/>
+        <alias name="currencyFieldTypeDescription" entity-alias="currencyFieldType" field="description"/>
+        <alias name="chargesFieldTypeDescription" entity-alias="chargesFieldType" field="description"/>
+    </view-entity>
+    <view-entity entity-name="FundsTransferPurposeDetail" package="banqio.ft">
+        <member-entity entity-alias="transferPurpose" entity-name="banqio.ft.FundsTransferPurpose"/>
+        <member-entity entity-alias="parentPurpose" entity-name="banqio.ft.FundsTransferPurpose" join-from-alias="transferPurpose" join-optional="true">
+            <key-map field-name="parentPurposeId" related="purposeId"/>
+        </member-entity>
+        <member-entity entity-alias="transferType" entity-name="banqio.ft.FundsTransferType" join-from-alias="transferPurpose">
+            <key-map field-name="transferTypeId"/>
+        </member-entity>
+        <member-entity entity-alias="transferCurrency" entity-name="moqui.basic.Uom" join-from-alias="transferPurpose" join-optional="true">
+            <key-map field-name="transferCurrencyId"/>
+        </member-entity>
+
+        <alias-all entity-alias="transferPurpose"/>
+        <alias name="parentPurposeName" entity-alias="parentPurpose" field="purposeName"/>
+        <alias name="transferTypeName" entity-alias="transferType" field="typeName"/>
+        <alias name="transferCurrencyDescription" entity-alias="transferCurrency" field="description"/>
+        <alias name="transferCurrencyAbbreviation" entity-alias="transferCurrency" field="abbreviation"/>
+        <alias name="transferCurrencyNumericCode" entity-alias="transferCurrency" field="numericCode"/>
+    </view-entity>
+    <view-entity entity-name="FundsTransferFrequencyDetail" package="banqio.ft">
+        <member-entity entity-alias="transferFrequency" entity-name="banqio.ft.FundsTransferFrequency"/>
+        <member-entity entity-alias="periodUom" entity-name="moqui.basic.Uom" join-from-alias="transferFrequency">
+            <key-map field-name="periodUomId"/>
+        </member-entity>
+
+        <alias-all entity-alias="transferFrequency"/>
+        <alias name="periodUomDescription" entity-alias="periodUom" field="description"/>
+    </view-entity>
+
+    <!-- Posting rule -->
+    <view-entity entity-name="PostingRuleDetail" package="banqio.ft">
+        <member-entity entity-alias="postingRule" entity-name="banqio.ft.PostingRule"/>
+        <member-entity entity-alias="app" entity-name="commons.server.App" join-from-alias="postingRule">
+            <key-map field-name="appId"/>
+        </member-entity>
+        <member-entity entity-alias="transferType" entity-name="banqio.ft.FundsTransferType" join-from-alias="postingRule">
+            <key-map field-name="transferTypeId"/>
+        </member-entity>
+        <member-entity entity-alias="postingType" entity-name="moqui.basic.Enumeration" join-from-alias="postingRule">
+            <key-map field-name="postingTypeEnumId"/>
+        </member-entity>
+        <member-entity entity-alias="currencyType" entity-name="moqui.basic.Enumeration" join-from-alias="postingRule">
+            <key-map field-name="currencyTypeEnumId"/>
+        </member-entity>
+        <member-entity entity-alias="transferCurrency" entity-name="moqui.basic.Uom" join-from-alias="postingRule" join-optional="true">
+            <key-map field-name="transferCurrencyId"/>
+        </member-entity>
+        <member-entity entity-alias="debitCurrency" entity-name="moqui.basic.Uom" join-from-alias="postingRule" join-optional="true">
+            <key-map field-name="debitCurrencyId"/>
+        </member-entity>
+        <member-entity entity-alias="partyClassification" entity-name="mantle.party.PartyClassification" join-from-alias="postingRule" join-optional="true">
+            <key-map field-name="partyClassificationId"/>
+        </member-entity>
+
+        <alias-all entity-alias="postingRule"/>
+        <alias name="appName" entity-alias="app" field="appName"/>
+        <alias name="transferTypeName" entity-alias="transferType" field="typeName"/>
+        <alias name="postingTypeDescription" entity-alias="postingType" field="description"/>
+        <alias name="currencyTypeDescription" entity-alias="currencyType" field="description"/>
+        <alias name="transferCurrencyDescription" entity-alias="transferCurrency" field="description"/>
+        <alias name="transferCurrencyAbbreviation" entity-alias="transferCurrency" field="abbreviation"/>
+        <alias name="transferCurrencyNumericCode" entity-alias="transferCurrency" field="numericCode"/>
+        <alias name="debitCurrencyDescription" entity-alias="debitCurrency" field="description"/>
+        <alias name="debitCurrencyAbbreviation" entity-alias="debitCurrency" field="abbreviation"/>
+        <alias name="debitCurrencyNumericCode" entity-alias="debitCurrency" field="numericCode"/>
+        <alias name="partyClassificationDescription" entity-alias="partyClassification" field="description"/>
+
+        <entity-condition>
+            <date-filter thru-field-name="toDate"/>
+        </entity-condition>
+    </view-entity>
+
+</entities>

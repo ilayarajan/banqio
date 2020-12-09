@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d219fa6"],{ba0a:function(e,n,a){"use strict";a.r(n);var t=function(){var e=this,n=e.$createElement,a=e._self._c||n;return a("router-view")},r=[],u={name:"clean-import-loan-overdue"},l=u,o=a("2877"),c=Object(o["a"])(l,t,r,!1,null,null,null);n["default"]=c.exports}}]);
+//# sourceMappingURL=chunk-2d219fa6.8bf666ef.js.map

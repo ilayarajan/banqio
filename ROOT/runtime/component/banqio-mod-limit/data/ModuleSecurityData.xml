@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Limit API -->
+    <artifactGroups artifactGroupId="BNQ_LMT_API" description="Banqio Limit API">
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/limit/.*"/>
+    </artifactGroups>
+
+    <!-- Admin Limits (All) -->
+    <userGroups userGroupId="BNQ_ADM_LMT_ALL" description="Banqio Admin Limits (All)" groupTypeEnumId="BNQ_ADM_GRP" wikiLocation="component://banqio-mod-limit/wiki/BNQ_ADM_LMT_ALL.md">
+        <authz artifactGroupId="BNQ_LMT_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+    </userGroups>
+
+    <!-- Admin Limits (View) -->
+    <userGroups userGroupId="BNQ_ADM_LMT_VIEW" description="Banqio Admin Limits (View)" groupTypeEnumId="BNQ_ADM_GRP" wikiLocation="component://banqio-mod-limit/wiki/BNQ_ADM_LMT_VIEW.md">
+        <authz artifactGroupId="BNQ_LMT_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+    </userGroups>
+
+</entity-facade-xml>

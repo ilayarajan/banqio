@@ -1,0 +1,954 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Transaction type -->
+    <service verb="find" noun="TransactionType" type="java" location="com.netvariant.banqio.account.TransactionTypeService" method="findTransactionTypes">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.account.TransactionTypeDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="transactionTypeList" type="List">
+                <parameter name="transactionType" type="Map">
+                    <auto-parameters entity-name="banqio.account.TransactionTypeDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="TransactionType" type="java" location="com.netvariant.banqio.account.TransactionTypeService" method="createTransactionType">
+        <in-parameters>
+            <parameter name="externalTypeId"/>
+            <parameter name="typeName"/>
+            <parameter name="typeBehaviourEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="typeId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="TransactionType" type="java" location="com.netvariant.banqio.account.TransactionTypeService" method="updateTransactionType">
+        <in-parameters>
+            <parameter name="typeId"/>
+            <parameter name="externalTypeId"/>
+            <parameter name="typeName"/>
+            <parameter name="typeBehaviourEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="typeId"/>
+        </out-parameters>
+    </service>
+
+    <!-- Transaction type L10n -->
+    <service verb="find" noun="TransactionTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.account.TransactionType"/>
+            <service-call name="commons.entity.EntityServices.find#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="create" noun="TransactionTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.account.TransactionType"/>
+            <service-call name="commons.entity.EntityServices.create#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="update" noun="TransactionTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.account.TransactionType"/>
+            <service-call name="commons.entity.EntityServices.update#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="delete" noun="TransactionTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="localized"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.account.TransactionType"/>
+            <service-call name="commons.entity.EntityServices.delete#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+
+    <!-- Account type -->
+    <service verb="find" noun="AccountType" type="java" location="com.netvariant.banqio.account.AccountTypeService" method="findAccountTypes">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.account.AccountTypeDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="accountTypeList" type="List">
+                <parameter name="accountType" type="Map">
+                    <auto-parameters entity-name="banqio.account.AccountTypeDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="AccountType" type="java" location="com.netvariant.banqio.account.AccountTypeService" method="createAccountType">
+        <in-parameters>
+            <parameter name="externalTypeId"/>
+            <parameter name="typeName"/>
+            <parameter name="typeBehaviourEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="typeId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="AccountType" type="java" location="com.netvariant.banqio.account.AccountTypeService" method="updateAccountType">
+        <in-parameters>
+            <parameter name="typeId"/>
+            <parameter name="externalTypeId"/>
+            <parameter name="typeName"/>
+            <parameter name="typeBehaviourEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="typeId"/>
+        </out-parameters>
+    </service>
+
+    <!-- Account type L10n -->
+    <service verb="find" noun="AccountTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.account.AccountType"/>
+            <service-call name="commons.entity.EntityServices.find#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="create" noun="AccountTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.account.AccountType"/>
+            <service-call name="commons.entity.EntityServices.create#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="update" noun="AccountTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.account.AccountType"/>
+            <service-call name="commons.entity.EntityServices.update#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="delete" noun="AccountTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="localized"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.account.AccountType"/>
+            <service-call name="commons.entity.EntityServices.delete#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+
+    <!-- Account status -->
+    <service verb="find" noun="AccountStatus" type="java" location="com.netvariant.banqio.account.AccountStatusService" method="findAccountStatuses">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.account.AccountStatusDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="accountStatusList" type="List">
+                <parameter name="accountStatus" type="Map">
+                    <auto-parameters entity-name="banqio.account.AccountStatusDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="AccountStatus" type="java" location="com.netvariant.banqio.account.AccountStatusService" method="createAccountStatus">
+        <in-parameters>
+            <parameter name="externalStatusId"/>
+            <parameter name="statusName"/>
+            <parameter name="statusBehaviourEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="statusId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="AccountStatus" type="java" location="com.netvariant.banqio.account.AccountStatusService" method="updateAccountStatus">
+        <in-parameters>
+            <parameter name="statusId"/>
+            <parameter name="externalStatusId"/>
+            <parameter name="statusName"/>
+            <parameter name="statusBehaviourEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="statusId"/>
+        </out-parameters>
+    </service>
+
+    <!-- Account status L10n -->
+    <service verb="find" noun="AccountStatusL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.account.AccountStatus"/>
+            <service-call name="commons.entity.EntityServices.find#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="create" noun="AccountStatusL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.account.AccountStatus"/>
+            <service-call name="commons.entity.EntityServices.create#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="update" noun="AccountStatusL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.account.AccountStatus"/>
+            <service-call name="commons.entity.EntityServices.update#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="delete" noun="AccountStatusL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="localized"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.account.AccountStatus"/>
+            <service-call name="commons.entity.EntityServices.delete#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+
+    <!-- Account -->
+    <service verb="create" noun="Account" type="java" location="com.netvariant.banqio.account.AccountService" method="createAccount">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="statusId"/>
+            <parameter name="targetUserId"/>
+            <parameter name="externalAccountId"/>
+            <parameter name="customerId"/>
+            <parameter name="accountName"/>
+            <parameter name="accountNumber"/>
+            <parameter name="accountTypeId"/>
+            <parameter name="currencyUomId"/>
+            <parameter name="chequeBooks" type="Integer"/>
+            <parameter name="instructions"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="accountId"/>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="AccountTag" type="java" location="com.netvariant.banqio.account.AccountService" method="createAccountTag">
+        <in-parameters>
+            <parameter name="accountId"/>
+            <parameter name="tag"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="userId"/>
+            <parameter name="accountId"/>
+        </out-parameters>
+    </service>
+    <service verb="delete" noun="AccountTag" type="java" location="com.netvariant.banqio.account.AccountService" method="deleteAccountTag">
+        <in-parameters>
+            <parameter name="userId"/>
+            <parameter name="accountId"/>
+        </in-parameters>
+    </service>
+    <service verb="create" noun="AccountNickname" type="java" location="com.netvariant.banqio.account.AccountService" method="createAccountNickname">
+        <in-parameters>
+            <parameter name="accountId"/>
+            <parameter name="nicknameId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="userId"/>
+            <parameter name="accountId"/>
+        </out-parameters>
+    </service>
+    <service verb="delete" noun="AccountNickname" type="java" location="com.netvariant.banqio.account.AccountService" method="deleteAccountNickname">
+        <in-parameters>
+            <parameter name="userId"/>
+            <parameter name="accountId"/>
+        </in-parameters>
+    </service>
+
+    <!-- Account workflow instance -->
+    <service verb="find" noun="AccountWorkflowInstance" type="java" location="com.netvariant.banqio.account.AccountService" method="findAccountWorkflowInstances">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.account.AccountWorkflowInstance"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="instanceList" type="List">
+                <parameter name="instance" type="Map">
+                    <auto-parameters entity-name="banqio.account.AccountWorkflowInstance"/>
+                    <parameter name="approvedCount"/>
+                    <parameter name="pendingCount"/>
+                    <parameter name="rejectedCount"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+
+    <!-- IBAN -->
+    <service verb="generate" noun="Iban" type="java" location="com.netvariant.banqio.account.IbanService" method="generateIban" authenticate="false">
+        <in-parameters>
+            <parameter name="geoId"/>
+            <parameter name="bankCode"/>
+            <parameter name="accountNumber"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="iban"/>
+        </out-parameters>
+    </service>
+    <service verb="validate" noun="Iban" type="java" location="com.netvariant.banqio.account.IbanService" method="validateIban" authenticate="false">
+        <in-parameters>
+            <parameter name="iban"/>
+        </in-parameters>
+    </service>
+
+    <!-- Saving goal -->
+    <service verb="create" noun="SavingGoal" type="java" location="com.netvariant.banqio.account.SavingGoalService" method="createSavingGoal">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="statusId"/>
+            <parameter name="accountId"/>
+            <parameter name="goalName"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+            <parameter name="startingBalance" type="Double"/>
+            <parameter name="targetBalance" type="Double"/>
+            <parameter name="lastBalance" type="Double"/>
+            <parameter name="lastBalanceDate"/>
+            <parameter name="highestBalance" type="Double"/>
+            <parameter name="highestBalanceDate"/>
+            <parameter name="minMonthlyAmount" type="Double"/>
+            <parameter name="suggestTransfers"/>
+            <parameter name="lastSuggestionDate"/>
+            <parameter name="completionDate"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="goalId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="SavingGoal" type="java" location="com.netvariant.banqio.account.SavingGoalService" method="updateSavingGoal">
+        <in-parameters>
+            <parameter name="goalId"/>
+            <parameter name="sourceAppId"/>
+            <parameter name="statusId"/>
+            <parameter name="accountId"/>
+            <parameter name="goalName"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+            <parameter name="startingBalance" type="Double"/>
+            <parameter name="targetBalance" type="Double"/>
+            <parameter name="lastBalance" type="Double"/>
+            <parameter name="lastBalanceDate"/>
+            <parameter name="highestBalance" type="Double"/>
+            <parameter name="highestBalanceDate"/>
+            <parameter name="minMonthlyAmount" type="Double"/>
+            <parameter name="suggestTransfers"/>
+            <parameter name="lastSuggestionDate"/>
+            <parameter name="completionDate"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="goalId"/>
+        </out-parameters>
+    </service>
+    <service verb="delete" noun="SavingGoal" type="java" location="com.netvariant.banqio.account.SavingGoalService" method="deleteSavingGoal">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="goalId"/>
+        </in-parameters>
+    </service>
+
+    <!-- Transaction reconciliation-->
+    <service verb="toggle" noun="TransactionReconciliation" type="java" location="com.netvariant.banqio.account.TransactionReconciliationService" method="toggleTransactionReconciliation">
+        <in-parameters>
+            <parameter name="paymentMethodTypeEnumId"/>
+            <parameter name="accountId"/>
+            <parameter name="transactionId"/>
+            <parameter name="customerId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="reconciliationId"/>
+        </out-parameters>
+    </service>
+
+    <!-- API -->
+    <service verb="find" noun="Account" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="accountNumber"/>
+            <parameter name="ignoreAccountNumber"/>
+            <parameter name="currencyId"/>
+            <parameter name="typeId"/>
+            <parameter name="typeBehaviourEnumId"/>
+            <parameter name="statusId"/>
+            <parameter name="statusBehaviourEnumId"/>
+            <parameter name="permissionTypeEnumId"/>
+            <parameter name="lcyOnly" type="Boolean" default="false"/>
+            <parameter name="fcyOnly" type="Boolean" default="false"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="accountList" type="List">
+                <parameter name="account" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="title"/>
+                    <parameter name="nickname"/>
+                    <parameter name="accountNumber"/>
+                    <parameter name="contractNumber"/>
+                    <parameter name="iban"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="typeId"/>
+                    <parameter name="typeName"/>
+                    <parameter name="typeBehaviourEnumId"/>
+                    <parameter name="statusId"/>
+                    <parameter name="statusName"/>
+                    <parameter name="statusBehaviourEnumId"/>
+                    <parameter name="openingDate" type="Date"/>
+                    <parameter name="lastTransactionDate" type="Date"/>
+                    <parameter name="applicableInterestRate" type="Double"/>
+                    <parameter name="openingBalance" type="Double"/>
+                    <parameter name="openingBalanceLocal" type="Double"/>
+                    <parameter name="ledgerBalance" type="Double"/>
+                    <parameter name="ledgerBalanceLocal" type="Double"/>
+                    <parameter name="workingBalance" type="Double"/>
+                    <parameter name="workingBalanceLocal" type="Double"/>
+                    <parameter name="availableBalance" type="Double"/>
+                    <parameter name="availableBalanceLocal" type="Double"/>
+                    <parameter name="overdraftLimit" type="Double"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="AccountTransaction" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="accountNumber"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+            <parameter name="fromAmount" type="Double"/>
+            <parameter name="toAmount" type="Double"/>
+            <parameter name="typeId"/>
+            <parameter name="transactionId"/>
+            <parameter name="orderByField"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="transactionList" type="List">
+                <parameter name="transaction" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="transactionId"/>
+                    <parameter name="typeId"/>
+                    <parameter name="typeName"/>
+                    <parameter name="typeBehaviourEnumId"/>
+                    <parameter name="amount" type="Double"/>
+                    <parameter name="amountLocal" type="Double"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="accountNumber"/>
+                    <parameter name="accountBalance" type="Double"/>
+                    <parameter name="postingDate" type="Date"/>
+                    <parameter name="valueDate" type="Date"/>
+                    <parameter name="narrative"/>
+                    <parameter name="drCrIndicator"/>
+                    <parameter name="reconciled"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="download" noun="AccountTransactions" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="accountNumber"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+            <parameter name="fromAmount" type="Double"/>
+            <parameter name="toAmount" type="Double"/>
+            <parameter name="typeId"/>
+            <parameter name="orderByField"/>
+        </in-parameters>
+    </service>
+    <service verb="find" noun="AccountTransactionAdvice" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="accountNumber"/>
+            <parameter name="trxId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="adviceList" type="List">
+                <parameter name="advice" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="accountNumber"/>
+                    <parameter name="adviceId"/>
+                    <parameter name="adviceDate" type="Date"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="download" noun="AccountTransactionAdvice" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="accountNumber"/>
+            <parameter name="adviceId"/>
+        </in-parameters>
+    </service>
+    <service verb="find" noun="OfficialAccountStatement" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="accountNumber"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="statementList" type="List">
+                <parameter name="statement" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="accountNumber"/>
+                    <parameter name="statementId"/>
+                    <parameter name="statementDate" type="Date"/>
+                    <parameter name="startDate" type="Date"/>
+                    <parameter name="endDate" type="Date"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="download" noun="OfficialAccountStatement" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="accountNumber"/>
+            <parameter name="statementId"/>
+        </in-parameters>
+    </service>
+    <service verb="find" noun="Mt940AccountStatement" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="accountNumber"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="statementList" type="List">
+                <parameter name="statement" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="accountNumber"/>
+                    <parameter name="statementId"/>
+                    <parameter name="statementDate" type="Date"/>
+                    <parameter name="startDate" type="Date"/>
+                    <parameter name="endDate" type="Date"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="download" noun="Mt940AccountStatement" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="accountNumber"/>
+            <parameter name="statementId"/>
+        </in-parameters>
+    </service>
+    <service verb="update" noun="AccountNickname" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="accountNumber"/>
+            <parameter name="nickname"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="customerId"/>
+            <parameter name="accountNumber"/>
+            <parameter name="nickname"/>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="TermDeposit" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="accountNumber"/>
+            <parameter name="currencyId"/>
+            <parameter name="typeId"/>
+            <parameter name="statusId"/>
+            <parameter name="permissionTypeEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="accountList" type="List">
+                <parameter name="account" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="title"/>
+                    <parameter name="nickname"/>
+                    <parameter name="accountNumber"/>
+                    <parameter name="contractNumber"/>
+                    <parameter name="settlementAccountNumber"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="typeId"/>
+                    <parameter name="typeName"/>
+                    <parameter name="typeBehaviourEnumId"/>
+                    <parameter name="statusId"/>
+                    <parameter name="statusName"/>
+                    <parameter name="statusBehaviourEnumId"/>
+                    <parameter name="startDate" type="Date"/>
+                    <parameter name="maturityDate" type="Date"/>
+                    <parameter name="term"/>
+                    <parameter name="termUomId"/>
+                    <parameter name="termDescription"/>
+                    <parameter name="depositAmount" type="Double"/>
+                    <parameter name="depositAmountLocal" type="Double"/>
+                    <parameter name="maturityAmount" type="Double"/>
+                    <parameter name="maturityAmountLocal" type="Double"/>
+                    <parameter name="interestAmount" type="Double"/>
+                    <parameter name="interestAmountLocal" type="Double"/>
+                    <parameter name="interestRate" type="Double"/>
+                    <parameter name="interestPaymentTermEnumId"/>
+                    <parameter name="interestPaymentTermDescription"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="TermDepositReceipt" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="accountNumber"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="receiptList" type="List">
+                <parameter name="receipt" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="accountNumber"/>
+                    <parameter name="receiptId"/>
+                    <parameter name="receiptDate" type="Date"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="download" noun="TermDepositReceipt" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="accountNumber"/>
+            <parameter name="receiptId"/>
+        </in-parameters>
+    </service>
+
+</services>

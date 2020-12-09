@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <moqui.basic.LocalizedMessage original="PARTY_CLASS_NAME_REQUIRED" locale="en" localized="Name is required."/>
+    <moqui.basic.LocalizedMessage original="PARTY_CLASS_NOT_FOUND" locale="en" localized="Party classification not found."/>
+    <moqui.basic.LocalizedMessage original="PARTY_CLASS_PARENT_NOT_FOUND" locale="en" localized="Parent classification not found."/>
+    <moqui.basic.LocalizedMessage original="PARTY_CLASS_SAME_PARENT" locale="en" localized="Parent classification cannot be self."/>
+    <moqui.basic.LocalizedMessage original="PARTY_CLASS_CRC_CHECK_FAILED" locale="en" localized="Parent classification CRC check failed."/>
+    <moqui.basic.LocalizedMessage original="PARTY_CLASS_CREATED_SUCCESSFULLY" locale="en" localized="Party classification created successfully."/>
+    <moqui.basic.LocalizedMessage original="PARTY_CLASS_UPDATED_SUCCESSFULLY" locale="en" localized="Party classification updated successfully."/>
+
+    <moqui.basic.LocalizedMessage original="USER_USERNAME_REQUIRED" locale="en" localized="Username is required."/>
+    <moqui.basic.LocalizedMessage original="USER_PASSWORD_REQUIRED" locale="en" localized="Password is required."/>
+    <moqui.basic.LocalizedMessage original="USER_PASSWORD_VERIFY_MISMATCH" locale="en" localized="Password and password verify do not match."/>
+    <moqui.basic.LocalizedMessage original="USER_OLD_PASSWORD_REQUIRED" locale="en" localized="Old password is required."/>
+    <moqui.basic.LocalizedMessage original="USER_NEW_PASSWORD_REQUIRED" locale="en" localized="New password is required."/>
+    <moqui.basic.LocalizedMessage original="USER_PARTY_USER_ACCOUNT_EXISTS" locale="en" localized="Party user account already exists."/>
+    <moqui.basic.LocalizedMessage original="USER_USERNAME_IN_USE" locale="en" localized="Username already in use."/>
+    <moqui.basic.LocalizedMessage original="USER_NOT_AUTHENTICATED" locale="en" localized="User not authenticated."/>
+    <moqui.basic.LocalizedMessage original="USER_DISABLED" locale="en" localized="User is disabled."/>
+    <moqui.basic.LocalizedMessage original="USER_NOT_APPROVED" locale="en" localized="User not approved."/>
+    <moqui.basic.LocalizedMessage original="USER_ALREADY_APPROVED" locale="en" localized="User already approved."/>
+    <moqui.basic.LocalizedMessage original="USER_APPROVAL_BY_CREATOR" locale="en" localized="User cannot be approved by creator."/>
+    <moqui.basic.LocalizedMessage original="USER_ALREADY_ENABLED" locale="en" localized="User already enabled."/>
+    <moqui.basic.LocalizedMessage original="USER_ALREADY_DISABLED" locale="en" localized="User already disabled."/>
+    <moqui.basic.LocalizedMessage original="USER_CONTACT_MECH_REQUIRED" locale="en" localized="User contact mechanism is required."/>
+    <moqui.basic.LocalizedMessage original="USER_PASSWORD_SENT" locale="en" localized="Password sent to selected contact mechanisms."/>
+    <moqui.basic.LocalizedMessage original="USER_PASSWORD_INSECURE" locale="en" localized="Password does not meet minimum security requirements."/>
+    <moqui.basic.LocalizedMessage original="USER_PASSWORD_CHANGED_SUCCESSFULLY" locale="en" localized="Password changed successfully."/>
+    <moqui.basic.LocalizedMessage original="USER_UNRECOGNIZED_LANGUAGE" locale="en" localized="Unrecognized language."/>
+    <moqui.basic.LocalizedMessage original="USER_ENABLED_SUCCESSFULLY" locale="en" localized="User enabled successfully."/>
+    <moqui.basic.LocalizedMessage original="USER_DISABLED_SUCCESSFULLY" locale="en" localized="User disabled successfully."/>
+    <moqui.basic.LocalizedMessage original="USER_APPROVED_SUCCESSFULLY" locale="en" localized="User approved successfully."/>
+    <moqui.basic.LocalizedMessage original="USER_LOGGED_OUT_SUCCESSFULLY" locale="en" localized="User logged out successfully."/>
+    <moqui.basic.LocalizedMessage original="USER_CREATED_SUCCESSFULLY" locale="en" localized="User created successfully."/>
+    <moqui.basic.LocalizedMessage original="USER_UPDATED_SUCCESSFULLY" locale="en" localized="User updated successfully."/>
+    <moqui.basic.LocalizedMessage original="USER_REGISTERED_SUCCESSFULLY" locale="en" localized="User registered successfully."/>
+    <moqui.basic.LocalizedMessage original="USER_LANGUAGE_UPDATED_SUCCESSFULLY" locale="en" localized="Language updated successfully."/>
+    <moqui.basic.LocalizedMessage original="USER_OTP_CHANNEL_UPDATED_SUCCESSFULLY" locale="en" localized="OTP channel updated successfully."/>
+    <moqui.basic.LocalizedMessage original="USER_PARTY_NOT_DEFINED" locale="en" localized="User party not defined."/>
+    <moqui.basic.LocalizedMessage original="USER_ACCESS_DENIED" locale="en" localized="Access denied."/>
+    <moqui.basic.LocalizedMessage original="USER_STATS_FROM_DATE_INVALID" locale="en" localized="From date is required."/>
+    <moqui.basic.LocalizedMessage original="USER_STATS_DATE_RANGE_INVALID" locale="en" localized="Invalid date range."/>
+
+    <moqui.basic.LocalizedMessage original="PASSWORD_SENT" locale="en" localized="Password sent via email."/>
+    <moqui.basic.LocalizedMessage original="PASSWORD_CHANGED_SUCCESSFULLY" locale="en" localized="Password changed successfully."/>
+    <moqui.basic.LocalizedMessage original="PASSWORD_RESET_SUCCESSFULLY" locale="en" localized="Password reset successfully."/>
+
+    <moqui.basic.LocalizedMessage original="USER_GROUP_DESCRIPTION_REQUIRED" locale="en" localized="Description is required."/>
+    <moqui.basic.LocalizedMessage original="USER_GROUP_TYPE_NOT_ALLOWED" locale="en" localized="Type is not allowed."/>
+    <moqui.basic.LocalizedMessage original="USER_GROUP_NOT_FOUND" locale="en" localized="Group not found."/>
+    <moqui.basic.LocalizedMessage original="USER_GROUP_CREATED_SUCCESSFULLY" locale="en" localized="User group created successfully."/>
+    <moqui.basic.LocalizedMessage original="USER_GROUP_MODIFIED_SUCCESSFULLY" locale="en" localized="User group modified successfully."/>
+    <moqui.basic.LocalizedMessage original="USER_GROUP_MEMBER_DATE_RANGE_INVALID" locale="en" localized="Invalid date range."/>
+    <moqui.basic.LocalizedMessage original="USER_GROUP_MEMBER_ALREADY_EXISTS" locale="en" localized="User group membership already exists."/>
+    <moqui.basic.LocalizedMessage original="USER_GROUP_MEMBER_CREATED_SUCCESSFULLY" locale="en" localized="User group member created successfully."/>
+    <moqui.basic.LocalizedMessage original="USER_GROUP_MEMBER_EXPIRED_SUCCESSFULLY" locale="en" localized="User group member expired successfully."/>
+
+    <moqui.basic.LocalizedMessage original="ACL_OBJECT_ID_REQUIRED" locale="en" localized="Object ID is required."/>
+    <moqui.basic.LocalizedMessage original="ACL_OBJECT_TYPE_REQUIRED" locale="en" localized="Object type is required."/>
+    <moqui.basic.LocalizedMessage original="ACL_DATE_RANGE_INVALID" locale="en" localized="Invalid date range."/>
+    <moqui.basic.LocalizedMessage original="ACL_NOT_FOUND" locale="en" localized="ACL not found."/>
+    <moqui.basic.LocalizedMessage original="ACL_CREATED_SUCCESSFULLY" locale="en" localized="ACL created successfully."/>
+    <moqui.basic.LocalizedMessage original="ACL_UPDATED_SUCCESSFULLY" locale="en" localized="ACL updated successfully."/>
+    <moqui.basic.LocalizedMessage original="ACL_EXPIRED_SUCCESSFULLY" locale="en" localized="ACL expired successfully."/>
+
+    <moqui.basic.LocalizedMessage original="PARTY_FIRST_NAME_REQUIRED" locale="en" localized="First name required."/>
+    <moqui.basic.LocalizedMessage original="PARTY_LAST_NAME_REQUIRED" locale="en" localized="Last name required."/>
+    <moqui.basic.LocalizedMessage original="PARTY_CONTACT_MECH_REQUIRED" locale="en" localized="At least one contact mechanism is required."/>
+    <moqui.basic.LocalizedMessage original="PARTY_ORG_NAME_REQUIRED" locale="en" localized="Organization name required."/>
+    <moqui.basic.LocalizedMessage original="PARTY_CREATED_SUCCESSFULLY" locale="en" localized="Party created successfully."/>
+    <moqui.basic.LocalizedMessage original="PARTY_NOT_FOUND" locale="en" localized="Party not found."/>
+    <moqui.basic.LocalizedMessage original="PARTY_UPDATED_SUCCESSFULLY" locale="en" localized="Party updated successfully."/>
+    <moqui.basic.LocalizedMessage original="PARTY_COUNTRY_CODE_REQUIRED" locale="en" localized="Country code is required."/>
+    <moqui.basic.LocalizedMessage original="PARTY_EMAIL_REQUIRED" locale="en" localized="Email is required."/>
+    <moqui.basic.LocalizedMessage original="PARTY_CONTACT_MECH_CREATED_SUCCESSFULLY" locale="en" localized="Contact mech created successfully."/>
+    <moqui.basic.LocalizedMessage original="PARTY_CONTACT_MECH_NOT_FOUND" locale="en" localized="Contact mech not found."/>
+    <moqui.basic.LocalizedMessage original="PARTY_CONTACT_MECH_EXPIRED_SUCCESSFULLY" locale="en" localized="Contact mech expired successfully."/>
+    <moqui.basic.LocalizedMessage original="PARTY_ID_VALUE_REQUIRED" locale="en" localized="ID value is required."/>
+    <moqui.basic.LocalizedMessage original="PARTY_IDENTIFICATION_ALREADY_EXISTS" locale="en" localized="Identification already exists."/>
+    <moqui.basic.LocalizedMessage original="PARTY_IDENTIFICATION_CREATED_SUCCESSFULLY" locale="en" localized="Identification created successfully."/>
+    <moqui.basic.LocalizedMessage original="PARTY_IDENTIFICATION_NOT_FOUND" locale="en" localized="Identification not found."/>
+    <moqui.basic.LocalizedMessage original="PARTY_IDENTIFICATION_DELETED_SUCCESSFULLY" locale="en" localized="Identification deleted successfully."/>
+    <moqui.basic.LocalizedMessage original="PARTY_CONTENT_FILE_NOT_FOUND" locale="en" localized="Content file not found."/>
+    <moqui.basic.LocalizedMessage original="PARTY_CONTENT_CREATED_SUCCESSFULLY" locale="en" localized="Content created successfully."/>
+    <moqui.basic.LocalizedMessage original="PARTY_CONTENT_NOT_FOUND" locale="en" localized="Content not found."/>
+    <moqui.basic.LocalizedMessage original="PARTY_ROLE_TYPE_NOT_FOUND" locale="en" localized="Role type not found."/>
+    <moqui.basic.LocalizedMessage original="PARTY_ROLE_ALREADY_EXISTS" locale="en" localized="Role already exists."/>
+    <moqui.basic.LocalizedMessage original="PARTY_ROLE_CREATED_SUCCESSFULLY" locale="en" localized="Role created successfully."/>
+    <moqui.basic.LocalizedMessage original="PARTY_ROLE_NOT_FOUND" locale="en" localized="Role not found."/>
+    <moqui.basic.LocalizedMessage original="PARTY_ROLE_DELETED_SUCCESSFULLY" locale="en" localized="Role deleted successfully."/>
+    <moqui.basic.LocalizedMessage original="PARTY_BADGE_SERIAL_NUMBER_REQUIRED" locale="en" localized="Serial number is required."/>
+    <moqui.basic.LocalizedMessage original="PARTY_BADGE_DATE_RANGE_INVALID" locale="en" localized="Invalid date range."/>
+    <moqui.basic.LocalizedMessage original="PARTY_BADGE_ALREADY_EXISTS" locale="en" localized="Badge already exists."/>
+    <moqui.basic.LocalizedMessage original="PARTY_BADGE_NOT_FOUND" locale="en" localized="Badge not found."/>
+    <moqui.basic.LocalizedMessage original="PARTY_BADGE_CREATED_SUCCESSFULLY" locale="en" localized="Badge created successfully."/>
+    <moqui.basic.LocalizedMessage original="PARTY_BADGE_EXPIRED_SUCCESSFULLY" locale="en" localized="Badge expired successfully."/>
+    <moqui.basic.LocalizedMessage original="PARTY_NOTE_TEXT_REQUIRED" locale="en" localized="Note text is required."/>
+    <moqui.basic.LocalizedMessage original="PARTY_NOTE_CREATED_SUCCESSFULLY" locale="en" localized="Note created successfully."/>
+    <moqui.basic.LocalizedMessage original="PARTY_RELATIONSHIP_SELF_RELATION" locale="en" localized="Party cannot be related to itself."/>
+    <moqui.basic.LocalizedMessage original="PARTY_RELATIONSHIP_DATE_RANGE_INVALID" locale="en" localized="Invalid date range."/>
+    <moqui.basic.LocalizedMessage original="PARTY_RELATIONSHIP_CREATED_SUCCESSFULLY" locale="en" localized="Relationship created successfully."/>
+    <moqui.basic.LocalizedMessage original="PARTY_RELATIONSHIP_NOT_FOUND" locale="en" localized="Relationship not found."/>
+    <moqui.basic.LocalizedMessage original="PARTY_RELATIONSHIP_EXPIRED_SUCCESSFULLY" locale="en" localized="Relationship expired successfully."/>
+    <moqui.basic.LocalizedMessage original="CONTACT_MECH_ACCESS_DENIED" locale="en" localized="Access to contact mech is denied."/>
+    <moqui.basic.LocalizedMessage original="PARTY_CLASS_EXPIRED_SUCCESSFULLY" locale="en" localized="Party classification expired successfully."/>
+    <moqui.basic.LocalizedMessage original="PARTY_CLASS_DATE_RANGE_INVALID" locale="en" localized="Invalid date range."/>
+
+    <moqui.basic.LocalizedMessage original="COMMUNICATION_EVENT_TYPE_NOT_FOUND" locale="en" localized="Event type not found."/>
+    <moqui.basic.LocalizedMessage original="COMMUNICATION_EVENT_NOT_FOUND" locale="en" localized="Event not found."/>
+    <moqui.basic.LocalizedMessage original="COMMUNICATION_EVENT_CREATED_SUCCESSFULLY" locale="en" localized="Event created successfully."/>
+    <moqui.basic.LocalizedMessage original="COMMUNICATION_EVENT_NOT_FOUND" locale="en" localized="Event not found."/>
+    <moqui.basic.LocalizedMessage original="COMMUNICATION_EVENT_CONTENT_CREATED_SUCCESSFULLY" locale="en" localized="Content created successfully."/>
+    <moqui.basic.LocalizedMessage original="COMMUNICATION_EVENT_UPDATED_SUCCESSFULLY" locale="en" localized="Event updated successfully."/>
+    <moqui.basic.LocalizedMessage original="COMMUNICATION_EVENT_CONTENT_NOT_FOUND" locale="en" localized="Content not found."/>
+
+    <moqui.basic.LocalizedMessage original="COUNTRY_NOT_FOUND" locale="en" localized="Country not found."/>
+    <moqui.basic.LocalizedMessage original="COUNTRY_WEEKEND_NOT_FOUND" locale="en" localized="Weekend not found."/>
+    <moqui.basic.LocalizedMessage original="COUNTRY_WEEKEND_ALREADY_EXISTS" locale="en" localized="Weekend already exists."/>
+    <moqui.basic.LocalizedMessage original="COUNTRY_WEEKEND_UPDATED_SUCCESSFULLY" locale="en" localized="Weekend updated successfully."/>
+    <moqui.basic.LocalizedMessage original="COUNTRY_WEEKEND_CREATED_SUCCESSFULLY" locale="en" localized="Weekend created successfully."/>
+    <moqui.basic.LocalizedMessage original="COUNTRY_HOLIDAY_NAME_REQUIRED" locale="en" localized="Name is required."/>
+    <moqui.basic.LocalizedMessage original="COUNTRY_HOLIDAY_DATE_RANGE_INVALID" locale="en" localized="Invalid date range."/>
+    <moqui.basic.LocalizedMessage original="COUNTRY_HOLIDAY_NOT_FOUND" locale="en" localized="Holiday not found."/>
+    <moqui.basic.LocalizedMessage original="COUNTRY_HOLIDAY_CREATED_SUCCESSFULLY" locale="en" localized="Holiday created successfully."/>
+    <moqui.basic.LocalizedMessage original="COUNTRY_HOLIDAY_DELETED_SUCCESSFULLY" locale="en" localized="Holiday deleted successfully."/>
+    <moqui.basic.LocalizedMessage original="COUNTRY_IBAN_FORMAT_ALREADY_EXISTS" locale="en" localized="IBAN format already exists."/>
+    <moqui.basic.LocalizedMessage original="COUNTRY_IBAN_FORMAT_CREATED_SUCCESSFULLY" locale="en" localized="IBAN format created successfully."/>
+    <moqui.basic.LocalizedMessage original="COUNTRY_IBAN_FORMAT_NOT_FOUND" locale="en" localized="IBAN format not found."/>
+    <moqui.basic.LocalizedMessage original="COUNTRY_IBAN_FORMAT_UPDATED_SUCCESSFULLY" locale="en" localized="IBAN format updated successfully."/>
+
+    <moqui.basic.LocalizedMessage original="CURRENCY_NOT_FOUND" locale="en" localized="Currency not found."/>
+    <moqui.basic.LocalizedMessage original="CURRENCY_WEEKEND_NOT_FOUND" locale="en" localized="Weekend not found."/>
+    <moqui.basic.LocalizedMessage original="CURRENCY_WEEKEND_ALREADY_EXISTS" locale="en" localized="Weekend already exists."/>
+    <moqui.basic.LocalizedMessage original="CURRENCY_WEEKEND_UPDATED_SUCCESSFULLY" locale="en" localized="Weekend updated successfully."/>
+    <moqui.basic.LocalizedMessage original="CURRENCY_WEEKEND_CREATED_SUCCESSFULLY" locale="en" localized="Weekend created successfully."/>
+    <moqui.basic.LocalizedMessage original="CURRENCY_WEEKEND_UPDATED_SUCCESSFULLY" locale="en" localized="Weekend updated successfully."/>
+    <moqui.basic.LocalizedMessage original="CURRENCY_HOLIDAY_NAME_REQUIRED" locale="en" localized="Name is required."/>
+    <moqui.basic.LocalizedMessage original="CURRENCY_HOLIDAY_DATE_RANGE_INVALID" locale="en" localized="Invalid date range."/>
+    <moqui.basic.LocalizedMessage original="CURRENCY_HOLIDAY_NOT_FOUND" locale="en" localized="Holiday not found."/>
+    <moqui.basic.LocalizedMessage original="CURRENCY_HOLIDAY_CREATED_SUCCESSFULLY" locale="en" localized="Holiday created successfully."/>
+    <moqui.basic.LocalizedMessage original="CURRENCY_HOLIDAY_DELETED_SUCCESSFULLY" locale="en" localized="Holiday deleted successfully."/>
+    <moqui.basic.LocalizedMessage original="CURRENCY_APP_CREATED_SUCCESSFULLY" locale="en" localized="Currency app created successfully."/>
+    <moqui.basic.LocalizedMessage original="CURRENCY_APP_NOT_FOUND" locale="en" localized="App not found."/>
+    <moqui.basic.LocalizedMessage original="CURRENCY_APP_ALREADY_EXISTS" locale="en" localized="App already exists."/>
+    <moqui.basic.LocalizedMessage original="CURRENCY_APP_DELETED_SUCCESSFULLY" locale="en" localized="Currency app deleted successfully."/>
+
+</entity-facade-xml>
+
+

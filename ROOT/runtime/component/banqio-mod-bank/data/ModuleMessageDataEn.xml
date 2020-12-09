@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <moqui.basic.LocalizedMessage original="TELLER_TYPE_NAME_REQUIRED" locale="en" localized="Type name is required."/>
+    <moqui.basic.LocalizedMessage original="TELLER_TYPE_NOT_FOUND" locale="en" localized="Type not found."/>
+    <moqui.basic.LocalizedMessage original="TELLER_TYPE_CREATED_SUCCESSFULLY" locale="en" localized="Type created successfully."/>
+    <moqui.basic.LocalizedMessage original="TELLER_TYPE_UPDATED_SUCCESSFULLY" locale="en" localized="Type updated successfully."/>
+    <moqui.basic.LocalizedMessage original="TELLER_TYPE_ALREADY_EXISTS" locale="en" localized="Type already exists."/>
+
+    <moqui.basic.LocalizedMessage original="TELLER_STATUS_NAME_REQUIRED" locale="en" localized="Status name is required."/>
+    <moqui.basic.LocalizedMessage original="TELLER_STATUS_NOT_FOUND" locale="en" localized="Status not found."/>
+    <moqui.basic.LocalizedMessage original="TELLER_STATUS_CREATED_SUCCESSFULLY" locale="en" localized="Status created successfully."/>
+    <moqui.basic.LocalizedMessage original="TELLER_STATUS_UPDATED_SUCCESSFULLY" locale="en" localized="Status updated successfully."/>
+    <moqui.basic.LocalizedMessage original="TELLER_STATUS_ALREADY_EXISTS" locale="en" localized="Status already exists."/>
+
+    <moqui.basic.LocalizedMessage original="TELLER_NAME_REQUIRED" locale="en" localized="Teller name is required."/>
+    <moqui.basic.LocalizedMessage original="TELLER_TYPE_REQUIRED" locale="en" localized="Teller type is required."/>
+    <moqui.basic.LocalizedMessage original="TELLER_NOT_FOUND" locale="en" localized="Teller not found."/>
+    <moqui.basic.LocalizedMessage original="TELLER_CREATED_SUCCESSFULLY" locale="en" localized="Teller created successfully."/>
+    <moqui.basic.LocalizedMessage original="TELLER_UPDATED_SUCCESSFULLY" locale="en" localized="Teller updated successfully."/>
+
+    <moqui.basic.LocalizedMessage original="BANK_NAME_REQUIRED" locale="en" localized="Bank name is required."/>
+    <moqui.basic.LocalizedMessage original="BANK_COUNTRY_REQUIRED" locale="en" localized="Country is required."/>
+    <moqui.basic.LocalizedMessage original="BANK_COUNTRY_NOT_FOUND" locale="en" localized="Country not found."/>
+    <moqui.basic.LocalizedMessage original="BANK_ALREADY_EXISTS" locale="en" localized="Bank already exists."/>
+    <moqui.basic.LocalizedMessage original="BANK_CREATED_SUCCESSFULLY" locale="en" localized="Bank created successfully."/>
+    <moqui.basic.LocalizedMessage original="BANK_UPDATED_SUCCESSFULLY" locale="en" localized="Bank updated successfully."/>
+
+    <moqui.basic.LocalizedMessage original="BIC_IMPORT_INVALID_REQUEST" locale="en" localized="Invalid import request."/>
+    <moqui.basic.LocalizedMessage original="BIC_IMPORT_DIR_NOT_FOUND" locale="en" localized="BIC directory file not found."/>
+    <moqui.basic.LocalizedMessage original="BIC_IMPORT_DIR_INVALID" locale="en" localized="Invalid BIC directory file."/>
+    <moqui.basic.LocalizedMessage original="BIC_IMPORT_ERROR" locale="en" localized="An error has occurred while importing BIC directory."/>
+
+    <moqui.basic.LocalizedMessage original="TXT_IMPORT_FILE_NOT_FOUND" locale="en" localized="Text file not found."/>
+    <moqui.basic.LocalizedMessage original="TXT_IMPORT_FILE_INVALID" locale="en" localized="Invalid text file."/>
+    <moqui.basic.LocalizedMessage original="TXT_IMPORT_NO_ROW_PATTERN" locale="en" localized="No row pattern has been specified."/>
+    <moqui.basic.LocalizedMessage original="TXT_IMPORT_ERROR" locale="en" localized="An error has occurred while importing text file."/>
+
+    <moqui.basic.LocalizedMessage original="BRANCH_NAME_REQUIRED" locale="en" localized="Branch name is required."/>
+    <moqui.basic.LocalizedMessage original="BRANCH_BANK_REQUIRED" locale="en" localized="Branch Bank is required."/>
+    <moqui.basic.LocalizedMessage original="BRANCH_COUNTRY_REQUIRED" locale="en" localized="Branch country is required."/>
+    <moqui.basic.LocalizedMessage original="BRANCH_NOT_FOUND" locale="en" localized="Branch not found."/>
+    <moqui.basic.LocalizedMessage original="BRANCH_ALREADY_EXISTS" locale="en" localized="Branch already exists."/>
+    <moqui.basic.LocalizedMessage original="BRANCH_CREATED_SUCCESSFULLY" locale="en" localized="Branch created successfully."/>
+    <moqui.basic.LocalizedMessage original="BRANCH_UPDATED_SUCCESSFULLY" locale="en" localized="Branch updated successfully."/>
+    <moqui.basic.LocalizedMessage original="BRANCH_CONTACT_MECH_CREATED_SUCCESSFULLY" locale="en" localized="Branch contact mechanism created successfully."/>
+    <moqui.basic.LocalizedMessage original="BRANCH_CONTACT_MECH_DELETED_SUCCESSFULLY" locale="en" localized="Branch contact mechanism deleted successfully."/>
+    <moqui.basic.LocalizedMessage original="BRANCH_WORK_SHIFT_CREATED_SUCCESSFULLY" locale="en" localized="Branch work shift created successfully."/>
+    <moqui.basic.LocalizedMessage original="BRANCH_WORK_SHIFT_DELETED_SUCCESSFULLY" locale="en" localized="Branch work shift deleted successfully."/>
+
+    <moqui.basic.LocalizedMessage original="BANK_FUNCTION_NAME_REQUIRED" locale="en" localized="Bank function name is required."/>
+    <moqui.basic.LocalizedMessage original="BANK_FUNCTION_NOT_FOUND" locale="en" localized="Bank function not found."/>
+    <moqui.basic.LocalizedMessage original="BANK_FUNCTION_CREATED_SUCCESSFULLY" locale="en" localized="Bank function created successfully."/>
+    <moqui.basic.LocalizedMessage original="BANK_FUNCTION_UPDATED_SUCCESSFULLY" locale="en" localized="Bank function updated successfully."/>
+
+</entity-facade-xml>

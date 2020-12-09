@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- DC type behaviour -->
+    <moqui.basic.EnumerationType enumTypeId="DcTypeBehaviour" description="DC Type Behaviour"/>
+    <moqui.basic.Enumeration enumTypeId="DcTypeBehaviour" enumId="DC_TYPE_DP" description="Documents against Payment"/>
+    <moqui.basic.Enumeration enumTypeId="DcTypeBehaviour" enumId="DC_TYPE_DA" description="Documents against Acceptance"/>
+
+    <!-- LC type behaviour -->
+    <moqui.basic.EnumerationType enumTypeId="LcTypeBehaviour" description="LC Type Behaviour"/>
+    <moqui.basic.Enumeration enumTypeId="LcTypeBehaviour" enumId="LC_TYPE_IMPORT" description="Import/Export"/>
+    <moqui.basic.Enumeration enumTypeId="LcTypeBehaviour" enumId="LC_TYPE_REVOKE" description="Revocable/Irrevocable"/>
+    <moqui.basic.Enumeration enumTypeId="LcTypeBehaviour" enumId="LC_TYPE_CONFIRM" description="Confirmed/Unconfirmed"/>
+    <moqui.basic.Enumeration enumTypeId="LcTypeBehaviour" enumId="LC_TYPE_RESTRICT" description="Restricted/Unrestricted"/>
+    <moqui.basic.Enumeration enumTypeId="LcTypeBehaviour" enumId="LC_TYPE_STANDBY" description="Deferred/Usance"/>
+
+    <!-- LG type behaviour -->
+    <moqui.basic.EnumerationType enumTypeId="LgTypeBehaviour" description="LG Type Behaviour"/>
+    <moqui.basic.Enumeration enumTypeId="LgTypeBehaviour" enumId="LG_TYPE_DIRECT" description="Direct Guarantee"/>
+    <moqui.basic.Enumeration enumTypeId="LgTypeBehaviour" enumId="LG_TYPE_INDIRECT" description="Indirect Guarantee"/>
+
+</entity-facade-xml>

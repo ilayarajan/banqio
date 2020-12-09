@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        default-menu-index="3"
+        default-menu-title="Configuration"
+        menu-image="/Static/icons/fugue/wrench.png">
+
+    <subscreens default-item="FindConfiguration"/>
+
+    <widgets>
+        <subscreens-menu id="configurationMenu"/>
+        <subscreens-active/>
+    </widgets>
+</screen>

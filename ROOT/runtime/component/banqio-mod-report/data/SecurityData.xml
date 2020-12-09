@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Object type -->
+    <moqui.basic.Enumeration enumTypeId="ObjectType" enumId="OBJ_REPORT" description="Report"/>
+
+</entity-facade-xml>

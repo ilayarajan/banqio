@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        default-menu-index="5"
+        default-menu-title="Server"
+        menu-image="/Static/icons/fugue/server.png">
+
+    <subscreens default-item="App">
+        <subscreens-item name="App" location="component://commons/screen/Commons/Server/App.xml" menu-index="1"/>
+        <subscreens-item name="Scene" location="component://commons/screen/Commons/Server/Scene.xml" menu-index="2"/>
+        <subscreens-item name="Configuration" location="component://commons/screen/Commons/Server/Configuration.xml" menu-index="3"/>
+    </subscreens>
+
+    <widgets>
+        <subscreens-menu id="serverMenu" type="popup"/>
+        <subscreens-active/>
+    </widgets>
+</screen>

@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Funds transfer type -->
+    <service verb="find" noun="FundsTransferType" type="java" location="com.netvariant.banqio.ft.FundsTransferTypeService" method="findFundsTransferTypes">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.ft.FundsTransferTypeDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="transferTypeList" type="List">
+                <parameter name="transferType" type="Map">
+                    <auto-parameters entity-name="banqio.ft.FundsTransferTypeDetail">
+                        <exclude field-name="templateFileLocation"/>
+                    </auto-parameters>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="FundsTransferType" type="java" location="com.netvariant.banqio.ft.FundsTransferTypeService" method="createFundsTransferType">
+        <in-parameters>
+            <parameter name="externalTypeId"/>
+            <parameter name="parentTypeId"/>
+            <parameter name="typeName"/>
+            <parameter name="typeBehaviourEnumId"/>
+            <parameter name="debitFieldTypeEnumId"/>
+            <parameter name="currencyFieldTypeEnumId"/>
+            <parameter name="chargesFieldTypeEnumId"/>
+            <parameter name="chargesAmountThreshold" type="Double"/>
+            <parameter name="templateFile" type="org.apache.commons.fileupload.FileItem"/>
+            <parameter name="inputNotes" allow-html="safe"/>
+            <parameter name="reviewNotes" allow-html="safe"/>
+            <parameter name="position" type="Integer"/>
+            <parameter name="disabled"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="typeId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="FundsTransferType" type="java" location="com.netvariant.banqio.ft.FundsTransferTypeService" method="updateFundsTransferType">
+        <in-parameters>
+            <parameter name="typeId"/>
+            <parameter name="externalTypeId"/>
+            <parameter name="parentTypeId"/>
+            <parameter name="typeName"/>
+            <parameter name="typeBehaviourEnumId"/>
+            <parameter name="debitFieldTypeEnumId"/>
+            <parameter name="currencyFieldTypeEnumId"/>
+            <parameter name="chargesFieldTypeEnumId"/>
+            <parameter name="chargesAmountThreshold" type="Double"/>
+            <parameter name="templateFile" type="org.apache.commons.fileupload.FileItem"/>
+            <parameter name="inputNotes" allow-html="safe"/>
+            <parameter name="reviewNotes" allow-html="safe"/>
+            <parameter name="position" type="Integer"/>
+            <parameter name="disabled"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="typeId"/>
+        </out-parameters>
+    </service>
+    <service verb="tree" noun="FundsTransferType" type="java" location="com.netvariant.banqio.ft.FundsTransferTypeService" method="fundsTransferTypeTree">
+        <in-parameters/>
+    </service>
+    <service verb="download" noun="FundsTransferTypeTemplate" type="java" location="com.netvariant.banqio.ft.FundsTransferTypeService" method="downloadFundsTransferTypeTemplate">
+        <in-parameters>
+            <parameter name="typeId"/>
+        </in-parameters>
+    </service>
+
+    <!-- Funds transfer type L10n -->
+    <service verb="find" noun="FundsTransferTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.ft.FundsTransferType"/>
+            <service-call name="commons.entity.EntityServices.find#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="create" noun="FundsTransferTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.ft.FundsTransferType"/>
+            <service-call name="commons.entity.EntityServices.create#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="update" noun="FundsTransferTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.ft.FundsTransferType"/>
+            <service-call name="commons.entity.EntityServices.update#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="delete" noun="FundsTransferTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="localized"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.ft.FundsTransferType"/>
+            <service-call name="commons.entity.EntityServices.delete#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+
+    <!-- Funds transfer purpose -->
+    <service verb="find" noun="FundsTransferPurpose" type="java" location="com.netvariant.banqio.ft.FundsTransferPurposeService" method="findFundsTransferPurposes">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.ft.FundsTransferPurposeDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="pageNoLimit" type="Boolean" default="false"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+            <parameter name="ignoreTransferCurrency" type="Boolean" default="false"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="transferPurposeList" type="List">
+                <parameter name="transferPurpose" type="Map">
+                    <auto-parameters entity-name="banqio.ft.FundsTransferPurposeDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="FundsTransferPurpose" type="java" location="com.netvariant.banqio.ft.FundsTransferPurposeService" method="createFundsTransferPurpose">
+        <in-parameters>
+            <parameter name="parentPurposeId"/>
+            <parameter name="externalPurposeId"/>
+            <parameter name="purposeName"/>
+            <parameter name="transferTypeId"/>
+            <parameter name="transferCurrencyId"/>
+            <parameter name="position" type="Integer"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="purposeId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="FundsTransferPurpose" type="java" location="com.netvariant.banqio.ft.FundsTransferPurposeService" method="updateFundsTransferPurpose">
+        <in-parameters>
+            <parameter name="purposeId"/>
+            <parameter name="parentPurposeId"/>
+            <parameter name="externalPurposeId"/>
+            <parameter name="purposeName"/>
+            <parameter name="transferTypeId"/>
+            <parameter name="transferCurrencyId"/>
+            <parameter name="position" type="Integer"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="purposeId"/>
+        </out-parameters>
+    </service>
+    <service verb="tree" noun="FundsTransferPurpose" type="java" location="com.netvariant.banqio.ft.FundsTransferPurposeService" method="fundsTransferPurposeTree">
+        <in-parameters/>
+    </service>
+
+    <!-- Funds transfer purpose L10n -->
+    <service verb="find" noun="FundsTransferPurposeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.ft.FundsTransferPurpose"/>
+            <service-call name="commons.entity.EntityServices.find#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="create" noun="FundsTransferPurposeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.ft.FundsTransferPurpose"/>
+            <service-call name="commons.entity.EntityServices.create#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="update" noun="FundsTransferPurposeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.ft.FundsTransferPurpose"/>
+            <service-call name="commons.entity.EntityServices.update#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="delete" noun="FundsTransferPurposeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="localized"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.ft.FundsTransferPurpose"/>
+            <service-call name="commons.entity.EntityServices.delete#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+
+    <!-- Funds transfer frequency -->
+    <service verb="find" noun="FundsTransferFrequency" type="java" location="com.netvariant.banqio.ft.FundsTransferFrequencyService" method="findFundsTransferFrequencies">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.ft.FundsTransferFrequencyDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="transferFrequencyList" type="List">
+                <parameter name="transferFrequency" type="Map">
+                    <auto-parameters entity-name="banqio.ft.FundsTransferFrequencyDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="FundsTransferFrequency" type="java" location="com.netvariant.banqio.ft.FundsTransferFrequencyService" method="createFundsTransferFrequency">
+        <in-parameters>
+            <parameter name="externalFrequencyId"/>
+            <parameter name="frequencyName"/>
+            <parameter name="period"/>
+            <parameter name="periodUomId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="frequencyId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="FundsTransferFrequency" type="java" location="com.netvariant.banqio.ft.FundsTransferFrequencyService" method="updateFundsTransferFrequency">
+        <in-parameters>
+            <parameter name="frequencyId"/>
+            <parameter name="externalFrequencyId"/>
+            <parameter name="frequencyName"/>
+            <parameter name="period"/>
+            <parameter name="periodUomId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="frequencyId"/>
+        </out-parameters>
+    </service>
+
+    <!-- Funds transfer frequency L10n -->
+    <service verb="find" noun="FundsTransferFrequencyL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.ft.FundsTransferFrequency"/>
+            <service-call name="commons.entity.EntityServices.find#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="create" noun="FundsTransferFrequencyL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.ft.FundsTransferFrequency"/>
+            <service-call name="commons.entity.EntityServices.create#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="update" noun="FundsTransferFrequencyL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.ft.FundsTransferFrequency"/>
+            <service-call name="commons.entity.EntityServices.update#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="delete" noun="FundsTransferFrequencyL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="localized"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.ft.FundsTransferFrequency"/>
+            <service-call name="commons.entity.EntityServices.delete#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+
+    <!-- Posting rule -->
+    <service verb="find" noun="PostingRule" type="java" location="com.netvariant.banqio.ft.PostingRuleService" method="findPostingRules">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.ft.PostingRuleDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="postingRuleList" type="List">
+                <parameter name="postingRule" type="Map">
+                    <auto-parameters entity-name="banqio.ft.PostingRuleDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="PostingRule" type="java" location="com.netvariant.banqio.ft.PostingRuleService" method="createPostingRule">
+        <in-parameters>
+            <parameter name="appId"/>
+            <parameter name="transferTypeId"/>
+            <parameter name="postingTypeEnumId"/>
+            <parameter name="currencyTypeEnumId"/>
+            <parameter name="transferCurrencyId"/>
+            <parameter name="debitCurrencyId"/>
+            <parameter name="partyClassificationId"/>
+            <parameter name="externalPartyId"/>
+            <parameter name="fromAmount" type="Double"/>
+            <parameter name="toAmount" type="Double"/>
+            <parameter name="fromTime"/>
+            <parameter name="toTime"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+            <parameter name="description"/>
+            <parameter name="disabled"/>
+            <parameter name="rollover" type="Integer"/>
+            <parameter name="position" type="Integer"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="systemId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="PostingRule" type="java" location="com.netvariant.banqio.ft.PostingRuleService" method="updatePostingRule">
+        <in-parameters>
+            <parameter name="ruleId"/>
+            <parameter name="appId"/>
+            <parameter name="transferTypeId"/>
+            <parameter name="postingTypeEnumId"/>
+            <parameter name="currencyTypeEnumId"/>
+            <parameter name="transferCurrencyId"/>
+            <parameter name="debitCurrencyId"/>
+            <parameter name="partyClassificationId"/>
+            <parameter name="externalPartyId"/>
+            <parameter name="fromAmount" type="Double"/>
+            <parameter name="toAmount" type="Double"/>
+            <parameter name="fromTime"/>
+            <parameter name="toTime"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+            <parameter name="description"/>
+            <parameter name="disabled"/>
+            <parameter name="rollover" type="Integer"/>
+            <parameter name="position" type="Integer"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="ruleId"/>
+        </out-parameters>
+    </service>
+    <service verb="position" noun="PostingRule" type="java" location="com.netvariant.banqio.ft.PostingRuleService" method="positionPostingRule">
+        <in-parameters>
+            <parameter name="ruleId"/>
+            <parameter name="position" type="Integer"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="ruleId"/>
+        </out-parameters>
+    </service>
+
+    <!-- Funds transfer -->
+    <service verb="find" noun="FundsTransfer" type="java" location="com.netvariant.banqio.ft.FundsTransferService" method="findFundsTransfers">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.ft.FundsTransferDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="fundsTransferList" type="List">
+                <parameter name="transfer" type="Map">
+                    <auto-parameters entity-name="banqio.ft.FundsTransferDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="FundsTransferChildren" type="java" location="com.netvariant.banqio.ft.FundsTransferService" method="findFundsTransferChildren">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.ft.FundsTransferDetail"/>
+            <parameter name="transferId"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="fundsTransferList" type="List">
+                <parameter name="transfer" type="Map">
+                    <auto-parameters entity-name="banqio.ft.FundsTransferDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="validate" noun="FundsTransferAccess" type="java" location="com.netvariant.banqio.ft.FundsTransferService" method="validateFundsTransferAccess">
+        <in-parameters>
+            <parameter name="transferId"/>
+        </in-parameters>
+    </service>
+    <service verb="create" noun="FundsTransfer" type="java" location="com.netvariant.banqio.ft.FundsTransferService" method="createFundsTransfer">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="parentTransferId"/>
+            <parameter name="typeId"/>
+            <parameter name="statusId"/>
+            <parameter name="ruleId"/>
+            <parameter name="customerId"/>
+            <parameter name="employerId"/>
+            <parameter name="payerId"/>
+            <parameter name="payerLegalId"/>
+            <parameter name="externalTransferId"/>
+            <parameter name="referenceNumber"/>
+            <parameter name="invoiceNumber"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="creditAccountNumber"/>
+            <parameter name="beneficiaryId"/>
+            <parameter name="cardId"/>
+            <parameter name="cardNumber"/>
+            <parameter name="paymentFile" type="org.apache.commons.fileupload.FileItem"/>
+            <parameter name="transactionCount" type="Integer"/>
+            <parameter name="currencyId"/>
+            <parameter name="amount" type="Double"/>
+            <parameter name="amountDebit" type="Double"/>
+            <parameter name="amountLocal" type="Double"/>
+            <parameter name="exchangeRate" type="Double"/>
+            <parameter name="senderReference"/>
+            <parameter name="transferDetails"/>
+            <parameter name="transferPurposeId"/>
+            <parameter name="chargesTypeEnumId"/>
+            <parameter name="sameCurrency"/>
+            <parameter name="termsAgreed"/>
+            <parameter name="postingDate"/>
+            <parameter name="valueDate"/>
+            <parameter name="processingDate"/>
+            <parameter name="salaryDate"/>
+            <parameter name="errors"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transferId"/>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="FundsTransferWorkflowInstance" type="java" location="com.netvariant.banqio.ft.FundsTransferService" method="findFundsTransferWorkflowInstances">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.ft.FundsTransferWorkflowInstance"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="instanceList" type="List">
+                <parameter name="instance" type="Map">
+                    <auto-parameters entity-name="banqio.ft.FundsTransferWorkflowInstance">
+                        <exclude field-name="paymentFileLocation"/>
+                    </auto-parameters>
+                    <parameter name="approvedCount"/>
+                    <parameter name="pendingCount"/>
+                    <parameter name="rejectedCount"/>
+                    <parameter name="paymentFileName"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="download" noun="FundsTransferPaymentFile" type="java" location="com.netvariant.banqio.ft.FundsTransferService" method="downloadFundsTransferPaymentFile">
+        <in-parameters>
+            <parameter name="transferId"/>
+        </in-parameters>
+    </service>
+    <service verb="find" noun="FundsTransferCurrencySummary" type="java" location="com.netvariant.banqio.ft.FundsTransferService" method="findFundsTransferCurrencySummaries">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.ft.FundsTransferCurrencySummaryDetail"/>
+            <parameter name="transferId"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="currencySummaryList" type="List">
+                <parameter name="currencySummary" type="Map">
+                    <auto-parameters entity-name="banqio.ft.FundsTransferCurrencySummaryDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="FundsTransferCurrencySummary" type="java" location="com.netvariant.banqio.ft.FundsTransferService" method="updateFundsTransferCurrencySummary">
+        <in-parameters>
+            <parameter name="transferId"/>
+            <parameter name="currencySummaryList" type="List">
+                <parameter name="currencySummary" type="Map">
+                    <auto-parameters entity-name="banqio.ft.FundsTransferCurrencySummary"/>
+                </parameter>
+            </parameter>
+        </in-parameters>
+    </service>
+
+</services>

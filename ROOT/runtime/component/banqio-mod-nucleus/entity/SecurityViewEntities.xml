@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <!-- User group -->
+    <view-entity entity-name="UserGroupDetail" package="banqio.security">
+        <member-entity entity-alias="userGroup" entity-name="moqui.security.UserGroup"/>
+        <member-entity entity-alias="groupType" entity-name="moqui.basic.Enumeration" join-from-alias="userGroup">
+            <key-map field-name="groupTypeEnumId"/>
+        </member-entity>
+
+        <alias-all entity-alias="userGroup"/>
+        <alias name="lastUpdatedStamp" entity-alias="userGroup" field="lastUpdatedStamp"/>
+        <alias name="groupTypeDescription" entity-alias="groupType" field="description"/>
+
+        <entity-condition>
+            <econdition field-name="groupTypeEnumId" operator="like" value="BNQ_%"/>
+        </entity-condition>
+    </view-entity>
+    <view-entity entity-name="UserGroupMemberDetail" package="banqio.security">
+        <member-entity entity-alias="userGroup" entity-name="moqui.security.UserGroup"/>
+        <member-entity entity-alias="userGroupMember" entity-name="moqui.security.UserGroupMember" join-from-alias="userGroup">
+            <key-map field-name="userGroupId"/>
+        </member-entity>
+        <member-entity entity-alias="groupType" entity-name="moqui.basic.Enumeration" join-from-alias="userGroup">
+            <key-map field-name="groupTypeEnumId"/>
+        </member-entity>
+        <member-entity entity-alias="userAccount" entity-name="moqui.security.UserAccount" join-from-alias="userGroupMember">
+            <key-map field-name="userId"/>
+        </member-entity>
+
+        <alias-all entity-alias="userGroupMember"/>
+        <alias name="groupTypeId" entity-alias="groupType" field="enumId"/>
+        <alias name="groupTypeDescription" entity-alias="groupType" field="description"/>
+        <alias name="userGroupDescription" entity-alias="userGroup" field="description"/>
+        <alias name="username" entity-alias="userAccount" field="username"/>
+        <alias name="userFullName" entity-alias="userAccount" field="userFullName"/>
+        <alias name="externalUserId" entity-alias="userAccount" field="externalUserId"/>
+
+        <entity-condition>
+            <date-filter/>
+        </entity-condition>
+    </view-entity>
+
+</entities>

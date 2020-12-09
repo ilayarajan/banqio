@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Party type -->
+    <moqui.basic.Enumeration enumId="PtyPerson" sequenceNum="1"/>
+    <moqui.basic.Enumeration enumId="PtyOrganization" sequenceNum="2"/>
+    <moqui.basic.Enumeration enumId="PtyAutomatedAgent" sequenceNum="3"/>
+
+    <!-- Role type -->
+    <mantle.party.RoleType roleTypeId="Corporate" parentTypeId="Customer" description="Corporate Banking Customer"/>
+    <mantle.party.RoleType roleTypeId="Personal" parentTypeId="Customer" description="Personal Banking Customer"/>
+
+</entity-facade-xml>

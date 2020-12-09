@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/rest-api-2.1.xsd"
+          name="limit"
+          displayName="Limit REST API"
+          version="1.0.0">
+
+    <resource name="limit" description="Limit API" version="1.0.0">
+        <resource name="fundsTransfer">
+            <method type="get">
+                <service name="banqio.limit.LimitServices.find#FundsTransferLimit"/>
+            </method>
+            <method type="post">
+                <service name="banqio.limit.LimitServices.create#FundsTransferLimit"/>
+            </method>
+            <method type="patch">
+                <service name="banqio.limit.LimitServices.update#FundsTransferLimit"/>
+            </method>
+        </resource>
+    </resource>
+
+</resource>

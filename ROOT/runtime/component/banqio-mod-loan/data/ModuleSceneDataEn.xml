@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Navigation -->
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_LOANS" messageValue="Loans"/>
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_LOAN_TYPES" messageValue="Loan Types"/>
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_LOAN_STATUSES" messageValue="Loan Statuses"/>
+
+    <!-- Loan Setup scene -->
+    <CommonsScene sceneId="ADM_LOAN_SETUP_BOARD" appId="ADM" sceneName="Loan Setup Dashboard" lookupName="/secure/setup/loan/dashboard">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Loan Setup"/>
+    </CommonsScene>
+
+    <!-- Browse Loan types scene -->
+    <CommonsScene sceneId="ADM_BROWSE_LOAN_TYPE" appId="ADM" sceneName="Browse Loan Types" lookupName="/secure/setup/loan/loan-type/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Loan Types"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Create Loan type scene -->
+    <CommonsScene sceneId="ADM_CREATE_LOAN_TYPE" appId="ADM" sceneName="Create Loan Type" lookupName="/secure/setup/loan/loan-type/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Loan Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Modify Loan type scene -->
+    <CommonsScene sceneId="ADM_MODIFY_LOAN_TYPE" appId="ADM" sceneName="Modify Loan Type" lookupName="/secure/setup/loan/loan-type/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Loan Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+
+    <!-- View Loan type scene -->
+    <CommonsScene sceneId="ADM_VIEW_LOAN_TYPE" appId="ADM" sceneName="View Loan Type" lookupName="/secure/setup/loan/loan-type/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Loan Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+    </CommonsScene>
+
+    <!-- Browse Loan statuses scene -->
+    <CommonsScene sceneId="ADM_BROWSE_LOAN_STAT" appId="ADM" sceneName="Browse Loan Statuses" lookupName="/secure/setup/loan/loan-status/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Loan Statuses"/>
+        <messages messageKey="STATUS_NAME" messageValue="Status Name"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Create Loan status scene -->
+    <CommonsScene sceneId="ADM_CREATE_LOAN_STAT" appId="ADM" sceneName="Create Loan Status" lookupName="/secure/setup/loan/loan-status/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Loan Status"/>
+        <messages messageKey="STATUS_NAME" messageValue="Status Name"/>
+        <messages messageKey="STATUS_BEHAVIOUR" messageValue="Status Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Modify Loan status scene -->
+    <CommonsScene sceneId="ADM_MODIFY_LOAN_STAT" appId="ADM" sceneName="Modify Loan Status" lookupName="/secure/setup/loan/loan-status/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Loan Status"/>
+        <messages messageKey="STATUS_NAME" messageValue="Status Name"/>
+        <messages messageKey="STATUS_BEHAVIOUR" messageValue="Status Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- View Loan status scene -->
+    <CommonsScene sceneId="ADM_VIEW_LOAN_STAT" appId="ADM" sceneName="View Loan Status" lookupName="/secure/setup/loan/loan-status/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Loan Status"/>
+        <messages messageKey="STATUS_NAME" messageValue="Status Name"/>
+        <messages messageKey="STATUS_BEHAVIOUR" messageValue="Status Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+    </CommonsScene>
+
+</entity-facade-xml>

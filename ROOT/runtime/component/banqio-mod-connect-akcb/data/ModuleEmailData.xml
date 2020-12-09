@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml>
+
+    <!-- Email templates -->
+    <moqui.basic.email.EmailTemplate
+            emailTemplateId="AKCB_CHQ_BOOK_REQ"
+            emailTypeEnumId="EMT_WF_EMAIL"
+            emailServerId="SYSTEM"
+            webappName="webroot"
+            bodyScreenLocation="component://banqio-mod-connect-akcb/template/email/chequeBookTemplate.xml"
+            description="Cheque Book Request"
+            sendPartial="Y"
+            fromName="Netvariant"
+            fromAddress="noreply@netvariant.com"
+            subject="Cheque Book Request"/>
+
+</entity-facade-xml>

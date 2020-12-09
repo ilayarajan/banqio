@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Navigation -->
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_LIMITS" messageValue="Limits"/>
+
+    <!-- Browse limits scene -->
+    <CommonsScene sceneId="ADM_BROWSE_LIMIT" appId="ADM" sceneName="Browse Limits" lookupName="/secure/ft/limit/browse">
+    <includes otherSceneId="ADM_TPL_SECURE"/>
+    <messages messageKey="PAGE_TITLE" messageValue="Limits"/>
+    <messages messageKey="APP" messageValue="App"/>
+    <messages messageKey="LIMIT_TYPE" messageValue="Limit Type"/>
+    <messages messageKey="TRANSFER_TYPE" messageValue="Transfer Type"/>
+    <messages messageKey="FREQUENCY" messageValue="Frequency"/>
+    <messages messageKey="CURRENCY_TYPE" messageValue="Currency Type"/>
+    <messages messageKey="AMOUNT" messageValue="Amount"/>
+</CommonsScene>
+
+    <!-- Create limit scene -->
+    <CommonsScene sceneId="ADM_CREATE_LIMIT" appId="ADM" sceneName="Create Limit" lookupName="/secure/ft/limit/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <includes otherSceneId="ADM_BROWSE_TRANSFER_TYPE"/>
+        <includes otherSceneId="ADM_BROWSE_CCY"/>
+        <includes otherSceneId="ADM_BROWSE_PRTY"/>
+        <includes otherSceneId="ADM_BROWSE_USR_GRP"/>
+        <includes otherSceneId="ADM_BROWSE_USR"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Limit"/>
+        <messages messageKey="TYPE" messageValue="Type"/>
+        <messages messageKey="DETAILS" messageValue="Details"/>
+        <messages messageKey="APP" messageValue="App"/>
+        <messages messageKey="FREQUENCY" messageValue="Frequency"/>
+        <messages messageKey="TRANSFER_TYPE" messageValue="Transfer Type"/>
+        <messages messageKey="CURRENCY_TYPE" messageValue="Currency Type"/>
+        <messages messageKey="DEBIT_CURRENCY" messageValue="Debit Currency"/>
+        <messages messageKey="TRANSFER_CURRENCY" messageValue="Transfer Currency"/>
+        <messages messageKey="USER" messageValue="User"/>
+        <messages messageKey="USER_GROUP" messageValue="User Group"/>
+        <messages messageKey="PARTY" messageValue="Party"/>
+        <messages messageKey="ACCOUNT" messageValue="Account"/>
+        <messages messageKey="BENEFICIARY" messageValue="Beneficiary"/>
+        <messages messageKey="AMOUNT" messageValue="Amount"/>
+        <messages messageKey="FROM_DATE" messageValue="From Date"/>
+        <messages messageKey="TO_DATE" messageValue="To Date"/>
+        <messages messageKey="DESCRIPTION" messageValue="Description"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+    </CommonsScene>
+
+    <!-- Modify limit scene -->
+    <CommonsScene sceneId="ADM_MODIFY_LIMIT" appId="ADM" sceneName="Modify Limit" lookupName="/secure/ft/limit/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <includes otherSceneId="ADM_BROWSE_TRANSFER_TYPE"/>
+        <includes otherSceneId="ADM_BROWSE_CCY"/>
+        <includes otherSceneId="ADM_BROWSE_PRTY"/>
+        <includes otherSceneId="ADM_BROWSE_USR_GRP"/>
+        <includes otherSceneId="ADM_BROWSE_USR"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Limit"/>
+        <messages messageKey="APP" messageValue="App"/>
+        <messages messageKey="FREQUENCY" messageValue="Frequency"/>
+        <messages messageKey="TRANSFER_TYPE" messageValue="Transfer Type"/>
+        <messages messageKey="CURRENCY_TYPE" messageValue="Currency Type"/>
+        <messages messageKey="DEBIT_CURRENCY" messageValue="Debit Currency"/>
+        <messages messageKey="TRANSFER_CURRENCY" messageValue="Transfer Currency"/>
+        <messages messageKey="USER" messageValue="User"/>
+        <messages messageKey="USER_GROUP" messageValue="User Group"/>
+        <messages messageKey="PARTY" messageValue="Party"/>
+        <messages messageKey="ACCOUNT" messageValue="Account"/>
+        <messages messageKey="BENEFICIARY" messageValue="Beneficiary"/>
+        <messages messageKey="AMOUNT" messageValue="Amount"/>
+        <messages messageKey="FROM_DATE" messageValue="From Date"/>
+        <messages messageKey="TO_DATE" messageValue="To Date"/>
+        <messages messageKey="DESCRIPTION" messageValue="Description"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+    </CommonsScene>
+
+    <!-- View limit scene -->
+    <CommonsScene sceneId="ADM_VIEW_LIMIT" appId="ADM" sceneName="View Limit" lookupName="/secure/ft/limit/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Limit"/>
+        <messages messageKey="TYPE" messageValue="Type"/>
+        <messages messageKey="APP" messageValue="App"/>
+        <messages messageKey="FREQUENCY" messageValue="Frequency"/>
+        <messages messageKey="TRANSFER_TYPE" messageValue="Transfer Type"/>
+        <messages messageKey="CURRENCY_TYPE" messageValue="Currency Type"/>
+        <messages messageKey="DEBIT_CURRENCY" messageValue="Debit Currency"/>
+        <messages messageKey="TRANSFER_CURRENCY" messageValue="Transfer Currency"/>
+        <messages messageKey="USER" messageValue="User"/>
+        <messages messageKey="USER_GROUP" messageValue="User Group"/>
+        <messages messageKey="PARTY" messageValue="Party"/>
+        <messages messageKey="ACCOUNT" messageValue="Account"/>
+        <messages messageKey="BENEFICIARY" messageValue="Beneficiary"/>
+        <messages messageKey="AMOUNT" messageValue="Amount"/>
+        <messages messageKey="FROM_DATE" messageValue="From Date"/>
+        <messages messageKey="TO_DATE" messageValue="To Date"/>
+        <messages messageKey="Description" messageValue="Description"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+    </CommonsScene>
+
+</entity-facade-xml>

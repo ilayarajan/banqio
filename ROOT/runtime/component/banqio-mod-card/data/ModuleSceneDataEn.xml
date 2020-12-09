@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Navigation -->
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_CARDS" messageValue="Cards"/>
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_CARD_BRANDS" messageValue="Card Brands"/>
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_CARD_TYPES" messageValue="Card Types"/>
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_CARD_STATUSES" messageValue="Card Statuses"/>
+
+    <!-- Card setup scene -->
+    <CommonsScene sceneId="ADM_CARD_SETUP_BOARD" appId="ADM" sceneName="Card Setup Dashboard" lookupName="/secure/setup/card/dashboard">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Card Setup"/>
+    </CommonsScene>
+
+    <!-- Browse card brands scene -->
+    <CommonsScene sceneId="ADM_BROWSE_CARD_BRAND" appId="ADM" sceneName="Browse Card Brands" lookupName="/secure/setup/card/card-brand/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Card Brands"/>
+        <messages messageKey="BRAND_NAME" messageValue="Brand Name"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Create card brand scene -->
+    <CommonsScene sceneId="ADM_CREATE_CARD_BRAND" appId="ADM" sceneName="Create Card Brand" lookupName="/secure/setup/card/card-brand/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Card Brand"/>
+        <messages messageKey="BRAND_NAME" messageValue="Brand Name"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Modify card brand scene -->
+    <CommonsScene sceneId="ADM_MODIFY_CARD_BRAND" appId="ADM" sceneName="Modify Card Brand" lookupName="/secure/setup/card/card-brand/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Card Brand"/>
+        <messages messageKey="BRAND_NAME" messageValue="Brand Name"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- View card brand scene -->
+    <CommonsScene sceneId="ADM_VIEW_CARD_BRAND" appId="ADM" sceneName="View Card Brand" lookupName="/secure/setup/card/card-brand/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Card Brand"/>
+        <messages messageKey="BRAND_NAME" messageValue="Brand Name"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+    </CommonsScene>
+
+    <!-- Browse card types scene -->
+    <CommonsScene sceneId="ADM_BROWSE_CARD_TYPE" appId="ADM" sceneName="Browse Card Types" lookupName="/secure/setup/card/card-type/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Card Types"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Create card type scene -->
+    <CommonsScene sceneId="ADM_CREATE_CARD_TYPE" appId="ADM" sceneName="Create Card Type" lookupName="/secure/setup/card/card-type/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Card Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Modify card type scene -->
+    <CommonsScene sceneId="ADM_MODIFY_CARD_TYPE" appId="ADM" sceneName="Modify Card Type" lookupName="/secure/setup/card/card-type/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Card Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- View card type scene -->
+    <CommonsScene sceneId="ADM_VIEW_CARD_TYPE" appId="ADM" sceneName="View Card Type" lookupName="/secure/setup/card/card-type/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Card Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+    </CommonsScene>
+
+    <!-- Browse card statuses scene -->
+    <CommonsScene sceneId="ADM_BROWSE_CARD_STAT" appId="ADM" sceneName="Browse Card Statuses" lookupName="/secure/setup/card/card-status/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Card Statuses"/>
+        <messages messageKey="STATUS_NAME" messageValue="Status Name"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Create card status scene -->
+    <CommonsScene sceneId="ADM_CREATE_CARD_STAT" appId="ADM" sceneName="Create Card Status" lookupName="/secure/setup/card/card-status/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Card Status"/>
+        <messages messageKey="STATUS_NAME" messageValue="Status Name"/>
+        <messages messageKey="STATUS_BEHAVIOUR" messageValue="Status Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Modify card status scene -->
+    <CommonsScene sceneId="ADM_MODIFY_CARD_STAT" appId="ADM" sceneName="Modify Card Status" lookupName="/secure/setup/card/card-status/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Card Status"/>
+        <messages messageKey="STATUS_NAME" messageValue="Status Name"/>
+        <messages messageKey="STATUS_BEHAVIOUR" messageValue="Status Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- View card status scene -->
+    <CommonsScene sceneId="ADM_VIEW_CARD_STAT" appId="ADM" sceneName="View Card Status" lookupName="/secure/setup/card/card-status/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Card Status"/>
+        <messages messageKey="STATUS_NAME" messageValue="Status Name"/>
+        <messages messageKey="STATUS_BEHAVIOUR" messageValue="Status Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+    </CommonsScene>
+    
+</entity-facade-xml>

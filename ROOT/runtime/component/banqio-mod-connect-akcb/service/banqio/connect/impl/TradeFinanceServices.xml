@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Trade finance -->
+    <service verb="find" noun="AcceptedInwardDc" type="java" location="com.netvariant.banqio.connect.impl.TradeFinanceServiceRelay" method="findAcceptedInwardDcs">
+        <implements service="banqio.trade.TradeServices.find#AcceptedInwardDc"/>
+    </service>
+    <service verb="find" noun="AdvisedExportLc" type="java" location="com.netvariant.banqio.connect.impl.TradeFinanceServiceRelay" method="findAdvisedExportLcs">
+        <implements service="banqio.trade.TradeServices.find#AdvisedExportLc"/>
+    </service>
+    <service verb="find" noun="ExpiredImportLc" type="java" location="com.netvariant.banqio.connect.impl.TradeFinanceServiceRelay" method="findExpiredImportLcs">
+        <implements service="banqio.trade.TradeServices.find#ExpiredImportLc"/>
+    </service>
+    <service verb="find" noun="DueExportLcBill" type="java" location="com.netvariant.banqio.connect.impl.TradeFinanceServiceRelay" method="findDueExportLcBills">
+        <implements service="banqio.trade.TradeServices.find#DueExportLcBill"/>
+    </service>
+    <service verb="find" noun="DueImportLcBill" type="java" location="com.netvariant.banqio.connect.impl.TradeFinanceServiceRelay" method="findDueImportLcBills">
+        <implements service="banqio.trade.TradeServices.find#DueImportLcBill"/>
+    </service>
+    <service verb="find" noun="IssuedImportLc" type="java" location="com.netvariant.banqio.connect.impl.TradeFinanceServiceRelay" method="findIssuedImportLcs">
+        <implements service="banqio.trade.TradeServices.find#IssuedImportLc"/>
+    </service>
+    <service verb="find" noun="IssuedLg" type="java" location="com.netvariant.banqio.connect.impl.TradeFinanceServiceRelay" method="findIssuedLgs">
+        <implements service="banqio.trade.TradeServices.find#IssuedLg"/>
+    </service>
+    <service verb="find" noun="OutstandingCleanImportLoan" type="java" location="com.netvariant.banqio.connect.impl.TradeFinanceServiceRelay" method="findOutstandingCleanImportLoans">
+        <implements service="banqio.trade.TradeServices.find#OutstandingCleanImportLoan"/>
+    </service>
+    <service verb="find" noun="OutstandingExportLc" type="java" location="com.netvariant.banqio.connect.impl.TradeFinanceServiceRelay" method="findOutstandingExportLcs">
+        <implements service="banqio.trade.TradeServices.find#OutstandingExportLc"/>
+    </service>
+    <service verb="find" noun="OutstandingImportLc" type="java" location="com.netvariant.banqio.connect.impl.TradeFinanceServiceRelay" method="findOutstandingImportLcs">
+        <implements service="banqio.trade.TradeServices.find#OutstandingImportLc"/>
+    </service>
+    <service verb="find" noun="OutstandingImportLcBill" type="java" location="com.netvariant.banqio.connect.impl.TradeFinanceServiceRelay" method="findOutstandingImportLcBills">
+        <implements service="banqio.trade.TradeServices.find#OutstandingImportLcBill"/>
+    </service>
+    <service verb="find" noun="OutstandingInwardDc" type="java" location="com.netvariant.banqio.connect.impl.TradeFinanceServiceRelay" method="findOutstandingInwardDcs">
+        <implements service="banqio.trade.TradeServices.find#OutstandingInwardDc"/>
+    </service>
+    <service verb="find" noun="OutstandingLg" type="java" location="com.netvariant.banqio.connect.impl.TradeFinanceServiceRelay" method="findOutstandingLgs">
+        <implements service="banqio.trade.TradeServices.find#OutstandingLg"/>
+    </service>
+    <service verb="find" noun="OutstandingSalesInvoiceLoan" type="java" location="com.netvariant.banqio.connect.impl.TradeFinanceServiceRelay" method="findOutstandingSalesInvoiceLoans">
+        <implements service="banqio.trade.TradeServices.find#OutstandingSalesInvoiceLoan"/>
+    </service>
+    <service verb="find" noun="OutstandingTrustReceiptLoan" type="java" location="com.netvariant.banqio.connect.impl.TradeFinanceServiceRelay" method="findOutstandingTrustReceiptLoans">
+        <implements service="banqio.trade.TradeServices.find#OutstandingTrustReceiptLoan"/>
+    </service>
+    <service verb="find" noun="OverdueCleanImportLoan" type="java" location="com.netvariant.banqio.connect.impl.TradeFinanceServiceRelay" method="findOverdueCleanImportLoans">
+        <implements service="banqio.trade.TradeServices.find#OverdueCleanImportLoan"/>
+    </service>
+    <service verb="find" noun="OverdueSalesInvoiceLoan" type="java" location="com.netvariant.banqio.connect.impl.TradeFinanceServiceRelay" method="findOverdueSalesInvoiceLoans">
+        <implements service="banqio.trade.TradeServices.find#OverdueSalesInvoiceLoan"/>
+    </service>
+    <service verb="find" noun="OverdueTradeFinanceLoan" type="java" location="com.netvariant.banqio.connect.impl.TradeFinanceServiceRelay" method="findOverdueTradeFinanceLoans">
+        <implements service="banqio.trade.TradeServices.find#OverdueTradeFinanceLoan"/>
+    </service>
+    <service verb="find" noun="OverdueTrustReceiptLoan" type="java" location="com.netvariant.banqio.connect.impl.TradeFinanceServiceRelay" method="findOverdueTrustReceiptLoans">
+        <implements service="banqio.trade.TradeServices.find#OverdueTrustReceiptLoan"/>
+    </service>
+    <service verb="find" noun="RejectedExportLcBill" type="java" location="com.netvariant.banqio.connect.impl.TradeFinanceServiceRelay" method="findRejectedExportLcBills">
+        <implements service="banqio.trade.TradeServices.find#RejectedExportLcBill"/>
+    </service>
+    <service verb="find" noun="RejectedImportLcBill" type="java" location="com.netvariant.banqio.connect.impl.TradeFinanceServiceRelay" method="findRejectedImportLcBills">
+        <implements service="banqio.trade.TradeServices.find#RejectedImportLcBill"/>
+    </service>
+    <service verb="find" noun="SentExportLcBill" type="java" location="com.netvariant.banqio.connect.impl.TradeFinanceServiceRelay" method="findSentExportLcBills">
+        <implements service="banqio.trade.TradeServices.find#SentExportLcBill"/>
+    </service>
+
+</services>

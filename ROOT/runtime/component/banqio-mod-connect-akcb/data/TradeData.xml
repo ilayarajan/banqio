@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- LG types -->
+    <BanqioLgType typeId="Lgt28000" externalTypeId="28000" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="***Miscellaneous Deals"/>
+    <BanqioLgType typeId="Lgt28001" externalTypeId="28001" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="Guarantee Issued"/>
+    <BanqioLgType typeId="Lgt28004" externalTypeId="28004" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="***Guarantee Issued"/>
+    <BanqioLgType typeId="Lgt28005" externalTypeId="28005" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="Bid Bond Issued"/>
+    <BanqioLgType typeId="Lgt28009" externalTypeId="28009" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="Bid Bond Issued (End)"/>
+    <BanqioLgType typeId="Lgt28010" externalTypeId="28010" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="Performance Bond Issued"/>
+    <BanqioLgType typeId="Lgt28014" externalTypeId="28014" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="Performance Bond Issued (End)"/>
+    <BanqioLgType typeId="Lgt28015" externalTypeId="28015" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="Standby Import LCs"/>
+    <BanqioLgType typeId="Lgt28019" externalTypeId="28019" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="Standby Import LCs (End)"/>
+    <BanqioLgType typeId="Lgt28020" externalTypeId="28020" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="Shipping Guarantee Issued"/>
+    <BanqioLgType typeId="Lgt28024" externalTypeId="28024" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="Shipping Guarantee Issued (End)"/>
+    <BanqioLgType typeId="Lgt28025" externalTypeId="28025" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="Advance payment guarantee"/>
+    <BanqioLgType typeId="Lgt28026" externalTypeId="28026" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="Retention guarantee"/>
+    <BanqioLgType typeId="Lgt28027" externalTypeId="28027" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="Financial guarantee"/>
+    <BanqioLgType typeId="Lgt28028" externalTypeId="28028" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="Other guarantee"/>
+    <BanqioLgType typeId="Lgt28029" externalTypeId="28029" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="Payment guarantee"/>
+    <BanqioLgType typeId="Lgt28030" externalTypeId="28030" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="Tax Guarantee"/>
+    <BanqioLgType typeId="Lgt28031" externalTypeId="28031" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="Maintenance Guarantee"/>
+    <BanqioLgType typeId="Lgt28099" externalTypeId="28099" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="***Other Guarantees Issued"/>
+    <BanqioLgType typeId="Lgt28100" externalTypeId="28100" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="***Guarantee Received"/>
+    <BanqioLgType typeId="Lgt28102" externalTypeId="28102" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="Guarantee Received - Generic"/>
+    <BanqioLgType typeId="Lgt28110" externalTypeId="28110" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="Guarantee Received -Generic (End)"/>
+    <BanqioLgType typeId="Lgt28112" externalTypeId="28112" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="Guarantee Received CoveringFacility"/>
+    <BanqioLgType typeId="Lgt28114" externalTypeId="28114" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="Guarantee Received-Facility (End)"/>
+    <BanqioLgType typeId="Lgt28199" externalTypeId="28199" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="***Guarantee Received"/>
+    <BanqioLgType typeId="Lgt28500" externalTypeId="28500" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="***Memo Assets"/>
+    <BanqioLgType typeId="Lgt28502" externalTypeId="28502" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="Real Estate Register"/>
+    <BanqioLgType typeId="Lgt28504" externalTypeId="28504" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="Real Estate Register (End)"/>
+    <BanqioLgType typeId="Lgt28506" externalTypeId="28506" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="Art &amp; Antique Register"/>
+    <BanqioLgType typeId="Lgt28508" externalTypeId="28508" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="Art &amp; Antique Register (End)"/>
+    <BanqioLgType typeId="Lgt28518" externalTypeId="28518" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="*** Memo Assets"/>
+    <BanqioLgType typeId="Lgt28520" externalTypeId="28520" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="Memo Liabilities"/>
+    <BanqioLgType typeId="Lgt28528" externalTypeId="28528" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="Memo Liabilities (End)"/>
+    <BanqioLgType typeId="Lgt28999" externalTypeId="28999" typeBehaviourEnumId="LG_TYPE_DIRECT" typeName="***Miscellaneous Deals"/>
+
+    <!-- LC types -->
+    <BanqioLcType typeId="LctAcc" externalTypeId="ACC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="DOC COLLECTION ACCEPTANCE EXPORT"/>
+    <BanqioLcType typeId="LctAcp" externalTypeId="ACP" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="DOC COLLECTION ACCEPTANCE IMPORT"/>
+    <BanqioLcType typeId="LctCait" externalTypeId="CAIT" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="Avalization Under Inward Collection"/>
+    <BanqioLcType typeId="LctCau" externalTypeId="CAU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC ACCEPTANCE CONFIRMED EXPORT"/>
+    <BanqioLcType typeId="LctCca" externalTypeId="CCA" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="CLEAN COLLECTION ACCEPTANCE EXPORT"/>
+    <BanqioLcType typeId="LctCcis" externalTypeId="CCIS" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="Collections Clean Inward Sight"/>
+    <BanqioLcType typeId="LctCcit" externalTypeId="CCIT" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="Collections Clean Inward Tenor"/>
+    <BanqioLcType typeId="LctCcos" externalTypeId="CCOS" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="Collections Clean Outward Sight"/>
+    <BanqioLcType typeId="LctCcot" externalTypeId="CCOT" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="Collections Clean Outward Tenor"/>
+    <BanqioLcType typeId="LctCcs" externalTypeId="CCS" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="CLEAN COLLECTION SIGHT EXPORT"/>
+    <BanqioLcType typeId="LctCdis" externalTypeId="CDIS" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="Collection Documentary Inward Sight"/>
+    <BanqioLcType typeId="LctCdit" externalTypeId="CDIT" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="Collection Documentary Inward Tenor"/>
+    <BanqioLcType typeId="LctCdos" externalTypeId="CDOS" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="CollectionDocumentary Outward Sight"/>
+    <BanqioLcType typeId="LctCdot" externalTypeId="CDOT" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="CollectionDocumentary Outward Tenor"/>
+    <BanqioLcType typeId="LctCdu" externalTypeId="CDU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC DEFERRED PAYM CONFIRMED EXPORT"/>
+    <BanqioLcType typeId="LctCia" externalTypeId="CIA" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="CLEAN COLLECTION ACCEPTANCE IMPORT"/>
+    <BanqioLcType typeId="LctCis" externalTypeId="CIS" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="CLEAN COLLECTION SIGHT IMPORT"/>
+    <BanqioLcType typeId="LctDis" externalTypeId="DIS" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="DOC COLLECTION SIGHT IMPORT"/>
+    <BanqioLcType typeId="LctDos" externalTypeId="DOS" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="DOC COLLECTION SIGHT EXPORT"/>
+    <BanqioLcType typeId="LctEac" externalTypeId="EAC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Export Acceptance Confirmed"/>
+    <BanqioLcType typeId="LctEatc" externalTypeId="EATC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Export Acceptance Trfr Confirmed"/>
+    <BanqioLcType typeId="LctEatu" externalTypeId="EATU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC ExportAcceptance Trf Unconfirmed"/>
+    <BanqioLcType typeId="LctEau" externalTypeId="EAU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Export Acceptance Unconfirmed"/>
+    <BanqioLcType typeId="LctEdc" externalTypeId="EDC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Export Def Payment Confirmed"/>
+    <BanqioLcType typeId="LctEdtc" externalTypeId="EDTC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Export DefPayment Trfr Confirmed"/>
+    <BanqioLcType typeId="LctEdtu" externalTypeId="EDTU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Export DefPaymt Trf Unconfirmed"/>
+    <BanqioLcType typeId="LctEdu" externalTypeId="EDU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Export Def Payment Unconfirmed"/>
+    <BanqioLcType typeId="LctEmc" externalTypeId="EMC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Export Mixed Payment Confirmed"/>
+    <BanqioLcType typeId="LctEmtc" externalTypeId="EMTC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Export Mixed Paymt Trfr Confirm"/>
+    <BanqioLcType typeId="LctEmtu" externalTypeId="EMTU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Export Mixed Pymt Trfr Unconfirm"/>
+    <BanqioLcType typeId="LctEmu" externalTypeId="EMU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Export Mixed Payment Unconfirmed"/>
+    <BanqioLcType typeId="LctEnsb" externalTypeId="ENSB" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC- Export Negotiation Stand By LC"/>
+    <BanqioLcType typeId="LctEnsc" externalTypeId="ENSC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Export Sight Nego Confirmed"/>
+    <BanqioLcType typeId="LctEnsu" externalTypeId="ENSU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Export Sight Nego Unconfirmed"/>
+    <BanqioLcType typeId="LctEntc" externalTypeId="ENTC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Export Sight Nego Trfr Confirmed"/>
+    <BanqioLcType typeId="LctEntu" externalTypeId="ENTU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC ExportSightNego Trfr Unconfirmed"/>
+    <BanqioLcType typeId="LctEp" externalTypeId="EP" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Export Pre-Advice"/>
+    <BanqioLcType typeId="LctEsc" externalTypeId="ESC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Export Sight Confirmed"/>
+    <BanqioLcType typeId="LctEstc" externalTypeId="ESTC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Export Sight Transfer Confirmed"/>
+    <BanqioLcType typeId="LctEstu" externalTypeId="ESTU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Export SightTransfer Unconfirmed"/>
+    <BanqioLcType typeId="LctEsu" externalTypeId="ESU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Export Sight Unconfirmed"/>
+    <BanqioLcType typeId="LctEtrf" externalTypeId="ETRF" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Export Transfer LC"/>
+    <BanqioLcType typeId="LctEunc" externalTypeId="EUNC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Export Usance Nego Confirmed"/>
+    <BanqioLcType typeId="LctEunu" externalTypeId="EUNU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Export Usance Nego Unconfirmed"/>
+    <BanqioLcType typeId="LctEutc" externalTypeId="EUTC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Export Usance Nego Trfr Confirm"/>
+    <BanqioLcType typeId="LctEutu" externalTypeId="EUTU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Export Usance Nego Trf Unconfirm"/>
+    <BanqioLcType typeId="LctExua" externalTypeId="EXUA" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="CONFIRMED REIMB UNDERTAKING ACCEPT"/>
+    <BanqioLcType typeId="LctExus" externalTypeId="EXUS" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="CONFIRMED REIMB UNDERTAKING SIGHT"/>
+    <BanqioLcType typeId="LctIac" externalTypeId="IAC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Import Acceptance Confirmed"/>
+    <BanqioLcType typeId="LctIarc" externalTypeId="IARC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="L/C IMPORT - ARC"/>
+    <BanqioLcType typeId="LctIatc" externalTypeId="IATC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Import Acceptance Trfr Confirmed"/>
+    <BanqioLcType typeId="LctIatu" externalTypeId="IATU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Import Acceptance Trfr Unconfirm"/>
+    <BanqioLcType typeId="LctIau" externalTypeId="IAU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Import Acceptance Unconfirmed"/>
+    <BanqioLcType typeId="LctIdc" externalTypeId="IDC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Import Def Payment Confirmed"/>
+    <BanqioLcType typeId="LctIdtc" externalTypeId="IDTC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Import DefPayment Trfr Confirmed"/>
+    <BanqioLcType typeId="LctIdtu" externalTypeId="IDTU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Import DefPaymt Trfr UnConfirmed"/>
+    <BanqioLcType typeId="LctIdu" externalTypeId="IDU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Import DefPayment UnConfirmed"/>
+    <BanqioLcType typeId="LctIiii" externalTypeId="IIII" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC INWARD"/>
+    <BanqioLcType typeId="LctImc" externalTypeId="IMC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Import Mixed Payment Confirmed"/>
+    <BanqioLcType typeId="LctImtc" externalTypeId="IMTC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Import MixedPaymt Trfr Confirmed"/>
+    <BanqioLcType typeId="LctImtu" externalTypeId="IMTU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Import MixedPaymt Trfr Unconfirm"/>
+    <BanqioLcType typeId="LctImu" externalTypeId="IMU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Import MixedPaymt Unconfirmed"/>
+    <BanqioLcType typeId="LctInct" externalTypeId="INCT" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Sight Nego Transfer Confirmed"/>
+    <BanqioLcType typeId="LctInsb" externalTypeId="INSB" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC- Import Negotiation StandBy LC"/>
+    <BanqioLcType typeId="LctInsc" externalTypeId="INSC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Import Nego Sight Confirmed"/>
+    <BanqioLcType typeId="LctInsu" externalTypeId="INSU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Import Nego Sight Unonfirmed"/>
+    <BanqioLcType typeId="LctIntc" externalTypeId="INTC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Import Nego Sight Trfr Confirmed"/>
+    <BanqioLcType typeId="LctIntu" externalTypeId="INTU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Import Nego Sight Trfr Unconfirm"/>
+    <BanqioLcType typeId="LctInuc" externalTypeId="INUC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="Import LC Usance Nego Confirmed"/>
+    <BanqioLcType typeId="LctInut" externalTypeId="INUT" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Import Nego Sight Trfr Unconfirm"/>
+    <BanqioLcType typeId="LctInuu" externalTypeId="INUU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="Import Nego Usance Unconfirmed"/>
+    <BanqioLcType typeId="LctIp" externalTypeId="IP" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Import - Pre Advice"/>
+    <BanqioLcType typeId="LctIsc" externalTypeId="ISC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Import Sight Confirmed"/>
+    <BanqioLcType typeId="LctIsnc" externalTypeId="ISNC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Import Nego Sight Confirmed"/>
+    <BanqioLcType typeId="LctIsnu" externalTypeId="ISNU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Import Nego Sight Unonfirmed"/>
+    <BanqioLcType typeId="LctIstc" externalTypeId="ISTC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Import Sight Transfer Confirmed"/>
+    <BanqioLcType typeId="LctIstu" externalTypeId="ISTU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Import Sight Transfer Unonfirmed"/>
+    <BanqioLcType typeId="LctIsu" externalTypeId="ISU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Import Sight Unonfirmed"/>
+    <BanqioLcType typeId="LctIsun" externalTypeId="ISUN" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="IMPORT SIGHT UNCONFIRM LC'S BY NEG"/>
+    <BanqioLcType typeId="LctItuc" externalTypeId="ITUC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="Import Nego Transfer Usance Cofnirm"/>
+    <BanqioLcType typeId="LctItuu" externalTypeId="ITUU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="Import Nego Transfer Usance Unconf"/>
+    <BanqioLcType typeId="LctIunc" externalTypeId="IUNC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Import Usance Nego Confirmed"/>
+    <BanqioLcType typeId="LctIunu" externalTypeId="IUNU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Import Usance Nego Unconfirmed"/>
+    <BanqioLcType typeId="LctIutc" externalTypeId="IUTC" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Import Usance Nego Trf Confirmed"/>
+    <BanqioLcType typeId="LctIutu" externalTypeId="IUTU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC Import Usance Nego Trf Unconfirm"/>
+    <BanqioLcType typeId="LctReim" externalTypeId="REIM" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="REIMBURSEMENT"/>
+    <BanqioLcType typeId="LctRscn" externalTypeId="RSCN" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="MURABAHA SIGHT CONF.BY NEGOTIATION."/>
+    <BanqioLcType typeId="LctRsun" externalTypeId="RSUN" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="MURABAHA SIGHT UNCONF.BY NEGOTIAT."/>
+    <BanqioLcType typeId="LctSaa" externalTypeId="SAA" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC SIGHT CONFIRMED EXPORT"/>
+    <BanqioLcType typeId="LctSpa" externalTypeId="SPA" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC ACCEPTANCE IMPORT"/>
+    <BanqioLcType typeId="LctSpd" externalTypeId="SPD" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC DEF.PAYMENT IMPORT"/>
+    <BanqioLcType typeId="LctSpp" externalTypeId="SPP" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC SIGHT UNCONFIRMED EXPORT"/>
+    <BanqioLcType typeId="LctSps" externalTypeId="SPS" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC SIGHT IMPORT"/>
+    <BanqioLcType typeId="LctSscn" externalTypeId="SSCN" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC MUSHARAKA SIGHT CON.BY NEGOT."/>
+    <BanqioLcType typeId="LctSsun" externalTypeId="SSUN" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="MUSHARAKA SIGHT UNCONF.BY NEGOTIAT."/>
+    <BanqioLcType typeId="LctUau" externalTypeId="UAU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC ACCEPTANCE UNCONFIRMED EXPORT"/>
+    <BanqioLcType typeId="LctUdu" externalTypeId="UDU" typeBehaviourEnumId="LC_TYPE_IMPORT" typeName="LC DEFERRED PAY. UNCONFIRMED EXP"/>
+
+</entity-facade-xml>

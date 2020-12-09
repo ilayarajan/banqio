@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        default-menu-title="App"
+        default-menu-index="1">
+
+    <parameter name="appId" required="true"/>
+
+    <transition name="findApp">
+        <default-response url="../FindApp"/>
+    </transition>
+    <transition name="updateApp">
+        <service-call name="update#commons.server.App" in-map="context">
+            <field-map field-name="updateUserId" from="ec.user.userId"/>
+        </service-call>
+        <default-response url="."/>
+    </transition>
+
+    <actions>
+        <entity-find-one entity-name="commons.server.App" value-field="app"/>
+    </actions>
+
+    <widgets>
+        <section name="UpdateAppSection" condition="app">
+            <widgets>
+                <container-panel>
+                    <panel-header>
+                        <link url="findApp" text="Find App" icon="glyphicon glyphicon-search"/>
+                    </panel-header>
+                    <panel-center>
+                        <form-single name="UpdateAppForm" transition="updateApp" map="app">
+                            <auto-fields-entity entity-name="commons.server.App" field-type="edit">
+                                <exclude field-name="inputUserId"/>
+                                <exclude field-name="updateUserId"/>
+                            </auto-fields-entity>
+                            <field name="appId">
+                                <default-field title="ID">
+                                    <display/>
+                                </default-field>
+                            </field>
+                            <field name="appName">
+                                <default-field>
+                                    <text-line size="40"/>
+                                </default-field>
+                            </field>
+                            <field name="description">
+                                <default-field>
+                                    <text-area rows="4" cols="80"/>
+                                </default-field>
+                            </field>
+                            <field name="disabled">
+                                <default-field>
+                                    <drop-down>
+                                        <option key="N" text="No"/>
+                                        <option key="Y" text="Yes"/>
+                                    </drop-down>
+                                </default-field>
+                            </field>
+                            <field name="creationDate">
+                                <default-field>
+                                    <display/>
+                                </default-field>
+                            </field>
+                            <field name="submitBtn">
+                                <default-field title="Save">
+                                    <submit/>
+                                </default-field>
+                            </field>
+
+                            <field-layout>
+                                <fields-not-referenced/>
+                            </field-layout>
+                        </form-single>
+                    </panel-center>
+                </container-panel>
+            </widgets>
+            <fail-widgets>
+                <container style="alert alert-warning">
+                    <label text="App with ID [${appId}] was not found."/>
+                </container>
+            </fail-widgets>
+        </section>
+    </widgets>
+</screen>

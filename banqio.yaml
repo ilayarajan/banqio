@@ -1,0 +1,167 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: banqio
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: nfs-share
+  namespace: banqio
+provisioner: nfsserv
+volumeBindingMode: WaitForFirstConsumer
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: banqio-nfs-pv
+  labels:
+    name: banqio-nfs-pv # name can be anything
+    namespace: banqio
+spec:
+  storageClassName: banqio-nfs-pv-sc  # same storage class as pvc
+  capacity:
+    storage: 48Gi
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: nfsserv # ip addres of nfs server
+    path: "/T24PRF_WEBSHARE" # path to directory
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: banqio-nfs-pvc
+  namespace: banqio
+spec:
+  storageClassName: banqio-nfs-pv-sc
+  accessModes:
+    - ReadWriteMany #  must be the same as PersistentVolume
+  resources:
+    requests:
+      storage: 48Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: banqio-deployment
+  namespace: banqio
+  labels:
+    app: banqio
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: banqio
+  template:
+    metadata:
+      labels:
+        app: banqio
+
+    spec:
+      hostNetwork: true
+      hostAliases:
+      - ip: "172.21.224.21"
+        hostnames:
+        - "kubemaster.akb.qa"
+      - ip: "172.21.224.22"
+        hostnames:
+        - "kubeclient01.akb.qa"
+      - ip: "172.21.224.23"
+        hostnames:
+        - "kubeclient02.akb.qa"
+      - ip: "172.20.160.28"
+        hostnames:
+        - "banqiodb"
+      - ip: "172.20.160.31"
+        hostnames:
+        - "t24web"
+      - ip: "172.20.113.35"
+        hostnames:
+        - "efsprint.akb.qa"
+      - ip: "172.20.113.41"
+        hostnames:
+        - "tsefsprint.akb.qa"
+      - ip: "172.20.113.32"
+        hostnames:
+        - "efsarch.akb.qa"
+      - ip: "172.20.113.40"
+        hostnames:
+        - "tsefsarch.akb.qa"
+      - ip: "172.20.136.30"
+        hostnames:
+        - "nvsmsapp.akb.qa"
+      - ip: "172.22.128.23"
+        hostnames:
+        - "mailrelay.akb.qa"
+      - ip: "192.168.68.116"
+        hostnames:
+        - "serv-websrvc-t.cscgroup.com"
+      volumes:
+      - name: banqio-volume
+        persistentVolumeClaim:
+          claimName: banqio-nfs-pvc # same name of pvc that was created
+      containers:
+      - name: banqio
+        image: "prddreg.akb.qa:5000/banqio-cus-tomcat:jdk8"
+        ports:
+        - containerPort: 8080
+        imagePullPolicy: Always
+        volumeMounts:
+        - name: banqio-volume # name of volume should match claimName volume
+          mountPath: /opt/t24share # mount inside of contianer
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: banqio-service
+  namespace: banqio
+  labels:
+    app: banqio
+spec:
+  type: ClusterIP
+  sessionAffinity: None
+  selector:
+     app: banqio
+  ports:
+  - name: http
+    protocol: TCP
+    port: 8080
+    targetPort: 8080
+#    nodePort: 30100
+status:
+    loadBalancer: {}
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: banqio-ingress
+  namespace: banqio
+  labels:
+    app: banqio
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.org/rewrites: serviceName=banqio-service rewrite=/
+    ports: "80,443"
+    aliases: "akb.qa"
+    default_domain: akb.qa
+spec:
+  rules:
+  - host:
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: banqio-service
+            port:
+              number: 8080
+      - pathType: Prefix
+        path: '/corporate/#/login'
+        backend:
+          service:
+            name: banqio-service
+            port:
+              number: 8080

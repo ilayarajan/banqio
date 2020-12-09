@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Navigation -->
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_SWEEPS" messageValue="Sweeps"/>
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_AGREEMENTS" messageValue="Agreements"/>
+
+    <!-- Browse account types scene -->
+    <CommonsScene sceneId="ADM_BROWSE_SWEEP_AGR" appId="ADM" sceneName="Browse Sweep Agreements" lookupName="/secure/agreement/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Agreements"/>
+        <messages messageKey="CUSTOMER_ID" messageValue="Customer ID"/>
+        <messages messageKey="TYPE" messageValue="Type"/>
+        <messages messageKey="FREQUENCY" messageValue="Frequency"/>
+        <messages messageKey="FROM_DATE" messageValue="From Date"/>
+        <messages messageKey="TO_DATE" messageValue="To Date"/>
+        <messages messageKey="LAST_RUN" messageValue="Last Run"/>
+    </CommonsScene>
+
+</entity-facade-xml>

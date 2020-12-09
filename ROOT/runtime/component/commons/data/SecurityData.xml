@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Object type -->
+    <moqui.basic.EnumerationType enumTypeId="ObjectType" description="Object Type"/>
+    <moqui.basic.Enumeration enumTypeId="ObjectType" enumId="OBJ_ANY" description="Any"/>
+
+    <!-- Permission type -->
+    <moqui.basic.EnumerationType enumTypeId="PermissionType" description="Permission Type"/>
+    <moqui.basic.Enumeration enumTypeId="PermissionType" enumId="PERM_NONE" description="None" sequenceNum="1"/>
+    <moqui.basic.Enumeration enumTypeId="PermissionType" enumId="PERM_READ" description="Read" sequenceNum="5"/>
+    <moqui.basic.Enumeration enumTypeId="PermissionType" enumId="PERM_WRITE" description="Write" sequenceNum="10"/>
+    <moqui.basic.Enumeration enumTypeId="PermissionType" enumId="PERM_MANAGE" description="Manage" sequenceNum="15"/>
+
+    <!-- Password channel type -->
+    <moqui.basic.EnumerationType enumTypeId="PasswordChannelType" description="Password Channel Type"/>
+    <moqui.basic.Enumeration enumTypeId="PasswordChannelType" enumId="PWD_CHANNEL_EMAIL" description="Email"/>
+    <moqui.basic.Enumeration enumTypeId="PasswordChannelType" enumId="PWD_CHANNEL_SMS" description="SMS"/>
+    <moqui.basic.Enumeration enumTypeId="PasswordChannelType" enumId="PWD_CHANNEL_FAX" description="Fax"/>
+    <moqui.basic.Enumeration enumTypeId="PasswordChannelType" enumId="PWD_CHANNEL_CALL" description="Phone Call"/>
+    <moqui.basic.Enumeration enumTypeId="PasswordChannelType" enumId="PWD_CHANNEL_PIN_MAIL" description="PIN Mailer"/>
+
+    <!-- User event type -->
+    <moqui.basic.EnumerationType enumTypeId="UserEventType" description="User Event Type"/>
+    <moqui.basic.Enumeration enumTypeId="UserEventType" enumId="USR_EVENT_LOGIN" description="Login"/>
+    <moqui.basic.Enumeration enumTypeId="UserEventType" enumId="USR_EVENT_LOGOUT" description="Logout"/>
+
+</entity-facade-xml>

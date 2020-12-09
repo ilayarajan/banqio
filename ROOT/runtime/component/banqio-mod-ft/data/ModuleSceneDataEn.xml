@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Navigation -->
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_FUNDS_TRANSFERS" messageValue="Funds Transfers"/>
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_POSTING_RULES" messageValue="Posting Rules"/>
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_TRANSFER_FREQUENCIES" messageValue="Transfer Frequencies"/>
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_TRANSFER_PURPOSES" messageValue="Transfer Purposes"/>
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_TRANSFER_TYPES" messageValue="Transfer Types"/>
+
+    <!-- Funds transfer setup scene -->
+    <CommonsScene sceneId="ADM_FT_SETUP_BOARD" appId="ADM" sceneName="Funds Transfer Setup Dashboard" lookupName="/secure/setup/ft/dashboard">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Funds Transfer Setup"/>
+    </CommonsScene>
+
+    <!-- Browse transfer frequencies scene -->
+    <CommonsScene sceneId="ADM_BROWSE_TRANSFER_FREQ" appId="ADM" sceneName="Browse Funds Transfer Frequencies" lookupName="/secure/setup/ft/funds-transfer-frequency/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Transfer Frequencies"/>
+        <messages messageKey="FREQUENCY_NAME" messageValue="Frequency Name"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Create transfer frequency scene -->
+    <CommonsScene sceneId="ADM_CREATE_TRANSFER_FREQ" appId="ADM" sceneName="Create Funds Transfer Frequency" lookupName="/secure/setup/ft/funds-transfer-frequency/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Transfer Frequency"/>
+        <messages messageKey="FREQUENCY_NAME" messageValue="Frequency Name"/>
+        <messages messageKey="PERIOD" messageValue="Period"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Modify transfer frequency scene -->
+    <CommonsScene sceneId="ADM_MODIFY_TRANSFER_FREQ" appId="ADM" sceneName="Modify Funds Transfer Frequency" lookupName="/secure/setup/ft/funds-transfer-frequency/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Transfer Frequency"/>
+        <messages messageKey="FREQUENCY_NAME" messageValue="Frequency Name"/>
+        <messages messageKey="PERIOD" messageValue="Period"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="POSITION" messageValue="Position"/>
+    </CommonsScene>
+
+    <!-- View transfer frequency scene -->
+    <CommonsScene sceneId="ADM_VIEW_TRANSFER_FREQ" appId="ADM" sceneName="View Funds Transfer Frequency" lookupName="/secure/setup/ft/funds-transfer-frequency/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Transfer Frequency"/>
+        <messages messageKey="FREQUENCY_NAME" messageValue="Frequency Name"/>
+        <messages messageKey="PERIOD" messageValue="Period"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+    </CommonsScene>
+
+    <!-- Browse transfer purposes scene -->
+    <CommonsScene sceneId="ADM_BROWSE_TRANSFER_PURPOSE" appId="ADM" sceneName="Browse Funds Transfer Purposes" lookupName="/secure/setup/ft/funds-transfer-purpose/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Transfer Purposes"/>
+        <messages messageKey="PURPOSE_NAME" messageValue="Purpose Name"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="POSITION" messageValue="Position"/>
+    </CommonsScene>
+
+    <!-- Transfer purpose tree scene -->
+    <CommonsScene sceneId="ADM_TREE_TRANSFER_PURPOSE" appId="ADM" sceneName="Funds Transfer Purpose Tree" lookupName="/secure/setup/ft/funds-transfer-purpose/tree">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Transfer Purposes"/>
+    </CommonsScene>
+
+    <!-- Create transfer purpose scene -->
+    <CommonsScene sceneId="ADM_CREATE_TRANSFER_PURPOSE" appId="ADM" sceneName="Create Funds Transfer Purpose" lookupName="/secure/setup/ft/funds-transfer-purpose/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <includes otherSceneId="ADM_BROWSE_CCY"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Transfer Purpose"/>
+        <messages messageKey="PURPOSE_NAME" messageValue="Purpose Name"/>
+        <messages messageKey="PARENT_PURPOSE" messageValue="Parent Purpose"/>
+        <messages messageKey="TRANSFER_TYPE" messageValue="Transfer Type"/>
+        <messages messageKey="TRANSFER_CURRENCY" messageValue="Transfer Currency"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="POSITION" messageValue="Position"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+    </CommonsScene>
+
+    <!-- Modify transfer purpose scene -->
+    <CommonsScene sceneId="ADM_MODIFY_TRANSFER_PURPOSE" appId="ADM" sceneName="Modify Funds Transfer Purpose" lookupName="/secure/setup/ft/funds-transfer-purpose/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <includes otherSceneId="ADM_BROWSE_CCY"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Transfer Purpose"/>
+        <messages messageKey="PURPOSE_NAME" messageValue="Purpose Name"/>
+        <messages messageKey="PARENT_PURPOSE" messageValue="Parent Purpose"/>
+        <messages messageKey="TRANSFER_TYPE" messageValue="Transfer Type"/>
+        <messages messageKey="TRANSFER_CURRENCY" messageValue="Transfer Currency"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="POSITION" messageValue="Position"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+    </CommonsScene>
+
+    <!-- View transfer purpose scene -->
+    <CommonsScene sceneId="ADM_VIEW_TRANSFER_PURPOSE" appId="ADM" sceneName="View Funds Transfer Purpose" lookupName="/secure/setup/ft/funds-transfer-purpose/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Transfer Purpose"/>
+        <messages messageKey="PURPOSE_NAME" messageValue="Purpose Name"/>
+        <messages messageKey="PARENT_PURPOSE" messageValue="Parent Purpose"/>
+        <messages messageKey="TRANSFER_TYPE" messageValue="Transfer Type"/>
+        <messages messageKey="TRANSFER_CURRENCY" messageValue="Transfer Currency"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="POSITION" messageValue="Position"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+    </CommonsScene>
+
+    <!-- Browse transfer types scene -->
+    <CommonsScene sceneId="ADM_BROWSE_TRANSFER_TYPE" appId="ADM" sceneName="Browse Funds Transfer Types" lookupName="/secure/setup/ft/funds-transfer-type/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Transfer Types"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Transfer type tree scene -->
+    <CommonsScene sceneId="ADM_TREE_TRANSFER_TYPE" appId="ADM" sceneName="Funds Transfer Type Tree" lookupName="/secure/setup/ft/funds-transfer-type/tree">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Transfer Types"/>
+    </CommonsScene>
+
+    <!-- Create transfer type scene -->
+    <CommonsScene sceneId="ADM_CREATE_TRANSFER_TYPE" appId="ADM" sceneName="Create Funds Transfer Type" lookupName="/secure/setup/ft/funds-transfer-type/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Transfer Type"/>
+        <messages messageKey="GENERAL" messageValue="General"/>
+        <messages messageKey="NOTES" messageValue="Notes"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="PARENT_TYPE" messageValue="Parent Type"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="DEBIT_FIELD_TYPE" messageValue="Debit Field Type"/>
+        <messages messageKey="CURRENCY_FIELD_TYPE" messageValue="Currency Field Type"/>
+        <messages messageKey="CHARGES_FIELD_TYPE" messageValue="Charges Field Type"/>
+        <messages messageKey="CHARGES_AMOUNT_THRESHOLD" messageValue="Charges Amount Threshold"/>
+        <messages messageKey="TEMPLATE_FILE" messageValue="Template File"/>
+        <messages messageKey="POSITION" messageValue="Position"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+        <messages messageKey="INPUT_NOTES" messageValue="Input Notes"/>
+        <messages messageKey="REVIEW_NOTES" messageValue="Review Notes"/>
+    </CommonsScene>
+
+    <!-- Modify transfer type scene -->
+    <CommonsScene sceneId="ADM_MODIFY_TRANSFER_TYPE" appId="ADM" sceneName="Modify Funds Transfer Type" lookupName="/secure/setup/ft/funds-transfer-type/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Transfer Type"/>
+        <messages messageKey="GENERAL" messageValue="General"/>
+        <messages messageKey="NOTES" messageValue="Notes"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="PARENT_TYPE" messageValue="Parent Type"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="DEBIT_FIELD_TYPE" messageValue="Debit Field Type"/>
+        <messages messageKey="CURRENCY_FIELD_TYPE" messageValue="Currency Field Type"/>
+        <messages messageKey="CHARGES_FIELD_TYPE" messageValue="Charges Field Type"/>
+        <messages messageKey="CHARGES_AMOUNT_THRESHOLD" messageValue="Charges Amount Threshold"/>
+        <messages messageKey="TEMPLATE_FILE" messageValue="Template File"/>
+        <messages messageKey="POSITION" messageValue="Position"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+        <messages messageKey="INPUT_NOTES" messageValue="Input Notes"/>
+        <messages messageKey="REVIEW_NOTES" messageValue="Review Notes"/>
+    </CommonsScene>
+
+    <!-- View transfer type scene -->
+    <CommonsScene sceneId="ADM_VIEW_TRANSFER_TYPE" appId="ADM" sceneName="View Funds Transfer Type" lookupName="/secure/setup/ft/funds-transfer-type/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Transfer Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="PARENT_TYPE" messageValue="Parent Type"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="DEBIT_FIELD_TYPE" messageValue="Debit Field Type"/>
+        <messages messageKey="CURRENCY_FIELD_TYPE" messageValue="Currency Field Type"/>
+        <messages messageKey="CHARGES_FIELD_TYPE" messageValue="Charges Field Type"/>
+        <messages messageKey="CHARGES_AMOUNT_THRESHOLD" messageValue="Charges Amount Threshold"/>
+        <messages messageKey="TEMPLATE_FILE" messageValue="Template File"/>
+        <messages messageKey="POSITION" messageValue="Position"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+        <messages messageKey="INPUT_NOTES" messageValue="Input Notes"/>
+        <messages messageKey="REVIEW_NOTES" messageValue="Review Notes"/>
+    </CommonsScene>
+
+    <!-- Funds transfer dashboard scene -->
+    <CommonsScene sceneId="ADM_FT_BOARD" appId="ADM" sceneName="Funds Transfer Dashboard" lookupName="/secure/ft/dashboard">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Funds Transfers"/>
+    </CommonsScene>
+
+    <!-- Browse posting rules scene -->
+    <CommonsScene sceneId="ADM_BROWSE_POST_RULE" appId="ADM" sceneName="Browse Posting Rules" lookupName="/secure/ft/posting-rule/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Posting Rules"/>
+        <messages messageKey="APP" messageValue="App"/>
+        <messages messageKey="TRANSFER_TYPE" messageValue="Transfer Type"/>
+        <messages messageKey="POSTING_TYPE" messageValue="Posting Type"/>
+        <messages messageKey="CURRENCY_TYPE" messageValue="Currency Type"/>
+        <messages messageKey="AMOUNT" messageValue="Amount"/>
+        <messages messageKey="TIME" messageValue="Time"/>
+    </CommonsScene>
+
+    <!-- Create posting rule scene -->
+    <CommonsScene sceneId="ADM_CREATE_POST_RULE" appId="ADM" sceneName="Create Posting Rule" lookupName="/secure/ft/posting-rule/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <includes otherSceneId="ADM_BROWSE_CCY"/>
+        <includes otherSceneId="ADM_BROWSE_TRANSFER_TYPE"/>
+        <includes otherSceneId="ADM_BROWSE_PRTY_CLS"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Posting Rule"/>
+        <messages messageKey="APP" messageValue="App"/>
+        <messages messageKey="TRANSFER_TYPE" messageValue="Transfer Type"/>
+        <messages messageKey="POSTING_TYPE" messageValue="Posting Type"/>
+        <messages messageKey="CURRENCY_TYPE" messageValue="Currency Type"/>
+        <messages messageKey="TRANSFER_CURRENCY" messageValue="Transfer Currency"/>
+        <messages messageKey="DEBIT_CURRENCY" messageValue="Debit Currency"/>
+        <messages messageKey="FROM_TIME" messageValue="From Time"/>
+        <messages messageKey="TO_TIME" messageValue="To Time"/>
+        <messages messageKey="PARTY_CLASS" messageValue="Party Class"/>
+        <messages messageKey="EXTERNAL_PARTY_ID" messageValue="External Party ID"/>
+        <messages messageKey="AMOUNT" messageValue="Amount"/>
+        <messages messageKey="FROM_DATE" messageValue="From Date"/>
+        <messages messageKey="TO_DATE" messageValue="To Date"/>
+        <messages messageKey="DESCRIPTION" messageValue="Description"/>
+        <messages messageKey="ROLLOVER" messageValue="Rollover"/>
+        <messages messageKey="POSITION" messageValue="Position"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+    </CommonsScene>
+
+    <!-- Modify posting rule scene -->
+    <CommonsScene sceneId="ADM_MODIFY_POST_RULE" appId="ADM" sceneName="Modify Posting Rule" lookupName="/secure/ft/posting-rule/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <includes otherSceneId="ADM_BROWSE_CCY"/>
+        <includes otherSceneId="ADM_BROWSE_TRANSFER_TYPE"/>
+        <includes otherSceneId="ADM_BROWSE_PRTY_CLS"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Posting Rule"/>
+        <messages messageKey="APP" messageValue="App"/>
+        <messages messageKey="TRANSFER_TYPE" messageValue="Transfer Type"/>
+        <messages messageKey="POSTING_TYPE" messageValue="Posting Type"/>
+        <messages messageKey="CURRENCY_TYPE" messageValue="Currency Type"/>
+        <messages messageKey="TRANSFER_CURRENCY" messageValue="Transfer Currency"/>
+        <messages messageKey="DEBIT_CURRENCY" messageValue="Debit Currency"/>
+        <messages messageKey="FROM_TIME" messageValue="From Time"/>
+        <messages messageKey="TO_TIME" messageValue="To Time"/>
+        <messages messageKey="PARTY_CLASS" messageValue="Party Class"/>
+        <messages messageKey="EXTERNAL_PARTY_ID" messageValue="External Party ID"/>
+        <messages messageKey="AMOUNT" messageValue="Amount"/>
+        <messages messageKey="FROM_DATE" messageValue="From Date"/>
+        <messages messageKey="TO_DATE" messageValue="To Date"/>
+        <messages messageKey="DESCRIPTION" messageValue="Description"/>
+        <messages messageKey="ROLLOVER" messageValue="Rollover"/>
+        <messages messageKey="POSITION" messageValue="Position"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+    </CommonsScene>
+
+    <!-- View posting rule scene -->
+    <CommonsScene sceneId="ADM_VIEW_POST_RULE" appId="ADM" sceneName="View Posting Rule" lookupName="/secure/ft/posting-rule/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Posting Rule"/>
+        <messages messageKey="APP" messageValue="App"/>
+        <messages messageKey="TRANSFER_TYPE" messageValue="Transfer Type"/>
+        <messages messageKey="POSTING_TYPE" messageValue="Posting Type"/>
+        <messages messageKey="CURRENCY_TYPE" messageValue="Currency Type"/>
+        <messages messageKey="TRANSFER_CURRENCY" messageValue="Transfer Currency"/>
+        <messages messageKey="DEBIT_CURRENCY" messageValue="Debit Currency"/>
+        <messages messageKey="TIME" messageValue="Time"/>
+        <messages messageKey="PARTY_CLASS" messageValue="Party Class"/>
+        <messages messageKey="EXTERNAL_PARTY_ID" messageValue="External Party ID"/>
+        <messages messageKey="AMOUNT" messageValue="Amount"/>
+        <messages messageKey="FROM_DATE" messageValue="From Date"/>
+        <messages messageKey="TO_DATE" messageValue="To Date"/>
+        <messages messageKey="DESCRIPTION" messageValue="Description"/>
+        <messages messageKey="ROLLOVER" messageValue="Rollover"/>
+        <messages messageKey="POSITION" messageValue="Position"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+    </CommonsScene>
+    
+</entity-facade-xml>

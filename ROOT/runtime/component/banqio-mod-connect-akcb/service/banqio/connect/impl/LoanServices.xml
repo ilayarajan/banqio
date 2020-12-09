@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Loan -->
+    <service verb="find" noun="Loan" type="java" location="com.netvariant.banqio.connect.impl.LoanServiceRelay" method="findLoans">
+        <implements service="banqio.loan.LoanServices.find#Loan"/>
+    </service>
+    <service verb="find" noun="LoanDetail" type="java" location="com.netvariant.banqio.connect.impl.LoanServiceRelay" method="findLoanDetails">
+        <implements service="banqio.loan.LoanServices.find#LoanDetail"/>
+    </service>
+    <service verb="find" noun="LoanRepayment" type="java" location="com.netvariant.banqio.connect.impl.LoanServiceRelay" method="findLoanRepayments">
+        <implements service="banqio.loan.LoanServices.find#LoanRepayment"/>
+    </service>
+
+</services>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Credit card -->
+    <service verb="find" noun="CreditCard" type="java" location="com.netvariant.banqio.connect.impl.CreditCardServiceRelay" method="findCreditCards">
+        <implements service="banqio.card.CardServices.find#CreditCard"/>
+    </service>
+    <service verb="find" noun="OfficialCreditCardStatement" type="java" location="com.netvariant.banqio.connect.impl.CreditCardServiceRelay" method="findOfficialCreditCardStatements">
+        <implements service="banqio.card.CardServices.find#OfficialCreditCardStatement"/>
+    </service>
+    <service verb="find" noun="CreditCardTransaction" type="java" location="com.netvariant.banqio.connect.impl.CreditCardServiceRelay" method="findCreditCardTransactions">
+        <implements service="banqio.card.CardServices.find#CreditCardTransaction"/>
+    </service>
+    <service verb="download" noun="OfficialCreditCardStatement" type="java" location="com.netvariant.banqio.connect.impl.CreditCardServiceRelay" method="downloadOfficialCreditCardStatement">
+        <implements service="banqio.card.CardServices.download#OfficialCreditCardStatement"/>
+    </service>
+
+</services>

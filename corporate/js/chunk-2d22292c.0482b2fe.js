@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d22292c"],{ced8:function(e,n,t){"use strict";t.r(n);var c=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("router-view")},r=[],u={name:"trust-receipt-loan"},l=u,a=t("2877"),o=Object(a["a"])(l,c,r,!1,null,null,null);n["default"]=o.exports}}]);
+//# sourceMappingURL=chunk-2d22292c.0482b2fe.js.map

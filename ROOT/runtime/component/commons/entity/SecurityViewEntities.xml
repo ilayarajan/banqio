@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <!-- User -->
+    <view-entity entity-name="UserEventDetail" package="commons.security">
+        <member-entity entity-alias="usrEvent" entity-name="commons.security.UserEvent"/>
+        <member-entity entity-alias="eventType" entity-name="moqui.basic.Enumeration" join-from-alias="usrEvent">
+            <key-map field-name="eventTypeEnumId"/>
+        </member-entity>
+
+        <alias-all entity-alias="usrEvent"/>
+        <alias name="eventTypeDescription" entity-alias="eventType" field="description"/>
+    </view-entity>
+
+    <!-- Object access control list -->
+    <view-entity entity-name="ObjectAclDetail" package="commons.security">
+        <member-entity entity-alias="objectAcl" entity-name="commons.security.ObjectAcl"/>
+        <member-entity entity-alias="objectType" entity-name="moqui.basic.Enumeration" join-from-alias="objectAcl">
+            <key-map field-name="objectTypeEnumId"/>
+        </member-entity>
+        <member-entity entity-alias="permissionType" entity-name="moqui.basic.Enumeration" join-from-alias="objectAcl">
+            <key-map field-name="permissionTypeEnumId"/>
+        </member-entity>
+
+        <alias-all entity-alias="objectAcl"/>
+        <alias name="objectTypeDescription" entity-alias="objectType" field="description"/>
+        <alias name="permissionTypeDescription" entity-alias="permissionType" field="description"/>
+
+        <entity-condition>
+            <date-filter thru-field-name="toDate"/>
+        </entity-condition>
+    </view-entity>
+
+</entities>

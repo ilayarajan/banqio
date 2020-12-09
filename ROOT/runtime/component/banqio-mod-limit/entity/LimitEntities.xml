@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <!-- Funds transfer limit -->
+    <entity entity-name="FundsTransferLimit" package="banqio.limit" short-alias="BanqioFtLimit">
+        <field name="limitId" type="id" is-pk="true"/>
+        <field name="appId" type="id"/>
+        <field name="limitTypeEnumId" type="id"/>
+        <field name="frequencyUomId" type="id"/>
+        <field name="transferTypeId" type="id"/>
+        <field name="currencyTypeEnumId" type="id"/>
+        <field name="transferCurrencyId" type="id"/>
+        <field name="debitCurrencyId" type="id"/>
+        <field name="minAmount" type="number-decimal"/>
+        <field name="maxAmount" type="number-decimal"/>
+        <field name="fromDate" type="date-time"/>
+        <field name="toDate" type="date-time"/>
+        <field name="description" type="text-medium"/>
+        <field name="disabled" type="text-indicator"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" related="commons.server.App" short-alias="app">
+            <key-map field-name="appId"/>
+        </relationship>
+        <relationship type="one" title="LimitType" related="moqui.basic.Enumeration" fk-name="LIMIT_TYPE_FK" short-alias="limitType">
+            <key-map field-name="limitTypeEnumId"/>
+        </relationship>
+        <relationship type="one" title="LimitFrequency" related="moqui.basic.Uom" fk-name="LIMIT_FREQ_FK" short-alias="frequency">
+            <key-map field-name="frequencyUomId"/>
+        </relationship>
+        <relationship type="one-nofk" related="banqio.ft.FundsTransferType" short-alias="fundsTransferType">
+            <key-map field-name="transferTypeId"/>
+        </relationship>
+        <relationship type="one" title="FundsTransferCurrencyType" related="moqui.basic.Enumeration" short-alias="currencyType">
+            <key-map field-name="currencyTypeEnumId"/>
+        </relationship>
+        <relationship type="one-nofk" related="moqui.basic.Uom" fk-name="FT_LIMIT_FT_CCY_FK" short-alias="transferCurrency">
+            <key-map field-name="transferCurrencyId"/>
+        </relationship>
+        <relationship type="one-nofk" related="moqui.basic.Uom" fk-name="FT_LIMIT_DEBIT_CCY_FK" short-alias="debitCurrency">
+            <key-map field-name="debitCurrencyId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="LIMIT_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="LIMIT_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="UserFundsTransferLimit" package="banqio.limit">
+        <field name="limitId" type="id" is-pk="true"/>
+        <field name="userId" type="id"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+
+        <relationship type="one" related="moqui.security.UserAccount">
+            <key-map field-name="userId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="UserGroupFundsTransferLimit" package="banqio.limit">
+        <field name="limitId" type="id" is-pk="true"/>
+        <field name="userGroupId" type="id"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+
+        <relationship type="one" related="moqui.security.UserGroup">
+            <key-map field-name="userGroupId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="AccountFundsTransferLimit" package="banqio.limit">
+        <field name="limitId" type="id" is-pk="true"/>
+        <field name="accountId" type="id"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+    </entity>
+    <entity entity-name="BeneficiaryFundsTransferLimit" package="banqio.limit">
+        <field name="limitId" type="id" is-pk="true"/>
+        <field name="beneficiaryId" type="id"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+
+        <relationship type="one" related="banqio.beneficiary.Beneficiary" short-alias="beneficiary">
+            <key-map field-name="beneficiaryId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="OrganizationFundsTransferLimit" package="banqio.limit">
+        <field name="limitId" type="id" is-pk="true"/>
+        <field name="partyId" type="id"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+
+        <relationship type="one" related="mantle.party.Party" short-alias="party">
+            <key-map field-name="partyId"/>
+        </relationship>
+    </entity>
+
+</entities>

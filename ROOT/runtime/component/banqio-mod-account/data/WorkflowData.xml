@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Plug workflow types -->
+    <CommonsWfType
+            typeId="WF_ACCT"
+            typeName="Account Opening"
+            statusTypeId="WorkflowRequest"
+            primaryEntityName="banqio.account.Account"
+            primaryViewEntityName="banqio.account.AccountDetail"
+            primaryKeyFieldName="requestId"/>
+
+    <!-- Plug entity fields -->
+    <CommonsEntityFld entityName="banqio.account.AccountDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="appId" displayName="App ID"/>
+    <CommonsEntityFld entityName="banqio.account.AccountDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="appName" displayName="App Name"/>
+    <CommonsEntityFld entityName="banqio.account.AccountDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="inputUsername" displayName="Input Username"/>
+    <CommonsEntityFld entityName="banqio.account.AccountDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="targetUsername" displayName="Target Username"/>
+    <CommonsEntityFld entityName="banqio.account.AccountDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="targetPartyId" displayName="Target Party ID"/>
+    <CommonsEntityFld entityName="banqio.account.AccountDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="targetPartyExternalId" displayName="Target Party External ID"/>
+    <CommonsEntityFld entityName="banqio.account.AccountDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="targetPartyTypeEnumId" displayName="Target Party Type ID"/>
+    <CommonsEntityFld entityName="banqio.account.AccountDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="targetPartyTypeDescription" displayName="Target Party Type"/>
+    <CommonsEntityFld entityName="banqio.account.AccountDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="customerId" displayName="Customer ID"/>
+    <CommonsEntityFld entityName="banqio.account.AccountDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="accountName" displayName="Account Number"/>
+    <CommonsEntityFld entityName="banqio.account.AccountDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="accountTypeId" displayName="Account Type ID"/>
+    <CommonsEntityFld entityName="banqio.account.AccountDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="accountTypeName" displayName="Account Type"/>
+    <CommonsEntityFld entityName="banqio.account.AccountDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="accountTypeExternalId" displayName="Account Type External ID"/>
+    <CommonsEntityFld entityName="banqio.account.AccountDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="accountTypeBehaviourEnumId" displayName="Account Type Behavior ID"/>
+    <CommonsEntityFld entityName="banqio.account.AccountDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="currencyAbbreviation" displayName="Currency Code"/>
+    <CommonsEntityFld entityName="banqio.account.AccountDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="currencyNumericCode" displayName="Currency Numeric Code"/>
+    <CommonsEntityFld entityName="banqio.account.AccountDetail" fieldTypeEnumId="ENTITY_FLD_NUMBER" fieldName="chequeBooks" displayName="Cheque Books"/>
+
+</entity-facade-xml>

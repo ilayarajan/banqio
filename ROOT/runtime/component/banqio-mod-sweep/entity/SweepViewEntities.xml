@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <view-entity entity-name="SweepAgreementDetail" package="banqio.sweep">
+        <member-entity entity-alias="agreement" entity-name="banqio.sweep.SweepAgreement"/>
+        <member-entity entity-alias="type" entity-name="moqui.basic.Enumeration" join-from-alias="agreement">
+            <key-map field-name="sweepTypeEnumId"/>
+        </member-entity>
+        <member-entity entity-alias="frequency" entity-name="moqui.basic.Enumeration" join-from-alias="agreement">
+            <key-map field-name="frequencyEnumId"/>
+        </member-entity>
+
+        <alias-all entity-alias="agreement"/>
+        <alias name="typeDescription" entity-alias="type" field="description"/>
+        <alias name="frequencyDescription" entity-alias="frequency" field="description"/>
+    </view-entity>
+
+</entities>

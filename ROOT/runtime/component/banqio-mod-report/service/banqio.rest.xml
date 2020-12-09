@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/rest-api-2.1.xsd"
+          name="report"
+          displayName="Report REST API"
+          version="1.0.0">
+
+    <resource name="reportCategory" description="Report Category API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.report.ReportServices.find#ReportCategory"/>
+        </method>
+        <method type="post">
+            <service name="banqio.report.ReportServices.create#ReportCategory"/>
+        </method>
+        <method type="patch">
+            <service name="banqio.report.ReportServices.update#ReportCategory"/>
+        </method>
+        <resource name="localization">
+            <method type="get">
+                <service name="banqio.report.ReportServices.find#ReportCategoryL10n"/>
+            </method>
+            <method type="post">
+                <service name="banqio.report.ReportServices.create#ReportCategoryL10n"/>
+            </method>
+            <method type="patch">
+                <service name="banqio.report.ReportServices.update#ReportCategoryL10n"/>
+            </method>
+            <method type="delete">
+                <service name="banqio.report.ReportServices.delete#ReportCategoryL10n"/>
+            </method>
+        </resource>
+    </resource>
+    <resource name="report" description="Report API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.report.ReportServices.find#Report"/>
+        </method>
+        <method type="post">
+            <service name="banqio.report.ReportServices.create#Report"/>
+        </method>
+        <method type="patch">
+            <service name="banqio.report.ReportServices.update#Report"/>
+        </method>
+        <id name="reportId">
+            <resource name="parameter">
+                <method type="get">
+                    <service name="banqio.report.ReportServices.find#ReportParameter"/>
+                </method>
+                <method type="post">
+                    <service name="banqio.report.ReportServices.create#ReportParameter"/>
+                </method>
+                <method type="patch">
+                    <service name="banqio.report.ReportServices.update#ReportParameter"/>
+                </method>
+            </resource>
+            <resource name="price">
+                <method type="get">
+                    <service name="banqio.report.ReportServices.find#ReportPrice"/>
+                </method>
+                <method type="post">
+                    <service name="banqio.report.ReportServices.create#ReportPrice"/>
+                </method>
+                <method type="delete">
+                    <service name="banqio.report.ReportServices.expire#ReportPrice"/>
+                </method>
+            </resource>
+            <resource name="run">
+                <method type="post">
+                    <service name="banqio.report.ReportServices.run#Report"/>
+                </method>
+            </resource>
+        </id>
+        <resource name="app">
+            <method type="get">
+                <service name="banqio.report.ReportServices.find#ReportApp"/>
+            </method>
+            <method type="post">
+                <service name="banqio.report.ReportServices.create#ReportApp"/>
+            </method>
+            <method type="delete">
+                <service name="banqio.report.ReportServices.delete#ReportApp"/>
+            </method>
+        </resource>
+        <resource name="localization">
+            <method type="get">
+                <service name="banqio.report.ReportServices.find#ReportL10n"/>
+            </method>
+            <method type="post">
+                <service name="banqio.report.ReportServices.create#ReportL10n"/>
+            </method>
+            <method type="patch">
+                <service name="banqio.report.ReportServices.update#ReportL10n"/>
+            </method>
+            <method type="delete">
+                <service name="banqio.report.ReportServices.delete#ReportL10n"/>
+            </method>
+        </resource>
+        <resource name="workflow">
+            <resource name="instance">
+                <method type="get">
+                    <service name="banqio.report.ReportServices.find#ReportWorkflowInstance"/>
+                </method>
+            </resource>
+        </resource>
+    </resource>
+
+</resource>

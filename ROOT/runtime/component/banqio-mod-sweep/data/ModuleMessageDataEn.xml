@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <moqui.basic.LocalizedMessage original="SWEEP_AGREEMENT_NOT_FOUND" locale="en" localized="Sweep agreement not found"/>
+
+</entity-facade-xml>

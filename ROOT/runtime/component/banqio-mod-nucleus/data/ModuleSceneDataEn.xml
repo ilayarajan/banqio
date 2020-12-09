@@ -1,0 +1,981 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Apps -->
+    <CommonsApp appId="COR" appName="Core" description="Core application" disabled="N"/>
+    <CommonsApp appId="ADM" appName="Admin" description="Admin web application" disabled="N"/>
+    <CommonsApp appId="PPL" appName="Personal" description="Personal web application" disabled="N"/>
+    <CommonsApp appId="CRP" appName="Corporate" description="Corporate web application" disabled="N"/>
+
+    <!-- Guest template scene -->
+    <CommonsScene sceneId="ADM_TPL_GUEST" appId="ADM" sceneName="Guest Template" description="Template used by all non-secure scenes" lookupName="/guest">
+        <messages messageKey="LOGIN" messageValue="Login"/>
+        <messages messageKey="REGISTER" messageValue="Register"/>
+        <messages messageKey="CONTACT_US" messageValue="Contact Us"/>
+        <messages messageKey="SUBMIT" messageValue="Submit"/>
+        <messages messageKey="CANCEL" messageValue="Cancel"/>
+        <messages messageKey="BACK" messageValue="Back"/>
+        <messages messageKey="UNKNOWN_ERROR" messageValue="An unknown error has occurred."/>
+        <messages messageKey="COPYRIGHT_OWNER" messageValue="Copyright #year# Netvariant. All rights reserved."/>
+    </CommonsScene>
+
+    <!-- Secure template scene -->
+    <CommonsScene sceneId="ADM_TPL_SECURE" appId="ADM" sceneName="Secure Template" description="Template used by all secure scenes" lookupName="/secure">
+        <messages messageKey="PRODUCT_NAME" messageValue="Banqio"/>
+        <messages messageKey="COPYRIGHT_OWNER" messageValue="Copyright #year# Netvariant. All rights reserved."/>
+        <messages messageKey="COPYRIGHT_PRODUCT" messageValue="Powered by Banqio"/>
+        <messages messageKey="SUBMIT" messageValue="Submit"/>
+        <messages messageKey="SUBMIT_STAY" messageValue="Submit &amp; Stay"/>
+        <messages messageKey="SUBMIT_VIEW" messageValue="Submit &amp; View"/>
+        <messages messageKey="SAVE" messageValue="Save"/>
+        <messages messageKey="MODIFY" messageValue="Modify"/>
+        <messages messageKey="ADD" messageValue="Add"/>
+        <messages messageKey="REFRESH" messageValue="Refresh"/>
+        <messages messageKey="BACK" messageValue="Back"/>
+        <messages messageKey="CANCEL" messageValue="Cancel"/>
+        <messages messageKey="CLEAR" messageValue="Clear"/>
+        <messages messageKey="DELETE" messageValue="Delete"/>
+        <messages messageKey="DUPLICATE" messageValue="Duplicate"/>
+        <messages messageKey="IMPORT" messageValue="Import"/>
+        <messages messageKey="EXPORT" messageValue="Export"/>
+        <messages messageKey="EXPORT_XLS" messageValue="Export as XLS"/>
+        <messages messageKey="EXPORT_CSV" messageValue="Export as CSV"/>
+        <messages messageKey="EXPORT_PDF" messageValue="Export as PDF"/>
+        <messages messageKey="NEXT" messageValue="Next"/>
+        <messages messageKey="PREVIOUS" messageValue="Previous"/>
+        <messages messageKey="EXPIRE" messageValue="Expire"/>
+        <messages messageKey="MOVE" messageValue="Move"/>
+        <messages messageKey="RESET" messageValue="Reset"/>
+        <messages messageKey="SEARCH" messageValue="Search"/>
+        <messages messageKey="OK" messageValue="OK"/>
+        <messages messageKey="WATCH" messageValue="Watch"/>
+        <messages messageKey="YES" messageValue="Yes"/>
+        <messages messageKey="NO" messageValue="No"/>
+        <messages messageKey="DESIGNER" messageValue="Designer"/>
+        <messages messageKey="EXPAND_ALL" messageValue="Expand All"/>
+        <messages messageKey="COLLAPSE_ALL" messageValue="Collapse All"/>
+        <messages messageKey="TASKS" messageValue="Tasks"/>
+        <messages messageKey="PROFILE" messageValue="Profile"/>
+        <messages messageKey="LOGOUT" messageValue="Logout"/>
+        <messages messageKey="NAV_DASHBOARD" messageValue="Dashboard"/>
+        <messages messageKey="NAV_HOME" messageValue="Home"/>
+        <messages messageKey="NAV_PROFILE" messageValue="Profile"/>
+        <messages messageKey="NAV_CHANGE_PASSWORD" messageValue="Change Password"/>
+        <messages messageKey="NAV_HELP" messageValue="Help"/>
+        <messages messageKey="NAV_LANGUAGE" messageValue="Language"/>
+        <messages messageKey="NAV_NIGHT_MODE" messageValue="Night Mode"/>
+        <messages messageKey="NAV_FULL_SCREEN" messageValue="Full Screen"/>
+        <messages messageKey="NAV_LOGOUT" messageValue="Logout"/>
+        <messages messageKey="NAV_ADMINISTRATION" messageValue="Administration"/>
+        <messages messageKey="NAV_CUSTOMERS" messageValue="Customers"/>
+        <messages messageKey="NAV_PARTIES" messageValue="Parties"/>
+        <messages messageKey="NAV_USERS" messageValue="Users"/>
+        <messages messageKey="NAV_USER_GROUPS" messageValue="User Groups"/>
+        <messages messageKey="NAV_COMMUNICATIONS" messageValue="Communications"/>
+        <messages messageKey="NAV_SEARCH" messageValue="Search"/>
+        <messages messageKey="NAV_SYSTEM" messageValue="System"/>"/>
+        <messages messageKey="NAV_WORKFLOWS" messageValue="Workflows"/>
+        <messages messageKey="NAV_WORKFLOW_REQUESTS" messageValue="Workflow Requests"/>
+        <messages messageKey="NAV_WORKFLOW_TASKS" messageValue="Workflow Tasks"/>
+        <messages messageKey="NAV_SETUP" messageValue="Setup"/>
+        <messages messageKey="NAV_ALERTS" messageValue="Alerts"/>
+        <messages messageKey="NAV_ALERT_TEMPLATES" messageValue="Alert Templates"/>
+        <messages messageKey="NAV_PARTY_CLASSES" messageValue="Party Classes"/>
+        <messages messageKey="NAV_ROLE_TYPES" messageValue="Role Types"/>
+        <messages messageKey="NAV_CURRENCIES" messageValue="Currencies"/>
+        <messages messageKey="NAV_COUNTRIES" messageValue="Countries"/>
+        <messages messageKey="UNKNOWN_ERROR" messageValue="An unknown error has occurred."/>
+        <messages messageKey="ID" messageValue="ID"/>
+        <messages messageKey="FILTER" messageValue="Filter"/>
+        <messages messageKey="OPTIONS" messageValue="Options"/>
+        <messages messageKey="SWITCH_LANGUAGE" messageValue="Switch Language"/>
+        <messages messageKey="FULL_SCREEN" messageValue="Full Screen"/>
+        <messages messageKey="USER_FULL_NAME" messageValue="User Full Name"/>
+        <messages messageKey="TO" messageValue="to"/>
+        <messages messageKey="LIST" messageValue="List"/>
+        <messages messageKey="TREE" messageValue="Tree"/>
+        <messages messageKey="CARDS" messageValue="Cards"/>
+        <messages messageKey="SHOWING" messageValue="Showing"/>
+        <messages messageKey="OF" messageValue="of"/>
+        <messages messageKey="LOCALIZATIONS" messageValue="Localizations"/>
+        <messages messageKey="LANGUAGE" messageValue="Language"/>
+        <messages messageKey="LOCALIZED" messageValue="Localized"/>
+        <messages messageKey="NO_DATA_FOUND" messageValue="No data found."/>
+        <messages messageKey="SEARCHING_FOR" messageValue="Searching for"/>
+        <messages messageKey="LOADING" messageValue="Loading"/>
+        <messages messageKey="RESULTS_FOUND" messageValue="Results found"/>
+        <messages messageKey="NO_RESULTS_FOUND" messageValue="No results found."/>
+        <messages messageKey="SELECT_DATE" messageValue="Select a date"/>
+        <messages messageKey="SELECT_VALUE" messageValue="Select a value"/>
+        <messages messageKey="SESSION_NOTICE" messageValue="Session Notice"/>
+        <messages messageKey="SESSION_EXPIRES_SOON" messageValue="Your login session will expire soon."/>
+        <messages messageKey="EXTEND" messageValue="Extend"/>
+    </CommonsScene>
+
+    <!-- Error 404 scene -->
+    <CommonsScene sceneId="ADM_ERROR_404" appId="ADM" sceneName="Error404" lookupName="/error/404">
+        <includes otherSceneId="ADM_TPL_GUEST"/>
+        <messages messageKey="TITLE" messageValue="Oops ... You just found an error!"/>
+        <messages messageKey="SUBTITLE" messageValue="We're sorry but the page you are looking for was not found."/>
+    </CommonsScene>
+
+    <!-- Error 403 scene -->
+    <CommonsScene sceneId="ADM_ERROR_403" appId="ADM" sceneName="Error403" lookupName="/error/403">
+        <includes otherSceneId="ADM_TPL_GUEST"/>
+        <messages messageKey="TITLE" messageValue="Oops ... You just found an error!"/>
+        <messages messageKey="SUBTITLE" messageValue="We're sorry but you don't have permission to view this page."/>
+    </CommonsScene>
+
+    <!-- Login scene -->
+    <CommonsScene sceneId="ADM_LOGIN" appId="ADM" sceneName="Login" lookupName="/login">
+        <includes otherSceneId="ADM_TPL_GUEST"/>
+        <messages messageKey="INTRO_MSG" messageValue="Hi there! Please login to continue."/>
+        <messages messageKey="USERNAME" messageValue="Username"/>
+        <messages messageKey="USERNAME_CMD" messageValue="Enter your username"/>
+        <messages messageKey="PASSWORD" messageValue="Password"/>
+        <messages messageKey="PASSWORD_CMD" messageValue="Enter your password"/>
+        <messages messageKey="FORGOT_PASSWORD" messageValue="Forgot password?"/>
+        <messages messageKey="REGISTER_MSG" messageValue="Don't have an account?"/>
+        <messages messageKey="LOGIN_FAILED" messageValue="Invalid username or password."/>
+    </CommonsScene>
+
+    <!-- Reset password scene -->
+    <CommonsScene sceneId="ADM_RESET_PWD" appId="ADM" sceneName="Reset Password" lookupName="/reset-password">
+        <includes otherSceneId="ADM_TPL_GUEST"/>
+        <messages messageKey="INTRO_MSG" messageValue="Trouble logging in? Reset your password."/>
+        <messages messageKey="USERNAME" messageValue="Username"/>
+        <messages messageKey="USERNAME_CMD" messageValue="Enter your username"/>
+        <messages messageKey="RESET_PASSWORD" messageValue="Reset Password"/>
+        <messages messageKey="RESET_PASSWORD_FAILED" messageValue="We're unable to reset your password at this time."/>
+    </CommonsScene>
+
+    <!-- Change temporary password scene -->
+    <CommonsScene sceneId="ADM_CHANGE_TEMP_PWD" appId="ADM" sceneName="Change Temporary Password" lookupName="/change-temporary-password">
+        <includes otherSceneId="ADM_TPL_GUEST"/>
+        <messages messageKey="INTRO_MSG" messageValue="Oops! Your Password Has Expired."/>
+        <messages messageKey="NEW_PASSWORD" messageValue="New Password"/>
+        <messages messageKey="NEW_PASSWORD_VERIFY" messageValue="New Password Verify"/>
+        <messages messageKey="CHANGE_PASSWORD" messageValue="Change Password"/>
+        <messages messageKey="CHANGE_PASSWORD_FAILED" messageValue="We couldn't update your password at this time."/>
+    </CommonsScene>
+
+    <!-- Login authentication scene -->
+    <CommonsScene sceneId="ADM_LOGIN_AUTH" appId="ADM" sceneName="Login Authentication" lookupName="/login-authentication">
+        <includes otherSceneId="ADM_TPL_GUEST"/>
+        <messages messageKey="INTRO_MSG" messageValue="We're verifying it's really you."/>
+        <messages messageKey="AUTH_CODE" messageValue="Authentication Code"/>
+        <messages messageKey="AUTH_FAILED" messageValue="The authentication code is incorrect."/>
+    </CommonsScene>
+
+    <!-- Contact us scene -->
+    <CommonsScene sceneId="ADM_CONTACT_US" appId="ADM" sceneName="Contact Us" lookupName="/contact-us">
+        <includes otherSceneId="ADM_TPL_GUEST"/>
+    </CommonsScene>
+
+    <!-- Profile scene -->
+    <CommonsScene sceneId="ADM_VIEW_PROFILE" appId="ADM" sceneName="View Profile" lookupName="/secure/profile/view">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Profile"/>
+        <messages messageKey="CHANGE_PASSWORD" messageValue="Change Password"/>
+        <messages messageKey="PERSONAL_INFORMATION" messageValue="Personal Information"/>
+        <messages messageKey="SALUTATION" messageValue="Salutation"/>
+        <messages messageKey="FIRST_NAME" messageValue="First Name"/>
+        <messages messageKey="MIDDLE_NAME" messageValue="Middle Name"/>
+        <messages messageKey="LAST_NAME" messageValue="Last Name"/>
+        <messages messageKey="SUFFIX" messageValue="Suffix"/>
+        <messages messageKey="MOTHERS_MAIDEN_NAME" messageValue="Mother's Maiden Name"/>
+        <messages messageKey="ACCOUNT_INFORMATION" messageValue="Account Information"/>
+        <messages messageKey="USERNAME" messageValue="Username"/>
+        <messages messageKey="LAST_LOGIN_DATE" messageValue="Last Login Date"/>
+        <messages messageKey="PREFERENCES" messageValue="Preferences"/>
+        <messages messageKey="OTP_CHANNEL" messageValue="OTP Channel"/>
+        <messages messageKey="SMS" messageValue="SMS"/>
+        <messages messageKey="EMAIL" messageValue="Email"/>
+        <messages messageKey="BOTH" messageValue="Both"/>
+    </CommonsScene>
+
+    <!-- Modify profile scene -->
+    <CommonsScene sceneId="ADM_MODIFY_PROFILE" appId="ADM" sceneName="Modify Profile" lookupName="/secure/profile/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <includes otherSceneId="ADM_VIEW_PROFILE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Profile"/>
+    </CommonsScene>
+
+    <!-- Change password scene -->
+    <CommonsScene sceneId="ADM_CHANGE_PWD" appId="ADM" sceneName="Change Password" lookupName="/secure/profile/change-password">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Change Password"/>
+        <messages messageKey="OLD_PASSWORD" messageValue="Old Password"/>
+        <messages messageKey="NEW_PASSWORD" messageValue="New Password"/>
+        <messages messageKey="NEW_PASSWORD_VERIFY" messageValue="New Password Verify"/>
+    </CommonsScene>
+
+    <!-- Setup scene -->
+    <CommonsScene sceneId="ADM_SETUP_BOARD" appId="ADM" sceneName="Setup" lookupName="/secure/setup/dashboard">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Setup"/>
+    </CommonsScene>
+
+    <!-- Alert setup scene -->
+    <CommonsScene sceneId="ADM_ALERT_SETUP_BOARD" appId="ADM" sceneName="Alerts" lookupName="/secure/setup/alert/dashboard">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Alerts"/>
+    </CommonsScene>
+
+    <!-- Browse alert templates scene -->
+    <CommonsScene sceneId="ADM_BROWSE_ALERT_TPL" appId="ADM" sceneName="Browse Alert Templates" lookupName="/secure/setup/alert/alert-template/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Alert Templates"/>
+        <messages messageKey="TEMPLATE_NAME" messageValue="Template Name"/>
+        <messages messageKey="ALERT_TYPE" messageValue="Alert Type"/>
+    </CommonsScene>
+
+    <!-- Create alert template scene -->
+    <CommonsScene sceneId="ADM_CREATE_ALERT_TPL" appId="ADM" sceneName="Create Alert Template" lookupName="/secure/setup/alert/alert-template/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Alert Template"/>
+        <messages messageKey="TEMPLATE_NAME" messageValue="Template Name"/>
+        <messages messageKey="ALERT_TYPE" messageValue="Alert Type"/>
+        <messages messageKey="BODY" messageValue="Body"/>
+        <messages messageKey="STYLE" messageValue="Style"/>
+    </CommonsScene>
+
+    <!-- Modify alert template scene -->
+    <CommonsScene sceneId="ADM_MODIFY_ALERT_TPL" appId="ADM" sceneName="Modify Alert Template" lookupName="/secure/setup/alert/alert-template/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Alert Template"/>
+        <messages messageKey="TEMPLATE_NAME" messageValue="Template Name"/>
+        <messages messageKey="ALERT_TYPE" messageValue="Alert Type"/>
+        <messages messageKey="BODY" messageValue="Body"/>
+        <messages messageKey="STYLE" messageValue="Style"/>
+    </CommonsScene>
+
+    <!-- View alert template scene -->
+    <CommonsScene sceneId="ADM_VIEW_ALERT_TPL" appId="ADM" sceneName="View Alert Template" lookupName="/secure/setup/alert/alert-template/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Alert Template"/>
+        <messages messageKey="TEMPLATE_NAME" messageValue="Template Name"/>
+        <messages messageKey="ALERT_TYPE" messageValue="Alert Type"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+        <messages messageKey="BODY" messageValue="Body"/>
+        <messages messageKey="STYLE" messageValue="Style"/>
+    </CommonsScene>
+
+    <!-- Browse countries scene -->
+    <CommonsScene sceneId="ADM_BROWSE_COUNTRY" appId="ADM" sceneName="Browse Countries" lookupName="/secure/setup/country/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Countries"/>
+        <messages messageKey="COUNTRY_NAME" messageValue="Country Name"/>
+        <messages messageKey="NUMERIC_CODE" messageValue="Numeric Code"/>
+        <messages messageKey="ALPHA2_CODE" messageValue="Alpha-2 Code"/>
+        <messages messageKey="ALPHA3_CODE" messageValue="Alpha-3 Code"/>
+    </CommonsScene>
+
+    <!-- Create country scene -->
+    <CommonsScene sceneId="ADM_CREATE_COUNTRY" appId="ADM" sceneName="Create Country" lookupName="/secure/setup/country/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Country"/>
+        <messages messageKey="COUNTRY_NAME" messageValue="Country Name"/>
+        <messages messageKey="NUMERIC_CODE" messageValue="Numeric Code"/>
+        <messages messageKey="ALPHA2_CODE" messageValue="Alpha-2 Code"/>
+        <messages messageKey="ALPHA3_CODE" messageValue="Alpha-3 Code"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+    </CommonsScene>
+
+    <!-- Modify country scene -->
+    <CommonsScene sceneId="ADM_MODIFY_COUNTRY" appId="ADM" sceneName="Modify Country" lookupName="/secure/setup/country/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Country"/>
+        <messages messageKey="COUNTRY_NAME" messageValue="Country Name"/>
+        <messages messageKey="NUMERIC_CODE" messageValue="Numeric Code"/>
+        <messages messageKey="ALPHA2_CODE" messageValue="Alpha-2 Code"/>
+        <messages messageKey="ALPHA3_CODE" messageValue="Alpha-3 Code"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+    </CommonsScene>
+
+    <!-- View country scene -->
+    <CommonsScene sceneId="ADM_VIEW_COUNTRY" appId="ADM" sceneName="View Country" lookupName="/secure/setup/country/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Country"/>
+        <messages messageKey="COUNTRY_NAME" messageValue="Country Name"/>
+        <messages messageKey="NUMERIC_CODE" messageValue="Numeric Code"/>
+        <messages messageKey="ALPHA2_CODE" messageValue="Alpha-2 Code"/>
+        <messages messageKey="ALPHA3_CODE" messageValue="Alpha-3 Code"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+        <messages messageKey="WEEKEND" messageValue="Weekend"/>
+        <messages messageKey="SUNDAY" messageValue="Sunday"/>
+        <messages messageKey="MONDAY" messageValue="Monday"/>
+        <messages messageKey="TUESDAY" messageValue="Tuesday"/>
+        <messages messageKey="WEDNESDAY" messageValue="Wednesday"/>
+        <messages messageKey="THURSDAY" messageValue="Thursday"/>
+        <messages messageKey="FRIDAY" messageValue="Friday"/>
+        <messages messageKey="SATURDAY" messageValue="Saturday"/>
+        <messages messageKey="IBAN_FORMATS" messageValue="IBAN Formats"/>
+        <messages messageKey="IBAN_LENGTH" messageValue="IBAN Length"/>
+        <messages messageKey="IBAN_LENGTH" messageValue="IBAN Length"/>
+        <messages messageKey="BBAN_FORMAT" messageValue="BBAN Format"/>
+        <messages messageKey="IBAN_FORMAT" messageValue="IBAN Format"/>
+        <messages messageKey="CHECK_DIGIT" messageValue="Check Digit"/>
+        <messages messageKey="HOLIDAYS" messageValue="Holidays"/>
+        <messages messageKey="HOLIDAY_NAME" messageValue="Holiday Name"/>
+        <messages messageKey="FROM_DATE" messageValue="From Date"/>
+        <messages messageKey="TO_DATE" messageValue="To Date"/>
+        <messages messageKey="RECURRING" messageValue="Recurring"/>
+    </CommonsScene>
+
+    <!-- Browse currencies scene -->
+    <CommonsScene sceneId="ADM_BROWSE_CCY" appId="ADM" sceneName="Browse Currencies" lookupName="/secure/setup/currency/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Currencies"/>
+        <messages messageKey="CURRENCY_NAME" messageValue="Currency Name"/>
+        <messages messageKey="CURRENCY_CODE" messageValue="Currency Code"/>
+        <messages messageKey="NUMERIC_CODE" messageValue="Numeric Code"/>
+    </CommonsScene>
+
+    <!-- Create currency scene -->
+    <CommonsScene sceneId="ADM_CREATE_CCY" appId="ADM" sceneName="Create Currency" lookupName="/secure/setup/currency/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Currency"/>
+        <messages messageKey="CURRENCY_NAME" messageValue="Currency Name"/>
+        <messages messageKey="CURRENCY_CODE" messageValue="Currency Code"/>
+        <messages messageKey="NUMERIC_CODE" messageValue="Numeric Code"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+    </CommonsScene>
+
+    <!-- Modify currency scene -->
+    <CommonsScene sceneId="ADM_MODIFY_CCY" appId="ADM" sceneName="Modify Currency" lookupName="/secure/setup/currency/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Currency"/>
+        <messages messageKey="CURRENCY_NAME" messageValue="Currency Name"/>
+        <messages messageKey="CURRENCY_CODE" messageValue="Currency Code"/>
+        <messages messageKey="NUMERIC_CODE" messageValue="Numeric Code"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+    </CommonsScene>
+
+    <!-- View currency scene -->
+    <CommonsScene sceneId="ADM_VIEW_CCY" appId="ADM" sceneName="View Currency" lookupName="/secure/setup/currency/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Currency"/>
+        <messages messageKey="CURRENCY_NAME" messageValue="Currency Name"/>
+        <messages messageKey="CURRENCY_CODE" messageValue="Currency Code"/>
+        <messages messageKey="NUMERIC_CODE" messageValue="Numeric Code"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+        <messages messageKey="WEEKEND" messageValue="Weekend"/>
+        <messages messageKey="SUNDAY" messageValue="Sunday"/>
+        <messages messageKey="MONDAY" messageValue="Monday"/>
+        <messages messageKey="TUESDAY" messageValue="Tuesday"/>
+        <messages messageKey="WEDNESDAY" messageValue="Wednesday"/>
+        <messages messageKey="THURSDAY" messageValue="Thursday"/>
+        <messages messageKey="FRIDAY" messageValue="Friday"/>
+        <messages messageKey="SATURDAY" messageValue="Saturday"/>
+        <messages messageKey="HOLIDAYS" messageValue="Holidays"/>
+        <messages messageKey="HOLIDAY_NAME" messageValue="Holiday Name"/>
+        <messages messageKey="FROM_DATE" messageValue="From Date"/>
+        <messages messageKey="TO_DATE" messageValue="To Date"/>
+        <messages messageKey="RECURRING" messageValue="Recurring"/>
+        <messages messageKey="APPS" messageValue="Apps"/>
+        <messages messageKey="APP" messageValue="App"/>
+        <messages messageKey="APP_NAME" messageValue="App Name"/>
+        <messages messageKey="APP_DESCRIPTION" messageValue="Description"/>
+    </CommonsScene>
+
+    <!-- Party setup scene -->
+    <CommonsScene sceneId="ADM_PRTY_SETUP_BOARD" appId="ADM" sceneName="Setup" lookupName="/secure/setup/party/dashboard">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Party Setup"/>
+    </CommonsScene>
+
+    <!-- Browse role types scene -->
+    <CommonsScene sceneId="ADM_BROWSE_ROLE_TYPE" appId="ADM" sceneName="Browse Role Types" lookupName="/secure/setup/party/role-type/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Role Types"/>
+        <messages messageKey="ROLE_NAME" messageValue="Role Name"/>
+    </CommonsScene>
+
+    <!-- View role type scene -->
+    <CommonsScene sceneId="ADM_VIEW_ROLE_TYPE" appId="ADM" sceneName="View Role Type" lookupName="/secure/setup/party/role-type/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Role Type"/>
+        <messages messageKey="ROLE_NAME" messageValue="Role Name"/>
+        <messages messageKey="PARENT_ROLE" messageValue="Parent Role"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+    </CommonsScene>
+
+    <!-- Browse party classes scene -->
+    <CommonsScene sceneId="ADM_BROWSE_PRTY_CLS" appId="ADM" sceneName="Browse Party Classes" lookupName="/secure/setup/party/party-class/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Party Classes"/>
+        <messages messageKey="CLASS_NAME" messageValue="Class Name"/>
+        <messages messageKey="CLASS_TYPE" messageValue="Class Type"/>
+    </CommonsScene>
+
+    <!-- Create party class scene -->
+    <CommonsScene sceneId="ADM_CREATE_PRTY_CLS" appId="ADM" sceneName="Create Party Class" lookupName="/secure/setup/party/party-class/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Party Class"/>
+        <messages messageKey="CLASS_NAME" messageValue="Class Name"/>
+        <messages messageKey="CLASS_TYPE" messageValue="Class Type"/>
+        <messages messageKey="PARENT_CLASS" messageValue="Parent Class"/>
+        <messages messageKey="STANDARD_CODE" messageValue="Standard Code"/>
+    </CommonsScene>
+
+    <!-- Modify party class scene -->
+    <CommonsScene sceneId="ADM_MODIFY_PRTY_CLS" appId="ADM" sceneName="Modify Party Class" lookupName="/secure/setup/party/party-class/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Party Class"/>
+        <messages messageKey="CLASS_NAME" messageValue="Class Name"/>
+        <messages messageKey="CLASS_TYPE" messageValue="Class Type"/>
+        <messages messageKey="PARENT_CLASS" messageValue="Parent Class"/>
+        <messages messageKey="STANDARD_CODE" messageValue="Standard Code"/>
+    </CommonsScene>
+
+    <!-- View party class scene -->
+    <CommonsScene sceneId="ADM_VIEW_PRTY_CLS" appId="ADM" sceneName="View Party Class" lookupName="/secure/setup/party/party-class/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Party Class"/>
+        <messages messageKey="CLASS_NAME" messageValue="Class Name"/>
+        <messages messageKey="CLASS_TYPE" messageValue="Class Type"/>
+        <messages messageKey="PARENT_CLASS" messageValue="Parent Class"/>
+        <messages messageKey="STANDARD_CODE" messageValue="Standard Code"/>
+    </CommonsScene>
+
+    <!-- Dashboard scene -->
+    <CommonsScene sceneId="ADM_DASHBOARD" appId="ADM" sceneName="Dashboard" lookupName="/secure/dashboard">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="CHOOSE_INTERVAL" messageValue="Choose Interval"/>
+        <messages messageKey="PAST_DAY" messageValue="Past Day"/>
+        <messages messageKey="PAST_WEEK" messageValue="Past Week"/>
+        <messages messageKey="PAST_MONTH" messageValue="Past Month"/>
+        <messages messageKey="PAST_YEAR" messageValue="Past Year"/>
+        <messages messageKey="ACTIVE_USERS" messageValue="Active Users"/>
+        <messages messageKey="DISABLED_USERS" messageValue="Disabled Users"/>
+        <messages messageKey="PENDING_USERS" messageValue="Users Pending Approval"/>
+        <messages messageKey="NEW_USERS" messageValue="New Users"/>
+        <messages messageKey="ACTIVE_WORKFLOWS" messageValue="Active Workflows"/>
+        <messages messageKey="DISABLED_WORKFLOWS" messageValue="Disabled Workflows"/>
+        <messages messageKey="PENDING_WORKFLOWS" messageValue="Workflows Pending Approval"/>
+        <messages messageKey="WORKFLOWS_PER_STATUS" messageValue="Workflows Per Status"/>
+        <messages messageKey="WORKFLOWS_PER_TYPE" messageValue="Workflows Per Type"/>
+    </CommonsScene>
+
+    <!-- Party dashboard scene -->
+    <CommonsScene sceneId="ADM_PRTY_BOARD" appId="ADM" sceneName="Party Dashboard" lookupName="/secure/party/dashboard">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Parties"/>
+    </CommonsScene>
+
+    <!-- Browse user groups scene -->
+    <CommonsScene sceneId="ADM_BROWSE_USR_GRP" appId="ADM" sceneName="Browse User Groups" lookupName="/secure/party/user-group/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="User Groups"/>
+        <messages messageKey="GROUP_NAME" messageValue="Group Name"/>
+        <messages messageKey="TYPE" messageValue="Type"/>
+    </CommonsScene>
+
+    <!-- Create user group scene -->
+    <CommonsScene sceneId="ADM_CREATE_USR_GRP" appId="ADM" sceneName="Create User Group" lookupName="/secure/party/user-group/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create User Group"/>
+        <messages messageKey="GROUP_NAME" messageValue="Group Name"/>
+        <messages messageKey="TYPE" messageValue="Type"/>
+        <messages messageKey="IPS_ALLOWED" messageValue="IPs Allowed"/>
+        <messages messageKey="AUTHORIZATIONS" messageValue="Authorizations"/>
+    </CommonsScene>
+
+    <!-- Modify user group scene -->
+    <CommonsScene sceneId="ADM_MODIFY_USR_GRP" appId="ADM" sceneName="Modify User Group" lookupName="/secure/party/user-group/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify User Group"/>
+        <messages messageKey="GROUP_NAME" messageValue="Group Name"/>
+        <messages messageKey="TYPE" messageValue="Type"/>
+        <messages messageKey="IPS_ALLOWED" messageValue="IPs Allowed"/>
+        <messages messageKey="AUTHORIZATIONS" messageValue="Authorizations"/>
+    </CommonsScene>
+
+    <!-- View user group scene -->
+    <CommonsScene sceneId="ADM_VIEW_USR_GRP" appId="ADM" sceneName="View User Group" lookupName="/secure/party/user-group/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View User Group"/>
+        <messages messageKey="GROUP_NAME" messageValue="Group Name"/>
+        <messages messageKey="TYPE" messageValue="Type"/>
+        <messages messageKey="IPS_ALLOWED" messageValue="IPs Allowed"/>
+        <messages messageKey="AUTHORIZATIONS" messageValue="Authorizations"/>
+        <messages messageKey="MEMBERS" messageValue="Members"/>
+        <messages messageKey="ACL" messageValue="ACL"/>
+        <messages messageKey="WORKFLOW" messageValue="Workflow"/>
+        <messages messageKey="USER" messageValue="User"/>
+        <messages messageKey="USERNAME" messageValue="Username"/>
+        <messages messageKey="FROM_DATE" messageValue="From Date"/>
+        <messages messageKey="TO_DATE" messageValue="To Date"/>
+        <messages messageKey="POSITION" messageValue="Position"/>
+        <messages messageKey="OBJECT_TYPE" messageValue="Object Type"/>
+        <messages messageKey="OBJECT_ID" messageValue="Object ID"/>
+        <messages messageKey="PERMISSION_TYPE" messageValue="Permission Type"/>
+        <messages messageKey="REPORT" messageValue="Report"/>
+        <messages messageKey="REPORT_NAME" messageValue="Report Name"/>
+        <messages messageKey="CATEGORY" messageValue="Category"/>
+        <messages messageKey="WORKFLOW_NAME" messageValue="Workflow Name"/>
+        <messages messageKey="WORKFLOW_TYPE" messageValue="Workflow Type"/>
+    </CommonsScene>
+
+    <!-- Browse users scene -->
+    <CommonsScene sceneId="ADM_BROWSE_USR" appId="ADM" sceneName="Browse Users" lookupName="/secure/party/user/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Users"/>
+        <messages messageKey="USERNAME" messageValue="Username"/>
+    </CommonsScene>
+
+    <!-- Modify user scene -->
+    <CommonsScene sceneId="ADM_MODIFY_USR" appId="ADM" sceneName="Modify User" lookupName="/secure/party/user/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify User"/>
+        <messages messageKey="USERNAME" messageValue="Username"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+    </CommonsScene>
+
+    <!-- View user scene -->
+    <CommonsScene sceneId="ADM_VIEW_USR" appId="ADM" sceneName="View User" lookupName="/secure/party/user/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View User"/>
+        <messages messageKey="APPROVE" messageValue="Approve"/>
+        <messages messageKey="ENABLE" messageValue="Enable"/>
+        <messages messageKey="DISABLE" messageValue="Disable"/>
+        <messages messageKey="RESET_PASSWORD" messageValue="Reset Password"/>
+        <messages messageKey="FORCE_LOGOUT" messageValue="Force Logout"/>
+        <messages messageKey="PARTY_ID" messageValue="Party ID"/>
+        <messages messageKey="USERNAME" messageValue="Username"/>
+        <messages messageKey="APPROVED" messageValue="Approved"/>
+        <messages messageKey="APPROVED_BY" messageValue="Approved By"/>
+        <messages messageKey="APPROVAL_DATE" messageValue="Approval Date"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+        <messages messageKey="USER_GROUPS" messageValue="User Groups"/>
+        <messages messageKey="ACL" messageValue="ACL"/>
+        <messages messageKey="USER_GROUP" messageValue="User Group"/>
+        <messages messageKey="GROUP_NAME" messageValue="Group Name"/>
+        <messages messageKey="FROM_DATE" messageValue="From Date"/>
+        <messages messageKey="TO_DATE" messageValue="To Date"/>
+        <messages messageKey="POSITION" messageValue="Position"/>
+        <messages messageKey="OBJECT_TYPE" messageValue="Object Type"/>
+        <messages messageKey="OBJECT_ID" messageValue="Object ID"/>
+        <messages messageKey="PERMISSION_TYPE" messageValue="Permission Type"/>
+        <messages messageKey="REPORT" messageValue="Report"/>
+        <messages messageKey="REPORT_NAME" messageValue="Report Name"/>
+        <messages messageKey="TYPE" messageValue="Type"/>
+        <messages messageKey="CATEGORY" messageValue="Category"/>
+    </CommonsScene>
+
+    <!-- Reset user password scene -->
+    <CommonsScene sceneId="ADM_RESET_USR_PWD" appId="ADM" sceneName="Reset User Password" lookupName="/secure/party/user/(\w|-)*/reset-password">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Reset Password"/>
+        <messages messageKey="EMAILS" messageValue="Emails"/>
+        <messages messageKey="PHONE_NUMBERS" messageValue="Phone Numbers"/>
+    </CommonsScene>
+
+    <!-- Browse parties scene -->
+    <CommonsScene sceneId="ADM_BROWSE_PRTY" appId="ADM" sceneName="Browse Parties" lookupName="/secure/party/party/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Parties"/>
+        <messages messageKey="PARTY_NAME" messageValue="Party Name"/>
+        <messages messageKey="TYPE" messageValue="Type"/>
+        <messages messageKey="ALL_PARTIES" messageValue="All Parties"/>
+        <messages messageKey="ORGANIZATIONS" messageValue="Organizations"/>
+        <messages messageKey="PERSONS" messageValue="Persons"/>
+        <messages messageKey="AUTOMATED_AGENTS" messageValue="Automated Agents"/>
+    </CommonsScene>
+
+    <!-- Create party scene -->
+    <CommonsScene sceneId="ADM_CREATE_PRTY" appId="ADM" sceneName="Create Party" lookupName="/secure/party/party/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Party"/>
+        <messages messageKey="SUBMIT_ENROLL" messageValue="Submit &amp; Enroll"/>
+        <messages messageKey="TYPE" messageValue="Type"/>
+        <messages messageKey="PROFILE" messageValue="Profile"/>
+        <messages messageKey="DETAILS" messageValue="Details"/>
+        <messages messageKey="CONTACTS" messageValue="Contacts"/>
+        <messages messageKey="PSEUDO_ID" messageValue="Pseudo ID"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="COMMENTS" messageValue="Comments"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+        <messages messageKey="MALE" messageValue="Male"/>
+        <messages messageKey="FEMALE" messageValue="Female"/>
+        <messages messageKey="SALUTATION" messageValue="Salutation"/>
+        <messages messageKey="FIRST_NAME" messageValue="First Name"/>
+        <messages messageKey="MIDDLE_NAME" messageValue="Middle Name"/>
+        <messages messageKey="LAST_NAME" messageValue="Last Name"/>
+        <messages messageKey="SUFFIX" messageValue="Suffix"/>
+        <messages messageKey="MAIDEN_NAME" messageValue="Mother's Maiden Name"/>
+        <messages messageKey="BIRTH_DATE" messageValue="Birth Date"/>
+        <messages messageKey="DECEASED_DATE" messageValue="Deceased Date"/>
+        <messages messageKey="MARITAL_STATUS" messageValue="Marital Status"/>
+        <messages messageKey="RESIDENCE_STATUS" messageValue="Residence Status"/>
+        <messages messageKey="EMPLOYMENT_STATUS" messageValue="Employment Status"/>
+        <messages messageKey="OCCUPATION" messageValue="Occupation"/>
+        <messages messageKey="ORGANIZATION_NAME" messageValue="Organization Name"/>
+        <messages messageKey="ANNUAL_REVENUE" messageValue="Annual Revenue"/>
+        <messages messageKey="NUMBER_OF_EMPLOYEES" messageValue="Number of Employees"/>
+        <messages messageKey="NOTHING_MORE" messageValue="Nothing more to input."/>
+        <messages messageKey="PHONE_NUMBER" messageValue="Phone Number"/>
+        <messages messageKey="PURPOSE" messageValue="Purpose"/>
+        <messages messageKey="ASK_FOR_NAME" messageValue="Ask For Name"/>
+        <messages messageKey="EMAIL_ADDRESS" messageValue="Email Address"/>
+    </CommonsScene>
+
+    <!-- Modify party scene -->
+    <CommonsScene sceneId="ADM_MODIFY_PRTY" appId="ADM" sceneName="Modify Party" lookupName="/secure/party/party/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Party"/>
+        <messages messageKey="PROFILE" messageValue="Profile"/>
+        <messages messageKey="DETAILS" messageValue="Details"/>
+        <messages messageKey="PSEUDO_ID" messageValue="Pseudo ID"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="COMMENTS" messageValue="Comments"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+        <messages messageKey="MALE" messageValue="Male"/>
+        <messages messageKey="FEMALE" messageValue="Female"/>
+        <messages messageKey="SALUTATION" messageValue="Salutation"/>
+        <messages messageKey="FIRST_NAME" messageValue="First Name"/>
+        <messages messageKey="MIDDLE_NAME" messageValue="Middle Name"/>
+        <messages messageKey="LAST_NAME" messageValue="Last Name"/>
+        <messages messageKey="SUFFIX" messageValue="Suffix"/>
+        <messages messageKey="MAIDEN_NAME" messageValue="Mother's Maiden Name"/>
+        <messages messageKey="BIRTH_DATE" messageValue="Birth Date"/>
+        <messages messageKey="DECEASED_DATE" messageValue="Deceased Date"/>
+        <messages messageKey="MARITAL_STATUS" messageValue="Marital Status"/>
+        <messages messageKey="RESIDENCE_STATUS" messageValue="Residence Status"/>
+        <messages messageKey="EMPLOYMENT_STATUS" messageValue="Employment Status"/>
+        <messages messageKey="OCCUPATION" messageValue="Occupation"/>
+        <messages messageKey="ORGANIZATION_NAME" messageValue="Organization Name"/>
+        <messages messageKey="ANNUAL_REVENUE" messageValue="Annual Revenue"/>
+        <messages messageKey="NUMBER_OF_EMPLOYEES" messageValue="Number of Employees"/>
+        <messages messageKey="NOTHING_MORE" messageValue="Nothing more to input."/>
+    </CommonsScene>
+
+    <!-- View party scene -->
+    <CommonsScene sceneId="ADM_VIEW_PRTY" appId="ADM" sceneName="View Party" lookupName="/secure/party/party/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <includes otherSceneId="ADM_BROWSE_COUNTRY"/>
+        <includes otherSceneId="ADM_BROWSE_PRTY"/>
+        <includes otherSceneId="ADM_BROWSE_PRTY_CLS"/>
+        <includes otherSceneId="ADM_BROWSE_ROLE_TYPE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Party"/>
+        <messages messageKey="ENROLL" messageValue="Enroll"/>
+        <messages messageKey="PARTY_TYPE" messageValue="Party Type"/>
+        <messages messageKey="PSEUDO_ID" messageValue="Pseudo ID"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="USER_ID" messageValue="User ID"/>
+        <messages messageKey="COMMENTS" messageValue="Comments"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+        <messages messageKey="MALE" messageValue="Male"/>
+        <messages messageKey="FEMALE" messageValue="Female"/>
+        <messages messageKey="SALUTATION" messageValue="Salutation"/>
+        <messages messageKey="FIRST_NAME" messageValue="First Name"/>
+        <messages messageKey="MIDDLE_NAME" messageValue="Middle Name"/>
+        <messages messageKey="LAST_NAME" messageValue="Last Name"/>
+        <messages messageKey="SUFFIX" messageValue="Suffix"/>
+        <messages messageKey="MAIDEN_NAME" messageValue="Mother's Maiden Name"/>
+        <messages messageKey="BIRTH_DATE" messageValue="Birth Date"/>
+        <messages messageKey="DECEASED_DATE" messageValue="Deceased Date"/>
+        <messages messageKey="MARITAL_STATUS" messageValue="Marital Status"/>
+        <messages messageKey="RESIDENCE_STATUS" messageValue="Residence Status"/>
+        <messages messageKey="EMPLOYMENT_STATUS" messageValue="Employment Status"/>
+        <messages messageKey="OCCUPATION" messageValue="Occupation"/>
+        <messages messageKey="ORGANIZATION_NAME" messageValue="Organization Name"/>
+        <messages messageKey="ANNUAL_REVENUE" messageValue="Annual Revenue"/>
+        <messages messageKey="NUMBER_OF_EMPLOYEES" messageValue="Number of Employees"/>
+        <messages messageKey="CONTACTS" messageValue="Contacts"/>
+        <messages messageKey="TYPE" messageValue="Type"/>
+        <messages messageKey="PHONE_NUMBER" messageValue="Phone Number"/>
+        <messages messageKey="COUNTRY_CODE" messageValue="Country Code"/>
+        <messages messageKey="AREA_CODE" messageValue="Area Code"/>
+        <messages messageKey="EXTENSION" messageValue="Extension"/>
+        <messages messageKey="ASK_FOR_NAME" messageValue="Ask For Name"/>
+        <messages messageKey="EMAIL_ADDRESS" messageValue="Email Address"/>
+        <messages messageKey="DETAILS" messageValue="Details"/>
+        <messages messageKey="PURPOSE" messageValue="Purpose"/>
+        <messages messageKey="ADDRESSES" messageValue="Addresses"/>
+        <messages messageKey="ADDRESS" messageValue="Address"/>
+        <messages messageKey="COUNTRY" messageValue="Country"/>
+        <messages messageKey="PROVINCE" messageValue="Province"/>
+        <messages messageKey="CITY" messageValue="City"/>
+        <messages messageKey="ADDRESS_1" messageValue="Address 1"/>
+        <messages messageKey="ADDRESS_2" messageValue="Address 2"/>
+        <messages messageKey="POSTAL_CODE" messageValue="Postal Code"/>
+        <messages messageKey="POSTAL_CODE_EXT" messageValue="Postal Code Extension"/>
+        <messages messageKey="IDENTIFICATION" messageValue="Identification"/>
+        <messages messageKey="IDENTIFICATION_TYPE" messageValue="Identification Type"/>
+        <messages messageKey="ID_VALUE" messageValue="ID Value"/>
+        <messages messageKey="EXPIRY_DATE" messageValue="Expire Date"/>
+        <messages messageKey="ISSUED_BY" messageValue="Issued By"/>
+        <messages messageKey="ROLES" messageValue="Roles"/>
+        <messages messageKey="ROLE" messageValue="Role"/>
+        <messages messageKey="BADGES" messageValue="Badges"/>
+        <messages messageKey="SERIAL_NUMBER" messageValue="Serial Number"/>
+        <messages messageKey="ORGANIZATION" messageValue="Organization"/>
+        <messages messageKey="STORED_VALUE" messageValue="Stored Value"/>
+        <messages messageKey="FROM_DATE" messageValue="From Date"/>
+        <messages messageKey="TO_DATE" messageValue="To Date"/>
+        <messages messageKey="CONTENT" messageValue="Content"/>
+        <messages messageKey="DESCRIPTION" messageValue="Description"/>
+        <messages messageKey="CONTENT_TYPE" messageValue="Content Type"/>
+        <messages messageKey="FILE" messageValue="File"/>
+        <messages messageKey="INPUT_BY" messageValue="Input By"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+        <messages messageKey="NOTES" messageValue="Notes"/>
+        <messages messageKey="NOTE_TEXT" messageValue="Note Text"/>
+        <messages messageKey="INTERNAL_NOTE" messageValue="Internal Note"/>
+        <messages messageKey="RELATED" messageValue="Related"/>
+        <messages messageKey="PARTY" messageValue="Party"/>
+        <messages messageKey="FROM_PARTY" messageValue="From Party"/>
+        <messages messageKey="TO_PARTY" messageValue="To Party"/>
+        <messages messageKey="RELATIONSHIP" messageValue="Relationship"/>
+        <messages messageKey="CLASSIFICATIONS" messageValue="Classifications"/>
+        <messages messageKey="PARTY_CLASS" messageValue="Party Class"/>
+        <messages messageKey="PROVINCE_NAME" messageValue="Province Name"/>
+        <messages messageKey="CITY_NAME" messageValue="City Name"/>
+    </CommonsScene>
+
+    <!-- Enroll party scene -->
+    <CommonsScene sceneId="ADM_ENROLL_PRTY" appId="ADM" sceneName="Enroll Party" lookupName="/secure/party/party/(\w|-)*/enroll">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <includes otherSceneId="ADM_BROWSE_USR_GRP"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Enroll Party"/>
+        <messages messageKey="CREDENTIALS" messageValue="Credentials"/>
+        <messages messageKey="GROUPS" messageValue="Groups"/>
+        <messages messageKey="USERNAME" messageValue="Username"/>
+        <messages messageKey="PASSWORD" messageValue="Password"/>
+        <messages messageKey="PASSWORD_VERIFY" messageValue="Password Verify"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+        <messages messageKey="USER_GROUP" messageValue="User Group"/>
+        <messages messageKey="GROUP_WIKI" messageValue="Group Wiki"/>
+    </CommonsScene>
+
+    <!-- Browse communications scene -->
+    <CommonsScene sceneId="ADM_BROWSE_COMM" appId="ADM" sceneName="Browse Communications" lookupName="/secure/party/communication/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Communications"/>
+        <messages messageKey="TYPE" messageValue="Type"/>
+        <messages messageKey="FROM_PARTY" messageValue="From Party"/>
+        <messages messageKey="TO_PARTY" messageValue="To Party"/>
+        <messages messageKey="STATUS" messageValue="Status"/>
+        <messages messageKey="DATE" messageValue="Date"/>
+    </CommonsScene>
+
+    <!-- Create communication scene -->
+    <CommonsScene sceneId="ADM_CREATE_COMM" appId="ADM" sceneName="Create Communication" lookupName="/secure/party/communication/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <includes otherSceneId="ADM_BROWSE_PRTY"/>
+        <includes otherSceneId="ADM_CREATE_PRTY"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Communication"/>
+        <messages messageKey="PARTIES" messageValue="Parties"/>
+        <messages messageKey="DETAILS" messageValue="Details"/>
+        <messages messageKey="COMMUNICATION_TYPE" messageValue="Communication Type"/>
+        <messages messageKey="CONTACT_TYPE" messageValue="Contact Type"/>
+        <messages messageKey="STATUS" messageValue="Status"/>
+        <messages messageKey="REASON" messageValue="Reason"/>
+        <messages messageKey="FROM_PARTY" messageValue="From Party"/>
+        <messages messageKey="TO_PARTY" messageValue="To Party"/>
+        <messages messageKey="START_DATE" messageValue="Start Date"/>
+        <messages messageKey="END_DATE" messageValue="End Date"/>
+        <messages messageKey="SUBJECT" messageValue="Subject"/>
+        <messages messageKey="BODY" messageValue="Body"/>
+        <messages messageKey="NOTES" messageValue="Notes"/>
+    </CommonsScene>
+
+    <!-- Modify communication scene -->
+    <CommonsScene sceneId="ADM_MODIFY_COMM" appId="ADM" sceneName="Modify Communication" lookupName="/secure/party/communication/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <includes otherSceneId="ADM_BROWSE_PRTY"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Communication"/>
+        <messages messageKey="PARTIES" messageValue="Parties"/>
+        <messages messageKey="DETAILS" messageValue="Details"/>
+        <messages messageKey="COMMUNICATION_TYPE" messageValue="Communication Type"/>
+        <messages messageKey="CONTACT_TYPE" messageValue="Contact Type"/>
+        <messages messageKey="STATUS" messageValue="Status"/>
+        <messages messageKey="REASON" messageValue="Reason"/>
+        <messages messageKey="FROM_PARTY" messageValue="From Party"/>
+        <messages messageKey="TO_PARTY" messageValue="To Party"/>
+        <messages messageKey="START_DATE" messageValue="Start Date"/>
+        <messages messageKey="END_DATE" messageValue="End Date"/>
+        <messages messageKey="SUBJECT" messageValue="Subject"/>
+        <messages messageKey="BODY" messageValue="Body"/>
+        <messages messageKey="NOTES" messageValue="Notes"/>
+    </CommonsScene>
+
+    <!-- View communication scene -->
+    <CommonsScene sceneId="ADM_VIEW_COMM" appId="ADM" sceneName="View Communication" lookupName="/secure/party/communication/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Communication"/>
+        <messages messageKey="COMMUNICATION_TYPE" messageValue="Communication Type"/>
+        <messages messageKey="CONTACT_TYPE" messageValue="Contact Type"/>
+        <messages messageKey="STATUS" messageValue="Status"/>
+        <messages messageKey="REASON" messageValue="Reason"/>
+        <messages messageKey="FROM_PARTY" messageValue="From Party"/>
+        <messages messageKey="TO_PARTY" messageValue="To Party"/>
+        <messages messageKey="START_DATE" messageValue="Start Date"/>
+        <messages messageKey="END_DATE" messageValue="End Date"/>
+        <messages messageKey="ENTRY_DATE" messageValue="Entry Date"/>
+        <messages messageKey="SUBJECT" messageValue="Subject"/>
+        <messages messageKey="BODY" messageValue="Body"/>
+        <messages messageKey="NOTES" messageValue="Notes"/>
+        <messages messageKey="CONTENT" messageValue="Content"/>
+        <messages messageKey="DESCRIPTION" messageValue="Description"/>
+        <messages messageKey="CONTENT_TYPE" messageValue="Content Type"/>
+        <messages messageKey="FILE" messageValue="File"/>
+        <messages messageKey="INPUT_BY" messageValue="Input By"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+    </CommonsScene>
+
+    <!-- Workflow dashboard scene -->
+    <CommonsScene sceneId="ADM_WORKFLOW_BOARD" appId="ADM" sceneName="Workflows" lookupName="/secure/workflow/dashboard">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Workflows"/>
+    </CommonsScene>
+
+    <!-- Browse workflows scene -->
+    <CommonsScene sceneId="ADM_BROWSE_WF" appId="ADM" sceneName="Browse Workflows" lookupName="/secure/workflow/workflow/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Workflows"/>
+        <messages messageKey="WORKFLOW_NAME" messageValue="Workflow Name"/>
+        <messages messageKey="WORKFLOW_TYPE" messageValue="Workflow Type"/>
+        <messages messageKey="DESCRIPTION" messageValue="Description"/>
+    </CommonsScene>
+
+    <!-- Create workflow scene -->
+    <CommonsScene sceneId="ADM_CREATE_WF" appId="ADM" sceneName="Create Workflow" lookupName="/secure/workflow/workflow/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <includes otherSceneId="ADM_BROWSE_USR_GRP"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Workflow"/>
+        <messages messageKey="GENERAL" messageValue="General"/>
+        <messages messageKey="REMINDERS" messageValue="Reminders"/>
+        <messages messageKey="INITIATORS" messageValue="Initiators"/>
+        <messages messageKey="WORKFLOW_NAME" messageValue="Workflow Name"/>
+        <messages messageKey="WORKFLOW_TYPE" messageValue="Workflow Type"/>
+        <messages messageKey="STATUS_FLOW" messageValue="Status Flow"/>
+        <messages messageKey="DESCRIPTION" messageValue="Description"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+        <messages messageKey="REMINDER_INTERVAL" messageValue="Reminder Interval"/>
+        <messages messageKey="REMINDER_LIMIT" messageValue="Reminder Limit"/>
+        <messages messageKey="USER_GROUP" messageValue="User Group"/>
+    </CommonsScene>
+
+    <!-- Modify workflow scene -->
+    <CommonsScene sceneId="ADM_MODIFY_WF" appId="ADM" sceneName="Modify Workflow" lookupName="/secure/workflow/workflow/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Workflow"/>
+        <messages messageKey="GENERAL" messageValue="General"/>
+        <messages messageKey="REMINDERS" messageValue="Reminders"/>
+        <messages messageKey="WORKFLOW_NAME" messageValue="Workflow Name"/>
+        <messages messageKey="DESCRIPTION" messageValue="Description"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+        <messages messageKey="REMINDER_INTERVAL" messageValue="Reminder Interval"/>
+        <messages messageKey="REMINDER_LIMIT" messageValue="Reminder Limit"/>
+    </CommonsScene>
+
+    <!-- Duplicate workflow scene -->
+    <CommonsScene sceneId="ADM_DUPLICATE_WF" appId="ADM" sceneName="Duplicate Workflow" lookupName="/secure/workflow/workflow/(\w|-)*/duplicate">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Duplicate Workflow"/>
+        <messages messageKey="GENERAL" messageValue="General"/>
+        <messages messageKey="REMINDERS" messageValue="Reminders"/>
+        <messages messageKey="WORKFLOW_NAME" messageValue="Workflow Name"/>
+        <messages messageKey="DESCRIPTION" messageValue="Description"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+        <messages messageKey="REMINDER_INTERVAL" messageValue="Reminder Interval"/>
+        <messages messageKey="REMINDER_LIMIT" messageValue="Reminder Limit"/>
+    </CommonsScene>
+
+    <!-- View workflow scene -->
+    <CommonsScene sceneId="ADM_VIEW_WF" appId="ADM" sceneName="View Workflow" lookupName="/secure/workflow/workflow/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Workflow"/>
+        <messages messageKey="WORKFLOW_NAME" messageValue="Workflow Name"/>
+        <messages messageKey="WORKFLOW_TYPE" messageValue="Workflow Type"/>
+        <messages messageKey="DESCRIPTION" messageValue="Description"/>
+        <messages messageKey="STATUS_FLOW" messageValue="Status Flow"/>
+        <messages messageKey="INPUT_BY" messageValue="Input By"/>
+        <messages messageKey="UPDATED_BY" messageValue="Updated By"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+        <messages messageKey="APPROVE" messageValue="Approve"/>
+        <messages messageKey="APPROVED" messageValue="Approved"/>
+        <messages messageKey="APPROVED_BY" messageValue="Approved By"/>
+        <messages messageKey="APPROVAL_DATE" messageValue="Approval Date"/>
+        <messages messageKey="REMINDERS" messageValue="Reminders"/>
+        <messages messageKey="REMINDER_INTERVAL" messageValue="Reminder Interval"/>
+        <messages messageKey="REMINDER_LIMIT" messageValue="Reminder Limit"/>
+        <messages messageKey="INITIATORS" messageValue="Initiators"/>
+        <messages messageKey="USER_GROUP" messageValue="User Group"/>
+        <messages messageKey="FROM_DATE" messageValue="From Date"/>
+        <messages messageKey="TO_DATE" messageValue="To Date"/>
+        <messages messageKey="VARIABLES" messageValue="Variables"/>
+        <messages messageKey="VARIABLE_NAME" messageValue="Variable Name"/>
+        <messages messageKey="VARIABLE_TYPE" messageValue="Variable Type"/>
+        <messages messageKey="DEFAULT_VALUE" messageValue="Default Value"/>
+    </CommonsScene>
+
+    <!-- Design workflow scene -->
+    <CommonsScene sceneId="ADM_DESIGN_WF" appId="ADM" sceneName="Design Workflow" lookupName="/secure/workflow/workflow/(\w|-)*/design">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Design Workflow"/>
+        <messages messageKey="NEW" messageValue="New"/>
+        <messages messageKey="UNDO" messageValue="Undo"/>
+        <messages messageKey="REDO" messageValue="Redo"/>
+        <messages messageKey="ZOOM_IN" messageValue="Zoom In"/>
+        <messages messageKey="RESET_ZOOM" messageValue="Reset Zoom"/>
+        <messages messageKey="ZOOM_OUT" messageValue="Zoom Out"/>
+        <messages messageKey="TOGGLE_PALETTE" messageValue="Toggle Palette"/>
+        <messages messageKey="TOGGLE_FULLSCREEN" messageValue="Toggle Fullscreen"/>
+        <messages messageKey="DOWNLOAD" messageValue="Download"/>
+        <messages messageKey="EXIT" messageValue="Exit"/>
+        <messages messageKey="CONDITION" messageValue="Condition"/>
+        <messages messageKey="USER" messageValue="User"/>
+        <messages messageKey="ADJUSTMENT" messageValue="Adjustment"/>
+        <messages messageKey="SERVICE" messageValue="Service"/>
+        <messages messageKey="ALERT" messageValue="Alert"/>
+        <messages messageKey="LOAD_DRAFT_DESIGN" messageValue="A draft of this workflow is available, load it now?"/>
+        <messages messageKey="WORKFLOW_NAME" messageValue="Workflow Name"/>
+        <messages messageKey="WORKFLOW_TYPE" messageValue="Workflow Type"/>
+        <messages messageKey="ACTIVITY_DESCRIPTION" messageValue="Activity Description"/>
+        <messages messageKey="RESULT_CODE" messageValue="Result Code"/>
+        <messages messageKey="CONDITION_TYPE" messageValue="Condition Type"/>
+        <messages messageKey="CONDITIONS" messageValue="Conditions"/>
+        <messages messageKey="GROUP" messageValue="Group"/>
+        <messages messageKey="FIELD" messageValue="Field"/>
+        <messages messageKey="VARIABLE" messageValue="Variable"/>
+        <messages messageKey="OPERATOR" messageValue="Operator"/>
+        <messages messageKey="VALUE" messageValue="Value"/>
+        <messages messageKey="SCRIPT" messageValue="Script"/>
+        <messages messageKey="TASK_TYPE" messageValue="Task Type"/>
+        <messages messageKey="CROWDS" messageValue="Crowds"/>
+        <messages messageKey="CROWD" messageValue="Crowd"/>
+        <messages messageKey="INITIATOR" messageValue="Initiator"/>
+        <messages messageKey="SUMMARY" messageValue="Summary"/>
+        <messages messageKey="DESCRIPTION" messageValue="Description"/>
+        <messages messageKey="MIN_APPROVALS" messageValue="Minimum Approvals"/>
+        <messages messageKey="MIN_REJECTIONS" messageValue="Minimum Rejections"/>
+        <messages messageKey="TIMEOUT" messageValue="Timeout"/>
+        <messages messageKey="ADJUSTMENT_TYPE" messageValue="Adjustment Type"/>
+        <messages messageKey="STATUS" messageValue="Status"/>
+        <messages messageKey="SERVICE_NAME" messageValue="Service Name"/>
+        <messages messageKey="PARAMETERS" messageValue="Parameters"/>
+        <messages messageKey="ALERT_TYPE" messageValue="Alert Type"/>
+        <messages messageKey="MESSAGE" messageValue="Message"/>
+        <messages messageKey="USER_GROUP" messageValue="User Group"/>
+        <messages messageKey="USERNAME" messageValue="Username"/>
+        <messages messageKey="GROUP_NAME" messageValue="Group Name"/>
+    </CommonsScene>
+
+    <!-- Browse workflow tasks scene -->
+    <CommonsScene sceneId="ADM_BROWSE_WF_TASK" appId="ADM" sceneName="Browse Workflow Tasks" lookupName="/secure/workflow/task/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Workflow Tasks"/>
+        <messages messageKey="WORKFLOW_NAME" messageValue="Workflow Name"/>
+        <messages messageKey="TASK_TYPE" messageValue="Task Type"/>
+        <messages messageKey="ACTION_TYPE" messageValue="Action Type"/>
+        <messages messageKey="STATUS" messageValue="Status"/>
+        <messages messageKey="DUE_DATE" messageValue="Due Date"/>
+    </CommonsScene>
+
+</entity-facade-xml>

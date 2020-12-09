@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Navigation -->
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_BENEFICIARIES" messageValue="Beneficiaries"/>
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_BENEFICIARY_TYPES" messageValue="Beneficiary Types"/>
+
+    <!-- Beneficiary Setup scene -->
+    <CommonsScene sceneId="ADM_BEN_SETUP_BOARD" appId="ADM" sceneName="Beneficiary Setup Dashboard" lookupName="/secure/setup/beneficiary/dashboard">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Beneficiary Setup"/>
+    </CommonsScene>
+
+    <!-- Browse beneficiary types scene -->
+    <CommonsScene sceneId="ADM_BROWSE_BEN_TYPE" appId="ADM" sceneName="Browse Beneficiary Types" lookupName="/secure/setup/beneficiary/beneficiary-type/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Beneficiary Types"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="POSITION" messageValue="Position"/>
+    </CommonsScene>
+
+    <!-- Beneficiary type tree scene -->
+    <CommonsScene sceneId="ADM_TREE_BEN_TYPE" appId="ADM" sceneName="Beneficiary Type Tree" lookupName="/secure/setup/beneficiary/beneficiary-type/tree">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Beneficiary Types"/>
+    </CommonsScene>
+
+    <!-- Create beneficiary type scene -->
+    <CommonsScene sceneId="ADM_CREATE_BEN_TYPE" appId="ADM" sceneName="Create Beneficiary Type" lookupName="/secure/setup/beneficiary/beneficiary-type/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Beneficiary Type"/>
+        <messages messageKey="GENERAL" messageValue="General"/>
+        <messages messageKey="NOTES" messageValue="Notes"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="PARENT_TYPE" messageValue="Parent Type"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="POSITION" messageValue="Position"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+        <messages messageKey="INPUT_NOTES" messageValue="Input Notes"/>
+        <messages messageKey="REVIEW_NOTES" messageValue="Review Notes"/>
+    </CommonsScene>
+
+    <!-- Modify beneficiary type scene -->
+    <CommonsScene sceneId="ADM_MODIFY_BEN_TYPE" appId="ADM" sceneName="Modify Beneficiary Type" lookupName="/secure/setup/beneficiary/beneficiary-type/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Beneficiary Type"/>
+        <messages messageKey="GENERAL" messageValue="General"/>
+        <messages messageKey="NOTES" messageValue="Notes"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="PARENT_TYPE" messageValue="Parent Type"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="POSITION" messageValue="Position"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+        <messages messageKey="INPUT_NOTES" messageValue="Input Notes"/>
+        <messages messageKey="REVIEW_NOTES" messageValue="Review Notes"/>
+    </CommonsScene>
+
+    <!-- View beneficiary type scene -->
+    <CommonsScene sceneId="ADM_VIEW_BEN_TYPE" appId="ADM" sceneName="View Beneficiary Type" lookupName="/secure/setup/beneficiary/beneficiary-type/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Beneficiary Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="PARENT_TYPE" messageValue="Parent Type"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="POSITION" messageValue="Position"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+        <messages messageKey="INPUT_NOTES" messageValue="Input Notes"/>
+        <messages messageKey="REVIEW_NOTES" messageValue="Review Notes"/>
+    </CommonsScene>
+    
+</entity-facade-xml>

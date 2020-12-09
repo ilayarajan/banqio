@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        default-menu-title="Find Scene"
+        default-menu-include="false">
+
+    <transition name="createScene">
+        <service-call name="create#commons.server.Scene"/>
+        <default-response url="."/>
+    </transition>
+    <transition name="editScene">
+        <default-response url="../EditScene"/>
+    </transition>
+
+    <actions>
+        <entity-find entity-name="commons.server.SceneDetail" list="sceneList">
+            <search-form-inputs default-order-by="^sceneId"/>
+        </entity-find>
+    </actions>
+
+    <widgets>
+        <container-box>
+            <box-header>
+                <label text="Find Scene" type="h5"/>
+            </box-header>
+            <box-toolbar>
+                <container-dialog id="CreateSceneContainer" button-text="New Scene" width="900">
+                    <form-single name="CreateSceneForm" transition="createScene">
+                        <auto-fields-entity entity-name="commons.server.Scene" field-type="edit">
+                            <exclude field-name="sceneId"/>
+                            <exclude field-name="creationDate"/>
+                            <exclude field-name="inputUserId"/>
+                            <exclude field-name="updateUserId"/>
+                        </auto-fields-entity>
+                        <field name="appId">
+                            <default-field title="App">
+                                <drop-down>
+                                    <entity-options text="${appName}" key="${appId}">
+                                        <entity-find entity-name="commons.server.App"/>
+                                    </entity-options>
+                                </drop-down>
+                            </default-field>
+                        </field>
+                        <field name="description">
+                            <default-field>
+                                <text-area rows="4" cols="80"/>
+                            </default-field>
+                        </field>
+                        <field name="submitBtn">
+                            <default-field title="Create">
+                                <submit/>
+                            </default-field>
+                        </field>
+
+                        <field-layout>
+                            <field-ref name="appId"/>
+                            <field-ref name="sceneName"/>
+                            <fields-not-referenced/>
+                        </field-layout>
+                    </form-single>
+                </container-dialog>
+            </box-toolbar>
+            <box-body>
+                <form-list name="ListScenes" list="sceneList" skip-form="true" header-dialog="true" select-columns="true">
+                    <field name="sceneId">
+                        <header-field show-order-by="true" title="ID">
+                            <text-find hide-options="true" size="10"/>
+                        </header-field>
+                        <default-field>
+                            <link url="editScene" text="${sceneId}"/>
+                        </default-field>
+                    </field>
+                    <field name="appId">
+                        <header-field show-order-by="true" title="App">
+                            <drop-down allow-empty="true">
+                                <entity-options text="${appName}" key="${appId}">
+                                    <entity-find entity-name="commons.server.App"/>
+                                </entity-options>
+                            </drop-down>
+                        </header-field>
+                        <default-field>
+                            <display text="${appName}"/>
+                        </default-field>
+                    </field>
+                    <field name="sceneName">
+                        <header-field show-order-by="true">
+                            <text-find hide-options="true"/>
+                        </header-field>
+                        <default-field>
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="lookupName">
+                        <header-field show-order-by="true">
+                            <text-find hide-options="true"/>
+                        </header-field>
+                        <default-field>
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="find">
+                        <header-field title="Find">
+                            <submit icon="glyphicon glyphicon-search"/>
+                        </header-field>
+                    </field>
+
+                    <form-list-column>
+                        <field-ref name="sceneId"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="appId"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="sceneName"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="lookupName"/>
+                    </form-list-column>
+                </form-list>
+            </box-body>
+        </container-box>
+    </widgets>
+</screen>

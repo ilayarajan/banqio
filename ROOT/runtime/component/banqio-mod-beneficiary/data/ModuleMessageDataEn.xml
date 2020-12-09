@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <moqui.basic.LocalizedMessage original="BEN_STATUS_NAME_REQUIRED" locale="en" localized="Status name is required."/>
+    <moqui.basic.LocalizedMessage original="BEN_STATUS_NOT_FOUND" locale="en" localized="Status not found."/>
+    <moqui.basic.LocalizedMessage original="BEN_STATUS_CREATED_SUCCESSFULLY" locale="en" localized="Status created successfully."/>
+    <moqui.basic.LocalizedMessage original="BEN_STATUS_UPDATED_SUCCESSFULLY" locale="en" localized="Status updated successfully."/>
+    <moqui.basic.LocalizedMessage original="BEN_STATUS_ALREADY_EXISTS" locale="en" localized="Status already exists."/>
+
+    <moqui.basic.LocalizedMessage original="BEN_TYPE_ROOT" locale="en" localized="Beneficiary Types"/>
+    <moqui.basic.LocalizedMessage original="BEN_TYPE_NAME_REQUIRED" locale="en" localized="Type name is required."/>
+    <moqui.basic.LocalizedMessage original="BEN_TYPE_NOT_FOUND" locale="en" localized="Type not found."/>
+    <moqui.basic.LocalizedMessage original="BEN_TYPE_PARENT_NOT_FOUND" locale="en" localized="Parent type not found."/>
+    <moqui.basic.LocalizedMessage original="BEN_TYPE_PARENT_NOT_ALLOWED" locale="en" localized="Parent type not allowed."/>
+    <moqui.basic.LocalizedMessage original="BEN_TYPE_SAME_PARENT" locale="en" localized="Parent type cannot be self."/>
+    <moqui.basic.LocalizedMessage original="BEN_TYPE_CRC_CHECK_FAILED" locale="en" localized="Parent type CRC check failed."/>
+    <moqui.basic.LocalizedMessage original="BEN_TYPE_CREATED_SUCCESSFULLY" locale="en" localized="Type created successfully."/>
+    <moqui.basic.LocalizedMessage original="BEN_TYPE_UPDATED_SUCCESSFULLY" locale="en" localized="Type updated successfully."/>
+    <moqui.basic.LocalizedMessage original="BEN_TYPE_ALREADY_EXISTS" locale="en" localized="Type already exists."/>
+
+    <moqui.basic.LocalizedMessage original="BEN_NOT_FOUND" locale="en" localized="Beneficiary not found."/>
+    <moqui.basic.LocalizedMessage original="BEN_UPDATED_SUCCESSFULLY" locale="en" localized="Beneficiary updated successfully."/>
+    <moqui.basic.LocalizedMessage original="BEN_CREATED_SUCCESSFULLY" locale="en" localized="Beneficiary created successfully."/>
+    <moqui.basic.LocalizedMessage original="BEN_DELETED_SUCCESSFULLY" locale="en" localized="Beneficiary deleted successfully."/>
+
+    <moqui.basic.LocalizedMessage original="BEN_CONTACT_COUNTRY_CODE_REQUIRED" locale="en" localized="Country code is required."/>
+    <moqui.basic.LocalizedMessage original="BEN_CONTACT_NUMBER_REQUIRED" locale="en" localized="Contact number is required."/>
+    <moqui.basic.LocalizedMessage original="BEN_CONTACT_EMAIL_REQUIRED" locale="en" localized="Email address is required."/>
+    <moqui.basic.LocalizedMessage original="BEN_CONTACT_MECH_NOT_FOUND" locale="en" localized="Beneficiary contact not found."/>
+    <moqui.basic.LocalizedMessage original="BEN_CONTACT_MECH_CREATED_SUCCESSFULLY" locale="en" localized="Beneficiary contact created successfully."/>
+    <moqui.basic.LocalizedMessage original="BEN_CONTACT_MECH_EXPIRED_SUCCESSFULLY" locale="en" localized="Beneficiary contact expired successfully."/>
+
+    <moqui.basic.LocalizedMessage original="BEN_TAG_NOT_FOUND" locale="en" localized="Beneficiary tag not found."/>
+    <moqui.basic.LocalizedMessage original="BEN_TAG_ALREADY_EXISTS" locale="en" localized="Beneficiary tag already exists."/>
+    <moqui.basic.LocalizedMessage original="BEN_TAG_CREATED_SUCCESSFULLY" locale="en" localized="Beneficiary tag created successfully."/>
+    <moqui.basic.LocalizedMessage original="BEN_TAG_DELETED_SUCCESSFULLY" locale="en" localized="Beneficiary tag deleted successfully."/>
+
+</entity-facade-xml>

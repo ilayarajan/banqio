@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Trade Finance API -->
+    <artifactGroups artifactGroupId="BQN_TF_API" description="Banqio Trade Finance API">
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/tradeFinance/.*"/>
+    </artifactGroups>
+
+    <!-- Admin Trade Finance (All) -->
+    <userGroups userGroupId="BNQ_ADM_TF_ALL" description="Banqio Admin Trade Finance (All)" groupTypeEnumId="BNQ_ADM_GRP" wikiLocation="component://banqio-mod-trade/wiki/BNQ_ADM_TF_ALL.md">
+        <authz artifactGroupId="BQN_TF_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+    </userGroups>
+
+    <!-- Admin Trade Finance (View) -->
+    <userGroups userGroupId="BNQ_ADM_TF_VIEW" description="Banqio Admin Trade Finance (View)" groupTypeEnumId="BNQ_ADM_GRP" wikiLocation="component://banqio-mod-trade/wiki/BNQ_ADM_TF_VIEW.md">
+        <authz artifactGroupId="BQN_TF_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+    </userGroups>
+
+</entity-facade-xml>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <!-- Role type -->
+    <view-entity entity-name="RoleTypeDetail" package="commons.party">
+        <member-entity entity-alias="roleType" entity-name="mantle.party.RoleType"/>
+        <member-relationship entity-alias="parentType" relationship="mantle.party.RoleType" join-from-alias="roleType" join-optional="true"/>
+
+        <alias-all entity-alias="roleType"/>
+        <alias name="parentTypeDescription" entity-alias="parentType" field="description"/>
+
+        <entity-condition>
+            <econdition field-name="roleTypeId" operator="not-equals" value="_NA_"/>
+        </entity-condition>
+    </view-entity>
+
+    <!-- Contact mech -->
+    <view-entity entity-name="PartyContactMechDetail" package="commons.party">
+        <member-entity entity-alias="partyContactMech" entity-name="mantle.party.contact.PartyContactMech"/>
+        <member-entity entity-alias="contactMech" entity-name="mantle.party.contact.ContactMech" join-from-alias="partyContactMech">
+            <key-map field-name="contactMechId"/>
+        </member-entity>
+        <member-entity entity-alias="contactMechType" entity-name="moqui.basic.Enumeration" join-from-alias="contactMech">
+            <key-map field-name="contactMechTypeEnumId"/>
+        </member-entity>
+        <member-entity entity-alias="contactMechPurpose" entity-name="mantle.party.contact.ContactMechPurpose" join-from-alias="partyContactMech" join-optional="true">
+            <key-map field-name="contactMechPurposeId"/>
+        </member-entity>
+        <member-entity entity-alias="telecomNumber" entity-name="mantle.party.contact.TelecomNumber" join-from-alias="contactMech" join-optional="true">
+            <key-map field-name="contactMechId"/>
+        </member-entity>
+        <member-entity entity-alias="postalAddress" entity-name="mantle.party.contact.PostalAddress" join-from-alias="contactMech" join-optional="true">
+            <key-map field-name="contactMechId"/>
+        </member-entity>
+        <member-entity entity-alias="country" entity-name="moqui.basic.Geo" join-from-alias="postalAddress" join-optional="true">
+            <key-map field-name="countryGeoId"/>
+        </member-entity>
+        <member-entity entity-alias="province" entity-name="moqui.basic.Geo" join-from-alias="postalAddress" join-optional="true">
+            <key-map field-name="stateProvinceGeoId"/>
+        </member-entity>
+        <member-entity entity-alias="city" entity-name="moqui.basic.Geo" join-from-alias="postalAddress" join-optional="true">
+            <key-map field-name="cityGeoId"/>
+        </member-entity>
+
+        <alias-all entity-alias="partyContactMech"/>
+        <alias-all entity-alias="contactMech">
+            <exclude field="contactMechId"/>
+        </alias-all>
+        <alias-all entity-alias="telecomNumber">
+            <exclude field="contactMechId"/>
+        </alias-all>
+        <alias-all entity-alias="postalAddress">
+            <exclude field="contactMechId"/>
+        </alias-all>
+        <alias name="contactMechTypeDescription" entity-alias="contactMechType" field="description"/>
+        <alias name="contactMechPurposeDescription" entity-alias="contactMechPurpose" field="description"/>
+        <alias name="countryName" entity-alias="country" field="geoName"/>
+        <alias name="countryNameLocal" entity-alias="country" field="geoNameLocal"/>
+        <alias name="countryAlpha2" entity-alias="country" field="geoCodeAlpha2"/>
+        <alias name="countryAlpha3" entity-alias="country" field="geoCodeAlpha3"/>
+        <alias name="countryIsoCode" entity-alias="country" field="geoCodeNumeric"/>
+        <alias name="provinceName" entity-alias="province" field="geoName"/>
+        <alias name="cityName" entity-alias="city" field="geoName"/>
+
+        <entity-condition>
+            <date-filter/>
+        </entity-condition>
+    </view-entity>
+
+</entities>

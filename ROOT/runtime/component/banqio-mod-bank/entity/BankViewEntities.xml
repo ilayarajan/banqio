@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <!-- Teller -->
+    <view-entity entity-name="TellerTypeDetail" package="banqio.bank.teller">
+        <member-entity entity-alias="tellerType" entity-name="banqio.bank.teller.TellerType"/>
+        <member-entity entity-alias="typeBehaviour" entity-name="moqui.basic.Enumeration" join-from-alias="tellerType">
+            <key-map field-name="typeBehaviourEnumId"/>
+        </member-entity>
+
+        <alias-all entity-alias="tellerType"/>
+        <alias name="typeBehaviourDescription" entity-alias="typeBehaviour" field="description"/>
+    </view-entity>
+    <view-entity entity-name="TellerStatusDetail" package="banqio.bank.teller">
+        <member-entity entity-alias="tellerStatus" entity-name="banqio.bank.teller.TellerStatus"/>
+        <member-entity entity-alias="statusBehaviour" entity-name="moqui.basic.Enumeration" join-from-alias="tellerStatus">
+            <key-map field-name="statusBehaviourEnumId"/>
+        </member-entity>
+
+        <alias-all entity-alias="tellerStatus"/>
+        <alias name="statusBehaviourDescription" entity-alias="statusBehaviour" field="description"/>
+    </view-entity>
+    <view-entity entity-name="TellerDetail" package="banqio.bank.teller">
+        <member-entity entity-alias="teller" entity-name="banqio.bank.teller.Teller"/>
+        <member-entity entity-alias="tellerType" entity-name="banqio.bank.teller.TellerType" join-from-alias="teller">
+            <key-map field-name="tellerTypeId"/>
+        </member-entity>
+        <member-entity entity-alias="tellerStatus" entity-name="banqio.bank.teller.TellerStatus" join-from-alias="teller">
+            <key-map field-name="tellerStatusId"/>
+        </member-entity>
+        <member-entity entity-alias="geoPoint" entity-name="moqui.basic.GeoPoint" join-from-alias="teller">
+            <key-map field-name="geoPointId"/>
+        </member-entity>
+        <alias-all entity-alias="teller"/>
+        <alias-all entity-alias="geoPoint">
+            <exclude field="geoPointId"/>
+            <exclude field="description"/>
+            <exclude field="information"/>
+            <exclude field="creationDate"/>
+        </alias-all>
+        <alias name="tellerTypeName" entity-alias="tellerType" field="typeName"/>
+        <alias name="tellerStatusName" entity-alias="tellerStatus" field="statusName"/>
+    </view-entity>
+    <view-entity entity-name="TellerBankFunctionApplDetail" package="banqio.bank.teller">
+        <member-entity entity-alias="functionAppl" entity-name="banqio.bank.teller.TellerBankFunctionAppl"/>
+        <member-entity entity-alias="function" entity-name="banqio.bank.BankFunction" join-from-alias="functionAppl">
+            <key-map field-name="functionId"/>
+        </member-entity>
+
+        <alias-all entity-alias="function"/>
+        <alias name="tellerId" entity-alias="functionAppl" field="tellerId"/>
+    </view-entity>
+
+    <!-- Bank -->
+    <view-entity entity-name="BankDetail" package="banqio.bank">
+        <member-entity entity-alias="bank" entity-name="banqio.bank.Bank"/>
+        <member-entity entity-alias="country" entity-name="moqui.basic.Geo" join-from-alias="bank">
+            <key-map field-name="countryGeoId"/>
+        </member-entity>
+
+        <alias-all entity-alias="bank"/>
+        <alias name="countryName" entity-alias="country" field="geoName"/>
+        <alias name="countryAlpha2Code" entity-alias="country" field="geoCodeAlpha2"/>
+        <alias name="countryAlpha3Code" entity-alias="country" field="geoCodeAlpha3"/>
+    </view-entity>
+
+    <!-- Branch -->
+    <view-entity entity-name="BranchDetail" package="banqio.bank">
+        <member-entity entity-alias="branch" entity-name="banqio.bank.Branch"/>
+        <member-entity entity-alias="bank" entity-name="banqio.bank.Bank" join-from-alias="branch">
+            <key-map field-name="bankId"/>
+        </member-entity>
+        <member-entity entity-alias="address" entity-name="banqio.bank.BranchAddress" join-from-alias="branch">
+            <key-map field-name="branchId"/>
+        </member-entity>
+        <member-entity entity-alias="country" entity-name="moqui.basic.Geo" join-from-alias="address" join-optional="true">
+            <key-map field-name="countryGeoId"/>
+        </member-entity>
+        <member-entity entity-alias="bankCountry" entity-name="moqui.basic.Geo" join-from-alias="bank" join-optional="true">
+            <key-map field-name="countryGeoId"/>
+        </member-entity>
+
+        <alias-all entity-alias="branch"/>
+        <alias-all entity-alias="address">
+            <exclude field="branchId"/>
+            <exclude field="creationDate"/>
+        </alias-all>
+        <alias name="bankName" entity-alias="bank" field="bankName"/>
+        <alias name="bankInstitutionCode" entity-alias="bank" field="institutionCode"/>
+        <alias name="bankNationalCode" entity-alias="bank" field="nationalCode"/>
+        <alias name="bankLicensee" entity-alias="bank" field="licensee"/>
+        <alias name="bankCountryGeoId" entity-alias="bankCountry" field="geoId"/>
+        <alias name="bankCountryName" entity-alias="bankCountry" field="geoName"/>
+        <alias name="countryName" entity-alias="country" field="geoName"/>
+        <alias name="countryNameLocal" entity-alias="country" field="geoNameLocal"/>
+        <alias name="countryAlpha2" entity-alias="country" field="geoCodeAlpha2"/>
+        <alias name="countryAlpha3" entity-alias="country" field="geoCodeAlpha3"/>
+        <alias name="countryIsoCode" entity-alias="country" field="geoCodeNumeric"/>
+    </view-entity>
+    <view-entity entity-name="BranchWorkShiftDetail" package="banqio.bank">
+        <member-entity entity-alias="shift" entity-name="banqio.bank.BranchWorkShift"/>
+        <member-entity entity-alias="branch" entity-name="banqio.bank.Branch" join-from-alias="shift">
+            <key-map field-name="branchId"/>
+        </member-entity>
+        <member-entity entity-alias="type" entity-name="moqui.basic.Enumeration" join-from-alias="shift">
+            <key-map field-name="weekDayEnumId"/>
+        </member-entity>
+
+        <alias-all entity-alias="shift"/>
+        <alias name="branchName" entity-alias="branch" field="branchName"/>
+        <alias name="weekDayDescription" entity-alias="type" field="description"/>
+    </view-entity>
+    <view-entity entity-name="BranchBankFunctionApplDetail" package="banqio.bank">
+        <member-entity entity-alias="functionAppl" entity-name="banqio.bank.BranchBankFunctionAppl"/>
+        <member-entity entity-alias="function" entity-name="banqio.bank.BankFunction" join-from-alias="functionAppl">
+            <key-map field-name="functionId"/>
+        </member-entity>
+
+        <alias-all entity-alias="function"/>
+        <alias name="branchId" entity-alias="functionAppl" field="branchId"/>
+    </view-entity>
+    <view-entity entity-name="BranchContactMechDetail" package="banqio.bank">
+        <member-entity entity-alias="branchContactMech" entity-name="banqio.bank.BranchContactMech"/>
+        <member-entity entity-alias="contactMechType" entity-name="moqui.basic.Enumeration" join-from-alias="branchContactMech">
+            <key-map field-name="contactMechTypeEnumId"/>
+        </member-entity>
+        <member-entity entity-alias="contactMechPurpose" entity-name="mantle.party.contact.ContactMechPurpose" join-from-alias="branchContactMech" join-optional="true">
+            <key-map field-name="contactMechPurposeId"/>
+        </member-entity>
+        <member-entity entity-alias="telecomNumber" entity-name="banqio.bank.BranchTelecomNumber" join-from-alias="branchContactMech" join-optional="true">
+            <key-map field-name="contactMechId"/>
+        </member-entity>
+
+        <alias-all entity-alias="branchContactMech"/>
+        <alias-all entity-alias="telecomNumber">
+            <exclude field="contactMechId"/>
+        </alias-all>
+        <alias name="contactMechTypeDescription" entity-alias="contactMechType" field="description"/>
+        <alias name="contactMechPurposeDescription" entity-alias="contactMechPurpose" field="description"/>
+    </view-entity>
+
+</entities>

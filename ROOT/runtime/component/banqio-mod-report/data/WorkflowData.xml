@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Plug workflow types -->
+    <CommonsWfType
+            typeId="WF_RPT"
+            typeName="Report"
+            statusTypeId="ReportInstance"
+            primaryEntityName="banqio.report.ReportInstance"
+            primaryViewEntityName="banqio.report.ReportInstanceDetail"
+            primaryKeyFieldName="instanceId"/>
+
+    <!-- Plug workflow type services -->
+    <CommonsWfTypeService
+            workflowTypeId="WF_RPT"
+            serviceName="banqio.report.ReportServices.approve#ReportInstance"
+            displayName="Approve Report"
+            acceptsParameters="N"/>
+    <CommonsWfTypeService
+            workflowTypeId="WF_RPT"
+            serviceName="banqio.report.ReportServices.reject#ReportInstance"
+            displayName="Reject Report"
+            acceptsParameters="N"/>
+
+    <!-- Plug entity fields -->
+    <CommonsEntityFld entityName="banqio.report.ReportInstanceDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="pseudoId" displayName="Report Pseudo ID"/>
+    <CommonsEntityFld entityName="banqio.report.ReportInstanceDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="reportName" displayName="Report Name"/>
+    <CommonsEntityFld entityName="banqio.report.ReportInstanceDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="categoryId" displayName="Report Category ID"/>
+    <CommonsEntityFld entityName="banqio.report.ReportInstanceDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="categoryName" displayName="Report Category Name"/>
+    <CommonsEntityFld entityName="banqio.report.ReportInstanceDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="reportTypeEnumId" displayName="Report Type ID"/>
+    <CommonsEntityFld entityName="banqio.report.ReportInstanceDetail" fieldTypeEnumId="ENTITY_FLD_TEXT" fieldName="reportTypeDescription" displayName="Report Type"/>
+
+</entity-facade-xml>

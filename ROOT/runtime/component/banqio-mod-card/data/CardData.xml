@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Card type behaviour -->
+    <moqui.basic.EnumerationType enumTypeId="CardTypeBehaviour" description="Card Type Behaviour"/>
+    <moqui.basic.Enumeration enumTypeId="CardTypeBehaviour" enumId="CARD_TYPE_CREDIT" description="Credit Card"/>
+    <moqui.basic.Enumeration enumTypeId="CardTypeBehaviour" enumId="CARD_TYPE_DEBIT" description="Debit Card"/>
+    <moqui.basic.Enumeration enumTypeId="CardTypeBehaviour" enumId="CARD_TYPE_PREPAID" description="Prepaid Card"/>
+
+    <!-- Card status behaviour -->
+    <moqui.basic.EnumerationType enumTypeId="CardStatusBehaviour" description="Card Status Behaviour"/>
+    <moqui.basic.Enumeration enumTypeId="CardStatusBehaviour" enumId="CARD_STAT_ISSUE" description="Issued"/>
+    <moqui.basic.Enumeration enumTypeId="CardStatusBehaviour" enumId="CARD_STAT_ACT" description="Active"/>
+    <moqui.basic.Enumeration enumTypeId="CardStatusBehaviour" enumId="CARD_STAT_LOCK" description="Locked"/>
+    <moqui.basic.Enumeration enumTypeId="CardStatusBehaviour" enumId="CARD_STAT_REPORT" description="Reported"/>
+    <moqui.basic.Enumeration enumTypeId="CardStatusBehaviour" enumId="CARD_STAT_TERMINATE" description="Terminated"/>
+    <moqui.basic.Enumeration enumTypeId="CardStatusBehaviour" enumId="CARD_STAT_EXPIRE" description="Expired"/>
+    <moqui.basic.Enumeration enumTypeId="CardStatusBehaviour" enumId="CARD_STAT_INACTIVE" description="Inactive"/>
+
+    <!-- Card lock reason -->
+    <moqui.basic.EnumerationType description="Card Lock Reason" enumTypeId="CardLockReason"/>
+    <moqui.basic.Enumeration enumTypeId="CardLockReason" enumId="CARD_LOCK_LOST" description="Lost"/>
+    <moqui.basic.Enumeration enumTypeId="CardLockReason" enumId="CARD_LOCK_STOLEN" description="Stolen"/>
+    <moqui.basic.Enumeration enumTypeId="CardLockReason" enumId="CARD_LOCK_WRONG_PIN" description="Wrong PIN"/>
+    <moqui.basic.Enumeration enumTypeId="CardLockReason" enumId="CARD_LOCK_WRONG_OTHER" description="Other"/>
+
+</entity-facade-xml>

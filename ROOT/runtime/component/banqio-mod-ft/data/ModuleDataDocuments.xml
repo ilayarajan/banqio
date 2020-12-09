@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <dataDocuments dataDocumentId="BanqioFtPurpose" documentName="Funds Transfer Purpose" documentTitle="${purposeName}" indexName="banqio" primaryEntityName="banqio.ft.FundsTransferPurpose">
+        <fields fieldSeqId="01" fieldPath="purposeId"/>
+        <fields fieldSeqId="02" fieldPath="parentPurposeId"/>
+        <fields fieldSeqId="03" fieldPath="externalPurposeId"/>
+        <fields fieldSeqId="04" fieldPath="purposeName"/>
+        <fields fieldSeqId="05" fieldPath="transferTypeId"/>
+        <fields fieldSeqId="06" fieldPath="transferType:typeName" fieldNameAlias="transferTypeName"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioFtType" documentName="Funds Transfer Type" documentTitle="${typeName}" indexName="banqio" primaryEntityName="banqio.ft.FundsTransferType">
+        <fields fieldSeqId="01" fieldPath="typeId"/>
+        <fields fieldSeqId="02" fieldPath="externalTypeId"/>
+        <fields fieldSeqId="03" fieldPath="typeName"/>
+        <fields fieldSeqId="04" fieldPath="typeBehaviourEnumId"/>
+        <fields fieldSeqId="05" fieldPath="typeBehaviour:description" fieldNameAlias="typeBehaviourDescription"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioFtFrequency" documentName="Funds Transfer Frequency" documentTitle="${frequencyName}" indexName="banqio" primaryEntityName="banqio.ft.FundsTransferFrequency">
+        <fields fieldSeqId="01" fieldPath="frequencyId"/>
+        <fields fieldSeqId="02" fieldPath="externalFrequencyId"/>
+        <fields fieldSeqId="03" fieldPath="frequencyName"/>
+        <fields fieldSeqId="04" fieldPath="period"/>
+        <fields fieldSeqId="04" fieldPath="periodUomId"/>
+        <fields fieldSeqId="05" fieldPath="periodUom:description" fieldNameAlias="periodUomDescription"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioPostingRule" documentName="Posting Rule" documentTitle="${ruleId}" indexName="banqio" primaryEntityName="banqio.ft.PostingRule">
+        <fields fieldSeqId="01" fieldPath="appId"/>
+        <fields fieldSeqId="02" fieldPath="ruleId"/>
+        <fields fieldSeqId="03" fieldPath="transferTypeId"/>
+        <fields fieldSeqId="04" fieldPath="postingTypeEnumId"/>
+        <fields fieldSeqId="05" fieldPath="currencyTypeEnumId"/>
+        <fields fieldSeqId="06" fieldPath="transferCurrencyId"/>
+        <fields fieldSeqId="07" fieldPath="debitCurrencyId"/>
+        <fields fieldSeqId="08" fieldPath="externalPartyId"/>
+        <fields fieldSeqId="09" fieldPath="fromAmount"/>
+        <fields fieldSeqId="10" fieldPath="toAmount"/>
+        <fields fieldSeqId="11" fieldPath="app:appName" fieldNameAlias="appName"/>
+        <fields fieldSeqId="12" fieldPath="transferType:typeName" fieldNameAlias="transferTypeName"/>
+        <fields fieldSeqId="13" fieldPath="postingType:description" fieldNameAlias="postingTypeDescription"/>
+        <fields fieldSeqId="14" fieldPath="currencyType:description" fieldNameAlias="currencyTypeDescription"/>
+        <fields fieldSeqId="15" fieldPath="transferCurrency:description" fieldNameAlias="transferCurrencyDescription"/>
+        <fields fieldSeqId="16" fieldPath="transferCurrency:abbreviation" fieldNameAlias="transferCurrencyAbbreviation"/>
+        <fields fieldSeqId="17" fieldPath="debitCurrency:description" fieldNameAlias="debitCurrencyDescription"/>
+        <fields fieldSeqId="18" fieldPath="debitCurrency:abbreviation" fieldNameAlias="debitCurrencyAbbreviation"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioFt" documentName="Funds Transfer" documentTitle="${transferId}" indexName="banqio" primaryEntityName="banqio.ft.FundsTransfer">
+        <fields fieldSeqId="01" fieldPath="appId"/>
+        <fields fieldSeqId="02" fieldPath="transferId"/>
+        <fields fieldSeqId="03" fieldPath="typeId"/>
+        <fields fieldSeqId="04" fieldPath="statusId"/>
+        <fields fieldSeqId="05" fieldPath="externalTransferId"/>
+        <fields fieldSeqId="06" fieldPath="referenceNumber"/>
+        <fields fieldSeqId="07" fieldPath="invoiceNumber"/>
+        <fields fieldSeqId="08" fieldPath="debitAccountNumber"/>
+        <fields fieldSeqId="09" fieldPath="creditAccountNumber"/>
+        <fields fieldSeqId="10" fieldPath="beneficiaryId"/>
+        <fields fieldSeqId="11" fieldPath="currencyId"/>
+        <fields fieldSeqId="12" fieldPath="amount"/>
+        <fields fieldSeqId="13" fieldPath="amountDebit"/>
+        <fields fieldSeqId="14" fieldPath="amountLocal"/>
+        <fields fieldSeqId="15" fieldPath="exchangeRate"/>
+        <fields fieldSeqId="16" fieldPath="senderReference"/>
+        <fields fieldSeqId="17" fieldPath="transferDetails"/>
+        <fields fieldSeqId="18" fieldPath="transferPurposeId"/>
+        <fields fieldSeqId="19" fieldPath="chargesTypeEnumId"/>
+        <fields fieldSeqId="20" fieldPath="sameCurrency"/>
+        <fields fieldSeqId="21" fieldPath="termsAgreed"/>
+        <fields fieldSeqId="22" fieldPath="app:appName" fieldNameAlias="appName"/>
+        <fields fieldSeqId="23" fieldPath="transferType:typeName" fieldNameAlias="transferTypeName"/>
+        <fields fieldSeqId="24" fieldPath="status:description" fieldNameAlias="transferStatusDescription"/>
+        <fields fieldSeqId="25" fieldPath="beneficiary:beneficiaryName" fieldNameAlias="beneficiaryName"/>
+        <fields fieldSeqId="26" fieldPath="beneficiary:accountNumber" fieldNameAlias="beneficiaryAccountNumber"/>
+        <fields fieldSeqId="27" fieldPath="currency:description" fieldNameAlias="transferCurrencyDescription"/>
+        <fields fieldSeqId="28" fieldPath="currency:abbreviation" fieldNameAlias="transferCurrencyAbbreviation"/>
+        <fields fieldSeqId="29" fieldPath="chargesType:description" fieldNameAlias="chargesTypeDescription"/>
+        <fields fieldSeqId="30" fieldPath="transferPurpose:purposeName" fieldNameAlias="transferPurposeName"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+
+</entity-facade-xml>

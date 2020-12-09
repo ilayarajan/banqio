@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Country -->
+    <service verb="find" noun="CountryHoliday" type="java" location="com.netvariant.banqio.nucleus.CountryService" method="findCountryHolidays">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.basic.CountryHoliday"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="pageNoLimit" type="Boolean" default="false"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="countryHolidayList" type="List">
+                <parameter name="holiday" type="Map">
+                    <auto-parameters entity-name="banqio.basic.CountryHoliday"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="CountryHoliday" type="java" location="com.netvariant.banqio.nucleus.CountryService" method="createCountryHoliday">
+        <in-parameters>
+            <parameter name="geoId"/>
+            <parameter name="holidayName"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+            <parameter name="recurring"/>
+            <parameter name="disabled"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="holidayId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="CountryHoliday" type="java" location="com.netvariant.banqio.nucleus.CountryService"
+             method="updateCountryHoliday">
+        <in-parameters>
+            <parameter name="holidayId"/>
+            <parameter name="geoId"/>
+            <parameter name="holidayName"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+            <parameter name="recurring"/>
+            <parameter name="disabled"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="holidayId"/>
+        </out-parameters>
+    </service>
+    <service verb="delete" noun="CountryHoliday" type="java" location="com.netvariant.banqio.nucleus.CountryService" method="deleteCountryHoliday">
+        <in-parameters>
+            <parameter name="holidayId"/>
+        </in-parameters>
+    </service>
+    <service verb="find" noun="CountryWeekend" type="java" location="com.netvariant.banqio.nucleus.CountryService" method="findCountryWeekend">
+        <in-parameters>
+            <parameter name="geoId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="weekend" type="Map">
+                <auto-parameters entity-name="banqio.basic.CountryWeekend"/>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="CountryWeekend" type="java" location="com.netvariant.banqio.nucleus.CountryService" method="createCountryWeekend">
+        <in-parameters>
+            <parameter name="geoId"/>
+            <parameter name="sunday"/>
+            <parameter name="monday"/>
+            <parameter name="tuesday"/>
+            <parameter name="wednesday"/>
+            <parameter name="thursday"/>
+            <parameter name="friday"/>
+            <parameter name="saturday"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="geoId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="CountryWeekend" type="java" location="com.netvariant.banqio.nucleus.CountryService" method="updateCountryWeekend">
+        <in-parameters>
+            <parameter name="geoId"/>
+            <parameter name="sunday"/>
+            <parameter name="monday"/>
+            <parameter name="tuesday"/>
+            <parameter name="wednesday"/>
+            <parameter name="thursday"/>
+            <parameter name="friday"/>
+            <parameter name="saturday"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="geoId"/>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="CountryIbanFormat" type="java" location="com.netvariant.banqio.nucleus.CountryService" method="findCountryIbanFormat">
+        <in-parameters>
+            <parameter name="geoId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="format" type="Map">
+                <auto-parameters entity-name="banqio.basic.CountryIbanFormat"/>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="CountryIbanFormat" type="java" location="com.netvariant.banqio.nucleus.CountryService" method="createCountryIbanFormat">
+        <in-parameters>
+            <parameter name="geoId"/>
+            <parameter name="ibanLength" type="Integer"/>
+            <parameter name="bbanFormat"/>
+            <parameter name="ibanFormat"/>
+            <parameter name="checkDigitTypeId"/>
+            <parameter name="checkDigit"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="geoId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="CountryIbanFormat" type="java" location="com.netvariant.banqio.nucleus.CountryService" method="updateCountryIbanFormat">
+        <in-parameters>
+            <parameter name="geoId"/>
+            <parameter name="ibanLength" type="Integer"/>
+            <parameter name="bbanFormat"/>
+            <parameter name="ibanFormat"/>
+            <parameter name="checkDigitTypeId"/>
+            <parameter name="checkDigit"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="geoId"/>
+        </out-parameters>
+    </service>
+
+    <!-- Currency -->
+    <service verb="find" noun="CurrencyHoliday" type="java" location="com.netvariant.banqio.nucleus.CurrencyService" method="findCurrencyHolidays">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.basic.CurrencyHolidayDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="pageNoLimit" type="Boolean" default="false"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="currencyHolidayList" type="List">
+                <parameter name="holiday" type="Map">
+                    <auto-parameters entity-name="banqio.basic.CurrencyHolidayDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="CurrencyHoliday" type="java" location="com.netvariant.banqio.nucleus.CurrencyService" method="createCurrencyHoliday">
+        <in-parameters>
+            <parameter name="uomId"/>
+            <parameter name="holidayName"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+            <parameter name="recurring"/>
+            <parameter name="disabled"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="holidayId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="CurrencyHoliday" type="java" location="com.netvariant.banqio.nucleus.CurrencyService"
+             method="updateCurrencyHoliday">
+        <in-parameters>
+            <parameter name="holidayId"/>
+            <parameter name="uomId"/>
+            <parameter name="holidayName"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+            <parameter name="recurring"/>
+            <parameter name="disabled"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="holidayId"/>
+        </out-parameters>
+    </service>
+    <service verb="delete" noun="CurrencyHoliday" type="java" location="com.netvariant.banqio.nucleus.CurrencyService" method="deleteCurrencyHoliday">
+        <in-parameters>
+            <parameter name="holidayId"/>
+        </in-parameters>
+    </service>
+    <service verb="find" noun="CurrencyWeekend" type="java" location="com.netvariant.banqio.nucleus.CurrencyService" method="findCurrencyWeekend">
+        <in-parameters>
+            <parameter name="uomId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="weekend" type="Map">
+                <auto-parameters entity-name="banqio.basic.CurrencyWeekendDetail"/>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="CurrencyWeekend" type="java" location="com.netvariant.banqio.nucleus.CurrencyService" method="createCurrencyWeekend">
+        <in-parameters>
+            <parameter name="uomId"/>
+            <parameter name="sunday"/>
+            <parameter name="monday"/>
+            <parameter name="tuesday"/>
+            <parameter name="wednesday"/>
+            <parameter name="thursday"/>
+            <parameter name="friday"/>
+            <parameter name="saturday"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="uomId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="CurrencyWeekend" type="java" location="com.netvariant.banqio.nucleus.CurrencyService" method="updateCurrencyWeekend">
+        <in-parameters>
+            <parameter name="uomId"/>
+            <parameter name="sunday"/>
+            <parameter name="monday"/>
+            <parameter name="tuesday"/>
+            <parameter name="wednesday"/>
+            <parameter name="thursday"/>
+            <parameter name="friday"/>
+            <parameter name="saturday"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="uomId"/>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="CurrencyExchangeRate" type="java" location="com.netvariant.banqio.nucleus.CurrencyService" method="findCurrencyExchangeRates">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.basic.CurrencyExchangeRateDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="pageNoLimit" type="Boolean" default="false"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="exchangeRateList" type="List">
+                <parameter name="exchangeRate" type="Map">
+                    <auto-parameters entity-name="banqio.basic.CurrencyExchangeRateDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="CurrencyApp" type="java" location="com.netvariant.banqio.nucleus.CurrencyService" method="findCurrencyApps">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.basic.CurrencyAppDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="pageNoLimit" type="Boolean" default="false"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+            <parameter name="lcyOnly" type="Boolean" default="false"/>
+            <parameter name="fcyOnly" type="Boolean" default="false"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="currencyAppList" type="List">
+                <parameter name="currencyApp" type="Map">
+                    <auto-parameters entity-name="banqio.basic.CurrencyAppDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="CurrencyApp" type="java" location="com.netvariant.banqio.nucleus.CurrencyService" method="createCurrencyApp">
+        <in-parameters>
+            <parameter name="uomId"/>
+            <parameter name="appId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="uomId"/>
+            <parameter name="appId"/>
+        </out-parameters>
+    </service>
+    <service verb="delete" noun="CurrencyApp" type="java" location="com.netvariant.banqio.nucleus.CurrencyService" method="deleteCurrencyApp">
+        <in-parameters>
+            <parameter name="uomId"/>
+            <parameter name="appId"/>
+        </in-parameters>
+    </service>
+
+    <!-- API -->
+    <service verb="send" noun="Sms" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="mobileNumber"/>
+            <parameter name="message"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="success" type="Boolean"/>
+        </out-parameters>
+    </service>
+    <service verb="send" noun="Email" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="toAddresses"/>
+            <parameter name="emailTemplateId"/>
+            <parameter name="bodyParameters" type="Map"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+        </out-parameters>
+    </service>
+
+</services>

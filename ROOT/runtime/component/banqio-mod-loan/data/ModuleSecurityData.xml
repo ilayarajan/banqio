@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Loan API -->
+    <artifactGroups artifactGroupId="BNQ_LOAN_API" description="Banqio Loan API">
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/loan/.*"/>
+    </artifactGroups>
+
+    <!-- Admin Loans (All) -->
+    <userGroups userGroupId="BNQ_ADM_LOAN_ALL" description="Banqio Admin Loans (All)" groupTypeEnumId="BNQ_ADM_GRP" wikiLocation="component://banqio-mod-loan/wiki/BNQ_ADM_LOAN_ALL.md">
+        <authz artifactGroupId="BNQ_LOAN_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+    </userGroups>
+
+    <!-- Admin Loans (View) -->
+    <userGroups userGroupId="BNQ_ADM_LOAN_VIEW" description="Banqio Admin Loans (View)" groupTypeEnumId="BNQ_ADM_GRP" wikiLocation="component://banqio-mod-loan/wiki/BNQ_ADM_LOAN_VIEW.md">
+        <authz artifactGroupId="BNQ_LOAN_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+    </userGroups>
+
+</entity-facade-xml>

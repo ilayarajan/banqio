@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        default-menu-title="User Groups"
+        default-menu-index="2">
+
+    <parameter name="userId" required="true"/>
+
+    <transition name="createUserGroupMember">
+        <service-call name="create#moqui.security.UserGroupMember"/>
+        <default-response url="."/>
+    </transition>
+    <transition name="deleteUserGroupMember">
+        <service-call name="delete#moqui.security.UserGroupMember" in-map="context"/>
+        <default-response url="."/>
+    </transition>
+
+    <actions>
+        <entity-find entity-name="moqui.security.UserGroupAndMember" list="groupList">
+            <econdition field-name="userId" from="userId"/>
+        </entity-find>
+    </actions>
+
+    <widgets>
+        <container-box>
+            <box-header>
+                <label text="Find User Groups" type="h5"/>
+            </box-header>
+            <box-toolbar>
+                <container-dialog id="CreateMemberContainer" button-text="New User Group" width="1000">
+                    <form-single name="CreateMemberForm" transition="createUserGroupMember">
+                        <auto-fields-entity entity-name="moqui.security.UserGroupMember" field-type="edit"/>
+                        <field name="userId">
+                            <default-field>
+                                <hidden default-value="${userId}"/>
+                            </default-field>
+                        </field>
+                        <field name="userGroupId">
+                            <default-field title="User Group">
+                                <drop-down>
+                                    <entity-options text="${description}" key="${userGroupId}">
+                                        <entity-find entity-name="moqui.security.UserGroup">
+                                            <econdition field-name="groupTypeEnumId" operator="like" value="BNQ_%"/>
+                                        </entity-find>
+                                    </entity-options>
+                                </drop-down>
+                            </default-field>
+                        </field>
+                        <field name="thruDate">
+                            <default-field title="To Date">
+                                <date-time/>
+                            </default-field>
+                        </field>
+                        <field name="submitBtn">
+                            <default-field title="Create">
+                                <submit/>
+                            </default-field>
+                        </field>
+
+                        <field-layout>
+                            <fields-not-referenced/>
+                        </field-layout>
+                    </form-single>
+                </container-dialog>
+            </box-toolbar>
+            <box-body>
+                <form-list name="ListGroups" list="groupList" skip-form="true" header-dialog="true">
+                    <field name="description">
+                        <default-field title="User Group">
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="fromDate">
+                        <default-field>
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="thruDate">
+                        <default-field title="To Date">
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="deleteBtn">
+                        <default-field title="" container-style="text-right">
+                            <link url="deleteUserGroupMember" icon="glyphicon glyphicon-trash" text="Delete" style="btn-danger"/>
+                        </default-field>
+                    </field>
+
+                    <form-list-column>
+                        <field-ref name="description"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="fromDate"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="thruDate"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="deleteBtn"/>
+                    </form-list-column>
+                </form-list>
+            </box-body>
+        </container-box>
+    </widgets>
+</screen>

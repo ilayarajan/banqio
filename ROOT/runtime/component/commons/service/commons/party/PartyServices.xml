@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Role type -->
+    <service verb="find" noun="RoleType" type="java" location="com.netvariant.commons.party.RoleTypeService" method="findRoleTypes">
+        <in-parameters>
+            <auto-parameters entity-name="commons.party.RoleTypeDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="typeList" type="List">
+                <parameter name="roleType" type="Map">
+                    <auto-parameters entity-name="commons.party.RoleTypeDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+
+</services>

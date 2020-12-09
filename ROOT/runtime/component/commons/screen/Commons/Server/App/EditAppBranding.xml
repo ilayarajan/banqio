@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        default-menu-title="Branding"
+        default-menu-index="5">
+
+    <parameter name="appId" required="true"/>
+
+    <transition name="updateBranding">
+        <service-call name="commons.server.ServerServices.update#AppBranding" in-map="context"/>
+        <default-response url="."/>
+    </transition>
+    <transition name="deleteBrandingLoginBackground">
+        <service-call name="commons.server.ServerServices.delete#AppBrandingResource" in-map="context">
+            <field-map field-name="resourceField" value="loginBackgroundLocation"/>
+        </service-call>
+        <default-response url="."/>
+    </transition>
+    <transition name="deleteBrandingLoginLogo">
+        <service-call name="commons.server.ServerServices.delete#AppBrandingResource" in-map="context">
+            <field-map field-name="resourceField" value="loginLogoLocation"/>
+        </service-call>
+        <default-response url="."/>
+    </transition>
+    <transition name="deleteBrandingLogo">
+        <service-call name="commons.server.ServerServices.delete#AppBrandingResource" in-map="context">
+            <field-map field-name="resourceField" value="logoLocation"/>
+        </service-call>
+        <default-response url="."/>
+    </transition>
+
+    <actions>
+        <entity-find-one entity-name="commons.server.AppBranding" value-field="branding"/>
+        <if condition="branding == null">
+            <service-call name="create#commons.server.AppBranding" in-map="context" out-map="context"/>
+            <entity-find-one entity-name="commons.server.AppBranding" value-field="branding"/>
+        </if>
+    </actions>
+
+    <widgets>
+        <section name="UpdateBrandingSection" condition="branding">
+            <widgets>
+                <container-panel>
+                    <panel-center>
+                        <form-single name="UpdateBrandingForm" transition="updateBranding" map="branding">
+                            <auto-fields-entity entity-name="commons.server.AppBranding" field-type="edit">
+                                <exclude field-name="loginBackgroundLocation"/>
+                                <exclude field-name="loginLogoLocation"/>
+                                <exclude field-name="logoLocation"/>
+                                <exclude field-name="creationDate"/>
+                                <exclude field-name="inputUserId"/>
+                                <exclude field-name="updateUserId"/>
+                            </auto-fields-entity>
+                            <field name="appId">
+                                <default-field>
+                                    <hidden/>
+                                </default-field>
+                            </field>
+                            <field name="loginBackgroundFile">
+                                <default-field title="Login Background">
+                                    <file/>
+                                </default-field>
+                            </field>
+                            <field name="loginLogoFile">
+                                <default-field title="Login Logo">
+                                    <file/>
+                                </default-field>
+                            </field>
+                            <field name="logoFile">
+                                <default-field title="Logo">
+                                    <file/>
+                                </default-field>
+                            </field>
+                            <field name="submitBtn">
+                                <default-field title="Save">
+                                    <submit/>
+                                </default-field>
+                            </field>
+
+                            <field-layout>
+                                <field-ref name="primaryColor"/>
+                                <field-ref name="successColor"/>
+                                <field-ref name="dangerColor"/>
+                                <field-ref name="warningColor"/>
+                                <field-ref name="darkColor"/>
+                                <field-ref name="titleColor"/>
+                                <field-ref name="loginBackgroundFile"/>
+                                <field-ref name="loginBackgroundPosition"/>
+                                <field-ref name="loginLogoFile"/>
+                                <field-ref name="loginLogoSize"/>
+                                <field-ref name="loginLogoBackgroundColor"/>
+                                <field-ref name="logoFile"/>
+                                <fields-not-referenced/>
+                            </field-layout>
+                        </form-single>
+                    </panel-center>
+                    <panel-footer>
+                        <container-box>
+                            <box-header>
+                                <label text="Login Background"/>
+                            </box-header>
+                            <box-toolbar>
+                                <widgets>
+                                    <link url="deleteBrandingLoginBackground" icon="glyphicon glyphicon-trash" style="btn-danger"/>
+                                </widgets>
+                            </box-toolbar>
+                            <box-body>
+                                <image url="../../../DownloadPublic/downloadAppBrandingLoginBackground" url-type="screen" parameter-map="[appId: appId]" height="450" alt="No image available."/>
+                            </box-body>
+                        </container-box>
+                        <container-box>
+                            <box-header>
+                                <label text="Login Logo"/>
+                            </box-header>
+                            <box-toolbar>
+                                <widgets>
+                                    <link url="deleteBrandingLoginLogo" icon="glyphicon glyphicon-trash" style="btn-danger"/>
+                                </widgets>
+                            </box-toolbar>
+                            <box-body>
+                                <image url="../../../DownloadPublic/downloadAppBrandingLoginLogo" url-type="screen" parameter-map="[appId: appId]" height="150" alt="No image available."/>
+                            </box-body>
+                        </container-box>
+                        <container-box>
+                            <box-header>
+                                <label text="Logo"/>
+                            </box-header>
+                            <box-toolbar>
+                                <widgets>
+                                    <link url="deleteBrandingLogo" icon="glyphicon glyphicon-trash" style="btn-danger"/>
+                                </widgets>
+                            </box-toolbar>
+                            <box-body>
+                                <image url="../../../DownloadPublic/downloadAppBrandingLogo" url-type="screen" parameter-map="[appId: appId]" width="40" height="40" alt="No image available."/>
+                            </box-body>
+                        </container-box>
+                    </panel-footer>
+                </container-panel>
+            </widgets>
+            <fail-widgets>
+                <container style="alert alert-warning">
+                    <label text="Branding for app with ID [${appId}] was not found."/>
+                </container>
+            </fail-widgets>
+        </section>
+    </widgets>
+</screen>

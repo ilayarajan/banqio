@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Cheque type -->
+    <service verb="find" noun="ChequeType" type="java" location="com.netvariant.banqio.cheque.ChequeTypeService" method="findChequeTypes">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.cheque.ChequeTypeDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="chequeTypeList" type="List">
+                <parameter name="chequeType" type="Map">
+                    <auto-parameters entity-name="banqio.cheque.ChequeTypeDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="ChequeType" type="java" location="com.netvariant.banqio.cheque.ChequeTypeService" method="createChequeType">
+        <in-parameters>
+            <parameter name="externalTypeId"/>
+            <parameter name="typeName"/>
+            <parameter name="typeBehaviourEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="typeId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="ChequeType" type="java" location="com.netvariant.banqio.cheque.ChequeTypeService" method="updateChequeType">
+        <in-parameters>
+            <parameter name="typeId"/>
+            <parameter name="externalTypeId"/>
+            <parameter name="typeName"/>
+            <parameter name="typeBehaviourEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="typeId"/>
+        </out-parameters>
+    </service>
+
+    <!-- Cheque type L10n -->
+    <service verb="find" noun="ChequeTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.cheque.ChequeType"/>
+            <service-call name="commons.entity.EntityServices.find#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="create" noun="ChequeTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.cheque.ChequeType"/>
+            <service-call name="commons.entity.EntityServices.create#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="update" noun="ChequeTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.cheque.ChequeType"/>
+            <service-call name="commons.entity.EntityServices.update#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="delete" noun="ChequeTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="localized"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.cheque.ChequeType"/>
+            <service-call name="commons.entity.EntityServices.delete#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+
+    <!-- Cheque status -->
+    <service verb="find" noun="ChequeStatus" type="java" location="com.netvariant.banqio.cheque.ChequeStatusService" method="findChequeStatuses">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.cheque.ChequeStatusDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="chequeStatusList" type="List">
+                <parameter name="chequeStatus" type="Map">
+                    <auto-parameters entity-name="banqio.cheque.ChequeStatusDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="ChequeStatus" type="java" location="com.netvariant.banqio.cheque.ChequeStatusService" method="createChequeStatus">
+        <in-parameters>
+            <parameter name="externalStatusId"/>
+            <parameter name="statusName"/>
+            <parameter name="statusBehaviourEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="statusId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="ChequeStatus" type="java" location="com.netvariant.banqio.cheque.ChequeStatusService" method="updateChequeStatus">
+        <in-parameters>
+            <parameter name="statusId"/>
+            <parameter name="externalStatusId"/>
+            <parameter name="statusName"/>
+            <parameter name="statusBehaviourEnumId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="statusId"/>
+        </out-parameters>
+    </service>
+
+    <!-- Cheque status L10n -->
+    <service verb="find" noun="ChequeStatusL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.cheque.ChequeStatus"/>
+            <service-call name="commons.entity.EntityServices.find#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="create" noun="ChequeStatusL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.cheque.ChequeStatus"/>
+            <service-call name="commons.entity.EntityServices.create#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="update" noun="ChequeStatusL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.cheque.ChequeStatus"/>
+            <service-call name="commons.entity.EntityServices.update#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="delete" noun="ChequeStatusL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="localized"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.cheque.ChequeStatus"/>
+            <service-call name="commons.entity.EntityServices.delete#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+
+    <!-- Cheque book -->
+    <service verb="create" noun="ChequeBook" type="java" location="com.netvariant.banqio.cheque.ChequeBookService" method="createChequeBook">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="statusId"/>
+            <parameter name="targetUserId"/>
+            <parameter name="externalBookId"/>
+            <parameter name="customerId"/>
+            <parameter name="deliveryMethodEnumId"/>
+            <parameter name="deliveryBranchId"/>
+            <parameter name="accountNumber"/>
+            <parameter name="bookCount" type="Integer"/>
+            <parameter name="pageCount" type="Integer"/>
+            <parameter name="instructions"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="bookId"/>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="ChequeBookWorkflowInstance" type="java" location="com.netvariant.banqio.cheque.ChequeBookService" method="findChequeBookWorkflowInstances">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.cheque.ChequeBookWorkflowInstance"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="instanceList" type="List">
+                <parameter name="instance" type="Map">
+                    <auto-parameters entity-name="banqio.cheque.ChequeBookWorkflowInstance"/>
+                    <parameter name="approvedCount"/>
+                    <parameter name="pendingCount"/>
+                    <parameter name="rejectedCount"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+
+    <!-- API -->
+    <service verb="find" noun="IssuedCheque" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="accountNumber"/>
+            <parameter name="chequeNumber"/>
+            <parameter name="typeId"/>
+            <parameter name="statusId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="chequeList" type="List">
+                <parameter name="cheque" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="chequeNumber"/>
+                    <parameter name="serialNumber"/>
+                    <parameter name="accountNumber"/>
+                    <parameter name="amount" type="Double"/>
+                    <parameter name="amountLocal" type="Double"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="typeId"/>
+                    <parameter name="typeName"/>
+                    <parameter name="typeBehaviourEnumId"/>
+                    <parameter name="statusId"/>
+                    <parameter name="statusName"/>
+                    <parameter name="statusBehaviourEnumId"/>
+                    <parameter name="drawer"/>
+                    <parameter name="drawerBank"/>
+                    <parameter name="payee"/>
+                    <parameter name="drawee"/>
+                    <parameter name="chequeDate" type="Date"/>
+                    <parameter name="dueDate" type="Date"/>
+                    <parameter name="clearingDate" type="Date"/>
+                    <parameter name="clearingTransactionId"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="PendingPostDatedCheque" type="interface">
+        <description>
+            This is an interface service. It provides a protocol that implementations must follow.
+        </description>
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="accountNumber"/>
+            <parameter name="chequeNumber"/>
+            <parameter name="typeId"/>
+            <parameter name="statusId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="chequeList" type="List">
+                <parameter name="cheque" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="chequeNumber"/>
+                    <parameter name="serialNumber"/>
+                    <parameter name="accountNumber"/>
+                    <parameter name="amount" type="Double"/>
+                    <parameter name="amountLocal" type="Double"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="typeId"/>
+                    <parameter name="typeName"/>
+                    <parameter name="typeBehaviourEnumId"/>
+                    <parameter name="statusId"/>
+                    <parameter name="statusName"/>
+                    <parameter name="statusBehaviourEnumId"/>
+                    <parameter name="drawer"/>
+                    <parameter name="drawerBank"/>
+                    <parameter name="payee"/>
+                    <parameter name="drawee"/>
+                    <parameter name="chequeDate" type="Date"/>
+                    <parameter name="dueDate" type="Date"/>
+                    <parameter name="clearingDate" type="Date"/>
+                    <parameter name="clearingTransactionId"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+
+</services>

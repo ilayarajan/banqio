@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Cheque API -->
+    <artifactGroups artifactGroupId="BNQ_CHQ_API" description="Banqio Cheque API">
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/cheque/.*"/>
+    </artifactGroups>
+
+    <!-- Admin Cheques (All) -->
+    <userGroups userGroupId="BNQ_ADM_CHQ_ALL" description="Banqio Admin Cheques (All)" groupTypeEnumId="BNQ_ADM_GRP" wikiLocation="component://banqio-mod-cheque/wiki/BNQ_ADM_CHQ_ALL.md">
+        <authz artifactGroupId="BNQ_CHQ_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+    </userGroups>
+
+    <!-- Admin Cheques (View) -->
+    <userGroups userGroupId="BNQ_ADM_CHQ_VIEW" description="Banqio Admin Cheques (View)" groupTypeEnumId="BNQ_ADM_GRP" wikiLocation="component://banqio-mod-cheque/wiki/BNQ_ADM_CHQ_VIEW.md">
+        <authz artifactGroupId="BNQ_CHQ_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+    </userGroups>
+
+</entity-facade-xml>

@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/rest-api-2.1.xsd"
+          name="connect"
+          displayName="Connect REST API"
+          version="1.0.0">
+
+    <!-- Account -->
+    <resource name="account" description="Account API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.connect.impl.AccountServices.find#Account"/>
+        </method>
+        <id name="accountNumber">
+            <resource name="transaction">
+                <method type="get">
+                    <service name="banqio.connect.impl.AccountServices.find#AccountTransaction"/>
+                </method>
+                <resource name="advice">
+                    <method type="get">
+                        <service name="banqio.connect.impl.AccountServices.find#AccountTransactionAdvice"/>
+                    </method>
+                </resource>
+            </resource>
+            <resource name="statement">
+                <resource name="official">
+                    <method type="get">
+                        <service name="banqio.connect.impl.AccountServices.find#OfficialAccountStatement"/>
+                    </method>
+                </resource>
+                <resource name="mt940">
+                    <method type="get">
+                        <service name="banqio.connect.impl.AccountServices.find#Mt940AccountStatement"/>
+                    </method>
+                </resource>
+            </resource>
+        </id>
+        <resource name="nickname">
+            <method type="patch">
+                <service name="banqio.connect.impl.AccountServices.update#AccountNickname"/>
+            </method>
+        </resource>
+        <resource name="transactionType">
+            <method type="get">
+                <service name="banqio.account.AccountServices.find#TransactionType"/>
+            </method>
+        </resource>
+    </resource>
+
+    <!-- Bank -->
+    <resource name="bank" description="Bank API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.bank.BankServices.find#Bank"/>
+        </method>
+        <resource name="branch">
+            <method type="get">
+                <service name="banqio.bank.BankServices.find#Branch"/>
+            </method>
+        </resource>
+    </resource>
+
+    <!-- Basic -->
+    <resource name="basic" description="Basic API" version="1.0.0">
+        <resource name="enumeration">
+            <method type="get">
+                <service name="commons.basic.BasicServices.find#Enumeration"/>
+            </method>
+        </resource>
+        <resource name="geo">
+            <method type="get">
+                <service name="commons.basic.BasicServices.find#Geo"/>
+            </method>
+            <resource name="assoc">
+                <method type="get">
+                    <service name="commons.basic.BasicServices.find#GeoAssoc"/>
+                </method>
+            </resource>
+        </resource>
+        <resource name="uom">
+            <method type="get">
+                <service name="commons.basic.BasicServices.find#Uom"/>
+            </method>
+        </resource>
+        <resource name="country">
+            <resource name="holiday">
+                <method type="get">
+                    <service name="banqio.basic.BasicServices.find#CountryHoliday"/>
+                </method>
+            </resource>
+            <resource name="weekend">
+                <method type="get">
+                    <service name="banqio.basic.BasicServices.find#CountryWeekend"/>
+                </method>
+            </resource>
+        </resource>
+        <resource name="currency">
+            <resource name="app">
+                <method type="get">
+                    <service name="banqio.basic.BasicServices.find#CurrencyApp"/>
+                </method>
+            </resource>
+            <resource name="holiday">
+                <method type="get">
+                    <service name="banqio.basic.BasicServices.find#CurrencyHoliday"/>
+                </method>
+            </resource>
+            <resource name="weekend">
+                <method type="get">
+                    <service name="banqio.basic.BasicServices.find#CurrencyWeekend"/>
+                </method>
+            </resource>
+        </resource>
+        <resource name="language">
+            <method type="get">
+                <service name="commons.basic.BasicServices.find#Language"/>
+            </method>
+        </resource>
+        <resource name="enum">
+            <method type="get">
+                <entity name="moqui.basic.Enumeration" operation="list"/>
+            </method>
+        </resource>
+        <resource name="status">
+            <resource name="flow">
+                <id name="statusFlowId">
+                    <resource name="transition">
+                        <method type="get">
+                            <service name="commons.basic.BasicServices.find#StatusFlowTransition"/>
+                        </method>
+                    </resource>
+                </id>
+            </resource>
+        </resource>
+    </resource>
+
+    <!-- Beneficiary -->
+    <resource name="beneficiary" description="Beneficiary API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.connect.impl.BeneficiaryServices.find#Beneficiary"/>
+        </method>
+        <method type="post">
+            <service name="banqio.connect.impl.BeneficiaryServices.create#Beneficiary"/>
+        </method>
+        <id name="beneficiaryId">
+            <method type="patch">
+                <service name="banqio.connect.impl.BeneficiaryServices.update#Beneficiary"/>
+            </method>
+            <method type="delete">
+                <service name="banqio.connect.impl.BeneficiaryServices.delete#Beneficiary"/>
+            </method>
+        </id>
+        <resource name="beneficiaryType">
+            <method type="get">
+                <service name="banqio.beneficiary.BeneficiaryServices.find#BeneficiaryType"/>
+            </method>
+            <resource name="tree">
+                <method type="get">
+                    <service name="banqio.beneficiary.BeneficiaryServices.tree#BeneficiaryType"/>
+                </method>
+            </resource>
+        </resource>
+        <resource name="workflow">
+            <resource name="instance">
+                <method type="get">
+                    <service name="banqio.beneficiary.BeneficiaryServices.find#BeneficiaryWorkflowInstance"/>
+                </method>
+            </resource>
+        </resource>
+    </resource>
+
+    <!-- Card -->
+    <resource name="card" description="Card API" version="1.0.0">
+        <resource name="credit">
+            <method type="get">
+                <service name="banqio.connect.impl.CreditCardServices.find#CreditCard"/>
+            </method>
+            <id name="cardId">
+                <resource name="transaction">
+                    <method type="get">
+                        <service name="banqio.connect.impl.CreditCardServices.find#CreditCardTransaction"/>
+                    </method>
+                </resource>
+                <resource name="statement">
+                    <resource name="official">
+                        <method type="get">
+                            <service name="banqio.connect.impl.CreditCardServices.find#OfficialCreditCardStatement"/>
+                        </method>
+                    </resource>
+                </resource>
+            </id>
+        </resource>
+    </resource>
+
+    <!-- Cheque -->
+    <resource name="cheque" description="Cheque API" version="1.0.0">
+        <resource name="issued">
+            <method type="get">
+                <service name="banqio.connect.impl.ChequeServices.find#IssuedCheque"/>
+            </method>
+        </resource>
+        <resource name="postDated">
+            <resource name="pending">
+                <method type="get">
+                    <service name="banqio.connect.impl.ChequeServices.find#PendingPostDatedCheque"/>
+                </method>
+            </resource>
+        </resource>
+        <resource name="book">
+            <method type="post">
+                <service name="banqio.connect.impl.ChequeServices.create#ChequeBook"/>
+            </method>
+            <resource name="workflow">
+                <resource name="instance">
+                    <method type="get">
+                        <service name="banqio.cheque.ChequeServices.find#ChequeBookWorkflowInstance"/>
+                    </method>
+                </resource>
+            </resource>
+        </resource>
+    </resource>
+
+    <!-- Dashboard -->
+    <resource name="dashboard" description="Dashboard API" version="1.0.0">
+        <resource name="netPosition">
+            <method type="get">
+                <service name="banqio.connect.impl.DashboardServices.find#NetPosition"/>
+            </method>
+        </resource>
+    </resource>
+
+    <!-- Exchange rate -->
+    <resource name="exchangeRate" description="Exchange Rate API" version="1.0.0">
+        <resource name="convert">
+            <method type="post">
+                <service name="banqio.connect.impl.ExchangeRateServices.convert#Amount"/>
+            </method>
+        </resource>
+    </resource>
+
+    <!-- Funds transfer -->
+    <resource name="ft" description="Funds Transfer API" version="1.0.0">
+        <id name="transferId">
+            <resource name="currencySummary">
+                <method type="get">
+                    <service name="banqio.ft.FundsTransferServices.find#FundsTransferCurrencySummary"/>
+                </method>
+            </resource>
+            <resource name="transfer">
+                <method type="get">
+                    <service name="banqio.ft.FundsTransferServices.find#FundsTransferChildren"/>
+                </method>
+            </resource>
+        </id>
+        <resource name="bulk">
+            <resource name="create">
+                <method type="post">
+                    <service name="banqio.connect.impl.FundsTransferServices.create#BulkFundsTransfer"/>
+                </method>
+            </resource>
+            <resource name="propose">
+                <method type="post">
+                    <service name="banqio.connect.impl.FundsTransferServices.propose#BulkFundsTransfer"/>
+                </method>
+            </resource>
+        </resource>
+        <resource name="single">
+            <method type="post">
+                <service name="banqio.connect.impl.FundsTransferServices.create#SingleFundsTransfer"/>
+            </method>
+            <resource name="valueDate">
+                <method type="post">
+                    <service name="banqio.connect.impl.FundsTransferServices.calculate#ValueDate"/>
+                </method>
+            </resource>
+        </resource>
+        <resource name="transferType">
+            <method type="get">
+                <service name="banqio.ft.FundsTransferServices.find#FundsTransferType"/>
+            </method>
+            <resource name="tree">
+                <method type="get">
+                    <service name="banqio.ft.FundsTransferServices.tree#FundsTransferType"/>
+                </method>
+            </resource>
+        </resource>
+        <resource name="transferPurpose">
+            <method type="get">
+                <service name="banqio.ft.FundsTransferServices.find#FundsTransferPurpose"/>
+            </method>
+        </resource>
+        <resource name="workflow">
+            <resource name="instance">
+                <method type="get">
+                    <service name="banqio.ft.FundsTransferServices.find#FundsTransferWorkflowInstance"/>
+                </method>
+            </resource>
+        </resource>
+    </resource>
+
+    <!-- Loan -->
+    <resource name="loan" description="Loan API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.connect.impl.LoanServices.find#Loan"/>
+        </method>
+        <id name="loanNumber">
+            <resource name="detail">
+                <method type="get">
+                    <service name="banqio.connect.impl.LoanServices.find#LoanDetail"/>
+                </method>
+            </resource>
+            <resource name="repayment">
+                <method type="get">
+                    <service name="banqio.connect.impl.LoanServices.find#LoanRepayment"/>
+                </method>
+            </resource>
+        </id>
+    </resource>
+
+    <!-- Report -->
+    <resource name="report" description="Report API" version="1.0.0">
+        <id name="reportId">
+            <resource name="run">
+                <method type="post">
+                    <service name="banqio.report.ReportServices.run#Report"/>
+                </method>
+            </resource>
+            <resource name="parameter">
+                <method type="get">
+                    <service name="banqio.report.ReportServices.find#ReportParameter"/>
+                </method>
+            </resource>
+            <resource name="price">
+                <method type="get">
+                    <service name="banqio.report.ReportServices.find#UserReportPrice"/>
+                </method>
+            </resource>
+        </id>
+        <resource name="app">
+            <method type="get">
+                <service name="banqio.report.ReportServices.find#ReportApp"/>
+            </method>
+        </resource>
+        <resource name="workflow">
+            <resource name="instance">
+                <method type="get">
+                    <service name="banqio.report.ReportServices.find#ReportWorkflowInstance"/>
+                </method>
+            </resource>
+        </resource>
+    </resource>
+
+    <!-- Security -->
+    <resource name="security" description="Security API" version="1.0.0">
+        <resource name="user">
+            <resource name="login">
+                <method type="post">
+                    <service name="banqio.security.SecurityServices.login#User"/>
+                </method>
+            </resource>
+            <resource name="authenticate">
+                <method type="post">
+                    <service name="banqio.security.SecurityServices.authenticate#User"/>
+                </method>
+            </resource>
+            <resource name="logout">
+                <method type="post">
+                    <service name="banqio.security.SecurityServices.logout#User"/>
+                </method>
+            </resource>
+            <resource name="poll">
+                <method type="get">
+                    <service name="banqio.security.SecurityServices.poll#UserSession"/>
+                </method>
+            </resource>
+            <resource name="password">
+                <resource name="reset" require-authentication="anonymous-all">
+                    <method type="post">
+                        <service name="banqio.security.SecurityServices.reset#Password"/>
+                    </method>
+                </resource>
+                <resource name="temporary" require-authentication="anonymous-all">
+                    <resource name="change">
+                        <method type="post">
+                            <service name="banqio.security.SecurityServices.change#TemporaryPassword"/>
+                        </method>
+                    </resource>
+                </resource>
+                <resource name="change">
+                    <method type="post">
+                        <service name="banqio.security.SecurityServices.change#Password"/>
+                    </method>
+                </resource>
+                <resource name="oneTime">
+                    <resource name="generate">
+                        <method type="post">
+                            <service name="commons.security.SecurityServices.generate#OneTimePassword"/>
+                        </method>
+                    </resource>
+                </resource>
+            </resource>
+            <resource name="profile">
+                <method type="get">
+                    <service name="banqio.security.SecurityServices.find#UserProfile"/>
+                </method>
+                <method type="post">
+                    <service name="banqio.security.SecurityServices.update#UserProfile"/>
+                </method>
+            </resource>
+            <resource name="preference">
+                <method type="get">
+                    <service name="banqio.security.SecurityServices.find#UserPreference"/>
+                </method>
+            </resource>
+            <resource name="language">
+                <method type="post">
+                    <service name="banqio.security.SecurityServices.update#UserLanguage"/>
+                </method>
+            </resource>
+            <resource name="otpChannel">
+                <method type="post">
+                    <service name="banqio.security.SecurityServices.update#UserOtpChannel"/>
+                </method>
+            </resource>
+            <resource name="event">
+                <method type="get">
+                    <service name="banqio.security.SecurityServices.find#UserEvent"/>
+                </method>
+            </resource>
+        </resource>
+    </resource>
+
+    <!-- Server -->
+    <resource name="server" description="Server API" version="1.0.0" require-authentication="anonymous-all">
+        <resource name="app">
+            <method type="get">
+                <service name="commons.server.ServerServices.find#App"/>
+            </method>
+            <id name="appId">
+                <resource name="branding">
+                    <method type="get">
+                        <service name="commons.server.ServerServices.find#AppBranding"/>
+                    </method>
+                </resource>
+            </id>
+        </resource>
+        <resource name="scene">
+            <method type="get">
+                <service name="commons.server.ServerServices.find#Scene"/>
+            </method>
+            <id name="sceneId">
+                <resource name="message">
+                    <method type="get">
+                        <service name="commons.server.ServerServices.find#SceneMessage"/>
+                    </method>
+                </resource>
+            </id>
+        </resource>
+    </resource>
+
+    <!-- Term deposit -->
+    <resource name="termDeposit" description="Term Deposit API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.connect.impl.TermDepositServices.find#TermDeposit"/>
+        </method>
+        <id name="accountNumber">
+            <resource name="receipt">
+                <method type="get">
+                    <service name="banqio.connect.impl.TermDepositServices.find#TermDepositReceipt"/>
+                </method>
+            </resource>
+        </id>
+    </resource>
+
+    <!-- Trade finance -->
+    <resource name="tradeFinance" description="Trade Finance API" version="1.0.0">
+        <resource name="lg">
+            <resource name="outstanding">
+                <method type="get">
+                    <service name="banqio.connect.impl.TradeFinanceServices.find#OutstandingLg"/>
+                </method>
+            </resource>
+            <resource name="issued">
+                <method type="get">
+                    <service name="banqio.connect.impl.TradeFinanceServices.find#IssuedLg"/>
+                </method>
+            </resource>
+        </resource>
+        <resource name="lc">
+            <resource name="import">
+                <resource name="outstanding">
+                    <method type="get">
+                        <service name="banqio.connect.impl.TradeFinanceServices.find#OutstandingImportLc"/>
+                    </method>
+                </resource>
+                <resource name="issued">
+                    <method type="get">
+                        <service name="banqio.connect.impl.TradeFinanceServices.find#IssuedImportLc"/>
+                    </method>
+                </resource>
+                <resource name="expired">
+                    <method type="get">
+                        <service name="banqio.connect.impl.TradeFinanceServices.find#ExpiredImportLc"/>
+                    </method>
+                </resource>
+                <resource name="bill">
+                    <resource name="outstanding">
+                        <method type="get">
+                            <service name="banqio.connect.impl.TradeFinanceServices.find#OutstandingImportLcBill"/>
+                        </method>
+                    </resource>
+                    <resource name="rejected">
+                        <method type="get">
+                            <service name="banqio.connect.impl.TradeFinanceServices.find#RejectedImportLcBill"/>
+                        </method>
+                    </resource>
+                    <resource name="due">
+                        <method type="get">
+                            <service name="banqio.connect.impl.TradeFinanceServices.find#DueImportLcBill"/>
+                        </method>
+                    </resource>
+                </resource>
+            </resource>
+            <resource name="export">
+                <resource name="outstanding">
+                    <method type="get">
+                        <service name="banqio.connect.impl.TradeFinanceServices.find#OutstandingExportLc"/>
+                    </method>
+                </resource>
+                <resource name="advised">
+                    <method type="get">
+                        <service name="banqio.connect.impl.TradeFinanceServices.find#AdvisedExportLc"/>
+                    </method>
+                </resource>
+                <resource name="bill">
+                    <resource name="due">
+                        <method type="get">
+                            <service name="banqio.connect.impl.TradeFinanceServices.find#DueExportLcBill"/>
+                        </method>
+                    </resource>
+                    <resource name="rejected">
+                        <method type="get">
+                            <service name="banqio.connect.impl.TradeFinanceServices.find#RejectedExportLcBill"/>
+                        </method>
+                    </resource>
+                    <resource name="sent">
+                        <method type="get">
+                            <service name="banqio.connect.impl.TradeFinanceServices.find#SentExportLcBill"/>
+                        </method>
+                    </resource>
+                </resource>
+            </resource>
+        </resource>
+        <resource name="loan">
+            <resource name="overdue">
+                <method type="get">
+                    <service name="banqio.connect.impl.TradeFinanceServices.find#OverdueTradeFinanceLoan"/>
+                </method>
+            </resource>
+            <resource name="trustReceipt">
+                <resource name="outstanding">
+                    <method type="get">
+                        <service name="banqio.connect.impl.TradeFinanceServices.find#OverdueTrustReceiptLoan"/>
+                    </method>
+                </resource>
+                <resource name="overdue">
+                    <method type="get">
+                        <service name="banqio.connect.impl.TradeFinanceServices.find#OverdueTrustReceiptLoan"/>
+                    </method>
+                </resource>
+            </resource>
+            <resource name="cleanImport">
+                <resource name="outstanding">
+                    <method type="get">
+                        <service name="banqio.connect.impl.TradeFinanceServices.find#OutstandingCleanImportLoan"/>
+                    </method>
+                </resource>
+                <resource name="overdue">
+                    <method type="get">
+                        <service name="banqio.connect.impl.TradeFinanceServices.find#OverdueCleanImportLoan"/>
+                    </method>
+                </resource>
+            </resource>
+            <resource name="salesInvoice">
+                <resource name="outstanding">
+                    <method type="get">
+                        <service name="banqio.connect.impl.TradeFinanceServices.find#OutstandingSalesInvoiceLoan"/>
+                    </method>
+                </resource>
+                <resource name="overdue">
+                    <method type="get">
+                        <service name="banqio.connect.impl.TradeFinanceServices.find#OverdueSalesInvoiceLoan"/>
+                    </method>
+                </resource>
+            </resource>
+        </resource>
+        <resource name="collection">
+            <resource name="inward">
+                <resource name="outstanding">
+                    <method type="get">
+                        <service name="banqio.connect.impl.TradeFinanceServices.find#OutstandingInwardDc"/>
+                    </method>
+                </resource>
+                <resource name="accepted">
+                    <method type="get">
+                        <service name="banqio.connect.impl.TradeFinanceServices.find#AcceptedInwardDc"/>
+                    </method>
+                </resource>
+            </resource>
+        </resource>
+    </resource>
+
+    <!-- Workflow -->
+    <resource name="workflow" description="Workflow API" version="1.0.0">
+        <resource name="instance">
+            <method type="get">
+                <service name="commons.workflow.WorkflowServices.find#WorkflowInstance"/>
+            </method>
+        </resource>
+        <resource name="task">
+            <method type="get">
+                <service name="commons.workflow.WorkflowServices.find#WorkflowInstanceTask"/>
+            </method>
+            <method type="patch">
+                <service name="commons.workflow.WorkflowServices.update#WorkflowInstanceTask"/>
+            </method>
+            <resource name="stats">
+                <method type="get">
+                    <service name="commons.workflow.WorkflowServices.find#WorkflowInstanceTaskStats"/>
+                </method>
+            </resource>
+        </resource>
+    </resource>
+
+    <!-- WPS -->
+    <resource name="wps" description="WPS API" version="1.0.0">
+        <resource name="registration">
+            <method type="get">
+                <service name="banqio.connect.impl.FundsTransferServices.find#WpsRegistration"/>
+            </method>
+        </resource>
+    </resource>
+
+</resource>

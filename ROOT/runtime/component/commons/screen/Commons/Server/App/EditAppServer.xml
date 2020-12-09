@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        default-menu-title="Edit Server"
+        default-menu-include="false">
+
+    <parameter name="appId" required="true"/>
+    <parameter name="serverId" required="true"/>
+
+    <transition name="findServer">
+        <default-response url="../FindAppServer"/>
+    </transition>
+    <transition name="updateServer">
+        <service-call name="update#commons.server.AppServer" in-map="context">
+            <field-map field-name="updateUserId" from="ec.user.userId"/>
+        </service-call>
+        <default-response url="."/>
+    </transition>
+    <transition name="enableServer">
+        <service-call name="update#commons.server.AppServer">
+            <field-map field-name="serverId" from="serverId"/>
+            <field-map field-name="disabled" value="N"/>
+            <field-map field-name="updateUserId" from="ec.user.userId"/>
+        </service-call>
+        <default-response url="."/>
+    </transition>
+    <transition name="disableServer">
+        <service-call name="update#commons.server.AppServer">
+            <field-map field-name="serverId" from="serverId"/>
+            <field-map field-name="disabled" value="Y"/>
+            <field-map field-name="updateUserId" from="ec.user.userId"/>
+        </service-call>
+        <default-response url="."/>
+    </transition>
+
+    <actions>
+        <entity-find-one entity-name="commons.server.AppServer" value-field="server"/>
+    </actions>
+
+    <widgets>
+        <section name="UpdateServerSection" condition="server">
+            <widgets>
+                <container-panel>
+                    <panel-header>
+                        <link url="findServer" text="Find Server" icon="glyphicon glyphicon-search"/>
+                        <section name="UpdateServerStatus">
+                            <condition>
+                                <compare field="server.disabled" value="Y"/>
+                            </condition>
+                            <widgets>
+                                <link url="enableServer" text="Enable" icon="glyphicon glyphicon-check" style="btn-success"/>
+                            </widgets>
+                            <fail-widgets>
+                                <link url="disableServer" text="Disable" icon="glyphicon glyphicon-unchecked" style="btn-danger"/>
+                            </fail-widgets>
+                        </section>
+                    </panel-header>
+                    <panel-center>
+                        <form-single name="UpdateServerForm" transition="updateServer" map="server">
+                            <auto-fields-entity entity-name="commons.server.AppServer" field-type="edit">
+                                <exclude field-name="inputUserId"/>
+                                <exclude field-name="updateUserId"/>
+                            </auto-fields-entity>
+                            <field name="appId">
+                                <default-field>
+                                    <hidden/>
+                                </default-field>
+                            </field>
+                            <field name="serverId">
+                                <default-field title="ID">
+                                    <display/>
+                                </default-field>
+                            </field>
+                            <field name="ipAddress">
+                                <default-field title="IP Address">
+                                    <text-line size="20"/>
+                                </default-field>
+                            </field>
+                            <field name="port">
+                                <default-field>
+                                    <text-line size="10" format="#"/>
+                                </default-field>
+                            </field>
+                            <field name="disabled">
+                                <default-field>
+                                    <drop-down>
+                                        <option key="N" text="No"/>
+                                        <option key="Y" text="Yes"/>
+                                    </drop-down>
+                                </default-field>
+                            </field>
+                            <field name="creationDate">
+                                <default-field>
+                                    <display/>
+                                </default-field>
+                            </field>
+                            <field name="submitBtn">
+                                <default-field title="Save">
+                                    <submit/>
+                                </default-field>
+                            </field>
+
+                            <field-layout>
+                                <fields-not-referenced/>
+                            </field-layout>
+                        </form-single>
+                    </panel-center>
+                </container-panel>
+            </widgets>
+            <fail-widgets>
+                <container style="alert alert-warning">
+                    <label text="App server with ID [${serverId}] was not found."/>
+                </container>
+            </fail-widgets>
+        </section>
+    </widgets>
+</screen>

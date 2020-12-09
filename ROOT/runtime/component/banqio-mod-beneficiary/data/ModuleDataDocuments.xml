@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <dataDocuments dataDocumentId="BanqioBeneficiaryType" documentName="Beneficiary Type" documentTitle="${typeName}" indexName="banqio" primaryEntityName="banqio.beneficiary.BeneficiaryType">
+        <fields fieldSeqId="01" fieldPath="typeId"/>
+        <fields fieldSeqId="02" fieldPath="externalTypeId"/>
+        <fields fieldSeqId="03" fieldPath="typeName"/>
+        <fields fieldSeqId="04" fieldPath="typeBehaviourEnumId"/>
+        <fields fieldSeqId="05" fieldPath="typeBehaviour:description" fieldNameAlias="typeBehaviourDescription"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioBeneficiary" documentName="Beneficiary" documentTitle="${beneficiaryName}" indexName="banqio" primaryEntityName="banqio.beneficiary.Beneficiary">
+        <fields fieldSeqId="01" fieldPath="beneficiaryId"/>
+        <fields fieldSeqId="02" fieldPath="typeId"/>
+        <fields fieldSeqId="03" fieldPath="statusId"/>
+        <fields fieldSeqId="04" fieldPath="customerId"/>
+        <fields fieldSeqId="05" fieldPath="beneficiaryName"/>
+        <fields fieldSeqId="06" fieldPath="nickname"/>
+        <fields fieldSeqId="07" fieldPath="accountNumber"/>
+        <fields fieldSeqId="08" fieldPath="iban"/>
+        <fields fieldSeqId="09" fieldPath="swiftCode"/>
+        <fields fieldSeqId="10" fieldPath="intermediarySwiftCode"/>
+        <fields fieldSeqId="11" fieldPath="localCode"/>
+        <fields fieldSeqId="12" fieldPath="beneficiaryStatus:description" fieldNameAlias="statusDescription"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioBeneficiaryContactMech" documentName="Beneficiary Contact Mech" documentTitle="${beneficiaryId}-${contactMechId}" indexName="banqio" primaryEntityName="banqio.beneficiary.BeneficiaryContactMech">
+        <fields fieldSeqId="01" fieldPath="beneficiaryId"/>
+        <fields fieldSeqId="02" fieldPath="contactMechId"/>
+        <fields fieldSeqId="03" fieldPath="infoString" fieldNameAlias="infoString"/>
+        <fields fieldSeqId="04" fieldPath="contactMechType:description" fieldNameAlias="contactMechTypeDescription"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+</entity-facade-xml>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        default-menu-title="Edit Configuration"
+        default-menu-include="false">
+
+    <parameter name="configurationId" required="true"/>
+
+    <transition name="findConfiguration">
+        <default-response url="../FindConfiguration"/>
+    </transition>
+    <transition name="updateConfiguration">
+        <service-call name="update#commons.server.Configuration"/>
+        <default-response url="."/>
+    </transition>
+
+    <actions>
+        <entity-find-one entity-name="commons.server.ConfigurationDetail" value-field="configuration"/>
+        <set field="editorType" from="configuration?.editorTypeEnumId"/>
+    </actions>
+
+    <widgets>
+        <section name="UpdateConfigurationSection" condition="configuration">
+            <widgets>
+                <container-panel>
+                    <panel-header>
+                        <link url="findConfiguration" text="Find Configuration" icon="glyphicon glyphicon-search"/>
+                    </panel-header>
+                    <panel-center>
+                        <widgets>
+                            <form-single name="UpdateConfigurationForm" transition="updateConfiguration" map="configuration">
+                                <field name="configurationId">
+                                    <default-field title="ID">
+                                        <display/>
+                                    </default-field>
+                                </field>
+                                <field name="appId">
+                                    <default-field title="App">
+                                        <display text="${appName}"/>
+                                    </default-field>
+                                </field>
+                                <field name="groupId">
+                                    <default-field title="Group">
+                                        <display text="${groupName}"/>
+                                    </default-field>
+                                </field>
+                                <field name="configurationName">
+                                    <default-field>
+                                        <display/>
+                                    </default-field>
+                                </field>
+                                <field name="description">
+                                    <default-field>
+                                        <display/>
+                                    </default-field>
+                                </field>
+                                <field name="defaultValue">
+                                    <default-field>
+                                        <display/>
+                                    </default-field>
+                                </field>
+                                <field name="definedValue">
+                                    <conditional-field condition="editorType.equals('CONF_EDITOR_TEXTFIELD')">
+                                        <text-line size="60"/>
+                                    </conditional-field>
+                                    <conditional-field condition="editorType.equals('CONF_EDITOR_TEXTAREA')">
+                                        <text-area rows="4" cols="80"/>
+                                    </conditional-field>
+                                    <conditional-field condition="editorType.equals('CONF_EDITOR_PASSWORD')">
+                                        <password size="60"/>
+                                    </conditional-field>
+                                    <conditional-field condition="editorType.equals('CONF_EDITOR_COMBO')">
+                                        <drop-down>
+                                            <entity-options key="${value}" text="${text}">
+                                                <entity-find entity-name="commons.server.ConfigurationOption">
+                                                    <econdition field-name="configurationId" from="configuration.configurationId"/>
+                                                    <order-by field-name="optionSeqId"/>
+                                                </entity-find>
+                                            </entity-options>
+                                        </drop-down>
+                                    </conditional-field>
+                                    <conditional-field condition="editorType.equals('CONF_EDITOR_CHECK')">
+                                        <check>
+                                            <entity-options key="${value}" text="${text}">
+                                                <entity-find entity-name="commons.server.ConfigurationOption">
+                                                    <econdition field-name="configurationId" from="configuration.configurationId"/>
+                                                    <order-by field-name="optionSeqId"/>
+                                                </entity-find>
+                                            </entity-options>
+                                        </check>
+                                    </conditional-field>
+                                    <conditional-field condition="editorType.equals('CONF_EDITOR_RADIO')">
+                                        <radio>
+                                            <entity-options key="${value}" text="${text}">
+                                                <entity-find entity-name="commons.server.ConfigurationOption">
+                                                    <econdition field-name="configurationId" from="configuration.configurationId"/>
+                                                    <order-by field-name="optionSeqId"/>
+                                                </entity-find>
+                                            </entity-options>
+                                        </radio>
+                                    </conditional-field>
+                                    <conditional-field condition="editorType.equals('CONF_EDITOR_FILE')">
+                                        <file/>
+                                    </conditional-field>
+                                    <conditional-field condition="editorType.equals('CONF_EDITOR_DATE')">
+                                        <date-time type="date"/>
+                                    </conditional-field>
+                                    <conditional-field condition="editorType.equals('CONF_EDITOR_TIME')">
+                                        <date-time type="time"/>
+                                    </conditional-field>
+                                    <conditional-field condition="editorType.equals('CONF_EDITOR_TIMESTAMP')">
+                                        <date-time/>
+                                    </conditional-field>
+                                    <default-field>
+                                        <text-line/>
+                                    </default-field>
+                                </field>
+                                <field name="creationDate">
+                                    <default-field>
+                                        <display/>
+                                    </default-field>
+                                </field>
+                                <field name="submitBtn">
+                                    <default-field title="Save">
+                                        <submit/>
+                                    </default-field>
+                                </field>
+
+                                <field-layout>
+                                    <fields-not-referenced/>
+                                </field-layout>
+                            </form-single>
+                        </widgets>
+                    </panel-center>
+                </container-panel>
+            </widgets>
+            <fail-widgets>
+                <container style="alert alert-warning">
+                    <label text="Configuration with ID [${configurationId}] was not found."/>
+                </container>
+            </fail-widgets>
+        </section>
+    </widgets>
+</screen>

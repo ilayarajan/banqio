@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/rest-api-2.1.xsd"
+          name="bank"
+          displayName="Bank REST API"
+          version="1.0.0">
+
+    <resource name="tellerType" description="Teller Type API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.bank.BankServices.find#TellerType"/>
+        </method>
+        <method type="post">
+            <service name="banqio.bank.BankServices.create#TellerType"/>
+        </method>
+        <method type="patch">
+            <service name="banqio.bank.BankServices.update#TellerType"/>
+        </method>
+        <resource name="localization">
+            <method type="get">
+                <service name="banqio.bank.BankServices.find#TellerTypeL10n"/>
+            </method>
+            <method type="post">
+                <service name="banqio.bank.BankServices.create#TellerTypeL10n"/>
+            </method>
+            <method type="patch">
+                <service name="banqio.bank.BankServices.update#TellerTypeL10n"/>
+            </method>
+            <method type="delete">
+                <service name="banqio.bank.BankServices.delete#TellerTypeL10n"/>
+            </method>
+        </resource>
+    </resource>
+    <resource name="tellerStatus" description="Teller Status API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.bank.BankServices.find#TellerStatus"/>
+        </method>
+        <method type="post">
+            <service name="banqio.bank.BankServices.create#TellerStatus"/>
+        </method>
+        <method type="patch">
+            <service name="banqio.bank.BankServices.update#TellerStatus"/>
+        </method>
+        <resource name="localization">
+            <method type="get">
+                <service name="banqio.bank.BankServices.find#TellerStatusL10n"/>
+            </method>
+            <method type="post">
+                <service name="banqio.bank.BankServices.create#TellerStatusL10n"/>
+            </method>
+            <method type="patch">
+                <service name="banqio.bank.BankServices.update#TellerStatusL10n"/>
+            </method>
+            <method type="delete">
+                <service name="banqio.bank.BankServices.delete#TellerStatusL10n"/>
+            </method>
+        </resource>
+    </resource>
+
+    <resource name="teller" description="Teller API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.bank.BankServices.find#Teller"/>
+        </method>
+        <method type="post">
+            <service name="banqio.bank.BankServices.create#Teller"/>
+        </method>
+        <method type="patch">
+            <service name="banqio.bank.BankServices.update#Teller"/>
+        </method>
+        <id name="tellerId">
+            <resource name="bankFunction">
+                <method type="get">
+                    <service name="banqio.bank.BankServices.find#TellerBankFunctionAppl"/>
+                </method>
+            </resource>
+        </id>
+    </resource>
+
+    <resource name="bank" description="Bank API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.bank.BankServices.find#Bank"/>
+        </method>
+        <method type="post">
+            <service name="banqio.bank.BankServices.create#Bank"/>
+        </method>
+        <method type="patch">
+            <service name="banqio.bank.BankServices.update#Bank"/>
+        </method>
+        <resource name="import">
+            <resource name="bic">
+                <method type="post">
+                    <service name="banqio.bank.BankServices.import#BIC"/>
+                </method>
+            </resource>
+            <resource name="text">
+                <method type="post">
+                    <service name="banqio.bank.BankServices.import#Text"/>
+                </method>
+            </resource>
+        </resource>
+    </resource>
+
+    <resource name="branch" description="Bank Branch API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.bank.BankServices.find#Branch"/>
+        </method>
+        <method type="post">
+            <service name="banqio.bank.BankServices.create#Branch"/>
+        </method>
+        <method type="patch">
+            <service name="banqio.bank.BankServices.update#Branch"/>
+        </method>
+        <id name="branchId">
+            <resource name="contactMech">
+                <method type="get">
+                    <service name="banqio.bank.BankServices.find#BranchContactMech"/>
+                </method>
+                <method type="post">
+                    <service name="banqio.bank.BankServices.create#BranchContactMech"/>
+                </method>
+                <method type="delete">
+                    <service name="banqio.bank.BankServices.delete#BranchContactMech"/>
+                </method>
+            </resource>
+            <resource name="workShift">
+                <method type="get">
+                    <service name="banqio.bank.BankServices.find#BranchWorkShift"/>
+                </method>
+                <method type="post">
+                    <service name="banqio.bank.BankServices.create#BranchWorkShift"/>
+                </method>
+                <method type="delete">
+                    <service name="banqio.bank.BankServices.delete#BranchWorkShift"/>
+                </method>
+            </resource>
+            <resource name="bankFunction">
+                <method type="get">
+                    <service name="banqio.bank.BankServices.find#BranchBankFunctionAppl"/>
+                </method>
+            </resource>
+        </id>
+    </resource>
+
+    <resource name="bankFunction" description="Bank Function API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.bank.BankServices.find#BankFunction"/>
+        </method>
+        <method type="post">
+            <service name="banqio.bank.BankServices.create#BankFunction"/>
+        </method>
+        <method type="patch">
+            <service name="banqio.bank.BankServices.update#BankFunction"/>
+        </method>
+        <resource name="localization">
+            <method type="get">
+                <service name="banqio.bank.BankServices.find#BankFunctionL10n"/>
+            </method>
+            <method type="post">
+                <service name="banqio.bank.BankServices.create#BankFunctionL10n"/>
+            </method>
+            <method type="patch">
+                <service name="banqio.bank.BankServices.update#BankFunctionL10n"/>
+            </method>
+            <method type="delete">
+                <service name="banqio.bank.BankServices.delete#BankFunctionL10n"/>
+            </method>
+        </resource>
+    </resource>
+
+</resource>

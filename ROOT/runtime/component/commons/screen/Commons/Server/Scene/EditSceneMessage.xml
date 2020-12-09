@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        default-menu-title="Edit Message"
+        default-menu-include="false">
+
+    <parameter name="messageId" required="true"/>
+    <parameter name="sceneId" required="true"/>
+
+    <transition name="findMessage">
+        <default-response url="../FindSceneMessage"/>
+    </transition>
+    <transition name="updateMessage">
+        <service-call name="update#commons.server.SceneMessage"/>
+        <default-response url="."/>
+    </transition>
+    <transition name="findLocalization">
+        <default-response url="../../../Localization/FindLocalization"/>
+    </transition>
+
+    <actions>
+        <entity-find-one entity-name="commons.server.SceneMessage" value-field="message"/>
+    </actions>
+
+    <widgets>
+        <section name="UpdateMessageSection" condition="message">
+            <widgets>
+                <container-panel>
+                    <panel-header>
+                        <link url="findMessage" text="Find Message" icon="glyphicon glyphicon-search"/>
+                    </panel-header>
+                    <panel-center>
+                        <form-single name="UpdateMessageForm" transition="updateMessage" map="message">
+                            <auto-fields-entity entity-name="commons.server.SceneMessage" field-type="edit"/>
+                            <field name="messageId">
+                                <default-field title="ID">
+                                    <display/>
+                                </default-field>
+                            </field>
+                            <field name="sceneId">
+                                <default-field>
+                                    <hidden/>
+                                </default-field>
+                            </field>
+                            <field name="messageValue">
+                                <default-field>
+                                    <text-area rows="4" cols="80"/>
+                                    <link url="findLocalization" target-window="_blank" tooltip="Localizations" icon="glyphicon glyphicon-globe" link-type="anchor" parameter-map="[entityName:'commons.server.SceneMessage', fieldName:'messageValue', pkValue:messageId, fieldType: 'TEXTAREA']"/>
+                                </default-field>
+                            </field>
+                            <field name="creationDate">
+                                <default-field>
+                                    <display/>
+                                </default-field>
+                            </field>
+                            <field name="submitBtn">
+                                <default-field title="Save">
+                                    <submit/>
+                                </default-field>
+                            </field>
+
+                            <field-layout>
+                                <fields-not-referenced/>
+                            </field-layout>
+                        </form-single>
+                    </panel-center>
+                </container-panel>
+            </widgets>
+            <fail-widgets>
+                <container style="alert alert-warning">
+                    <label text="Message with ID [${messageId}] was not found."/>
+                </container>
+            </fail-widgets>
+        </section>
+    </widgets>
+</screen>

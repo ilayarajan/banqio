@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Nucleus Screens (Basic) -->
+    <artifactGroups artifactGroupId="BNQ_NCLS_SCREEN_BASIC" description="Banqio Nucleus Screens (Basic)">
+        <artifacts artifactTypeEnumId="AT_XML_SCREEN" inheritAuthz="Y" nameIsPattern="N" artifactName="component://banqio-mod-nucleus/screen/Nucleus/Dashboard.xml"/>
+        <artifacts artifactTypeEnumId="AT_XML_SCREEN" inheritAuthz="Y" nameIsPattern="N" artifactName="component://banqio-mod-nucleus/screen/Nucleus/Localization.xml"/>
+        <artifacts artifactTypeEnumId="AT_XML_SCREEN" inheritAuthz="Y" nameIsPattern="N" artifactName="component://banqio-mod-nucleus/screen/Nucleus/Basic.xml"/>
+    </artifactGroups>
+
+    <!-- Nucleus Screens (Security) -->
+    <artifactGroups artifactGroupId="BNQ_NCLS_SCREEN_SECURITY" description="Banqio Nucleus Screens (Security)">
+        <artifacts artifactTypeEnumId="AT_XML_SCREEN" inheritAuthz="Y" nameIsPattern="N" artifactName="component://banqio-mod-nucleus/screen/Nucleus/Dashboard.xml"/>
+        <artifacts artifactTypeEnumId="AT_XML_SCREEN" inheritAuthz="Y" nameIsPattern="N" artifactName="component://banqio-mod-nucleus/screen/Nucleus/Localization.xml"/>
+        <artifacts artifactTypeEnumId="AT_XML_SCREEN" inheritAuthz="Y" nameIsPattern="N" artifactName="component://banqio-mod-nucleus/screen/Nucleus/Security.xml"/>
+    </artifactGroups>
+
+    <!-- Nucleus Screens (Server) -->
+    <artifactGroups artifactGroupId="BNQ_NCLS_SCREEN_SERVER" description="Banqio Nucleus Screens (Server)">
+        <artifacts artifactTypeEnumId="AT_XML_SCREEN" inheritAuthz="Y" nameIsPattern="N" artifactName="component://banqio-mod-nucleus/screen/Nucleus/Dashboard.xml"/>
+        <artifacts artifactTypeEnumId="AT_XML_SCREEN" inheritAuthz="Y" nameIsPattern="N" artifactName="component://banqio-mod-nucleus/screen/Nucleus/Localization.xml"/>
+        <artifacts artifactTypeEnumId="AT_XML_SCREEN" inheritAuthz="Y" nameIsPattern="N" artifactName="component://banqio-mod-nucleus/screen/Nucleus/Server.xml"/>
+    </artifactGroups>
+
+    <!-- Nucleus Screens (Workflow) -->
+    <artifactGroups artifactGroupId="BNQ_NCLS_SCREEN_WORKFLOW" description="Banqio Nucleus Screens (Workflow)">
+        <artifacts artifactTypeEnumId="AT_XML_SCREEN" inheritAuthz="Y" nameIsPattern="N" artifactName="component://banqio-mod-nucleus/screen/Nucleus/Dashboard.xml"/>
+        <artifacts artifactTypeEnumId="AT_XML_SCREEN" inheritAuthz="Y" nameIsPattern="N" artifactName="component://banqio-mod-nucleus/screen/Nucleus/Localization.xml"/>
+        <artifacts artifactTypeEnumId="AT_XML_SCREEN" inheritAuthz="Y" nameIsPattern="N" artifactName="component://banqio-mod-nucleus/screen/Nucleus/Workflow.xml"/>
+    </artifactGroups>
+
+    <!-- Nucleus API -->
+    <artifactGroups artifactGroupId="BNQ_NCLS_API" description="Banqio Nucleus API">
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/commons/.*"/>
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/nucleus/.*"/>
+        <artifacts artifactTypeEnumId="AT_SERVICE" inheritAuthz="Y" nameIsPattern="N" artifactName="banqio.party.PartyServices.download#PartyContent"/>
+        <artifacts artifactTypeEnumId="AT_SERVICE" inheritAuthz="Y" nameIsPattern="N" artifactName="banqio.party.PartyServices.download#CommunicationEventContent"/>
+    </artifactGroups>
+
+    <!-- Nucleus Rescue API -->
+    <artifactGroups artifactGroupId="BNQ_NCLS_RESCUE_API" description="Banqio Nucleus Rescue API">
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/nucleus/security/user/.*/enable"/>
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/nucleus/security/user/.*/disable"/>
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/nucleus/security/user/.*/logout"/>
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/nucleus/security/user/.*/password/reset"/>
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="N" artifactName="/nucleus/security/user/password/reset"/>
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="N" artifactName="/nucleus/security/user/poll"/>
+    </artifactGroups>
+
+    <!-- Nucleus Login API -->
+    <artifactGroups artifactGroupId="BNQ_NCLS_LOGIN_API" description="Banqio Nucleus Login API">
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="N" artifactName="/nucleus/security/user/login"/>
+    </artifactGroups>
+
+    <!-- Admin Nucleus (All) -->
+    <userGroups userGroupId="BNQ_ADM_NCLS_ALL" description="Banqio Admin Nucleus (All)" groupTypeEnumId="BNQ_ADM_GRP" wikiLocation="component://banqio-mod-nucleus/wiki/BNQ_ADM_NCLS_ALL.md">
+        <authz artifactGroupId="BNQ_NCLS_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+    </userGroups>
+
+    <!-- Admin Nucleus (View) -->
+    <userGroups userGroupId="BNQ_ADM_NCLS_VIEW" description="Banqio Admin Nucleus (View)" groupTypeEnumId="BNQ_ADM_GRP" wikiLocation="component://banqio-mod-nucleus/wiki/BNQ_ADM_NCLS_VIEW.md">
+        <authz artifactGroupId="BNQ_NCLS_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+        <authz artifactGroupId="BNQ_NCLS_LOGIN_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+    </userGroups>
+
+    <!-- Admin Nucleus (Rescue) -->
+    <userGroups userGroupId="BNQ_ADM_NCLS_RESCUE" description="Banqio Admin Nucleus (Rescue)" groupTypeEnumId="BNQ_ADM_GRP" wikiLocation="component://banqio-mod-nucleus/wiki/BNQ_ADM_NCLS_RESCUE.md">
+        <authz artifactGroupId="BNQ_NCLS_RESCUE_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_NCLS_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+        <authz artifactGroupId="BNQ_NCLS_LOGIN_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+    </userGroups>
+
+    <!-- Core (All) -->
+    <userGroups userGroupId="BNQ_CORE_ALL" description="Banqio Core (All)" groupTypeEnumId="BNQ_COR_GRP" wikiLocation="component://banqio-mod-nucleus/wiki/BNQ_CORE_ALL.md">
+        <authz artifactGroupId="BNQ_NCLS_SCREEN_BASIC" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_NCLS_SCREEN_SECURITY" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_NCLS_SCREEN_SERVER" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+        <authz artifactGroupId="BNQ_NCLS_SCREEN_WORKFLOW" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+    </userGroups>
+
+    <!-- Core (View) -->
+    <userGroups userGroupId="BNQ_CORE_VIEW" description="Banqio Core (View)" groupTypeEnumId="BNQ_COR_GRP" wikiLocation="component://banqio-mod-nucleus/wiki/BNQ_CORE_VIEW.md">
+        <authz artifactGroupId="BNQ_NCLS_SCREEN_BASIC" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+        <authz artifactGroupId="BNQ_NCLS_SCREEN_SECURITY" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+        <authz artifactGroupId="BNQ_NCLS_SCREEN_SERVER" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+        <authz artifactGroupId="BNQ_NCLS_SCREEN_WORKFLOW" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+    </userGroups>
+    
+</entity-facade-xml>

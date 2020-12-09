@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Security configuration -->
+    <CommonsConfig appId="COR" groupId="SECURITY" configurationId="CARD_NUM_MASK" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Card Number Mask" description="Card number masking pattern" defaultValue="xxxx-xxxx-xxxx-####" definedValue="xxxx-xxxx-xxxx-####"/>
+
+</entity-facade-xml>

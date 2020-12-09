@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Loan type behaviour -->
+    <moqui.basic.EnumerationType enumTypeId="LoanTypeBehaviour" description="Loan Type Behaviour"/>
+    <moqui.basic.Enumeration enumTypeId="LoanTypeBehaviour" enumId="LOAN_TYPE_MORTGAGE" description="Mortgage Loan"/>
+    <moqui.basic.Enumeration enumTypeId="LoanTypeBehaviour" enumId="LOAN_TYPE_VEHICLE" description="Vehicle Loan"/>
+    <moqui.basic.Enumeration enumTypeId="LoanTypeBehaviour" enumId="LOAN_TYPE_STUDENT" description="Student Loan"/>
+    <moqui.basic.Enumeration enumTypeId="LoanTypeBehaviour" enumId="LOAN_TYPE_PERSON" description="Personal Loan"/>
+    <moqui.basic.Enumeration enumTypeId="LoanTypeBehaviour" enumId="LOAN_TYPE_CORP" description="Corporate Loan"/>
+
+    <!-- Loan status behaviour -->
+    <moqui.basic.EnumerationType enumTypeId="LoanStatusBehaviour" description="Loan Status Behaviour"/>
+    <moqui.basic.Enumeration enumTypeId="LoanStatusBehaviour" enumId="LOAN_STAT_ACT" description="Active"/>
+    <moqui.basic.Enumeration enumTypeId="LoanStatusBehaviour" enumId="LOAN_STAT_CLOSE" description="Closed"/>
+
+</entity-facade-xml>

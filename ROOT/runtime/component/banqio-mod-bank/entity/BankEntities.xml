@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <!-- Teller -->
+    <entity entity-name="TellerType" package="banqio.bank.teller" short-alias="BanqioTellerType">
+        <field name="typeId" type="id" is-pk="true"/>
+        <field name="externalTypeId" type="text-medium"/>
+        <field name="typeName" type="text-medium" enable-localization="true"/>
+        <field name="typeBehaviourEnumId" type="id"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" title="TellerTypeBehaviour" related="moqui.basic.Enumeration" short-alias="typeBehaviour">
+            <key-map field-name="typeBehaviourEnumId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="TELL_TYPE_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="TELL_TYPE_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+
+        <index name="tellerTypeIdx1" unique="true">
+            <index-field name="externalTypeId"/>
+        </index>
+    </entity>
+    <entity entity-name="TellerStatus" package="banqio.bank.teller" short-alias="BanqioTellerStatus">
+        <field name="statusId" type="id" is-pk="true"/>
+        <field name="externalStatusId" type="text-medium"/>
+        <field name="statusName" type="text-medium" enable-localization="true"/>
+        <field name="statusBehaviourEnumId" type="id"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" title="TellerStatusBehaviour" related="moqui.basic.Enumeration" short-alias="statusBehaviour">
+            <key-map field-name="statusBehaviourEnumId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="TELL_STAT_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="TELL_STAT_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+
+        <index name="tellerStatusIdx1" unique="true">
+            <index-field name="externalStatusId"/>
+        </index>
+    </entity>
+    <entity entity-name="Teller" package="banqio.bank.teller" short-alias="BanqioTeller">
+        <field name="tellerId" type="id" is-pk="true"/>
+        <field name="tellerTypeId" type="id"/>
+        <field name="tellerStatusId" type="id"/>
+        <field name="tellerName" type="text-medium"/>
+        <field name="pseudoId" type="text-medium" default="tellerId"/>
+        <field name="externalId" type="text-medium"/>
+        <field name="geoPointId" type="id"/>
+        <field name="disabled" type="text-indicator"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+
+        <relationship type="one" related="banqio.bank.teller.TellerType" short-alias="type">
+            <key-map field-name="tellerTypeId"/>
+        </relationship>
+        <relationship type="one" related="banqio.bank.teller.TellerStatus" short-alias="status">
+            <key-map field-name="tellerStatusId"/>
+        </relationship>
+        <relationship type="one" related="moqui.basic.GeoPoint" short-alias="geoPoint">
+            <key-map field-name="geoPointId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="TellerBankFunctionAppl" package="banqio.bank.teller">
+        <field name="tellerId" type="id" is-pk="true"/>
+        <field name="functionId" type="id" is-pk="true"/>
+
+        <relationship type="one" related="banqio.bank.teller.Teller" short-alias="teller">
+            <key-map field-name="tellerId"/>
+        </relationship>
+        <relationship type="one" related="banqio.bank.BankFunction" short-alias="function">
+            <key-map field-name="functionId"/>
+        </relationship>
+    </entity>
+
+    <!-- Bank -->
+    <entity entity-name="Bank" package="banqio.bank" short-alias="BanqioBank">
+        <field name="bankId" type="id" is-pk="true"/>
+        <field name="countryGeoId" type="id"/>
+        <field name="bankName" type="text-medium"/>
+        <field name="institutionCode" type="text-medium"/>
+        <field name="nationalCode" type="text-medium"/>
+        <field name="licensee" type="text-indicator"/>
+        <field name="disabled" type="text-indicator"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+
+        <relationship type="one" related="moqui.basic.Geo" short-alias="country">
+            <key-map field-name="countryGeoId"/>
+        </relationship>
+        <relationship type="many" related="banqio.bank.Branch" short-alias="branches">
+            <key-map field-name="bankId"/>
+        </relationship>
+
+        <index name="bankIdx1">
+            <index-field name="institutionCode"/>
+        </index>
+        <index name="bankIdx2">
+            <index-field name="bankName"/>
+            <index-field name="countryGeoId"/>
+        </index>
+
+        <master>
+            <detail relationship="branches"/>
+        </master>
+    </entity>
+    <entity entity-name="BankFunction" package="banqio.bank">
+        <field name="functionId" type="id" is-pk="true"/>
+        <field name="functionName" type="text-medium" enable-localization="true"/>
+        <field name="description" type="text-medium"/>
+        <field name="iconClass" type="text-medium"/>
+        <field name="disabled" type="text-indicator"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="BNK_FN_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="BNK_FN_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+    </entity>
+
+    <!-- Branch -->
+    <entity entity-name="Branch" package="banqio.bank" short-alias="BanqioBranch">
+        <field name="branchId" type="id" is-pk="true"/>
+        <field name="bankId" type="id"/>
+        <field name="externalBranchId" type="text-medium"/>
+        <field name="branchName" type="text-medium"/>
+        <field name="branchCode" type="text-medium"/>
+        <field name="swiftCode" type="text-medium"/>
+        <field name="localCode" type="text-medium">
+            <description>This field may be used to store local codes for specific countries such as: IFSC (India), Sort Code (UK), Transit Number (Canada), Routing Number (USA)</description>
+        </field>
+        <field name="recordKey" type="text-medium"/>
+        <field name="acceptsPayments" type="text-indicator"/>
+        <field name="disabled" type="text-indicator"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+
+        <relationship type="one" related="banqio.bank.Bank" short-alias="bank">
+            <key-map field-name="bankId"/>
+        </relationship>
+        <relationship type="many" related="banqio.bank.BranchAddress" short-alias="addresses">
+            <key-map field-name="branchId"/>
+        </relationship>
+        <relationship type="many" related="banqio.bank.BranchContactMech" short-alias="contactMechs">
+            <key-map field-name="branchId"/>
+        </relationship>
+        <relationship type="many" related="banqio.bank.BranchWorkShift" short-alias="workShifts">
+            <key-map field-name="branchId"/>
+        </relationship>
+
+        <index name="branchIdx1" unique="true">
+            <index-field name="swiftCode"/>
+        </index>
+        <index name="branchIdx2">
+            <index-field name="recordKey"/>
+        </index>
+        <index name="branchIdx3">
+            <index-field name="localCode"/>
+        </index>
+
+        <master>
+            <detail relationship="addresses"/>
+            <detail relationship="contactMechs"/>
+            <detail relationship="workShifts"/>
+        </master>
+    </entity>
+    <entity entity-name="BranchAddress" package="banqio.bank" short-alias="BanqioBranchAddr">
+        <field name="branchId" type="id" is-pk="true"/>
+        <field name="address1" type="text-medium"/>
+        <field name="address2" type="text-medium"/>
+        <field name="district" type="text-medium"/>
+        <field name="city" type="text-medium"/>
+        <field name="province" type="text-medium"/>
+        <field name="countryGeoId" type="id"/>
+        <field name="poBox" type="text-medium"/>
+        <field name="postalCode" type="text-medium"/>
+        <field name="postalCodeExt" type="text-medium"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+
+        <relationship type="one" related="banqio.bank.Branch" short-alias="branch">
+            <key-map field-name="branchId"/>
+        </relationship>
+        <relationship type="one" title="Country" related="moqui.basic.Geo" short-alias="country">
+            <key-map field-name="countryGeoId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="BranchWorkShift" package="banqio.bank">
+        <field name="branchId" type="id" is-pk="true"/>
+        <field name="shiftSeqId" type="id" is-pk="true"/>
+        <field name="weekDayEnumId" type="id"/>
+        <field name="startTime" type="time"/>
+        <field name="endTime" type="time"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+
+        <relationship type="one" related="banqio.bank.Branch">
+            <key-map field-name="branchId"/>
+        </relationship>
+        <relationship type="one" title="WeekDay" related="moqui.basic.Enumeration" short-alias="weekDay">
+            <key-map field-name="weekDayEnumId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="BranchBankFunctionAppl" package="banqio.bank">
+        <field name="branchId" type="id" is-pk="true"/>
+        <field name="functionId" type="id" is-pk="true"/>
+
+        <relationship type="one" related="banqio.bank.Branch" short-alias="branch">
+            <key-map field-name="branchId"/>
+        </relationship>
+        <relationship type="one" related="banqio.bank.BankFunction" short-alias="function">
+            <key-map field-name="functionId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="BranchContactMech" package="banqio.bank">
+        <field name="contactMechId" type="id" is-pk="true"/>
+        <field name="branchId" type="id"/>
+        <field name="contactMechTypeEnumId" type="id"/>
+        <field name="contactMechPurposeId" type="id"/>
+        <field name="infoString" type="text-medium"/>
+
+        <relationship type="one" related="banqio.bank.Branch">
+            <key-map field-name="branchId"/>
+        </relationship>
+        <relationship type="one" related="moqui.basic.Enumeration" short-alias="type">
+            <key-map field-name="contactMechTypeEnumId"/>
+        </relationship>
+        <relationship type="one" related="mantle.party.contact.ContactMechPurpose" short-alias="purpose">
+            <key-map field-name="contactMechPurposeId"/>
+        </relationship>
+        <relationship type="one-nofk" related="banqio.bank.BranchTelecomNumber" short-alias="telecomNumber"/>
+    </entity>
+    <entity entity-name="BranchTelecomNumber" package="banqio.bank">
+        <field name="contactMechId" type="id" is-pk="true"/>
+        <field name="countryCode" type="text-short"/>
+        <field name="extension" type="text-short"/>
+        <field name="areaCode" type="text-short"/>
+        <field name="contactNumber" type="text-short"/>
+
+        <relationship type="one" related="banqio.bank.BranchContactMech" short-alias="contactMech">
+            <key-map field-name="contactMechId"/>
+        </relationship>
+    </entity>
+
+</entities>

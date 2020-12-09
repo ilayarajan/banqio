@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Configuration groups -->
+    <CommonsConfigGrp groupId="GENERAL" groupName="General" description="General configuration" position="5"/>
+    <CommonsConfigGrp groupId="SECURITY" groupName="Security" description="Security and access control configuration" position="10"/>
+    <CommonsConfigGrp groupId="ALERT" groupName="Alerts" description="Alert and notification configuration" position="15"/>
+    <CommonsConfigGrp groupId="DATABASE" groupName="Database" description="Database and data access configuration" position="20"/>
+    <CommonsConfigGrp groupId="NETWORK" groupName="Network" description="Network and connectivity configuration" position="25"/>
+    <CommonsConfigGrp groupId="CONTENT" groupName="Content" description="Content configuration" position="30"/>
+    <CommonsConfigGrp groupId="FORMAT" groupName="Formatting" description="Formatting and display configuration" position="35"/>
+    <CommonsConfigGrp groupId="UI" groupName="User Interface" description="User interface and user experience configuration" position="40"/>
+
+    <!-- Version alert type -->
+    <moqui.basic.EnumerationType enumTypeId="VersionAlertType" description="Version Alert Type"/>
+    <moqui.basic.Enumeration enumTypeId="VersionAlertType" enumId="VERSION_ALERT_NONE" description="None"/>
+    <moqui.basic.Enumeration enumTypeId="VersionAlertType" enumId="VERSION_ALERT_INFO" description="Informative"/>
+    <moqui.basic.Enumeration enumTypeId="VersionAlertType" enumId="VERSION_ALERT_MANDATORY" description="Mandatory"/>
+
+    <!-- Configuration editor type -->
+    <moqui.basic.EnumerationType enumTypeId="ConfigEditorType" description="Configuration Editor Type"/>
+    <moqui.basic.Enumeration enumTypeId="ConfigEditorType" enumId="CONF_EDITOR_TEXTFIELD" description="Text Field"/>
+    <moqui.basic.Enumeration enumTypeId="ConfigEditorType" enumId="CONF_EDITOR_TEXTAREA" description="Text Area"/>
+    <moqui.basic.Enumeration enumTypeId="ConfigEditorType" enumId="CONF_EDITOR_PASSWORD" description="Password"/>
+    <moqui.basic.Enumeration enumTypeId="ConfigEditorType" enumId="CONF_EDITOR_COMBO" description="Combo Box"/>
+    <moqui.basic.Enumeration enumTypeId="ConfigEditorType" enumId="CONF_EDITOR_CHECK" description="Check Box"/>
+    <moqui.basic.Enumeration enumTypeId="ConfigEditorType" enumId="CONF_EDITOR_RADIO" description="Radio Button"/>
+    <moqui.basic.Enumeration enumTypeId="ConfigEditorType" enumId="CONF_EDITOR_FILE" description="File"/>
+    <moqui.basic.Enumeration enumTypeId="ConfigEditorType" enumId="CONF_EDITOR_DATE" description="Date"/>
+    <moqui.basic.Enumeration enumTypeId="ConfigEditorType" enumId="CONF_EDITOR_TIME" description="Time"/>
+    <moqui.basic.Enumeration enumTypeId="ConfigEditorType" enumId="CONF_EDITOR_TIMESTAMP" description="Timestamp"/>
+
+    <!-- Netvariant Footer -->
+    <moqui.screen.ScreenThemeResource screenThemeId="DEFAULT" sequenceNum="200" resourceTypeEnumId="STRT_FOOTER_ITEM">
+        <resourceValue><![CDATA[<p><a href="https://www.netvariant.com/" target="_blank">${ec.resource.expand('Built on Netvariant Framework ${ec.factory.moquiVersion}', '')}</a></p>]]></resourceValue>
+    </moqui.screen.ScreenThemeResource>
+
+    <!-- Apps -->
+    <CommonsApp appId="COM" appName="Commons" description="Common services" disabled="N"/>
+
+    <!-- Alert configuration -->
+    <CommonsConfig appId="COM" groupId="ALERT" configurationId="SMS_SERVICE_NAME" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="SMS Service Name" description="Name of service used to send SMS" defaultValue="_NA_" definedValue="_NA_"/>
+    <CommonsConfig appId="COM" groupId="ALERT" configurationId="EMAIL_SERVICE_NAME" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Email Service Name" description="Name of service used to send emails" defaultValue="_NA_" definedValue="_NA_"/>
+
+    <!-- General configuration -->
+    <CommonsConfig appId="COM" groupId="GENERAL" configurationId="WF_SKIP_INITIATOR_TASKS" editorTypeEnumId="CONF_EDITOR_RADIO" configurationName="Skip Workflow Initiator Tasks" description="Do not create any tasks for the initiator of a workflow" defaultValue="false" definedValue="false">
+        <options optionSeqId="1" optionValue="true" optionText="Yes"/>
+        <options optionSeqId="2" optionValue="false" optionText="No"/>
+    </CommonsConfig>
+    <CommonsConfig appId="COM" groupId="GENERAL" configurationId="WF_IGNORE_ERRORS" editorTypeEnumId="CONF_EDITOR_RADIO" configurationName="Ignore Workflow Errors" description="Advance an active workflow even when errors occur" defaultValue="false" definedValue="false">
+        <options optionSeqId="1" optionValue="true" optionText="Yes"/>
+        <options optionSeqId="2" optionValue="false" optionText="No"/>
+    </CommonsConfig>
+
+    <!-- Security configuration -->
+    <CommonsConfig appId="COM" groupId="SECURITY" configurationId="WF_TASK_AUTH" editorTypeEnumId="CONF_EDITOR_RADIO" configurationName="Workflow Task Authentication" description="Workflow task second factor authentication type" defaultValue="NONE" definedValue="NONE">
+        <options optionSeqId="1" optionValue="NONE" optionText="None"/>
+        <options optionSeqId="2" optionValue="PWD" optionText="Password"/>
+        <options optionSeqId="3" optionValue="SMS" optionText="SMS Code"/>
+        <options optionSeqId="4" optionValue="EMAIL" optionText="Email Code"/>
+    </CommonsConfig>
+    <CommonsConfig appId="COM" groupId="SECURITY" configurationId="WF_AUTO_APPROVE" editorTypeEnumId="CONF_EDITOR_RADIO" configurationName="Workflow Auto Approval" description="Automatically approve new workflows" defaultValue="false" definedValue="true">
+        <options optionSeqId="1" optionValue="true" optionText="Yes"/>
+        <options optionSeqId="2" optionValue="false" optionText="No"/>
+    </CommonsConfig>
+    <CommonsConfig appId="COM" groupId="SECURITY" configurationId="OTP_LENGTH" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="OTP Length" description="Length of OTP" defaultValue="6" definedValue="6"/>
+    <CommonsConfig appId="COM" groupId="SECURITY" configurationId="OTP_VALID_MINS" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="OTP Validity" description="Validity of OTP in minutes" defaultValue="10" definedValue="10"/>
+    <CommonsConfig appId="COM" groupId="SECURITY" configurationId="OTP_MAX_VALID_ATTEMPTS" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="OTP Maximum Validation Attempts" description="Maximum number of times a OTP can be validated" defaultValue="3" definedValue="3"/>
+    <CommonsConfig appId="COM" groupId="SECURITY" configurationId="ENC_KEYSTORE_TYPE" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Encryption KeyStore Type" description="Type of JCE key store" defaultValue="JCEKS" definedValue="JCEKS"/>
+    <CommonsConfig appId="COM" groupId="SECURITY" configurationId="ENC_KEYSTORE_PATH" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Encryption KeyStore Path" description="Path to JCE key store" defaultValue="component://commons/vendor/netvariant/commons.jks" definedValue="component://commons/vendor/netvariant/commons.jks"/>
+    <CommonsConfig appId="COM" groupId="SECURITY" configurationId="ENC_KEYSTORE_PWD" editorTypeEnumId="CONF_EDITOR_PASSWORD" configurationName="Encryption KeyStore Password" description="Password of JCE key store" defaultValue="" definedValue="ENj3zwtJxRMoWn8@WdXcsNTV"/>
+    <CommonsConfig appId="COM" groupId="SECURITY" configurationId="ENC_KEY_ALIAS" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Encryption Key Alias" description="Alias of secret key in key store" defaultValue="secret" definedValue="secret"/>
+    <CommonsConfig appId="COM" groupId="SECURITY" configurationId="ENC_KEY_PWD" editorTypeEnumId="CONF_EDITOR_PASSWORD" configurationName="Encryption Key Password" description="Password of secret key" defaultValue="" definedValue="o4zrvuFrkDzK2g_MnFbWsAKJ"/>
+    <CommonsConfig appId="COM" groupId="SECURITY" configurationId="ENC_TRANSFORM" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Encryption Transformation" description="Encryption transformation (algorithm/mode/padding)" defaultValue="AES/CBC/PKCS5Padding" definedValue="AES/CBC/PKCS5Padding"/>
+    <CommonsConfig appId="COM" groupId="SECURITY" configurationId="ENC_SALT" editorTypeEnumId="CONF_EDITOR_TEXTFIELD" configurationName="Encryption Salt" description="Encryption salt value" defaultValue="" definedValue="4Q!*htze*vAkXq8."/>
+
+</entity-facade-xml>

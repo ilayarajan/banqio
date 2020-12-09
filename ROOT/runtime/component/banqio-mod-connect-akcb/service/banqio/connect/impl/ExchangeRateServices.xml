@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Exchange rate -->
+    <service verb="find" noun="ExchangeRate" type="java" location="com.netvariant.banqio.connect.impl.ExchangeRateServiceRelay" method="findExchangeRates">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="baseCurrencyId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="exchangeRateList" type="List">
+                <parameter name="exchangeRate" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="buyRate" type="Double"/>
+                    <parameter name="sellRate" type="Double"/>
+                    <parameter name="baseCurrencyId"/>
+                    <parameter name="baseCurrencyDescription"/>
+                    <parameter name="baseCurrencyAbbreviation"/>
+                    <parameter name="quoteCurrencyId"/>
+                    <parameter name="quoteCurrencyDescription"/>
+                    <parameter name="quoteCurrencyAbbreviation"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="convert" noun="Amount" type="java" location="com.netvariant.banqio.connect.impl.ExchangeRateServiceRelay" method="convertAmount">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="debitCurrencyId"/>
+            <parameter name="creditCurrencyId"/>
+            <parameter name="debitAmount" type="Double"/>
+            <parameter name="creditAmount" type="Double"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="debitCurrencyId"/>
+            <parameter name="creditCurrencyId"/>
+            <parameter name="debitAmount" type="Double"/>
+            <parameter name="creditAmount" type="Double"/>
+            <parameter name="exchangeRate" type="Double"/>
+            <parameter name="convertedAmount" type="Double"/>
+        </out-parameters>
+    </service>
+
+</services>

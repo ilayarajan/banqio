@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <moqui.basic.LocalizedMessage original="LOAN_STATUS_NAME_REQUIRED" locale="en" localized="Status name is required"/>
+    <moqui.basic.LocalizedMessage original="LOAN_STATUS_NOT_FOUND" locale="en" localized="Status not found"/>
+    <moqui.basic.LocalizedMessage original="LOAN_STATUS_CREATED_SUCCESSFULLY" locale="en" localized="Status created successfully"/>
+    <moqui.basic.LocalizedMessage original="LOAN_STATUS_UPDATED_SUCCESSFULLY" locale="en" localized="Status updated successfully"/>
+    <moqui.basic.LocalizedMessage original="LOAN_STATUS_ALREADY_EXISTS" locale="en" localized="Status already exists"/>
+
+
+    <moqui.basic.LocalizedMessage original="LOAN_TYPE_NAME_REQUIRED" locale="en" localized="Type name is required"/>
+    <moqui.basic.LocalizedMessage original="LOAN_TYPE_NOT_FOUND" locale="en" localized="Type not found"/>
+    <moqui.basic.LocalizedMessage original="LOAN_TYPE_CREATED_SUCCESSFULLY" locale="en" localized="Type created successfully"/>
+    <moqui.basic.LocalizedMessage original="LOAN_TYPE_UPDATED_SUCCESSFULLY" locale="en" localized="Type updated successfully"/>
+    <moqui.basic.LocalizedMessage original="LOAN_TYPE_ALREADY_EXISTS" locale="en" localized="Type already exists"/>
+
+</entity-facade-xml>

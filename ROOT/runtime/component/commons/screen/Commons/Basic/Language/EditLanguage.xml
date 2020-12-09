@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        default-menu-title="Edit Language"
+        default-menu-include="false">
+
+    <parameter name="languageId" required="true"/>
+
+    <transition name="findLanguage">
+        <default-response url="../FindLanguage"/>
+    </transition>
+    <transition name="updateLanguage">
+        <service-call name="update#commons.basic.Language"/>
+        <default-response url="."/>
+    </transition>
+    <transition name="enableLanguage">
+        <service-call name="update#commons.basic.Language">
+            <field-map field-name="languageId" from="languageId"/>
+            <field-map field-name="disabled" value="N"/>
+        </service-call>
+        <default-response url="."/>
+    </transition>
+    <transition name="disableLanguage">
+        <service-call name="update#commons.basic.Language">
+            <field-map field-name="languageId" from="languageId"/>
+            <field-map field-name="disabled" value="Y"/>
+        </service-call>
+        <default-response url="."/>
+    </transition>
+
+    <actions>
+        <entity-find-one entity-name="commons.basic.Language" value-field="language"/>
+    </actions>
+
+    <widgets>
+        <section name="UpdateLanguageSection" condition="language">
+            <widgets>
+                <container-panel>
+                    <panel-header>
+                        <link url="findLanguage" text="Find Language" icon="glyphicon glyphicon-search"/>
+                        <section name="UpdateLanguageStatus">
+                            <condition>
+                                <compare field="language.disabled" value="Y"/>
+                            </condition>
+                            <widgets>
+                                <link url="enableLanguage" text="Enable" icon="glyphicon glyphicon-check" style="btn-success"/>
+                            </widgets>
+                            <fail-widgets>
+                                <link url="disableLanguage" text="Disable" icon="glyphicon glyphicon-unchecked" style="btn-danger"/>
+                            </fail-widgets>
+                        </section>
+                    </panel-header>
+                    <panel-center>
+                        <form-single name="UpdateLanguageForm" transition="updateLanguage" map="language">
+                            <auto-fields-entity entity-name="commons.basic.Language" field-type="edit"/>
+                            <field name="languageId">
+                                <default-field title="ID">
+                                    <display/>
+                                </default-field>
+                            </field>
+                            <field name="rtl">
+                                <default-field title="RTL">
+                                    <drop-down>
+                                        <option key="N" text="No"/>
+                                        <option key="Y" text="Yes"/>
+                                    </drop-down>
+                                </default-field>
+                            </field>
+                            <field name="disabled">
+                                <default-field>
+                                    <drop-down>
+                                        <option key="N" text="No"/>
+                                        <option key="Y" text="Yes"/>
+                                    </drop-down>
+                                </default-field>
+                            </field>
+                            <field name="creationDate">
+                                <default-field>
+                                    <display/>
+                                </default-field>
+                            </field>
+                            <field name="submitBtn">
+                                <default-field title="Save">
+                                    <submit/>
+                                </default-field>
+                            </field>
+
+                            <field-layout>
+                                <fields-not-referenced/>
+                            </field-layout>
+                        </form-single>
+                    </panel-center>
+                </container-panel>
+            </widgets>
+            <fail-widgets>
+                <container style="alert alert-warning">
+                    <label text="Language with ID [${languageId}] was not found."/>
+                </container>
+            </fail-widgets>
+        </section>
+    </widgets>
+</screen>

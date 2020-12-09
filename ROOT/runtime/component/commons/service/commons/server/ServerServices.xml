@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- App -->
+    <service verb="find" noun="App" type="java" location="com.netvariant.commons.server.AppService" method="findApps">
+        <in-parameters>
+            <auto-parameters entity-name="commons.server.App">
+                <exclude field-name="creationDate"/>
+                <exclude field-name="inputUserId"/>
+                <exclude field-name="updateUserId"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="appList" type="List">
+                <parameter name="app" type="Map">
+                    <auto-parameters entity-name="commons.server.App"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="validate" noun="App" type="java" location="com.netvariant.commons.server.AppService" method="validateApp">
+        <in-parameters>
+            <parameter name="appId"/>
+        </in-parameters>
+    </service>
+    <service verb="find" noun="AppVersion" type="java" location="com.netvariant.commons.server.AppService" method="findAppVersions">
+        <in-parameters>
+            <auto-parameters entity-name="commons.server.AppVersionDetail">
+                <exclude field-name="creationDate"/>
+                <exclude field-name="inputUserId"/>
+                <exclude field-name="updateUserId"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="versionList" type="List">
+                <parameter name="version" type="Map">
+                    <auto-parameters entity-name="commons.server.AppVersionDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="AppBranding" type="java" location="com.netvariant.commons.server.AppService" method="findAppBranding">
+        <in-parameters>
+            <parameter name="appId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="appBranding" type="Map">
+                <auto-parameters entity-name="commons.server.AppBranding">
+                    <exclude field-name="loginBackgroundLocation"/>
+                    <exclude field-name="loginLogoLocation"/>
+                    <exclude field-name="logoLocation"/>
+                    <exclude field-name="creationDate"/>
+                    <exclude field-name="inputUserId"/>
+                    <exclude field-name="updateUserId"/>
+                </auto-parameters>
+                <parameter name="loginBackgroundAvailable" type="Boolean"/>
+                <parameter name="loginLogoAvailable" type="Boolean"/>
+                <parameter name="logoAvailable" type="Boolean"/>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="AppBranding" type="java" location="com.netvariant.commons.server.AppService" method="updateAppBranding">
+        <in-parameters>
+            <parameter name="appId"/>
+            <parameter name="primaryColor"/>
+            <parameter name="successColor"/>
+            <parameter name="dangerColor"/>
+            <parameter name="warningColor"/>
+            <parameter name="darkColor"/>
+            <parameter name="titleColor"/>
+            <parameter name="loginBackgroundFile" type="org.apache.commons.fileupload.FileItem"/>
+            <parameter name="loginBackgroundPosition"/>
+            <parameter name="loginLogoFile" type="org.apache.commons.fileupload.FileItem"/>
+            <parameter name="loginLogoBackgroundColor"/>
+            <parameter name="loginLogoSize" type="Integer"/>
+            <parameter name="logoFile" type="org.apache.commons.fileupload.FileItem"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="appId"/>
+        </out-parameters>
+    </service>
+    <service verb="delete" noun="AppBrandingResource" type="java" location="com.netvariant.commons.server.AppService" method="deleteAppBrandingResource">
+        <in-parameters>
+            <parameter name="appId"/>
+            <parameter name="resourceField"/>
+        </in-parameters>
+    </service>
+    <service verb="download" noun="AppBrandingResource" type="java" location="com.netvariant.commons.server.AppService" method="downloadAppBrandingResource">
+        <in-parameters>
+            <parameter name="appId"/>
+            <parameter name="resourceField"/>
+        </in-parameters>
+    </service>
+
+    <!-- Scene -->
+    <service verb="find" noun="Scene" type="java" location="com.netvariant.commons.server.SceneService" method="findScene">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="lookupName"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="scene" type="Map">
+                <auto-parameters entity-name="commons.server.SceneDetail">
+                    <exclude field-name="creationDate"/>
+                    <exclude field-name="inputUserId"/>
+                    <exclude field-name="updateUserId"/>
+                </auto-parameters>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="SceneMessage" type="java" location="com.netvariant.commons.server.SceneService" method="findSceneMessages">
+        <in-parameters>
+            <parameter name="sceneId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="messageList" type="List">
+                <parameter name="message" type="Map">
+                    <auto-parameters entity-name="commons.server.SceneMessage"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+
+    <!-- Configuration -->
+    <service verb="find" noun="Configuration">
+        <in-parameters>
+            <auto-parameters entity-name="commons.server.Configuration">
+                <exclude field-name="editorTypeEnumId"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="configurationList" type="List">
+                <parameter name="configuration" type="Map">
+                    <auto-parameters entity-name="commons.server.Configuration">
+                        <exclude field-name="editorTypeEnumId"/>
+                        <exclude field-name="creationDate"/>
+                    </auto-parameters>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <entity-find entity-name="commons.server.Configuration" list="configurationList">
+                <search-form-inputs paginate="false"/>
+                <select-field field-name="configurationId"/>
+                <select-field field-name="appId"/>
+                <select-field field-name="groupId"/>
+                <select-field field-name="configurationName"/>
+                <select-field field-name="description"/>
+                <select-field field-name="definedValue"/>
+            </entity-find>
+            <script>result.put("configurationList", configurationList)</script>
+        </actions>
+    </service>
+</services>

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Beneficiary type -->
+    <service verb="find" noun="BeneficiaryType" type="java" location="com.netvariant.banqio.beneficiary.BeneficiaryTypeService" method="findBeneficiaryTypes">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.beneficiary.BeneficiaryTypeDetail"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="beneficiaryTypeList" type="List">
+                <parameter name="beneficiaryType" type="Map">
+                    <auto-parameters entity-name="banqio.beneficiary.BeneficiaryTypeDetail"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="create" noun="BeneficiaryType" type="java" location="com.netvariant.banqio.beneficiary.BeneficiaryTypeService" method="createBeneficiaryType">
+        <in-parameters>
+            <parameter name="externalTypeId"/>
+            <parameter name="parentTypeId"/>
+            <parameter name="typeName"/>
+            <parameter name="typeBehaviourEnumId"/>
+            <parameter name="inputNotes" allow-html="safe"/>
+            <parameter name="reviewNotes" allow-html="safe"/>
+            <parameter name="position" type="Integer"/>
+            <parameter name="disabled"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="typeId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="BeneficiaryType" type="java" location="com.netvariant.banqio.beneficiary.BeneficiaryTypeService" method="updateBeneficiaryType">
+        <in-parameters>
+            <parameter name="typeId"/>
+            <parameter name="externalTypeId"/>
+            <parameter name="parentTypeId"/>
+            <parameter name="typeName"/>
+            <parameter name="typeBehaviourEnumId"/>
+            <parameter name="inputNotes" allow-html="safe"/>
+            <parameter name="reviewNotes" allow-html="safe"/>
+            <parameter name="position" type="Integer"/>
+            <parameter name="disabled"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="typeId"/>
+        </out-parameters>
+    </service>
+    <service verb="tree" noun="BeneficiaryType" type="java" location="com.netvariant.banqio.beneficiary.BeneficiaryTypeService" method="beneficiaryTypeTree">
+        <in-parameters/>
+    </service>
+
+    <!-- Beneficiary type L10n -->
+    <service verb="find" noun="BeneficiaryTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.beneficiary.BeneficiaryType"/>
+            <service-call name="commons.entity.EntityServices.find#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="create" noun="BeneficiaryTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.beneficiary.BeneficiaryType"/>
+            <service-call name="commons.entity.EntityServices.create#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="update" noun="BeneficiaryTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.beneficiary.BeneficiaryType"/>
+            <service-call name="commons.entity.EntityServices.update#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+    <service verb="delete" noun="BeneficiaryTypeL10n">
+        <in-parameters>
+            <auto-parameters entity-name="moqui.basic.LocalizedEntityField">
+                <exclude field-name="entityName"/>
+                <exclude field-name="localized"/>
+                <exclude field-name="lastUpdatedStamp"/>
+            </auto-parameters>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="localizedEntityFieldList" type="List">
+                <parameter name="localizedEntityField" type="Map">
+                    <auto-parameters entity-name="moqui.basic.LocalizedEntityField"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+        <actions>
+            <set field="entityName" value="banqio.beneficiary.BeneficiaryType"/>
+            <service-call name="commons.entity.EntityServices.delete#LocalizedEntityField" in-map="context" out-map="context"/>
+        </actions>
+    </service>
+
+    <!-- Beneficiary -->
+    <service verb="create" noun="Beneficiary" type="java" location="com.netvariant.banqio.beneficiary.BeneficiaryService" method="createBeneficiary">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="beneficiaryId"/>
+            <parameter name="typeId"/>
+            <parameter name="statusId"/>
+            <parameter name="preferredCurrencyId"/>
+            <parameter name="customerId"/>
+            <parameter name="externalBeneficiaryId"/>
+            <parameter name="beneficiaryName"/>
+            <parameter name="nickname"/>
+            <parameter name="accountNumber"/>
+            <parameter name="iban"/>
+            <parameter name="swiftCode"/>
+            <parameter name="intermediarySwiftCode"/>
+            <parameter name="localCode"/>
+            <parameter name="disabled"/>
+            <parameter name="address1"/>
+            <parameter name="address2"/>
+            <parameter name="district"/>
+            <parameter name="city"/>
+            <parameter name="province"/>
+            <parameter name="countryGeoId"/>
+            <parameter name="postalCode"/>
+            <parameter name="postalCodeExt"/>
+            <parameter name="postOfficeBox"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="beneficiaryId"/>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="Beneficiary" type="java" location="com.netvariant.banqio.beneficiary.BeneficiaryService" method="updateBeneficiary">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="beneficiaryId"/>
+            <parameter name="statusId"/>
+            <parameter name="preferredCurrencyId"/>
+            <parameter name="customerId"/>
+            <parameter name="externalBeneficiaryId"/>
+            <parameter name="beneficiaryName"/>
+            <parameter name="nickname"/>
+            <parameter name="accountNumber"/>
+            <parameter name="iban"/>
+            <parameter name="swiftCode"/>
+            <parameter name="intermediarySwiftCode"/>
+            <parameter name="localCode"/>
+            <parameter name="activationDate"/>
+            <parameter name="lastTransactionDate"/>
+            <parameter name="disabled"/>
+            <parameter name="address1"/>
+            <parameter name="address2"/>
+            <parameter name="district"/>
+            <parameter name="city"/>
+            <parameter name="province"/>
+            <parameter name="countryGeoId"/>
+            <parameter name="postalCode"/>
+            <parameter name="postalCodeExt"/>
+            <parameter name="postOfficeBox"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="beneficiaryId"/>
+        </out-parameters>
+    </service>
+    <service verb="delete" noun="Beneficiary" type="java" location="com.netvariant.banqio.beneficiary.BeneficiaryService" method="deleteBeneficiary">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="beneficiaryId"/>
+        </in-parameters>
+    </service>
+    <service verb="create" noun="BeneficiaryContactMech" type="java" location="com.netvariant.banqio.beneficiary.BeneficiaryService" method="createBeneficiaryContactMech">
+        <in-parameters>
+            <parameter name="beneficiaryId"/>
+            <parameter name="contactMechTypeEnumId"/>
+            <parameter name="infoString"/>
+            <parameter name="countryCode"/>
+            <parameter name="areaCode"/>
+            <parameter name="contactNumber"/>
+            <parameter name="extension"/>
+            <parameter name="fromDate"/>
+            <parameter name="toDate"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="contactMechId"/>
+        </out-parameters>
+    </service>
+    <service verb="expire" noun="BeneficiaryContactMech" type="java" location="com.netvariant.banqio.beneficiary.BeneficiaryService" method="expireBeneficiaryContactMech">
+        <in-parameters>
+            <parameter name="beneficiaryId"/>
+            <parameter name="contactMechId"/>
+        </in-parameters>
+    </service>
+    <service verb="create" noun="BeneficiaryTag" type="java" location="com.netvariant.banqio.beneficiary.BeneficiaryService" method="createBeneficiaryTag">
+        <in-parameters>
+            <parameter name="beneficiaryId"/>
+            <parameter name="tag"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="userId"/>
+            <parameter name="beneficiaryId"/>
+        </out-parameters>
+    </service>
+    <service verb="delete" noun="BeneficiaryTag" type="java" location="com.netvariant.banqio.beneficiary.BeneficiaryService" method="deleteBeneficiaryTag">
+        <in-parameters>
+            <parameter name="userId"/>
+            <parameter name="beneficiaryId"/>
+        </in-parameters>
+    </service>
+
+    <!-- Beneficiary workflow instance -->
+    <service verb="find" noun="BeneficiaryWorkflowInstance" type="java" location="com.netvariant.banqio.beneficiary.BeneficiaryService" method="findBeneficiaryWorkflowInstances">
+        <in-parameters>
+            <auto-parameters entity-name="banqio.beneficiary.BeneficiaryWorkflowInstance"/>
+            <parameter name="pageIndex" type="Integer"/>
+            <parameter name="pageSize" type="Integer"/>
+            <parameter name="orderByField"/>
+            <parameter name="filter"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="instanceList" type="List">
+                <parameter name="instance" type="Map">
+                    <auto-parameters entity-name="banqio.beneficiary.BeneficiaryWorkflowInstance"/>
+                    <parameter name="approvedCount"/>
+                    <parameter name="pendingCount"/>
+                    <parameter name="rejectedCount"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+
+</services>

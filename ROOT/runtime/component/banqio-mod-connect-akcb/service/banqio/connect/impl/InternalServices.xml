@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Account -->
+    <service verb="find" noun="Account" type="java" location="com.netvariant.banqio.connect.impl.AccountServiceRelay" method="findAccountsInternal" authenticate="false">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="accountNumber"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="accountList" type="List">
+                <parameter name="account" type="Map">
+                    <parameter name="customerId"/>
+                    <parameter name="title"/>
+                    <parameter name="nickname"/>
+                    <parameter name="accountNumber"/>
+                    <parameter name="contractNumber"/>
+                    <parameter name="iban"/>
+                    <parameter name="currencyId"/>
+                    <parameter name="currencyDescription"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="typeId"/>
+                    <parameter name="typeName"/>
+                    <parameter name="typeBehaviourEnumId"/>
+                    <parameter name="statusId"/>
+                    <parameter name="statusName"/>
+                    <parameter name="statusBehaviourEnumId"/>
+                    <parameter name="openingDate" type="Date"/>
+                    <parameter name="lastTransactionDate" type="Date"/>
+                    <parameter name="applicableInterestRate" type="Double"/>
+                    <parameter name="openingBalance" type="Double"/>
+                    <parameter name="openingBalanceLocal" type="Double"/>
+                    <parameter name="ledgerBalance" type="Double"/>
+                    <parameter name="ledgerBalanceLocal" type="Double"/>
+                    <parameter name="workingBalance" type="Double"/>
+                    <parameter name="workingBalanceLocal" type="Double"/>
+                    <parameter name="availableBalance" type="Double"/>
+                    <parameter name="availableBalanceLocal" type="Double"/>
+                    <parameter name="overdraftLimit" type="Double"/>
+                    <parameter name="auxiliary1"/>
+                    <parameter name="auxiliary2"/>
+                    <parameter name="auxiliary3"/>
+                    <parameter name="auxiliary4"/>
+                    <parameter name="auxiliary5"/>
+                    <parameter name="auxiliary6"/>
+                    <parameter name="auxiliary7"/>
+                    <parameter name="auxiliary8"/>
+                    <parameter name="auxiliary9"/>
+                    <parameter name="auxiliary10" type="Double"/>
+                    <parameter name="auxiliary11" type="Double"/>
+                    <parameter name="auxiliary12" type="Double"/>
+                    <parameter name="auxiliary13" type="Date"/>
+                    <parameter name="auxiliary14" type="Date"/>
+                    <parameter name="auxiliary15" type="Date"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="find" noun="AccountCurrency" type="java" location="com.netvariant.banqio.connect.impl.AccountServiceRelay" method="findAccountCurrency" authenticate="false">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="accountCustomerId"/>
+            <parameter name="accountNumber"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="account" type="Map">
+                <parameter name="customerId"/>
+                <parameter name="accountNumber"/>
+                <parameter name="currencyId"/>
+                <parameter name="currencyDescription"/>
+                <parameter name="currencyAbbreviation"/>
+            </parameter>
+        </out-parameters>
+    </service>
+
+    <!-- Funds transfer -->
+    <service verb="validate" noun="BankChargePayment" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="validateBankChargePayment" authenticate="false">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="billingIdentifier"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="currencyId"/>
+            <parameter name="amount" type="Double"/>
+            <parameter name="transferDetails"/>
+        </in-parameters>
+    </service>
+    <service verb="pay" noun="BankCharge" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="payBankCharge" authenticate="false">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="billingIdentifier"/>
+            <parameter name="debitAccountNumber"/>
+            <parameter name="currencyId"/>
+            <parameter name="amount" type="Double"/>
+            <parameter name="transferDetails"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transferId"/>
+            <parameter name="externalTransferId"/>
+        </out-parameters>
+    </service>
+    <service verb="refresh" noun="SingleFundsTransfer" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="refreshSingleFundsTransfer" authenticate="false">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="transferId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="transferId"/>
+            <parameter name="postingDate"/>
+            <parameter name="valueDate"/>
+        </out-parameters>
+    </service>
+    <service verb="refresh" noun="BulkFundsTransfer" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="refreshBulkFundsTransfer" authenticate="false">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="transferId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="transferId"/>
+            <parameter name="externalTransferId"/>
+            <parameter name="processingDate"/>
+            <parameter name="errors"/>
+            <parameter name="currencySummaryList" type="List">
+                <parameter name="currencySummary" type="Map">
+                    <parameter name="exchangeRate"/>
+                    <parameter name="currencyAbbreviation"/>
+                    <parameter name="totalAmount"/>
+                    <parameter name="totalDebitAmount"/>
+                    <parameter name="transactionCount"/>
+                    <parameter name="valueDate"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+    <service verb="update" noun="BulkFundsTransfers" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="updateBulkFundsTransfers" authenticate="false">
+    </service>
+    <service verb="dequeue" noun="FundsTransfers" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="dequeueFundsTransfers" authenticate="false"/>
+    <service verb="post" noun="QueuedFundsTransfer" type="java" location="com.netvariant.banqio.connect.impl.FundsTransferServiceRelay" method="postQueuedFundsTransfer" authenticate="false">
+        <in-parameters>
+            <parameter name="transferId"/>
+        </in-parameters>
+    </service>
+
+    <!-- Cheque Book -->
+    <service verb="update" noun="ChequeBooks" type="java" location="com.netvariant.banqio.connect.impl.ChequeServiceRelay" method="updateChequeBooks" authenticate="false"/>
+
+</services>

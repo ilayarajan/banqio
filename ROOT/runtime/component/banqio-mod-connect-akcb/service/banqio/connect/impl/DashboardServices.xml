@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Dashboard -->
+    <service verb="find" noun="NetPosition" type="java" location="com.netvariant.banqio.connect.impl.DashboardService" method="findNetPosition">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="currencyId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalAccounts"/>
+            <parameter name="totalLoans"/>
+            <parameter name="totalDeposits"/>
+            <parameter name="netPosition"/>
+            <parameter name="currencyId"/>
+            <parameter name="currencyDescription"/>
+            <parameter name="currencyAbbreviation"/>
+        </out-parameters>
+    </service>
+
+</services>

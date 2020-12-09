@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        default-menu-include="false">
+
+    <transition name="downloadAccountTransactions" read-only="true" require-session-token="false">
+        <service-call name="banqio.connect.impl.AccountServices.download#AccountTransactions" in-map="context"/>
+        <default-response type="none"/>
+    </transition>
+    <transition name="downloadAccountTransactionAdvice" read-only="true" require-session-token="false">
+        <service-call name="banqio.connect.impl.AccountServices.download#AccountTransactionAdvice" in-map="context"/>
+        <default-response type="none"/>
+    </transition>
+    <transition name="downloadOfficialAccountStatement" read-only="true" require-session-token="false">
+        <service-call name="banqio.connect.impl.AccountServices.download#OfficialAccountStatement" in-map="context"/>
+        <default-response type="none"/>
+    </transition>
+    <transition name="downloadMt940AccountStatement" read-only="true" require-session-token="false">
+        <service-call name="banqio.connect.impl.AccountServices.download#Mt940AccountStatement" in-map="context"/>
+        <default-response type="none"/>
+    </transition>
+    <transition name="downloadTermDepositReceipt" read-only="true" require-session-token="false">
+        <service-call name="banqio.connect.impl.TermDepositServices.download#TermDepositReceipt" in-map="context"/>
+        <default-response type="none"/>
+    </transition>
+    <transition name="downloadOfficialCreditCardStatement" read-only="true" require-session-token="false">
+        <service-call name="banqio.connect.impl.CreditCardServices.download#OfficialCreditCardStatement" in-map="context"/>
+        <default-response type="none"/>
+    </transition>
+    <transition name="downloadFundsTransferTypeTemplate" read-only="true" require-session-token="false">
+        <service-call name="banqio.ft.FundsTransferServices.download#FundsTransferTypeTemplate" in-map="context"/>
+        <default-response type="none"/>
+    </transition>
+    <transition name="downloadFundsTransferPaymentFile" read-only="true" require-session-token="false">
+        <service-call name="banqio.ft.FundsTransferServices.download#FundsTransferPaymentFile" in-map="context"/>
+        <default-response type="none"/>
+    </transition>
+    <transition name="downloadReportInstance" read-only="true" require-session-token="false">
+        <service-call name="banqio.report.ReportServices.download#ReportInstance" in-map="context"/>
+        <default-response type="none"/>
+    </transition>
+
+    <widgets/>
+
+</screen>

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/rest-api-2.1.xsd"
+          name="commons"
+          displayName="Commons REST API"
+          description=""
+          version="1.0.0">
+
+    <resource name="basic" description="Basic API" version="1.0.0">
+        <resource name="alertTemplate">
+            <method type="get" require-authentication="anonymous-all">
+                <service name="commons.basic.BasicServices.find#AlertTemplate"/>
+            </method>
+            <method type="post">
+                <service name="commons.basic.BasicServices.create#AlertTemplate"/>
+            </method>
+            <method type="patch">
+                <service name="commons.basic.BasicServices.update#AlertTemplate"/>
+            </method>
+        </resource>
+        <resource name="language" require-authentication="anonymous-all">
+            <method type="get">
+                <service name="commons.basic.BasicServices.find#Language"/>
+            </method>
+        </resource>
+        <resource name="enumeration" require-authentication="anonymous-all">
+            <method type="get">
+                <service name="commons.basic.BasicServices.find#Enumeration"/>
+            </method>
+        </resource>
+        <resource name="geo">
+            <method type="get" require-authentication="anonymous-all">
+                <service name="commons.basic.BasicServices.find#Geo"/>
+            </method>
+            <method type="post">
+                <service name="commons.basic.BasicServices.create#Geo"/>
+            </method>
+            <method type="patch">
+                <service name="commons.basic.BasicServices.update#Geo"/>
+            </method>
+            <resource name="assoc">
+                <method type="get">
+                    <service name="commons.basic.BasicServices.find#GeoAssoc"/>
+                </method>
+            </resource>
+        </resource>
+        <resource name="uom">
+            <method type="get" require-authentication="anonymous-all">
+                <service name="commons.basic.BasicServices.find#Uom"/>
+            </method>
+            <method type="post">
+                <service name="commons.basic.BasicServices.create#Uom"/>
+            </method>
+            <method type="patch">
+                <service name="commons.basic.BasicServices.update#Uom"/>
+            </method>
+        </resource>
+        <resource name="dataSource" require-authentication="anonymous-all">
+            <method type="get">
+                <service name="commons.basic.BasicServices.find#DataSource"/>
+            </method>
+        </resource>
+        <resource name="status">
+            <resource name="item">
+                <method type="get" require-authentication="anonymous-all">
+                    <service name="commons.basic.BasicServices.find#StatusItem"/>
+                </method>
+                <method type="post">
+                    <service name="commons.basic.BasicServices.create#StatusItem"/>
+                </method>
+                <method type="patch">
+                    <service name="commons.basic.BasicServices.update#StatusItem"/>
+                </method>
+            </resource>
+            <resource name="flow">
+                <method type="get" require-authentication="anonymous-all">
+                    <service name="commons.basic.BasicServices.find#StatusFlow"/>
+                </method>
+                <id name="statusFlowId">
+                    <resource name="item">
+                        <method type="get" require-authentication="anonymous-all">
+                            <service name="commons.basic.BasicServices.find#StatusFlowItem"/>
+                        </method>
+                        <method type="post">
+                            <service name="commons.basic.BasicServices.create#StatusFlowItem"/>
+                        </method>
+                        <method type="patch">
+                            <service name="commons.basic.BasicServices.initial#StatusFlowItem"/>
+                        </method>
+                        <method type="delete">
+                            <service name="commons.basic.BasicServices.delete#StatusFlowItem"/>
+                        </method>
+                    </resource>
+                    <resource name="transition">
+                        <method type="get" require-authentication="anonymous-all">
+                            <service name="commons.basic.BasicServices.find#StatusFlowTransition"/>
+                        </method>
+                        <method type="post">
+                            <service name="commons.basic.BasicServices.create#StatusFlowTransition"/>
+                        </method>
+                        <method type="delete">
+                            <service name="commons.basic.BasicServices.delete#StatusFlowTransition"/>
+                        </method>
+                    </resource>
+                </id>
+            </resource>
+        </resource>
+    </resource>
+
+    <resource name="entity" description="Entity API" version="1.0.0" require-authentication="anonymous-all">
+        <resource name="field" description="Find entity fields">
+            <method type="get">
+                <service name="commons.entity.EntityServices.find#EntityField"/>
+            </method>
+        </resource>
+    </resource>
+
+    <resource name="party" description="Party API" version="1.0.0">
+        <resource name="roleType">
+            <method type="get">
+                <service name="commons.party.PartyServices.find#RoleType"/>
+            </method>
+        </resource>
+    </resource>
+
+    <resource name="server" description="Server API" version="1.0.0" require-authentication="anonymous-all">
+        <resource name="app">
+            <method type="get">
+                <service name="commons.server.ServerServices.find#App"/>
+            </method>
+            <id name="appId">
+                <resource name="version">
+                    <method type="get">
+                        <service name="commons.server.ServerServices.find#AppVersion"/>
+                    </method>
+                </resource>
+                <resource name="branding">
+                    <method type="get">
+                        <service name="commons.server.ServerServices.find#AppBranding"/>
+                    </method>
+                </resource>
+            </id>
+        </resource>
+        <resource name="scene">
+            <method type="get">
+                <service name="commons.server.ServerServices.find#Scene"/>
+            </method>
+            <id name="sceneId">
+                <resource name="message">
+                    <method type="get">
+                        <service name="commons.server.ServerServices.find#SceneMessage"/>
+                    </method>
+                </resource>
+            </id>
+        </resource>
+    </resource>
+
+    <resource name="workflow" description="Workflow API" version="1.0.0">
+        <method type="get">
+            <service name="commons.workflow.WorkflowServices.find#Workflow"/>
+        </method>
+        <method type="post">
+            <service name="commons.workflow.WorkflowServices.create#Workflow"/>
+        </method>
+        <method type="patch">
+            <service name="commons.workflow.WorkflowServices.update#Workflow"/>
+        </method>
+        <id name="workflowId">
+            <resource name="design">
+                <method type="post">
+                    <service name="commons.workflow.WorkflowServices.design#Workflow"/>
+                </method>
+            </resource>
+            <resource name="draft">
+                <method type="post">
+                    <service name="commons.workflow.WorkflowServices.draft#Workflow"/>
+                </method>
+            </resource>
+            <resource name="duplicate">
+                <method type="post">
+                    <service name="commons.workflow.WorkflowServices.duplicate#Workflow"/>
+                </method>
+            </resource>
+            <resource name="approve">
+                <method type="post">
+                    <service name="commons.workflow.WorkflowServices.approve#Workflow"/>
+                </method>
+            </resource>
+            <resource name="variable">
+                <method type="get">
+                    <service name="commons.workflow.WorkflowServices.find#WorkflowVariable"/>
+                </method>
+                <method type="post">
+                    <service name="commons.workflow.WorkflowServices.create#WorkflowVariable"/>
+                </method>
+            </resource>
+            <resource name="initiator">
+                <method type="get">
+                    <service name="commons.workflow.WorkflowServices.find#WorkflowInitiator"/>
+                </method>
+                <method type="post">
+                    <service name="commons.workflow.WorkflowServices.create#WorkflowInitiator"/>
+                </method>
+                <method type="delete">
+                    <service name="commons.workflow.WorkflowServices.expire#WorkflowInitiator"/>
+                </method>
+            </resource>
+        </id>
+        <resource name="stats">
+            <method type="get">
+                <service name="commons.workflow.WorkflowServices.find#WorkflowStats"/>
+            </method>
+        </resource>
+        <resource name="instance">
+            <method type="get">
+                <service name="commons.workflow.WorkflowServices.find#WorkflowInstance"/>
+            </method>
+        </resource>
+        <resource name="task">
+            <method type="get">
+                <service name="commons.workflow.WorkflowServices.find#WorkflowInstanceTask"/>
+            </method>
+            <method type="patch">
+                <service name="commons.workflow.WorkflowServices.update#WorkflowInstanceTask"/>
+            </method>
+            <resource name="count">
+                <method type="get">
+                    <service name="commons.workflow.WorkflowServices.count#WorkflowInstanceTask"/>
+                </method>
+            </resource>
+            <resource name="stats">
+                <method type="get">
+                    <service name="commons.workflow.WorkflowServices.find#WorkflowInstanceTaskStats"/>
+                </method>
+            </resource>
+        </resource>
+        <resource name="type">
+            <method type="get">
+                <service name="commons.workflow.WorkflowServices.find#WorkflowType"/>
+            </method>
+            <resource name="service">
+                <method type="get">
+                    <service name="commons.workflow.WorkflowServices.find#WorkflowTypeService"/>
+                </method>
+            </resource>
+            <resource name="alertTemplate">
+                <method type="get">
+                    <service name="commons.workflow.WorkflowServices.find#WorkflowTypeAlertTemplate"/>
+                </method>
+            </resource>
+        </resource>
+    </resource>
+
+</resource>

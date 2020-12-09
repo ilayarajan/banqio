@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+    
+    <!-- Data feeds -->
+    <moqui.entity.feed.DataFeed dataFeedId="BanqioSearch" dataFeedTypeEnumId="DTFDTP_RT_PUSH" indexOnStartEmpty="Y" feedName="Banqio Search" feedReceiveServiceName="org.moqui.search.SearchServices.index#DataDocuments"/>
+
+    <!-- Data documents -->
+    <dataDocuments dataDocumentId="BanqioCountryHoliday" documentName="Country Holiday" documentTitle="${holidayName}" indexName="banqio" primaryEntityName="banqio.basic.CountryHoliday">
+        <fields fieldSeqId="01" fieldPath="holidayId"/>
+        <fields fieldSeqId="02" fieldPath="geoId"/>
+        <fields fieldSeqId="03" fieldPath="holidayName"/>
+        <fields fieldSeqId="04" fieldPath="fromDate"/>
+        <fields fieldSeqId="05" fieldPath="toDate"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioCurrencyHoliday" documentName="Currency Holiday" documentTitle="${holidayName}" indexName="banqio" primaryEntityName="banqio.basic.CurrencyHoliday">
+        <fields fieldSeqId="01" fieldPath="holidayId"/>
+        <fields fieldSeqId="02" fieldPath="uomId"/>
+        <fields fieldSeqId="03" fieldPath="holidayName"/>
+        <fields fieldSeqId="04" fieldPath="fromDate"/>
+        <fields fieldSeqId="05" fieldPath="toDate"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioPartyClassification" documentName="Party Classification" documentTitle="${description}" indexName="banqio" primaryEntityName="mantle.party.PartyClassification">
+        <fields fieldSeqId="01" fieldPath="partyClassificationId"/>
+        <fields fieldSeqId="02" fieldPath="description"/>
+        <fields fieldSeqId="03" fieldPath="standardCode"/>
+        <fields fieldSeqId="04" fieldPath="classificationTypeEnumId"/>
+        <fields fieldSeqId="05" fieldPath="type:description" fieldNameAlias="classificationTypeDescription"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioParty" documentName="Party" documentTitle="${partyId}" indexName="banqio" primaryEntityName="mantle.party.Party">
+        <fields fieldSeqId="01" fieldPath="partyId"/>
+        <fields fieldSeqId="02" fieldPath="pseudoId"/>
+        <fields fieldSeqId="03" fieldPath="partyTypeEnumId"/>
+        <fields fieldSeqId="04" fieldPath="externalId"/>
+        <fields fieldSeqId="05" fieldPath="comments"/>
+        <fields fieldSeqId="06" fieldPath="type:description" fieldNameAlias="partyTypeDescription"/>
+        <fields fieldSeqId="07" fieldPath="organization:organizationName" fieldNameAlias="organizationName"/>
+        <fields fieldSeqId="08" fieldPath="person:firstName" fieldNameAlias="firstName"/>
+        <fields fieldSeqId="09" fieldPath="person:middleName" fieldNameAlias="middleName"/>
+        <fields fieldSeqId="10" fieldPath="person:lastName" fieldNameAlias="lastName"/>
+        <fields fieldSeqId="11" fieldPath="person:mothersMaidenName" fieldNameAlias="mothersMaidenName"/>
+        <fields fieldSeqId="12" fieldPath="userAccounts:username" fieldNameAlias="username"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioPartyContactMech" documentName="Party Contact Mech" documentTitle="${partyId}-${contactMechId}" indexName="banqio" primaryEntityName="mantle.party.contact.PartyContactMech">
+        <fields fieldSeqId="01" fieldPath="partyId"/>
+        <fields fieldSeqId="02" fieldPath="contactMechId"/>
+        <fields fieldSeqId="03" fieldPath="contactMechPurposeId"/>
+        <fields fieldSeqId="04" fieldPath="purpose:description" fieldNameAlias="contactMechPurposeDescription"/>
+        <fields fieldSeqId="05" fieldPath="contactMech:infoString" fieldNameAlias="infoString"/>
+        <fields fieldSeqId="06" fieldPath="contactMech:type:description" fieldNameAlias="contactMechTypeDescription"/>
+        <fields fieldSeqId="07" fieldPath="contactMech:telecomNumber:countryCode" fieldNameAlias="countryCode"/>
+        <fields fieldSeqId="08" fieldPath="contactMech:telecomNumber:areaCode" fieldNameAlias="areaCode"/>
+        <fields fieldSeqId="09" fieldPath="contactMech:telecomNumber:contactNumber" fieldNameAlias="contactNumber"/>
+        <fields fieldSeqId="10" fieldPath="contactMech:postalAddress:address1" fieldNameAlias="address1"/>
+        <fields fieldSeqId="11" fieldPath="contactMech:postalAddress:address2" fieldNameAlias="address2"/>
+        <fields fieldSeqId="12" fieldPath="contactMech:postalAddress:city" fieldNameAlias="city"/>
+        <fields fieldSeqId="13" fieldPath="contactMech:postalAddress:cityGeoId" fieldNameAlias="cityGeoId"/>
+        <fields fieldSeqId="14" fieldPath="contactMech:postalAddress:cityGeo:geoName" fieldNameAlias="cityName"/>
+        <fields fieldSeqId="15" fieldPath="contactMech:postalAddress:stateProvinceGeoId" fieldNameAlias="stateProvinceGeoId"/>
+        <fields fieldSeqId="16" fieldPath="contactMech:postalAddress:stateProvinceGeo:geoName" fieldNameAlias="stateProvinceName"/>
+        <fields fieldSeqId="17" fieldPath="contactMech:postalAddress:countryGeoId" fieldNameAlias="countryGeoId"/>
+        <fields fieldSeqId="18" fieldPath="contactMech:postalAddress:countryGeo:geoName" fieldNameAlias="countryName"/>
+        <fields fieldSeqId="19" fieldPath="contactMech:postalAddress:postalCode" fieldNameAlias="postalCode"/>
+        <fields fieldSeqId="20" fieldPath="contactMech:postalAddress:postalCodeExt" fieldNameAlias="postalCodeExt"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioPartyIdentification" documentName="Party Identification" documentTitle="${partyId}-${partyIdTypeEnumId}" indexName="banqio" primaryEntityName="mantle.party.PartyIdentification">
+        <fields fieldSeqId="01" fieldPath="partyId"/>
+        <fields fieldSeqId="02" fieldPath="partyIdTypeEnumId"/>
+        <fields fieldSeqId="03" fieldPath="idValue"/>
+        <fields fieldSeqId="04" fieldPath="issuedBy"/>
+        <fields fieldSeqId="05" fieldPath="type:description" fieldNameAlias="partyIdTypeDescription"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioPartyBadge" documentName="Party Badge" documentTitle="${partyBadgeId}" indexName="banqio" primaryEntityName="mantle.party.PartyBadge">
+        <fields fieldSeqId="01" fieldPath="partyBadgeId"/>
+        <fields fieldSeqId="02" fieldPath="partyId"/>
+        <fields fieldSeqId="03" fieldPath="organizationPartyId"/>
+        <fields fieldSeqId="04" fieldPath="serialNumber"/>
+        <fields fieldSeqId="05" fieldPath="storedValue"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioPartyContent" documentName="Party Content" documentTitle="${partyContentId}" indexName="banqio" primaryEntityName="mantle.party.PartyContent">
+        <fields fieldSeqId="01" fieldPath="partyContentId"/>
+        <fields fieldSeqId="02" fieldPath="partyId"/>
+        <fields fieldSeqId="03" fieldPath="contentLocation"/>
+        <fields fieldSeqId="04" fieldPath="partyContentTypeEnumId"/>
+        <fields fieldSeqId="05" fieldPath="description"/>
+        <fields fieldSeqId="06" fieldPath="type:description" fieldNameAlias="partyContentTypeDescription"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioCommunicationEvent" documentName="Communication Event" documentTitle="${communicationEventId}" indexName="banqio" primaryEntityName="mantle.party.communication.CommunicationEvent">
+        <fields fieldSeqId="01" fieldPath="communicationEventId"/>
+        <fields fieldSeqId="02" fieldPath="communicationEventTypeId"/>
+        <fields fieldSeqId="03" fieldPath="contactMechTypeEnumId"/>
+        <fields fieldSeqId="04" fieldPath="statusId"/>
+        <fields fieldSeqId="05" fieldPath="reasonEnumId"/>
+        <fields fieldSeqId="03" fieldPath="fromPartyId"/>
+        <fields fieldSeqId="04" fieldPath="toPartyId"/>
+        <fields fieldSeqId="06" fieldPath="type:description" fieldNameAlias="communicationEventTypeDescription"/>
+        <fields fieldSeqId="07" fieldPath="contactMechType:description" fieldNameAlias="contactMechTypeDescription"/>
+        <fields fieldSeqId="08" fieldPath="status:description" fieldNameAlias="communicationEventStatusDescription"/>
+        <fields fieldSeqId="09" fieldPath="reason:description" fieldNameAlias="communicationEventReasonDescription"/>
+        <fields fieldSeqId="10" fieldPath="fromParty:organization:organizationName" fieldNameAlias="fromPartyOrganizationName"/>
+        <fields fieldSeqId="11" fieldPath="fromParty:person:firstName" fieldNameAlias="fromPartyFirstName"/>
+        <fields fieldSeqId="12" fieldPath="fromParty:person:middleName" fieldNameAlias="fromPartyMiddleName"/>
+        <fields fieldSeqId="13" fieldPath="fromParty:person:lastName" fieldNameAlias="fromPartyLastName"/>
+        <fields fieldSeqId="14" fieldPath="fromParty:person:mothersMaidenName" fieldNameAlias="fromPartyMothersMaidenName"/>
+        <fields fieldSeqId="15" fieldPath="toParty:organization:organizationName" fieldNameAlias="toPartyOrganizationName"/>
+        <fields fieldSeqId="16" fieldPath="toParty:person:firstName" fieldNameAlias="toPartyFirstName"/>
+        <fields fieldSeqId="17" fieldPath="toParty:person:middleName" fieldNameAlias="toPartyMiddleName"/>
+        <fields fieldSeqId="18" fieldPath="toParty:person:lastName" fieldNameAlias="toPartyLastName"/>
+        <fields fieldSeqId="19" fieldPath="toParty:person:mothersMaidenName" fieldNameAlias="toPartyMothersMaidenName"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+    <dataDocuments dataDocumentId="BanqioCommunicationEventContent" documentName="Communication Event Content" documentTitle="${communicationEventContentId}" indexName="banqio" primaryEntityName="mantle.party.communication.CommunicationEventContent">
+        <fields fieldSeqId="01" fieldPath="communicationEventContentId"/>
+        <fields fieldSeqId="02" fieldPath="description"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+
+</entity-facade-xml>

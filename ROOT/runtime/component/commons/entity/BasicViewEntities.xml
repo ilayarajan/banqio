@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <!-- Data source -->
+    <view-entity entity-name="DataSourceDetail" package="moqui.basic">
+        <member-entity entity-alias="dataSource" entity-name="moqui.basic.DataSource"/>
+        <member-entity entity-alias="dataSourceType" entity-name="moqui.basic.Enumeration" join-from-alias="dataSource">
+            <key-map field-name="dataSourceTypeEnumId"/>
+        </member-entity>
+
+        <alias-all entity-alias="dataSource"/>
+        <alias name="dataSourceTypeDescription" entity-alias="dataSourceType" field="description"/>
+    </view-entity>
+
+    <!-- Status flow -->
+    <view-entity entity-name="StatusFlowTransitionDetail" package="moqui.basic">
+        <member-entity entity-alias="transition" entity-name="moqui.basic.StatusFlowTransition"/>
+        <member-entity entity-alias="fromStatus" entity-name="moqui.basic.StatusItem" join-from-alias="transition">
+            <key-map field-name="statusId"/>
+        </member-entity>
+        <member-entity entity-alias="toStatus" entity-name="moqui.basic.StatusItem" join-from-alias="transition">
+            <key-map field-name="toStatusId"/>
+        </member-entity>
+        
+        <alias-all entity-alias="transition">
+            <exclude field="toStatusId"/>
+        </alias-all>
+        <alias-all entity-alias="fromStatus" prefix="from"/>
+        <alias-all entity-alias="toStatus" prefix="to"/>
+    </view-entity>
+
+    <!-- Alert template -->
+    <view-entity entity-name="AlertTemplateDetail" package="commons.basic">
+        <member-entity entity-alias="alertTemplate" entity-name="commons.basic.AlertTemplate"/>
+        <member-entity entity-alias="alertType" entity-name="moqui.basic.Enumeration" join-from-alias="alertTemplate">
+            <key-map field-name="alertTypeEnumId"/>
+        </member-entity>
+
+        <alias-all entity-alias="alertTemplate"/>
+        <alias name="alertTypeDescription" entity-alias="alertType" field="description"/>
+    </view-entity>
+
+</entities>

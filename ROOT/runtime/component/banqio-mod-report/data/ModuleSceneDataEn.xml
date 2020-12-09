@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Navigation -->
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_REPORTS" messageValue="Reports"/>
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_REPORT_CATEGORIES" messageValue="Report Categories"/>
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_REPORT_CATALOG" messageValue="Report Catalog"/>
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_RUN_REPORT" messageValue="Run Report"/>
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_ARCHIVE" messageValue="Archive"/>
+
+    <!-- Report Setup scene -->
+    <CommonsScene sceneId="ADM_RPT_SETUP_BOARD" appId="ADM" sceneName="Report Setup Dashboard" lookupName="/secure/setup/report/dashboard">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Report Setup"/>
+    </CommonsScene>
+
+    <!-- Browse report categories scene -->
+    <CommonsScene sceneId="ADM_BROWSE_RPT_CAT" appId="ADM" sceneName="Browse Report Categories" lookupName="/secure/setup/report/report-category/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Report Categories"/>
+        <messages messageKey="CATEGORY_NAME" messageValue="Category Name"/>
+    </CommonsScene>
+
+    <!-- Create report category scene -->
+    <CommonsScene sceneId="ADM_CREATE_RPT_CAT" appId="ADM" sceneName="Create Report Category" lookupName="/secure/setup/report/report-category/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Report Category"/>
+        <messages messageKey="CATEGORY_NAME" messageValue="Category Name"/>
+    </CommonsScene>
+
+    <!-- Modify report category scene -->
+    <CommonsScene sceneId="ADM_MODIFY_RPT_CAT" appId="ADM" sceneName="Modify Report Category" lookupName="/secure/setup/report/report-category/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Report Category"/>
+        <messages messageKey="CATEGORY_NAME" messageValue="Category Name"/>
+    </CommonsScene>
+
+    <!-- View report category scene -->
+    <CommonsScene sceneId="ADM_VIEW_RPT_CAT" appId="ADM" sceneName="View Report Category" lookupName="/secure/setup/report/report-category/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Report Category"/>
+        <messages messageKey="CATEGORY_NAME" messageValue="Category Name"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+    </CommonsScene>
+
+    <!-- Browse report definitions scene -->
+    <CommonsScene sceneId="ADM_BROWSE_RPT_DEF" appId="ADM" sceneName="Browse Reports" lookupName="/secure/setup/report/report/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Reports"/>
+        <messages messageKey="REPORT_NAME" messageValue="Report Name"/>
+        <messages messageKey="TYPE" messageValue="Type"/>
+        <messages messageKey="CATEGORY" messageValue="Category"/>
+    </CommonsScene>
+
+    <!-- Create report definition scene -->
+    <CommonsScene sceneId="ADM_CREATE_RPT_DEF" appId="ADM" sceneName="Create Report" lookupName="/secure/setup/report/report/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create Report"/>
+        <messages messageKey="GENERAL" messageValue="General"/>
+        <messages messageKey="DATA" messageValue="Data"/>
+        <messages messageKey="NOTES" messageValue="Notes"/>
+        <messages messageKey="REPORT_NAME" messageValue="Report Name"/>
+        <messages messageKey="PSEUDO_ID" messageValue="Pseudo ID"/>
+        <messages messageKey="TYPE" messageValue="Type"/>
+        <messages messageKey="CATEGORY" messageValue="Category"/>
+        <messages messageKey="ICON_CLASS" messageValue="Icon Class"/>
+        <messages messageKey="BROWSE_NOTES" messageValue="Browse Notes"/>
+        <messages messageKey="RUN_NOTES" messageValue="Run Notes"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+        <messages messageKey="SERVICE_NAME" messageValue="Service Name"/>
+        <messages messageKey="DATA_DOCUMENT_ID" messageValue="Data Document ID"/>
+        <messages messageKey="DATA_FIELD" messageValue="Data Field"/>
+        <messages messageKey="CATEGORY_NAME" messageValue="Category Name"/>
+    </CommonsScene>
+
+    <!-- Modify report definition scene -->
+    <CommonsScene sceneId="ADM_MODIFY_RPT_DEF" appId="ADM" sceneName="Modify Report" lookupName="/secure/setup/report/report/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify Report"/>
+        <messages messageKey="GENERAL" messageValue="General"/>
+        <messages messageKey="DATA" messageValue="Data"/>
+        <messages messageKey="NOTES" messageValue="Notes"/>
+        <messages messageKey="REPORT_NAME" messageValue="Report Name"/>
+        <messages messageKey="PSEUDO_ID" messageValue="Pseudo ID"/>
+        <messages messageKey="TYPE" messageValue="Type"/>
+        <messages messageKey="CATEGORY" messageValue="Category"/>
+        <messages messageKey="ICON_CLASS" messageValue="Icon Class"/>
+        <messages messageKey="BROWSE_NOTES" messageValue="Browse Notes"/>
+        <messages messageKey="RUN_NOTES" messageValue="Run Notes"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+        <messages messageKey="SERVICE_NAME" messageValue="Service Name"/>
+        <messages messageKey="DATA_DOCUMENT_ID" messageValue="Data Document ID"/>
+        <messages messageKey="DATA_FIELD" messageValue="Data Field"/>
+        <messages messageKey="CATEGORY_NAME" messageValue="Category Name"/>
+    </CommonsScene>
+
+    <!-- View report definition scene -->
+    <CommonsScene sceneId="ADM_VIEW_RPT_DEF" appId="ADM" sceneName="View Report" lookupName="/secure/setup/report/report/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <includes otherSceneId="ADM_BROWSE_CCY"/>
+        <includes otherSceneId="ADM_BROWSE_PRTY_CLS"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Report"/>
+        <messages messageKey="REPORT_NAME" messageValue="Report Name"/>
+        <messages messageKey="PSEUDO_ID" messageValue="Pseudo ID"/>
+        <messages messageKey="TYPE" messageValue="Type"/>
+        <messages messageKey="CATEGORY" messageValue="Category"/>
+        <messages messageKey="ICON_CLASS" messageValue="Icon Class"/>
+        <messages messageKey="SERVICE_NAME" messageValue="Service Name"/>
+        <messages messageKey="DATA_DOCUMENT_ID" messageValue="Data Document ID"/>
+        <messages messageKey="DATA_FIELD" messageValue="Data Field"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+        <messages messageKey="BROWSE_NOTES" messageValue="Browse Notes"/>
+        <messages messageKey="RUN_NOTES" messageValue="Run Notes"/>
+        <messages messageKey="INPUT_PARAMETERS" messageValue="Input Parameters"/>
+        <messages messageKey="OUTPUT_PARAMETERS" messageValue="Output Parameters"/>
+        <messages messageKey="PARAMETER_NAME" messageValue="Parameter Name"/>
+        <messages messageKey="DISPLAY_NAME" messageValue="Display Name"/>
+        <messages messageKey="OPERATOR" messageValue="Operator"/>
+        <messages messageKey="POSITION" messageValue="Position"/>
+        <messages messageKey="MANDATORY" messageValue="Mandatory"/>
+        <messages messageKey="DISABLED" messageValue="Disabled"/>
+        <messages messageKey="PRICES" messageValue="Prices"/>
+        <messages messageKey="PRICE" messageValue="Price"/>
+        <messages messageKey="CURRENCY" messageValue="Currency"/>
+        <messages messageKey="BILLING_IDENTIFIER" messageValue="Billing Identifier"/>
+        <messages messageKey="PARTY_CLASS" messageValue="Party Class"/>
+        <messages messageKey="EXTERNAL_PARTY_ID" messageValue="External Party ID"/>
+        <messages messageKey="FROM_DATE" messageValue="From Date"/>
+        <messages messageKey="TO_DATE" messageValue="To Date"/>
+        <messages messageKey="APPS" messageValue="Apps"/>
+        <messages messageKey="APP" messageValue="App"/>
+        <messages messageKey="APP_NAME" messageValue="App Name"/>
+        <messages messageKey="APP_DESCRIPTION" messageValue="Description"/>
+    </CommonsScene>
+
+    <!-- Report dashboard scene -->
+    <CommonsScene sceneId="ADM_RPT_BOARD" appId="ADM" sceneName="Report Dashboard" lookupName="/secure/report/dashboard">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Reports"/>
+    </CommonsScene>
+
+    <!-- Browse report scene -->
+    <CommonsScene sceneId="ADM_BROWSE_RPT" appId="ADM" sceneName="Browse Reports" lookupName="/secure/report/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Report Catalog"/>
+        <messages messageKey="REPORT_NAME" messageValue="Report Name"/>
+        <messages messageKey="CATEGORY" messageValue="Category"/>
+    </CommonsScene>
+
+    <!-- Run report scene -->
+    <CommonsScene sceneId="ADM_RUN_RPT" appId="ADM" sceneName="Run Report" lookupName="/secure/report/(\w|-)*/run">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Run Report"/>
+        <messages messageKey="PARAMETERS" messageValue="Parameters"/>
+        <messages messageKey="NO_PARAMETERS" messageValue="This report does not have any parameters."/>
+        <messages messageKey="EXPORT_FORMAT" messageValue="Export Format"/>
+    </CommonsScene>
+
+    <!-- Browse report instances scene -->
+    <CommonsScene sceneId="ADM_BROWSE_RPT_INST" appId="ADM" sceneName="Browse Report Instances" lookupName="/secure/report/archive/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Archive"/>
+        <messages messageKey="REPORT" messageValue="Report"/>
+        <messages messageKey="STATUS" messageValue="Status"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+    </CommonsScene>
+
+    <!-- View report instance scene -->
+    <CommonsScene sceneId="ADM_VIEW_RPT_INST" appId="ADM" sceneName="View Report Instance" lookupName="/secure/report/archive/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View Report"/>
+        <messages messageKey="DOWNLOAD" messageValue="Download"/>
+        <messages messageKey="REPORT_NAME" messageValue="Report Name"/>
+        <messages messageKey="STATUS" messageValue="Status"/>
+        <messages messageKey="ERRORS" messageValue="Errors"/>
+        <messages messageKey="INPUT_BY" messageValue="Input By"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+        <messages messageKey="ASSIGNED_USER" messageValue="Assigned User"/>
+        <messages messageKey="DUE_DATE" messageValue="Due Date"/>
+    </CommonsScene>
+
+</entity-facade-xml>

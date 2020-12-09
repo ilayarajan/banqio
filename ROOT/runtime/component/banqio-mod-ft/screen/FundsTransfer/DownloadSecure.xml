@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        default-menu-include="false">
+
+    <transition name="downloadFundsTransferTypeTemplate" read-only="true" require-session-token="false">
+        <service-call name="banqio.ft.FundsTransferServices.download#FundsTransferTypeTemplate" in-map="context"/>
+        <default-response type="none"/>
+    </transition>
+    <transition name="downloadFundsTransferPaymentFile" read-only="true" require-session-token="false">
+        <service-call name="banqio.ft.FundsTransferServices.download#FundsTransferPaymentFile" in-map="context"/>
+        <default-response type="none"/>
+    </transition>
+
+    <widgets/>
+
+</screen>

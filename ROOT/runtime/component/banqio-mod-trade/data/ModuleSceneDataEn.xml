@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Navigation -->
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_TRADE" messageValue="Trade Finance"/>
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_DC_TYPES" messageValue="DC Types"/>
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_LC_TYPES" messageValue="LC Types"/>
+    <CommonsSceneMsg sceneId="ADM_TPL_SECURE" messageKey="NAV_LG_TYPES" messageValue="LG Types"/>
+
+    <!-- Trade Setup scene -->
+    <CommonsScene sceneId="ADM_TRADE_SETUP_BOARD" appId="ADM" sceneName="Trade Finance Setup Dashboard" lookupName="/secure/setup/trade/dashboard">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Trade Finance Setup"/>
+    </CommonsScene>
+
+    <!-- Browse DC types scene -->
+    <CommonsScene sceneId="ADM_BROWSE_DC_TYPE" appId="ADM" sceneName="Browse DC Types" lookupName="/secure/setup/trade/dc-type/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="DC Types"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Create DC type scene -->
+    <CommonsScene sceneId="ADM_CREATE_DC_TYPE" appId="ADM" sceneName="Create DC Type" lookupName="/secure/setup/trade/dc-type/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create DC Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Modify DC type scene -->
+    <CommonsScene sceneId="ADM_MODIFY_DC_TYPE" appId="ADM" sceneName="Modify DC Type" lookupName="/secure/setup/trade/dc-type/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify DC Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- View DC type scene -->
+    <CommonsScene sceneId="ADM_VIEW_DC_TYPE" appId="ADM" sceneName="View DC Type" lookupName="/secure/setup/trade/dc-type/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View DC Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+    </CommonsScene>
+
+    <!-- Browse LC types scene -->
+    <CommonsScene sceneId="ADM_BROWSE_LC_TYPE" appId="ADM" sceneName="Browse LC Types" lookupName="/secure/setup/trade/lc-type/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="LC Types"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Create LC type scene -->
+    <CommonsScene sceneId="ADM_CREATE_LC_TYPE" appId="ADM" sceneName="Create LC Type" lookupName="/secure/setup/trade/lc-type/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create LC Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Modify LC type scene -->
+    <CommonsScene sceneId="ADM_MODIFY_LC_TYPE" appId="ADM" sceneName="Modify LC Type" lookupName="/secure/setup/trade/lc-type/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify LC Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- View LC type scene -->
+    <CommonsScene sceneId="ADM_VIEW_LC_TYPE" appId="ADM" sceneName="View LC Type" lookupName="/secure/setup/trade/lc-type/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View LC Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+    </CommonsScene>
+
+    <!-- Browse LG types scene -->
+    <CommonsScene sceneId="ADM_BROWSE_LG_TYPE" appId="ADM" sceneName="Browse LG Types" lookupName="/secure/setup/trade/lg-type/browse">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="LG Types"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Create LG type scene -->
+    <CommonsScene sceneId="ADM_CREATE_LG_TYPE" appId="ADM" sceneName="Create LG Type" lookupName="/secure/setup/trade/lg-type/create">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Create LG Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- Modify LG type scene -->
+    <CommonsScene sceneId="ADM_MODIFY_LG_TYPE" appId="ADM" sceneName="Modify LG Type" lookupName="/secure/setup/trade/lg-type/(\w|-)*/modify">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="Modify LG Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+    </CommonsScene>
+
+    <!-- View LG type scene -->
+    <CommonsScene sceneId="ADM_VIEW_LG_TYPE" appId="ADM" sceneName="View LG Type" lookupName="/secure/setup/trade/lg-type/(\w|-)*">
+        <includes otherSceneId="ADM_TPL_SECURE"/>
+        <messages messageKey="PAGE_TITLE" messageValue="View LG Type"/>
+        <messages messageKey="TYPE_NAME" messageValue="Type Name"/>
+        <messages messageKey="TYPE_BEHAVIOUR" messageValue="Type Behaviour"/>
+        <messages messageKey="EXTERNAL_ID" messageValue="External ID"/>
+        <messages messageKey="CREATION_DATE" messageValue="Creation Date"/>
+    </CommonsScene>
+    
+</entity-facade-xml>

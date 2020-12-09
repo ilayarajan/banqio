@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        default-menu-index="2"
+        default-menu-title="User Groups"
+        menu-image="/Static/icons/fugue/users.png">
+
+    <subscreens default-item="FindUserGroup"/>
+
+    <widgets>
+        <subscreens-menu id="userGroupMenu"/>
+        <subscreens-active/>
+    </widgets>
+</screen>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <!-- Transaction -->
+    <entity entity-name="TransactionType" package="banqio.account" short-alias="BanqioTrxType">
+        <field name="typeId" type="id" is-pk="true"/>
+        <field name="externalTypeId" type="text-medium"/>
+        <field name="typeName" type="text-medium" enable-localization="true"/>
+        <field name="typeBehaviourEnumId" type="id"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" title="TransactionTypeBehaviour" related="moqui.basic.Enumeration" short-alias="typeBehaviour">
+            <key-map field-name="typeBehaviourEnumId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="TRX_TYPE_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="TRX_TYPE_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+
+        <index name="transactionTypeIdx1" unique="true">
+            <index-field name="externalTypeId"/>
+        </index>
+    </entity>
+
+    <!-- Transaction reconciliation -->
+    <entity entity-name="TransactionReconciliation" package="banqio.account">
+        <field name="reconciliationId" type="id" is-pk="true"/>
+        <field name="paymentMethodTypeEnumId" type="id"/>
+        <field name="accountId" type="text-medium"/>
+        <field name="transactionId" type="text-medium"/>
+        <field name="customerId" type="text-medium"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="targetUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" title="PaymentMethodType" related="moqui.basic.Enumeration" short-alias="paymentMethodType">
+            <key-map field-name="paymentMethodTypeEnumId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="TRX_RECON_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="TRX_RECON_TARGET_USR_FK" short-alias="targetUser">
+            <key-map field-name="targetUserId"/>
+        </relationship>
+
+        <index name="trxReconciliationIdx1" unique="true">
+            <index-field name="paymentMethodTypeEnumId"/>
+            <index-field name="accountId"/>
+            <index-field name="transactionId"/>
+            <index-field name="customerId"/>
+        </index>
+    </entity>
+
+    <!-- Account -->
+    <entity entity-name="Account" package="banqio.account">
+        <field name="accountId" type="id" is-pk="true"/>
+        <field name="appId" type="id"/>
+        <field name="statusId" type="id"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="targetUserId" type="id" default="ec.user.userId"/>
+        <field name="externalAccountId" type="text-medium"/>
+        <field name="customerId" type="text-medium"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="accountName" type="text-medium"/>
+        <field name="accountNumber" type="text-medium"/>
+        <field name="accountTypeId" type="id"/>
+        <field name="currencyUomId" type="id"/>
+        <field name="chequeBooks" type="number-integer" default="0"/>
+        <field name="instructions" type="text-long"/>
+
+        <relationship type="one" related="commons.server.App" short-alias="app">
+            <key-map field-name="appId"/>
+        </relationship>
+        <relationship type="one" related="moqui.basic.StatusItem" short-alias="accountStatus">
+            <key-map field-name="statusId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="ACCT_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="ACCT_TARGET_USR_FK" short-alias="targetUser">
+            <key-map field-name="targetUserId"/>
+        </relationship>
+        <relationship type="one" related="banqio.account.AccountType" short-alias="accountType">
+            <key-map field-name="accountTypeId"/>
+        </relationship>
+        <relationship type="one" related="moqui.basic.Uom" short-alias="currency">
+            <key-map field-name="currencyUomId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="AccountType" package="banqio.account" short-alias="BanqioAcctType">
+        <field name="typeId" type="id" is-pk="true"/>
+        <field name="externalTypeId" type="text-medium"/>
+        <field name="typeName" type="text-medium" enable-localization="true"/>
+        <field name="typeBehaviourEnumId" type="id"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" title="AccountTypeBehaviour" related="moqui.basic.Enumeration" short-alias="typeBehaviour">
+            <key-map field-name="typeBehaviourEnumId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="ACCT_TYPE_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="ACCT_TYPE_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+
+        <index name="accountTypeIdx1" unique="true">
+            <index-field name="externalTypeId"/>
+        </index>
+    </entity>
+    <entity entity-name="AccountStatus" package="banqio.account" short-alias="BanqioAcctStatus">
+        <field name="statusId" type="id" is-pk="true"/>
+        <field name="externalStatusId" type="text-medium"/>
+        <field name="statusName" type="text-medium" enable-localization="true"/>
+        <field name="statusBehaviourEnumId" type="id"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" title="AccountStatusBehaviour" related="moqui.basic.Enumeration" short-alias="statusBehaviour">
+            <key-map field-name="statusBehaviourEnumId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="ACCT_STAT_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="ACCT_STAT_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+
+        <index name="accountStatusIdx1" unique="true">
+            <index-field name="externalStatusId"/>
+        </index>
+    </entity>
+    <entity entity-name="AccountNickname" package="banqio.account">
+        <field name="userId" type="id" is-pk="true"/>
+        <field name="accountId" type="text-medium" is-pk="true"/>
+        <field name="nickname" type="text-medium"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+
+        <relationship type="one" related="moqui.security.UserAccount">
+            <key-map field-name="userId"/>
+        </relationship>
+
+        <index name="accountNicknameIdx1">
+            <index-field name="accountId"/>
+        </index>
+    </entity>
+    <entity entity-name="AccountTag" package="banqio.account">
+        <field name="userId" type="id" is-pk="true"/>
+        <field name="accountId" type="text-medium" is-pk="true"/>
+        <field name="tag" type="text-medium"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+
+        <relationship type="one" related="moqui.security.UserAccount">
+            <key-map field-name="userId"/>
+        </relationship>
+
+        <index name="accountTagIdx1">
+            <index-field name="accountId"/>
+        </index>
+    </entity>
+
+    <!-- Saving goal -->
+    <entity entity-name="SavingGoal" package="banqio.account">
+        <field name="goalId" type="id" is-pk="true"/>
+        <field name="appId" type="id"/>
+        <field name="statusId" type="id"/>
+        <field name="accountId" type="text-medium"/>
+        <field name="goalName" type="text-medium"/>
+        <field name="fromDate" type="date-time"/>
+        <field name="toDate" type="date-time"/>
+        <field name="startingBalance" type="number-decimal"/>
+        <field name="targetBalance" type="number-decimal"/>
+        <field name="lastBalance" type="number-decimal"/>
+        <field name="lastBalanceDate" type="date-time"/>
+        <field name="highestBalance" type="number-decimal"/>
+        <field name="highestBalanceDate" type="date-time"/>
+        <field name="minMonthlyAmount" type="number-decimal"/>
+        <field name="suggestTransfers" type="text-indicator"/>
+        <field name="lastSuggestionDate" type="date-time"/>
+        <field name="completionDate" type="date-time"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="targetUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" related="commons.server.App" short-alias="app">
+            <key-map field-name="appId"/>
+        </relationship>
+        <relationship type="one" related="moqui.basic.StatusItem" short-alias="goalStatus">
+            <key-map field-name="statusId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="ACCT_SAVE_GOAL_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="ACCT_SAVE_GOAL_TARGET_USR_FK" short-alias="targetUser">
+            <key-map field-name="targetUserId"/>
+        </relationship>
+
+        <index name="savingGoalIdx1">
+            <index-field name="accountId"/>
+        </index>
+    </entity>
+
+</entities>

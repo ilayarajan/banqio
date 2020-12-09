@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <dataDocuments dataDocumentId="BanqioFundsTransferLimit" documentName="Funds Transfer Limit" documentTitle="${limitId}" indexName="banqio" primaryEntityName="banqio.limit.FundsTransferLimit">
+        <fields fieldSeqId="01" fieldPath="limitId"/>
+        <fields fieldSeqId="02" fieldPath="appId"/>
+        <fields fieldSeqId="03" fieldPath="limitTypeEnumId"/>
+        <fields fieldSeqId="04" fieldPath="frequencyUomId"/>
+        <fields fieldSeqId="05" fieldPath="transferTypeId"/>
+        <fields fieldSeqId="08" fieldPath="currencyTypeEnumId"/>
+        <fields fieldSeqId="06" fieldPath="minAmount"/>
+        <fields fieldSeqId="07" fieldPath="maxAmount"/>
+        <fields fieldSeqId="09" fieldPath="app:appName" fieldNameAlias="appName"/>
+        <fields fieldSeqId="10" fieldPath="limitType:description" fieldNameAlias="limitTypeDescription"/>
+        <fields fieldSeqId="11" fieldPath="frequency:description" fieldNameAlias="frequencyDescription"/>
+        <fields fieldSeqId="12" fieldPath="fundsTransferType:typeName" fieldNameAlias="transferTypeName"/>
+        <fields fieldSeqId="13" fieldPath="currencyType:description" fieldNameAlias="currencyTypeDescription"/>
+        <fields fieldSeqId="14" fieldPath="transferCurrency:description" fieldNameAlias="transferCurrencyDescription"/>
+        <fields fieldSeqId="15" fieldPath="transferCurrency:abbreviation" fieldNameAlias="transferCurrencyAbbreviation"/>
+        <fields fieldSeqId="16" fieldPath="debitCurrency:description" fieldNameAlias="debitCurrencyDescription"/>
+        <fields fieldSeqId="17" fieldPath="debitCurrency:abbreviation" fieldNameAlias="debitCurrencyAbbreviation"/>
+
+        <feeds dataFeedId="BanqioSearch"/>
+    </dataDocuments>
+
+</entity-facade-xml>

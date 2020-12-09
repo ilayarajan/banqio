@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <!-- Language -->
+    <entity entity-name="Language" package="commons.basic" short-alias="CommonsLang">
+        <field name="languageId" type="id" is-pk="true"/>
+        <field name="languageName" type="text-medium"/>
+        <field name="iconName" type="text-short"/>
+        <field name="locale" type="text-medium"/>
+        <field name="rtl" type="text-indicator"/>
+        <field name="disabled" type="text-indicator"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+
+        <index name="languageIdx1" unique="true">
+            <index-field name="locale"/>
+        </index>
+    </entity>
+
+    <!-- Alert template -->
+    <entity entity-name="AlertTemplate" package="commons.basic" short-alias="CommonsAlertTpl">
+        <field name="templateId" type="id" is-pk="true"/>
+        <field name="templateName" type="text-medium"/>
+        <field name="alertTypeEnumId" type="id"/>
+        <field name="body" type="text-very-long"/>
+        <field name="style" type="text-very-long"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" title="AlertType" related="moqui.basic.Enumeration" short-alias="alertType">
+            <key-map field-name="alertTypeEnumId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="ALERT_TPL_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="ALERT_TPL_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+    </entity>
+
+    <!-- Geography -->
+    <extend-entity entity-name="Geo" package="moqui.basic">
+        <field name="disabled" type="text-indicator"/>
+    </extend-entity>
+
+    <!-- UOM -->
+    <extend-entity entity-name="Uom" package="moqui.basic">
+        <field name="numericCode" type="text-short"/>
+        <field name="disabled" type="text-indicator"/>
+    </extend-entity>
+
+</entities>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml>
+
+    <!-- Email server -->
+    <moqui.basic.email.EmailServer
+            emailServerId="SYSTEM"
+            smtpHost="smtp.office365.com"
+            smtpPort="587"
+            smtpStartTls="Y"
+            smtpSsl="N"
+            storeHost="outlook.office365.com"
+            storePort="993"
+            storeProtocol="imaps"
+            storeFolder="INBOX"
+            storeDelete="N"
+            storeMarkSeen="Y"
+            storeSkipSeen="Y"
+            mailUsername="noreply@netvariant.com"
+            mailPassword="BrqTZpXF#PqKrJe1"/>
+
+    <!-- Email types -->
+    <moqui.basic.Enumeration enumTypeId="EmailType" enumId="EMT_OTP" description="One Time Password"/>
+    <moqui.basic.Enumeration enumTypeId="EmailType" enumId="EMT_WF_REMINDER" description="Workflow Reminder"/>
+    <moqui.basic.Enumeration enumTypeId="EmailType" enumId="EMT_WF_EMAIL" description="Workflow Email"/>
+    <moqui.basic.Enumeration enumTypeId="EmailType" enumId="EMT_WF_TASK" description="Workflow Task"/>
+
+    <!-- Email templates -->
+    <moqui.basic.email.EmailTemplate
+            emailTemplateId="COM_PWD_RESET"
+            emailTypeEnumId="EMT_PWD_RESET"
+            emailServerId="SYSTEM"
+            webappName="webroot"
+            bodyScreenLocation="component://commons/template/resetPasswordTemplate.xml"
+            description="Password Reset"
+            sendPartial="Y"
+            fromName="Netvariant"
+            fromAddress="noreply@netvariant.com"
+            subject="Your new password"/>
+    <moqui.basic.email.EmailTemplate
+            emailTemplateId="COM_OTP"
+            emailTypeEnumId="EMT_OTP"
+            emailServerId="SYSTEM"
+            webappName="webroot"
+            bodyScreenLocation="component://commons/template/oneTimePasswordTemplate.xml"
+            description="One Time Password"
+            sendPartial="Y"
+            fromName="Netvariant"
+            fromAddress="noreply@netvariant.com"
+            subject="Your one time password"/>
+    <moqui.basic.email.EmailTemplate
+            emailTemplateId="COM_WF_REMINDER"
+            emailTypeEnumId="EMT_WF_REMINDER"
+            emailServerId="SYSTEM"
+            webappName="webroot"
+            bodyScreenLocation="component://commons/template/workflowReminderTemplate.xml"
+            description="Workflow Reminder"
+            sendPartial="Y"
+            fromName="Netvariant"
+            fromAddress="noreply@netvariant.com"
+            subject="Workflow Reminder"/>
+    <moqui.basic.email.EmailTemplate
+            emailTemplateId="COM_WF_EMAIL"
+            emailTypeEnumId="EMT_WF_EMAIL"
+            emailServerId="SYSTEM"
+            webappName="webroot"
+            bodyScreenLocation="component://commons/template/workflowEmailTemplate.xml"
+            description="Workflow Email"
+            sendPartial="Y"
+            fromName="Netvariant"
+            fromAddress="noreply@netvariant.com"
+            subject="Workflow Email"/>
+    <moqui.basic.email.EmailTemplate
+            emailTemplateId="COM_WF_TASK"
+            emailTypeEnumId="EMT_WF_TASK"
+            emailServerId="SYSTEM"
+            webappName="webroot"
+            bodyScreenLocation="component://commons/template/workflowTaskTemplate.xml"
+            description="Workflow Task"
+            sendPartial="Y"
+            fromName="Netvariant"
+            fromAddress="noreply@netvariant.com"
+            subject="Workflow Revision Request"/>
+
+</entity-facade-xml>

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-2.1.xsd">
+
+    <!-- Funds transfer -->
+    <entity entity-name="FundsTransfer" package="banqio.ft">
+        <field name="transferId" type="id" is-pk="true"/>
+        <field name="parentTransferId" type="id"/>
+        <field name="appId" type="id"/>
+        <field name="typeId" type="id"/>
+        <field name="statusId" type="id"/>
+        <field name="ruleId" type="id"/>
+        <field name="customerId" type="text-medium"/>
+        <field name="employerId" type="text-medium"/>
+        <field name="payerId" type="text-medium"/>
+        <field name="payerLegalId" type="text-medium"/>
+        <field name="externalTransferId" type="text-medium"/>
+        <field name="referenceNumber" type="text-medium"/>
+        <field name="invoiceNumber" type="text-medium"/>
+        <field name="debitAccountNumber" type="text-medium"/>
+        <field name="creditAccountNumber" type="text-medium"/>
+        <field name="beneficiaryId" type="id"/>
+        <field name="cardId" type="text-medium"/>
+        <field name="cardNumber" type="text-medium"/>
+        <field name="paymentFileLocation" type="text-medium"/>
+        <field name="transactionCount" type="number-integer"/>
+        <field name="currencyId" type="id"/>
+        <field name="amount" type="number-decimal"/>
+        <field name="amountDebit" type="number-decimal"/>
+        <field name="amountLocal" type="number-decimal"/>
+        <field name="exchangeRate" type="number-decimal"/>
+        <field name="senderReference" type="text-medium"/>
+        <field name="transferDetails" type="text-medium"/>
+        <field name="transferPurposeId" type="id"/>
+        <field name="chargesTypeEnumId" type="id"/>
+        <field name="sameCurrency" type="text-indicator"/>
+        <field name="termsAgreed" type="text-indicator"/>
+        <field name="postingDate" type="date"/>
+        <field name="valueDate" type="date"/>
+        <field name="processingDate" type="date"/>
+        <field name="salaryDate" type="date"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="errors" type="text-very-long"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one-nofk" related="banqio.ft.FundsTransfer" short-alias="parentTransfer">
+            <key-map field-name="parentTransferId"/>
+        </relationship>
+        <relationship type="one" related="commons.server.App" short-alias="app">
+            <key-map field-name="appId"/>
+        </relationship>
+        <relationship type="one" title="FundsTransfer" related="moqui.basic.StatusItem" short-alias="status">
+            <key-map field-name="statusId"/>
+        </relationship>
+        <relationship type="one-nofk" related="banqio.ft.FundsTransferType" short-alias="transferType">
+            <key-map field-name="typeId"/>
+        </relationship>
+        <relationship type="one-nofk" related="banqio.ft.PostingRule" short-alias="postingRule">
+            <key-map field-name="ruleId"/>
+        </relationship>
+        <relationship type="one-nofk" related="banqio.beneficiary.Beneficiary" short-alias="beneficiary">
+            <key-map field-name="beneficiaryId"/>
+        </relationship>
+        <relationship type="one-nofk" related="moqui.basic.Uom" short-alias="currency">
+            <key-map field-name="currencyId"/>
+        </relationship>
+        <relationship type="one-nofk" title="FundsTransferChargesType" related="moqui.basic.Enumeration" short-alias="chargesType">
+            <key-map field-name="chargesTypeEnumId"/>
+        </relationship>
+        <relationship type="one-nofk" related="banqio.ft.FundsTransferPurpose" short-alias="transferPurpose">
+            <key-map field-name="transferPurposeId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="FT_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="FT_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="FundsTransferCurrencySummary" package="banqio.ft">
+        <field name="transferId" type="id" is-pk="true"/>
+        <field name="summarySeqId" type="id" is-pk="true"/>
+        <field name="currencyId" type="id"/>
+        <field name="exchangeRate" type="number-decimal"/>
+        <field name="amount" type="number-decimal"/>
+        <field name="amountDebit" type="number-decimal"/>
+        <field name="amountLimit" type="number-decimal"/>
+        <field name="transactionCount" type="number-integer"/>
+        <field name="valueDate" type="date-time"/>
+
+        <relationship type="one" related="banqio.ft.FundsTransfer" short-alias="transfer">
+            <key-map field-name="transferId"/>
+        </relationship>
+        <relationship type="one" related="moqui.basic.Uom" short-alias="currency">
+            <key-map field-name="currencyId"/>
+        </relationship>
+    </entity>
+    <entity entity-name="FundsTransferType" package="banqio.ft" short-alias="BanqioFtType">
+        <field name="typeId" type="id" is-pk="true"/>
+        <field name="parentTypeId" type="id"/>
+        <field name="externalTypeId" type="text-medium"/>
+        <field name="typeName" type="text-medium" enable-localization="true"/>
+        <field name="typeBehaviourEnumId" type="id"/>
+        <field name="debitFieldTypeEnumId" type="id"/>
+        <field name="currencyFieldTypeEnumId" type="id"/>
+        <field name="chargesFieldTypeEnumId" type="id"/>
+        <field name="chargesAmountThreshold" type="number-decimal"/>
+        <field name="templateFileName" type="text-medium"/>
+        <field name="templateFileLocation" type="text-medium"/>
+        <field name="templateAttached" type="text-indicator"/>
+        <field name="inputNotes" type="text-long"/>
+        <field name="reviewNotes" type="text-long"/>
+        <field name="position" type="number-integer" default="0"/>
+        <field name="disabled" type="text-indicator"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one-nofk" related="banqio.ft.FundsTransferType" short-alias="parentType">
+            <key-map field-name="parentTypeId"/>
+        </relationship>
+        <relationship type="one" title="FundsTransferTypeBehaviour" related="moqui.basic.Enumeration" fk-name="FT_TYPE_BEHAVIOUR_FK" short-alias="typeBehaviour">
+            <key-map field-name="typeBehaviourEnumId"/>
+        </relationship>
+        <relationship type="one" title="FundsTransferDebitFieldType" related="moqui.basic.Enumeration" fk-name="FT_TYPE_DEBIT_FLD_TYPE_FK" short-alias="debitFieldType">
+            <key-map field-name="debitFieldTypeEnumId"/>
+        </relationship>
+        <relationship type="one" title="FundsTransferCurrencyFieldType" related="moqui.basic.Enumeration" fk-name="FT_TYPE_CCY_FLD_TYPE_FK" short-alias="currencyFieldType">
+            <key-map field-name="currencyFieldTypeEnumId"/>
+        </relationship>
+        <relationship type="one" title="FundsTransferChargesFieldType" related="moqui.basic.Enumeration" fk-name="FT_TYPE_CHARGES_FLD_TYPE_FK" short-alias="chargesFieldType">
+            <key-map field-name="chargesFieldTypeEnumId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="FT_TYPE_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="FT_TYPE_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+
+        <index name="fundsTransferTypeIdx1" unique="true">
+            <index-field name="externalTypeId"/>
+        </index>
+    </entity>
+    <entity entity-name="FundsTransferPurpose" package="banqio.ft" short-alias="BanqioFtPurpose">
+        <field name="purposeId" type="id" is-pk="true"/>
+        <field name="parentPurposeId" type="id"/>
+        <field name="transferTypeId" type="id"/>
+        <field name="externalPurposeId" type="text-medium"/>
+        <field name="transferCurrencyId" type="id"/>
+        <field name="purposeName" type="text-medium" enable-localization="true"/>
+        <field name="position" type="number-integer" default="0"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one-nofk" related="banqio.ft.FundsTransferPurpose" short-alias="parentPurpose">
+            <key-map field-name="parentPurposeId"/>
+        </relationship>
+        <relationship type="one" related="banqio.ft.FundsTransferType" short-alias="transferType">
+            <key-map field-name="transferTypeId"/>
+        </relationship>
+        <relationship type="one-nofk" related="moqui.basic.Uom" short-alias="currency">
+            <key-map field-name="transferCurrencyId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="FT_PURPOSE_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="FT_PURPOSE_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+
+        <index name="fundsTransferPurposeIdx1" unique="true">
+            <index-field name="externalPurposeId"/>
+            <index-field name="transferTypeId"/>
+        </index>
+    </entity>
+    <entity entity-name="FundsTransferFrequency" package="banqio.ft">
+        <field name="frequencyId" type="id" is-pk="true"/>
+        <field name="externalFrequencyId" type="text-medium"/>
+        <field name="frequencyName" type="text-long" enable-localization="true"/>
+        <field name="period" type="number-integer"/>
+        <field name="periodUomId" type="id"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" related="moqui.basic.Uom" short-alias="periodUom">
+            <key-map field-name="periodUomId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="FT_FREQ_INPUT_USR_ID" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="FT_FREQ_UPDATE_USR_ID" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+    </entity>
+
+    <!-- Posting rule -->
+    <entity entity-name="PostingRule" package="banqio.ft" short-alias="BanqioFtRule">
+        <field name="ruleId" type="id" is-pk="true"/>
+        <field name="appId" type="id"/>
+        <field name="transferTypeId" type="id"/>
+        <field name="postingTypeEnumId" type="id"/>
+        <field name="currencyTypeEnumId" type="id"/>
+        <field name="transferCurrencyId" type="id"/>
+        <field name="debitCurrencyId" type="id"/>
+        <field name="partyClassificationId" type="id"/>
+        <field name="externalPartyId" type="text-medium"/>
+        <field name="fromAmount" type="number-decimal"/>
+        <field name="toAmount" type="number-decimal"/>
+        <field name="fromTime" type="time"/>
+        <field name="toTime" type="time"/>
+        <field name="fromDate" type="date-time"/>
+        <field name="toDate" type="date-time"/>
+        <field name="description" type="text-medium"/>
+        <field name="disabled" type="text-indicator"/>
+        <field name="rollover" type="number-integer" default="0"/>
+        <field name="position" type="number-integer" default="0"/>
+        <field name="creationDate" type="date-time" default="ec.user.nowTimestamp"/>
+        <field name="inputUserId" type="id" default="ec.user.userId"/>
+        <field name="updateUserId" type="id" default="ec.user.userId"/>
+
+        <relationship type="one" related="commons.server.App" short-alias="app">
+            <key-map field-name="appId"/>
+        </relationship>
+        <relationship type="one" title="FundsTransferPostingType" related="moqui.basic.Enumeration" short-alias="postingType">
+            <key-map field-name="postingTypeEnumId"/>
+        </relationship>
+        <relationship type="one" title="FundsTransferCurrencyType" related="moqui.basic.Enumeration" short-alias="currencyType">
+            <key-map field-name="currencyTypeEnumId"/>
+        </relationship>
+        <relationship type="one-nofk" related="moqui.basic.Uom" fk-name="POST_RULE_FT_CCY_FK" short-alias="transferCurrency">
+            <key-map field-name="transferCurrencyId"/>
+        </relationship>
+        <relationship type="one-nofk" related="moqui.basic.Uom" fk-name="POST_RULE_DEBIT_CCY_FK" short-alias="debitCurrency">
+            <key-map field-name="debitCurrencyId"/>
+        </relationship>
+        <relationship type="one-nofk" related="mantle.party.PartyClassification" short-alias="partyClassification">
+            <key-map field-name="partyClassificationId"/>
+        </relationship>
+        <relationship type="one" related="banqio.ft.FundsTransferType" short-alias="transferType">
+            <key-map field-name="transferTypeId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="POST_RULE_INPUT_USR_FK" short-alias="inputUser">
+            <key-map field-name="inputUserId"/>
+        </relationship>
+        <relationship type="one" related="moqui.security.UserAccount" fk-name="CCY_POST_RULE_UPDATE_USR_FK" short-alias="updateUser">
+            <key-map field-name="updateUserId"/>
+        </relationship>
+    </entity>
+
+</entities>

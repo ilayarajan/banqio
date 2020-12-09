@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/rest-api-2.1.xsd"
+          name="beneficiary"
+          displayName="Beneficiary REST API"
+          version="1.0.0">
+
+    <resource name="beneficiaryType" description="Beneficiary Type API" version="1.0.0">
+        <method type="get">
+            <service name="banqio.beneficiary.BeneficiaryServices.find#BeneficiaryType"/>
+        </method>
+        <method type="post">
+            <service name="banqio.beneficiary.BeneficiaryServices.create#BeneficiaryType"/>
+        </method>
+        <method type="patch">
+            <service name="banqio.beneficiary.BeneficiaryServices.update#BeneficiaryType"/>
+        </method>
+        <resource name="tree">
+            <method type="get">
+                <service name="banqio.beneficiary.BeneficiaryServices.tree#BeneficiaryType"/>
+            </method>
+        </resource>
+        <resource name="localization">
+            <method type="get">
+                <service name="banqio.beneficiary.BeneficiaryServices.find#BeneficiaryTypeL10n"/>
+            </method>
+            <method type="post">
+                <service name="banqio.beneficiary.BeneficiaryServices.create#BeneficiaryTypeL10n"/>
+            </method>
+            <method type="patch">
+                <service name="banqio.beneficiary.BeneficiaryServices.update#BeneficiaryTypeL10n"/>
+            </method>
+            <method type="delete">
+                <service name="banqio.beneficiary.BeneficiaryServices.delete#BeneficiaryTypeL10n"/>
+            </method>
+        </resource>
+    </resource>
+
+</resource>

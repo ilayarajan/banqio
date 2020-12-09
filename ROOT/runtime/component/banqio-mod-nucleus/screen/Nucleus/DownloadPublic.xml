@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        require-authentication="anonymous-all"
+        default-menu-include="false">
+
+    <transition name="downloadAppBrandingLoginBackground" read-only="true" require-session-token="false">
+        <service-call name="commons.server.ServerServices.download#AppBrandingResource" in-map="context">
+            <field-map field-name="resourceField" value="loginBackgroundLocation"/>
+        </service-call>
+        <default-response type="none"/>
+    </transition>
+    <transition name="downloadAppBrandingLoginLogo" read-only="true" require-session-token="false">
+        <service-call name="commons.server.ServerServices.download#AppBrandingResource" in-map="context">
+            <field-map field-name="resourceField" value="loginLogoLocation"/>
+        </service-call>
+        <default-response type="none"/>
+    </transition>
+    <transition name="downloadAppBrandingLogo" read-only="true" require-session-token="false">
+        <service-call name="commons.server.ServerServices.download#AppBrandingResource" in-map="context">
+            <field-map field-name="resourceField" value="logoLocation"/>
+        </service-call>
+        <default-response type="none"/>
+    </transition>
+
+    <widgets/>
+
+</screen>

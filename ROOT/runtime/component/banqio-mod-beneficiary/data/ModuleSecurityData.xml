@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Beneficiary API -->
+    <artifactGroups artifactGroupId="BNQ_BEN_API" description="Banqio Beneficiary API">
+        <artifacts artifactTypeEnumId="AT_REST_PATH" inheritAuthz="Y" nameIsPattern="Y" artifactName="/beneficiary/.*"/>
+    </artifactGroups>
+
+    <!-- Admin Beneficiaries (All) -->
+    <userGroups userGroupId="BNQ_ADM_BEN_ALL" description="Banqio Admin Beneficiaries (All)" groupTypeEnumId="BNQ_ADM_GRP" wikiLocation="component://banqio-mod-beneficiary/wiki/BNQ_ADM_BEN_ALL.md">
+        <authz artifactGroupId="BNQ_BEN_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_ALL"/>
+    </userGroups>
+
+    <!-- Admin Beneficiaries (View) -->
+    <userGroups userGroupId="BNQ_ADM_BEN_VIEW" description="Banqio Admin Beneficiaries (View)" groupTypeEnumId="BNQ_ADM_GRP" wikiLocation="component://banqio-mod-beneficiary/wiki/BNQ_ADM_BEN_VIEW.md">
+        <authz artifactGroupId="BNQ_BEN_API" authzTypeEnumId="AUTHZT_ALLOW" authzActionEnumId="AUTHZA_VIEW"/>
+    </userGroups>
+
+</entity-facade-xml>

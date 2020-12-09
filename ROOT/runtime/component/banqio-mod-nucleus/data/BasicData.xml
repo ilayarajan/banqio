@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- User group types -->
+    <moqui.basic.Enumeration enumTypeId="UserGroupType" enumId="BNQ_COR_GRP" description="Banqio Core Group"/>
+    <moqui.basic.Enumeration enumTypeId="UserGroupType" enumId="BNQ_ADM_GRP" description="Banqio Admin Group"/>
+    <moqui.basic.Enumeration enumTypeId="UserGroupType" enumId="BNQ_PPL_GRP" description="Banqio Personal Group"/>
+    <moqui.basic.Enumeration enumTypeId="UserGroupType" enumId="BNQ_CRP_GRP" description="Banqio Corporate Group"/>
+
+    <!-- Exchange rate data source -->
+    <moqui.basic.Enumeration enumTypeId="DataSourceType" enumId="CurrencyExchangeRate" description="Currency Exchange Rate"/>
+    <moqui.basic.DataSource dataSourceTypeEnumId="CurrencyExchangeRate" dataSourceId="CCY_EXCHANGE_RATE" description="Internal Exchange Rates"/>
+
+    <!-- Check digit type -->
+    <moqui.basic.EnumerationType enumTypeId="CheckDigitType" description="Check Digit Type"/>
+    <moqui.basic.Enumeration enumTypeId="CheckDigitType" enumId="CHECK_DIGIT_MOD97_10" description="Mod 97-10"/>
+    <moqui.basic.Enumeration enumTypeId="CheckDigitType" enumId="CHECK_DIGIT_STATIC" description="Static"/>
+
+    <!-- Geos -->
+    <Geo geoCodeAlpha3="CUW" geoCodeAlpha2="CW" geoId="CUW" geoName="Curacao" geoCodeNumeric="531" geoTypeEnumId="GEOT_COUNTRY"/>
+    <Geo geoCodeAlpha3="JEY" geoCodeAlpha2="JE" geoId="JEY" geoName="Jersey" geoCodeNumeric="832" geoTypeEnumId="GEOT_COUNTRY" disabled="N"/>
+    <Geo geoCodeAlpha3="GGY" geoCodeAlpha2="GG" geoId="GGY" geoName="Guernsey" geoCodeNumeric="831" geoTypeEnumId="GEOT_COUNTRY" disabled="N"/>
+    <Geo geoCodeAlpha3="SSD" geoCodeAlpha2="SS" geoId="SSD" geoName="South Sudan" geoCodeNumeric="728" geoTypeEnumId="GEOT_COUNTRY" disabled="N"/>
+    <Geo geoCodeAlpha3="IMN" geoCodeAlpha2="IM" geoId="IMN" geoName="Isle of Man" geoCodeNumeric="833" geoTypeEnumId="GEOT_COUNTRY" disabled="N"/>
+    <Geo geoCodeAlpha3="BES" geoCodeAlpha2="BQ" geoId="BES" geoName="Bonaire, Sint Eustatius and Saba" geoCodeNumeric="535" geoTypeEnumId="GEOT_COUNTRY" disabled="N"/>
+    <Geo geoCodeAlpha3="SXM" geoCodeAlpha2="SX" geoId="SXM" geoName="Sint Maarten (Dutch part)" geoCodeNumeric="534" geoTypeEnumId="GEOT_COUNTRY" disabled="N"/>
+
+    <!-- Geos -->
+    <Geo geoId="AFG" disabled="N"/>
+    <Geo geoId="ALB" disabled="N"/>
+    <Geo geoId="DZA" disabled="N"/>
+    <Geo geoId="ASM" disabled="N"/>
+    <Geo geoId="AND" disabled="N"/>
+    <Geo geoId="AGO" disabled="N"/>
+    <Geo geoId="AIA" disabled="N"/>
+    <Geo geoId="ATA" disabled="N"/>
+    <Geo geoId="ATG" disabled="N"/>
+    <Geo geoId="ARG" disabled="N"/>
+    <Geo geoId="ARM" disabled="N"/>
+    <Geo geoId="ABW" disabled="N"/>
+    <Geo geoId="AUS" disabled="N"/>
+    <Geo geoId="AUT" disabled="N"/>
+    <Geo geoId="AZE" disabled="N"/>
+    <Geo geoId="BHS" disabled="N"/>
+    <Geo geoId="BHR" disabled="N"/>
+    <Geo geoId="BGD" disabled="N"/>
+    <Geo geoId="BRB" disabled="N"/>
+    <Geo geoId="BLR" disabled="N"/>
+    <Geo geoId="BEL" disabled="N"/>
+    <Geo geoId="BLZ" disabled="N"/>
+    <Geo geoId="BEN" disabled="N"/>
+    <Geo geoId="BMU" disabled="N"/>
+    <Geo geoId="BTN" disabled="N"/>
+    <Geo geoId="BOL" disabled="N"/>
+    <Geo geoId="BIH" disabled="N"/>
+    <Geo geoId="BWA" disabled="N"/>
+    <Geo geoId="BVT" disabled="N"/>
+    <Geo geoId="BRA" disabled="N"/>
+    <Geo geoId="IOT" disabled="N"/>
+    <Geo geoId="BRN" disabled="N"/>
+    <Geo geoId="BGR" disabled="N"/>
+    <Geo geoId="BFA" disabled="N"/>
+    <Geo geoId="BDI" disabled="N"/>
+    <Geo geoId="KHM" disabled="N"/>
+    <Geo geoId="CMR" disabled="N"/>
+    <Geo geoId="CAN" disabled="N"/>
+    <Geo geoId="CPV" disabled="N"/>
+    <Geo geoId="CYM" disabled="N"/>
+    <Geo geoId="CAF" disabled="N"/>
+    <Geo geoId="TCD" disabled="N"/>
+    <Geo geoId="CHL" disabled="N"/>
+    <Geo geoId="CHN" disabled="N"/>
+    <Geo geoId="CXR" disabled="N"/>
+    <Geo geoId="CCK" disabled="N"/>
+    <Geo geoId="COL" disabled="N"/>
+    <Geo geoId="COM" disabled="N"/>
+    <Geo geoId="COG" disabled="N"/>
+    <Geo geoId="COD" disabled="N"/>
+    <Geo geoId="COK" disabled="N"/>
+    <Geo geoId="CRI" disabled="N"/>
+    <Geo geoId="CIV" disabled="N"/>
+    <Geo geoId="HRV" disabled="N"/>
+    <Geo geoId="CUB" disabled="N"/>
+    <Geo geoId="CYP" disabled="N"/>
+    <Geo geoId="CZE" disabled="N"/>
+    <Geo geoId="DNK" disabled="N"/>
+    <Geo geoId="DJI" disabled="N"/>
+    <Geo geoId="DMA" disabled="N"/>
+    <Geo geoId="DOM" disabled="N"/>
+    <Geo geoId="TLS" disabled="N"/>
+    <Geo geoId="ECU" disabled="N"/>
+    <Geo geoId="EGY" disabled="N"/>
+    <Geo geoId="SLV" disabled="N"/>
+    <Geo geoId="GNQ" disabled="N"/>
+    <Geo geoId="ERI" disabled="N"/>
+    <Geo geoId="EST" disabled="N"/>
+    <Geo geoId="ETH" disabled="N"/>
+    <Geo geoId="FLK" disabled="N"/>
+    <Geo geoId="FRO" disabled="N"/>
+    <Geo geoId="FJI" disabled="N"/>
+    <Geo geoId="FIN" disabled="N"/>
+    <Geo geoId="FXX" disabled="N"/>
+    <Geo geoId="FRA" disabled="N"/>
+    <Geo geoId="GUF" disabled="N"/>
+    <Geo geoId="PYF" disabled="N"/>
+    <Geo geoId="ATF" disabled="N"/>
+    <Geo geoId="GAB" disabled="N"/>
+    <Geo geoId="GMB" disabled="N"/>
+    <Geo geoId="GEO" disabled="N"/>
+    <Geo geoId="DEU" disabled="N"/>
+    <Geo geoId="GHA" disabled="N"/>
+    <Geo geoId="GIB" disabled="N"/>
+    <Geo geoId="GRC" disabled="N"/>
+    <Geo geoId="GRL" disabled="N"/>
+    <Geo geoId="GRD" disabled="N"/>
+    <Geo geoId="GLP" disabled="N"/>
+    <Geo geoId="GUM" disabled="N"/>
+    <Geo geoId="GTM" disabled="N"/>
+    <Geo geoId="GIN" disabled="N"/>
+    <Geo geoId="GNB" disabled="N"/>
+    <Geo geoId="GUY" disabled="N"/>
+    <Geo geoId="HTI" disabled="N"/>
+    <Geo geoId="HMD" disabled="N"/>
+    <Geo geoId="VAT" disabled="N"/>
+    <Geo geoId="HND" disabled="N"/>
+    <Geo geoId="HKG" disabled="N"/>
+    <Geo geoId="HUN" disabled="N"/>
+    <Geo geoId="ISL" disabled="N"/>
+    <Geo geoId="IND" disabled="N"/>
+    <Geo geoId="IDN" disabled="N"/>
+    <Geo geoId="IRN" disabled="N"/>
+    <Geo geoId="IRQ" disabled="N"/>
+    <Geo geoId="IRL" disabled="N"/>
+    <Geo geoId="ISR" disabled="Y"/>
+    <Geo geoId="ITA" disabled="N"/>
+    <Geo geoId="JAM" disabled="N"/>
+    <Geo geoId="JPN" disabled="N"/>
+    <Geo geoId="JOR" disabled="N"/>
+    <Geo geoId="KAZ" disabled="N"/>
+    <Geo geoId="KEN" disabled="N"/>
+    <Geo geoId="KIR" disabled="N"/>
+    <Geo geoId="PRK" disabled="N"/>
+    <Geo geoId="KOR" disabled="N"/>
+    <Geo geoId="KWT" disabled="N"/>
+    <Geo geoId="KGZ" disabled="N"/>
+    <Geo geoId="LAO" disabled="N"/>
+    <Geo geoId="LVA" disabled="N"/>
+    <Geo geoId="LBN" disabled="N"/>
+    <Geo geoId="LSO" disabled="N"/>
+    <Geo geoId="LBR" disabled="N"/>
+    <Geo geoId="LBY" disabled="N"/>
+    <Geo geoId="LIE" disabled="N"/>
+    <Geo geoId="LTU" disabled="N"/>
+    <Geo geoId="LUX" disabled="N"/>
+    <Geo geoId="MAC" disabled="N"/>
+    <Geo geoId="MKD" disabled="N"/>
+    <Geo geoId="MDG" disabled="N"/>
+    <Geo geoId="MWI" disabled="N"/>
+    <Geo geoId="MYS" disabled="N"/>
+    <Geo geoId="MDV" disabled="N"/>
+    <Geo geoId="MLI" disabled="N"/>
+    <Geo geoId="MLT" disabled="N"/>
+    <Geo geoId="MHL" disabled="N"/>
+    <Geo geoId="MTQ" disabled="N"/>
+    <Geo geoId="MRT" disabled="N"/>
+    <Geo geoId="MUS" disabled="N"/>
+    <Geo geoId="MYT" disabled="N"/>
+    <Geo geoId="MEX" disabled="N"/>
+    <Geo geoId="FSM" disabled="N"/>
+    <Geo geoId="MDA" disabled="N"/>
+    <Geo geoId="MCO" disabled="N"/>
+    <Geo geoId="MNG" disabled="N"/>
+    <Geo geoId="MNE" disabled="N"/>
+    <Geo geoId="MSR" disabled="N"/>
+    <Geo geoId="MAR" disabled="N"/>
+    <Geo geoId="MOZ" disabled="N"/>
+    <Geo geoId="MMR" disabled="N"/>
+    <Geo geoId="NAM" disabled="N"/>
+    <Geo geoId="NRU" disabled="N"/>
+    <Geo geoId="NPL" disabled="N"/>
+    <Geo geoId="NLD" disabled="N"/>
+    <Geo geoId="ANT" disabled="N"/>
+    <Geo geoId="NCL" disabled="N"/>
+    <Geo geoId="NZL" disabled="N"/>
+    <Geo geoId="NIC" disabled="N"/>
+    <Geo geoId="NER" disabled="N"/>
+    <Geo geoId="NGA" disabled="N"/>
+    <Geo geoId="NIU" disabled="N"/>
+    <Geo geoId="NFK" disabled="N"/>
+    <Geo geoId="MNP" disabled="N"/>
+    <Geo geoId="NOR" disabled="N"/>
+    <Geo geoId="OMN" disabled="N"/>
+    <Geo geoId="PAK" disabled="N"/>
+    <Geo geoId="PLW" disabled="N"/>
+    <Geo geoId="PSE" disabled="N"/>
+    <Geo geoId="PAN" disabled="N"/>
+    <Geo geoId="PNG" disabled="N"/>
+    <Geo geoId="PRY" disabled="N"/>
+    <Geo geoId="PER" disabled="N"/>
+    <Geo geoId="PHL" disabled="N"/>
+    <Geo geoId="PCN" disabled="N"/>
+    <Geo geoId="POL" disabled="N"/>
+    <Geo geoId="PRT" disabled="N"/>
+    <Geo geoId="PRI" disabled="N"/>
+    <Geo geoId="QAT" disabled="N"/>
+    <Geo geoId="REU" disabled="N"/>
+    <Geo geoId="ROU" disabled="N"/>
+    <Geo geoId="RUS" disabled="N"/>
+    <Geo geoId="RWA" disabled="N"/>
+    <Geo geoId="KNA" disabled="N"/>
+    <Geo geoId="LCA" disabled="N"/>
+    <Geo geoId="VCT" disabled="N"/>
+    <Geo geoId="WSM" disabled="N"/>
+    <Geo geoId="SMR" disabled="N"/>
+    <Geo geoId="STP" disabled="N"/>
+    <Geo geoId="SAU" disabled="N"/>
+    <Geo geoId="SEN" disabled="N"/>
+    <Geo geoId="SRB" disabled="N"/>
+    <Geo geoId="SYC" disabled="N"/>
+    <Geo geoId="SLE" disabled="N"/>
+    <Geo geoId="SGP" disabled="N"/>
+    <Geo geoId="SVK" disabled="N"/>
+    <Geo geoId="SVN" disabled="N"/>
+    <Geo geoId="SLB" disabled="N"/>
+    <Geo geoId="SOM" disabled="N"/>
+    <Geo geoId="SGS" disabled="N"/>
+    <Geo geoId="ZAF" disabled="N"/>
+    <Geo geoId="ESP" disabled="N"/>
+    <Geo geoId="LKA" disabled="N"/>
+    <Geo geoId="SHN" disabled="N"/>
+    <Geo geoId="SPM" disabled="N"/>
+    <Geo geoId="SDN" disabled="N"/>
+    <Geo geoId="SUR" disabled="N"/>
+    <Geo geoId="SJM" disabled="N"/>
+    <Geo geoId="SWZ" disabled="N"/>
+    <Geo geoId="SWE" disabled="N"/>
+    <Geo geoId="CHE" disabled="N"/>
+    <Geo geoId="SYR" disabled="N"/>
+    <Geo geoId="TWN" disabled="N"/>
+    <Geo geoId="TJK" disabled="N"/>
+    <Geo geoId="TZA" disabled="N"/>
+    <Geo geoId="THA" disabled="N"/>
+    <Geo geoId="TGO" disabled="N"/>
+    <Geo geoId="TKL" disabled="N"/>
+    <Geo geoId="TON" disabled="N"/>
+    <Geo geoId="TTO" disabled="N"/>
+    <Geo geoId="TUN" disabled="N"/>
+    <Geo geoId="TUR" disabled="N"/>
+    <Geo geoId="TKM" disabled="N"/>
+    <Geo geoId="TCA" disabled="N"/>
+    <Geo geoId="TUV" disabled="N"/>
+    <Geo geoId="UGA" disabled="N"/>
+    <Geo geoId="UKR" disabled="N"/>
+    <Geo geoId="USA" disabled="N"/>
+    <Geo geoId="UMI" disabled="N"/>
+    <Geo geoId="ARE" disabled="N"/>
+    <Geo geoId="GBR" disabled="N"/>
+    <Geo geoId="URY" disabled="N"/>
+    <Geo geoId="UZB" disabled="N"/>
+    <Geo geoId="VUT" disabled="N"/>
+    <Geo geoId="VEN" disabled="N"/>
+    <Geo geoId="VNM" disabled="N"/>
+    <Geo geoId="VGB" disabled="N"/>
+    <Geo geoId="VIR" disabled="N"/>
+    <Geo geoId="WLF" disabled="N"/>
+    <Geo geoId="ESH" disabled="N"/>
+    <Geo geoId="YEM" disabled="N"/>
+    <Geo geoId="YUG" disabled="N"/>
+    <Geo geoId="ZMB" disabled="N"/>
+    <Geo geoId="ZWE" disabled="N"/>
+
+    <!-- Uom -->
+    <Uom uomId="ADP" disabled="N"/>
+    <Uom uomId="AED" disabled="N"/>
+    <Uom uomId="AFA" disabled="N"/>
+    <Uom uomId="ALL" disabled="N"/>
+    <Uom uomId="AMD" disabled="N"/>
+    <Uom uomId="ANG" disabled="N"/>
+    <Uom uomId="AOK" disabled="N"/>
+    <Uom uomId="ARA" disabled="N"/>
+    <Uom uomId="ARS" disabled="N"/>
+    <Uom uomId="AUD" disabled="N"/>
+    <Uom uomId="AWG" disabled="N"/>
+    <Uom uomId="AZM" disabled="N"/>
+    <Uom uomId="BAD" disabled="N"/>
+    <Uom uomId="BBD" disabled="N"/>
+    <Uom uomId="BDT" disabled="N"/>
+    <Uom uomId="BGN" disabled="N"/>
+    <Uom uomId="BHD" disabled="N"/>
+    <Uom uomId="BIF" disabled="N"/>
+    <Uom uomId="BMD" disabled="N"/>
+    <Uom uomId="BND" disabled="N"/>
+    <Uom uomId="BOB" disabled="N"/>
+    <Uom uomId="BRL" disabled="N"/>
+    <Uom uomId="BRR" disabled="N"/>
+    <Uom uomId="BSD" disabled="N"/>
+    <Uom uomId="BTC" disabled="Y"/>
+    <Uom uomId="BWP" disabled="N"/>
+    <Uom uomId="BYR" disabled="N"/>
+    <Uom uomId="BZD" disabled="N"/>
+    <Uom uomId="CAD" disabled="N"/>
+    <Uom uomId="CDP" disabled="N"/>
+    <Uom uomId="CHF" disabled="N"/>
+    <Uom uomId="CLP" disabled="N"/>
+    <Uom uomId="CNY" disabled="N"/>
+    <Uom uomId="COP" disabled="N"/>
+    <Uom uomId="CRC" disabled="N"/>
+    <Uom uomId="CUP" disabled="N"/>
+    <Uom uomId="CVE" disabled="N"/>
+    <Uom uomId="CYP" disabled="N"/>
+    <Uom uomId="CZK" disabled="N"/>
+    <Uom uomId="DJF" disabled="N"/>
+    <Uom uomId="DKK" disabled="N"/>
+    <Uom uomId="DOP" disabled="N"/>
+    <Uom uomId="DRP" disabled="N"/>
+    <Uom uomId="DZD" disabled="N"/>
+    <Uom uomId="ECS" disabled="N"/>
+    <Uom uomId="EEK" disabled="N"/>
+    <Uom uomId="EGP" disabled="N"/>
+    <Uom uomId="ETB" disabled="N"/>
+    <Uom uomId="EUR" disabled="N"/>
+    <Uom uomId="FJD" disabled="N"/>
+    <Uom uomId="FKP" disabled="N"/>
+    <Uom uomId="GBP" disabled="N"/>
+    <Uom uomId="GEK" disabled="N"/>
+    <Uom uomId="GHC" disabled="N"/>
+    <Uom uomId="GIP" disabled="N"/>
+    <Uom uomId="GMD" disabled="N"/>
+    <Uom uomId="GNF" disabled="N"/>
+    <Uom uomId="GTQ" disabled="N"/>
+    <Uom uomId="GWP" disabled="N"/>
+    <Uom uomId="GYD" disabled="N"/>
+    <Uom uomId="HKD" disabled="N"/>
+    <Uom uomId="HNL" disabled="N"/>
+    <Uom uomId="HRD" disabled="N"/>
+    <Uom uomId="HTG" disabled="N"/>
+    <Uom uomId="HUF" disabled="N"/>
+    <Uom uomId="IDR" disabled="N"/>
+    <Uom uomId="ILS" disabled="Y"/>
+    <Uom uomId="INR" disabled="N"/>
+    <Uom uomId="IQD" disabled="N"/>
+    <Uom uomId="IRR" disabled="N"/>
+    <Uom uomId="ISK" disabled="N"/>
+    <Uom uomId="JMD" disabled="N"/>
+    <Uom uomId="JOD" disabled="N"/>
+    <Uom uomId="JPY" disabled="N"/>
+    <Uom uomId="KES" disabled="N"/>
+    <Uom uomId="KHR" disabled="N"/>
+    <Uom uomId="KIS" disabled="N"/>
+    <Uom uomId="KMF" disabled="N"/>
+    <Uom uomId="KPW" disabled="N"/>
+    <Uom uomId="KRW" disabled="N"/>
+    <Uom uomId="KWD" disabled="N"/>
+    <Uom uomId="KYD" disabled="N"/>
+    <Uom uomId="KZT" disabled="N"/>
+    <Uom uomId="LAK" disabled="N"/>
+    <Uom uomId="LBP" disabled="N"/>
+    <Uom uomId="LKR" disabled="N"/>
+    <Uom uomId="LRD" disabled="N"/>
+    <Uom uomId="LSL" disabled="N"/>
+    <Uom uomId="LTL" disabled="N"/>
+    <Uom uomId="LVL" disabled="N"/>
+    <Uom uomId="LYD" disabled="N"/>
+    <Uom uomId="MAD" disabled="N"/>
+    <Uom uomId="MDL" disabled="N"/>
+    <Uom uomId="MGF" disabled="N"/>
+    <Uom uomId="MNT" disabled="N"/>
+    <Uom uomId="MOP" disabled="N"/>
+    <Uom uomId="MRO" disabled="N"/>
+    <Uom uomId="MTL" disabled="N"/>
+    <Uom uomId="MUR" disabled="N"/>
+    <Uom uomId="MVR" disabled="N"/>
+    <Uom uomId="MWK" disabled="N"/>
+    <Uom uomId="MXN" disabled="N"/>
+    <Uom uomId="MXP" disabled="N"/>
+    <Uom uomId="MYR" disabled="N"/>
+    <Uom uomId="MZM" disabled="N"/>
+    <Uom uomId="NGN" disabled="N"/>
+    <Uom uomId="NIC" disabled="N"/>
+    <Uom uomId="NIO" disabled="N"/>
+    <Uom uomId="NIS" disabled="N"/>
+    <Uom uomId="NOK" disabled="N"/>
+    <Uom uomId="NPR" disabled="N"/>
+    <Uom uomId="NZD" disabled="N"/>
+    <Uom uomId="OMR" disabled="N"/>
+    <Uom uomId="PAB" disabled="N"/>
+    <Uom uomId="PEI" disabled="N"/>
+    <Uom uomId="PEN" disabled="N"/>
+    <Uom uomId="PES" disabled="N"/>
+    <Uom uomId="PGK" disabled="N"/>
+    <Uom uomId="PHP" disabled="N"/>
+    <Uom uomId="PKR" disabled="N"/>
+    <Uom uomId="PLN" disabled="N"/>
+    <Uom uomId="PLZ" disabled="N"/>
+    <Uom uomId="PYG" disabled="N"/>
+    <Uom uomId="QAR" disabled="N"/>
+    <Uom uomId="ROL" disabled="N"/>
+    <Uom uomId="RUR" disabled="N"/>
+    <Uom uomId="RWF" disabled="N"/>
+    <Uom uomId="SAR" disabled="N"/>
+    <Uom uomId="SBD" disabled="N"/>
+    <Uom uomId="SCR" disabled="N"/>
+    <Uom uomId="SDP" disabled="N"/>
+    <Uom uomId="SEK" disabled="N"/>
+    <Uom uomId="SGD" disabled="N"/>
+    <Uom uomId="SHP" disabled="N"/>
+    <Uom uomId="SLL" disabled="N"/>
+    <Uom uomId="SOL" disabled="N"/>
+    <Uom uomId="SOS" disabled="N"/>
+    <Uom uomId="SRG" disabled="N"/>
+    <Uom uomId="STD" disabled="N"/>
+    <Uom uomId="SUR" disabled="N"/>
+    <Uom uomId="SVC" disabled="N"/>
+    <Uom uomId="SYP" disabled="N"/>
+    <Uom uomId="SZL" disabled="N"/>
+    <Uom uomId="THB" disabled="N"/>
+    <Uom uomId="TJR" disabled="N"/>
+    <Uom uomId="TMM" disabled="N"/>
+    <Uom uomId="TND" disabled="N"/>
+    <Uom uomId="TOP" disabled="N"/>
+    <Uom uomId="TPE" disabled="N"/>
+    <Uom uomId="TRY" disabled="N"/>
+    <Uom uomId="TTD" disabled="N"/>
+    <Uom uomId="TWD" disabled="N"/>
+    <Uom uomId="TZS" disabled="N"/>
+    <Uom uomId="UAH" disabled="N"/>
+    <Uom uomId="UGS" disabled="N"/>
+    <Uom uomId="USD" disabled="N"/>
+    <Uom uomId="UYP" disabled="N"/>
+    <Uom uomId="UYU" disabled="N"/>
+    <Uom uomId="VEB" disabled="N"/>
+    <Uom uomId="VND" disabled="N"/>
+    <Uom uomId="VUV" disabled="N"/>
+    <Uom uomId="WST" disabled="N"/>
+    <Uom uomId="XAF" disabled="N"/>
+    <Uom uomId="XCD" disabled="N"/>
+    <Uom uomId="XOF" disabled="N"/>
+    <Uom uomId="YER" disabled="N"/>
+    <Uom uomId="ZAR" disabled="N"/>
+    <Uom uomId="ZMK" disabled="N"/>
+    <Uom uomId="ZRZ" disabled="N"/>
+    <Uom uomId="ZWD" disabled="N"/>
+
+    <!-- Workflow request status -->
+    <moqui.basic.StatusItem statusTypeId="WorkflowRequest" statusId="WF_REQ_PEND" sequenceNum="1" description="Pending"/>
+    <moqui.basic.StatusItem statusTypeId="WorkflowRequest" statusId="WF_REQ_REVIEW" sequenceNum="2" description="In Review"/>
+    <moqui.basic.StatusItem statusTypeId="WorkflowRequest" statusId="WF_REQ_EXEC" sequenceNum="3" description="Executed"/>
+    <moqui.basic.StatusItem statusTypeId="WorkflowRequest" statusId="WF_REQ_REJECT" sequenceNum="4" description="Rejected"/>
+    <moqui.basic.StatusItem statusTypeId="WorkflowRequest" statusId="WF_REQ_CANCEL" sequenceNum="5" description="Canceled"/>
+
+    <!-- Workflow request status flow -->
+    <moqui.basic.StatusFlow statusFlowId="WorkflowRequestStatusFlow" statusTypeId="WorkflowRequest" description="Workflow Request Status Flow"/>
+    <moqui.basic.StatusFlowItem statusFlowId="WorkflowRequestStatusFlow" statusId="WF_REQ_PEND" isInitial="Y"/>
+    <moqui.basic.StatusFlowItem statusFlowId="WorkflowRequestStatusFlow" statusId="WF_REQ_REVIEW" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="WorkflowRequestStatusFlow" statusId="WF_REQ_EXEC" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="WorkflowRequestStatusFlow" statusId="WF_REQ_REJECT" isInitial="N"/>
+    <moqui.basic.StatusFlowItem statusFlowId="WorkflowRequestStatusFlow" statusId="WF_REQ_CANCEL" isInitial="N"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="WorkflowRequestStatusFlow" statusId="WF_REQ_PEND" toStatusId="WF_REQ_REVIEW" transitionSequence="1" transitionName="Review"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="WorkflowRequestStatusFlow" statusId="WF_REQ_PEND" toStatusId="WF_REQ_CANCEL" transitionSequence="2" transitionName="Cancel"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="WorkflowRequestStatusFlow" statusId="WF_REQ_REVIEW" toStatusId="WF_REQ_EXEC" transitionSequence="1" transitionName="Execute"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="WorkflowRequestStatusFlow" statusId="WF_REQ_REVIEW" toStatusId="WF_REQ_REJECT" transitionSequence="2" transitionName="Reject"/>
+    <moqui.basic.StatusFlowTransition statusFlowId="WorkflowRequestStatusFlow" statusId="WF_REQ_REVIEW" toStatusId="WF_REQ_CANCEL" transitionSequence="1" transitionName="Cancel"/>
+
+</entity-facade-xml>

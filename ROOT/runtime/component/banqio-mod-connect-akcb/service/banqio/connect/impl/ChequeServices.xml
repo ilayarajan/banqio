@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <!-- Cheque -->
+    <service verb="find" noun="IssuedCheque" type="java" location="com.netvariant.banqio.connect.impl.ChequeServiceRelay" method="findIssuedCheques">
+        <implements service="banqio.cheque.ChequeServices.find#IssuedCheque"/>
+    </service>
+    <service verb="find" noun="PendingPostDatedCheque" type="java" location="com.netvariant.banqio.connect.impl.ChequeServiceRelay" method="findPendingPostDatedCheques">
+        <implements service="banqio.cheque.ChequeServices.find#PendingPostDatedCheque"/>
+    </service>
+
+    <!-- Cheque book -->
+    <service verb="create" noun="ChequeBook" type="java" location="com.netvariant.banqio.connect.impl.ChequeServiceRelay" method="createChequeBook">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="accountNumber"/>
+            <parameter name="deliveryBranchId"/>
+            <parameter name="bookCount" type="Integer"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="bookId"/>
+        </out-parameters>
+    </service>
+    <service verb="commit" noun="ChequeBook" type="java" location="com.netvariant.banqio.connect.impl.ChequeServiceRelay" method="commitChequeBook">
+        <in-parameters>
+            <parameter name="instanceId"/>
+        </in-parameters>
+    </service>
+    <service verb="reject" noun="ChequeBook" type="java" location="com.netvariant.banqio.connect.impl.ChequeServiceRelay" method="rejectChequeBook">
+        <in-parameters>
+            <parameter name="instanceId"/>
+        </in-parameters>
+    </service>
+    <service verb="create" noun="T24ChequeBook" type="java" location="com.netvariant.banqio.connect.impl.ChequeServiceRelay" method="createT24ChequeBook">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="customerId"/>
+            <parameter name="bookId"/>
+            <parameter name="accountNumber"/>
+            <parameter name="deliveryBranchId"/>
+            <parameter name="bookCount" type="Integer"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="bookId"/>
+            <parameter name="externalBookId"/>
+            <parameter name="notifyEmailAddress"/>
+        </out-parameters>
+    </service>
+    <service verb="get" noun="T24ChequeBookStatus" type="java" location="com.netvariant.banqio.connect.impl.ChequeServiceRelay" method="getT24ChequeBookStatus">
+        <in-parameters>
+            <parameter name="externalBookId"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="transactionId"/>
+            <parameter name="externalBookId"/>
+            <parameter name="statusId"/>
+        </out-parameters>
+    </service>
+    <service verb="get" noun="T24ChequeBooks" type="java" location="com.netvariant.banqio.connect.impl.ChequeServiceRelay" method="getT24ChequeBooks">
+        <in-parameters>
+            <parameter name="sourceAppId"/>
+            <parameter name="accountNumber"/>
+            <parameter name="requestDate"/>
+        </in-parameters>
+        <out-parameters>
+            <parameter name="totalRows" type="Long"/>
+            <parameter name="requestList" type="List">
+                <parameter name="request" type="Map">
+                    <parameter name="externalBookId"/>
+                    <parameter name="statusId"/>
+                    <parameter name="requestDate"/>
+                </parameter>
+            </parameter>
+        </out-parameters>
+    </service>
+
+</services>

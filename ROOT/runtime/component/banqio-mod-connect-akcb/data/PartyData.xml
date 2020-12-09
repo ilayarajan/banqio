@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Party identification types -->
+    <moqui.basic.Enumeration enumTypeId="PartyIdType" enumId="PtidQatarId" description="Qatar ID"/>
+    <moqui.basic.Enumeration enumTypeId="PartyIdType" enumId="PtidOther" description="Other"/>
+
+    <!-- Party content types -->
+    <moqui.basic.Enumeration enumTypeId="PartyContentType" enumId="PcntMandate" description="Mandate Document"/>
+
+    <!-- Party relation types -->
+    <moqui.basic.Enumeration enumId="PrtAgent" description="User"/>
+
+</entity-facade-xml>

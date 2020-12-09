@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Beneficiary types -->
+    <BanqioBenType typeId="BtBnk" externalTypeId="within bank" typeName="Within al khaliji" typeBehaviourEnumId="BEN_TYPE_BANK" position="1" disabled="N"/>
+    <BanqioBenType typeId="BtLcy" externalTypeId="with in Qatar" typeName="QAR beneficiary" typeBehaviourEnumId="BEN_TYPE_LOCAL" position="2" disabled="N"/>
+    <BanqioBenType typeId="BtFcy" externalTypeId="international" typeName="FCY beneficiary" typeBehaviourEnumId="BEN_TYPE_OVERSEAS" position="3" disabled="N"/>
+
+</entity-facade-xml>

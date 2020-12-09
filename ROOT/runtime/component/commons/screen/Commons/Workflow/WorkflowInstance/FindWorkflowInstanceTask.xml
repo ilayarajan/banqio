@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns=""
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        default-menu-title="Tasks"
+        default-menu-index="4">
+
+    <parameter name="instanceId" required="true"/>
+
+    <actions>
+        <entity-find entity-name="commons.workflow.WorkflowInstanceTaskDetail" list="taskList">
+            <search-form-inputs default-order-by="creationDate"/>
+        </entity-find>
+    </actions>
+
+    <widgets>
+        <container-box>
+            <box-header>
+                <label text="Find Task" type="h5"/>
+            </box-header>
+            <box-body>
+                <form-list name="ListTasks" list="taskList" skip-form="true" header-dialog="true" select-columns="true">
+                    <field name="instanceId">
+                        <header-field>
+                            <hidden/>
+                        </header-field>
+                    </field>
+                    <field name="taskId">
+                        <header-field>
+                            <hidden/>
+                        </header-field>
+                    </field>
+                    <field name="taskTypeEnumId">
+                        <header-field show-order-by="true" title="Task Type">
+                            <drop-down allow-empty="true">
+                                <entity-options text="${description}" key="${enumId}">
+                                    <entity-find entity-name="moqui.basic.Enumeration">
+                                        <econdition field-name="enumTypeId" value="WorkflowTaskType"/>
+                                        <order-by field-name="sequenceNum,description"/>
+                                    </entity-find>
+                                </entity-options>
+                            </drop-down>
+                        </header-field>
+                        <default-field>
+                            <display text="${taskTypeDescription}"/>
+                        </default-field>
+                    </field>
+                    <field name="statusId">
+                        <header-field show-order-by="true" title="Task Status">
+                            <drop-down allow-empty="true">
+                                <entity-options text="${description}" key="${enumId}">
+                                    <entity-find entity-name="moqui.basic.StatusItem">
+                                        <econdition field-name="statusTypeId" value="WorkflowTask"/>
+                                        <order-by field-name="sequenceNum,description"/>
+                                    </entity-find>
+                                </entity-options>
+                            </drop-down>
+                        </header-field>
+                        <default-field>
+                            <display text="${statusDescription}"/>
+                        </default-field>
+                    </field>
+                    <field name="activityId">
+                        <header-field show-order-by="true">
+                            <text-find hide-options="true"/>
+                        </header-field>
+                        <default-field>
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="assignedUserId">
+                        <header-field show-order-by="true" title="User ID">
+                            <text-find hide-options="true"/>
+                        </header-field>
+                        <default-field>
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="creationDate">
+                        <header-field show-order-by="true"/>
+                        <default-field>
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="completionDate">
+                        <header-field show-order-by="true"/>
+                        <default-field>
+                            <display/>
+                        </default-field>
+                    </field>
+                    <field name="find">
+                        <header-field title="Find">
+                            <submit icon="glyphicon glyphicon-search"/>
+                        </header-field>
+                    </field>
+
+                    <form-list-column>
+                        <field-ref name="instanceId"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="taskId"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="taskTypeEnumId"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="statusId"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="activityId"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="assignedUserId"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="creationDate"/>
+                    </form-list-column>
+                    <form-list-column>
+                        <field-ref name="completionDate"/>
+                    </form-list-column>
+                </form-list>
+            </box-body>
+        </container-box>
+    </widgets>
+</screen>

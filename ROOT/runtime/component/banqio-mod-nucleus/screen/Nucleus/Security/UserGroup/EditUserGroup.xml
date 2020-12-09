@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
+        default-menu-title="Edit User Group"
+        default-menu-index="1"
+        default-menu-include="false">
+
+    <parameter name="userGroupId" required="true"/>
+
+    <transition name="findUserGroup">
+        <default-response url="../FindUserGroup"/>
+    </transition>
+    <transition name="updateUserGroup">
+        <service-call name="update#moqui.security.UserGroup"/>
+        <default-response url="."/>
+    </transition>
+
+    <actions>
+        <entity-find-one entity-name="moqui.security.UserGroup" value-field="userGroup">
+            <field-map field-name="userGroupId" from="userGroupId"/>
+        </entity-find-one>
+    </actions>
+
+    <widgets>
+        <section name="UpdateUserGroupSection" condition="userGroup">
+            <widgets>
+                <container-panel>
+                    <panel-header>
+                        <link url="findUserGroup" text="Find User Group" icon="glyphicon glyphicon-search"/>
+                    </panel-header>
+                    <panel-center>
+                        <form-single name="UpdateUserGroupForm" transition="updateUserGroup" map="userGroup">
+                            <auto-fields-entity entity-name="moqui.security.UserGroup" field-type="edit">
+                                <exclude field-name="ipAllowed"/>
+                            </auto-fields-entity>
+                            <field name="userGroupId">
+                                <default-field title="ID">
+                                    <display/>
+                                </default-field>
+                            </field>
+                            <field name="description">
+                                <default-field title="Group Name">
+                                    <text-line size="60"/>
+                                </default-field>
+                            </field>
+                            <field name="groupTypeEnumId">
+                                <default-field>
+                                    <hidden/>
+                                </default-field>
+                            </field>
+                            <field name="submitBtn">
+                                <default-field title="Save">
+                                    <submit/>
+                                </default-field>
+                            </field>
+
+                            <field-layout>
+                                <fields-not-referenced/>
+                            </field-layout>
+                        </form-single>
+                    </panel-center>
+                </container-panel>
+            </widgets>
+            <fail-widgets>
+                <container style="alert alert-warning">
+                    <label text="User group with ID [${userGroupId}] was not found."/>
+                </container>
+            </fail-widgets>
+        </section>
+    </widgets>
+</screen>

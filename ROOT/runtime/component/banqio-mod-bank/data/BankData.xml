@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-facade-xml type="seed">
+
+    <!-- Teller type behaviour -->
+    <moqui.basic.EnumerationType enumTypeId="TellerTypeBehaviour" description="Teller Type Behaviour"/>
+    <moqui.basic.Enumeration enumTypeId="TellerTypeBehaviour" enumId="TELLER_TYPE_ATM" description="Automated Teller Machine"/>
+    <moqui.basic.Enumeration enumTypeId="TellerTypeBehaviour" enumId="TELLER_TYPE_BANK" description="Bank Teller"/>
+    <moqui.basic.Enumeration enumTypeId="TellerTypeBehaviour" enumId="TELLER_TYPE_ITM" description="Interactive Teller Machine"/>
+
+    <!-- Teller status behaviour -->
+    <moqui.basic.EnumerationType enumTypeId="TellerStatusBehaviour" description="Teller Status Behaviour"/>
+    <moqui.basic.Enumeration enumTypeId="TellerStatusBehaviour" enumId="TELLER_STATUS_ACT" description="Active"/>
+    <moqui.basic.Enumeration enumTypeId="TellerStatusBehaviour" enumId="TELLER_STATUS_MAINT" description="Maintenance"/>
+    <moqui.basic.Enumeration enumTypeId="TellerStatusBehaviour" enumId="TELLER_STATUS_OUT_SRV" description="Out of Service"/>
+
+    <!-- Geo point type -->
+    <moqui.basic.EnumerationType enumTypeId="GeoPointType" description="Geo Point Type"/>
+    <moqui.basic.Enumeration enumTypeId="GeoPointType" enumId="GEO_PT_TELLER" description="Teller Location" sequenceNum="1"/>
+
+</entity-facade-xml>
