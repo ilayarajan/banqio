@@ -11,7 +11,7 @@ pipeline {
 
     stage('Checkout Source') {
       steps {
-        git 'https://ilayarajan@bitbucket.org/ilayarajan/banqio.git'
+        git 'https://bitbucket.org/ilayarajan/banqio.git'
       }
     }
 
